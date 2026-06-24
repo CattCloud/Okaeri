@@ -4,10 +4,10 @@
 
 ---
 
-## Decisiones pendientes (necesitan input del usuario)
+## Decisiones resueltas
 
-- 🎯 **Primera canción del repertorio.** El usuario elige (worship simple de 4 acordes es el candidato ideal). Hasta entonces, las semanas 1-2 de la ruta avanzan sin bloqueo. Ver `sistema/ruta/ruta_inicial.md` §"Decisión: la primera canción".
-- **Instalar Oído Perfecto (Perfect Ear)** antes/durante la semana 1.
+- ✅ **Primera canción del repertorio: 10,000 Reasons (Bless the Lord)** — Matt Redman, en Do mayor (acordes Do-Fa-Lam-Sol, los mismos de la ruta). Ficha creada (2026-06-24).
+- ✅ **Oído Perfecto (Perfect Ear) instalado.**
 
 ## Para más adelante (NO es V1 — no construir ahora)
 

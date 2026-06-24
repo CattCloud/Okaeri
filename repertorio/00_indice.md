@@ -16,12 +16,9 @@
 
 | Pieza | Artista | Tonalidad | Dificultad | Estado | Ficha |
 |-------|---------|-----------|------------|--------|-------|
-| _(ninguna todavía)_ | | | | | |
+| 10,000 Reasons (Bless the Lord) | Matt Redman | Do mayor (transp.) | fácil | `APRENDIENDO` | [ficha](10000-reasons/00_indice.md) |
 
-> 🎯 **La primera pieza nace con la primera canción real** (semanas 3-4 de `sistema/ruta/ruta_inicial.md`). Para registrarla:
-> 1. El usuario **elige la canción** (ver `ruta_inicial.md` §"Decisión: la primera canción"). Worship simple de 4 acordes es el candidato ideal.
-> 2. Crear `repertorio/[pieza]/00_indice.md` desde `_plantillas/plantilla_pieza.md`.
-> 3. Agregar la fila aquí con link a su ficha.
+> 🎯 **Primera pieza registrada** (2026-06-24). Acordes Do-Fa-Lam-Sol, los mismos que la ruta construye en las semanas 1-4. Para la siguiente canción: crear `repertorio/[pieza]/00_indice.md` desde `_plantillas/plantilla_pieza.md` y agregar la fila aquí.
 
 ---
 
