@@ -1,0 +1,23 @@
+# Config local de Claude Code (permisos personales, no compartible)
+.claude/settings.local.json
+
+# Archivo de instrucciones al agente (scratchpad de trabajo, no es parte del sistema)
+PROMPT.md
+
+# Grabaciones de práctica (audio/video): pesan demasiado para versionar en git
+audios/
+grabaciones/
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.mp4
+*.mov
+
+# Archivos MIDI exportados del Casio (si en algún momento se capturan)
+*.mid
+*.midi
+
+# Basura de sistema
+Thumbs.db
+.DS_Store
