@@ -38,6 +38,7 @@ Ese es el único indicador de verdad. Tres estados por pieza: `APRENDIENDO` → 
 - Las apps con notación (Yousician) se usan **en modo sheet/partitura**, nunca en modo "pista que cae". La disciplina la pone el usuario; el sistema se la recuerda en cada interacción relevante.
 - La memoria se construye **por capas, no solo muscular**: muscular (dedos), visual (forma en el teclado), auditiva (cómo suena) y estructural (la teoría: "aquí va esta progresión"). La muscular sola es frágil; la multicapa es sólida.
 - Cualquier sugerencia que induzca dependencia de la muleta se descarta. Sin excepciones.
+- La **capa visual de `fundamentos/`** sigue la misma regla: diagramas **estáticos de comprensión** (el mapa mental: dónde está Do, qué forma tiene un acorde), nunca representaciones de "pista que cae". Detalle en `fundamentos/_estilo-visual.md`.
 
 ---
 
@@ -87,6 +88,7 @@ Vetos explícitos, con el porqué. Sirven para que el alcance no se desborde.
 
 - **El método manda, la herramienta se elige después.** No amoldar el aprendizaje a la app.
 - **Define-or-link: nada de jerga sin explicar.** Todo término técnico en la ruta o una sesión se glosa en una frase o se enlaza a su nota de `fundamentos/`. Jerga huérfana = bug del sistema.
+- **Imágenes pedagógicas, no decorativas.** Cuando una nota se beneficie de un diagrama, se genera en estilo minimalista (`fundamentos/_estilo-visual.md`): una imagen, un concepto inequívoco. No se ilustra por adornar.
 - **Pragmatismo: avanzar > pulir.** No iterar indefinidamente. La perfección es enemiga de la constancia.
 - **Construir con el dolor real, no antes.** El repertorio crece con el uso; la primera pieza nace con la primera canción real, no antes.
 - **Progresión de fricción:** barrera baja al inicio (construir el hábito), potencia después. *Un método mejor que abandonas pierde contra uno peor que mantienes* — más cierto que nunca aquí, dado el patrón de abandono.

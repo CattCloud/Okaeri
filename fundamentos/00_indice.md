@@ -18,6 +18,8 @@ Cuando la ruta o yo te decimos *"forma Do mayor, manos separadas"*, aquí está 
 - 📖 **Cuerpo desarrollado** — para cuando el tema es nuevo. Léelo completo, con calma.
 - 📋 **Repaso en una pantalla** — un recuadro al final. Para cuando ya lo viste y solo quieres refrescar.
 
+Las notas también incluyen **diagramas pedagógicos** (mapas estáticos del teclado, los dedos, las formas de acorde) en estilo minimalista. El estilo y las reglas viven en [[_estilo-visual]].
+
 ## Las notas
 
 | # | Nota | Qué desbloquea |
@@ -31,5 +33,5 @@ Cuando la ruta o yo te decimos *"forma Do mayor, manos separadas"*, aquí está 
 ## Qué NO es esto
 
 - ❌ **No es teoría de conservatorio.** Solo el 20% que ilumina tu ruta (lo mínimo que sirve a lo máximo).
-- ❌ **No es una muleta.** Se lee para entender, no se mira mientras tocas. Una canción aprendida se toca de memoria, sin nada delante.
+- ❌ **No es una muleta.** Se lee para entender, no se mira mientras tocas. Una canción aprendida se toca de memoria, sin nada delante. Las **imágenes** tampoco son muleta: son mapas para entender (dónde está Do, qué forma tiene un acorde), nunca una pista que cae mientras tocas (ver [[_estilo-visual]] §1).
 - ❌ **No es insumo del sistema.** Eso es `sistema/referencia/errores-comunes-musica.md` (lo uso yo). Esto lo estudias **tú**.
