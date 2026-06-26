@@ -20,12 +20,18 @@ next: 04_acorde-mayor
 
 Ojo al detalle que confunde a todos al inicio: **el pulgar siempre es 1 en ambas manos.** Así que en la mano izquierda los números van del meñique (5) al pulgar (1) de izquierda a derecha, y en la derecha al revés. No lo memorices a la fuerza; con tocar se vuelve natural.
 
+![Las dos manos con los dedos numerados del 1 al 5; el pulgar es 1 en ambas y los pulgares miran al centro.](img/03-numeracion-dedos.png)
+*Mismo código en las dos manos: pulgar 1, índice 2, medio 3, anular 4, meñique 5. Los pulgares miran al centro.*
+
 ## 🖐️ El calentamiento de 5 dedos
 
 > **Es el ejercicio de entrada de cada sesión: pones los 5 dedos en 5 teclas blancas seguidas y los tocas uno por uno, subiendo y bajando, despacio.**
 > No es para "tocar una canción" — es para despertar la mano y soltar los dedos, como estirar antes de correr.
 
 En la práctica: mano derecha, pulgar (1) en **Do central**, y los dedos 2-3-4-5 caen naturalmente en **Re, Mi, Fa, Sol**. Tocas Do-Re-Mi-Fa-Sol (subiendo) y Sol-Fa-Mi-Re-Do (bajando), una nota por dedo, lento y parejo. Luego lo mismo con la izquierda.
+
+![Teclado con la mano derecha en posición: pulgar 1 en Do, y dedos 2-3-4-5 en Re-Mi-Fa-Sol.](img/03-calentamiento.png)
+*Pulgar (1) en Do central; 2-3-4-5 caen solos en Re-Mi-Fa-Sol. Esa es la posición.*
 
 Es corto (unos minutos) y es también un **ritual**: marca "empieza la sesión", ayuda a entrar en modo concentración.
 

@@ -25,16 +25,25 @@ Para formar **Do mayor** con la mano derecha:
 
 Las tres juntas. ¿Por qué suena tan "en su sitio"? Porque Do-Mi-Sol son notas que encajan de forma muy estable (se saltan una blanca entre cada una: Do, _salto Re_, Mi, _salto Fa_, Sol). No necesitas la teoría profunda ahora — solo reconocer ese sonido **firme y luminoso** como "mayor".
 
+![Acorde Do mayor resaltado en verde: Do, Mi y Sol con los dedos 1, 3 y 5.](img/04-do-mayor.png)
+*Do mayor es una forma fija: Do-Mi-Sol con los dedos 1-3-5, saltando una blanca entre cada una.*
+
 Tus tres primeros acordes mayores, los de las semanas 1-2, se forman con la misma idea (una sí, una no):
 - **Do mayor** = Do · Mi · Sol
 - **Sol mayor** = Sol · Si · Re
 - **Fa mayor** = Fa · La · Do
+
+![Tres teclados mostrando Do mayor, Fa mayor y Sol mayor: la misma forma movida de sitio.](img/04-tres-acordes.png)
+*La misma forma "una sí, una no", movida: Do, Fa y Sol mayores.*
 
 ## 🎵 Mayor vs. menor — alegre vs. triste
 
 > **La diferencia entre un acorde mayor y uno menor es una sola nota que se mueve un pelito, y eso cambia todo el color: el mayor suena alegre, el menor suena triste o melancólico.**
 
 Si el acorde mayor es "luz", el menor es "sombra cálida". No es peor — es la herramienta de la **emoción**. Las canciones que te tocan el corazón usan los dos: el mayor da firmeza, el menor da el nudo en la garganta.
+
+![Comparación Do mayor vs Do menor: solo cambia la nota del medio, Mi baja a Mi bemol, marcada en rojo.](img/04-mayor-vs-menor.png)
+*Una sola nota baja (Mi → Mi♭) y el acorde pasa de alegre a emotivo.*
 
 Esto es justo lo que vas a entrenar en **Oído Perfecto** estas semanas: te suena un acorde y reconoces *¿alegre (mayor) o triste (menor)?* Es el músculo que Yousician nunca te dio: oír y entender, no solo apretar.
 

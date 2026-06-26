@@ -66,6 +66,8 @@ for (const f of ['01-patron-negras','01-donde-esta-do','01-octava'])
   sharp(fs.readFileSync(base+f+'.svg'), {density:200}).png().toFile(base+f+'.png');
 ```
 
+> **Generador reutilizable:** los diagramas de teclado/acordes se producen con `fundamentos/_generador.js` (Node puro, sin dependencias: `node _generador.js` escribe los `.svg` a `img/`). Trae una función `keyboard()` que coloca blancas/negras, resaltados, nombres y círculos de dedo — úsala para diagramas nuevos (p. ej. la nota 05). Las manos (`03-numeracion-dedos.svg`) y los diagramas de la nota 01 son SVG a mano.
+
 > **Por qué SVG y no IA:** dos rondas con Google Banana Pro fallaron (notación Do/C mezclada, octavas mal contadas, nombres en inglés). Ningún generador de imágenes garantiza exactitud en diagramas técnicos; el SVG sí. El preámbulo de IA (§5) y los prompts (§8) se conservan **solo** por si algún día se quiere una imagen *ilustrativa no técnica* — para teclados/acordes, siempre SVG.
 
 ---
@@ -113,6 +115,11 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 | Patrón 2-3 de las negras | 01 | ✅ integrada | `img/01-patron-negras.svg` → `.png` |
 | Dónde está Do (+ Do central) | 01 | ✅ integrada | `img/01-donde-esta-do.svg` → `.png` |
 | La octava (Do a Do) | 01 | ✅ integrada | `img/01-octava.svg` → `.png` |
+| Numeración de dedos 1-5 | 03 | ✅ integrada | `img/03-numeracion-dedos.svg` → `.png` |
+| Calentamiento de 5 dedos | 03 | ✅ integrada | `img/03-calentamiento.svg` → `.png` |
+| Forma de Do mayor | 04 | ✅ integrada | `img/04-do-mayor.svg` → `.png` |
+| Tres acordes mayores | 04 | ✅ integrada | `img/04-tres-acordes.svg` → `.png` |
+| Mayor vs. menor | 04 | ✅ integrada | `img/04-mayor-vs-menor.svg` → `.png` |
 
 > Estados: ⬜ pendiente · 🟡 generada (sin verificar) · ✅ integrada.
 
