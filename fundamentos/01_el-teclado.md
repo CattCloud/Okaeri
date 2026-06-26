@@ -22,6 +22,9 @@ Mira tu Casio. No te fijes en las blancas todavía — mira las **negras**. ¿Ve
 
 **Grupo de 2 negras, luego grupo de 3, luego de 2, luego de 3...** hasta el final. Ese es el mapa. Todo se ubica respecto a esos grupos.
 
+![Teclado mostrando que las teclas negras se repiten en grupos de 2 (verde) y de 3 (naranja).](img/01-patron-negras.png)
+*Las negras nunca están parejas: 2, luego 3, y vuelta a empezar. Ese es todo el mapa.*
+
 ## 🎵 Dónde está Do
 
 > **Do es la tecla blanca que está justo a la izquierda de cada grupo de 2 teclas negras.**

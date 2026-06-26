@@ -88,9 +88,9 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 
 | Imagen | Nota | Estado | Archivo |
 |--------|------|--------|---------|
-| Patrón 2-3 de las negras | 01 | ⬜ pendiente | `img/01-patron-negras.png` |
-| Dónde está Do (+ Do central) | 01 | ⬜ pendiente | `img/01-donde-esta-do.png` |
-| La octava (Do a Do) | 01 | ⬜ pendiente | `img/01-octava.png` |
+| Patrón 2-3 de las negras | 01 | ✅ integrada | `img/01-patron-negras.png` |
+| Dónde está Do (+ Do central) | 01 | 🔴 rechazada v1 (notación Do/C mezclada) — regenerar | `img/01-donde-esta-do.png` |
+| La octava (Do a Do) | 01 | 🔴 rechazada v1 (los Do a varias octavas) — regenerar | `img/01-octava.png` |
 
 > Estados: ⬜ pendiente · 🟡 generada (sin verificar) · ✅ integrada.
 
@@ -105,12 +105,14 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 Dibuja un fragmento de teclado de piano visto de frente, mostrando aproximadamente dos octavas. Resalta cómo las teclas negras forman grupos alternados: un grupo de 2 teclas negras, luego un grupo de 3, luego 2, luego 3, repitiéndose. Encima de cada grupo coloca una etiqueta sans-serif: "2" sobre cada grupo de dos negras y "3" sobre cada grupo de tres. Pinta los grupos de 2 negras en VERDE y los grupos de 3 negras en NARANJA (relleno sólido y plano sobre esas teclas negras, como único recurso de color). Las teclas blancas en blanco con contornos finos negros. Sin nombres de notas, sin manos, sin flechas. Una llave o corchete fino debajo agrupa visualmente la idea "2 + 3 se repite". Proporción horizontal.
 ```
 
-### 01-B · `01-donde-esta-do.png`
+### 01-B · `01-donde-esta-do.png` (v2 — corregido)
+> v1 falló: mezcló "Do" con notación "C3/C4/C5" y puso doble etiqueta en el Do central. v2 fuerza español y una sola etiqueta.
 ```
-Dibuja un teclado de piano de frente abarcando varias octavas completas. En CADA grupo de 2 teclas negras, marca la tecla blanca inmediatamente a su izquierda con la etiqueta "Do" en negro y un punto o contorno AZUL sobre esa tecla. Todos los "Do" se marcan igual para mostrar que se repiten. Al Do que queda más o menos en el centro del teclado, señálalo con UNA sola flecha vertical ROJA apuntando hacia arriba a la tecla, y una etiqueta más grande debajo: "Do central". El resto del teclado en blanco y negro neutro. Sin números de dedos, sin manos. La flecha roja señala una ubicación fija, no una secuencia.
+Dibuja un teclado de piano de frente abarcando unas 3 octavas completas. Identifica TODAS las teclas Do: cada Do es la tecla blanca inmediatamente a la izquierda de un grupo de 2 teclas negras. Marca cada Do con un punto AZUL y la etiqueta "Do" en negro debajo de esa tecla. Usa SOLO nombres en español (Do); NO uses notación con letras ni números como C, C3, C4, C5. Al Do que queda más o menos en el centro del teclado, señálalo además con UNA sola flecha vertical ROJA apuntando hacia abajo a esa tecla, y debajo, en rojo, la etiqueta "Do central" (esa tecla lleva solo esa etiqueta, no dos). El resto del teclado en blanco y negro neutro, sin más etiquetas. Sin números de dedos, sin manos. La flecha roja señala una ubicación fija, no una secuencia.
 ```
 
-### 01-C · `01-octava.png`
+### 01-C · `01-octava.png` (v2 — corregido)
+> v1 falló: los dos Do quedaron a varias octavas de distancia y hubo manchas de color en negras. v2 fuerza EXACTAMENTE una octava y negras limpias.
 ```
-Dibuja un tramo de teclado de piano que vaya exactamente de un Do al siguiente Do (una octava). Marca la tecla "Do" inicial y la tecla "Do" final, ambas con etiqueta en negro y un punto MORADO. Entre ambas, un corchete o llave horizontal fino con el texto centrado "1 octava". Bajo las blancas intermedias, en gris claro y pequeño, los nombres Re Mi Fa Sol La Si (son nombres, no un orden a tocar). Sin flechas de dirección, sin números de dedos. Es un diagrama de distancia, no de secuencia.
+Dibuja un tramo de teclado de piano que muestre EXACTAMENTE una octava: desde una tecla Do hasta la SIGUIENTE tecla Do, es decir 8 teclas blancas consecutivas (Do, Re, Mi, Fa, Sol, La, Si, Do) con sus 5 teclas negras intercaladas. NO dibujes más teclas que esas; el diagrama abarca solo una octava, nada más. Marca la primera tecla "Do" (izquierda) y la última tecla "Do" (derecha), ambas con etiqueta en negro y un punto MORADO. Etiqueta las 6 blancas intermedias en gris claro: Re, Mi, Fa, Sol, La, Si, en orden. Debajo, un corchete horizontal fino que une los dos Do con el texto centrado "1 octava". Las teclas negras quedan completamente negras, SIN ninguna mancha ni marca de color. Sin flechas, sin números de dedos. Es un diagrama de distancia, no de secuencia.
 ```
