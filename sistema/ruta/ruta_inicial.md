@@ -2,7 +2,7 @@
 
 > **Esta es la pieza más importante de StayHere.** Durante el arranque sin profesor, esta ruta *es* el maestro. Sustituye la guía que el usuario nunca tuvo y que, al faltar, lo hizo abandonar. La calidad de esta ruta importa más que cualquier otra cosa del sistema.
 >
-> **Qué respeta** (no negociable): cifrado primero · manos separadas → juntas · chunking · interpretación desde el día uno · **anti-muleta** (apps solo en modo sheet; "aprendido" = de memoria, solo, sin app).
+> **Qué respeta** (no negociable): cifrado primero · manos separadas → juntas · chunking · interpretación desde el día uno · **vocabulario explicado antes de pedirlo** (define-or-link a `fundamentos/`) · **anti-muleta** (apps solo en modo sheet; "aprendido" = de memoria, solo, sin app).
 >
 > **Cómo usarla:** es una guía, no una jaula. El usuario la afina en vivo. Si una semana se siente corta o larga, se ajusta — la constancia diaria pesa más que cumplir el calendario al día. La meta de las 8 semanas es **una canción tocada de memoria** y **llegar al profesor con un diagnóstico claro**, no "completar el temario".
 
@@ -32,6 +32,17 @@ La misma estructura todos los días. La constancia del ritual es parte de la cur
 
 > 🔑 **20-30 min diarios > 3 horas el domingo.** Si un día solo hay 15 min, se hace el calentamiento + un fragmento. Nunca cero. La cadena no se rompe.
 
+### 📖 Cómo se conduce la sesión (protocolo guiado — anti-perderse)
+
+El usuario tiene **base dormida**: conoce algo pero sin estructura. Por eso el sistema **nunca le suelta jerga de golpe**. La sesión se conduce concepto por concepto, en pasos pequeños, así:
+
+1. **Entender primero.** Ante un concepto nuevo (Do, octava, manos separadas, acorde mayor...), el sistema lo **explica en el momento** o manda leer su nota corta de `fundamentos/`. Si el tema es **nuevo**, explicación completa antes de la acción. Si es **repaso**, basta la tarjeta "Repaso en una pantalla" de la nota.
+2. **Ahora al teclado.** Una sola acción concreta: *"forma Do mayor: Do-Mi-Sol con los dedos 1-3-5"*. Nada de listas de cinco cosas a la vez.
+3. **Confirmar.** El sistema pregunta cómo fue, si se entendió, dónde se trabó — **antes** de pasar al siguiente concepto. Si algo no quedó, se reexplica; no se avanza encima de una duda.
+4. **Siguiente.** Recién entonces el próximo paso.
+
+> 🚫 **Regla define-or-link:** ningún bloque de esta ruta ni de una sesión usa un término técnico sin **definirlo en una frase** o **enlazar su nota de `fundamentos/`**. Si aparece jerga huérfana, es un bug del sistema, no torpeza del usuario. La comprensión precede o acompaña la ejecución — nunca al revés.
+
 ---
 
 ## SEMANAS 1-2 — Refresco y fundamentos
@@ -47,6 +58,9 @@ La misma estructura todos los días. La constancia del ritual es parte de la cur
 | **Oído** | **Instalar Oído Perfecto.** Ejercicio único: distinguir **mayor vs. menor** (alegre vs. triste). 5 min/día. |
 | **Repertorio** | Ninguna canción aún. Se está construyendo el terreno. |
 | **Constancia** | **Empezar el registro de práctica HOY** (`practica/_plantillas/plantilla_sesion.md`). Cada sesión, ≤3 min de llenado. Esto es el accountability que faltó siempre. |
+
+> 📖 **Fundamentos de la quincena** (leer la nota antes de su bloque — `fundamentos/`):
+> Lectura → [[01_el-teclado]] + [[02_cifrado]] · Técnica → [[03_dedos-y-manos]] · Teoría y Oído → [[04_acorde-mayor]].
 
 **Indicador honesto de la quincena:** ¿se forman 2-3 acordes mayores limpios sin mirar una guía? ¿se distingue mayor de menor de oído? ¿hay registro de práctica de la mayoría de los días?
 
@@ -65,6 +79,8 @@ La misma estructura todos los días. La constancia del ritual es parte de la cur
 | **Lectura (pentagrama)** | Dosis ligera (10 min, 2-3 veces/semana): ubicar las notas en el pentagrama y en el teclado. Sin presión, solo para que no se oxide. |
 | **Oído** | Sumar **intervalos básicos** en Oído Perfecto (3ª mayor/menor, 5ª justa). Asociar cada uno a una canción conocida. |
 | **Interpretación** | Desde la primera canción: aunque sean solo acordes, tocarlos **con intención** — suave en lo íntimo, con cuerpo en lo que crece. No esperar a "saber" para sentir. |
+
+> 📖 **Fundamentos de la quincena:** Teoría → [[05_progresion]] (la progresión I-V-vi-IV; *se escribe al acercarse esta semana*). Repaso de [[04_acorde-mayor]] para los acordes menores (Lam).
 
 **Indicador honesto:** ¿se cambia entre 4-5 acordes sin frenar? ¿se reconoce la progresión I-V-vi-IV en canciones que se escuchan? ¿la primera canción suena (en acordes) reconocible?
 

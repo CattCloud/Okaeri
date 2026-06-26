@@ -26,7 +26,7 @@ Worship de 4 acordes, tempo amable, muy querida. **Transpuesta a Do mayor** usa 
 > Esqueleto base para arrancar. El reparto exacto compás a compás se afina en la práctica (y lo valida el profesor más adelante). Lo importante ahora: son **4 acordes** y se repiten.
 
 - **Tonalidad:** Do mayor (transpuesta desde el original en Sol).
-- **Acordes (cifrado):** **Do · Fa · Lam · Sol** (I–IV–vi–V).
+- **Acordes (cifrado):** **Do · Fa · Lam · Sol** (I–IV–vi–V). → ¿qué es un acorde mayor/menor? [[fundamentos/04_acorde-mayor]] · ¿qué es esta progresión? [[fundamentos/05_progresion]] *(se escribe en la semana 3)*.
 - **Secciones:**
   - **Coro** ("Bless the Lord, O my soul / O my soul") — el gancho, lo más reconocible. Buen punto de partida.
   - **Verso** ("The sun comes up...") — misma familia de acordes, tempo tranquilo.

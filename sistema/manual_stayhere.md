@@ -60,6 +60,7 @@ Las 7 dimensiones activas se agrupan en las tres capas del principio rector. El 
 - **Chunking (trocear).** Fragmentos de 2-4 compases, dominar cada uno, conectarlos. Nunca de corrido.
 - **Manos separadas → manos juntas.** Cada mano por su lado hasta fluir, luego juntas. Saltárselo es la causa #1 de frustración del principiante.
 - **Memoria por comprensión, no solo muscular.** Lo que hace que una pieza *se quede*. La cura directa al mal de Yousician.
+- **Vocabulario antes (o junto a) la práctica.** La base dormida no tiene la estructura: pedirle *"forma Do mayor, manos separadas"* sin haber nombrado esas palabras genera caos y abandono. La dimensión 4 (Teoría aplicada) se materializa en `fundamentos/` — notas cortas, atadas a la canción real, que el usuario estudia. Es la misma cura del anti-muleta: comprensión que sostiene la memoria. El sistema **conduce la sesión** concepto por concepto (entender → tocar → confirmar), nunca suelta jerga de golpe.
 
 ---
 
@@ -85,6 +86,7 @@ Vetos explícitos, con el porqué. Sirven para que el alcance no se desborde.
 ## 5. Filosofía de construcción (heredada de TESLA/Oráculo)
 
 - **El método manda, la herramienta se elige después.** No amoldar el aprendizaje a la app.
+- **Define-or-link: nada de jerga sin explicar.** Todo término técnico en la ruta o una sesión se glosa en una frase o se enlaza a su nota de `fundamentos/`. Jerga huérfana = bug del sistema.
 - **Pragmatismo: avanzar > pulir.** No iterar indefinidamente. La perfección es enemiga de la constancia.
 - **Construir con el dolor real, no antes.** El repertorio crece con el uso; la primera pieza nace con la primera canción real, no antes.
 - **Progresión de fricción:** barrera baja al inicio (construir el hábito), potencia después. *Un método mejor que abandonas pierde contra uno peor que mantienes* — más cierto que nunca aquí, dado el patrón de abandono.

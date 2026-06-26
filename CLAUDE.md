@@ -75,6 +75,7 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 | `sistema/manual_stayhere.md` | Guía de operación: principio rector, anti-muleta, las tres capas, qué NO hace. |
 | `sistema/perfil/yo_musica.md` | **Perfil del usuario.** Leer ANTES de proponer ruta o repertorio. Calibra nivel, meta, repertorio y el patrón de abandono. |
 | `sistema/ruta/ruta_inicial.md` | **La pieza más importante.** La ruta de las primeras 8 semanas autodidacta-guiado. Es la guía que sustituye al profesor durante el arranque. |
+| `fundamentos/00_indice.md` | **Material de estudio del usuario.** El vocabulario mínimo que la ruta asume (teclado, cifrado, dedos, acorde, progresión), atado a la canción real. Es la dimensión 4 (Teoría aplicada) hecha artefacto. Lo estudia él. Distinto de `errores-comunes` (insumo del sistema). |
 | `sistema/herramientas/config_herramientas.md` | Rol operativo de cada herramienta (Yousician modo sheet, Oído Perfecto, MIDI del Casio, metrónomo). |
 | `sistema/referencia/errores-comunes-musica.md` | Checklist preventiva de errores predecibles del principiante. Insumo del sistema, no material de estudio. |
 | `sistema/decisiones/` | Decisiones ya tomadas (piano primero, cifrado primero, autodidacta-luego-profesor). |
@@ -87,6 +88,7 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 - **Leer `sistema/perfil/yo_musica.md` ANTES de proponer cualquier ruta o repertorio.** Calibra al usuario.
 - **El método manda, la herramienta se elige después.** No amoldar el aprendizaje a la app (`contexto/stayhere-metodologia.md`).
 - **Anti-muleta siempre.** Toda sugerencia se evalúa contra él. Si induce dependencia de "pista que cae", se descarta.
+- **Explica antes de pedir práctica (define-or-link).** Ningún bloque usa un término técnico sin definirlo en una frase o enlazar su nota de `fundamentos/`. El sistema **conduce la sesión en pasos pequeños**, confirmando que el usuario no se perdió antes de avanzar. La comprensión precede o acompaña la ejecución — nunca al revés. Jerga huérfana = bug del sistema, no torpeza del usuario.
 - **La fecha dura del profesor no se estira.** Es la salvaguarda contra el patrón de abandono. El sistema la vigila (alarma si pasan ~3 días sin registro de práctica).
 - **No sobre-construir.** Si la tentación es "integro las apps por API / hago un dashboard / arranco el canto" → detenerse. Eso es etapa posterior o está vetado.
 - **Construir con el dolor real, no antes.** El repertorio crece con el uso; la primera pieza nace con la primera canción.
