@@ -34,6 +34,9 @@ Pon el dedo en cualquier grupo de **2 negras**. La blanca pegadita a la izquierd
 
 El **Do central** es simplemente el Do que queda más o menos **en el medio** del teclado (suele estar cerca del logo o la marca del fabricante). Es el punto de referencia desde donde empezamos casi todo, porque queda cómodo para las dos manos.
 
+![Teclado con cada Do marcado en azul a la izquierda de los grupos de 2 negras; el Do central señalado con flecha roja.](img/01-donde-esta-do.png)
+*Do siempre es la blanca pegada a la izquierda de un grupo de 2 negras. El central es tu punto de partida.*
+
 ## 🎵 Las 7 notas
 
 > **Solo existen 7 nombres de notas, y se repiten: Do · Re · Mi · Fa · Sol · La · Si. Después de Si vuelve Do y empieza otra vez.**
@@ -51,6 +54,9 @@ No hay nota número 8: después de Si, el ciclo reinicia en Do. Por eso con 7 no
 > **Una octava es la distancia de un Do al siguiente Do (o de cualquier nota a la siguiente con el mismo nombre). Suenan "igual pero más agudo o más grave".**
 
 Toca un Do, y luego el siguiente Do hacia la derecha. ¿Oyes que es "la misma nota" pero más aguda? Esa distancia es una **octava**. Cuando yo te diga *"una octava más abajo"*, significa: el mismo nombre de nota, pero en el grupo de teclas anterior (hacia la izquierda, más grave).
+
+![Tramo de teclado de un Do al siguiente Do marcado como una octava, con las notas Do Re Mi Fa Sol La Si Do.](img/01-octava.png)
+*De un Do al siguiente Do hay una octava: misma nota, más aguda o más grave.*
 
 Esto importa para las manos: la izquierda suele tocar un Do **una octava más abajo** que la derecha — el mismo Do, pero más grave, para que las dos manos no se choquen.
 

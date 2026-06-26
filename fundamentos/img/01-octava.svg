@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 312" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="460" height="312" fill="#ffffff"/>
+  <text x="230" y="34" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">UNA OCTAVA — de un Do al siguiente Do</text>
+
+  <!-- White keys: Do Re Mi Fa Sol La Si Do -->
+  <g fill="#ffffff" stroke="#333333" stroke-width="2">
+    <rect x="46"  y="64" width="46" height="190" rx="2"/>
+    <rect x="92"  y="64" width="46" height="190" rx="2"/>
+    <rect x="138" y="64" width="46" height="190" rx="2"/>
+    <rect x="184" y="64" width="46" height="190" rx="2"/>
+    <rect x="230" y="64" width="46" height="190" rx="2"/>
+    <rect x="276" y="64" width="46" height="190" rx="2"/>
+    <rect x="322" y="64" width="46" height="190" rx="2"/>
+    <rect x="368" y="64" width="46" height="190" rx="2"/>
+  </g>
+
+  <!-- Black keys -->
+  <g fill="#1a1a1a">
+    <rect x="79"  y="64" width="26" height="120" rx="2"/>
+    <rect x="125" y="64" width="26" height="120" rx="2"/>
+    <rect x="217" y="64" width="26" height="120" rx="2"/>
+    <rect x="263" y="64" width="26" height="120" rx="2"/>
+    <rect x="309" y="64" width="26" height="120" rx="2"/>
+  </g>
+
+  <!-- Purple dots on the two Do keys -->
+  <circle cx="69"  cy="210" r="6" fill="#8E2DE2"/>
+  <circle cx="391" cy="210" r="6" fill="#8E2DE2"/>
+
+  <!-- White-key note names -->
+  <g text-anchor="middle" font-size="15">
+    <text x="69"  y="238" font-weight="bold" fill="#111111">Do</text>
+    <text x="115" y="238" fill="#999999">Re</text>
+    <text x="161" y="238" fill="#999999">Mi</text>
+    <text x="207" y="238" fill="#999999">Fa</text>
+    <text x="253" y="238" fill="#999999">Sol</text>
+    <text x="299" y="238" fill="#999999">La</text>
+    <text x="345" y="238" fill="#999999">Si</text>
+    <text x="391" y="238" font-weight="bold" fill="#111111">Do</text>
+  </g>
+
+  <!-- Octave bracket -->
+  <g stroke="#333333" stroke-width="1.5" fill="none">
+    <path d="M69 266 L69 274 L391 274 L391 266"/>
+  </g>
+  <text x="230" y="296" text-anchor="middle" font-size="15" font-weight="bold" fill="#333333">1 octava</text>
+</svg>

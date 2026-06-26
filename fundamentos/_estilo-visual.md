@@ -48,7 +48,29 @@ El color **significa lo mismo en todas las imágenes**. Nunca es decorativo.
 
 ---
 
-## 4. Preámbulo de sistema para Banana Pro
+## 4. Cómo se generan los diagramas: SVG por código (método principal)
+
+> **Los diagramas técnicos (teclado, dedos, formas de acorde) se DIBUJAN COMO CÓDIGO (SVG), no con un generador de imágenes de IA.**
+> Un teclado exige conteo exacto y texto correcto en cada tecla — justo lo que los modelos de imagen fallan. El SVG es exacto por construcción, en este estilo, editable y versionado.
+
+**Flujo:**
+1. Se escribe el `.svg` en `img/` con geometría exacta (7 blancas, 5 negras en sus posiciones, etiquetas en español).
+2. Se rasteriza a `.png` con Node + sharp (para que renderice en cualquier visor). El `.svg` es la **fuente editable**; el `.png` es lo que se embebe en la nota.
+3. Se verifica el PNG contra la checklist (§7) antes de integrar.
+
+**Rasterizar** (`npm i sharp` una vez en cualquier carpeta de trabajo, p. ej. el scratchpad):
+```js
+const sharp = require('sharp'); const fs = require('fs');
+const base = 'C:/cerebro/StayHere/fundamentos/img/';
+for (const f of ['01-patron-negras','01-donde-esta-do','01-octava'])
+  sharp(fs.readFileSync(base+f+'.svg'), {density:200}).png().toFile(base+f+'.png');
+```
+
+> **Por qué SVG y no IA:** dos rondas con Google Banana Pro fallaron (notación Do/C mezclada, octavas mal contadas, nombres en inglés). Ningún generador de imágenes garantiza exactitud en diagramas técnicos; el SVG sí. El preámbulo de IA (§5) y los prompts (§8) se conservan **solo** por si algún día se quiere una imagen *ilustrativa no técnica* — para teclados/acordes, siempre SVG.
+
+---
+
+## 5. Preámbulo de IA (fallback — solo ilustraciones NO técnicas)
 
 > **Copiar este bloque al inicio de CADA prompt**, y debajo el cuerpo específico de la imagen (sección 8).
 
@@ -86,19 +108,21 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 
 ## 7. Galería / estado
 
-| Imagen | Nota | Estado | Archivo |
+| Imagen | Nota | Estado | Archivo (fuente + PNG) |
 |--------|------|--------|---------|
-| Patrón 2-3 de las negras | 01 | ✅ integrada | `img/01-patron-negras.png` |
-| Dónde está Do (+ Do central) | 01 | 🔴 rechazada v1 (notación Do/C mezclada) — regenerar | `img/01-donde-esta-do.png` |
-| La octava (Do a Do) | 01 | 🔴 rechazada v1 (los Do a varias octavas) — regenerar | `img/01-octava.png` |
+| Patrón 2-3 de las negras | 01 | ✅ integrada | `img/01-patron-negras.svg` → `.png` |
+| Dónde está Do (+ Do central) | 01 | ✅ integrada | `img/01-donde-esta-do.svg` → `.png` |
+| La octava (Do a Do) | 01 | ✅ integrada | `img/01-octava.svg` → `.png` |
 
 > Estados: ⬜ pendiente · 🟡 generada (sin verificar) · ✅ integrada.
 
 ---
 
-## 8. Prompts de generación (versionados)
+## 8. Prompts de generación de IA (históricos — superados por SVG)
 
-> Cada prompt = **preámbulo (§4) + el cuerpo de abajo**. Se versionan aquí para poder regenerar igual si hace falta.
+> ⚠️ **Estos prompts ya NO se usan para los diagramas de teclado.** Se conservan como registro de los intentos con Banana Pro (que fallaron en exactitud). El método vigente es SVG por código (§4). Quedan aquí solo por si alguna vez se necesita una imagen ilustrativa no técnica.
+>
+> Cada prompt = **preámbulo de IA (§5) + el cuerpo de abajo**.
 
 ### 01-A · `01-patron-negras.png`
 ```
