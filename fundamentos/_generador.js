@@ -29,6 +29,9 @@ function keyboard(cfg){
     s+=`<circle cx="${cx}" cy="${cy}" r="12" fill="${o.color}"/><text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff" ${FONT}>${o.n}</text>`; }
   if(circ.black) for(const i in circ.black){ const o=circ.black[i]; const cx=left+(+i+1)*ww; const cy=top+bh-18;
     s+=`<circle cx="${cx}" cy="${cy}" r="11" fill="${o.color}" stroke="#fff" stroke-width="1.5"/><text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff" ${FONT}>${o.n}</text>`; }
+  if(cfg.blackNames) for(const i in cfg.blackNames){ const a=cfg.blackNames[i][0], b=cfg.blackNames[i][1]; const cx=left+(+i+1)*ww;
+    s+=`<text x="${cx}" y="${top-22}" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333" ${FONT}>${a}</text>`+
+       `<text x="${cx}" y="${top-7}" text-anchor="middle" font-size="13" fill="#888888" ${FONT}>${b}</text>`; }
   return s;
 }
 const svg=(w,h,inner)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" ${FONT}><rect x="0" y="0" width="${w}" height="${h}" fill="#ffffff"/>${inner}</svg>\n`;
@@ -85,5 +88,17 @@ const T=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" fo
     redKey:{black:[1]}});
   inner+=T(cx,262,'La nota roja baja un poco: Mi → Mi♭. El menor es el color emotivo (como el Lam de tu canción).',{s:13,f:'#666'});
   fs.writeFileSync(OUT+'04-mayor-vs-menor.svg', svg(W,285,inner));
+}
+/* 01: nombres de las teclas negras (sostenidos y bemoles) */
+{
+  const SH='♯', FL='♭';
+  const ww=54, top=120, N=8, wh=150, W=700, left=(W-N*ww)/2, cx=W/2;
+  const wn={}; for(let i=0;i<N;i++) wn[i]={};
+  let inner=T(cx,34,'Las teclas negras tienen dos nombres',{s:16,w:'bold'});
+  inner+=T(cx,58,SH+' sostenido = sube (negra de la derecha)        '+FL+' bemol = baja (negra de la izquierda)',{s:13,f:'#555'});
+  inner+=keyboard({N,left,top,ww,wh,bw:30,bh:104, whiteName:wn,
+    blackNames:{0:['Do'+SH,'Re'+FL],1:['Re'+SH,'Mi'+FL],3:['Fa'+SH,'Sol'+FL],4:['Sol'+SH,'La'+FL],5:['La'+SH,'Si'+FL]}});
+  inner+=T(cx,top+wh+34,'La misma negra tiene dos nombres. Ej.: Mi'+FL+' = Re'+SH+' = la negra a la izquierda de Mi.',{s:13,f:'#666'});
+  fs.writeFileSync(OUT+'01-negras-nombres.svg', svg(W,top+wh+55,inner));
 }
 console.log('OK keyboards');

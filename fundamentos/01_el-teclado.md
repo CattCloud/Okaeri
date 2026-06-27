@@ -60,6 +60,9 @@ Las blancas ya las nombraste (Do-Re-Mi-Fa-Sol-La-Si). Las **negras** se nombran 
 
 Y el truco que confunde a todos: **la misma tecla negra tiene dos nombres**, según desde qué blanca la mires.
 
+![Teclado de una octava con cada tecla negra etiquetada con su sostenido (arriba) y su bemol (abajo).](img/01-negras-nombres.png)
+*Cada negra tiene dos nombres: ♯ (subiendo) y ♭ (bajando). Mi♭ y Re♯ son la misma tecla.*
+
 | Tecla negra | Subiendo (♯) | Bajando (♭) |
 |-------------|:------------:|:-----------:|
 | entre Do y Re | Do♯ | Re♭ |

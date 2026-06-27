@@ -115,6 +115,7 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 | Patrón 2-3 de las negras | 01 | ✅ integrada | `img/01-patron-negras.svg` → `.png` |
 | Dónde está Do (+ Do central) | 01 | ✅ integrada | `img/01-donde-esta-do.svg` → `.png` |
 | La octava (Do a Do) | 01 | ✅ integrada | `img/01-octava.svg` → `.png` |
+| Nombres de las negras (♯/♭) | 01 | ✅ integrada | `img/01-negras-nombres.svg` → `.png` |
 | Numeración de dedos 1-5 | 03 | ✅ integrada | `img/03-numeracion-dedos.svg` → `.png` |
 | Calentamiento de 5 dedos | 03 | ✅ integrada | `img/03-calentamiento.svg` → `.png` |
 | Forma de Do mayor | 04 | ✅ integrada | `img/04-do-mayor.svg` → `.png` |
