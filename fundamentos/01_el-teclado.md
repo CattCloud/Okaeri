@@ -1,4 +1,3 @@
-
 ---
 tema: Fundamentos
 seccion: 1
@@ -50,6 +49,27 @@ Do · Re · Mi · Fa · Sol · La · Si · (Do otra vez) ...
 
 No hay nota número 8: después de Si, el ciclo reinicia en Do. Por eso con 7 nombres alcanza para todo el teclado.
 
+## 🎵 Las teclas negras también tienen nombre (sostenido ♯ y bemol ♭)
+
+> **Las negras se nombran a partir de la blanca vecina: sostenido (♯) sube un pasito a la negra de la derecha; bemol (♭) baja un pasito a la negra de la izquierda. Por eso una misma tecla negra tiene dos nombres.**
+
+Las blancas ya las nombraste (Do-Re-Mi-Fa-Sol-La-Si). Las **negras** se nombran así:
+
+- **Sostenido ♯ = subir** a la negra de la **derecha**. La negra a la derecha de Do es **Do♯** (Do sostenido).
+- **Bemol ♭ = bajar** a la negra de la **izquierda**. La negra a la izquierda de Mi es **Mi♭** (Mi bemol).
+
+Y el truco que confunde a todos: **la misma tecla negra tiene dos nombres**, según desde qué blanca la mires.
+
+| Tecla negra | Subiendo (♯) | Bajando (♭) |
+|-------------|:------------:|:-----------:|
+| entre Do y Re | Do♯ | Re♭ |
+| entre Re y Mi | Re♯ | **Mi♭** |
+| entre Fa y Sol | Fa♯ | Sol♭ |
+| entre Sol y La | Sol♯ | La♭ |
+| entre La y Si | La♯ | Si♭ |
+
+> Por eso, cuando en la nota 04 veas **Mi♭**, es simplemente la **tecla negra justo a la izquierda de Mi**. (Misma tecla que Re♯.)
+
 ## 🎵 Qué es una octava
 
 > **Una octava es la distancia de un Do al siguiente Do (o de cualquier nota a la siguiente con el mismo nombre). Suenan "igual pero más agudo o más grave".**
@@ -69,6 +89,7 @@ Esto importa para las manos: la izquierda suele tocar un Do **una octava más ab
 > - **Do central** = el Do del medio del teclado (referencia para empezar).
 > - **7 notas** que se repiten: Do-Re-Mi-Fa-Sol-La-Si → Do otra vez.
 > - **Octava** = de un Do al siguiente Do. "Misma nota, más aguda/grave."
+> - **Negras** = sostenido **♯** (sube, negra de la derecha) / bemol **♭** (baja, negra de la izquierda). Misma negra, dos nombres. **Mi♭** = la negra a la izquierda de Mi.
 
 > 🎹 **Ahora al teclado:** encuentra **todos los Do** del teclado, de grave a agudo, usando el truco de las 2 negras. Luego toca Do-Re-Mi-Fa-Sol-La-Si subiendo. Lento. No sigas leyendo — ve a buscarlos.
 

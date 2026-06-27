@@ -45,6 +45,8 @@ Si el acorde mayor es "luz", el menor es "sombra cálida". No es peor — es la 
 ![Comparación Do mayor vs Do menor: solo cambia la nota del medio, Mi baja a Mi bemol, marcada en rojo.](img/04-mayor-vs-menor.png)
 *Una sola nota baja (Mi → Mi♭) y el acorde pasa de alegre a emotivo.*
 
+> ¿Qué es **Mi♭** (Mi bemol)? La **tecla negra justo a la izquierda de Mi**. Si te suena nuevo el símbolo ♭, repasa "las teclas negras tienen nombre" en [[01_el-teclado]].
+
 Esto es justo lo que vas a entrenar en **Oído Perfecto** estas semanas: te suena un acorde y reconoces *¿alegre (mayor) o triste (menor)?* Es el músculo que Yousician nunca te dio: oír y entender, no solo apretar.
 
 **En 10,000 Reasons** aparece **Lam (La menor)** entre los acordes mayores. Ese acorde menor es el que le pone el toque emotivo, el que hace que la canción "sienta". Cuando lo toques, vas a oír esa sombra cálida — y vas a entender *por qué* está ahí.
