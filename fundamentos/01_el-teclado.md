@@ -1,3 +1,4 @@
+
 ---
 tema: Fundamentos
 seccion: 1
@@ -54,6 +55,8 @@ No hay nota número 8: después de Si, el ciclo reinicia en Do. Por eso con 7 no
 > **Una octava es la distancia de un Do al siguiente Do (o de cualquier nota a la siguiente con el mismo nombre). Suenan "igual pero más agudo o más grave".**
 
 Toca un Do, y luego el siguiente Do hacia la derecha. ¿Oyes que es "la misma nota" pero más aguda? Esa distancia es una **octava**. Cuando yo te diga *"una octava más abajo"*, significa: el mismo nombre de nota, pero en el grupo de teclas anterior (hacia la izquierda, más grave).
+
+> 💡 **Agudo/grave = derecha/izquierda (y por qué "altas y bajas").** Hacia la **derecha** las notas son más **agudas** (lo que solemos llamar "altas": suenan finitas, como un silbido). Hacia la **izquierda**, más **graves** ("bajas": suenan gruesas, como un trueno). Por eso *"una octava más abajo"* = a la izquierda. **Ojo:** en música "alto/bajo" describe qué tan aguda es una nota, **no** el volumen — lo fuerte o suave es otra cosa (se dice *fuerte/suave*).
 
 ![Tramo de teclado de un Do al siguiente Do marcado como una octava, con las notas Do Re Mi Fa Sol La Si Do.](img/01-octava.png)
 *De un Do al siguiente Do hay una octava: misma nota, más aguda o más grave.*
