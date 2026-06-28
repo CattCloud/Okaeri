@@ -121,6 +121,7 @@ Los generadores de IA dibujan teclados mal con frecuencia. **No se integra ningu
 | Forma de Do mayor | 04 | ✅ integrada | `img/04-do-mayor.svg` → `.png` |
 | Tres acordes mayores | 04 | ✅ integrada | `img/04-tres-acordes.svg` → `.png` |
 | Mayor vs. menor | 04 | ✅ integrada | `img/04-mayor-vs-menor.svg` → `.png` |
+| Tarjetas de acorde (Do/Fa/Sol/Lam) | mazo Anki | ✅ generadas | `img/acorde-*.svg` → `.png` (reverso del mazo) |
 
 > Estados: ⬜ pendiente · 🟡 generada (sin verificar) · ✅ integrada.
 

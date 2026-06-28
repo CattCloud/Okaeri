@@ -101,4 +101,23 @@ const T=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" fo
   inner+=T(cx,top+wh+34,'La misma negra tiene dos nombres. Ej.: Mi'+FL+' = Re'+SH+' = la negra a la izquierda de Mi.',{s:13,f:'#666'});
   fs.writeFileSync(OUT+'01-negras-nombres.svg', svg(W,top+wh+55,inner));
 }
+/* Tarjetas de acorde para Anki (reverso): Do, Fa, Sol, Lam */
+{
+  const chords=[
+    {file:'acorde-do', name:'Do mayor', notes:[0,2,4], sub:'Do · Mi · Sol'},
+    {file:'acorde-fa', name:'Fa mayor', notes:[3,5,7], sub:'Fa · La · Do'},
+    {file:'acorde-sol',name:'Sol mayor',notes:[4,6,8], sub:'Sol · Si · Re'},
+    {file:'acorde-lam',name:'La menor (Lam)', notes:[5,7,9], sub:'La · Do · Mi'},
+  ];
+  const fingers=[1,3,5];
+  const ww=40, top=72, N=10, wh=150, left=30, W=left*2+N*ww, cx=W/2;
+  for(const c of chords){
+    const wf={}, wn={}, cw={};
+    c.notes.forEach((i,k)=>{ wf[i]='#16A34A'; wn[i]={color:'#fff',weight:'bold'}; cw[i]={n:fingers[k],color:'#0b6b32'}; });
+    let inner=T(cx,38,c.name,{s:20,w:'bold'});
+    inner+=keyboard({N,left,top,ww,wh,whiteFill:wf,whiteName:wn,circ:{white:cw}});
+    inner+=T(cx,top+wh+30,c.sub+'   (dedos 1-3-5)',{s:15,f:'#444'});
+    fs.writeFileSync(OUT+c.file+'.svg', svg(W,top+wh+50,inner));
+  }
+}
 console.log('OK keyboards');
