@@ -66,7 +66,7 @@ Al hacer el ejercicio con criterio minimalista, el resultado es claro: el stack 
 
 **Markdown guarda:** registro de qué acordes se dominan, qué progresiones se reconocen, el avance en pentagrama.
 
-**App externa / hardware:** **Yousician en modo sheet** (verificado: tiene cuatro notaciones, incluida partitura tradicional sin colores ni nombres) como gimnasio de práctica de lectura, con feedback MIDI del Casio. **Oído Perfecto** también tiene entrenador de lectura a primera vista, que puede usarse en paralelo.
+**App externa / hardware:** **Yousician en modo sheet** (verificado: tiene cuatro notaciones, incluida partitura tradicional sin colores ni nombres) como gimnasio de práctica de lectura, con feedback MIDI del Casio. **Oído Perfecto** también tiene entrenador de lectura a primera vista, que puede usarse en paralelo. **Anki** entrena la lectura de **cifrado por recall** (ve "Lam" → tocas el acorde de memoria); es la aplicación directa del cifrado-primero (ver `sistema/decisiones/decision_acordes_recall_anki.md`).
 
 > ⚠️ **Regla anti-muleta crítica aquí:** Yousician permite quedarse en las muletas (notas que caen, colores) indefinidamente. La disciplina de usar **modo sheet** la pone el usuario, no la app. El sistema lo recuerda.
 
@@ -161,11 +161,14 @@ Reparto limpio: **Oído Perfecto es el ejecutor** (reproduce, evalúa, registra)
 | **Casio CT-X800 + MIDI** | El instrumento + feedback a apps + metrónomo integrado | No (ya se tiene) | — |
 | **Yousician (modo sheet)** | Gimnasio de lectura y práctica de piezas | No (ya pagado) | — |
 | **Oído Perfecto (Perfect Ear)** | Gimnasio de oído (+ refuerza ritmo y lectura) | **Sí — la única nueva** | Gratis / pago único |
+| **Anki** | Drill de acordes por recall (cifrado → tocar) | No (reusada de la constelación) | Footprint nuevo = 0 |
 | **Metrónomo del Casio** | Ritmo | No (ya se tiene) | — |
 | **YouTube / Spotify** | Referencias de postura e interpretación | No (ya se usa) | — |
 | **Profesor** | Técnica + interpretación (lo físico) | El ancla humana | (curso) |
 
-**Una sola app nueva real: Oído Perfecto.** Igual que Oráculo terminó con una (Anki), StayHere termina con una. Todo lo demás corre sobre el stack actual o herramientas ya pagadas.
+**Una sola app nueva real: Oído Perfecto.** Igual que Oráculo terminó con una (Anki), StayHere termina con una. Todo lo demás corre sobre el stack actual o herramientas ya pagadas — incluido **Anki**, que se reusa de la constelación para el **drill de acordes por recall** (footprint nuevo = 0; ver `sistema/decisiones/decision_acordes_recall_anki.md`).
+
+> 🔭 **Evolución futura (no ahora):** para el drill de acordes, una app que **valide por MIDI** lo que se toca (auto-chequeo) — análoga a cómo §6 deja Functional Ear Trainer como opción futura para el oído. Por ahora Anki + autoverificación honesta basta. No se construye en esta etapa.
 
 **Reglas que gobiernan el uso:**
 - **Anti-muleta:** Yousician solo en modo sheet; ninguna app en modo "pista que cae".

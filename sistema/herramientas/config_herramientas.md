@@ -26,6 +26,7 @@
 | **Casio CT-X800 + MIDI** | El instrumento + feedback a apps + metrónomo integrado | No (ya se tiene) | El aprendizaje ocurre AQUÍ, no leyendo. |
 | **Yousician (modo sheet)** | Gimnasio de lectura y práctica de piezas | No (ya pagado) | ⚠️ **SOLO modo sheet/partitura. Nunca pista que cae.** |
 | **Oído Perfecto (Perfect Ear)** | Gimnasio de oído (+ refuerza ritmo y lectura) | **Sí — la única nueva** | Gratis / pago único. Acepta el Casio por MIDI. |
+| **Anki** | Drill de acordes por **recall** (nombre → recuerdas la forma → la tocas) | No (reusada de la constelación) | Frente = nombre; reverso = diagrama para verificar. Footprint nuevo = 0. |
 | **Metrónomo del Casio** | Ritmo | No (integrado) | Para calibrar el pulso, luego soltar. No vivir pegado a él. |
 | **YouTube / Spotify** | Referencias de postura e interpretación | No (ya se usa) | Postura (arranque) + cómo frasea el repertorio. |
 | **Profesor** | Técnica + interpretación (lo físico) | El ancla humana | Entra en la fecha dura. Insustituible. |
@@ -45,6 +46,14 @@
 - **La IA dirige qué entrenar** ("esta semana, mayor vs. menor; configura así"); la app ejecuta; el markdown guarda el avance.
 - **Por qué se ganó el lugar:** personalización real (aislar los sonidos que cuestan, crear ejercicios propios) que Yousician no permite. Pago único, versión gratuita generosa, en español, acepta MIDI del Casio.
 - ⚠️ **Honestidad:** reseñas reportan crashes ocasionales (sobre todo iOS) y una sección de ritmo algo confusa. Para el núcleo (intervalos, acordes, escalas de oído) funciona bien.
+
+### Anki — drill de acordes por recall
+- **Rol:** ejecutor del entrenamiento de acordes por **recall activo**. Es Anki real (distinto de la metáfora "el Anki de StayHere" que arriba se usa para Yousician). Decisión completa en `sistema/decisiones/decision_acordes_recall_anki.md`.
+- **La regla anti-muleta:** **frente = el nombre** del acorde ("Do", "Fa", "Lam"); recuerdas la forma y la **tocas en el Casio**; el **reverso = el diagrama** (reusa los de `fundamentos/`), solo para verificar. Nunca el frente con las teclas a apretar — eso sería copiar, no recordar.
+- **Dos modos:** (1) **repaso espaciado** (modo normal, para que las formas se queden); (2) **Custom Study / mazo filtrado + Auto Advance** (cronometrado, barajado, solo los acordes elegidos) para la **fluidez de cambios**.
+- **Velocidad:** el cronómetro arranca **generoso**; se acorta solo cuando las formas salen limpias (*lento es rápido*).
+- **Reparto:** la **IA arma el mazo** (con los diagramas), **Anki ejecuta**, el **markdown manda** (qué acordes se dominan se refleja en repertorio/práctica).
+- 🔭 **Evolución futura (no ahora):** una app que **valide por MIDI** lo que tocas (auto-chequeo). Se evaluará más adelante si el usuario quiere; por ahora Anki + autoverificación honesta basta y mantiene el footprint mínimo.
 
 ### El Casio CT-X800
 - **Instrumento principal.** Todo el aprendizaje real ocurre aquí.

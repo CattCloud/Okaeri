@@ -103,3 +103,4 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 - **Fecha dura del profesor:** ver `practica/00_indice.md` (fijada en la construcción de V1).
 - **Repertorio en curso:** ninguno todavía. La primera pieza nace con la primera canción real (siguiendo `ruta_inicial.md`).
 - **App nueva a instalar:** Oído Perfecto (Perfect Ear) — la única del sistema.
+- **Herramienta reusada:** Anki para el **drill de acordes por recall** (frente = nombre, lo tocas de memoria; footprint nuevo = 0). Ver `sistema/decisiones/decision_acordes_recall_anki.md`. Evolución futura (no ahora): validación por MIDI.

@@ -52,7 +52,7 @@ El usuario tiene **base dormida**: conoce algo pero sin estructura. Por eso el s
 | Dimensión | Qué se hace esta quincena |
 |-----------|---------------------------|
 | **Técnica** | Postura (espalda, altura del banco, muñecas neutras), posición natural de la mano (como sosteniendo una pelota), dedos curvos tocando con la yema. Calentamiento diario corto de 5 dedos. **Ver 1-2 videos de referencia confiables de postura** — sabiendo que es lo PRIMERO que el profesor revisará. |
-| **Lectura (cifrado)** | Reubicar las notas en el teclado (dónde está Do, el patrón de teclas negras). Primeros **2-3 acordes mayores** en posición fundamental (sugerido: **Do, Sol, Fa** — Do mayor / G / F). Solo formarlos limpio, sin prisa de cambiar rápido. |
+| **Lectura (cifrado)** | Reubicar las notas en el teclado (dónde está Do, el patrón de teclas negras). Primeros **2-3 acordes mayores** en posición fundamental (sugerido: **Do, Sol, Fa** — Do mayor / G / F). Solo formarlos limpio, sin prisa de cambiar rápido. Puedes empezar a fijarlos con el **drill de acordes (Anki)** — ver `decisiones/decision_acordes_recall_anki.md`. |
 | **Ritmo** | Pulso básico con el metrónomo del Casio a tempo lento. Contar "1-2-3-4" en voz alta mientras se forma cada acorde. |
 | **Teoría aplicada** | Mínimo: qué es un acorde mayor (la "forma" alegre), por qué Do-Mi-Sol suena estable. Solo lo que ilumina lo que se está tocando. |
 | **Oído** | **Instalar Oído Perfecto.** Ejercicio único: distinguir **mayor vs. menor** (alegre vs. triste). 5 min/día. |
@@ -72,7 +72,7 @@ El usuario tiene **base dormida**: conoce algo pero sin estructura. Por eso el s
 
 | Dimensión | Qué se hace esta quincena |
 |-----------|---------------------------|
-| **Lectura (cifrado)** | Dominar **4-5 acordes comunes** y, sobre todo, **cambiar entre ellos** sin parar. Sumar un menor (sugerido: **Lam** / Am) y otro (sugerido: **Mim** / Em o Re / D). El objetivo no es saber más acordes, es que los cambios fluyan. |
+| **Lectura (cifrado)** | Dominar **4-5 acordes comunes** y, sobre todo, **cambiar entre ellos** sin parar. Sumar un menor (sugerido: **Lam** / Am) y otro (sugerido: **Mim** / Em o Re / D). El objetivo no es saber más acordes, es que los cambios fluyan. Herramienta: el **drill de acordes (Anki)** en Custom Study barajado y cronometrado (cronómetro generoso primero) — `decisiones/decision_acordes_recall_anki.md`. |
 | **Teoría aplicada** | La **progresión I-V-vi-IV** (en Do: **Do-Sol-Lam-Fa**) — el "esqueleto" de cientos de canciones (worship y pop viven de ella). Entender que reconocer esta progresión = reconocer el esqueleto de muchísimas canciones a la vez. Por qué el vi (Lam) le da el toque emotivo. |
 | **Ritmo** | Mantener pulso estable mientras se cambia de acorde. Contar en voz alta sigue. Tocar un acorde por compás, luego dos. |
 | **Repertorio** | 🎯 **ENTRA LA PRIMERA CANCIÓN.** Worship simple de 4 acordes (ver "Decisión: primera canción" abajo). Solo la **mano izquierda / acordes** por ahora, lento, sintiendo cada cambio. |
