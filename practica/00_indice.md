@@ -23,8 +23,8 @@
 
 **Regla:** si pasan **~3 días sin registro de práctica**, es la alarma temprana del patrón de abandono. El sistema lo señala.
 
-- **Última sesión registrada:** _(ninguna todavía — la primera nace con la primera práctica)_
-- **Racha actual:** —
+- **Última sesión registrada:** **2026-06-29** (Sesión 1) ✅
+- **Racha actual:** 1 día — ¡cadena iniciada! No la rompas.
 
 > 🔑 La constancia diaria corta gana a los atracones esporádicos. 20-30 min/día > 3 horas el domingo. **No romper la cadena.**
 
@@ -36,7 +36,7 @@
 
 | Fecha | Duración | Dimensiones | Sensación | Sesión |
 |-------|----------|-------------|-----------|--------|
-| _(ninguna todavía)_ | | | | |
+| 2026-06-29 | — | Técnica · Cifrado (acordes) · Anki | motivado | [ver](2026-06-29.md) |
 
 > 🎯 **La primera sesión arranca con la semana 1 de `sistema/ruta/ruta_inicial.md`.** Empezar a registrar desde el día uno es parte de la cura — el accountability que faltó siempre.
 
@@ -44,6 +44,6 @@
 
 ## 📍 Dónde estoy en la ruta
 
-- **Semana actual de la ruta:** _(pre-arranque — empieza en semanas 1-2: refresco y fundamentos)_
+- **Semana actual de la ruta:** **Semanas 1-2** (refresco y fundamentos) — en curso.
 - **Primera canción elegida:** ✅ **10,000 Reasons (Bless the Lord)** — Matt Redman (en Do mayor). Ficha en `repertorio/10000-reasons/00_indice.md`.
 - **Próximo hito:** tocar la primera canción de memoria, sola, sin app (meta semana 8).
