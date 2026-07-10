@@ -4,7 +4,7 @@ seccion: 4
 titulo: "El acorde mayor, y mayor vs. menor"
 estado: EN-CURSO
 prev: 03_dedos-y-manos
-next: null
+next: 05_ritmo
 ---
 
 # 🎵 El acorde: varias notas que suenan bien juntas
@@ -61,4 +61,4 @@ Esto es justo lo que vas a entrenar en **Oído Perfecto** estas semanas: te suen
 > 🎹 **Ahora al teclado:** forma **Do mayor** (Do-Mi-Sol, dedos 1-3-5). Fórmalo, suéltalo, repite ~10 veces, escuchando. Luego prueba **Sol mayor** (Sol-Si-Re). Ve a hacerlo — el acorde no se aprende leyendo, se aprende en los dedos y el oído.
 
 ---
-[[03_dedos-y-manos|← Los dedos]] · [[00_indice|índice]]
+[[03_dedos-y-manos|← Los dedos]] · [[00_indice|índice]] · [[05_ritmo|El ritmo →]]

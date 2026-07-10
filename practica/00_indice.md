@@ -23,8 +23,8 @@
 
 **Regla:** si pasan **~3 días sin registro de práctica**, es la alarma temprana del patrón de abandono. El sistema lo señala.
 
-- **Última sesión registrada:** **2026-06-29** (Sesión 1) ✅
-- **Racha actual:** 1 día — ¡cadena iniciada! No la rompas.
+- **Última sesión registrada:** **2026-07-03** (Sesión 3) ✅
+- **Racha actual:** reanudada hoy tras una **pausa de 2 días** (01 y 02-jul). Dentro del margen (la alarma salta a ~3). Lo que cuenta: **volviste por tu cuenta.** 3 sesiones en total.
 
 > 🔑 La constancia diaria corta gana a los atracones esporádicos. 20-30 min/día > 3 horas el domingo. **No romper la cadena.**
 
@@ -36,7 +36,9 @@
 
 | Fecha | Duración | Dimensiones | Sensación | Sesión |
 |-------|----------|-------------|-----------|--------|
-| 2026-06-29 | — | Técnica · Cifrado (acordes) · Anki | motivado | [ver](2026-06-29.md) |
+| 2026-06-29 | 25 min | Técnica · Cifrado (acordes) · Anki | motivado | [ver](2026-06-29.md) |
+| 2026-06-30 | 10 min | Ritmo · Cifrado (acordes) | confiado | [ver](2026-06-30.md) |
+| 2026-07-03 | 15 min | Cifrado — drill fluidez (Anki) | satisfecho | [ver](2026-07-03.md) |
 
 > 🎯 **La primera sesión arranca con la semana 1 de `sistema/ruta/ruta_inicial.md`.** Empezar a registrar desde el día uno es parte de la cura — el accountability que faltó siempre.
 

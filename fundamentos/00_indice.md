@@ -28,7 +28,8 @@ Las notas también incluyen **diagramas pedagógicos** (mapas estáticos del tec
 | 2 | [[02_cifrado\|El cifrado: nombrar por su nombre, no leer pentagrama]] | Semanas 1-2 · Lectura (por qué cifrado primero) |
 | 3 | [[03_dedos-y-manos\|Los dedos (1-5) y "manos separadas"]] | Semanas 1-2 · Técnica |
 | 4 | [[04_acorde-mayor\|El acorde mayor, y mayor vs. menor]] | Semanas 1-2 · Teoría + Oído |
-| 5 | _La progresión I-V-vi-IV_ | Semanas 3-4 · Teoría — *se escribe al acercarse la semana 3* |
+| 5 | [[05_ritmo\|El ritmo: el pulso, el compás y el tempo]] | Semanas 1-2 · Ritmo |
+| 6 | _La progresión I-V-vi-IV_ | Semanas 3-4 · Teoría — *se escribe al acercarse la semana 3* |
 
 ## Qué NO es esto
 

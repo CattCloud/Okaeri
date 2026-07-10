@@ -23,3 +23,8 @@
 ---
 
 > **Regla:** si una idea no aporta a la etapa habilitada (Practicar) o no pasa el filtro del manual, vive aquí hasta que le toque. Avanzar > pulir.
+
+
+
+
+CONSTRUIR TODO UNA RUTA DE AVANCE

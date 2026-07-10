@@ -80,7 +80,7 @@ El usuario tiene **base dormida**: conoce algo pero sin estructura. Por eso el s
 | **Oído** | Sumar **intervalos básicos** en Oído Perfecto (3ª mayor/menor, 5ª justa). Asociar cada uno a una canción conocida. |
 | **Interpretación** | Desde la primera canción: aunque sean solo acordes, tocarlos **con intención** — suave en lo íntimo, con cuerpo en lo que crece. No esperar a "saber" para sentir. |
 
-> 📖 **Fundamentos de la quincena:** Teoría → [[05_progresion]] (la progresión I-V-vi-IV; *se escribe al acercarse esta semana*). Repaso de [[04_acorde-mayor]] para los acordes menores (Lam).
+> 📖 **Fundamentos de la quincena:** Teoría → [[06_progresion]] (la progresión I-V-vi-IV; *se escribe al acercarse esta semana*). Repaso de [[04_acorde-mayor]] para los acordes menores (Lam).
 
 **Indicador honesto:** ¿se cambia entre 4-5 acordes sin frenar? ¿se reconoce la progresión I-V-vi-IV en canciones que se escuchan? ¿la primera canción suena (en acordes) reconocible?
 

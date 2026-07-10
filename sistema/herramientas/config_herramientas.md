@@ -55,6 +55,13 @@
 - **Reparto:** la **IA arma el mazo** (con los diagramas), **Anki ejecuta**, el **markdown manda** (qué acordes se dominan se refleja en repertorio/práctica).
 - 🔭 **Evolución futura (no ahora):** una app que **valide por MIDI** lo que tocas (auto-chequeo). Se evaluará más adelante si el usuario quiere; por ahora Anki + autoverificación honesta basta y mantiene el footprint mínimo.
 
+#### 🔁 Cómo correr el drill de fluidez (paso a paso, probado 2026-07)
+> El repaso normal del mazo **"Acordes"** programa las tarjetas a días de distancia (por eso a veces dice *"¡Finalizaste el mazo!"* — es correcto, es el modo memoria). Para **drillear los 4 acordes ahora, barajados y cronometrados**, se usa un **mazo filtrado** aparte:
+> 1. **Herramientas → Crear mazo filtrado.** Búsqueda: `deck:Acordes`. **Desmarcar "Reprogramar las tarjetas según mis respuestas"** (así el drill NO ensucia el calendario del repaso espaciado). Orden: **Aleatorio**. Construir. *(Ya creado: mazo **"Acordes Auto"**.)*
+> 2. **Avance automático:** dentro del estudio → **⋮ Más → Avance automático**. Tiempos en el preset **"Acordes (drill)"**: **3 s** para recordar+tocar / **1 s** para verificar (ajustables por AnkiConnect; subir si 3 s queda corto para tocar la forma — *lento es rápido*).
+> 3. **Bucle:** Anki no cicla infinito solo. Al terminar los 4 → tecla **R (Reconstruir)** y se rellenan. Reconstruir infinitas veces no daña nada porque "Reprogramar" está desmarcado.
+> - **Config vía AnkiConnect** (Anki abierto, `http://127.0.0.1:8765`): los tiempos viven en `secondsToShowQuestion` / `secondsToShowAnswer` del preset; se leen/guardan con `getDeckConfig` / `saveDeckConfig`.
+
 ### El Casio CT-X800
 - **Instrumento principal.** Todo el aprendizaje real ocurre aquí.
 - **MIDI:** conecta a la tablet/laptop para que Yousician y Oído Perfecto validen notas.
