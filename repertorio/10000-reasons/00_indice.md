@@ -39,6 +39,11 @@ Worship de 4 acordes, tempo amable, muy querida. **Transpuesta a Do mayor** usa 
 | Coro      |            |              |            |
 | Verso     |            |              |            |
 
+## Grabaciones de referencia
+- **Audio oficial (solo audio):** https://www.youtube.com/watch?v=mRWAHY4q_LQ — para ejercicios de escucha (Día 1, Bloque 3: notar *cuándo* cambia el acorde).
+- **Video lyric oficial (con letra):** https://www.youtube.com/watch?v=k4YQWAOE86c — si ayuda ver la letra mientras se escucha.
+- ⚠️ **Tonalidad:** la grabación original está en **Sol**; la versión de estudio es en **Do**. Para *escuchar* no importa. Para **tocar encima** (Día 3+): activar **Transpose +7** en el Casio CT-X800 — los dedos siguen en las formas de Do, el sonido sale en Sol y encaja con la grabación. (No es muleta: es la práctica estándar; la memoria sigue siendo de las formas y la progresión.)
+
 ## Notas de interpretación
 > Desde el inicio, no al final. Referencia: escuchar la versión original (Spotify/YouTube) para sentir dónde respira.
 - Verso íntimo y suave → coro con más cuerpo. Dinámica simple pero ya presente.

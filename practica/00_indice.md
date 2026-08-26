@@ -46,6 +46,7 @@
 
 ## 📍 Dónde estoy en la ruta
 
-- **Semana actual de la ruta:** **Semanas 1-2** (refresco y fundamentos) — en curso.
+- **Semana actual de la ruta:** **Semanas 3-4** (fluidez de acordes + primera canción) — siguiendo el **plan guiado** `sistema/ruta/plan_semana_prueba.md`, Día 1 pendiente.
+- **Estado de sesión (¿quedó algo a medias?):** ver `sistema/estado/estado_actual.md` — se lee ANTES de decidir qué toca.
 - **Primera canción elegida:** ✅ **10,000 Reasons (Bless the Lord)** — Matt Redman (en Do mayor). Ficha en `repertorio/10000-reasons/00_indice.md`.
 - **Próximo hito:** tocar la primera canción de memoria, sola, sin app (meta semana 8).

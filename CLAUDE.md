@@ -75,6 +75,8 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 | `sistema/manual_stayhere.md` | Guía de operación: principio rector, anti-muleta, las tres capas, qué NO hace. |
 | `sistema/perfil/yo_musica.md` | **Perfil del usuario.** Leer ANTES de proponer ruta o repertorio. Calibra nivel, meta, repertorio y el patrón de abandono. |
 | `sistema/ruta/ruta_inicial.md` | **La pieza más importante.** La ruta de las primeras 8 semanas autodidacta-guiado. Es la guía que sustituye al profesor durante el arranque. |
+| `sistema/ruta/plan_semana_prueba.md` | **El guion diario del instructor.** Plan de acción de la semana en curso, paso a paso, bloque a bloque. La ruta dice el QUÉ quincenal; este plan dice qué se hace HOY y qué sigue. Nunca improvisar una sesión: seguir este guion. |
+| `sistema/estado/estado_actual.md` | **⚡ LEER PRIMERO en toda conversación de práctica.** Checkpoint de sesión: si hay una sesión EN-CURSO/PAUSADA, en qué bloque y paso quedó. Conversación cerrada ≠ sesión terminada. |
 | `fundamentos/00_indice.md` | **Material de estudio del usuario.** El vocabulario mínimo que la ruta asume (teclado, cifrado, dedos, acorde, progresión), atado a la canción real. Es la dimensión 4 (Teoría aplicada) hecha artefacto. Lo estudia él. Distinto de `errores-comunes` (insumo del sistema). |
 | `sistema/herramientas/config_herramientas.md` | Rol operativo de cada herramienta (Yousician modo sheet, Oído Perfecto, MIDI del Casio, metrónomo). |
 | `sistema/referencia/errores-comunes-musica.md` | Checklist preventiva de errores predecibles del principiante. Insumo del sistema, no material de estudio. |
@@ -85,6 +87,9 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 
 ## Reglas de operación
 
+- **⚡ Leer `sistema/estado/estado_actual.md` PRIMERO en toda conversación de práctica.** Una conversación cerrada NO significa sesión terminada: si el estado es `EN-CURSO` o `PAUSADA`, se retoma en el bloque/paso exacto marcado — jamás se asume que toca el siguiente bloque. Ignorar cuántos días pasaron desde la pausa para efectos de *dónde retomar* (la alarma de constancia es otro asunto y sigue vigente).
+- **Protocolo de sesión (apertura/pausa/cierre):** al iniciar, escribir la checklist del día en `estado_actual.md`; al completar cada bloque, marcarlo y actualizar "bloque actual"; si el usuario dice "pausa"/"me voy" (o desaparece), estado `PAUSADA` con nota de dónde quedó; solo con confirmación explícita del usuario la sesión pasa a `CERRADA` y se registra en `practica/`.
+- **El agente nunca improvisa la sesión: sigue el plan semanal vigente** (`sistema/ruta/plan_semana_prueba.md`). Cuando el plan de la semana termina (Día 7), se construye el de la siguiente con el diagnóstico de la revisión. "Día N" = enésima sesión, no día del calendario.
 - **Leer `sistema/perfil/yo_musica.md` ANTES de proponer cualquier ruta o repertorio.** Calibra al usuario.
 - **El método manda, la herramienta se elige después.** No amoldar el aprendizaje a la app (`contexto/stayhere-metodologia.md`).
 - **Anti-muleta siempre.** Toda sugerencia se evalúa contra él. Si induce dependencia de "pista que cae", se descarta.
@@ -96,11 +101,14 @@ Agrupadas en las tres capas del principio rector. Detalle del método en `contex
 - **Preguntas con alternativas concretas, no abiertas.** Minimizar la fricción de decisión.
 - **Spanglish controlado:** tecnicismos musicales con su nombre (cifrado, rubato, chunking), explicaciones en español.
 - **El usuario ajusta en vivo.** Revisa y corrige cada archivo. El `.md` es la única fuente de verdad: releerlo antes de volver a tocarlo.
+- **`PROMPT.md` = handoff vivo.** Cuando el usuario dice *"coloca en PROMPT.md"* (o similar), significa: actualizar `PROMPT.md` de la raíz con (1) el punto exacto donde está el trabajo, (2) qué sigue en orden, y (3) el prompt listo para pegar en una conversación nueva. Es la foto del momento para retomar sin perder contexto.
+- **Presentar antes de construir.** Los planes y cambios estructurales se resumen al usuario y se aprueban ANTES de darse por hechos (acordado 2026-07-10).
 
 ## Estado actual del sistema
 
 - **Etapa habilitada:** 1 — Practicar.
 - **Fecha dura del profesor:** ver `practica/00_indice.md` (fijada en la construcción de V1).
-- **Repertorio en curso:** ninguno todavía. La primera pieza nace con la primera canción real (siguiendo `ruta_inicial.md`).
-- **App nueva a instalar:** Oído Perfecto (Perfect Ear) — la única del sistema.
+- **Repertorio en curso:** **10,000 Reasons (Bless the Lord)** — Matt Redman, en Do mayor. Ficha en `repertorio/10000-reasons/00_indice.md`.
+- **Plan vigente:** `sistema/ruta/plan_semana_prueba.md` (semanas 3-4 de la ruta: fluidez de acordes + canción mano izquierda). Estado de sesión en `sistema/estado/estado_actual.md`.
+- **App nueva:** Oído Perfecto (Perfect Ear) — ✅ instalada.
 - **Herramienta reusada:** Anki para el **drill de acordes por recall** (frente = nombre, lo tocas de memoria; footprint nuevo = 0). Ver `sistema/decisiones/decision_acordes_recall_anki.md`. Evolución futura (no ahora): validación por MIDI.
