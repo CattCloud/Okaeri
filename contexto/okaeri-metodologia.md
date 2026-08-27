@@ -1,10 +1,10 @@
-# STAYHERE — Metodología de Práctica
+# OKAERI — Metodología de Práctica
 
-> **Propósito:** Definir *cómo* se practica cada una de las 7 dimensiones del aprendizaje musical (piano) en StayHere, de forma independiente de las herramientas. El método se fija primero; las herramientas se cuelgan después.
-> **Documento hermano:** `stayhere-base.md` (el QUÉ y el PORQUÉ).
+> **Propósito:** Definir *cómo* se practica cada una de las 7 dimensiones del aprendizaje musical (piano) en Okaeri, de forma independiente de las herramientas. El método se fija primero; las herramientas se cuelgan después.
+> **Documento hermano:** `okaeri-base.md` (el QUÉ y el PORQUÉ).
 > **Estado:** Metodología definida ✅ · Herramientas por definir ⬜ · Implementación pendiente ⬜.
 
-> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **StayHere (música)**.
+> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **Okaeri (música)**.
 
 ---
 
@@ -41,7 +41,7 @@ Estructura uniforme de cada dimensión: **el método (el cómo) → anti-muleta 
 Principios ya validados en Oráculo y TESLA que aplican igual:
 
 1. **El método manda, la herramienta se elige después.** No amoldar el aprendizaje a la app.
-2. **Anti-muleta:** todo construye comprensión y memoria, no reacción. Es el principio rector de StayHere (ver §4 del base).
+2. **Anti-muleta:** todo construye comprensión y memoria, no reacción. Es el principio rector de Okaeri (ver §4 del base).
 3. **Progresión de fricción:** barrera baja al inicio (construir el hábito), potencia después. *Un método mejor que abandonas pierde contra uno peor que mantienes* — más cierto que nunca en música, dado el patrón de abandono del usuario.
 
 ---
@@ -163,7 +163,7 @@ En lofi e instrumental emotivo el ritmo no es rígido, *respira* (rubato: aceler
 4. **Teoría que explica la emoción.** Revela *por qué* una progresión de worship emociona, por qué el lofi suena melancólico (séptimas, tonalidades menores). Entender la mecánica de la propia emoción musical no le quita magia, le da profundidad.
 
 ### Anti-muleta
-La teoría *es* el antídoto directo: la muleta hacía tocar sin entender; la teoría es el entender. La dimensión que más diferencia StayHere de Yousician.
+La teoría *es* el antídoto directo: la muleta hacía tocar sin entender; la teoría es el entender. La dimensión que más diferencia Okaeri de Yousician.
 
 ### Rol del profesor + IA
 **La IA brilla aquí** — explicar teoría aplicada a una canción específica, responder "¿por qué este acorde aquí?", generar analogías. El profesor complementa, pero esta dimensión es muy apoyable con IA.
@@ -258,7 +258,7 @@ Las siete dimensiones no son silos — fluyen juntas hacia la meta de intérpret
 - **Repertorio e Interpretación** (expresión) son el destino: tocar de memoria, con sentimiento, las canciones que se aman.
 - El **Canto** (futuro, §5 del base) se montará sobre esta base cuando el piano ya sostenga.
 
-**El hilo que une todo es la memoria por comprensión:** cada dimensión de comprensión (teoría, oído) hace que el repertorio se quede, y cada dimensión mecánica (técnica, lectura, ritmo) hace que se pueda ejecutar. La interpretación es el sentimiento que recorre todo. Y bajo el nombre que es instrucción: *quédate*. La constancia diaria corta, no los atracones, es lo que hace que funcione.
+**El hilo que une todo es la memoria por comprensión:** cada dimensión de comprensión (teoría, oído) hace que el repertorio se quede, y cada dimensión mecánica (técnica, lectura, ritmo) hace que se pueda ejecutar. La interpretación es el sentimiento que recorre todo. Y bajo el nombre que es recibimiento: *okaeri*, "bienvenido de vuelta" — se vuelve tantas veces como haga falta. La constancia diaria corta, no los atracones, es lo que hace que funcione.
 
 ---
 

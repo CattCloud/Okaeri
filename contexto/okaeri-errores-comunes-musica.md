@@ -1,10 +1,10 @@
-# STAYHERE — Errores comunes del aprendizaje musical (checklist de detección)
+# OKAERI — Errores comunes del aprendizaje musical (checklist de detección)
 
-> **Propósito:** Comportamiento preventivo del sistema. Esta lista contiene los errores *predecibles* que comete casi todo principiante de piano/música. StayHere la usa de forma **proactiva**: cuando arma la ruta, genera ejercicios o registra la práctica, vigila que el usuario no caiga en estos patrones.
+> **Propósito:** Comportamiento preventivo del sistema. Esta lista contiene los errores *predecibles* que comete casi todo principiante de piano/música. Okaeri la usa de forma **proactiva**: cuando arma la ruta, genera ejercicios o registra la práctica, vigila que el usuario no caiga en estos patrones.
 > **Documento hermano del registro de práctica:** mientras esta lista cubre lo *predecible*, el registro de práctica revela los errores *idiosincráticos* (los particulares del usuario). El sistema vigila ambos.
 > **Importante:** esta lista es **insumo del sistema, no material de estudio** para el usuario.
 
-> **Constelación:** TESLA · Agatha · ARCA · Oráculo · **StayHere**. Es el equivalente musical de la checklist L1 (`errores-hispanohablantes.md`) de Oráculo.
+> **Constelación:** TESLA · Agatha · ARCA · Oráculo · **Okaeri**. Es el equivalente musical de la checklist L1 (`errores-hispanohablantes.md`) de Oráculo.
 
 ---
 
@@ -88,7 +88,7 @@ Los errores que el usuario ya conoce de carne propia. La categoría que el accou
 
 ## Mapa de uso por momento del sistema
 
-| Momento | Qué errores vigila StayHere |
+| Momento | Qué errores vigila Okaeri |
 |---|---|
 | Al armar la ruta | 5.4 (piezas muy difíciles), 1.x (estructura de práctica), 3.x (incluir comprensión) |
 | Al registrar práctica | 1.x (cómo se practicó), 4.x (ritmo), 5.x (memoria real) |
@@ -97,4 +97,4 @@ Los errores que el usuario ya conoce de carne propia. La categoría que el accou
 
 ---
 
-> **Resumen:** esta lista es a StayHere lo que la checklist L1 es a Oráculo: un comportamiento preventivo que vigila los errores predecibles del principiante, complementando el registro de práctica que descubre los idiosincráticos. Insumo del sistema, no material de estudio.
+> **Resumen:** esta lista es a Okaeri lo que la checklist L1 es a Oráculo: un comportamiento preventivo que vigila los errores predecibles del principiante, complementando el registro de práctica que descubre los idiosincráticos. Insumo del sistema, no material de estudio.

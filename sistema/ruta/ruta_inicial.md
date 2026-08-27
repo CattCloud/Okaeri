@@ -1,6 +1,6 @@
 # 🗺️ Ruta inicial — Las primeras 8 semanas (autodidacta-guiado)
 
-> **Esta es la pieza más importante de StayHere.** Durante el arranque sin profesor, esta ruta *es* el maestro. Sustituye la guía que el usuario nunca tuvo y que, al faltar, lo hizo abandonar. La calidad de esta ruta importa más que cualquier otra cosa del sistema.
+> **Esta es la pieza más importante de Okaeri.** Durante el arranque sin profesor, esta ruta *es* el maestro. Sustituye la guía que el usuario nunca tuvo y que, al faltar, lo hizo abandonar. La calidad de esta ruta importa más que cualquier otra cosa del sistema.
 >
 > **Qué respeta** (no negociable): cifrado primero · manos separadas → juntas · chunking · interpretación desde el día uno · **vocabulario explicado antes de pedirlo** (define-or-link a `fundamentos/`) · **anti-muleta** (apps solo en modo sheet; "aprendido" = de memoria, solo, sin app).
 >
@@ -155,4 +155,4 @@ Cruzados con `sistema/referencia/errores-comunes-musica.md`:
 
 ---
 
-> **Después de la semana 8:** entra el profesor (etapa 3: Corregir) para la corrección física que la IA no puede dar. StayHere NO desaparece — sigue llevando la ruta y el repertorio; el profesor se vuelve el corrector del cuerpo. La ruta post-profesor se construye con el diagnóstico real en mano, no antes.
+> **Después de la semana 8:** entra el profesor (etapa 3: Corregir) para la corrección física que la IA no puede dar. Okaeri NO desaparece — sigue llevando la ruta y el repertorio; el profesor se vuelve el corrector del cuerpo. La ruta post-profesor se construye con el diagnóstico real en mano, no antes.

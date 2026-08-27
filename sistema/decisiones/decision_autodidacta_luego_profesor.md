@@ -8,7 +8,7 @@
 ## Por qué
 
 - **Los primeros 1-2 meses son diagnóstico real:** refrescar bases, reintentar la lectura, y que el sistema **registre dónde se traba**. Así se llega al profesor con un dolor identificado, no como página en blanco.
-- **La música carece de un currículum universal** (no hay "CEFR musical"). La ruta la debe poner alguien, y durante el arranque ese alguien es el sistema. Por eso StayHere es **director de ruta**, no solo consolidador (a diferencia de Oráculo).
+- **La música carece de un currículum universal** (no hay "CEFR musical"). La ruta la debe poner alguien, y durante el arranque ese alguien es el sistema. Por eso Okaeri es **director de ruta**, no solo consolidador (a diferencia de Oráculo).
 - **El profesor cumple lo que ninguna IA puede:** ver las manos, la postura, la técnica, y dar accountability humano. Eso es insustituible.
 
 ## El riesgo y las salvaguardas
@@ -26,4 +26,4 @@ Un profesor particular 1-a-1 se adapta mejor a la ruta del sistema que una acade
 
 ## Implicación para el sistema
 - Durante el arranque, `ruta_inicial.md` *es* el maestro.
-- Cuando entra el profesor, **StayHere no desaparece:** sigue llevando la estructura y el repertorio; el profesor se vuelve el corrector físico.
+- Cuando entra el profesor, **Okaeri no desaparece:** sigue llevando la estructura y el repertorio; el profesor se vuelve el corrector físico.

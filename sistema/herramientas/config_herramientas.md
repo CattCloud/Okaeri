@@ -1,6 +1,6 @@
 # 🛠️ Configuración de herramientas — Rol operativo
 
-> **Propósito:** resumen operativo de *con qué* se ejecuta cada cosa y *cuál es su rol*. Versión corta y accionable de `contexto/stayhere-herramientas.md`.
+> **Propósito:** resumen operativo de *con qué* se ejecuta cada cosa y *cuál es su rol*. Versión corta y accionable de `contexto/okaeri-herramientas.md`.
 > **Principio que gobierna:** la herramienta se elige *después* del método. El método manda; las apps son ejecutores. **Anti-muleta:** ninguna app en modo "pista que cae".
 
 ---
@@ -36,7 +36,7 @@
 ## Cómo se usa cada una
 
 ### Yousician — en modo sheet (la regla crítica)
-- **Rol:** gimnasio de práctica de lectura y de piezas. Es el **Anki de StayHere**: ejecutor, no cerebro.
+- **Rol:** gimnasio de práctica de lectura y de piezas. Es el **Anki de Okaeri**: ejecutor, no cerebro.
 - ⚠️ **La trampa:** Yousician permite quedarse en las muletas (notas que caen, colores) **indefinidamente**. Tiene 4 notaciones, incluida **partitura tradicional sin colores ni nombres** — esa es la que se usa.
 - **La disciplina la pone el usuario, no la app.** El sistema lo recuerda cada vez que se mencione Yousician.
 - **El MIDI del Casio** le da feedback de notas a la app. Pero recordar: **Yousician NO mide el sostenido de las notas**, así que la interpretación no se le delega.
@@ -48,7 +48,7 @@
 - ⚠️ **Honestidad:** reseñas reportan crashes ocasionales (sobre todo iOS) y una sección de ritmo algo confusa. Para el núcleo (intervalos, acordes, escalas de oído) funciona bien.
 
 ### Anki — drill de acordes por recall
-- **Rol:** ejecutor del entrenamiento de acordes por **recall activo**. Es Anki real (distinto de la metáfora "el Anki de StayHere" que arriba se usa para Yousician). Decisión completa en `sistema/decisiones/decision_acordes_recall_anki.md`.
+- **Rol:** ejecutor del entrenamiento de acordes por **recall activo**. Es Anki real (distinto de la metáfora "el Anki de Okaeri" que arriba se usa para Yousician). Decisión completa en `sistema/decisiones/decision_acordes_recall_anki.md`.
 - **La regla anti-muleta:** **frente = el nombre** del acorde ("Do", "Fa", "Lam"); recuerdas la forma y la **tocas en el Casio**; el **reverso = el diagrama** (reusa los de `fundamentos/`), solo para verificar. Nunca el frente con las teclas a apretar — eso sería copiar, no recordar.
 - **Dos modos:** (1) **repaso espaciado** (modo normal, para que las formas se queden); (2) **Custom Study / mazo filtrado + Auto Advance** (cronometrado, barajado, solo los acordes elegidos) para la **fluidez de cambios**.
 - **Velocidad:** el cronómetro arranca **generoso**; se acorta solo cuando las formas salen limpias (*lento es rápido*).
@@ -77,7 +77,7 @@
 ## Reglas que gobiernan el uso
 
 1. **Anti-muleta:** Yousician solo en modo sheet; ninguna app en modo "pista que cae".
-2. **El método dirige las apps:** Oído Perfecto y Yousician son ejecutores; StayHere/IA decide qué practicar y los configura.
+2. **El método dirige las apps:** Oído Perfecto y Yousician son ejecutores; Okaeri/IA decide qué practicar y los configura.
 3. **Markdown es siempre la fuente de verdad:** las apps ejecutan, pero el registro de práctica y el índice de repertorio viven en markdown.
 
 > **La pieza que de verdad importa no es ninguna app.** Es (1) la IA orquestando bien la ruta y la teoría, y (2) el profesor corrigiendo el cuerpo a tiempo. Una ruta bien armada y un profesor puntual valen más que cualquier app.

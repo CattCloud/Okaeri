@@ -17,7 +17,7 @@ Hay dos formas de decirle al piano qué tocar:
 1. **Pentagrama** — las cinco líneas con bolitas dibujadas. Es preciso pero lento de aprender: hay que descifrar cada bolita antes de tocarla. (Ya lo intentaste antes y lo dejaste — no porque no pudieras, sino porque la recompensa estaba muy lejos.)
 2. **Cifrado** — alguien escribe arriba de la letra: *"aquí va Do, aquí Sol, aquí La menor"*. Tú ya sabes formar esos acordes, así que tocas **de una**.
 
-StayHere empieza por el **cifrado**. Esta es una decisión de diseño, no un atajo flojo (está en `sistema/decisiones/decision_cifrado_primero.md`).
+Okaeri empieza por el **cifrado**. Esta es una decisión de diseño, no un atajo flojo (está en `sistema/decisiones/decision_cifrado_primero.md`).
 
 ## 🎵 Por qué empezamos por aquí
 
@@ -47,7 +47,7 @@ Cuando busques 10,000 Reasons en internet vas a ver acordes como **C, G, Am, F**
 
 > 📋 **Repaso en una pantalla**
 > - **Cifrado** = nombrar acordes por su nombre (Do, Sol, Lam), no leer pentagrama.
-> - Es el idioma de StayHere porque da **recompensa temprana** → protege la constancia.
+> - Es el idioma de Okaeri porque da **recompensa temprana** → protege la constancia.
 > - Pocas progresiones = muchas canciones.
 > - **Do=C, Re=D, Mi=E, Fa=F, Sol=G, La=A, Si=B.** "m" = menor (Lam = Am).
 > - El pentagrama no se abandona: entra ligero más adelante, sin presión.

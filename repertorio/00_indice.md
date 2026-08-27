@@ -26,6 +26,6 @@
 
 > **¿Cuántas canciones se pueden tocar de memoria, solo, ahora mismo, sin ninguna ayuda?**
 
-Ese número —las piezas en estado `TOCO-DE-MEMORIA-SOLO`— es el indicador más honesto de todo StayHere. No cuántas se empezaron, no cuántas se tocaron "esa vez". Cuántas son **propias de verdad**.
+Ese número —las piezas en estado `TOCO-DE-MEMORIA-SOLO`— es el indicador más honesto de todo Okaeri. No cuántas se empezaron, no cuántas se tocaron "esa vez". Cuántas son **propias de verdad**.
 
 **Contador actual:** **0** · Meta de las primeras 8 semanas: **1**.

@@ -1,7 +1,7 @@
 # 🎹 Perfil musical del usuario
 
 > **Propósito:** calibrar al agente antes de proponer ruta, repertorio o ejercicios. Leer ANTES de generar cualquier cosa. Define quién es el usuario en el dominio música, qué quiere de verdad, y —lo más importante— el patrón que lo derrotó antes.
-> **Fuente:** `contexto/stayhere-base.md` §1 y §2.
+> **Fuente:** `contexto/okaeri-base.md` §1 y §2.
 
 ---
 
@@ -36,7 +36,7 @@
 
 > **Sin una guía clara y sin estructura externa, el usuario se pierde entre infinitas opciones (videos de YouTube, rutas de apps) y termina abandonando — incluso cuando ama el dominio.**
 
-Es el mismo patrón que en el inglés. La música conecta profundamente con él, pero a la hora de aprender, **la falta de estructura lo derrota.** Todo el diseño de StayHere existe para neutralizar esto: el sistema lleva la ruta para que él no tenga que elegir entre infinitas opciones.
+Es el mismo patrón que en el inglés. La música conecta profundamente con él, pero a la hora de aprender, **la falta de estructura lo derrota.** Todo el diseño de Okaeri existe para neutralizar esto: el sistema lleva la ruta para que él no tenga que elegir entre infinitas opciones.
 
 ## Historial de intentos (qué falló y por qué)
 

@@ -7,7 +7,7 @@
 ## Decisiones resueltas
 
 - ✅ **Primera canción del repertorio: 10,000 Reasons (Bless the Lord)** — Matt Redman, en Do mayor (acordes Do-Fa-Lam-Sol, los mismos de la ruta). Ficha creada (2026-06-24).
-- ✅ **Oído Perfecto (Perfect Ear) instalado.** → ⚠️ **Reemplazado por Anki (2026-07-10):** la app no traía los ejercicios configurables que el plan pedía. Ahora el oído se entrena con el mazo `sistema/herramientas/anki-oido/StayHere_Oido.apkg` (audios sintetizados a medida: mayor/menor + intervalos). Misma herramienta que el drill de acordes.
+- ✅ **Oído Perfecto (Perfect Ear) instalado.** → ⚠️ **Reemplazado por Anki (2026-07-10):** la app no traía los ejercicios configurables que el plan pedía. Ahora el oído se entrena con el mazo `sistema/herramientas/anki-oido/Okaeri_Oido.apkg` (audios sintetizados a medida: mayor/menor + intervalos). Misma herramienta que el drill de acordes.
 - ✅ **Plan de acción guiado + estado de sesión** (2026-07-10): el sistema ya no improvisa ni asume que una sesión terminó. Guion diario en `sistema/ruta/plan_semana_prueba.md`; checkpoint de dónde quedaste en `sistema/estado/estado_actual.md`. (Resuelve la nota "construir toda una ruta de avance".)
 
 ## Para más adelante (NO es V1 — no construir ahora)

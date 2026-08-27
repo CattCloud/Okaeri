@@ -61,7 +61,7 @@ El color **significa lo mismo en todas las imágenes**. Nunca es decorativo.
 **Rasterizar** (`npm i sharp` una vez en cualquier carpeta de trabajo, p. ej. el scratchpad):
 ```js
 const sharp = require('sharp'); const fs = require('fs');
-const base = 'C:/cerebro/StayHere/fundamentos/img/';
+const base = 'C:/cerebro/Okaeri/fundamentos/img/';
 for (const f of ['01-patron-negras','01-donde-esta-do','01-octava'])
   sharp(fs.readFileSync(base+f+'.svg'), {density:200}).png().toFile(base+f+'.png');
 ```

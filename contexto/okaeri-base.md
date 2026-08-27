@@ -1,39 +1,45 @@
-# STAYHERE — Documento base
+# OKAERI — Documento base
 
 > Sistema de apoyo al aprendizaje musical (piano como instrumento de inicio).
 > Define el propósito, el diagnóstico, las dimensiones del aprendizaje, el principio rector y las decisiones de diseño.
 > Vive como repositorio independiente, separado de los demás sistemas personales.
 
-> **Constelación de sistemas:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **StayHere (música)**.
+> **Constelación de sistemas:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **Okaeri (música)**.
 
 ---
 
 ## Índice
 
-- [0. El nombre: StayHere](#0-el-nombre-stayhere)
+- [0. El nombre: Okaeri](#0-el-nombre-okaeri)
 - [1. Diagnóstico: el punto de partida](#1-diagnóstico-el-punto-de-partida)
 - [2. El "para qué": la meta real](#2-el-para-qué-la-meta-real)
 - [3. Principio rector](#3-principio-rector)
-- [3.bis El papel de StayHere: director de ruta, no solo consolidador](#3bis-el-papel-de-stayhere-director-de-ruta-no-solo-consolidador)
+- [3.bis El papel de Okaeri: director de ruta, no solo consolidador](#3bis-el-papel-de-okaeri-director-de-ruta-no-solo-consolidador)
 - [4. El error a no repetir: la muleta](#4-el-error-a-no-repetir-la-muleta)
 - [5. Las dimensiones del aprendizaje musical](#5-las-dimensiones-del-aprendizaje-musical)
 - [6. El ancla externa (cómo y cuándo)](#6-el-ancla-externa-cómo-y-cuándo)
-- [7. Lo que StayHere NO hace](#7-lo-que-stayhere-no-hace)
+- [7. Lo que Okaeri NO hace](#7-lo-que-okaeri-no-hace)
 - [8. Decisiones de diseño](#8-decisiones-de-diseño)
 - [9. Preguntas abiertas](#9-preguntas-abiertas)
 - [10. Resumen ejecutivo](#10-resumen-ejecutivo)
 
 ---
 
-## 0. El nombre: StayHere
+## 0. El nombre: Okaeri
 
-El sistema se llama **StayHere**, en una sola palabra.
+El sistema se llama **Okaeri** (おかえり), en una sola palabra.
 
-**Origen.** El nombre viene de una pieza de piano que marcó al usuario ("Stay Here"). Se eligió por su carga emocional personal, no por etimología — el mismo criterio que hizo que Agatha y ARCA funcionaran: la conexión vivida pesa más que el significado de diccionario. Se descartaron nombres mitológicos y términos musicales fríos; el usuario buscaba algo ligado a lo emocional, sereno (quietud, presencia, consciencia), no intenso. "Stay Here" lo captura.
+**Significado.** "Bienvenido de vuelta." Es lo que en japonés se dice en la puerta al que regresa a casa; se responde con *tadaima* ("ya volví"). No es una palabra ceremoniosa ni poética: es doméstica, diaria, y la dice alguien que te estaba esperando. Sigue el mismo patrón que *maido* (毎度, "gracias por venir siempre"): una palabra corta que carga una frase entera.
 
-**Significado.** "Quédate aquí" — en el presente, en la música, en la quietud. Es el estado que produce la música ambiental que el usuario ama, y es lo opuesto a la prisa.
+**Origen: Toni.** El nombre viene del lorito del usuario, **Toni**, que se fue volando meses antes de este cambio de nombre. Nunca supo si era macho o hembra; a veces decía que era hembra porque no se despegaba de su hombro. Nunca le cortó las alas —*"quitarle eso es como quitarle los brazos"*—, y fue por esa decisión que el susto de uno de los perros bastó para que se fuera y no volviera nunca más. Toni le enseñó lo que es el amor a alguien que no lo vivió desde pequeño y —en sus palabras— **lo hizo parte de su manada**.
 
-**Por qué es exacto, no decorativo.** El obstáculo histórico del usuario —en el inglés, en Yousician, en la guitarra, en el canto de la iglesia— fue siempre *irse*: empezar y abandonar. El nombre del sistema es, literalmente, una instrucción contra ese patrón: quédate. Quédate en la música, en el momento, en el camino. No es solo el título de una pieza que emocionó — es lo único que el usuario necesita hacer para que esta vez sea distinta: permanecer.
+**Por qué ese origen da exactamente este nombre.** Toni tenía el cielo entero disponible y las alas intactas: podía irse cuando quisiera, y aun así volvía al hombro. Cada aterrizaje era un *tadaima*; el usuario respondía *okaeri* todos los días sin saber que la palabra existía. El nombre no conmemora la pérdida — nombra lo que Toni hacía (volver por elección) y lo que el usuario hacía (recibir sin retener).
+
+**Por qué es exacto, no decorativo.** El obstáculo histórico del usuario —en el inglés, en Yousician, en la guitarra, en el canto de la iglesia— fue siempre *irse*: empezar y abandonar. El nombre anterior (**StayHere**, "quédate aquí") atacaba ese patrón con una orden, y una orden cobra su precio: cada ausencia se vuelve una falta, y volver después de semanas fuera cuesta más porque el nombre mismo está acusando. *Okaeri* hace lo contrario: **no pide que no te vayas — recibe cuando vuelves.** Baja el costo de regresar, que es lo que de verdad rompe el patrón de abandono. Y es coherente con la única forma de amar que el usuario reconoce como propia: sin cortar alas.
+
+**Qué le impone el nombre al sistema** (regla operativa, no adorno): Okaeri **nunca reprocha una ausencia**. La alarma de constancia (~3 días sin registro) sigue viva y se dice con todas sus letras —el registro honesto es innegociable—, pero se dice como quien abre la puerta, no como quien pasa la cuenta. Una racha rota se nombra; no se cobra.
+
+**El nombre anterior.** El sistema se llamó **StayHere** desde su fundación (2026-06-24), por una pieza de piano ("Stay Here") que marcó al usuario. No se borra: fue el nombre correcto para nacer, y su significado —quédate en el presente, en la música— sobrevive dentro de *okaeri*. Se sucede el **2026-08-26**, cuando quedó claro que el sistema no necesitaba dar una orden, sino un recibimiento. El criterio de elección es el mismo que hizo funcionar a Agatha y ARCA: **la conexión vivida pesa más que el significado de diccionario.**
 
 **Lugar en la constelación.**
 
@@ -43,7 +49,7 @@ El sistema se llama **StayHere**, en una sola palabra.
 | Agatha | Gestión de vida | La compañía cálida |
 | ARCA | Metas | El refugio |
 | Oráculo | Inglés | El espejo que revela |
-| **StayHere** | Música | El quedarse, la presencia |
+| **Okaeri** | Música | El recibimiento — la puerta abierta |
 
 ---
 
@@ -86,7 +92,7 @@ El usuario es un **intérprete**, no un compositor. La composición NO es una me
 
 ## 3. Principio rector
 
-> **StayHere existe para que el usuario aprenda música de verdad —comprendiéndola y reteniéndola— al servicio de la expresión, no de la ejecución mecánica. No reemplaza al instrumento ni al profesor: estructura el aprendizaje para que la base dormida despierte y no se abandone.**
+> **Okaeri existe para que el usuario aprenda música de verdad —comprendiéndola y reteniéndola— al servicio de la expresión, no de la ejecución mecánica. No reemplaza al instrumento ni al profesor: estructura el aprendizaje para que la base dormida despierte y no se abandone.**
 
 Toda decisión del sistema se evalúa contra tres capas que el aprendizaje debe cubrir (las tres que los intentos previos no cubrieron):
 
@@ -98,29 +104,29 @@ Si una actividad no aporta a alguna de las tres, no entra.
 
 ---
 
-## 3.bis El papel de StayHere: director de ruta, no solo consolidador
+## 3.bis El papel de Okaeri: director de ruta, no solo consolidador
 
-StayHere ocupa un lugar **distinto** al de Oráculo en el aprendizaje, y conviene fijarlo explícitamente para no confundir los dos sistemas.
+Okaeri ocupa un lugar **distinto** al de Oráculo en el aprendizaje, y conviene fijarlo explícitamente para no confundir los dos sistemas.
 
 **En Oráculo (inglés), el sistema viene *después* de la clase.** La academia tiene un currículum estándar (CEFR) que define qué se enseña y en qué orden; el sistema solo **consolida** lo que la academia ya enseñó. El centro de gravedad está en la academia; Oráculo es el complemento posterior.
 
-**En StayHere (música), el sistema viene *antes y alrededor* del profesor.** Es StayHere quien **lleva la estructura y la ruta**. El profesor entra a corregir el cuerpo (técnica, postura, manos) y a dar accountability, pero NO define qué se aprende ni en qué orden.
+**En Okaeri (música), el sistema viene *antes y alrededor* del profesor.** Es Okaeri quien **lleva la estructura y la ruta**. El profesor entra a corregir el cuerpo (técnica, postura, manos) y a dar accountability, pero NO define qué se aprende ni en qué orden.
 
 **Por qué esta inversión:**
 - La música carece de un currículum universal confiable equivalente al CEFR (ver §8.3). La ruta la debe poner alguien, y ese alguien es el sistema.
-- El plan arranca **autodidacta-guiado 1-2 meses sin profesor** (§6). Durante ese arranque, StayHere *es* el maestro de ruta. Cuando llega el profesor, StayHere no desaparece: sigue llevando la estructura, y el profesor se vuelve el corrector físico que el sistema no puede ser.
+- El plan arranca **autodidacta-guiado 1-2 meses sin profesor** (§6). Durante ese arranque, Okaeri *es* el maestro de ruta. Cuando llega el profesor, Okaeri no desaparece: sigue llevando la estructura, y el profesor se vuelve el corrector físico que el sistema no puede ser.
 
-**Lo que StayHere hace en el día a día:**
+**Lo que Okaeri hace en el día a día:**
 1. **Decide qué practicar** — la ruta, para no perderse entre infinitas opciones (el patrón de abandono del usuario).
 2. **Explica el porqué** — teoría aplicada, oído (donde la IA aporta más).
 3. **Registra el repertorio y la memoria** — qué se toca de verdad, de memoria, sin app.
 4. **Sostiene la constancia** — accountability mínimo, sobre todo mientras no hay profesor.
 
-**Lo que StayHere NO hace:** enseñar el movimiento físico ni ver tocar al usuario. Eso es del profesor (§6, §7).
+**Lo que Okaeri NO hace:** enseñar el movimiento físico ni ver tocar al usuario. Eso es del profesor (§6, §7).
 
-**La diferencia en una imagen:** en el inglés, el usuario *va* a la academia y *vuelve* a Oráculo. En la música, el usuario *vive* en StayHere y *sale* al profesor una vez por semana. El centro de gravedad está en lados opuestos.
+**La diferencia en una imagen:** en el inglés, el usuario *va* a la academia y *vuelve* a Oráculo. En la música, el usuario *vive* en Okaeri y *sale* al profesor una vez por semana. El centro de gravedad está en lados opuestos.
 
-| | Oráculo (inglés) | StayHere (música) |
+| | Oráculo (inglés) | Okaeri (música) |
 |---|---|---|
 | Papel del sistema | Consolidador (post-clase) | Director de ruta + consolidador |
 | Quién define qué se aprende | La academia (CEFR) | El sistema |
@@ -131,13 +137,13 @@ StayHere ocupa un lugar **distinto** al de Oráculo en el aprendizaje, y convien
 
 ## 4. El error a no repetir: la muleta
 
-El fracaso de Yousician/Synthesia no fue del usuario — fue estructural de la herramienta, y StayHere se diseña explícitamente para no repetirlo.
+El fracaso de Yousician/Synthesia no fue del usuario — fue estructural de la herramienta, y Okaeri se diseña explícitamente para no repetirlo.
 
 **Qué es la muleta:** una ayuda visual (la pista que cae, tipo Guitar Hero) que te dice qué tecla apretar *justo cuando* hay que apretarla. Entrena **reacción**, no música. Es el equivalente musical de leer con subtítulos en español: el cerebro se apoya en la muleta y nunca construye el conocimiento por debajo. Cuando se quita la pista, no queda nada.
 
 **Por qué falla:** no construye comprensión (no entiendes *por qué* suena así) ni memoria (no retienes la pieza). Tocas "esa vez" y se evapora. Exactamente lo que le pasó al usuario.
 
-**La regla anti-muleta de StayHere:**
+**La regla anti-muleta de Okaeri:**
 - Una canción no está "aprendida" hasta que se puede tocar **sin la app, de memoria, solo**.
 - Las herramientas tipo app se usan en modo notación real (no en modo pista-que-cae), y siempre bajo la dirección del sistema/profesor, nunca como ruta principal.
 - El indicador de verdad de cada pieza es: *¿puede el usuario sentarse y tocarla sin ayuda?*
@@ -183,7 +189,7 @@ Un ancla externa es algo fuera del usuario que sostiene el aprendizaje cuando la
 
 **Diferencia clave con el inglés:** el inglés tiene un currículum estandarizado (CEFR) que cualquier academia sigue. La música es más fragmentada — no hay un "CEFR musical" universal, y la calidad/estructura depende mucho del profesor y del enfoque. Por eso:
 
-- **En StayHere, el sistema lleva la estructura y la ruta** (más peso que en Oráculo).
+- **En Okaeri, el sistema lleva la estructura y la ruta** (más peso que en Oráculo).
 - **El profesor cumple sobre todo corrección física + accountability** — lo que ninguna IA puede dar (un profesor ve las manos, la postura, la técnica; la IA no).
 
 **Plan de arranque (decidido):** **autodidacta-guiado 1-2 meses, luego profesor.** Los primeros meses son período de diagnóstico real: refrescar bases, reintentar lectura, y que el sistema registre dónde se traba — para llegar al profesor sabiendo qué se necesita, no como página en blanco.
@@ -196,7 +202,7 @@ Un ancla externa es algo fuera del usuario que sostiene el aprendizaje cuando la
 
 ---
 
-## 7. Lo que StayHere NO hace
+## 7. Lo que Okaeri NO hace
 
 - ❌ **No reemplaza al instrumento.** El aprendizaje ocurre tocando el Casio, no leyendo sobre música.
 - ❌ **No reemplaza al profesor** para la corrección física (postura, manos, técnica). Eso es insustituible.
@@ -218,7 +224,7 @@ El piano es el mejor primer instrumento para construir comprensión musical: la 
 El cifrado conecta con el repertorio real, la teoría aplicada y el canto futuro; da gratificación temprana que protege la constancia (el punto débil del usuario). El pentagrama tiene curva inicial frustrante y ya fue abandonado una vez. Empezar por cifrado engancha y construye el mapa armónico que luego facilita el pentagrama. El pentagrama no se abandona — entra en paralelo ligero.
 
 ### 8.3 Por qué el sistema lleva la estructura (no la academia)
-A diferencia del inglés (CEFR estandarizado), la música carece de currículum universal confiable. El sistema StayHere define la ruta; el profesor aporta corrección física y accountability. Esto invierte el reparto respecto a Oráculo.
+A diferencia del inglés (CEFR estandarizado), la música carece de currículum universal confiable. El sistema Okaeri define la ruta; el profesor aporta corrección física y accountability. Esto invierte el reparto respecto a Oráculo.
 
 ### 8.4 Por qué autodidacta-guiado primero, profesor después
 Los primeros 1-2 meses son diagnóstico: llegar al profesor con dolor real identificado, no como página en blanco. Con salvaguardas (fecha dura + accountability del sistema) para que el patrón de abandono no gane.
@@ -230,7 +236,7 @@ Para la mayoría, la expresión llega al final (primero las notas, luego el sent
 Yousician es buena app de práctica y tiene modo notación (no solo muleta). Se conserva como **gimnasio de práctica técnica** (ejercitar dedos, lectura, coordinación) en modo notación, bajo la dirección del sistema — NO como maestro ni ruta (ahí fallaba). Es el equivalente de Anki en Oráculo: ejecutor, no cerebro.
 
 ### 8.7 Por qué memoria como criterio de "aprendido"
-El fracaso de Yousician fue tocar sin retener. StayHere define "aprendido" como tocar sin app, de memoria, solo. La memorización no es extra: es la prueba de que el conocimiento se construyó de verdad.
+El fracaso de Yousician fue tocar sin retener. Okaeri define "aprendido" como tocar sin app, de memoria, solo. La memorización no es extra: es la prueba de que el conocimiento se construyó de verdad.
 
 ### 8.8 Por qué se descartó la composición
 El usuario la marcó inicialmente pero la aclaró después como no-meta. Es intérprete, no compositor. Eliminarla simplifica el sistema y reenfoca la teoría hacia comprensión/interpretación, no creación.
@@ -260,13 +266,13 @@ El usuario la marcó inicialmente pero la aclaró después como no-meta. Es int�
 
 ### 9.5 Transición al canto
 - ¿Qué hito del piano marca que se puede empezar el canto? (criterio concreto).
-- ¿El canto entra en el mismo sistema StayHere o como módulo aparte?
+- ¿El canto entra en el mismo sistema Okaeri o como módulo aparte?
 
 ---
 
 ## 10. Resumen ejecutivo
 
-**StayHere** es el sistema de aprendizaje musical del usuario, enfocado en **piano** como instrumento de inicio, al servicio de una meta de **intérprete**: tocar —y eventualmente cantar a la vez— las canciones que le emocionan, no componer.
+**Okaeri** es el sistema de aprendizaje musical del usuario, enfocado en **piano** como instrumento de inicio, al servicio de una meta de **intérprete**: tocar —y eventualmente cantar a la vez— las canciones que le emocionan, no componer.
 
 **Principio rector:** aprender música de verdad (comprendiéndola y reteniéndola) al servicio de la expresión, no de la ejecución mecánica.
 
@@ -280,7 +286,7 @@ El usuario la marcó inicialmente pero la aclaró después como no-meta. Es int�
 
 **Decisiones clave:** piano primero; cifrado antes que pentagrama; el sistema lleva la estructura y el profesor la corrección física; autodidacta-guiado 1-2 meses (con salvaguardas) y luego profesor; "aprendido" = tocar de memoria, solo, sin app.
 
-**El nombre es la instrucción:** *StayHere* — quédate. En la música, en el momento, en el camino. El antídoto al patrón de abandono.
+**El nombre es el recibimiento:** *Okaeri* (おかえり) — "bienvenido de vuelta". Viene de Toni, el lorito que volvía al hombro teniendo el cielo entero. Contra el patrón de abandono, el sistema no ordena quedarse: le quita el costo a regresar.
 
 ---
 

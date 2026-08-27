@@ -1,13 +1,13 @@
-# 📘 Manual de StayHere
+# 📘 Manual de Okaeri
 
-> **Propósito:** guía de operación del sistema. Define cómo opera StayHere, qué filosofía sigue su construcción, y qué queda explícitamente fuera. Equivalente al `manual_oraculo.md` de Oráculo, pero para el dominio música.
-> **Fuente de verdad del QUÉ y el PORQUÉ:** `contexto/stayhere-base.md`.
+> **Propósito:** guía de operación del sistema. Define cómo opera Okaeri, qué filosofía sigue su construcción, y qué queda explícitamente fuera. Equivalente al `manual_oraculo.md` de Oráculo, pero para el dominio música.
+> **Fuente de verdad del QUÉ y el PORQUÉ:** `contexto/okaeri-base.md`.
 
 ---
 
 ## 1. Principio rector
 
-> **StayHere existe para que el usuario aprenda música de verdad —comprendiéndola y reteniéndola— al servicio de la expresión, no de la ejecución mecánica. No reemplaza al instrumento ni al profesor: estructura el aprendizaje para que la base dormida despierte y no se abandone.**
+> **Okaeri existe para que el usuario aprenda música de verdad —comprendiéndola y reteniéndola— al servicio de la expresión, no de la ejecución mecánica. No reemplaza al instrumento ni al profesor: estructura el aprendizaje para que la base dormida despierte y no se abandone.**
 
 Toda decisión del sistema se evalúa contra las **tres capas** que el aprendizaje debe cubrir (las tres que los intentos previos no cubrieron):
 
@@ -17,7 +17,7 @@ Toda decisión del sistema se evalúa contra las **tres capas** que el aprendiza
 
 > Si una actividad no aporta a alguna de las tres, no entra.
 
-El nombre describe la función, no la adorna. El obstáculo histórico del usuario —en el inglés, en Yousician, en la guitarra, en el canto de la iglesia— fue siempre *irse*: empezar y abandonar. *StayHere* es, literalmente, una instrucción contra ese patrón: **quédate**. En la música, en el momento, en el camino.
+El nombre describe la función, no la adorna. El obstáculo histórico del usuario —en el inglés, en Yousician, en la guitarra, en el canto de la iglesia— fue siempre *irse*: empezar y abandonar. *Okaeri* (おかえり) es, literalmente, lo que se le dice al que vuelve: **"bienvenido de vuelta"**. No ataca el patrón con una orden —el nombre anterior, *StayHere*, decía "quédate", y una orden convierte cada ausencia en una falta—: lo ataca **quitándole el costo al regreso**. De ahí la regla de tono del sistema: **nunca se reprocha una ausencia; se registra la verdad y se recibe.** Origen completo del nombre —y de Toni— en `contexto/okaeri-base.md` §0.
 
 ---
 
@@ -44,7 +44,7 @@ Ese es el único indicador de verdad. Tres estados por pieza: `APRENDIENDO` → 
 
 ## 3. Las tres capas y las 7 dimensiones
 
-Las 7 dimensiones activas se agrupan en las tres capas del principio rector. El método completo de cada una vive en `contexto/stayhere-metodologia.md`.
+Las 7 dimensiones activas se agrupan en las tres capas del principio rector. El método completo de cada una vive en `contexto/okaeri-metodologia.md`.
 
 | Capa | Dimensiones | Qué aporta |
 |------|-------------|------------|
@@ -65,7 +65,7 @@ Las 7 dimensiones activas se agrupan en las tres capas del principio rector. El 
 
 ---
 
-## 4. Lo que StayHere NO hace
+## 4. Lo que Okaeri NO hace
 
 Vetos explícitos, con el porqué. Sirven para que el alcance no se desborde.
 
@@ -111,4 +111,4 @@ Dos salvaguardas innegociables, ambas vigiladas por el sistema:
 
 ---
 
-> Este manual define cómo opera StayHere. El detalle de cada dimensión vive en `contexto/stayhere-metodologia.md`; el QUÉ y el PORQUÉ completos en `contexto/stayhere-base.md`; el perfil del usuario en `sistema/perfil/yo_musica.md`.
+> Este manual define cómo opera Okaeri. El detalle de cada dimensión vive en `contexto/okaeri-metodologia.md`; el QUÉ y el PORQUÉ completos en `contexto/okaeri-base.md`; el perfil del usuario en `sistema/perfil/yo_musica.md`.

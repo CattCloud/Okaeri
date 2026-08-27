@@ -3,7 +3,7 @@
 > **Reemplaza a Perfect Ear** en los bloques de Oído del plan (la app no traía los ejercicios configurables que el plan pedía). Mismo hábito que el drill de acordes: Anki, footprint nuevo cero.
 > Audios **sintetizados a medida** (tono tipo piano, registro medio del teclado): solo lo que la ruta necesita ahora, sin el buffet de los mazos comunitarios.
 
-## Contenido — `StayHere_Oido.apkg`
+## Contenido — `Okaeri_Oido.apkg`
 
 | Submazo | Tarjetas | Ejercicio |
 |---------|----------|-----------|
@@ -14,8 +14,8 @@ Cada audio toca primero las notas **una por una** (para que el oído las separe)
 
 ## Cómo importar
 
-1. Abrir Anki → `Archivo → Importar` → elegir `StayHere_Oido.apkg`.
-2. Aparecen los dos submazos bajo **"StayHere Oído"**.
+1. Abrir Anki → `Archivo → Importar` → elegir `Okaeri_Oido.apkg`.
+2. Aparecen los dos submazos bajo **"StayHere Oído"** — el nombre del mazo viaja dentro del `.apkg` y no cambió con el renombrado del sistema (2026-08-26). Para alinearlo: en Anki, engranaje del mazo → **Renombrar** → `Okaeri Oído`. Es cosmético; si se deja como está, no rompe nada.
 3. En AnkiDroid/AnkiMobile se sincroniza solo vía AnkiWeb después de importar en el escritorio.
 
 ## Cómo usarlo en la sesión (5 min)

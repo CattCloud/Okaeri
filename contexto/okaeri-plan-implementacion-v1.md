@@ -1,18 +1,18 @@
-# STAYHERE — Plan de Implementación V1
+# OKAERI — Plan de Implementación V1
 
-> Documento operativo para construir StayHere desde cero.
+> Documento operativo para construir Okaeri desde cero.
 > Pensado para ejecutarse con un agente IA (Claude Code en terminal), espejando la arquitectura de TESLA y Oráculo.
-> **Documentos hermanos:** `stayhere-base.md` (el QUÉ y PORQUÉ) · `stayhere-metodologia.md` (el CÓMO practicar) · `stayhere-herramientas.md` (el CON QUÉ) · `stayhere-errores-comunes-musica.md` (la checklist preventiva). Este documento define el CÓMO construir y el ORDEN.
+> **Documentos hermanos:** `okaeri-base.md` (el QUÉ y PORQUÉ) · `okaeri-metodologia.md` (el CÓMO practicar) · `okaeri-herramientas.md` (el CON QUÉ) · `okaeri-errores-comunes-musica.md` (la checklist preventiva). Este documento define el CÓMO construir y el ORDEN.
 
-> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **StayHere (música)**.
+> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **Okaeri (música)**.
 
 ---
 
 ## Índice
 
 - [0. Cómo usar este documento](#0-cómo-usar-este-documento)
-- [1. Lo que hace distinto a StayHere (vs Oráculo)](#1-lo-que-hace-distinto-a-stayhere-vs-oráculo)
-- [2. El ciclo de vida de StayHere](#2-el-ciclo-de-vida-de-stayhere)
+- [1. Lo que hace distinto a Okaeri (vs Oráculo)](#1-lo-que-hace-distinto-a-okaeri-vs-oráculo)
+- [2. El ciclo de vida de Okaeri](#2-el-ciclo-de-vida-de-okaeri)
 - [3. Arquitectura: qué hereda](#3-arquitectura-qué-hereda)
 - [4. Estructura de carpetas objetivo](#4-estructura-de-carpetas-objetivo)
 - [5. Plan de construcción por pasos (Fase Cimientos)](#5-plan-de-construcción-por-pasos-fase-cimientos)
@@ -26,34 +26,34 @@
 
 ## 0. Cómo usar este documento
 
-El alcance de V1 es **dejar el sistema listo para empezar a practicar y registrar**, no construir todo. StayHere arranca en modo **autodidacta-guiado** (sin profesor los primeros 1-2 meses), así que V1 debe dejar lista la estructura mínima para que la práctica diaria empiece con guía y se registre.
+El alcance de V1 es **dejar el sistema listo para empezar a practicar y registrar**, no construir todo. Okaeri arranca en modo **autodidacta-guiado** (sin profesor los primeros 1-2 meses), así que V1 debe dejar lista la estructura mínima para que la práctica diaria empiece con guía y se registre.
 
 **Orden de lectura para el agente:**
 1. Este documento (plan).
-2. `stayhere-base.md` (diagnóstico, "para qué", las 7 dimensiones, el papel de director de ruta, qué NO hace).
-3. `stayhere-metodologia.md` (cómo se practica cada dimensión).
-4. `stayhere-herramientas.md` (qué herramientas y su rol).
-5. `stayhere-errores-comunes-musica.md` (la checklist preventiva).
+2. `okaeri-base.md` (diagnóstico, "para qué", las 7 dimensiones, el papel de director de ruta, qué NO hace).
+3. `okaeri-metodologia.md` (cómo se practica cada dimensión).
+4. `okaeri-herramientas.md` (qué herramientas y su rol).
+5. `okaeri-errores-comunes-musica.md` (la checklist preventiva).
 6. Si está disponible, TESLA y Oráculo como **molde arquitectónico** (estructura, convenciones, CLAUDE.md) — no para copiar contenido.
 
 **Regla de oro de V1:** construir poco, bien, y dejar que la práctica real dicte el resto. Y la regla anti-muleta gobierna todo el sistema.
 
 ---
 
-## 1. Lo que hace distinto a StayHere (vs Oráculo)
+## 1. Lo que hace distinto a Okaeri (vs Oráculo)
 
 El agente debe internalizar esta diferencia antes de construir (está en §3.bis del base):
 
 - **Oráculo es consolidador:** viene *después* de la clase de inglés; la academia define el currículum (CEFR), el sistema fija.
-- **StayHere es director de ruta + consolidador:** el sistema **lleva la estructura y la ruta** (la música no tiene un CEFR universal). El profesor entra *después* (mes 2-3) para corregir el cuerpo y dar accountability, no para definir qué se aprende.
+- **Okaeri es director de ruta + consolidador:** el sistema **lleva la estructura y la ruta** (la música no tiene un CEFR universal). El profesor entra *después* (mes 2-3) para corregir el cuerpo y dar accountability, no para definir qué se aprende.
 
-**Implicación para la construcción:** StayHere debe poder **proponer y dirigir una ruta de práctica** desde V1, porque durante el arranque autodidacta es la única guía. Esto es más responsabilidad que la que cargaba Oráculo. La calidad de la ruta importa más aquí.
+**Implicación para la construcción:** Okaeri debe poder **proponer y dirigir una ruta de práctica** desde V1, porque durante el arranque autodidacta es la única guía. Esto es más responsabilidad que la que cargaba Oráculo. La calidad de la ruta importa más aquí.
 
 **El principio anti-muleta** (del base §4) gobierna todo: nada se construye de forma que induzca dependencia de "pista que cae". El criterio de "aprendido" es: tocar sin app, de memoria, solo.
 
 ---
 
-## 2. El ciclo de vida de StayHere
+## 2. El ciclo de vida de Okaeri
 
 | # | Etapa | Qué hace | Estado en V1 |
 |---|---|---|---|
@@ -68,9 +68,9 @@ El agente debe internalizar esta diferencia antes de construir (está en §3.bis
 
 ## 3. Arquitectura: qué hereda
 
-StayHere replica los patrones probados de TESLA(C:\cerebro\mi-sistema-estudio) y Oráculo:
+Okaeri replica los patrones probados de TESLA(C:\cerebro\mi-sistema-estudio) y Oráculo:
 
-| Patrón | Cómo se aplica en StayHere |
+| Patrón | Cómo se aplica en Okaeri |
 |---|---|
 | Separación motor / output (`sistema/` vs output) | `sistema/` (motor) vs `practica/` y `repertorio/` (output) |
 | Índice como fuente única de control | `00_indice.md` global de repertorio + estado por pieza |
@@ -78,7 +78,7 @@ StayHere replica los patrones probados de TESLA(C:\cerebro\mi-sistema-estudio) y
 | Checklist preventiva (como L1 en Oráculo) | `referencia/errores-comunes-musica.md` |
 | Decisiones documentadas | `sistema/decisiones/` |
 | Perfil que calibra al agente | `sistema/perfil/yo_musica.md` |
-| CLAUDE.md raíz como contrato del agente | CLAUDE.md raíz de StayHere |
+| CLAUDE.md raíz como contrato del agente | CLAUDE.md raíz de Okaeri |
 | Markdown local, sin Notion, en VSCode | Idéntico |
 
 ---
@@ -88,13 +88,13 @@ StayHere replica los patrones probados de TESLA(C:\cerebro\mi-sistema-estudio) y
 Estructura **mínima de V1**. Espeja TESLA/Oráculo, solo con lo que se llena desde la primera semana.
 
 ```
-stayhere/
+okaeri/
 ├── CLAUDE.md                       ← contrato del agente
-├── README.md                       ← qué es StayHere, cómo se usa
+├── README.md                       ← qué es Okaeri, cómo se usa
 ├── NOTAS.md                        ← ideas y adiciones centralizadas
 │
 ├── sistema/                        ← EL MOTOR
-│   ├── manual_stayhere.md          ← principio rector + anti-muleta + qué NO hace
+│   ├── manual_okaeri.md          ← principio rector + anti-muleta + qué NO hace
 │   ├── perfil/
 │   │   └── yo_musica.md            ← nivel, "para qué", repertorio, patrón de abandono
 │   ├── referencia/
@@ -109,10 +109,10 @@ stayhere/
 │       └── decision_autodidacta_luego_profesor.md
 │
 ├── contexto/                       ← DOCUMENTACIÓN DEL PROYECTO
-│   ├── stayhere-base.md
-│   ├── stayhere-metodologia.md
-│   ├── stayhere-herramientas.md
-│   └── stayhere-plan-implementacion-v1.md
+│   ├── okaeri-base.md
+│   ├── okaeri-metodologia.md
+│   ├── okaeri-herramientas.md
+│   └── okaeri-plan-implementacion-v1.md
 │
 ├── practica/                       ← REGISTRO DE PRÁCTICA (output diario)
 │   ├── 00_indice.md                ← estado de constancia + accountability
@@ -137,22 +137,22 @@ Ejecutar en orden. Fase corta: una o dos sesiones, no semanas.
 Crear el árbol de §4, solo lo que se llena en V1. No crear piezas de repertorio todavía.
 
 ### Paso 2 — Inicializar Git
-`git init` en la raíz. Primer commit tras colocar los documentos en `contexto/`. Mensaje: `chore: cimientos de StayHere V1`.
+`git init` en la raíz. Primer commit tras colocar los documentos en `contexto/`. Mensaje: `chore: cimientos de Okaeri V1`.
 
 ### Paso 3 — CLAUDE.md raíz
-El contrato del agente. La pieza más importante. Ver §6.1. Molde: el CLAUDE.md de TESLA, adaptado al ciclo de vida de StayHere y al rol de director de ruta.
+El contrato del agente. La pieza más importante. Ver §6.1. Molde: el CLAUDE.md de TESLA, adaptado al ciclo de vida de Okaeri y al rol de director de ruta.
 
-### Paso 4 — manual_stayhere.md
+### Paso 4 — manual_okaeri.md
 Principio rector + el principio anti-muleta + las tres capas + qué NO hace el sistema (§7 del base). Ver §6.2.
 
 ### Paso 5 — perfil/yo_musica.md
 Extraer del base (§1 y §2): nivel real, "para qué" (intérprete, no compositor), repertorio, el patrón de abandono, el plan autodidacta-luego-profesor. Ver §6.3.
 
 ### Paso 6 — referencia/errores-comunes-musica.md
-Copiar el documento `stayhere-errores-comunes-musica.md` a la carpeta de referencia. Es referencia estática.
+Copiar el documento `okaeri-errores-comunes-musica.md` a la carpeta de referencia. Es referencia estática.
 
 ### Paso 7 — ruta/ruta_inicial.md
-**La pieza más distintiva de StayHere.** La ruta de las primeras 8 semanas autodidacta-guiado: qué practicar cada semana (refresco técnico, primeros acordes, primera canción simple, lectura, oído). Ver §6.4 y §9. Esto es lo que Oráculo no necesitaba (porque la academia ponía el currículum).
+**La pieza más distintiva de Okaeri.** La ruta de las primeras 8 semanas autodidacta-guiado: qué practicar cada semana (refresco técnico, primeros acordes, primera canción simple, lectura, oído). Ver §6.4 y §9. Esto es lo que Oráculo no necesitaba (porque la academia ponía el currículum).
 
 ### Paso 8 — herramientas/config_herramientas.md
 Cómo se usa cada herramienta y su rol: Yousician en modo sheet (con la advertencia anti-muleta), Oído Perfecto, el MIDI del Casio, el metrónomo integrado. Resumen operativo del documento de herramientas.
@@ -169,7 +169,7 @@ Tres archivos cortos documentando las decisiones clave (del §8 del base): piano
 - `repertorio/00_indice.md` — índice de todas las piezas y su estado (vacío de piezas en V1).
 
 ### Paso 12 — README.md
-Entrada del repo: qué es StayHere, el principio rector y el anti-muleta en una línea, el mapa de carpetas, cómo se usa.
+Entrada del repo: qué es Okaeri, el principio rector y el anti-muleta en una línea, el mapa de carpetas, cómo se usa.
 
 ### Paso 13 — Dry run
 Simular una sesión de práctica ficticia con la plantilla, y registrar una pieza ficticia con sus estados. Verificar que el flujo no tiene fricciones. Borrar lo ficticio al terminar.
@@ -178,7 +178,7 @@ Simular una sesión de práctica ficticia con la plantilla, y registrar una piez
 En `practica/00_indice.md`, escribir la **fecha concreta** (~8 semanas desde hoy) en que se buscará profesor, pase lo que pase. No es opcional — es la salvaguarda contra el patrón de abandono (§6 del base).
 
 ### Paso 15 — Commit final de cimientos
-`git add . && git commit -m "feat: StayHere V1 listo para la primera práctica"`.
+`git add . && git commit -m "feat: Okaeri V1 listo para la primera práctica"`.
 
 ---
 
@@ -186,17 +186,17 @@ En `practica/00_indice.md`, escribir la **fecha concreta** (~8 semanas desde hoy
 
 ### 6.1 CLAUDE.md (raíz)
 Contrato del agente. Mínimo:
-- **Qué es StayHere:** sistema de aprendizaje musical (piano), enfocado en intérprete (tocar/cantar canciones que se aman), no compositor ni virtuoso.
+- **Qué es Okaeri:** sistema de aprendizaje musical (piano), enfocado en intérprete (tocar/cantar canciones que se aman), no compositor ni virtuoso.
 - **Principio rector** (citado) + **principio anti-muleta** (citado).
-- **El papel de director de ruta** (§3.bis del base): StayHere lleva la estructura; el profesor corrige el cuerpo. Distinto de Oráculo.
+- **El papel de director de ruta** (§3.bis del base): Okaeri lleva la estructura; el profesor corrige el cuerpo. Distinto de Oráculo.
 - **El ciclo de vida** (§2) y qué etapa está habilitada (V1: Practicar).
 - **Qué NO hace** (§7 del base): no usa muleta, no enseña composición, no persigue virtuosismo, no reemplaza al profesor para lo físico, no gamifica, no arranca canto en paralelo.
 - **Mapa de archivos clave** (tabla ruta → propósito).
 - **Reglas de operación:** leer el perfil antes de proponer ruta; pragmatismo > pulir; preguntas con alternativas concretas; anti-muleta siempre; tecnicismos musicales con su nombre, explicaciones en español.
 - **Estado actual:** etapa habilitada, fecha dura del profesor, repertorio en curso (al inicio: ninguno).
 
-### 6.2 manual_stayhere.md
-Principio rector expandido + el principio anti-muleta (qué es la muleta, por qué falla, la regla de "aprendido = de memoria, solo, sin app") + las tres capas (mecánica/comprensión/expresión) + la lista de "lo que StayHere NO hace".
+### 6.2 manual_okaeri.md
+Principio rector expandido + el principio anti-muleta (qué es la muleta, por qué falla, la regla de "aprendido = de memoria, solo, sin app") + las tres capas (mecánica/comprensión/expresión) + la lista de "lo que Okaeri NO hace".
 
 ### 6.3 perfil/yo_musica.md
 Del base §1 y §2:
@@ -247,7 +247,7 @@ Molde del índice de cada pieza — fuente única de control de esa canción. Ca
 - [ ] Estructura de carpetas creada (solo lo de V1).
 - [ ] Git inicializado, con commits.
 - [ ] `CLAUDE.md` raíz redactado, fiel al principio rector y anti-muleta.
-- [ ] `manual_stayhere.md` con principio rector + anti-muleta + qué NO hace.
+- [ ] `manual_okaeri.md` con principio rector + anti-muleta + qué NO hace.
 - [ ] `perfil/yo_musica.md` completo.
 - [ ] `referencia/errores-comunes-musica.md` colocada.
 - [ ] `ruta/ruta_inicial.md` con las primeras 8 semanas.
@@ -289,4 +289,4 @@ El detalle semana a semana se construye en `ruta_inicial.md`. Después de la sem
 
 ---
 
-> **Resumen de una línea:** V1 deja StayHere listo para empezar a practicar y registrar, con la ruta inicial de 8 semanas y la fecha dura del profesor fijadas. StayHere es director de ruta (no solo consolidador como Oráculo), el anti-muleta gobierna todo, y el esfuerzo va en la calidad de la ruta, no en integrar apps.
+> **Resumen de una línea:** V1 deja Okaeri listo para empezar a practicar y registrar, con la ruta inicial de 8 semanas y la fecha dura del profesor fijadas. Okaeri es director de ruta (no solo consolidador como Oráculo), el anti-muleta gobierna todo, y el esfuerzo va en la calidad de la ruta, no en integrar apps.

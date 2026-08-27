@@ -48,7 +48,7 @@
 1. **Calentamiento** (5 min) — Igual que Día 1.
 2. **Teoría aplicada** (5-8 min) — *¿Qué es una progresión?* Una **secuencia de acordes que se repite** y le da a la canción su "camino" emocional. La de 10,000 Reasons (en Do): **Do (I) → Fa (IV) → Lam (vi) → Sol (V)**. El **Lam** (el único menor) es el que aporta el color emotivo. Cientos de canciones worship y pop usan estas mismas cuatro "casillas" en distinto orden. *(El agente lo explica en vivo y crea la nota `fundamentos/06_progresion.md` con lo conversado — regla define-or-link.)*
 3. **Al teclado** (10-12 min) — Tocar la progresión en bucle, mano izquierda, **sin metrónomo primero**: formar cada acorde, sostenerlo, cambiar sin prisa. Cuando los cambios salgan sin pensar → 4-5 vueltas más buscando que el cambio Fa→Lam y Lam→Sol fluyan (suelen ser los que traban). *Diferencia con el drill de Anki:* allá los acordes salen barajados y sueltos; aquí van **en el orden de la canción** — cada vuelta del bucle ya es 10,000 Reasons en embrión. Ojo: esto es un **bucle de laboratorio** (siempre el mismo orden); la canción real usa estos acordes en otro orden y con otras duraciones — ese salto es el Día 3.
-4. **Oído** (5 min) — Mazo Anki **"StayHere Oído → 1 Acordes"** (`sistema/herramientas/anki-oido/`): suena un acorde, dices mayor o menor. Conexión directa: es la diferencia Do vs. Lam que acabas de tocar.
+4. **Oído** (5 min) — Mazo Anki **"Okaeri Oído → 1 Acordes"** (`sistema/herramientas/anki-oido/`): suena un acorde, dices mayor o menor. Conexión directa: es la diferencia Do vs. Lam que acabas de tocar.
 5. **Cierre** (2 min) — Registro + estado.
 
 **Checkpoint honesto:** ¿puedes dar 3 vueltas seguidas a la progresión sin parar a buscar teclas?
@@ -75,7 +75,7 @@
 1. **Calentamiento** (5 min).
 2. **Drill exprés** (5 min) — Anki "Acordes Auto", una pasada.
 3. **Coro con metrónomo** (10 min) — Metrónomo del Casio **lento** (≈60-70 bpm). Un acorde por compás, contando "1-2-3-4" **en voz alta** (no es adorno: obliga al cuerpo a subordinarse al pulso en vez de esperar "sentirse listo" — el cambio cae en el "1", esté como esté la mano). Si un cambio descuadra el pulso, aislar SOLO ese cambio y repetirlo 5 veces — no volver siempre al inicio: volver al inicio es practicar mil veces lo que ya sale y una vez lo que falla.
-4. **Oído** (5 min) — Mazo Anki **"StayHere Oído → 2 Intervalos"**: 3ª mayor, 3ª menor, 5ª justa. Truco: asociar cada uno a una canción conocida.
+4. **Oído** (5 min) — Mazo Anki **"Okaeri Oído → 2 Intervalos"**: 3ª mayor, 3ª menor, 5ª justa. Truco: asociar cada uno a una canción conocida.
 5. **Cierre** (2 min).
 
 **Checkpoint honesto:** ¿el coro entero mantiene el pulso sin frenar en los cambios?
@@ -103,7 +103,7 @@
 2. **Pasada completa lenta** (8-10 min) — Verso → coro → verso → coro, metrónomo lento, **de principio a fin sin parar** (equivocarse y seguir es parte del ejercicio; parar a corregir cada error rompe la forma grande). Al terminar, diagnóstico: detectar el fragmento más flojo y repetirlo aislado 5 veces. Cirugía, no maratón desde el inicio.
 3. **Interpretación** (8-10 min) — La misma pasada pero con **dinámica simple**: verso suave e íntimo (casi hablando) → coro con más cuerpo (el "Bless the Lord" se abre) → final que se suaviza ("worship Your holy name" — se apaga con reverencia, no se corta). Mismas notas que el Bloque 2; lo único que cambia es la **intención**, y suena a otra cosa. En worship la dinámica no es adorno técnico: es lo que la canción *dice*. Es la diferencia entre notas correctas y música — y es tu para qué.
    > ⚠️ **Aviso esperado:** la mano izquierda sola se va a sentir "vacía" comparada con la grabación — falta la melodía. **Eso es bueno**: esa hambre es exactamente lo que la semana siguiente resuelve (mano derecha, semanas 5-6). El sistema la deja a propósito.
-4. **Oído** (5 min) — Mazo Anki "StayHere Oído", repaso corto (acordes + intervalos mezclados).
+4. **Oído** (5 min) — Mazo Anki "Okaeri Oído", repaso corto (acordes + intervalos mezclados).
 5. **Cierre** (2 min).
 
 **Checkpoint honesto:** si alguien te escuchara desde otra habitación, ¿reconocería que es 10,000 Reasons?

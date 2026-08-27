@@ -1,10 +1,10 @@
-# STAYHERE — Herramientas por Dimensión
+# OKAERI — Herramientas por Dimensión
 
 > **Propósito:** Definir *con qué* herramientas se ejecuta cada metodología, una vez fijado el método. Cierra la trilogía de documentos del sistema.
-> **Documentos hermanos:** `stayhere-base.md` (el QUÉ y PORQUÉ) · `stayhere-metodologia.md` (el CÓMO practicar) · `stayhere-errores-comunes-musica.md` (la checklist preventiva).
+> **Documentos hermanos:** `okaeri-base.md` (el QUÉ y PORQUÉ) · `okaeri-metodologia.md` (el CÓMO practicar) · `okaeri-errores-comunes-musica.md` (la checklist preventiva).
 > **Principio que lo gobierna:** la herramienta se elige *después* del método. El método manda; las herramientas lo sirven. Y la regla anti-muleta gobierna: ninguna herramienta se usa en modo "pista que cae".
 
-> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **StayHere (música)**.
+> **Constelación:** TESLA (estudio) · Agatha (gestión de vida) · ARCA (metas) · Oráculo (inglés) · **Okaeri (música)**.
 
 ---
 
@@ -116,7 +116,7 @@ Por qué se gana el lugar (el filtro de capa 3): el entrenamiento auditivo neces
 - **Personalización real** (la razón por la que se eligió sobre Yousician): permite aislar los sonidos que cuestan, crear ejercicios propios, customizar intervalos/acordes/escalas/tonalidades. Yousician no deja personalizar a este nivel.
 - Panel de práctica diaria con estadísticas finas; está en español; **acepta el Casio por MIDI**.
 
-Reparto limpio: **Oído Perfecto es el ejecutor** (reproduce, evalúa, registra), **StayHere/IA dirige** (qué entrenar), **markdown es la fuente de verdad** (el registro de práctica). Mismo criterio que Anki en Oráculo: ejecutor especializado bajo la dirección del sistema.
+Reparto limpio: **Oído Perfecto es el ejecutor** (reproduce, evalúa, registra), **Okaeri/IA dirige** (qué entrenar), **markdown es la fuente de verdad** (el registro de práctica). Mismo criterio que Anki en Oráculo: ejecutor especializado bajo la dirección del sistema.
 
 > ⚠️ **Advertencia honesta:** reseñas reportan crashes ocasionales (sobre todo en iOS) y una sección de ritmo algo confusa. Para el núcleo (intervalos, acordes, escalas de oído) funciona bien.
 
@@ -166,13 +166,13 @@ Reparto limpio: **Oído Perfecto es el ejecutor** (reproduce, evalúa, registra)
 | **YouTube / Spotify** | Referencias de postura e interpretación | No (ya se usa) | — |
 | **Profesor** | Técnica + interpretación (lo físico) | El ancla humana | (curso) |
 
-**Una sola app nueva real: Oído Perfecto.** Igual que Oráculo terminó con una (Anki), StayHere termina con una. Todo lo demás corre sobre el stack actual o herramientas ya pagadas — incluido **Anki**, que se reusa de la constelación para el **drill de acordes por recall** (footprint nuevo = 0; ver `sistema/decisiones/decision_acordes_recall_anki.md`).
+**Una sola app nueva real: Oído Perfecto.** Igual que Oráculo terminó con una (Anki), Okaeri termina con una. Todo lo demás corre sobre el stack actual o herramientas ya pagadas — incluido **Anki**, que se reusa de la constelación para el **drill de acordes por recall** (footprint nuevo = 0; ver `sistema/decisiones/decision_acordes_recall_anki.md`).
 
 > 🔭 **Evolución futura (no ahora):** para el drill de acordes, una app que **valide por MIDI** lo que se toca (auto-chequeo) — análoga a cómo §6 deja Functional Ear Trainer como opción futura para el oído. Por ahora Anki + autoverificación honesta basta. No se construye en esta etapa.
 
 **Reglas que gobiernan el uso:**
 - **Anti-muleta:** Yousician solo en modo sheet; ninguna app en modo "pista que cae".
-- **El método dirige las apps:** Oído Perfecto y Yousician son ejecutores; StayHere/IA decide qué practicar y los configura.
+- **El método dirige las apps:** Oído Perfecto y Yousician son ejecutores; Okaeri/IA decide qué practicar y los configura.
 - **Markdown es siempre la fuente de verdad:** las apps ejecutan, pero el registro de práctica y el índice de repertorio viven en markdown.
 
 ---
