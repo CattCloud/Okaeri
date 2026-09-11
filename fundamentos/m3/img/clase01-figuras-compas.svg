@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 445" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="445" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Las figuras rítmicas y el compás de 4/4</text>
+
+  <!-- Redonda -->
+  <ellipse cx="170" cy="115" rx="17" ry="12" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <text x="170" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">Redonda</text>
+  <text x="170" y="182" text-anchor="middle" font-size="13" fill="#555555">dura 4 tiempos</text>
+
+  <!-- Blanca -->
+  <ellipse cx="450" cy="115" rx="14" ry="10" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <line x1="463" y1="112" x2="463" y2="52" stroke="#111111" stroke-width="2.5"/>
+  <text x="450" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">Blanca</text>
+  <text x="450" y="182" text-anchor="middle" font-size="13" fill="#555555">dura 2 tiempos</text>
+
+  <!-- Negra -->
+  <ellipse cx="730" cy="115" rx="14" ry="10" fill="#111111" stroke="#111111" stroke-width="2"/>
+  <line x1="743" y1="112" x2="743" y2="52" stroke="#111111" stroke-width="2.5"/>
+  <text x="730" y="162" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">Negra</text>
+  <text x="730" y="182" text-anchor="middle" font-size="13" fill="#555555">dura 1 tiempo</text>
+
+  <line x1="60" y1="210" x2="840" y2="210" stroke="#dddddd" stroke-width="1.5"/>
+
+  <text x="60" y="245" font-size="15.5" font-weight="bold" fill="#111111">El compás: la caja donde entran los tiempos</text>
+  <text x="60" y="272" font-size="13.5" fill="#333333">El número de ARRIBA (4): cuántos tiempos entran en cada caja.</text>
+  <text x="60" y="292" font-size="13.5" fill="#333333">El número de ABAJO (4): qué figura vale UN tiempo — el 4 de abajo significa «la negra».</text>
+
+  <!-- 4/4 stacked -->
+  <text x="80" y="348" text-anchor="middle" font-size="27" font-weight="bold" fill="#111111">4</text>
+  <text x="80" y="380" text-anchor="middle" font-size="27" font-weight="bold" fill="#111111">4</text>
+
+  <!-- Box 1: negra negra blanca -->
+  <text x="300" y="310" text-anchor="middle" font-size="12.5" fill="#2e9e44">negra + negra + blanca  =  1 + 1 + 2  =  4 ✓</text>
+  <rect x="110" y="318" width="380" height="70" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="205" y1="318" x2="205" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="300" y1="318" x2="300" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="395" y1="318" x2="395" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="157" cy="362" rx="10" ry="7" fill="#111111"/><line x1="166" y1="360" x2="166" y2="326" stroke="#111111" stroke-width="2"/>
+  <ellipse cx="252" cy="362" rx="10" ry="7" fill="#111111"/><line x1="261" y1="360" x2="261" y2="326" stroke="#111111" stroke-width="2"/>
+  <ellipse cx="347" cy="362" rx="10" ry="7" fill="#ffffff" stroke="#111111" stroke-width="2.5"/><line x1="356" y1="360" x2="356" y2="326" stroke="#111111" stroke-width="2"/>
+  <text x="157" y="406" text-anchor="middle" font-size="12" fill="#888888">1</text>
+  <text x="252" y="406" text-anchor="middle" font-size="12" fill="#888888">2</text>
+  <text x="347" y="406" text-anchor="middle" font-size="12" fill="#888888">3</text>
+  <text x="442" y="406" text-anchor="middle" font-size="12" fill="#888888">4</text>
+
+  <!-- Box 2: redonda -->
+  <text x="685" y="310" text-anchor="middle" font-size="12.5" fill="#2e9e44">una redonda sola  =  4 ✓</text>
+  <rect x="530" y="318" width="310" height="70" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="607" y1="318" x2="607" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="685" y1="318" x2="685" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="762" y1="318" x2="762" y2="388" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="568" cy="362" rx="13" ry="9" fill="#ffffff" stroke="#111111" stroke-width="3"/>
+  <text x="568" y="406" text-anchor="middle" font-size="12" fill="#888888">1</text>
+  <text x="646" y="406" text-anchor="middle" font-size="12" fill="#888888">2</text>
+  <text x="723" y="406" text-anchor="middle" font-size="12" fill="#888888">3</text>
+  <text x="800" y="406" text-anchor="middle" font-size="12" fill="#888888">4</text>
+
+  <text x="450" y="435" text-anchor="middle" font-size="12.5" fill="#555555">La regla: cada caja se llena con figuras que sumen exactamente 4 tiempos — como una suma.</text>
+</svg>

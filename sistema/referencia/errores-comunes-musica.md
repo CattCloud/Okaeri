@@ -1,6 +1,6 @@
 # OKAERI — Errores comunes del aprendizaje musical (checklist de detección)
 
-> **Propósito:** Comportamiento preventivo del sistema. Esta lista contiene los errores *predecibles* que comete casi todo principiante de piano/música. Okaeri la usa de forma **proactiva**: cuando arma la ruta, genera ejercicios o registra la práctica, vigila que el usuario no caiga en estos patrones.
+> **Propósito:** Comportamiento preventivo del sistema. Esta lista contiene los errores *predecibles* que comete casi todo principiante de guitarra/música. Okaeri la usa de forma **proactiva**: cuando arma la ruta, genera ejercicios o registra la práctica, vigila que el usuario no caiga en estos patrones.
 > **Documento hermano del registro de práctica:** mientras esta lista cubre lo *predecible*, el registro de práctica revela los errores *idiosincráticos* (los particulares del usuario). El sistema vigila ambos.
 > **Importante:** esta lista es **insumo del sistema, no material de estudio** para el usuario.
 
@@ -25,7 +25,7 @@ Arruinan todo lo demás. Atados a la metodología de §2 (práctica deliberada, 
 - **Repetir en piloto automático.** Tocar muchas veces sin atención, creyendo que la repetición sola enseña. *Fosiliza errores* en lugar de corregirlos.
 - **Practicar siempre desde el inicio.** Cuando algo falla a la mitad, volver siempre al comienzo en vez de aislar el fragmento difícil. El inicio sale perfecto y el resto nunca.
 - **Tocar rápido antes de tocar bien.** Buscar velocidad antes que precisión. Graba los errores a alta velocidad; durísimos de desaprender.
-- **No usar manos separadas.** Atacar ambas manos juntas desde el inicio en piezas nuevas. Causa #1 de frustración y abandono del principiante.
+- **No usar manos separadas.** En guitarra: intentar el cambio de acorde *y* el patrón de rasgueo a la vez desde el inicio. Primero la forma de la izquierda sola; luego la derecha sobre un solo acorde; recién entonces juntas. Causa #1 de frustración del principiante.
 - **Saltarse el calentamiento.** Tocar en frío: tensa y arriesga malos hábitos.
 
 ## 2. Errores de técnica (el cuerpo) — los que el profesor debe ver
@@ -34,7 +34,7 @@ Físicos. Son por los que se fijó la fecha dura del profesor (§6 del base). La
 
 - **Muñecas tensas o caídas.** Generan fatiga, frenan el progreso y a largo plazo pueden lesionar.
 - **Dedos planos en vez de curvos.** Tocar con dedos estirados en lugar de curvos (como sosteniendo una pelota) quita control y velocidad.
-- **Mirar las manos constantemente.** Depender de ver los dedos en vez de sentir el teclado. Frena lectura y memoria espacial.
+- **Mirar las manos constantemente.** Depender de ver los dedos en vez de sentir el mástil. Frena lectura y memoria espacial.
 - **Postura mala.** Sentarse muy cerca/lejos, muy alto/bajo, hombros tensos. Afecta todo y se vuelve hábito.
 - **Digitación inconsistente.** Usar dedos distintos cada vez para el mismo pasaje. Impide la memoria muscular. La digitación debe fijarse y repetirse igual.
 - **Forzar la velocidad con tensión.** Apretar para ir rápido en vez de relajar. Contraproducente.
@@ -43,7 +43,7 @@ Físicos. Son por los que se fijó la fecha dura del profesor (§6 del base). La
 
 Lo que el sistema ataca por diseño, pero hay que vigilarlos. Atados a Teoría aplicada y Oído.
 
-- **Tocar sin entender.** Memorizar secuencias de teclas sin saber qué acordes o estructura son. Memoria frágil, cero transferencia a otras canciones. (El mal histórico del usuario.)
+- **Tocar sin entender.** Memorizar posiciones de dedos sin saber qué acordes o estructura son. Memoria frágil, cero transferencia a otras canciones. (El mal histórico del usuario.)
 - **Saltarse la teoría por "aburrida".** Evitar entender la música condena a depender siempre de partituras/apps. La teoría aplicada bien dada no aburre.
 - **Ignorar el oído.** No entrenar el reconocimiento auditivo, quedando incapaz de tocar sin notación. Limita al intérprete para siempre.
 - **Memorizar solo con los dedos.** Confiar solo en memoria muscular (que se rompe con un error) sin las otras capas (visual, auditiva, estructural).
@@ -52,7 +52,7 @@ Lo que el sistema ataca por diseño, pero hay que vigilarlos. Atados a Teoría a
 
 Atados a la dimensión Ritmo.
 
-- **Ignorar el ritmo, solo notas.** Concentrarse tanto en qué teclas que se descuida el cuándo. Suena descuadrado aunque las notas sean correctas.
+- **Ignorar el ritmo, solo notas.** Concentrarse tanto en la mano izquierda que se descuida la derecha (el cuándo). Suena descuadrado aunque las notas sean correctas.
 - **Acelerar en lo fácil, frenar en lo difícil.** Tempo inestable: correr en lo cómodo y trabarse en lo difícil. El error rítmico más común.
 - **Nunca contar.** No contar el pulso (en voz alta o mental), tocando "por intuición" sin base rítmica.
 - **Depender del metrónomo o nunca usarlo.** Los dos extremos: vivir pegado al metrónomo sin internalizar, o no usarlo nunca y descuadrarse.

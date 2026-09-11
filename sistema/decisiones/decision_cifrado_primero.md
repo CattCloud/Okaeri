@@ -13,6 +13,6 @@ La **lectura por cifrado (acordes por su nombre: Do, Sol, Lam, Fa)** es la vía 
 - **El cifrado construye el mapa armónico** que luego hace el pentagrama *menos* intimidante.
 
 ## Implicación para el sistema
-- La ruta inicial ataca **4-5 acordes comunes + la progresión I-V-vi-IV** en las primeras semanas, no notas en pentagrama.
-- El **pentagrama NO se abandona:** entra en dosis pequeñas y constantes (10-15 min, sin presión) para no oxidarse, pensando en el repertorio instrumental clásico (estilo Einaudi) que lo requerirá más adelante.
+- El temario ataca **5 acordes abiertos + los cambios entre ellos** (M1-M2) y la progresión (M5), no notas en pentagrama.
+- **Actualización 2026-08-28 (guitarra):** el pentagrama queda **fuera del nivel base** del temario. La lectura de la guitarra es cifrado (M1) y **tablatura/TAB** (M8). El pentagrama se evalúa solo si la academia o una pieza futura lo piden.
 - Es la misma lógica que el inglés: la estructura llega *al servicio de* la expresión, no antes que ella.

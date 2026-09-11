@@ -1,53 +1,61 @@
-# Okaeri 🎹
+# Okaeri 🎸
 
-> Sistema personal de aprendizaje musical (piano). *おかえり — "bienvenido de vuelta".*
+> Sistema personal de aprendizaje musical. *おかえり — "bienvenido de vuelta".*
 
 ## El nombre
 
 **Okaeri** (おかえり) es lo que en japonés se dice en la puerta al que regresa a casa. Viene de **Toni**, el lorito de casa: nunca le cortaron las alas, tenía el cielo entero disponible y aun así volvía al hombro — hasta el día que un susto lo hizo volar y no volver. El nombre no le pide a nadie que se quede; recibe al que vuelve. Contra un historial de empezar y abandonar, eso es lo que importa: **el sistema no reprocha la ausencia — le quita el costo a regresar.**
 
-*(Historia completa en `contexto/okaeri-base.md` §0. Nombre anterior: StayHere, 2026-06-24 → 2026-08-26.)*
+*(Historia completa en `contexto/okaeri-base.md` §0.)*
 
 ## Qué es
 
-Okaeri estructura el aprendizaje del piano para alguien que ama la música pero, sin guía clara, siempre terminaba abandonando. La meta no es el virtuosismo ni componer: es ser **intérprete** — sentarse al piano y tocar (y algún día cantar a la vez) las canciones que tocan el corazón.
+Okaeri estructura el aprendizaje musical para alguien que ama la música pero, sin guía clara, siempre terminaba abandonando. La meta no es el virtuosismo ni componer: es ser **intérprete** — tocar (y algún día cantar a la vez) las canciones que tocan el corazón. **Destino concreto: la banda de su iglesia.**
+
+**Instrumento activo: guitarra clásica** (desde 2026-08-28). El piano fue el primer intento (2026-06 → 2026-08); está archivado en `_archivo/piano/`, con su diagnóstico.
 
 **El principio rector:** aprender música de verdad —comprendiéndola y reteniéndola— al servicio de la **expresión**, no de la ejecución mecánica.
 
-**El principio anti-muleta** (el corazón del sistema): una canción no está aprendida hasta tocarse **sin app, de memoria, solo**. Nada de "pista que cae" tipo Guitar Hero — eso entrena reacción, no música, y fue el error histórico a no repetir.
+**El principio anti-muleta** (el corazón del sistema): una canción no está aprendida hasta tocarse **sin cifrado, de memoria, sola**. Nada de "pista que cae" tipo Guitar Hero — entrena reacción, no música.
 
-**Lo que lo hace distinto** (vs. el sistema de inglés, Oráculo): Okaeri es **director de ruta**, no solo consolidador. El sistema lleva la estructura y el camino; el profesor entra después, solo para corregir el cuerpo (postura, manos). Por eso la ruta de las primeras 8 semanas es la pieza más importante.
+**El modelo** (el de Cloud en TESLA): el **temario** es la columna —un mapa de 9 módulos ordenado por dependencia—; la **academia** (curso presencial, martes) cubre la técnica en vivo; **Okaeri** consolida entre martes y martes y lidera solo lo que la academia no toca: el repertorio worship, la memoria, la banda.
 
 ## Mapa de carpetas
 
 ```
 okaeri/
-├── CLAUDE.md            ← contrato del agente (empezar por aquí)
-├── README.md           ← este archivo
-├── NOTAS.md            ← ideas y adiciones centralizadas
+├── CLAUDE.md                  ← contrato del agente (empezar por aquí)
+├── README.md · NOTAS.md
 │
-├── sistema/            ← EL MOTOR
-│   ├── manual_okaeri.md      ← principio rector + anti-muleta + qué NO hace
-│   ├── perfil/yo_musica.md     ← quién es el usuario (leer antes de proponer ruta)
-│   ├── ruta/ruta_inicial.md    ← ⭐ las primeras 8 semanas (la pieza clave)
-│   ├── herramientas/           ← rol de cada herramienta
-│   ├── referencia/             ← checklist de errores predecibles
-│   └── decisiones/             ← decisiones ya tomadas
+├── contexto/
+│   ├── plan_estudio/temario_guitarra.md   ← ⭐ EL MAPA (la pieza clave)
+│   └── okaeri-*.md            ← diseño original (era piano; principios vigentes)
 │
-├── contexto/           ← documentación de diseño (el QUÉ, CÓMO, CON QUÉ)
-├── practica/           ← registro diario + la fecha dura del profesor
-└── repertorio/         ← las canciones y su estado de memoria
+├── sistema/                   ← EL MOTOR
+│   ├── estado/estado_actual.md      ← ⚡ dónde estás (marcador + plan semanal + bloque)
+│   ├── prompts/integracion_academia_sistema.md  ← el temario manda, la clase alimenta
+│   ├── perfil/yo_musica.md          ← quién es el usuario
+│   ├── decisiones/                  ← por qué el sistema es como es
+│   ├── herramientas/ · referencia/ · manual_okaeri.md
+│
+├── fundamentos/               ← teoría y práctica por módulo, lado a lado
+│     m1/clase01_<tema>.md            (apunte — lejos de la guitarra)
+│     m1/clase01_practica_<tema>.md   (práctica — con la guitarra)
+├── repertorio/                ← las canciones y su estado de memoria
+├── practica/                  ← registro de sesiones, constancia, academia
+└── _archivo/piano/            ← la era piano (solo para reusar, nunca para operar)
 ```
 
 ## Cómo se usa
 
-1. **Cada día:** una sesión de práctica (30-45 min) siguiendo `sistema/ruta/ruta_inicial.md`. Se registra desde `practica/_plantillas/plantilla_sesion.md`. **No romper la cadena.**
-2. **Cada canción nueva:** se le crea una ficha desde `repertorio/_plantillas/plantilla_pieza.md` y se sigue su estado (`APRENDIENDO` → `TOCO-CON-AYUDA` → `TOCO-DE-MEMORIA-SOLO`).
-3. **La fecha dura del profesor** (`practica/00_indice.md`) **no se estira.** Es la salvaguarda contra el abandono.
+1. **Martes:** clase en la academia. Después, tres líneas al agente: qué se vio, qué tarea dejaron, qué no se entendió.
+2. **Los otros días:** sesiones de mínimo 15 min, 3-4 veces por semana. Primero la tarea del profesor, luego la sección del mapa que toca. El agente entrega un bloque completo y uno se va a tocar; **el silencio significa que estás tocando**.
+3. **Cada sesión se registra** en `practica/`. Una sesión puede partirse en días; `estado_actual.md` guarda dónde quedó.
+4. **Cada canción** tiene ficha en `repertorio/` y pasa por `APRENDIENDO` → `TOCO-CON-AYUDA` → `TOCO-DE-MEMORIA-SOLO`. Solo la última cuenta. **Una canción a la vez.**
 
 ## Estado
 
-**V1 — Cimientos.** Etapa habilitada: **Practicar**. Sin piezas todavía (nacen con la primera canción). App nueva a instalar: **Oído Perfecto**.
+**Rediseño 2026-08-28.** Marcador: Sesión 0 (diagnóstico) pendiente. Academia inicia 2026-09-01. Canción única: *No hay lugar más alto* (Miel San Marcos). Canciones de memoria: **0**.
 
 ---
 

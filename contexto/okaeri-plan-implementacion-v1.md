@@ -1,5 +1,7 @@
 # OKAERI — Plan de Implementación V1
 
+> ⚠️ **Documento de la era piano (2026-06).** Los **principios** (anti-muleta, tres capas, dimensiones, método manda) siguen vigentes; los **ejemplos, el instrumento y la implementación** están archivados. Lo vigente desde 2026-08-28: `contexto/plan_estudio/temario_guitarra.md` · `sistema/decisiones/decision_guitarra_academia_primero.md` · `decision_temario_mapa_cancion_vehiculo.md`. No reescrito a propósito (no sobre-construir).
+
 > Documento operativo para construir Okaeri desde cero.
 > Pensado para ejecutarse con un agente IA (Claude Code en terminal), espejando la arquitectura de TESLA y Oráculo.
 > **Documentos hermanos:** `okaeri-base.md` (el QUÉ y PORQUÉ) · `okaeri-metodologia.md` (el CÓMO practicar) · `okaeri-herramientas.md` (el CON QUÉ) · `okaeri-errores-comunes-musica.md` (la checklist preventiva). Este documento define el CÓMO construir y el ORDEN.

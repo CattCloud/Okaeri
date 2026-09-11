@@ -1,9 +1,12 @@
 #separator:tab
 #html:true
+#deck:Acordes Guitarra
 #notetype:Basic
-#deck:Acordes
-#columns:Frente	Reverso
-Do (C)	Do · Mi · Sol<br><img src="acorde-do.png">
-Fa (F)	Fa · La · Do<br><img src="acorde-fa.png">
-Sol (G)	Sol · Si · Re<br><img src="acorde-sol.png">
-Lam (Am)	La · Do · Mi<br><img src="acorde-lam.png">
+Do (C)	<img src="acorde-do.png">
+Re (D)	<img src="acorde-re.png">
+Mi (E)	<img src="acorde-mi.png">
+Sol (G)	<img src="acorde-sol.png">
+La (A)	<img src="acorde-la.png">
+Mim (Em)	<img src="acorde-mim.png">
+Lam (Am)	<img src="acorde-lam.png">
+Rem (Dm)	<img src="acorde-rem.png">

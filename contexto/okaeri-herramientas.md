@@ -1,5 +1,7 @@
 # OKAERI — Herramientas por Dimensión
 
+> ⚠️ **Documento de la era piano (2026-06).** Los **principios** (anti-muleta, tres capas, dimensiones, método manda) siguen vigentes; los **ejemplos, el instrumento y la implementación** están archivados. Lo vigente desde 2026-08-28: `contexto/plan_estudio/temario_guitarra.md` · `sistema/decisiones/decision_guitarra_academia_primero.md` · `decision_temario_mapa_cancion_vehiculo.md`. No reescrito a propósito (no sobre-construir).
+
 > **Propósito:** Definir *con qué* herramientas se ejecuta cada metodología, una vez fijado el método. Cierra la trilogía de documentos del sistema.
 > **Documentos hermanos:** `okaeri-base.md` (el QUÉ y PORQUÉ) · `okaeri-metodologia.md` (el CÓMO practicar) · `okaeri-errores-comunes-musica.md` (la checklist preventiva).
 > **Principio que lo gobierna:** la herramienta se elige *después* del método. El método manda; las herramientas lo sirven. Y la regla anti-muleta gobierna: ninguna herramienta se usa en modo "pista que cae".

@@ -1,35 +1,35 @@
 ---
 fecha: YYYY-MM-DD
-duracion_min:            # minutos reales tocados
+duracion_min:            # minutos reales con la guitarra
+sesion_n:                # número de sesión (0 = diagnóstico)
 sensacion: ""            # fluido | trabado | cansado | motivado | frustrado
 ---
 
-# Sesión — [fecha]
+# Sesión N — [fecha]
 
-> **Cómo usar:** llenar en ≤3 minutos justo después de tocar, en caliente. No buscar perfección — capturar lo esencial. Borrar los comentarios `<!-- -->` al llenar. Lo que no aplique se deja vacío. **Lo importante es no romper la cadena: una sesión registrada cada día.**
+> **Cómo usar:** llenar en ≤3 minutos justo después de tocar. No buscar perfección. Lo que no aplique, vacío. Una sesión puede partirse en dos días: se registra una vez, con la suma de minutos.
 
-## Qué se practicó
-<!-- Marca las dimensiones que tocaste hoy. No tienen que ser todas. -->
-- [ ] Técnica (calentamiento, postura)
-- [ ] Lectura — cifrado (acordes)
-- [ ] Lectura — pentagrama (dosis ligera)
-- [ ] Ritmo
-- [ ] Teoría aplicada
-- [ ] Oído (Oído Perfecto)
-- [ ] Repertorio (canción en proceso)
-
-## Pieza(s) trabajada(s) y avance
-<!-- Qué canción, qué fragmento, cómo va. Ej: "10,000 Reasons — coro, manos separadas, ya fluye la izquierda". -->
--
+## Qué se hizo
+<!-- Marca lo que tocaste hoy. -->
+- [ ] Afiné al inicio
+- [ ] **Tarea del profesor:** _(cuál)_
+- [ ] **Sección del mapa:** _(N.N — nombre)_
+- [ ] Drill Anki — acordes
+- [ ] Anki — oído
+- [ ] Canción en curso: _(fragmento)_
 
 ## Dónde me trabé
-<!-- El punto difícil concreto. Ej: "el cambio de Fa a Sol me corta el pulso". Esto alimenta el diagnóstico para el profesor. -->
+<!-- El punto difícil concreto. Ej: "el cambio Do→Sol me deja la 1ª cuerda muda". Alimenta el próximo ejercicio y lo que se le pregunta al profesor. -->
+-
+
+## Corrección del profesor (si hubo clase esta semana)
+<!-- Lo que el profesor corrigió del cuerpo/manos. Esto manda sobre cualquier apunte. -->
 -
 
 ## Errores notados
-<!-- ¿Caí en alguno de la checklist? (toqué de corrido, no usé manos separadas, busqué velocidad, mirar las manos...). Cruzar con sistema/referencia/errores-comunes-musica.md. -->
+<!-- ¿Caí en alguno de la checklist? (de corrido, sin chunking, buscando velocidad, mirando la mano, leyendo mientras toco...). Cruzar con sistema/referencia/errores-comunes-musica.md. -->
 -
 
 ## Sensación / motivación
-<!-- Una línea honesta. ¿Disfruté? ¿Me costó arrancar? ¿Sonó a música o a robot? Sirve para leer mi propio estado en el tiempo. -->
+<!-- Una línea honesta. ¿Sonó a música o a ejercicio? ¿Me costó arrancar? -->
 

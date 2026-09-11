@@ -1,83 +1,64 @@
 # 🛠️ Configuración de herramientas — Rol operativo
 
-> **Propósito:** resumen operativo de *con qué* se ejecuta cada cosa y *cuál es su rol*. Versión corta y accionable de `contexto/okaeri-herramientas.md`.
-> **Principio que gobierna:** la herramienta se elige *después* del método. El método manda; las apps son ejecutores. **Anti-muleta:** ninguna app en modo "pista que cae".
+> **Propósito:** con qué se ejecuta cada cosa y cuál es su rol. Versión corta de `contexto/okaeri-herramientas.md` (era piano; el modelo de 3 capas sigue vigente).
+> **Principio:** la herramienta se elige *después* del método. **Anti-muleta:** ninguna app en modo "pista que cae".
+> **Actualizado:** 2026-08-28 (guitarra).
 
 ---
 
 ## El modelo de 3 capas
 
-| Capa | Qué es | Cuándo se usa |
-|------|--------|---------------|
-| **1. La IA** (Claude Code) | El cerebro: arma la ruta, explica teoría, dirige la práctica, propone repertorio | Default para todo lo cognitivo |
-| **2. Markdown** | El sustrato: registro de práctica, índice de repertorio, estado, fuente única de verdad | Default para todo lo que se guarda |
-| **3. App / hardware** | Solo lo que las dos de arriba no pueden: producir sonido, dar feedback de notas, ver/oír | Solo si reduce fricción real e insustituible |
-
-> Una herramienta sube de capa solo si la de abajo no puede hacer el trabajo. El **insustituible que no es app** es el **profesor**, para lo físico.
+| Capa | Qué es | Cuándo |
+|---|---|---|
+| **1. La IA** (Claude Code) | El cerebro: mantiene el mapa, escribe apuntes y ejercicios, genera diagramas, dirige la semana | Default para lo cognitivo |
+| **2. Markdown** | El sustrato: temario, estado, registro, repertorio. Fuente única de verdad | Default para lo que se guarda |
+| **3. Instrumento / app / humano** | Lo que 1 y 2 no pueden: sonar, ver las manos, medir el pulso | Solo si es insustituible |
 
 ---
 
-## Footprint completo (una sola app nueva)
+## Footprint
 
 | Herramienta | Rol | ¿Nueva? | Regla clave |
-|-------------|-----|---------|-------------|
-| **IA (Claude Code)** | Dirige todo: ruta, teoría, lectura, oído, chunking, repertorio | No (stack) | Es el cerebro. Aquí se juega la calidad del sistema. |
-| **Markdown** | Registro de práctica + índice de repertorio con estados. Fuente única de verdad | No (stack) | Las apps ejecutan; el markdown manda. |
-| **Casio CT-X800 + MIDI** | El instrumento + feedback a apps + metrónomo integrado | No (ya se tiene) | El aprendizaje ocurre AQUÍ, no leyendo. |
-| **Yousician (modo sheet)** | Gimnasio de lectura y práctica de piezas | No (ya pagado) | ⚠️ **SOLO modo sheet/partitura. Nunca pista que cae.** |
-| **Oído Perfecto (Perfect Ear)** | Gimnasio de oído (+ refuerza ritmo y lectura) | **Sí — la única nueva** | Gratis / pago único. Acepta el Casio por MIDI. |
-| **Anki** | Drill de acordes por **recall** (nombre → recuerdas la forma → la tocas) | No (reusada de la constelación) | Frente = nombre; reverso = diagrama para verificar. Footprint nuevo = 0. |
-| **Metrónomo del Casio** | Ritmo | No (integrado) | Para calibrar el pulso, luego soltar. No vivir pegado a él. |
-| **YouTube / Spotify** | Referencias de postura e interpretación | No (ya se usa) | Postura (arranque) + cómo frasea el repertorio. |
-| **Profesor** | Técnica + interpretación (lo físico) | El ancla humana | Entra en la fecha dura. Insustituible. |
+|---|---|---|---|
+| **Guitarra clásica (nylon)** | El instrumento. Todo el aprendizaje real ocurre aquí | No (ya se tiene) | Se afina **cada vez** antes de tocar (`fundamentos/_consulta-instrumento.md`) |
+| **Capo** | Tocar en el tono de la grabación con formas abiertas, sin cejilla | **Sí — por comprar** | No es muleta: los dedos aprenden las formas reales. Equivale al Transpose del Casio |
+| **Afinador** (app o pinza) | Afinar | App gratuita | Un minuto al inicio de cada sesión |
+| **Metrónomo** (app) | Pulso | App gratuita | Se calibra y se suelta. No vivir pegado |
+| **Academia** (martes 8-10 pm, grupo de 4) | Técnica física en vivo, corrección del cuerpo, presentación de fin de nivel | **Sí** — desde 2026-09-01 | Cubre ~80% de la técnica. **No mueve el marcador del mapa.** Protocolo en `sistema/prompts/integracion_academia_sistema.md` |
+| **Anki — drill de acordes** | Recall: frente = nombre, tú formas, reverso verifica | No (reusada) | Mazo por **reconstruir con formas de guitarra** en M1. Método en `sistema/decisiones/decision_acordes_recall_anki.md` |
+| **Anki — mazo de oído** | Mayor/menor, intervalos | No (ya existe) | `sistema/herramientas/anki-oido/`. Es de música, sirve igual para guitarra |
+| **YouTube / Spotify** | La grabación de cada canción; referencia de interpretación | No | Tocar *sobre* la grabación no es muleta: el oído manda, no una pista que cae |
+| **Cifrados públicos** (Cifra Club, La Cuerda, Ultimate Guitar) | Leer el cifrado de una canción | No | Varían entre sí: se fija **uno** por canción en su ficha. Se usan mientras se aprende; el test es sin ellos |
+| **IA (Claude Code)** | Mantiene el mapa · escribe apuntes y ejercicios · **genera los diagramas** (SVG) · arma la semana · registra | No (stack) | Límite honesto: no ve las manos ni oye. Eso es de la academia |
+| **Profesor** | Lo físico | El ancla humana | Si corrige el cuerpo, eso manda sobre cualquier apunte |
+
+**Fuera del foco:** Casio CT-X800 (era piano) · Yousician (pagado; si algún día se usa para guitarra, **solo modo sheet**) · Oído Perfecto (reemplazada por Anki en 2026-07).
 
 ---
 
 ## Cómo se usa cada una
 
-### Yousician — en modo sheet (la regla crítica)
-- **Rol:** gimnasio de práctica de lectura y de piezas. Es el **Anki de Okaeri**: ejecutor, no cerebro.
-- ⚠️ **La trampa:** Yousician permite quedarse en las muletas (notas que caen, colores) **indefinidamente**. Tiene 4 notaciones, incluida **partitura tradicional sin colores ni nombres** — esa es la que se usa.
-- **La disciplina la pone el usuario, no la app.** El sistema lo recuerda cada vez que se mencione Yousician.
-- **El MIDI del Casio** le da feedback de notas a la app. Pero recordar: **Yousician NO mide el sostenido de las notas**, así que la interpretación no se le delega.
-
-### Oído Perfecto (Perfect Ear) — la única app nueva
-- **Rol:** ejecutor del entrenamiento auditivo (reproduce sonidos, evalúa al instante, registra estadísticas) — algo que la IA por texto no hace bien.
-- **La IA dirige qué entrenar** ("esta semana, mayor vs. menor; configura así"); la app ejecuta; el markdown guarda el avance.
-- **Por qué se ganó el lugar:** personalización real (aislar los sonidos que cuestan, crear ejercicios propios) que Yousician no permite. Pago único, versión gratuita generosa, en español, acepta MIDI del Casio.
-- ⚠️ **Honestidad:** reseñas reportan crashes ocasionales (sobre todo iOS) y una sección de ritmo algo confusa. Para el núcleo (intervalos, acordes, escalas de oído) funciona bien.
-
 ### Anki — drill de acordes por recall
-- **Rol:** ejecutor del entrenamiento de acordes por **recall activo**. Es Anki real (distinto de la metáfora "el Anki de Okaeri" que arriba se usa para Yousician). Decisión completa en `sistema/decisiones/decision_acordes_recall_anki.md`.
-- **La regla anti-muleta:** **frente = el nombre** del acorde ("Do", "Fa", "Lam"); recuerdas la forma y la **tocas en el Casio**; el **reverso = el diagrama** (reusa los de `fundamentos/`), solo para verificar. Nunca el frente con las teclas a apretar — eso sería copiar, no recordar.
-- **Dos modos:** (1) **repaso espaciado** (modo normal, para que las formas se queden); (2) **Custom Study / mazo filtrado + Auto Advance** (cronometrado, barajado, solo los acordes elegidos) para la **fluidez de cambios**.
-- **Velocidad:** el cronómetro arranca **generoso**; se acorta solo cuando las formas salen limpias (*lento es rápido*).
-- **Reparto:** la **IA arma el mazo** (con los diagramas), **Anki ejecuta**, el **markdown manda** (qué acordes se dominan se refleja en repertorio/práctica).
-- 🔭 **Evolución futura (no ahora):** una app que **valide por MIDI** lo que tocas (auto-chequeo). Se evaluará más adelante si el usuario quiere; por ahora Anki + autoverificación honesta basta y mantiene el footprint mínimo.
+- **Frente = el nombre** ("Sol", "Mim"). Recuerdas la forma y **la tocas en la guitarra**. **Reverso = el diagrama** (generado por el agente), solo para verificar. Nunca al revés.
+- **Dos modos:** (1) repaso espaciado normal, para que las formas se queden; (2) **mazo filtrado + avance automático** (barajado, cronometrado, sin reprogramar) para la fluidez de cambios — M2.
+- **Cronómetro generoso primero.** Se acorta solo cuando las formas salen limpias.
+- **Paso a paso del mazo filtrado (probado 2026-07, sigue igual):** *Herramientas → Crear mazo filtrado* · búsqueda `deck:Acordes` · **desmarcar "Reprogramar las tarjetas según mis respuestas"** · orden aleatorio · construir. En estudio: *⋮ Más → Avance automático* (3 s pregunta / 1 s respuesta; subir si queda corto). Al terminar: **R** (Reconstruir) para otra vuelta.
 
-#### 🔁 Cómo correr el drill de fluidez (paso a paso, probado 2026-07)
-> El repaso normal del mazo **"Acordes"** programa las tarjetas a días de distancia (por eso a veces dice *"¡Finalizaste el mazo!"* — es correcto, es el modo memoria). Para **drillear los 4 acordes ahora, barajados y cronometrados**, se usa un **mazo filtrado** aparte:
-> 1. **Herramientas → Crear mazo filtrado.** Búsqueda: `deck:Acordes`. **Desmarcar "Reprogramar las tarjetas según mis respuestas"** (así el drill NO ensucia el calendario del repaso espaciado). Orden: **Aleatorio**. Construir. *(Ya creado: mazo **"Acordes Auto"**.)*
-> 2. **Avance automático:** dentro del estudio → **⋮ Más → Avance automático**. Tiempos en el preset **"Acordes (drill)"**: **3 s** para recordar+tocar / **1 s** para verificar (ajustables por AnkiConnect; subir si 3 s queda corto para tocar la forma — *lento es rápido*).
-> 3. **Bucle:** Anki no cicla infinito solo. Al terminar los 4 → tecla **R (Reconstruir)** y se rellenan. Reconstruir infinitas veces no daña nada porque "Reprogramar" está desmarcado.
-> - **Config vía AnkiConnect** (Anki abierto, `http://127.0.0.1:8765`): los tiempos viven en `secondsToShowQuestion` / `secondsToShowAnswer` del preset; se leen/guardan con `getDeckConfig` / `saveDeckConfig`.
+### Anki — oído
+- `sistema/herramientas/anki-oido/README.md`. Submazo 1 (mayor/menor) desde M1; submazo 2 (intervalos) desde M5. 5 min, responder en voz alta **antes** de destapar.
 
-### El Casio CT-X800
-- **Instrumento principal.** Todo el aprendizaje real ocurre aquí.
-- **MIDI:** conecta a la tablet/laptop para que Yousician y Oído Perfecto validen notas.
-- **Metrónomo integrado:** se usa para el ritmo. Cero apps nuevas para esto.
+### El capo
+- Se pone justo **detrás** del traste (pegado a la barrita, lado de la pala), recto, con presión suficiente para que ninguna cuerda zumbe. Se explica en M4 (4.1).
 
-### La IA (Claude Code) — donde está el valor real
-- **La dimensión donde más aporta: teoría aplicada** (por qué una canción suena así, qué progresión usa, por qué emociona).
-- Arma y afina la **ruta**, propone **repertorio al nivel correcto** (evitando el error 5.4: piezas muy difíciles), ayuda a **trocear** (chunking), explica la estructura para memorizar.
-- **Límite honesto:** no ve las manos ni oye cómo se toca. La técnica física y la interpretación las corrige el **profesor**.
+### Los diagramas (los genera la IA)
+- SVG por código, reglas en `fundamentos/_estilo-visual.md`. Los diagramas de **acorde** (lo que se produce de memoria) van en el **apunte** y en el **reverso** de Anki — nunca en la práctica. La **práctica** lleva solo el gráfico de *qué practicar* (TAB del ejercicio, figuras rítmicas).
 
 ---
 
-## Reglas que gobiernan el uso
+## Reglas
 
-1. **Anti-muleta:** Yousician solo en modo sheet; ninguna app en modo "pista que cae".
-2. **El método dirige las apps:** Oído Perfecto y Yousician son ejecutores; Okaeri/IA decide qué practicar y los configura.
-3. **Markdown es siempre la fuente de verdad:** las apps ejecutan, pero el registro de práctica y el índice de repertorio viven en markdown.
+1. **Anti-muleta:** ninguna app en modo pista que cae. La práctica nunca trae el diagrama de lo que debe salir de memoria.
+2. **El temario manda; la academia alimenta; la IA sostiene.**
+3. **Markdown es la fuente de verdad.** La academia enseña, las apps ejecutan, el `.md` registra.
 
-> **La pieza que de verdad importa no es ninguna app.** Es (1) la IA orquestando bien la ruta y la teoría, y (2) el profesor corrigiendo el cuerpo a tiempo. Una ruta bien armada y un profesor puntual valen más que cualquier app.
+> **La pieza que de verdad importa no es ninguna app.** Es (1) el mapa bien armado, (2) el martes con el profesor, y (3) el hábito mínimo de 15 minutos.

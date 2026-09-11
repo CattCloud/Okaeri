@@ -1,5 +1,7 @@
 # OKAERI — Metodología de Práctica
 
+> ⚠️ **Documento de la era piano (2026-06).** Los **principios** (anti-muleta, tres capas, dimensiones, método manda) siguen vigentes; los **ejemplos, el instrumento y la implementación** están archivados. Lo vigente desde 2026-08-28: `contexto/plan_estudio/temario_guitarra.md` · `sistema/decisiones/decision_guitarra_academia_primero.md` · `decision_temario_mapa_cancion_vehiculo.md`. No reescrito a propósito (no sobre-construir).
+
 > **Propósito:** Definir *cómo* se practica cada una de las 7 dimensiones del aprendizaje musical (piano) en Okaeri, de forma independiente de las herramientas. El método se fija primero; las herramientas se cuelgan después.
 > **Documento hermano:** `okaeri-base.md` (el QUÉ y el PORQUÉ).
 > **Estado:** Metodología definida ✅ · Herramientas por definir ⬜ · Implementación pendiente ⬜.

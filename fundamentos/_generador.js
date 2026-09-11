@@ -1,123 +1,155 @@
+// Generador de diagramas de acorde (SVG) — Okaeri, era guitarra.
+// Node puro, sin dependencias:  node _generador.js   → escribe los .svg en m1/img/
+// Convenciones: fundamentos/_estilo-visual.md §3 (vertical, 6ª a la izquierda, colores por dedo).
+// Rasterizar a PNG: sharp con density 200 (ver _estilo-visual.md §5).
+
 const fs = require('fs');
-const OUT = 'C:/cerebro/StayHere/fundamentos/img/';
-const NAMES = ['Do','Re','Mi','Fa','Sol','La','Si'];
-const FCOLOR = {1:'#E2342E',2:'#EA7317',3:'#16A34A',4:'#1565C0',5:'#8E2DE2'};
-const blackAfter = i => [0,1,3,4,5].includes(((i%7)+7)%7);
-const FONT = 'font-family="Arial, Helvetica, sans-serif"';
+const path = require('path');
 
-function keyboard(cfg){
-  const {N,left,top,ww=40,wh=150,bw=24,bh=95} = cfg;
-  const wf=cfg.whiteFill||{}, bf=cfg.blackFill||{}, wn=cfg.whiteName||{},
-        red=cfg.redKey||{}, circ=cfg.circ||{};
-  let s='';
-  for(let i=0;i<N;i++){
-    const x=left+i*ww; const fill=wf[i]||'#ffffff';
-    s+=`<rect x="${x}" y="${top}" width="${ww}" height="${wh}" rx="2" fill="${fill}" stroke="#333333" stroke-width="1.8"/>`;
-  }
-  for(let i=0;i<N-1;i++){
-    if(!blackAfter(i)) continue;
-    const x=left+(i+1)*ww-bw/2; const fill=bf[i]||'#1a1a1a';
-    s+=`<rect x="${x}" y="${top}" width="${bw}" height="${bh}" rx="2" fill="${fill}"/>`;
-  }
-  (red.white||[]).forEach(i=>{ const x=left+i*ww;
-    s+=`<rect x="${x}" y="${top}" width="${ww}" height="${wh}" rx="2" fill="none" stroke="#E2342E" stroke-width="4"/>`; });
-  (red.black||[]).forEach(i=>{ const x=left+(i+1)*ww-bw/2;
-    s+=`<rect x="${x}" y="${top}" width="${bw}" height="${bh}" rx="2" fill="none" stroke="#E2342E" stroke-width="3.5"/>`; });
-  for(const i in wn){ const x=left+(+i)*ww+ww/2; const o=wn[i];
-    s+=`<text x="${x}" y="${top+wh-12}" text-anchor="middle" font-size="14" font-weight="${o.weight||'normal'}" fill="${o.color||'#111'}" ${FONT}>${NAMES[((+i)%7+7)%7]}</text>`; }
-  if(circ.white) for(const i in circ.white){ const o=circ.white[i]; const cx=left+(+i)*ww+ww/2; const cy=top+wh-40;
-    s+=`<circle cx="${cx}" cy="${cy}" r="12" fill="${o.color}"/><text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff" ${FONT}>${o.n}</text>`; }
-  if(circ.black) for(const i in circ.black){ const o=circ.black[i]; const cx=left+(+i+1)*ww; const cy=top+bh-18;
-    s+=`<circle cx="${cx}" cy="${cy}" r="11" fill="${o.color}" stroke="#fff" stroke-width="1.5"/><text x="${cx}" y="${cy+5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff" ${FONT}>${o.n}</text>`; }
-  if(cfg.blackNames) for(const i in cfg.blackNames){ const a=cfg.blackNames[i][0], b=cfg.blackNames[i][1]; const cx=left+(+i+1)*ww;
-    s+=`<text x="${cx}" y="${top-22}" text-anchor="middle" font-size="13" font-weight="bold" fill="#333333" ${FONT}>${a}</text>`+
-       `<text x="${cx}" y="${top-7}" text-anchor="middle" font-size="13" fill="#888888" ${FONT}>${b}</text>`; }
-  return s;
-}
-const svg=(w,h,inner)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" ${FONT}><rect x="0" y="0" width="${w}" height="${h}" fill="#ffffff"/>${inner}</svg>\n`;
-const T=(x,y,t,o={})=>`<text x="${x}" y="${y}" text-anchor="${o.a||'middle'}" font-size="${o.s||16}" font-weight="${o.w||'normal'}" fill="${o.f||'#333'}" ${FONT}>${t}</text>`;
+const COLOR_DEDO = { 1: '#d23333', 2: '#e8820c', 3: '#2e9e44', 4: '#2b6cb0' };
+const FONT = 'font-family="Segoe UI, Arial, sans-serif"';
 
-/* 03-B calentamiento */
-{
-  const ww=44, N=8, top=80, W=560, left=(W-N*ww)/2, cx=W/2;
-  let inner=T(cx,34,'Posición de la mano derecha: el calentamiento de 5 dedos',{s:15,w:'bold'});
-  inner+=keyboard({N,left,top,ww,
-    whiteName:{0:{weight:'bold'},1:{weight:'bold'},2:{weight:'bold'},3:{weight:'bold'},4:{weight:'bold'},5:{color:'#999'},6:{color:'#999'},7:{color:'#999'}},
-    circ:{white:{0:{n:1,color:FCOLOR[1]},1:{n:2,color:FCOLOR[2]},2:{n:3,color:FCOLOR[3]},3:{n:4,color:FCOLOR[4]},4:{n:5,color:FCOLOR[5]}}}});
-  inner+=T(cx,262,'El pulgar (1) en Do central; 2-3-4-5 caen en Re-Mi-Fa-Sol. Es una posición, no un orden.',{s:13,f:'#666'});
-  fs.writeFileSync(OUT+'03-calentamiento.svg', svg(W,285,inner));
-}
-/* 04-A forma de Do mayor */
-{
-  const left=70, top=80, ww=46, N=8, right=left+N*ww, W=right+left, cx=(left+right)/2;
-  let inner=T(cx,34,'Do mayor = Do + Mi + Sol (dedos 1-3-5)',{s:16,w:'bold'});
-  inner+=keyboard({N,left,top,ww,
-    whiteFill:{0:'#16A34A',2:'#16A34A',4:'#16A34A'},
-    whiteName:{0:{color:'#fff',weight:'bold'},2:{color:'#fff',weight:'bold'},4:{color:'#fff',weight:'bold'},1:{color:'#bbb'},3:{color:'#bbb'}},
-    circ:{white:{0:{n:1,color:'#0b6b32'},2:{n:3,color:'#0b6b32'},4:{n:5,color:'#0b6b32'}}}});
-  inner+=T(cx,262,'Se salta una tecla blanca entre cada nota (Re y Fa quedan fuera).',{s:13,f:'#666'});
-  fs.writeFileSync(OUT+'04-do-mayor.svg', svg(W,285,inner));
-}
-/* 04-B tres acordes mayores */
-{
-  const ww=30, top=58, N=9, wh=110, bh=68, kbW=N*ww, gap=30, m=30;
-  const lefts=[m, m+kbW+gap, m+2*(kbW+gap)];
-  const W=lefts[2]+kbW+m, cx=W/2;
-  const mk=(left,title,notes)=>{ const wf={},wn={}; notes.forEach(i=>{wf[i]='#16A34A';wn[i]={color:'#fff',weight:'bold'};});
-    return T(left+kbW/2,48,title,{s:14,w:'bold',f:'#16A34A'})+keyboard({N,left,top,ww,wh,bh,whiteFill:wf,whiteName:wn}); };
-  let inner=T(cx,28,'La misma forma, movida: tus tres acordes mayores',{s:16,w:'bold'});
-  inner+=mk(lefts[0],'Do mayor',[0,2,4]);
-  inner+=mk(lefts[1],'Fa mayor',[3,5,7]);
-  inner+=mk(lefts[2],'Sol mayor',[4,6,8]);
-  fs.writeFileSync(OUT+'04-tres-acordes.svg', svg(W,205,inner));
-}
-/* 04-C mayor vs menor */
-{
-  const ww=40, top=78, N=8, wh=150, kbW=N*ww, m=50, gap=60;
-  const left1=m, left2=m+kbW+gap, W=left2+kbW+m, cx=W/2;
-  let inner=T(cx,32,'Mayor vs. menor: una sola nota cambia',{s:16,w:'bold'});
-  inner+=T(left1+kbW/2,62,'Do mayor — alegre',{s:14,w:'bold'});
-  inner+=keyboard({N,left:left1,top,ww,wh,
-    whiteFill:{0:'#1565C0',2:'#1565C0',4:'#1565C0'},
-    whiteName:{0:{color:'#fff',weight:'bold'},2:{color:'#fff',weight:'bold'},4:{color:'#fff',weight:'bold'}},
-    redKey:{white:[2]}});
-  inner+=T(left2+kbW/2,62,'Do menor — triste / emotivo',{s:14,w:'bold'});
-  inner+=keyboard({N,left:left2,top,ww,wh,
-    whiteFill:{0:'#1565C0',4:'#1565C0'}, blackFill:{1:'#1565C0'},
-    whiteName:{0:{color:'#fff',weight:'bold'},4:{color:'#fff',weight:'bold'}},
-    redKey:{black:[1]}});
-  inner+=T(cx,262,'La nota roja baja un poco: Mi → Mi♭. El menor es el color emotivo (como el Lam de tu canción).',{s:13,f:'#666'});
-  fs.writeFileSync(OUT+'04-mayor-vs-menor.svg', svg(W,285,inner));
-}
-/* 01: nombres de las teclas negras (sostenidos y bemoles) */
-{
-  const SH='♯', FL='♭';
-  const ww=54, top=120, N=8, wh=150, W=700, left=(W-N*ww)/2, cx=W/2;
-  const wn={}; for(let i=0;i<N;i++) wn[i]={};
-  let inner=T(cx,34,'Las teclas negras tienen dos nombres',{s:16,w:'bold'});
-  inner+=T(cx,58,SH+' sostenido = sube (negra de la derecha)        '+FL+' bemol = baja (negra de la izquierda)',{s:13,f:'#555'});
-  inner+=keyboard({N,left,top,ww,wh,bw:30,bh:104, whiteName:wn,
-    blackNames:{0:['Do'+SH,'Re'+FL],1:['Re'+SH,'Mi'+FL],3:['Fa'+SH,'Sol'+FL],4:['Sol'+SH,'La'+FL],5:['La'+SH,'Si'+FL]}});
-  inner+=T(cx,top+wh+34,'La misma negra tiene dos nombres. Ej.: Mi'+FL+' = Re'+SH+' = la negra a la izquierda de Mi.',{s:13,f:'#666'});
-  fs.writeFileSync(OUT+'01-negras-nombres.svg', svg(W,top+wh+55,inner));
-}
-/* Tarjetas de acorde para Anki (reverso): Do, Fa, Sol, Lam */
-{
-  const chords=[
-    {file:'acorde-do', name:'Do mayor', notes:[0,2,4], sub:'Do · Mi · Sol'},
-    {file:'acorde-fa', name:'Fa mayor', notes:[3,5,7], sub:'Fa · La · Do'},
-    {file:'acorde-sol',name:'Sol mayor',notes:[4,6,8], sub:'Sol · Si · Re'},
-    {file:'acorde-lam',name:'La menor (Lam)', notes:[5,7,9], sub:'La · Do · Mi'},
-  ];
-  const fingers=[1,3,5];
-  const ww=40, top=72, N=10, wh=150, left=30, W=left*2+N*ww, cx=W/2;
-  for(const c of chords){
-    const wf={}, wn={}, cw={};
-    c.notes.forEach((i,k)=>{ wf[i]='#16A34A'; wn[i]={color:'#fff',weight:'bold'}; cw[i]={n:fingers[k],color:'#0b6b32'}; });
-    let inner=T(cx,38,c.name,{s:20,w:'bold'});
-    inner+=keyboard({N,left,top,ww,wh,whiteFill:wf,whiteName:wn,circ:{white:cw}});
-    inner+=T(cx,top+wh+30,c.sub+'   (dedos 1-3-5)',{s:15,f:'#444'});
-    fs.writeFileSync(OUT+c.file+'.svg', svg(W,top+wh+50,inner));
+// frets/fingers: arrays de 6 (de la 6ª a la 1ª). fret: -1 = X, 0 = al aire, n = traste. finger: 0 = ninguno.
+// Opcionales: startFret (primer traste visible, >1 = sin cejuela gruesa y con etiqueta),
+//             barre {fret, from, to, finger} (cejilla: from/to = índice de cuerda 0..5).
+const ACORDES = [
+  { file: 'acorde-do',  name: 'Do (C)',   frets: [-1, 3, 2, 0, 1, 0], fingers: [0, 3, 2, 0, 1, 0] },
+  { file: 'acorde-re',  name: 'Re (D)',   frets: [-1, -1, 0, 2, 3, 2], fingers: [0, 0, 0, 1, 3, 2] },
+  { file: 'acorde-mi',  name: 'Mi (E)',   frets: [0, 2, 2, 1, 0, 0],  fingers: [0, 2, 3, 1, 0, 0] },
+  { file: 'acorde-sol', name: 'Sol (G)',  frets: [3, 2, 0, 0, 3, 3],  fingers: [2, 1, 0, 0, 3, 4] },
+  { file: 'acorde-la',  name: 'La (A)',   frets: [-1, 0, 2, 2, 2, 0], fingers: [0, 0, 1, 2, 3, 0] },
+  { file: 'acorde-mim', name: 'Mim (Em)', frets: [0, 2, 2, 0, 0, 0],  fingers: [0, 2, 3, 0, 0, 0] },
+  { file: 'acorde-lam', name: 'Lam (Am)', frets: [-1, 0, 2, 2, 1, 0], fingers: [0, 0, 2, 3, 1, 0] },
+  { file: 'acorde-rem', name: 'Rem (Dm)', frets: [-1, -1, 0, 2, 3, 1], fingers: [0, 0, 0, 2, 3, 1] },
+];
+
+// Variantes ilustrativas (para apuntes; NO van al mazo Anki).
+const VARIANTES = [
+  { file: 'acorde-sol-3dedos', name: 'Sol (G)', frets: [3, 2, 0, 0, 0, 3], fingers: [2, 1, 0, 0, 0, 3] },
+  { file: 'acorde-re-alt', name: 'Re (D)', frets: [-1, -1, 0, 2, 3, 2], fingers: [0, 0, 0, 2, 3, 1] },
+  { file: 'acorde-do-traste3', name: 'Do (C)', startFret: 3, frets: [-1, 3, 5, 5, 5, 3], fingers: [0, 1, 2, 3, 4, 1], barre: { fret: 3, from: 1, to: 5, finger: 1 } },
+  { file: 'acorde-do-traste8', name: 'Do (C)', startFret: 8, frets: [8, 10, 10, 9, 8, 8], fingers: [1, 3, 4, 2, 1, 1], barre: { fret: 8, from: 0, to: 5, finger: 1 } },
+];
+
+// Geometría (canvas 240×292): nombre arriba, X/O, cejuela, 4 trastes, números de cuerda abajo.
+const X0 = 60, DX = 28;            // cuerdas: x = 60..200 (6ª a la izquierda)
+const Y_NAME = 32, Y_XO = 56, Y_NUT = 66, DY = 48, NFRETS = 4;
+const W = 240, H = 292;
+
+function xCuerda(i) { return X0 + i * DX; }           // i: 0 = 6ª … 5 = 1ª
+function yTraste(f) { return Y_NUT + (f - 0.5) * DY; } // centro del traste f
+
+function chordSVG({ name, frets, fingers, startFret = 1, barre = null }) {
+  const rel = f => f - startFret + 1; // traste absoluto → fila visible
+  const p = [];
+  p.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" ${FONT}>`);
+  p.push(`<rect width="${W}" height="${H}" fill="#ffffff"/>`);
+  p.push(`<text x="${W / 2}" y="${Y_NAME}" text-anchor="middle" font-size="20" font-weight="bold" fill="#111111">${name}</text>`);
+  // cejuela (solo si el diagrama empieza en el traste 1) + trastes
+  if (startFret === 1) {
+    p.push(`<rect x="${X0 - 1}" y="${Y_NUT - 5}" width="${5 * DX + 2}" height="5" fill="#111111"/>`);
+  } else {
+    p.push(`<line x1="${X0}" y1="${Y_NUT}" x2="${X0 + 5 * DX}" y2="${Y_NUT}" stroke="#999999" stroke-width="1.5"/>`);
+    p.push(`<text x="${X0 - 14}" y="${yTraste(1) + 5}" text-anchor="end" font-size="14" font-weight="bold" fill="#888888">${startFret}</text>`);
   }
+  for (let f = 1; f <= NFRETS; f++)
+    p.push(`<line x1="${X0}" y1="${Y_NUT + f * DY}" x2="${X0 + 5 * DX}" y2="${Y_NUT + f * DY}" stroke="#999999" stroke-width="1.5"/>`);
+  // cuerdas
+  for (let i = 0; i < 6; i++)
+    p.push(`<line x1="${xCuerda(i)}" y1="${Y_NUT}" x2="${xCuerda(i)}" y2="${Y_NUT + NFRETS * DY}" stroke="#333333" stroke-width="${2.6 - i * 0.25}"/>`);
+  // cejilla (barre)
+  if (barre) {
+    const y = yTraste(rel(barre.fret));
+    const xa = xCuerda(barre.from), xb = xCuerda(barre.to);
+    p.push(`<rect x="${xa - 11}" y="${y - 11}" width="${xb - xa + 22}" height="22" rx="11" fill="${COLOR_DEDO[barre.finger]}"/>`);
+    p.push(`<text x="${(xa + xb) / 2}" y="${y + 5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">${barre.finger}</text>`);
+  }
+  // X / O / puntos
+  for (let i = 0; i < 6; i++) {
+    const x = xCuerda(i), fret = frets[i], dedo = fingers[i];
+    if (fret === -1) {
+      p.push(`<text x="${x}" y="${Y_XO}" text-anchor="middle" font-size="16" font-weight="bold" fill="#888888">✕</text>`);
+    } else if (fret === 0) {
+      p.push(`<circle cx="${x}" cy="${Y_XO - 5}" r="7" fill="none" stroke="#111111" stroke-width="2"/>`);
+    } else if (barre && fret === barre.fret && i >= barre.from && i <= barre.to) {
+      // cuerda cubierta por la cejilla: ya dibujada
+    } else {
+      const color = COLOR_DEDO[dedo] || '#111111';
+      p.push(`<circle cx="${x}" cy="${yTraste(rel(fret))}" r="12" fill="${color}"/>`);
+      if (dedo) p.push(`<text x="${x}" y="${yTraste(rel(fret)) + 5}" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">${dedo}</text>`);
+    }
+  }
+  // números de cuerda
+  for (let i = 0; i < 6; i++)
+    p.push(`<text x="${xCuerda(i)}" y="${Y_NUT + NFRETS * DY + 18}" text-anchor="middle" font-size="11" fill="#aaaaaa">${6 - i}ª</text>`);
+  p.push('</svg>');
+  return p.join('\n');
 }
-console.log('OK keyboards');
+
+// Diagrama anatómico: un acorde real (Lam) + etiquetas de qué significa cada cosa.
+function anatomiaSVG() {
+  const base = chordSVG(ACORDES.find(a => a.file === 'acorde-lam'))
+    .replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')
+    .replace('<rect width="240" height="292" fill="#ffffff"/>', '');
+  const L = [];
+  L.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" ${FONT}>`);
+  L.push(`<rect width="620" height="300" fill="#ffffff"/>`);
+  L.push(`<g>${base}</g>`);
+  const label = (y, txt) => L.push(`<text x="255" y="${y}" font-size="13.5" fill="#333333">${txt}</text>`);
+  label(58, '✕ = esta cuerda NO se toca · ○ = se toca al aire (sin pisar)');
+  label(78, 'La barra gruesa de arriba es la cejuela (el traste 0).');
+  label(120, 'Punto = dónde pisa un dedo. El número dice CUÁL dedo:');
+  const dedos = [['1', 'índice'], ['2', 'medio'], ['3', 'anular'], ['4', 'meñique']];
+  dedos.forEach(([n, nom], k) => {
+    const x = 265 + k * 88;
+    L.push(`<circle cx="${x}" cy="146" r="10" fill="${COLOR_DEDO[n]}"/>`);
+    L.push(`<text x="${x}" y="150" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">${n}</text>`);
+    L.push(`<text x="${x + 14}" y="150" font-size="12" fill="#333333">${nom}</text>`);
+  });
+  label(190, 'Izquierda = 6ª cuerda (la gruesa) · derecha = 1ª (la fina).');
+  label(210, 'Es la guitarra vista de frente, parada.');
+  label(252, 'Se lee: pisa lo marcado, y toca SOLO las cuerdas sin ✕.');
+  L.push('</svg>');
+  return L.join('\n');
+}
+
+// Hoja de repaso imprimible: los 8 acordes en una sola imagen (A4 apaisado).
+function hoja8SVG() {
+  const strip = (a) => chordSVG(a).replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')
+    .replace(`<rect width="${W}" height="${H}" fill="#ffffff"/>`, '');
+  const by = f => ACORDES.find(a => a.file === f);
+  const mayores = ['acorde-do', 'acorde-re', 'acorde-mi', 'acorde-sol', 'acorde-la'].map(by);
+  const menores = ['acorde-mim', 'acorde-lam', 'acorde-rem'].map(by);
+  const L = [];
+  L.push(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 860" ${FONT}>`);
+  L.push(`<rect width="1240" height="860" fill="#ffffff"/>`);
+  L.push(`<text x="620" y="42" text-anchor="middle" font-size="26" font-weight="bold" fill="#111111">Los 8 acordes abiertos — Básico 1</text>`);
+  L.push(`<text x="30" y="95" font-size="17" font-weight="bold" fill="#555555">MAYORES</text>`);
+  mayores.forEach((a, i) => L.push(`<g transform="translate(${20 + i * 242}, 100) scale(0.97)">${strip(a)}</g>`));
+  L.push(`<text x="30" y="455" font-size="17" font-weight="bold" fill="#555555">MENORES</text>`);
+  menores.forEach((a, i) => L.push(`<g transform="translate(${20 + i * 242}, 460) scale(0.97)">${strip(a)}</g>`));
+  // leyenda en el espacio libre de la fila 2
+  const lx = 20 + 3 * 242 + 30, ly = 560;
+  L.push(`<text x="${lx}" y="${ly}" font-size="16" font-weight="bold" fill="#111111">Cómo se lee</text>`);
+  const dedos = [['1', 'índice'], ['2', 'medio'], ['3', 'anular'], ['4', 'meñique']];
+  dedos.forEach(([n, nom], k) => {
+    const y = ly + 32 + k * 32;
+    L.push(`<circle cx="${lx + 12}" cy="${y - 5}" r="11" fill="${COLOR_DEDO[n]}"/>`);
+    L.push(`<text x="${lx + 12}" y="${y}" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">${n}</text>`);
+    L.push(`<text x="${lx + 32}" y="${y}" font-size="14" fill="#333333">${nom}</text>`);
+  });
+  L.push(`<text x="${lx}" y="${ly + 168}" font-size="14" fill="#333333">○ = cuerda al aire · ✕ = no se toca</text>`);
+  L.push(`<text x="${lx}" y="${ly + 192}" font-size="14" fill="#333333">Barra gruesa = cejuela (traste 0)</text>`);
+  L.push(`<text x="${lx + 190}" y="${ly + 32}" font-size="14" fill="#555555" font-style="italic">Hoja de repaso — se mira</text>`);
+  L.push(`<text x="${lx + 190}" y="${ly + 52}" font-size="14" fill="#555555" font-style="italic">para verificar, no mientras</text>`);
+  L.push(`<text x="${lx + 190}" y="${ly + 72}" font-size="14" fill="#555555" font-style="italic">se toca.</text>`);
+  L.push('</svg>');
+  return L.join('\n');
+}
+
+const OUT = path.join(__dirname, 'm1', 'img');
+fs.mkdirSync(OUT, { recursive: true });
+for (const a of [...ACORDES, ...VARIANTES]) fs.writeFileSync(path.join(OUT, a.file + '.svg'), chordSVG(a));
+fs.writeFileSync(path.join(OUT, 'clase02-anatomia-diagrama.svg'), anatomiaSVG());
+fs.writeFileSync(path.join(OUT, 'hoja-8-acordes.svg'), hoja8SVG());
+console.log(`ok: ${ACORDES.length} acordes + ${VARIANTES.length} variantes + anatomía → ${OUT}`);

@@ -1,5 +1,7 @@
 # OKAERI — Errores comunes del aprendizaje musical (checklist de detección)
 
+> ⚠️ **Documento de la era piano (2026-06).** Los **principios** (anti-muleta, tres capas, dimensiones, método manda) siguen vigentes; los **ejemplos, el instrumento y la implementación** están archivados. Lo vigente desde 2026-08-28: `contexto/plan_estudio/temario_guitarra.md` · `sistema/decisiones/decision_guitarra_academia_primero.md` · `decision_temario_mapa_cancion_vehiculo.md`. No reescrito a propósito (no sobre-construir).
+
 > **Propósito:** Comportamiento preventivo del sistema. Esta lista contiene los errores *predecibles* que comete casi todo principiante de piano/música. Okaeri la usa de forma **proactiva**: cuando arma la ruta, genera ejercicios o registra la práctica, vigila que el usuario no caiga en estos patrones.
 > **Documento hermano del registro de práctica:** mientras esta lista cubre lo *predecible*, el registro de práctica revela los errores *idiosincráticos* (los particulares del usuario). El sistema vigila ambos.
 > **Importante:** esta lista es **insumo del sistema, no material de estudio** para el usuario.

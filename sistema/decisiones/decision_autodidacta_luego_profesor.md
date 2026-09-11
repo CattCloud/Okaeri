@@ -1,5 +1,7 @@
 # Decisión: autodidacta-guiado primero, profesor después
 
+> ❌ **SUPERSEDIDA el 2026-08-28** por `decision_guitarra_academia_primero.md`. La academia entra primero; la fecha dura desaparece. Se conserva como registro del razonamiento original y de por qué falló.
+
 > **Estado:** decidida (base §6 y §8.4). **Fecha:** cimientos V1.
 
 ## La decisión

@@ -1,51 +1,59 @@
-# 📍 Estado actual — Checkpoint de sesión
+# 📍 Estado actual — Marcador, semana y sesión
 
-> **Qué es este archivo:** la memoria de corto plazo del sistema. Dice exactamente **dónde quedó el usuario** dentro de una sesión de práctica, para que cualquier conversación nueva retome desde ahí — no desde donde el agente asume.
+> **Qué es este archivo:** la memoria de corto plazo del sistema. Tres cosas: **dónde vas en el mapa**, **qué toca esta semana**, y **en qué bloque quedaste** si una sesión está a medias.
 >
-> **Regla de oro:** una conversación cerrada NO significa una sesión terminada. Si el usuario se va a mitad de sesión, la sesión queda **PAUSADA** en el bloque exacto donde quedó. Al volver (aunque sea otro día), se retoma **ese bloque**, no el siguiente.
+> **Regla de oro:** una conversación cerrada NO significa una sesión terminada. Si el usuario se va a mitad de sesión —avise o no—, la sesión queda `PAUSADA` en el bloque exacto. Al volver (aunque sea otro día), se retoma **ese bloque**. **El silencio del usuario durante una sesión significa que está tocando**, no que se fue.
 >
-> **Quién lo actualiza:** el agente, al completar cada bloque y al pausar/cerrar. El usuario puede corregirlo a mano si el agente no llegó a actualizarlo (p.ej. cerró la app de golpe).
+> **Quién lo actualiza:** el agente, al abrir/cerrar cada bloque y cada semana. El usuario puede corregirlo a mano.
 
 ---
 
-## Estado de la sesión
+## 🗺️ Marcador del mapa
 
 | Campo | Valor |
-|-------|-------|
+|---|---|
+| **Temario** | `contexto/plan_estudio/temario_guitarra.md` |
+| **Módulo actual** | **Sesión 0 — diagnóstico** (antes de M1) |
+| **Sección actual** | — |
+| **Secciones completadas** | 0 / 53 |
+| **Vistas en clase (🏫), no completadas** | M1: casi completo (clase 2: diagrama + los 8 acordes) · M2: anclas y cambios · M3: pulso, figuras, 4/4, metrónomo · M5: La, Mi, Rem + progresiones · M8: la TAB |
+| **Próxima acción** | **Evaluación de M1** (absorbe a la Sesión 0, que la clase 2 volvió innecesaria): con el drill de Anki, producir los 8 acordes de memoria, limpios, en <5 s cada uno. Cuando salga 2 días seguidos → M1 ✅ y el marcador avanza a M2, que la clase ya pre-cargó. |
+
+---
+
+## 📅 Semana en curso
+
+| Campo | Valor |
+|---|---|
+| **Semana** | 2026-09-08 → 09-14 · Clase 2 hecha ✅ · Clase 3: martes **15-sep** |
+| **Reporte del martes** | ✅ Clase 2 (recibido 11-sep): diagramas de acorde · los 8 acordes (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio (anclas, no levantar la mano) · digitaciones del profe (G a 4 dedos, D estándar) |
+| **Tarea del profesor** | **Las 4 progresiones** → `fundamentos/m1/clase02_practica_progresiones.md` — 🔵 mínimo 6 min/día |
+| **Plan de la semana** | 1. Calentar con la araña (nivel 🔵, 5 min). 2. **Progresiones a diario** — la tarea va primero. 3. **Importar el mazo nuevo** (`sistema/herramientas/anki-acordes/`) y drill de 3 min al cierre de cada sesión (es la evaluación de M1 en marcha). 4. Registrar cada sesión en `practica/`. 5. Martes 15-sep → reporte de la clase 3. |
+
+---
+
+## 🎸 Sesión en curso
+
+| Campo | Valor |
+|---|---|
 | **Estado** | `SIN-SESION` |
-| **Fecha de la sesión** | — |
-| **Plan que sigue** | `sistema/ruta/plan_semana_prueba.md` |
-| **Día del plan** | Día 1 (pendiente de iniciar) |
+| **Fecha** | — |
 | **Bloque actual** | — |
-| **Paso dentro del bloque** | — |
-| **Próxima acción al retomar** | Iniciar el Día 1 del plan de la semana de prueba, desde el Bloque 1 (Reconexión). |
+| **Bloques del día** | _(se escriben al abrir la sesión)_ |
+| **Notas de la pausa** | _(vacío)_ |
 
-**Estados posibles:** `SIN-SESION` (no hay sesión abierta hoy) · `EN-CURSO` (sesión abierta ahora) · `PAUSADA` (se fue a mitad de sesión; retomar en el bloque marcado) · `CERRADA` (sesión del día completada y registrada).
-
----
-
-## Bloques del día (checklist viva)
-
-> El agente la reescribe al **iniciar** cada sesión con los bloques del día según el plan, y va marcando. Si el estado es `PAUSADA`, aquí se ve exactamente qué falta.
-
-- [ ] _(se llena al iniciar la sesión del día)_
-
----
-
-## Notas de la pausa
-
-> Si la sesión quedó `PAUSADA`: ¿en qué se estaba exactamente? ¿algo a medio entender que haya que re-explicar al volver?
-
-_(vacío)_
+**Estados:** `SIN-SESION` · `EN-CURSO` · `PAUSADA` (retomar en el bloque marcado) · `CERRADA` (registrada en `practica/`).
 
 ---
 
 ## Protocolo (para el agente)
 
-1. **Al inicio de TODA conversación de práctica:** leer este archivo PRIMERO. Nunca asumir que la sesión anterior terminó.
-2. **Si el estado es `PAUSADA`:** retomar en el bloque/paso marcado, con un repaso de 1 frase de lo que se estaba haciendo. No saltar bloques pendientes.
-3. **Si el estado es `CERRADA` o `SIN-SESION`:** ofrecer iniciar la sesión del día siguiente del plan.
-4. **Al completar cada bloque:** marcar el checkbox y actualizar "Bloque actual".
-5. **Antes de despedir al usuario o si dice "me voy" / "pausa":** actualizar estado a `PAUSADA` con notas de dónde quedó.
-6. **Solo al confirmar el usuario que terminó:** estado `CERRADA` + crear/actualizar la nota de sesión en `practica/` + fila en `practica/00_indice.md`.
-7. **Si el usuario desaparece sin avisar** (la conversación simplemente termina): en la próxima conversación, tratar la última sesión `EN-CURSO` como `PAUSADA` y confirmar con él dónde quedó.
+1. **Al inicio de TODA conversación de práctica:** leer este archivo PRIMERO. Nunca asumir que la sesión anterior terminó ni que toca la siguiente sección.
+2. **Si `PAUSADA`:** retomar en el bloque marcado con un repaso de una frase. No saltar.
+3. **Si `SIN-SESION` o `CERRADA`:** abrir la sesión con lo que el plan de la semana diga — **tarea del profesor primero**, luego la sección del mapa.
+4. **Al abrir una sesión:** escribir los bloques del día aquí. Entregar el primer bloque **completo** (explicación · diagrama · qué hacer · cómo suena bien · 3 errores y arreglo · cuándo ya está · qué sigue) y dejar tocar. **No preguntar por cada movimiento.**
+5. **Al cerrar un bloque:** marcarlo. Si el usuario no respondió en horas o días, la sesión pasa a `PAUSADA` sola, sin reproche.
+6. **Al cerrar una sección del mapa:** actualizar el marcador. **Al cerrar un módulo:** correr su evaluación (está en el temario) y **ahí sí preguntar** — ¿avanzamos o repetimos?
+7. **Solo con confirmación explícita:** sesión `CERRADA` + nota en `practica/` + fila en `practica/00_indice.md`.
+8. **Cada miércoles (tras la clase del martes):** pedir el reporte de tres líneas (qué se vio · qué tarea · qué no entendió), marcar 🏫 en el mapa, escribir/actualizar el apunte, y reescribir la sección "Semana en curso".
+9. **Si pasó una semana sin sesión:** nombrar el hecho con exactitud, abrir la puerta, retomar aquí. *Okaeri.*

@@ -1,5 +1,7 @@
 # OKAERI — Documento base
 
+> ⚠️ **Documento de la era piano (2026-06).** Los **principios** (anti-muleta, tres capas, dimensiones, método manda) siguen vigentes; los **ejemplos, el instrumento y la implementación** están archivados. Lo vigente desde 2026-08-28: `contexto/plan_estudio/temario_guitarra.md` · `sistema/decisiones/decision_guitarra_academia_primero.md` · `decision_temario_mapa_cancion_vehiculo.md`. No reescrito a propósito (no sobre-construir).
+
 > Sistema de apoyo al aprendizaje musical (piano como instrumento de inicio).
 > Define el propósito, el diagnóstico, las dimensiones del aprendizaje, el principio rector y las decisiones de diseño.
 > Vive como repositorio independiente, separado de los demás sistemas personales.

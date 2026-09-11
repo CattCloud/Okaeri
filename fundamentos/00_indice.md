@@ -1,38 +1,60 @@
 ---
-tema: Fundamentos — el vocabulario mínimo del piano
+tema: Fundamentos — teoría y práctica, por módulo del temario, lado a lado
 estado: EN-CURSO
 ---
 
-# 🎹 Fundamentos — lo mínimo para entender la ruta
+# 🎸 Fundamentos — apuntes y prácticas, lado a lado
 
-> **Estas notas son tu material de estudio: el vocabulario que la ruta y las sesiones dan por sabido.**
-> Se leen para **entender** antes o junto a tocar — nunca como pista que cae mientras tocas.
+> **Aquí vive tu material de estudio Y tus prácticas, juntos por módulo del temario.** Que estén en `m1/` o `m3/` te dice en qué punto del mapa está cada cosa.
+> - **Apunte** (`claseNN_<tema>.md`) → se lee **lejos de la guitarra**. Conceptos, porqués, diagramas de referencia.
+> - **Práctica** (`claseNN_practica_<tema>.md`) → se usa **con la guitarra**. Objetivo en claro, tiempo mínimo y natural, el gráfico de qué practicar, los 3 errores típicos y su arreglo.
+>
+> El prefijo **`claseNN_`** = nació de esa clase de la academia. Una práctica nacida del mapa (no de una clase) lleva su sección: `practica_4.4_<tema>.md`.
 
-## Para qué sirve esto
+## Reglas
 
-Cuando la ruta o yo te decimos *"forma Do mayor, manos separadas"*, aquí está escrito qué significa cada palabra. Antes esto se asumía y por eso te perdías — ya no.
+- **Un concepto se define en el módulo donde aparece por primera vez** — nunca antes, nunca en glosario previo. Si la academia adelanta un concepto (como la TAB en la clase 1), se escribe donde se necesitó y se marca 🏫.
+- **Las notas nacen con las clases y las sesiones**, con tus palabras y lo que te costó. No se escriben 40 de golpe.
+- **La práctica nunca trae el diagrama de lo que debes producir de memoria** (formas de acorde del drill o de la canción — eso vive solo en el apunte y en el reverso de Anki). Sí trae el gráfico de **qué practicar** (TAB del ejercicio, figuras).
+- **Todo ejemplo visual se muestra, no se cuenta.** Si un apunte nombra una forma, posición o comparación, lleva sus diagramas — lado a lado cuando compara.
+- **El apunte es atemporal, no un chat.** Solo la lección: nada de referencias al hilo del día, disculpas ni meta-comentarios del sistema (eso va al chat, a `estado_actual.md` o al frontmatter). Quien lo relea en tres semanas solo debe encontrar la lección. La personalización pedagógica (tus ejemplos, tu repertorio) sí entra.
+- **Cada apunte tiene dos modos:** 📖 cuerpo desarrollado (tema nuevo) · 📋 repaso en una pantalla.
 
-**Método manda:** todo está atado a tu primera canción, **10,000 Reasons** (en Do mayor, acordes Do-Fa-Lam-Sol), no a un libro de teoría. No estudias teoría por estudiarla; estudias justo lo que necesitas para tocar lo que amas.
+## Consulta (no es un paso del mapa)
 
-**Cada nota tiene dos modos de lectura:**
-- 📖 **Cuerpo desarrollado** — para cuando el tema es nuevo. Léelo completo, con calma.
-- 📋 **Repaso en una pantalla** — un recuadro al final. Para cuando ya lo viste y solo quieres refrescar.
+| Nota | Qué es |
+|---|---|
+| [[_consulta-instrumento\|La guitarra: partes, sostenerla, afinar, cuidado]] | Lo que era el "módulo 0". **Afinar sí es obligatorio, cada vez.** |
 
-Las notas también incluyen **diagramas pedagógicos** (mapas estáticos del teclado, los dedos, las formas de acorde) en estilo minimalista. El estilo y las reglas viven en [[_estilo-visual]].
+## Lo escrito, por módulo
 
-## Las notas
+### m1 · Los primeros acordes
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [[m1/clase01_notas-y-cuerdas\|Las notas y las 6 cuerdas]] | 📖 apunte | Las 7 notas, Do-Re-Mi = A-B-C, cada cuerda es una nota |
+| [[m1/clase01_tablatura\|La tablatura (TAB)]] | 📖 apunte | Cómo se lee — 🏫 concepto de M8 adelantado por la academia |
+| [[m1/clase01_dedos-mano-izquierda\|Los dedos de la mano izquierda]] | 📖 apunte | Numeración 1-4, "un dedo por traste" |
+| [[m1/clase01_practica_independencia-1234\|🎸 El 1-2-3-4 (la araña)]] | 🎸 práctica | Tarea de la clase 1 — independencia y pisada limpia. **Sigue como calentamiento** |
+| [[m1/clase02_el-acorde\|El acorde, y mayor vs. menor]] | 📖 apunte | Qué es un acorde · los dos colores · la trampa del "mayor a secas" · un acorde dentro de otro (Mi − dedo 1 = Mim) |
+| [[m1/clase02_diagramas-de-acorde\|El diagrama de acorde]] | 📖 apunte | Cómo se lee · **por qué un acorde tiene varias digitaciones** y cuál elegir |
+| [[m1/clase02_los-8-acordes\|Los 8 acordes abiertos]] | 📖 apunte | C·D·E·G·A·Em·Am·Dm con diagramas + **la tabla de anclas** + 🖨️ hoja imprimible (`m1/img/hoja-8-acordes.png`) |
+| [[m1/clase02_practica_progresiones\|🎸 Las 4 progresiones]] | 🎸 práctica | Tarea de la clase 2 — el cambio de acorde, con escalera de metrónomo |
 
-| # | Nota | Qué desbloquea |
-|---|------|----------------|
-| 1 | [[01_el-teclado\|El teclado: dónde está Do, las negras, la octava]] | Semanas 1-2 · Lectura |
-| 2 | [[02_cifrado\|El cifrado: nombrar por su nombre, no leer pentagrama]] | Semanas 1-2 · Lectura (por qué cifrado primero) |
-| 3 | [[03_dedos-y-manos\|Los dedos (1-5) y "manos separadas"]] | Semanas 1-2 · Técnica |
-| 4 | [[04_acorde-mayor\|El acorde mayor, y mayor vs. menor]] | Semanas 1-2 · Teoría + Oído |
-| 5 | [[05_ritmo\|El ritmo: el pulso, el compás y el tempo]] | Semanas 1-2 · Ritmo |
-| 6 | _La progresión I-V-vi-IV_ | Semanas 3-4 · Teoría — *se escribe al acercarse la semana 3* |
+*Pendiente de M1: 1.9 "que suene limpio" (diagnóstico de zumbidos) — cuando la clase o el mapa lo pidan.*
+
+### m3 · Mano derecha: pulso y ritmo
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [[m3/clase01_ritmo-basico\|Ritmo básico]] | 📖 apunte | Pulso, figuras (redonda/blanca/negra), **el 4/4 explicado en claro**, **tempo y BPM** (qué significa el "60"), metrónomo — 🏫 adelantado |
+| [[m3/clase01_practica_ritmo-metronomo\|🎸 Figuras con metrónomo]] | 🎸 práctica | Tarea de la clase 1 — el reloj interno |
+
+### m2, m4-m9
+_(pendientes — el mapa completo de conceptos está en `contexto/plan_estudio/temario_guitarra.md`)_
+
+## Reciclable de la era piano
+
+`_archivo/piano/fundamentos/`: `02_cifrado.md` (→ m1) · `04_acorde-mayor.md` (→ m1) · `05_ritmo.md` (→ m3, ya parcialmente reusado). Son de música; se reusa el texto cambiando ejemplos.
 
 ## Qué NO es esto
 
-- ❌ **No es teoría de conservatorio.** Solo el 20% que ilumina tu ruta (lo mínimo que sirve a lo máximo).
-- ❌ **No es una muleta.** Se lee para entender, no se mira mientras tocas. Una canción aprendida se toca de memoria, sin nada delante. Las **imágenes** tampoco son muleta: son mapas para entender (dónde está Do, qué forma tiene un acorde), nunca una pista que cae mientras tocas (ver [[_estilo-visual]] §1).
-- ❌ **No es insumo del sistema.** Eso es `sistema/referencia/errores-comunes-musica.md` (lo uso yo). Esto lo estudias **tú**.
+❌ Teoría de conservatorio · ❌ una muleta (se lee para entender, no se mira mientras tocas) · ❌ relleno (historia, marketing, biografías) · ❌ insumo del sistema (eso es `sistema/referencia/`).

@@ -1,44 +1,53 @@
 ---
-pieza: ""                # nombre de la canción
-artista: ""              # autor / intérprete original
-tonalidad: ""            # ej. Do mayor / G major
+pieza: ""                # nombre
+artista: ""              # banda / intérprete
+tipo: ""                 # adoración | alabanza | otro
+formas: ""               # las formas que haces con los dedos, ej. "Sol · Do · Re · Mim"
+capo: ""                 # traste del capo, o "—"
 dificultad: ""           # fácil | media | difícil (al nivel del usuario)
 estado_memoria: APRENDIENDO   # APRENDIENDO | TOCO-CON-AYUDA | TOCO-DE-MEMORIA-SOLO
+modulo_entrada: ""       # el módulo del mapa que esta canción ejercita
 fecha_inicio: YYYY-MM-DD
 ---
 
 # 🎵 [Pieza] — [Artista]
 
-> **Fuente única de control de esta canción.** Es el `00_indice.md` de la pieza: aquí vive su estado real, no en la app ni en la memoria.
-> **La regla anti-muleta:** esta canción NO está aprendida hasta tocarse **sin app, de memoria, sola**. Solo entonces pasa a `TOCO-DE-MEMORIA-SOLO`.
+> **Fuente única de control de esta canción.** Aquí vive su estado real.
+> **La regla anti-muleta:** NO está aprendida hasta tocarse **sin cifrado, de memoria, sola**. Solo entonces pasa a `TOCO-DE-MEMORIA-SOLO`.
+
+## Por qué entra
+<!-- Qué módulo ejercita, por qué esta y no otra, si la banda la toca. Una canción es un vehículo: si no sirve, se cambia. -->
+-
 
 ## Estado de memoria
-<!-- Los tres estados. Mover según avance. -->
-- `APRENDIENDO` — descifrando la pieza, todavía no se toca seguida.
-- `TOCO-CON-AYUDA` — se toca entera pero con partitura/app/notas delante.
-- `TOCO-DE-MEMORIA-SOLO` — ✅ se toca completa, de memoria, sin nada delante. **El único que cuenta como aprendida.**
+- `APRENDIENDO` — descifrando; no se toca seguida.
+- `TOCO-CON-AYUDA` — entera, con cifrado delante.
+- `TOCO-DE-MEMORIA-SOLO` — ✅ completa, sin nada delante. **El único que cuenta.**
 
 **Estado actual:** APRENDIENDO
 
 ## Estructura (para memoria por comprensión)
-<!-- La progresión de acordes y las secciones. Entender la estructura es lo que hace robusta la memoria (no solo muscular). Ej: "Verso: Do-Sol-Lam-Fa | Coro: Fa-Do-Sol". -->
-- **Tonalidad:**
-- **Progresión:**
-- **Secciones:** (intro / verso / coro / puente)
+<!-- Entender la estructura es lo que hace robusta la memoria. Reparto frase → acorde se valida contra la grabación y se escribe aquí. -->
+- **Tono de la grabación:**
+- **Formas con capo:**
+- **Acordes que se simplifican al inicio:** (ej. Re/Fa# → Re)
+- **Secciones:** intro / verso / coro / puente — y qué acordes lleva cada una
 
 ## Fragmentos (chunking)
-<!-- Trocear en 2-4 compases. Estado de cada fragmento: el chunking evita la frustración de "no me sale entera". -->
-| Fragmento | Manos sep. | Manos juntas | De memoria |
-|-----------|:----------:|:------------:|:----------:|
-| Verso     |            |              |            |
-| Coro      |            |              |            |
-| Puente    |            |              |            |
+| Fragmento | Acordes de memoria | Con rasgueo a tempo | Con la grabación | De memoria, sola |
+|---|:-:|:-:|:-:|:-:|
+| Coro | | | | |
+| Verso | | | | |
+| Costura verso → coro | | | | |
+
+## Grabaciones y cifrado de referencia
+<!-- Un solo cifrado fijado (los públicos varían). El audio oficial. Capo confirmado de oído. -->
+-
 
 ## Notas de interpretación
-<!-- Dinámicas (dónde fuerte/suave), fraseo (dónde respira), rubato si aplica. Desde el inicio, no al final. Referencia de YouTube/Spotify para imitar. -->
+<!-- Desde el inicio. Dónde suave, dónde con cuerpo, dónde respira. -->
 -
 
 ## Repaso espaciado
-<!-- Una pieza memorizada se oxida si no se repasa. Registrar última vez tocada de memoria y cuándo toca la próxima. -->
 - **Última vez tocada de memoria:**
 - **Próximo repaso:**

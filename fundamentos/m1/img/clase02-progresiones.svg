@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 480" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="780" height="480" fill="#ffffff"/>
+  <text x="390" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#111111">Las 4 progresiones — cada caja es un compás de 4/4</text>
+
+  <!-- P1: Am C Em | G/D -->
+  <text x="45" y="103" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">P1</text>
+  <rect x="75" y="72" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="150" y="97" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Am</text>
+  <text x="150" y="114" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="233" y="72" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="308" y="97" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">C</text>
+  <text x="308" y="114" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="391" y="72" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="466" y="97" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Em</text>
+  <text x="466" y="114" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="549" y="72" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <line x1="624" y1="72" x2="624" y2="124" stroke="#999999" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="586" y="97" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">G</text>
+  <text x="586" y="114" text-anchor="middle" font-size="10.5" fill="#888888">tiempos 1-2</text>
+  <text x="661" y="97" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">D</text>
+  <text x="661" y="114" text-anchor="middle" font-size="10.5" fill="#888888">3-4</text>
+
+  <!-- P2: Am Dm G | C/E -->
+  <text x="45" y="198" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">P2</text>
+  <rect x="75" y="167" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="150" y="192" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Am</text>
+  <text x="150" y="209" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="233" y="167" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="308" y="192" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Dm</text>
+  <text x="308" y="209" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="391" y="167" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="466" y="192" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">G</text>
+  <text x="466" y="209" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="549" y="167" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <line x1="624" y1="167" x2="624" y2="219" stroke="#999999" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="586" y="192" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">C</text>
+  <text x="586" y="209" text-anchor="middle" font-size="10.5" fill="#888888">tiempos 1-2</text>
+  <text x="661" y="192" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">E</text>
+  <text x="661" y="209" text-anchor="middle" font-size="10.5" fill="#888888">3-4</text>
+
+  <!-- P3: C Dm Am | Em/G -->
+  <text x="45" y="293" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">P3</text>
+  <rect x="75" y="262" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="150" y="287" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">C</text>
+  <text x="150" y="304" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="233" y="262" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="308" y="287" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Dm</text>
+  <text x="308" y="304" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="391" y="262" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="466" y="287" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Am</text>
+  <text x="466" y="304" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="549" y="262" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <line x1="624" y1="262" x2="624" y2="314" stroke="#999999" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="586" y="287" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Em</text>
+  <text x="586" y="304" text-anchor="middle" font-size="10.5" fill="#888888">tiempos 1-2</text>
+  <text x="661" y="287" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">G</text>
+  <text x="661" y="304" text-anchor="middle" font-size="10.5" fill="#888888">3-4</text>
+
+  <!-- P4: A D E A -->
+  <text x="45" y="388" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">P4</text>
+  <rect x="75" y="357" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="150" y="382" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">A</text>
+  <text x="150" y="399" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="233" y="357" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="308" y="382" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">D</text>
+  <text x="308" y="399" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="391" y="357" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="466" y="382" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">E</text>
+  <text x="466" y="399" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+  <rect x="549" y="357" width="150" height="52" fill="none" stroke="#111111" stroke-width="1.6"/>
+  <text x="624" y="382" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">A</text>
+  <text x="624" y="399" text-anchor="middle" font-size="10.5" fill="#888888">4 tiempos</text>
+
+  <text x="390" y="446" text-anchor="middle" font-size="12.5" fill="#555555">Caja partida = dos acordes comparten el compás: el cambio cae en el tiempo 3.</text>
+  <text x="390" y="466" text-anchor="middle" font-size="12.5" fill="#555555">Al terminar cada progresión, vuelve a empezar (bucle). Nombres en cifrado americano — equivalencia en el apunte de la clase 1.</text>
+</svg>
