@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="880" height="410" fill="#ffffff"/>
+
+  <!-- cuerpo (dos lóbulos) -->
+  <ellipse cx="700" cy="210" rx="130" ry="120" fill="#f0f0f0" stroke="#333333" stroke-width="2.5"/>
+  <ellipse cx="565" cy="210" rx="95" ry="88" fill="#f0f0f0" stroke="#333333" stroke-width="2.5"/>
+  <ellipse cx="565" cy="210" rx="93" ry="86" fill="#f0f0f0" stroke="none"/>
+
+  <!-- boca -->
+  <circle cx="590" cy="210" r="34" fill="#333333"/>
+
+  <!-- puente -->
+  <rect x="745" y="170" width="14" height="80" rx="4" fill="#333333"/>
+
+  <!-- mástil / diapasón -->
+  <rect x="156" y="190" width="350" height="40" fill="#e6e6e6" stroke="#333333" stroke-width="2"/>
+  <!-- trastes -->
+  <line x1="200" y1="190" x2="200" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="244" y1="190" x2="244" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="288" y1="190" x2="288" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="332" y1="190" x2="332" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="376" y1="190" x2="376" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="420" y1="190" x2="420" y2="230" stroke="#888888" stroke-width="1.5"/>
+  <line x1="464" y1="190" x2="464" y2="230" stroke="#888888" stroke-width="1.5"/>
+
+  <!-- pala y clavijas -->
+  <rect x="58" y="186" width="94" height="48" rx="8" fill="#f0f0f0" stroke="#333333" stroke-width="2"/>
+  <circle cx="78"  cy="177" r="5.5" fill="#888888"/><circle cx="106" cy="177" r="5.5" fill="#888888"/><circle cx="134" cy="177" r="5.5" fill="#888888"/>
+  <circle cx="78"  cy="243" r="5.5" fill="#888888"/><circle cx="106" cy="243" r="5.5" fill="#888888"/><circle cx="134" cy="243" r="5.5" fill="#888888"/>
+
+  <!-- cejuela -->
+  <rect x="152" y="186" width="6" height="48" fill="#111111"/>
+
+  <!-- cuerdas -->
+  <line x1="158" y1="196"   x2="750" y2="196"   stroke="#555555" stroke-width="2"/>
+  <line x1="158" y1="202.5" x2="750" y2="202.5" stroke="#555555" stroke-width="1.8"/>
+  <line x1="158" y1="209"   x2="750" y2="209"   stroke="#555555" stroke-width="1.6"/>
+  <line x1="158" y1="215.5" x2="750" y2="215.5" stroke="#555555" stroke-width="1.4"/>
+  <line x1="158" y1="222"   x2="750" y2="222"   stroke="#555555" stroke-width="1.2"/>
+  <line x1="158" y1="228.5" x2="750" y2="228.5" stroke="#555555" stroke-width="1"/>
+
+  <!-- etiquetas arriba -->
+  <text x="95" y="112" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Pala y clavijas</text>
+  <text x="95" y="130" text-anchor="middle" font-size="12" fill="#777777">(giras para afinar)</text>
+  <line x1="95" y1="138" x2="95" y2="168" stroke="#999999" stroke-width="1.2"/>
+  <text x="300" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Trastes</text>
+  <text x="300" y="138" text-anchor="middle" font-size="12" fill="#777777">(pisas ENTRE dos, no encima)</text>
+  <line x1="300" y1="146" x2="300" y2="186" stroke="#999999" stroke-width="1.2"/>
+  <text x="590" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Boca</text>
+  <line x1="590" y1="96" x2="590" y2="172" stroke="#999999" stroke-width="1.2"/>
+  <text x="770" y="112" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Puente</text>
+  <line x1="760" y1="120" x2="753" y2="166" stroke="#999999" stroke-width="1.2"/>
+
+  <!-- etiquetas abajo -->
+  <text x="152" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Cejuela</text>
+  <text x="152" y="348" text-anchor="middle" font-size="12" fill="#777777">(el traste 0)</text>
+  <line x1="152" y1="312" x2="153" y2="238" stroke="#999999" stroke-width="1.2"/>
+  <text x="340" y="290" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Diapasón</text>
+  <text x="340" y="308" text-anchor="middle" font-size="12" fill="#777777">(la cara del mástil donde pisas)</text>
+  <line x1="340" y1="272" x2="340" y2="234" stroke="#999999" stroke-width="1.2"/>
+  <text x="700" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Cuerpo / caja</text>
+  <line x1="700" y1="360" x2="700" y2="334" stroke="#999999" stroke-width="1.2"/>
+</svg>

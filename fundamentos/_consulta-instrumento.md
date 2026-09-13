@@ -18,6 +18,9 @@ Con la guitarra desafinada tu oído aprende mal sin que te des cuenta, y los aco
 
 ## Partes (las que vas a nombrar)
 
+![La guitarra con sus partes señaladas: pala y clavijas, cejuela, trastes, diapasón, boca, puente, cuerpo.](img/consulta-partes-guitarra.png)
+*Las siete partes que los apuntes y el profesor nombran.*
+
 | Parte | Qué es |
 |---|---|
 | **Cuerpo / caja** | La parte grande y hueca. Donde suena. |

@@ -6,7 +6,6 @@ titulo: "El acorde, y mayor vs. menor"
 secciones_mapa: "concepto 'acorde' de M1"
 estado: ESCRITA
 ---
-
 # 🎵 El acorde: varias notas que suenan bien juntas
 
 > **Un acorde es tocar tres o más notas al mismo tiempo, elegidas para que suenen bien juntas.** Es la unidad con la que se acompañan las canciones: cuando escuchas la guitarra "rellenando" debajo de una voz en un worship, eso son acordes.
@@ -17,10 +16,11 @@ Una nota sola suena fina, sola. Junta tres bien elegidas y aparece **cuerpo, emo
 
 Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se **oye** antes de entenderse:
 
-| Familia | Cómo suena | Se escribe |
-|---|---|---|
-| **Mayor** | Estable, completo, "alegre" — luz | Solo el nombre: **C**, **G**, **D** |
-| **Menor** | Melancólico, emotivo — sombra cálida | Nombre + **m**: **Am**, **Em**, **Dm** |
+
+| Familia   | Cómo suena                             | Se escribe                            |
+| --------- | --------------------------------------- | ------------------------------------- |
+| **Mayor** | Estable, completo, "alegre" — luz      | Solo el nombre:**C**, **G**, **D**    |
+| **Menor** | Melancólico, emotivo — sombra cálida | Nombre +**m**: **Am**, **Em**, **Dm** |
 
 La diferencia física es mínima —**una sola nota** del acorde baja un poquito— y cambia todo el color. El menor no es "peor": es la herramienta de la emoción. Las canciones que tocan el corazón usan los dos: el mayor da firmeza, el menor da el nudo en la garganta.
 
@@ -38,9 +38,10 @@ Dos sentidos, ambos reales:
 
 **1. En los dedos.** Algunas formas contienen otras completas. El caso perfecto de los 8: forma **Mi (E)** y levanta solo el dedo 1 — lo que queda es **Mim (Em)**, un acorde entero.
 
+
 | ![Mi (E)](img/acorde-mi.png) | ![Mim (Em)](img/acorde-mim.png) |
-|:-:|:-:|
-| *Mi (E) — con el dedo 1* | *Levanta el dedo 1 → Mim (Em)* |
+| :--------------------------: | :-----------------------------: |
+|  *Mi (E) — con el dedo 1*  | *Levanta el dedo 1 → Mim (Em)* |
 
 Y el detalle instructivo: la nota que quitas al levantar ese dedo es **exactamente la que separa mayor de menor** — la sección anterior, vista en los dedos.
 
@@ -48,12 +49,8 @@ Y el detalle instructivo: la nota que quitas al levantar ese dedo es **exactamen
 
 Ambos sentidos siguen la regla de siempre: **el acorde son sus notas** — si dentro de un grupo de notas está completo el grupo de otro acorde, ese acorde está ahí adentro.
 
-## Dónde entrenas esto
-
-- **De oído:** el mazo `sistema/herramientas/anki-oido/`, submazo *¿mayor o menor?* — suena un acorde, dices el color. 5 min.
-- **De dedos:** las formas de los 8 están en [[clase02_los-8-acordes]] y en el mazo Anki de acordes (recall: ves el nombre, la produces).
-
 > 📋 **Repaso en una pantalla**
+>
 > - **Acorde** = 3+ notas a la vez que suenan bien juntas. La base del acompañamiento.
 > - **Mayor** = estable/alegre, se escribe a secas (C, G, D, E, A). **Menor** = emotivo, lleva **m** (Am, Em, Dm).
 > - **No hay tres categorías:** todo acorde es mayor o menor; "mayor" es el apellido que no se escribe.
@@ -61,4 +58,5 @@ Ambos sentidos siguen la regla de siempre: **el acorde son sus notas** — si de
 > - **Un acorde puede vivir dentro de otro:** en los dedos (Mi − dedo 1 = Mim) y en las notas (Am7 contiene a Do y a Lam). El acorde son sus notas.
 
 ---
+
 [[00_indice|índice]] · [[clase02_diagramas-de-acorde|siguiente → Cómo se lee un diagrama]]

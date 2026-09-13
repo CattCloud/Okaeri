@@ -36,6 +36,9 @@ Truco para no perderse: las letras **no empiezan en Do sino en La** (La = A, Si 
 
 Fíjate: la primera y la última son **las dos Mi** — una grave y una aguda. Por eso el orden se dice rápido: **Mi-La-Re-Sol-Si-Mi**.
 
+![Las 6 cuerdas al aire con sus notas, de la gruesa (6ª, Mi) a la fina (1ª, Mi).](img/clase01-cuerdas-notas.png)
+*El grosor del dibujo es el grosor real: la 6ª es la gorda de arriba.*
+
 **Dónde ya usas esto sin saberlo:** tu afinador. Cuando afinas, la app te muestra **E, A, D, G, B, E** — ahora ya sabes que te está diciendo Mi, La, Re, Sol, Si, Mi.
 
 > 📋 **Repaso en una pantalla**

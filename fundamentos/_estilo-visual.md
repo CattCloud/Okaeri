@@ -107,7 +107,13 @@ Permitido: ✅ señalar una ubicación · ✅ resaltar una forma de acorde · �
 
 | Imagen | Archivo | Estado |
 |---|---|---|
-| TAB del ejercicio 1-2-3-4 + leyenda de dedos | `m1/img/clase01-tab-1234.svg` → `.png` | ✅ integrada (práctica de la clase 1) |
-| Figuras rítmicas + compás 4/4 con ejemplos | `m3/img/clase01-figuras-compas.svg` → `.png` | ✅ integrada (apunte y práctica de ritmo) |
+| TAB del ejercicio 1-2-3-4 + leyenda de dedos | `m1/img/clase01-tab-1234.svg` → `.png` | ✅ práctica clase 1 |
+| Anatomía de la TAB (0, números, columna = acorde) | `m1/img/clase01-anatomia-tab.svg` → `.png` | ✅ apunte tablatura |
+| Las 6 cuerdas al aire con sus notas | `m1/img/clase01-cuerdas-notas.svg` → `.png` | ✅ apunte notas y cuerdas |
+| Mano izquierda: dedos 1-4 + pulgar | `m1/img/clase01-mano-izquierda.svg` → `.png` | ✅ apunte dedos |
+| Figuras rítmicas + compás 4/4 con ejemplos | `m3/img/clase01-figuras-compas.svg` → `.png` | ✅ apunte y práctica de ritmo |
+| Partes de la guitarra, señaladas | `img/consulta-partes-guitarra.svg` → `.png` | ✅ nota de consulta |
+| 8 acordes + 4 variantes + anatomía del diagrama + hoja imprimible | `m1/img/acorde-*.svg`, `clase02-*.svg`, `hoja-8-acordes.svg` | ✅ generados por `_generador.js` (clase 2) |
+| Las 4 progresiones en compases | `m1/img/clase02-progresiones.svg` → `.png` | ✅ práctica clase 2 |
 
 > Era piano: 10 diagramas en `_archivo/piano/fundamentos/img/`. No se reusan (son teclado).

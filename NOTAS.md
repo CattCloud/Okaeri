@@ -30,7 +30,7 @@
 
 - **Sesión 0** → ajustar M1 con lo que esté vivo.
 - ~~Cuando entren los acordes~~ → **Hecho 2026-09-11** (clase 2): apuntes de acorde/diagramas/8 acordes, `_generador.js` con `chord()`, mazo nuevo `sistema/herramientas/anki-acordes/` (8 acordes). Pendiente del usuario: importarlo.
-- **Canto (jueves):** incorporación al sistema pendiente de conversar — estructura, material compartido con la hermana, tiempo. No tocar hasta esa conversación.
+- ~~**Canto (jueves):** incorporación pendiente de conversar~~ → **Conversado 2026-09-11.** Temario escrito (`contexto/plan_estudio/temario_canto.md`) + sílabo mapeado. El material se redacta solo para el usuario, como siempre. **Pendiente de aprobación:** la integración estructural (carpetas `fundamentos/guitarra/` y `fundamentos/canto/`, dos marcadores en `estado_actual.md`, dos academias en `practica/`, dos estados de memoria por pieza, decisión que retira el veto "canto en paralelo").
 - **M4.1** → confirmar el capo de *No hay lugar más alto* contra la grabación (4 o 2).
 - **Primer reporte del martes** → empezar a llenar la tabla de cobertura del temario con lo real.
 

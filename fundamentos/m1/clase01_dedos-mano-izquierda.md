@@ -18,6 +18,9 @@ estado: ESCRITA
 | **3** | Anular | 🟢 verde |
 | **4** | Meñique | 🔵 azul |
 
+![La mano izquierda con la palma hacia ti: dedos 1 a 4 numerados y coloreados; el pulgar sin número.](img/clase01-mano-izquierda.png)
+*Los mismos colores que usan todos los diagramas del sistema.*
+
 ⚠️ Ojo con no confundir: en la **TAB los números son trastes**; los números de **dedo** son estos otros. Cuando un ejercicio dice "un dedo por traste", los dos coinciden a propósito: traste 1 → dedo 1, traste 2 → dedo 2, etc. Eso se llama estar **en posición**.
 
 **Lo que vas a descubrir practicando** (y es normal): los dedos 1 y 2 obedecen; el **3 y el 4 se mueven en manada** — cuando levantas uno, el otro se va con él. No es defecto tuyo: sus tendones vienen conectados de fábrica. El ejercicio 1-2-3-4 existe precisamente para separarlos.

@@ -9,7 +9,6 @@ tiempo_natural: "12 min"
 tiempo_motivado: "20 min"
 estado: EN-CURSO
 ---
-
 # 🎸 Práctica — El 1-2-3-4 (la "araña")
 
 > **Con la guitarra en la mano, afinada.** Es la tarea del profesor de la clase 1. Este ejercicio es universal — se enseña en casi toda escuela del mundo, y por una razón.
@@ -40,29 +39,37 @@ No es un ejercicio de velocidad. Tu propia intuición en clase fue correcta: *so
 **Pon cronómetro. Cuando suena, paras** — sin culpa y sin "una más". Cada nivel incluye al anterior.
 
 ### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-| Qué | Cuánto |
-|---|---|
-| V1, lenta | 1 ciclo completo (~2 min) |
-| V2 | 1 ciclo (~2 min) |
+
+
+| Qué                                | Cuánto                        |
+| ----------------------------------- | ------------------------------ |
+| V1, lenta                           | 1 ciclo completo (~2 min)      |
+| V2                                  | 1 ciclo (~2 min)               |
 | Presión mínima (ver Afinación 1) | 3 notas en una cuerda (~1 min) |
 
 Sin metrónomo. Nada más.
 
 ### 🟢 Natural — 12 min (el día normal)
+
 Todo el Mínimo, y además:
-| Qué | Cuánto |
-|---|---|
-| **V3 (dedos que se quedan)** | 2 ciclos (~5 min) |
-| V1 otra vez, vigilando **dedos cerca** (Afinación 2) | 1 ciclo (~2 min) |
+
+
+| Qué                                                 | Cuánto           |
+| ---------------------------------------------------- | ----------------- |
+| **V3 (dedos que se quedan)**                         | 2 ciclos (~5 min) |
+| V1 otra vez, vigilando**dedos cerca** (Afinación 2) | 1 ciclo (~2 min)  |
 
 Sin metrónomo todavía.
 
 ### 🔥 Motivado — 20 min
+
 Todo el Natural, y además:
-| Qué | Cuánto |
-|---|---|
-| V4 (moviendo posición) | 1 pasada, ida y vuelta (~4 min) |
-| **Metrónomo 60: V1, una nota por clic** | ~4 min |
+
+
+| Qué                                     | Cuánto                         |
+| ---------------------------------------- | ------------------------------- |
+| V4 (moviendo posición)                  | 1 pasada, ida y vuelta (~4 min) |
+| **Metrónomo 60: V1, una nota por clic** | ~4 min                          |
 
 **La regla del metrónomo:** entra SOLO en la versión que ya te sale limpia sin él — por ahora, la V1. El día que la V1 con metrónomo salga cuadrada, el metrónomo pasa a la V2, y así una por una. Nunca metrónomo sobre una versión que aún suena sucia.
 
@@ -74,20 +81,9 @@ Todo el Natural, y además:
 
 ## Si sale mal — los 3 típicos
 
-| Suena así | Casi siempre es | Arréglalo así |
-|---|---|---|
-| **Zumba / vibra feo** | Estás pisando lejos del traste o con poca punta | Pisa **justo detrás de la barrita** del traste (no encima, no lejos) y con la **punta** del dedo |
-| **Se ahoga / no suena** | Un dedo vecino está rozando esa cuerda | Arquea más los dedos — cada uno cae de punta, como martillito, sin tocar a los vecinos |
-| **Se acelera y ensucia** | El cuerpo quiere "terminar rápido" | El objetivo es limpio, no rápido: baja la velocidad hasta que TODAS suenen, y quédate ahí |
 
-## Afinación del instructor
-
-El ejercicio del profe es el correcto — no lo cambio. Le agrego tres detalles que las buenas escuelas suman y que multiplican su efecto:
-
-1. **Presión mínima.** Una vez al día: pisa una nota, aflójala hasta que zumbe, y vuelve a apretar **apenas lo justo** para que suene limpia. Así aprendes cuánta fuerza se necesita de verdad (mucha menos de la que crees) y no entrenas tensión.
-2. **Dedos cerca.** Los dedos que no están pisando se quedan **a menos de 1 cm de las cuerdas**, no volando lejos. Ahí está la mitad de la independencia.
-3. **El oído manda.** Si una nota sale sucia, no la dejes pasar: repítela sola 2-3 veces limpia y sigue. Repetir sucio graba sucio.
-
-## Hasta cuándo
-
-Es **tarea semanal**: se practica todos los días hasta la clase 2 (martes 08-sep). No "se aprueba" — este ejercicio te va a acompañar meses como calentamiento. Si el profe pide video al grupo de WhatsApp, graba la **versión 3** (es donde se ve el trabajo).
+| Suena así               | Casi siempre es                                  | Arréglalo así                                                                                  |
+| ------------------------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| **Zumba / vibra feo**    | Estás pisando lejos del traste o con poca punta | Pisa**justo detrás de la barrita** del traste (no encima, no lejos) y con la **punta** del dedo |
+| **Se ahoga / no suena**  | Un dedo vecino está rozando esa cuerda          | Arquea más los dedos — cada uno cae de punta, como martillito, sin tocar a los vecinos         |
+| **Se acelera y ensucia** | El cuerpo quiere "terminar rápido"              | El objetivo es limpio, no rápido: baja la velocidad hasta que TODAS suenen, y quédate ahí     |

@@ -90,15 +90,3 @@ Todo el Natural, y además:
 | **Hueco largo en un cambio**           | Ese par específico no está automatizado | Aísla SOLO ese par y hazlo 5 veces seguido — no repitas toda la vuelta (eso practica mil veces lo que ya sale) |
 | **Levantas toda la mano al cambiar**   | No buscaste el ancla                      | Antes de tocar, di en voz alta qué dedo(s) se quedan en ese cambio. Si hay ancla, que no se despegue            |
 | **El acorde cae sucio, dedo por dedo** | Estás armando la forma en el aire        | Piensa la forma completa antes de saltar y baja los dedos**todos a la vez**                                      |
-
-## Afinación del instructor
-
-Las progresiones del profesor son exactamente el ejercicio correcto. Tres detalles que las potencian:
-
-1. **Cambios fantasma:** sin rasguear, solo la mano izquierda saltando entre dos acordes, 10 veces. Sin el rasgueo puedes poner toda la atención en el movimiento de la mano.
-2. **Prepara en el 4:** en el último tiempo del compás los dedos ya empiezan a moverse hacia el siguiente acorde. Si esperas a que el compás termine para recién mover la mano, siempre llegas tarde.
-3. **El drill de Anki es el complemento exacto:** aquí los acordes vienen en orden conocido; en el mazo salen barajados. Orden = canción; barajado = lectura real. 3 min de drill al cierre cierran el círculo.
-
-## Hasta cuándo
-
-Tarea semanal, hasta la clase 3 (martes 15-sep). Si piden video al grupo: graba la **P1 en modo B a 60** — ahí se ve el trabajo de cambios. Registro de cada sesión en `practica/`, como siempre.
