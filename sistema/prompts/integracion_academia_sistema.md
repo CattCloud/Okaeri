@@ -6,6 +6,8 @@
 
 ---
 
+> **Desde 2026-09-14 hay dos carriles de academia: guitarra (martes) y canto (jueves).** Este protocolo aplica a cada uno por igual — reporte al día siguiente, tarea del profesor primero, 🏫 sin mover su marcador, piso de tiempo propio (`decision_canto_segundo_mapa.md`).
+
 ## Los dos carriles
 
 | Territorio | Quién manda | Qué hace Okaeri |

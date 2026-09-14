@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="430" viewBox="0 0 820 430" font-family="Arial, Helvetica, sans-serif">
+  <rect width="820" height="430" fill="#ffffff"/>
+
+  <!-- ===== Panel izquierdo: respiración alta (incorrecta) ===== -->
+  <text x="205" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#cc2222">✕ Respiración alta (hombros)</text>
+
+  <!-- cabeza -->
+  <circle cx="205" cy="90" r="26" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- cuello tenso -->
+  <line x1="205" y1="116" x2="205" y2="138" stroke="#333333" stroke-width="2.5"/>
+  <!-- hombros SUBIDOS (línea alta, encogida) -->
+  <path d="M 130 150 Q 205 128 280 150" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- torso -->
+  <path d="M 130 150 L 125 300 Q 205 316 285 300 L 280 150" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- pecho inflado arriba -->
+  <ellipse cx="205" cy="190" rx="52" ry="30" fill="none" stroke="#cc2222" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="205" y="195" text-anchor="middle" font-size="12" fill="#cc2222">solo la parte alta</text>
+  <!-- flechas hombros hacia arriba -->
+  <line x1="138" y1="140" x2="138" y2="108" stroke="#cc2222" stroke-width="3"/>
+  <polygon points="138,100 132,112 144,112" fill="#cc2222"/>
+  <line x1="272" y1="140" x2="272" y2="108" stroke="#cc2222" stroke-width="3"/>
+  <polygon points="272,100 266,112 278,112" fill="#cc2222"/>
+  <!-- abdomen quieto -->
+  <text x="205" y="270" text-anchor="middle" font-size="12" fill="#888888">abdomen quieto</text>
+
+  <text x="205" y="345" text-anchor="middle" font-size="13" fill="#333333">Los hombros suben → poco aire</text>
+  <text x="205" y="364" text-anchor="middle" font-size="13" fill="#333333">y tensión en cuello y garganta,</text>
+  <text x="205" y="383" text-anchor="middle" font-size="13" fill="#333333">justo donde nace la voz.</text>
+
+  <!-- separador -->
+  <line x1="410" y1="20" x2="410" y2="410" stroke="#cccccc" stroke-width="1.5"/>
+
+  <!-- ===== Panel derecho: respiración baja (correcta) ===== -->
+  <text x="615" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#22883a">✓ Respiración baja (diafragma + costados)</text>
+
+  <!-- cabeza -->
+  <circle cx="615" cy="90" r="26" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <line x1="615" y1="116" x2="615" y2="142" stroke="#333333" stroke-width="2.5"/>
+  <!-- hombros RELAJADOS (línea baja, horizontal) -->
+  <path d="M 535 160 Q 615 152 695 160" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- torso, más ancho abajo -->
+  <path d="M 535 160 L 528 300 Q 615 318 702 300 L 695 160" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- diafragma: cúpula que BAJA -->
+  <path d="M 552 218 Q 615 196 678 218" fill="none" stroke="#333333" stroke-width="2" stroke-dasharray="6 4"/>
+  <path d="M 552 240 Q 615 218 678 240" fill="none" stroke="#22883a" stroke-width="2.5"/>
+  <line x1="615" y1="212" x2="615" y2="238" stroke="#22883a" stroke-width="2.5"/>
+  <polygon points="615,248 609,236 621,236" fill="#22883a"/>
+  <text x="712" y="228" font-size="12" fill="#333333">el diafragma baja</text>
+  <!-- abdomen hacia afuera -->
+  <ellipse cx="615" cy="272" rx="58" ry="24" fill="none" stroke="#22883a" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="615" y="277" text-anchor="middle" font-size="12" fill="#22883a">el abdomen sale</text>
+  <!-- flechas costados hacia afuera -->
+  <line x1="540" y1="235" x2="512" y2="235" stroke="#22883a" stroke-width="3"/>
+  <polygon points="504,235 516,229 516,241" fill="#22883a"/>
+  <line x1="690" y1="235" x2="718" y2="235" stroke="#22883a" stroke-width="3"/>
+  <polygon points="726,235 714,229 714,241" fill="#22883a"/>
+  <text x="474" y="215" font-size="12" fill="#22883a">costillas</text>
+  <text x="474" y="231" font-size="12" fill="#22883a">se abren</text>
+
+  <text x="615" y="345" text-anchor="middle" font-size="13" fill="#333333">Hombros quietos. El aire llena hacia abajo:</text>
+  <text x="615" y="364" text-anchor="middle" font-size="13" fill="#333333">el abdomen sale y las costillas bajas se abren</text>
+  <text x="615" y="383" text-anchor="middle" font-size="13" fill="#333333">a los lados (te empujan las manos).</text>
+</svg>

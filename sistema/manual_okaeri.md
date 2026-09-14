@@ -33,7 +33,7 @@ El nombre describe la función. El obstáculo histórico del usuario fue siempre
 Tres estados por pieza: `APRENDIENDO` → `TOCO-CON-AYUDA` → `TOCO-DE-MEMORIA-SOLO`. Solo el tercero cuenta.
 
 **Cómo se aplica:**
-- **Teoría y práctica: archivos distintos, lado a lado en `fundamentos/mN/`.** El apunte (`claseNN_<tema>`) se lee lejos de la guitarra; la práctica (`claseNN_practica_<tema>`) se usa con la guitarra. La práctica trae el gráfico de **qué practicar**, pero **nunca el diagrama de lo que hay que producir de memoria** (formas del drill o de la canción — solo en el apunte y en Anki). Es la regla del drill (frente = nombre, reverso = verificación) hecha archivo.
+- **Teoría y práctica: archivos distintos, lado a lado en `fundamentos/<instrumento>/mN/`.** El apunte (`claseNN_<tema>`) se lee lejos de la guitarra; la práctica (`claseNN_practica_<tema>`) se usa con la guitarra. La práctica trae el gráfico de **qué practicar**, pero **nunca el diagrama de lo que hay que producir de memoria** (formas del drill o de la canción — solo en el apunte y en Anki). Es la regla del drill (frente = nombre, reverso = verificación) hecha archivo.
 - La memoria se construye **por capas**: muscular (dedos), visual (la forma en el mástil), auditiva (cómo suena), estructural (la progresión). La muscular sola es frágil.
 - **El capo no es muleta.** Los dedos aprenden las formas reales; solo cambia dónde suena. Es práctica estándar en toda banda.
 - Los diagramas son **mapas estáticos para entender**, nunca secuencia (`fundamentos/_estilo-visual.md`).
@@ -59,7 +59,7 @@ Protocolo completo: `sistema/prompts/integracion_academia_sistema.md`. Regla cor
 | **Comprensión** | Teoría aplicada · Oído |
 | **Expresión** | Repertorio (con memoria) · Interpretación |
 
-La **interpretación atraviesa todo desde M1**. El **canto** es posterior y secuencial.
+La **interpretación atraviesa todo desde M1**. El **canto** es el segundo mapa desde 2026-09-14 (`decision_canto_segundo_mapa.md`): mismo modelo, carril propio (jueves), anti-muleta propio, la grabadora como verificación.
 
 ### Cómo se conduce una sesión — bloques, no ping-pong
 
@@ -102,7 +102,7 @@ Los ejercicios del profesor son **propuestas, no límites**: si hay una práctic
 | ❌ Gamificar | Motivación frágil. Solo el registro honesto. |
 | ❌ **Relleno** | Historia, marketing, biografías, teoría que no ilumina lo que toca. Solo lo que cambie algo que va a tocar. |
 | ❌ **Ping-pong** | Preguntar tras cada movimiento rompe la práctica. |
-| ❌ Canto en paralelo · varias canciones a la vez | Secuencial. Una canción hasta que salga de memoria. |
+| ❌ Varias canciones del mapa a la vez | Una por carril (guitarra / canto) hasta que salga de memoria. El repertorio del profesor es tarea, no canción del mapa. |
 | ❌ Fecha dura | Murió con el rediseño. Lo que obliga ahora es la presentación de la academia. |
 
 > ⚠️ **Cuidado con sobre-construir.** Nada de APIs, dashboards, módulos de canto, ni escribir 40 notas de golpe.

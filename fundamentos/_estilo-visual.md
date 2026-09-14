@@ -70,7 +70,7 @@ Permitido: ✅ señalar una ubicación · ✅ resaltar una forma de acorde · �
 > **Se dibujan como código (SVG), no con un generador de imágenes de IA.** Un diagrama de acorde exige la cuerda exacta, el traste exacto y el dedo exacto — justo lo que los modelos de imagen fallan. El SVG es exacto por construcción y editable. (En la era piano, dos rondas con IA de imágenes fallaron; el SVG no.)
 
 **Flujo:**
-1. El agente escribe el `.svg` en `fundamentos/mN/img/` con geometría exacta.
+1. El agente escribe el `.svg` en `fundamentos/<instrumento>/mN/img/` con geometría exacta.
 2. Se rasteriza a `.png` (Node + `sharp`, `density: 200`) para que renderice en cualquier visor. El `.svg` es la fuente; el `.png` se embebe.
 3. Se verifica contra la checklist (§7).
 
@@ -80,8 +80,8 @@ Permitido: ✅ señalar una ubicación · ✅ resaltar una forma de acorde · �
 
 ## 6. Convención de archivos y embebido
 
-- **Carpeta:** `fundamentos/mN/img/`. PNG versionados (livianos).
-- **Nombre:** `NN-concepto.png` — NN = número de nota dentro del módulo, kebab-case sin tildes. Ej: `m1/img/04-mim.png`. Los de acorde para Anki: `acorde-<nombre>.png`.
+- **Carpeta:** `fundamentos/<instrumento>/mN/img/`. PNG versionados (livianos).
+- **Nombre:** `NN-concepto.png` — NN = número de nota dentro del módulo, kebab-case sin tildes. Ej: `guitarra/m1/img/04-mim.png`. Los de acorde para Anki: `acorde-<nombre>.png`.
 - **Embebido** (tras el párrafo que explica, antes del siguiente H2; nunca dentro del callout "Repaso"):
 
 ```markdown
@@ -107,13 +107,15 @@ Permitido: ✅ señalar una ubicación · ✅ resaltar una forma de acorde · �
 
 | Imagen | Archivo | Estado |
 |---|---|---|
-| TAB del ejercicio 1-2-3-4 + leyenda de dedos | `m1/img/clase01-tab-1234.svg` → `.png` | ✅ práctica clase 1 |
-| Anatomía de la TAB (0, números, columna = acorde) | `m1/img/clase01-anatomia-tab.svg` → `.png` | ✅ apunte tablatura |
-| Las 6 cuerdas al aire con sus notas | `m1/img/clase01-cuerdas-notas.svg` → `.png` | ✅ apunte notas y cuerdas |
-| Mano izquierda: dedos 1-4 + pulgar | `m1/img/clase01-mano-izquierda.svg` → `.png` | ✅ apunte dedos |
-| Figuras rítmicas + compás 4/4 con ejemplos | `m3/img/clase01-figuras-compas.svg` → `.png` | ✅ apunte y práctica de ritmo |
+| TAB del ejercicio 1-2-3-4 + leyenda de dedos | `guitarra/m1/img/clase01-tab-1234.svg` → `.png` | ✅ práctica clase 1 |
+| Anatomía de la TAB (0, números, columna = acorde) | `guitarra/m1/img/clase01-anatomia-tab.svg` → `.png` | ✅ apunte tablatura |
+| Las 6 cuerdas al aire con sus notas | `guitarra/m1/img/clase01-cuerdas-notas.svg` → `.png` | ✅ apunte notas y cuerdas |
+| Mano izquierda: dedos 1-4 + pulgar | `guitarra/m1/img/clase01-mano-izquierda.svg` → `.png` | ✅ apunte dedos |
+| Figuras rítmicas + compás 4/4 con ejemplos | `guitarra/m3/img/clase01-figuras-compas.svg` → `.png` | ✅ apunte y práctica de ritmo |
+| Respiración alta vs. baja (comparación) | `canto/m1/img/clase01-respiracion-alta-vs-baja.svg` → `.png` | ✅ apunte de respiración (canto) |
+| El ejercicio del papel en la pared | `canto/m1/img/clase01-papel-pared.svg` → `.png` | ✅ apunte y práctica de aire (canto) |
 | Partes de la guitarra, señaladas | `img/consulta-partes-guitarra.svg` → `.png` | ✅ nota de consulta |
-| 8 acordes + 4 variantes + anatomía del diagrama + hoja imprimible | `m1/img/acorde-*.svg`, `clase02-*.svg`, `hoja-8-acordes.svg` | ✅ generados por `_generador.js` (clase 2) |
-| Las 4 progresiones en compases | `m1/img/clase02-progresiones.svg` → `.png` | ✅ práctica clase 2 |
+| 8 acordes + 4 variantes + anatomía del diagrama + hoja imprimible | `guitarra/m1/img/acorde-*.svg`, `clase02-*.svg`, `hoja-8-acordes.svg` | ✅ generados por `_generador.js` (clase 2) |
+| Las 4 progresiones en compases | `guitarra/m1/img/clase02-progresiones.svg` → `.png` | ✅ práctica clase 2 |
 
 > Era piano: 10 diagramas en `_archivo/piano/fundamentos/img/`. No se reusan (son teclado).

@@ -9,8 +9,8 @@
 - ✅ **2026-09-11 — Todo ejemplo visual se muestra, no se cuenta (regla del usuario):** si un apunte nombra una forma, posición o comparación, lleva sus diagramas, lado a lado cuando compara. En CLAUDE.md, `fundamentos/00_indice.md` y `_estilo-visual.md`. El generador ya soporta cejilla y traste inicial.
 - ✅ **2026-09-08 — El apunte es atemporal, no un chat (regla del usuario):** nada que solo tenga sentido en el hilo del día vive en un apunte — solo la lección. Personalización pedagógica sí; conversación no. En CLAUDE.md y `fundamentos/00_indice.md`. Apuntes existentes auditados y limpiados.
 - ✅ **2026-09-08 — Niveles de avance en las prácticas (pedido del usuario):** cada práctica prescribe **3 niveles con rutina exacta** (🔵 mínimo / 🟢 natural / 🔥 motivado): qué, cuántas repeticiones, minutos por parte, metrónomo sí/no. Sin rangos vagos. Aplicado a las 2 prácticas de la clase 1 y a la plantilla.
-- ✅ **2026-09-05 — Formato de prácticas (adición del usuario):** cada práctica trae objetivo en lenguaje claro ("mira lo que estoy mejorando"), tiempo **mínimo** (días sin ganas) y **natural**, y el gráfico SVG de qué practicar. Prácticas **lado a lado con su apunte** en `fundamentos/mN/` con prefijo `claseNN_` (sin carpeta `ejercicios/`). Los ejercicios del profe son propuestas mejorables sin desviarse ("Afinación del instructor"). Enmienda en `decision_temario_mapa_cancion_vehiculo.md` §2.
-- ✅ **2026-09-05 — Clase 1 procesada:** apuntes y prácticas en `fundamentos/m1/` y `m3/`. Sílabo Básico 1 mapeado (`silabo_academia_basico1.md`); hallazgo clave: **clase 13 = selección del tema del concierto** → intentar que sea la worship en curso.
+- ✅ **2026-09-05 — Formato de prácticas (adición del usuario):** cada práctica trae objetivo en lenguaje claro ("mira lo que estoy mejorando"), tiempo **mínimo** (días sin ganas) y **natural**, y el gráfico SVG de qué practicar. Prácticas **lado a lado con su apunte** en `fundamentos/<instrumento>/mN/` con prefijo `claseNN_` (sin carpeta `ejercicios/`). Los ejercicios del profe son propuestas mejorables sin desviarse ("Afinación del instructor"). Enmienda en `decision_temario_mapa_cancion_vehiculo.md` §2.
+- ✅ **2026-09-05 — Clase 1 procesada:** apuntes y prácticas en `fundamentos/guitarra/m1/` y `m3/`. Sílabo Básico 1 mapeado (`silabo_academia_basico1.md`); hallazgo clave: **clase 13 = selección del tema del concierto** → intentar que sea la worship en curso.
 - ✅ **2026-08-28 — Rediseño completo: guitarra + academia + temario.** El piano se archivó (`_archivo/piano/`). Diagnóstico y decisiones en `sistema/decisiones/decision_guitarra_academia_primero.md` y `decision_temario_mapa_cancion_vehiculo.md`. El mapa en `contexto/plan_estudio/temario_guitarra.md`.
 - ✅ **Canción única del arranque:** *No hay lugar más alto* (Miel San Marcos). Lista de espera en `repertorio/00_indice.md`.
 - ✅ **Sin fecha dura.** La sustituye la presentación de fin de nivel de la academia.
@@ -25,12 +25,16 @@
 - [X]  Matrícula (S/50).
 - [X]  **Comprar capo.** Instalar afinador.
 - [ ]  Pedir a la banda de la iglesia la lista de 5-6 canciones que más repiten.
+- [ ]  **Medir el rango vocal** (una pasada de 12 min: `fundamentos/canto/m2/practica_2.5_rango-vocal.md`) — desbloquea el tono de *Hosanna* y de todo el repertorio de canto.
+- [ ]  Decidir la **3ª canción del profesor de canto**: *Al que está sentado en el trono* (Brunet) o *10,000 Razones* (esp.) — ambas suman doble (ya están en la lista de guitarra).
+- [ ]  **Apps de canto** (el profe recomendó varias; se decide aparte): propuesta del 09-14 → **Moises** (pista sin voz + cambio de tono) y **AnkiDroid** (oído y acordes). Vocal Pitch Monitor solo para verificar grabaciones, nunca en vivo.
+- [ ]  Importar el mazo Anki de acordes de guitarra.
 
 ## Pendientes del sistema (cuando toque, no antes)
 
 - **Sesión 0** → ajustar M1 con lo que esté vivo.
 - ~~Cuando entren los acordes~~ → **Hecho 2026-09-11** (clase 2): apuntes de acorde/diagramas/8 acordes, `_generador.js` con `chord()`, mazo nuevo `sistema/herramientas/anki-acordes/` (8 acordes). Pendiente del usuario: importarlo.
-- ~~**Canto (jueves):** incorporación pendiente de conversar~~ → **Conversado 2026-09-11.** Temario escrito (`contexto/plan_estudio/temario_canto.md`) + sílabo mapeado. El material se redacta solo para el usuario, como siempre. **Pendiente de aprobación:** la integración estructural (carpetas `fundamentos/guitarra/` y `fundamentos/canto/`, dos marcadores en `estado_actual.md`, dos academias en `practica/`, dos estados de memoria por pieza, decisión que retira el veto "canto en paralelo").
+- ✅ **2026-09-14 — Canto integrado como segundo mapa (aprobado y ejecutado):** `fundamentos/guitarra/` + `fundamentos/canto/` · dos marcadores · dos academias · dos estados por pieza · `decision_canto_segundo_mapa.md` (retira el veto "canto en paralelo"). Clases 1-2 de canto procesadas; repertorio del profesor registrado.
 - **M4.1** → confirmar el capo de *No hay lugar más alto* contra la grabación (4 o 2).
 - **Primer reporte del martes** → empezar a llenar la tabla de cobertura del temario con lo real.
 

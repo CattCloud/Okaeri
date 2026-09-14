@@ -16,7 +16,7 @@
 
 Inspirado en TESLA (`apuntes/` vs `practica/`), pero aquí es **estructural**, no de comodidad: la teoría se lee lejos de la guitarra; la práctica ocurre con la guitarra y **sin mirar nada**. Mezclarlas en un archivo induce a leer mientras se toca — la muleta.
 
-**Enmienda 2026-09-05 (decisión del usuario):** no hay carpeta `ejercicios/` aparte. Apunte y práctica viven **lado a lado en `fundamentos/mN/`** — así la carpeta dice en qué punto del temario está cada cosa — y comparten prefijo de origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica). Una práctica nacida del mapa y no de una clase lleva su sección: `practica_N.N_<tema>.md`.
+**Enmienda 2026-09-05 (decisión del usuario):** no hay carpeta `ejercicios/` aparte. Apunte y práctica viven **lado a lado en `fundamentos/<instrumento>/mN/`** — así la carpeta dice en qué punto del temario está cada cosa — y comparten prefijo de origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica). Una práctica nacida del mapa y no de una clase lleva su sección: `practica_N.N_<tema>.md`.
 
 | | Apunte (`claseNN_<tema>`) | Práctica (`claseNN_practica_<tema>`) |
 |---|---|---|

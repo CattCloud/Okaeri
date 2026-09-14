@@ -67,7 +67,7 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 
 | # | Módulo | Secciones | Cubre la academia | Estado |
 |---|---|:-:|:-:|---|
-| 1 | Cuerpo y aire | 5 | ✅ (clases 1-2) | ⬜ |
+| 1 | Cuerpo y aire | 5 | ✅ (clases 1-2) | 🏫 clase 1: respiración diafragma+costados, papel, trino |
 | 2 | Producir el sonido: afinar, registros, vocales | 6 | ✅ (clases 3, 7-8) | ⬜ |
 | 3 | Ritmo y letra | 4 | ✅ parcial (clase 4) | ⬜ |
 | 4 | **Tu primera canción cantada** 🎯 | 6 | ❌ **Okaeri solo** (la clase canta su repertorio; la memoria es nuestra) | ⬜ |
@@ -79,7 +79,7 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 
 Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) · 🏫 visto en clase (adelantado, no completado).
 
-> **Sesión 0 — diagnóstico.** Con la grabadora encendida: siseo largo, una nota sostenida, una sirena, cinco notas dictadas con la guitarra. Se marca lo que ya sale. No se diagnostica hablando: se diagnostica cantando.
+> **Sesión 0 — diagnóstico.** Con la grabadora encendida: siseo largo, una nota sostenida, una sirena, cinco notas dictadas con la guitarra — y **la medición del rango vocal** (sección 2.5, adelantada: el repertorio del profesor ya la exige — *Hosanna* llegó al límite). Práctica lista: `fundamentos/canto/m2/practica_2.5_rango-vocal.md`. Se marca lo que ya sale. No se diagnostica hablando: se diagnostica cantando.
 
 ---
 
@@ -139,7 +139,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 3.3 | Dónde respirar | Marcar en la letra las respiraciones (al final de frase, nunca a mitad de palabra) y cumplirlas |
 | 3.4 | Hablar la letra a ritmo | Recitar la estrofa con metrónomo, a tiempo, antes de ponerle melodía |
 
-**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás (ya definidos en guitarra M3, `fundamentos/m3/`).
+**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás (ya definidos en guitarra M3, `fundamentos/guitarra/m3/`).
 
 **Repertorio:** una estrofa de la canción en curso o del repertorio de la clase.
 
@@ -266,7 +266,9 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | Canción | Banda | Tono original | Entra en | Estado (canto) |
 |---|---|:-:|:-:|---|
 | **No hay lugar más alto** | Miel San Marcos ft. Christine D'Clario | La / Si (a confirmar) | **M4** | 🎯 candidata a canción única — el tono se prueba en 4.1 |
-| Repertorio de la clase de canto | _(el profesor)_ | — | tarea del profesor | pendiente: el usuario lo lista tras el reporte del jueves |
+| **Eres todo poderoso** | Danilo Montero | — | tarea del profesor | `APRENDIENDO` |
+| **Hosanna** | Marcos Witt | agudo (⚠️ al límite hoy) | tarea del profesor | `APRENDIENDO` — tono a decidir tras medir el rango |
+| _3ª del profesor: por decidir_ | Brunet / Redman | — | tarea del profesor | entre *Al que está sentado en el trono* y *10,000 Razones* |
 | Al que está sentado en el trono | Marcos Brunet | — | M4 / M5 | en espera (adoración, tempo perdonador) |
 | Eres | Un Corazón | — | M5 | en espera |
 | 10,000 Razones | Matt Redman (esp.) | — | M5 / M6 | en espera |

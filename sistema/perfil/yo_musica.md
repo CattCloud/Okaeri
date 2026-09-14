@@ -22,7 +22,8 @@
 
 - **Meta general:** tocar —y después cantar a la vez— las canciones que le tocan el corazón. Canciones que ya existen.
 - **Destino concreto: la banda de su iglesia.** Real y accesible: sigue en contacto y podría entrar cuando esté listo. Es el objetivo visualizable que faltaba.
-- **Secuencia elegida:** instrumental → acompañarse cantando → banda. Reordenada a **base primero** (acordes + rasgueo) porque lo instrumental se construye encima y la banda necesita justo el acompañamiento. El canto entra **después**, cuando los acordes salgan sin pensar.
+- **Secuencia elegida:** instrumental → acompañarse cantando → banda. Reordenada a **base primero** (acordes + rasgueo). **Actualización 2026-09-14:** el canto entró antes de lo planeado — matrícula real (jueves, misma academia) → carril propio con temario y piso de tiempo (`decision_canto_segundo_mapa.md`). La meta de **juntarlos** sigue siendo posterior: canto M7 exige los dos M4 cerrados.
+- **Rango vocal: sin medir.** *Hosanna* (Witt) llegó al límite de agudos — no se fuerza; práctica de medición lista en `fundamentos/canto/m2/practica_2.5_rango-vocal.md`.
 - **NO es compositor. NO busca virtuosismo ni conservatorio.** La música es *"parte de mi vida, una forma de expresar el corazón"*.
 
 ## Repertorio

@@ -33,7 +33,7 @@ inicio: 2026-08-28
 
 **Sección ≠ sesión.** Una sección puede tomar 10 minutos o tres días. El mapa mide **contenido**; tu día mide **tiempo**. Mínimo irreducible: **15 min, 3-4 veces por semana** — es el piso para presentarte, no el techo del contenido.
 
-**Teoría y práctica son archivos distintos, lado a lado** (regla anti-muleta hecha archivo). Ambos viven en `fundamentos/mN/` — la carpeta dice en qué punto del temario está cada cosa:
+**Teoría y práctica son archivos distintos, lado a lado** (regla anti-muleta hecha archivo). Ambos viven en `fundamentos/<instrumento>/mN/` — la carpeta dice en qué punto del temario está cada cosa:
 - `claseNN_<tema>.md` → el **apunte**: se lee **lejos de la guitarra**.
 - `claseNN_practica_<tema>.md` → la **práctica**: se usa **con la guitarra**. Trae objetivo en lenguaje claro, tiempo mínimo y natural, el gráfico de **qué practicar** (SVG), y los 3 errores típicos con arreglo. **Nunca trae el diagrama de lo que hay que producir de memoria** (formas de acorde del drill o de la canción) — eso es copiar, no recordar.
 - Prefijo `claseNN_` = nació de esa clase de la academia; una práctica nacida del mapa lleva su sección (`practica_4.4_...`).

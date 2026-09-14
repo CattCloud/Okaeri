@@ -60,5 +60,6 @@ Distinto de guitarra, donde el tema se elige recién en la clase 13: aquí **se 
 
 | Clase | Fecha | Qué se vio de verdad | Tarea |
 |:-:|---|---|---|
-| 1 | _(a confirmar: matrícula 2026-09-03; ¿primera clase el 03 o el 10?)_ | _(pendiente de reporte)_ | |
-| 2 | | | |
+| 1 | 2026-09-03 | Respiración de diafragma, más la variante que abre los **costados** (costo-diafragmática) · ejercicio del **papel en la pared** (chorro de aire fino y constante que lo sostiene) · **trino de labios** subiendo y bajando · práctica de canto. *Cuadra con el brochure (\"Introducción al canto\" + adelanto de \"Respiración I\")* | Practicar lo visto |
+| 2 | 2026-09-10 | Apps recomendadas para practicar (se evalúan aparte — no es contenido pedagógico) · canto sobre repertorio · consigna: **cada alumno elige 2-3 canciones** que se trabajan y mejoran clase a clase. *Poca teoría nueva a propósito* | Elegir las 2-3 canciones (elegidas → `repertorio/00_indice.md` §canto) |
+| 3 | 2026-09-17 | | |

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" font-family="Arial, Helvetica, sans-serif">
+  <rect width="760" height="330" fill="#ffffff"/>
+  <text x="380" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">El ejercicio del papel: presión de aire constante y dirigida</text>
+
+  <!-- pared -->
+  <line x1="600" y1="60" x2="600" y2="290" stroke="#333333" stroke-width="4"/>
+  <g stroke="#999999" stroke-width="1.5">
+    <line x1="600" y1="75"  x2="614" y2="61"/>
+    <line x1="600" y1="115" x2="614" y2="101"/>
+    <line x1="600" y1="155" x2="614" y2="141"/>
+    <line x1="600" y1="195" x2="614" y2="181"/>
+    <line x1="600" y1="235" x2="614" y2="221"/>
+    <line x1="600" y1="275" x2="614" y2="261"/>
+  </g>
+  <text x="640" y="180" font-size="13" fill="#555555">pared</text>
+
+  <!-- papel -->
+  <rect x="590" y="150" width="10" height="52" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+  <text x="560" y="135" text-anchor="end" font-size="13" font-weight="bold" fill="#111111">papel de 5-10 cm,</text>
+  <text x="560" y="152" text-anchor="end" font-size="13" fill="#333333">pegado SOLO por el aire</text>
+  <line x1="566" y1="158" x2="586" y2="168" stroke="#999999" stroke-width="1.4"/>
+
+  <!-- cabeza de perfil -->
+  <circle cx="150" cy="180" r="42" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <!-- labios en "u" -->
+  <path d="M 190 176 Q 198 180 190 184" fill="none" stroke="#333333" stroke-width="2.5"/>
+  <text x="150" y="250" text-anchor="middle" font-size="13" fill="#333333">labios como para soplar</text>
+  <text x="150" y="268" text-anchor="middle" font-size="13" fill="#333333">una vela (chorro fino)</text>
+
+  <!-- chorro de aire: líneas convergentes al papel -->
+  <line x1="200" y1="170" x2="588" y2="174" stroke="#2266cc" stroke-width="2"/>
+  <line x1="200" y1="180" x2="588" y2="176" stroke="#2266cc" stroke-width="2.5"/>
+  <line x1="200" y1="190" x2="588" y2="178" stroke="#2266cc" stroke-width="2"/>
+  <text x="370" y="222" text-anchor="middle" font-size="13" font-weight="bold" fill="#2266cc">aire fino, parejo y apuntado al papel</text>
+
+  <!-- distancia -->
+  <line x1="205" y1="300" x2="585" y2="300" stroke="#999999" stroke-width="1.4"/>
+  <line x1="205" y1="294" x2="205" y2="306" stroke="#999999" stroke-width="1.4"/>
+  <line x1="585" y1="294" x2="585" y2="306" stroke="#999999" stroke-width="1.4"/>
+  <text x="395" y="320" text-anchor="middle" font-size="13" fill="#555555">empieza cerca (~30 cm); si lo sostienes 10 s, aléjate un paso</text>
+
+  <text x="390" y="90" text-anchor="middle" font-size="13" fill="#333333">Si el chorro es débil, intermitente o desenfocado → el papel se cae.</text>
+  <text x="390" y="108" text-anchor="middle" font-size="13" fill="#333333">Sostenerlo = el abdomen mantiene la presión pareja (eso es el apoyo).</text>
+</svg>

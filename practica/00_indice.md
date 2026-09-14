@@ -1,10 +1,10 @@
-# 📒 Índice de práctica — Constancia, academia y accountability
+# 📒 Índice de práctica — Constancia, academias y accountability
 
-> **Fuente única de control de la constancia.** Aquí vive el registro de sesiones, el chequeo semanal, y todo lo de la academia (clases, faltas, la presentación de fin de nivel). La fecha dura del profesor **ya no existe** — el profesor está desde el día uno.
+> **Fuente única de control de la constancia.** Aquí vive el registro de sesiones, el chequeo semanal, y todo lo de las **dos academias** (guitarra martes · canto jueves): clases, faltas, presentaciones de fin de nivel. La fecha dura del profesor **ya no existe** — los profesores están desde el día uno.
 
 ---
 
-## 🏫 La academia
+## 🏫 La academia — Guitarra (martes)
 
 | Campo | Valor |
 |---|---|
@@ -23,17 +23,38 @@
 
 | # | Fecha | Asistí | Qué se vio | Tarea | Reporte |
 |---|---|:-:|---|---|---|
-| 1 | 2026-09-01 | ✅ | Notas y cuerdas · cifrado americano · TAB · dedos 1-4 · ejercicio 1-2-3-4 (4 versiones) · figuras rítmicas, 4/4, metrónomo. El profe preguntó la base previa y aceleró — buena dinámica | El 1-2-3-4 + figuras con metrónomo (prácticas en `fundamentos/m1/` y `m3/`) | ✅ 09-05 |
-| 2 | 2026-09-08 | ✅ | Acordes: diagramas · los 8 (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio · corrección de digitaciones (G a 4 dedos, D estándar) | Las 4 progresiones (práctica en `fundamentos/m1/`) | ✅ 09-11 |
+| 1 | 2026-09-01 | ✅ | Notas y cuerdas · cifrado americano · TAB · dedos 1-4 · ejercicio 1-2-3-4 (4 versiones) · figuras rítmicas, 4/4, metrónomo. El profe preguntó la base previa y aceleró — buena dinámica | El 1-2-3-4 + figuras con metrónomo (prácticas en `fundamentos/guitarra/m1/` y `m3/`) | ✅ 09-05 |
+| 2 | 2026-09-08 | ✅ | Acordes: diagramas · los 8 (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio · corrección de digitaciones (G a 4 dedos, D estándar) | Las 4 progresiones (práctica en `fundamentos/guitarra/m1/`) | ✅ 09-11 |
 | 3 | 2026-09-15 | | | | |
 
 > Una falta se registra sin drama. La semana siguiente se pregunta "qué me perdí" y el agente cubre el hueco. **Okaeri no reprocha una ausencia — tampoco una de la academia.**
 
 ---
 
+## 🏫 La academia — Canto (jueves)
+
+| Campo | Valor |
+|---|---|
+| **Curso** | Canto para adultos — Básico I (misma academia y estructura que guitarra) |
+| **Formato** | Presencial, grupo de 3-4, **jueves 8:00-10:00 pm** |
+| **Inicio** | **2026-09-03** (matrícula y clase 1) |
+| **Sílabo** | `contexto/plan_estudio/silabo_academia_canto_basico1.md` (5 módulos × 4 clases) |
+| **Repertorio del curso** | Cada alumno elige **2-3 canciones** que se trabajan y mejoran clase a clase. Las elegidas: ver `repertorio/00_indice.md` §canto |
+| **🎯 Presentación de clausura** | **1 canción** al cerrar el nivel — el objetivo visualizable del carril canto |
+
+**Clases:**
+
+| # | Fecha | Asistí | Qué se vio | Tarea | Reporte |
+|---|---|:-:|---|---|---|
+| 1 | 2026-09-03 | ✅ | Respiración de diafragma + variante con costados (costo-diafragmática) · ejercicio del papel en la pared (presión de aire constante) · trino de labios con subidas y bajadas · práctica de canto | Practicar lo visto (apunte y práctica en `fundamentos/canto/m1/`) | ✅ 09-14 |
+| 2 | 2026-09-10 | ✅ | Apps recomendadas (se define aparte, no es pedagógico) · canto sobre repertorio · consigna: **elegir 2-3 canciones propias** para trabajar cada clase | Elegir el repertorio → elegido (ver `repertorio/00_indice.md` §canto) | ✅ 09-14 |
+| 3 | 2026-09-17 | | | | |
+
+---
+
 ## 🔔 Chequeo de constancia (semanal, no diario)
 
-**Mínimo irreducible:** 15 min, **3-4 sesiones por semana**. Una sesión puede partirse en dos días — cuenta como una.
+**Mínimo irreducible (guitarra):** 15 min, **3-4 sesiones por semana**. **Piso del canto:** 10 min, 3 veces por semana (propuesta; el calentamiento de aire/trino cuenta). El piso de guitarra no se negocia por el canto. Una sesión puede partirse en dos días — cuenta como una.
 
 **El chequeo se hace el miércoles**, junto al reporte del martes: *¿la semana pasada tuvo ≥3 sesiones registradas?* Si no, se nombra el hecho con exactitud y se abre la puerta. No hay alarma diaria: la presión diaria fue parte del problema.
 
@@ -53,9 +74,9 @@
 
 > Cada sesión se registra desde `_plantillas/plantilla_sesion.md`: crear `practica/[fecha].md` y agregar la fila. Sesión 0 = diagnóstico.
 
-| Fecha | Duración | Sección(es) del mapa | Tarea del profesor | Sensación | Sesión |
-|---|---|---|---|---|---|
-| | | | | | |
+| Fecha | Carril | Duración | Sección(es) del mapa | Tarea del profesor | Sensación | Sesión |
+|---|---|---|---|---|---|---|
+| | | | | | | |
 
 *(Las 3 sesiones de la era piano —29-jun, 30-jun, 03-jul 2026— están en `_archivo/piano/practica/`. Son historia real; cuentan.)*
 
@@ -63,7 +84,7 @@
 
 ## 📍 Dónde estoy
 
-- **Marcador del mapa:** ver `sistema/estado/estado_actual.md` — se lee ANTES de decidir qué toca.
-- **Canción única:** *No hay lugar más alto* (Miel San Marcos) — `repertorio/no-hay-lugar-mas-alto/00_indice.md`.
-- **Próximo hito:** M4.6 — la canción de memoria, sola, sin nada delante.
-- **Destino:** la banda de la iglesia (M9).
+- **Marcadores (guitarra y canto):** ver `sistema/estado/estado_actual.md` — se lee ANTES de decidir qué toca.
+- **Canción única (guitarra):** *No hay lugar más alto* (Miel San Marcos) — `repertorio/no-hay-lugar-mas-alto/00_indice.md`.
+- **Próximos hitos:** guitarra M4.6 (la canción tocada de memoria) · canto M4.6 (cantada de memoria) · el puente: canto M7, cantarla y tocarla a la vez.
+- **Destino:** la banda de la iglesia (guitarra M9 · canto M8).

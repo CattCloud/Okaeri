@@ -1,5 +1,5 @@
 // Generador de diagramas de acorde (SVG) — Okaeri, era guitarra.
-// Node puro, sin dependencias:  node _generador.js   → escribe los .svg en m1/img/
+// Node puro, sin dependencias:  node _generador.js   → escribe los .svg en guitarra/m1/img/
 // Convenciones: fundamentos/_estilo-visual.md §3 (vertical, 6ª a la izquierda, colores por dedo).
 // Rasterizar a PNG: sharp con density 200 (ver _estilo-visual.md §5).
 
@@ -147,7 +147,7 @@ function hoja8SVG() {
   return L.join('\n');
 }
 
-const OUT = path.join(__dirname, 'm1', 'img');
+const OUT = path.join(__dirname, 'guitarra', 'm1', 'img');
 fs.mkdirSync(OUT, { recursive: true });
 for (const a of [...ACORDES, ...VARIANTES]) fs.writeFileSync(path.join(OUT, a.file + '.svg'), chordSVG(a));
 fs.writeFileSync(path.join(OUT, 'clase02-anatomia-diagrama.svg'), anatomiaSVG());
