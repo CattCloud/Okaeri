@@ -42,7 +42,7 @@ En ambos, **solo el tercero cuenta** (anti-muleta). La meta final de una pieza: 
 | Canción | Artista | Estado (canto) | Nota |
 |---|---|---|---|
 | **Eres todo poderoso** | Danilo Montero | `APRENDIENDO` | — |
-| **Hosanna** | Marcos Witt | `APRENDIENDO` | ⚠️ Los agudos llegaron al límite. **No se fuerza**: primero medir el rango (`fundamentos/canto/m2/practica_2.5_rango-vocal.md`) y con eso decidir su tono o si espera a M6 |
+| **Hosanna** | Marcos Witt | `APRENDIENDO` | ⚠️ Los agudos llegaron al límite. **No se fuerza**: primero medir el rango vocal con la app (ver `NOTAS.md`) y con eso decidir su tono o si espera a M6 |
 | _Tercera: por decidir_ | Marcos Brunet / Matt Redman | — | Entre **Al que está sentado en el trono** y **10,000 Razones (esp.)** — las dos están también en la lista de espera de guitarra: cualquiera que elijas sumará doble cuando llegue su módulo de guitarra |
 
 > **Las primeras cinco de guitarra viven en las mismas cuatro formas.** M1 + M2 es la llave de todas.

@@ -59,6 +59,8 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 
 **Criterio de "aprendida":** una canción se canta **afinada, de memoria, sin letra ni voz original delante, sola**. Estados: `APRENDIENDO` → `CANTO-CON-AYUDA` → `CANTO-DE-MEMORIA-SOLA`. Solo el tercero cuenta.
 
+**Medir no es muleta.** Una app de test de rango o un afinador vocal usado **sobre una grabación o en una medición puntual** es verificación, como el afinador de la guitarra. Lo vetado es cantar canciones siguiendo la línea en la pantalla.
+
 ---
 
 ## 📊 Índice
@@ -79,7 +81,7 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 
 Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) · 🏫 visto en clase (adelantado, no completado).
 
-> **Sesión 0 — diagnóstico.** Con la grabadora encendida: siseo largo, una nota sostenida, una sirena, cinco notas dictadas con la guitarra — y **la medición del rango vocal** (sección 2.5, adelantada: el repertorio del profesor ya la exige — *Hosanna* llegó al límite). Práctica lista: `fundamentos/canto/m2/practica_2.5_rango-vocal.md`. Se marca lo que ya sale. No se diagnostica hablando: se diagnostica cantando.
+> **Sesión 0 — diagnóstico.** Con la grabadora encendida: siseo largo, una nota sostenida, una sirena, cinco notas dictadas con la guitarra — y **la medición del rango vocal con una app de test de rango** (sección 2.5, adelantada: el repertorio del profesor ya la exige — *Hosanna* llegó al límite; herramienta: ver `NOTAS.md`). Se marca lo que ya sale. No se diagnostica hablando: se diagnostica cantando.
 
 ---
 
@@ -115,7 +117,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 2.2 | Voz de pecho y voz de cabeza | Distinguir las dos en tu propia voz y producir cada una a propósito |
 | 2.3 | Sirenas sin quiebre | Subir y bajar entre las dos voces sin el "gallo" (el salto brusco), dentro de tu zona cómoda |
 | 2.4 | Las cinco vocales | A-E-I-O-U con la boca abierta y el sonido "adelante", sin cambiar de posición al subir |
-| 2.5 | Tu rango hoy | Medir con la guitarra tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo |
+| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo |
 | 2.6 | Cantar una escala | Do-Re-Mi-Fa-Sol subiendo y bajando, afinado, desde una nota que te den |
 
 **Conceptos:** afinación (cantar la misma altura que la referencia) · **registro** (pecho: la voz de hablar fuerte; cabeza: la voz liviana y aguda) · quiebre o "gallo" (el salto entre registros) · **rango** (de tu nota más grave a la más aguda) · zona cómoda (*tesitura*: donde cantas sin esfuerzo) · resonancia (dónde "suena" la voz: pecho, boca, nariz) · escala.

@@ -58,12 +58,7 @@ _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_guitar
 | [[canto/m1/clase01_respiracion\|Respirar para cantar]] | 📖 apunte | Diafragma y costados (costo-diafragmática) · el apoyo · por qué el papel y el trino miden el aire |
 | [[canto/m1/clase01_practica_respiracion-trino\|🎤 Aire y trino]] | 🎤 práctica | Ejercicios de la clase 1 — **es también el calentamiento permanente** (1.5) |
 
-### canto/m2 · Producir el sonido
-| Archivo | Tipo | Qué es |
-|---|---|---|
-| [[canto/m2/practica_2.5_rango-vocal\|🎤 Medir tu rango vocal]] | 🎤 práctica | Sección 2.5 adelantada a la Sesión 0 — una pasada de 12 min con guitarra y grabadora |
-
-### canto/m3-m8
+### canto/m2-m8
 _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_canto.md`)_
 
 ## Reciclable de la era piano

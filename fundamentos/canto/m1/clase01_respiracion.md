@@ -49,8 +49,8 @@ Labios sueltos vibrando con el aire — el "brrr" de caballo — mientras la voz
 Por qué es el ejercicio favorito de todos los profesores:
 
 - **Solo funciona con aire parejo.** Si el aire llega a golpes o se acaba, los labios dejan de vibrar al instante. Es otro medidor honesto, como el papel.
-- **Protege la voz.** Los labios semicerrados crean una contrapresión que deja a las cuerdas vocales vibrar con mínimo esfuerzo. Por eso se puede subir más agudo en trino que cantando abierto, sin dañarse.
-- **Conecta aire y voz.** Es respiración y fonación a la vez: el puente entre este módulo y el siguiente.
+- **Protege la voz.** Los labios semicerrados frenan un poco la salida del aire, y ese freno deja a las cuerdas vocales vibrar con mínimo esfuerzo. Por eso se puede subir más agudo en trino que cantando abierto, sin dañarse.
+- **Conecta aire y voz.** Es las dos cosas a la vez — soltar aire parejo y hacer sonar la voz encima: el puente entre este módulo y el siguiente.
 
 > 📋 **Repaso en una pantalla**
 > - Cantar = controlar la **salida** del aire, no inhalar mucho.
