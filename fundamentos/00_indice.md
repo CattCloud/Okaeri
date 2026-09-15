@@ -18,6 +18,7 @@ estado: EN-CURSO
 - **La práctica nunca trae lo que debes producir de memoria** (formas de acorde del drill o de la canción; en canto, la letra o la melodía de la canción — eso vive en el apunte, en Anki o en tu memoria). Sí trae el gráfico de **qué practicar** (TAB del ejercicio, figuras, el esquema de un ejercicio de aire).
 - **En canto la verificación es la grabadora:** se canta sin mirar nada, se graba, se escucha al final. La grabación es el reverso de Anki.
 - **Todo ejemplo visual se muestra, no se cuenta.** Si un apunte nombra una forma, posición o comparación, lleva sus diagramas — lado a lado cuando compara.
+- **Un mismo ejercicio puede vivir en ambos archivos, con roles distintos:** el apunte explica **qué entrena y por qué funciona** (para practicarlo con comprensión, no en piloto automático); la práctica prescribe **la rutina exacta** (repeticiones, minutos, niveles). Prescribir es exclusivo de la práctica.
 - **El apunte es atemporal, no un chat.** Solo la lección: nada de referencias al hilo del día, disculpas ni meta-comentarios del sistema (eso va al chat, a `estado_actual.md` o al frontmatter). Quien lo relea en tres semanas solo debe encontrar la lección. La personalización pedagógica (tus ejemplos, tu repertorio) sí entra.
 - **Cada apunte tiene dos modos:** 📖 cuerpo desarrollado (tema nuevo) · 📋 repaso en una pantalla.
 

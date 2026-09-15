@@ -6,7 +6,6 @@ titulo: "Respirar para cantar: diafragma, costados, presión"
 secciones_mapa: "1.2-1.4 (+ 1.5 parcial: el trino)"
 estado: ESCRITA
 ---
-
 # 🎤 Respirar para cantar: diafragma, costados y presión de aire
 
 > **Se lee lejos del ensayo.** La técnica de la clase 1 de canto, explicada. Su práctica: [[clase01_practica_respiracion-trino]].
@@ -64,6 +63,7 @@ Por qué es el ejercicio favorito de todos los profesores:
 - **Conecta aire y voz.** Es las dos cosas a la vez — soltar aire parejo y hacer sonar la voz encima: el puente entre este módulo y el siguiente.
 
 > 📋 **Repaso en una pantalla**
+>
 > - Cantar = controlar la **salida** del aire, no inhalar mucho.
 > - Inhalar bien: el **abdomen sale** (diafragma baja) y las **costillas bajas se abren** (las manos en los costados lo comprueban). Hombros quietos.
 > - **Apoyo** = presión de aire constante desde el abdomen. El papel en la pared lo mide.
@@ -71,4 +71,5 @@ Por qué es el ejercicio favorito de todos los profesores:
 > - **Trino de labios**: solo vibra con aire parejo; protege las cuerdas; con subidas y bajadas es una sirena.
 
 ---
+
 [[00_indice|índice]] · su práctica: [[clase01_practica_respiracion-trino]]
