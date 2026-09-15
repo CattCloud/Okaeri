@@ -27,7 +27,7 @@
 - [ ]  Pedir a la banda de la iglesia la lista de 5-6 canciones que más repiten.
 - [X]  **Medir el rango vocal** → hecho 2026-09-14 con 3 tests web coincidentes: **cómodo Do3–Sol4 · total ~Sol2–Mi5 · tenor**. En el perfil, con capturas en `sistema/perfil/img/`. Lección: los extremos varían 1-3 semitonos entre apps (ruido de borde); la zona cómoda es el dato de trabajo.
 - [ ]  Decidir la **3ª canción del profesor de canto**: *Al que está sentado en el trono* (Brunet) o *10,000 Razones* (esp.) — ambas suman doble (ya están en la lista de guitarra).
-- [ ]  **Apps de canto** (el profe recomendó varias; se decide aparte): propuesta del 09-14 → **Moises** (pista sin voz + cambio de tono) y **AnkiDroid** (oído y acordes). Vocal Pitch Monitor solo para verificar grabaciones, nunca en vivo.
+- [ ]  **Apps de canto** — el usuario trajo 4 (09-14): roles aclarados en `fundamentos/canto/_consulta-voz.md` (Moises = pista sin voz + tono · Nail the Pitch = afinador para verificar · Learn To Master = ejercicios guiados · SolFaMe = guardada, es solfeo). **Integración formal al sistema: pendiente, a pedido del usuario.** AnkiDroid sigue para los mazos.
 - [ ]  Importar el mazo Anki de acordes de guitarra.
 
 ## Pendientes del sistema (cuando toque, no antes)

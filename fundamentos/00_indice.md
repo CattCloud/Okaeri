@@ -26,6 +26,7 @@ estado: EN-CURSO
 | Nota | Qué es |
 |---|---|
 | [[_consulta-instrumento\|La guitarra: partes, sostenerla, afinar, cuidado]] | Lo que era el "módulo 0". **Afinar sí es obligatorio, cada vez.** |
+| [[canto/_consulta-voz\|La voz: cuidarla, calentarla, y la rutina de toda sesión]] | El espejo para el canto: antes/durante/después, señales de parar, hidratación, el tono, las apps. **Calentar sí es obligatorio, cada vez.** |
 
 ## Lo escrito, por módulo
 
