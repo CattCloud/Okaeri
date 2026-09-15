@@ -42,6 +42,17 @@ El papel es un medidor honesto: se cae si el chorro es débil, si es intermitent
 ![Vista lateral del ejercicio: soplar un chorro fino y constante que mantiene un papel pegado a la pared.](img/clase01-papel-pared.png)
 *El mismo abdomen que empuja el papel es el que sostiene una nota de 8 segundos.*
 
+## El siseo: la frase sin la voz
+
+Soltar el aire en una **"sssss" larga y pareja**. Los dientes casi cerrados dejan una rendija mínima, así que el aire dura mucho y cualquier irregularidad **se oye**: si la "s" tiembla, tu aire tiembla; si arranca fuerte y muere, soltaste todo al inicio. Cantar una frase larga es exactamente esto — aire parejo durante segundos — con la voz montada encima.
+
+Dos virtudes que lo hacen ejercicio de todos los días:
+
+- **Se cronometra.** Es el único de los tres que da un número (segundos), y por eso mide tu avance: la evaluación de M1 pide ≥ 20 s parejos.
+- **No gasta la voz.** Las cuerdas vocales no vibran, así que puedes repetirlo sin cansarte ni lastimarte.
+
+**Papel vs. siseo, que no son lo mismo:** el papel entrena la presión *dirigida* a un punto (puntería del aire); el siseo entrena su *duración* en el tiempo (tanque del aire). Juntos son el apoyo completo.
+
 ## El trino de labios (lip trill)
 
 Labios sueltos vibrando con el aire — el "brrr" de caballo — mientras la voz suena por debajo. Subir y bajar la altura durante el trino es hacer una **sirena**.
@@ -56,6 +67,7 @@ Por qué es el ejercicio favorito de todos los profesores:
 > - Cantar = controlar la **salida** del aire, no inhalar mucho.
 > - Inhalar bien: el **abdomen sale** (diafragma baja) y las **costillas bajas se abren** (las manos en los costados lo comprueban). Hombros quietos.
 > - **Apoyo** = presión de aire constante desde el abdomen. El papel en la pared lo mide.
+> - **Siseo** = la frase sin la voz: duración del aire, cronometrable (meta M1: ≥ 20 s parejos), no gasta la voz.
 > - **Trino de labios**: solo vibra con aire parejo; protege las cuerdas; con subidas y bajadas es una sirena.
 
 ---
