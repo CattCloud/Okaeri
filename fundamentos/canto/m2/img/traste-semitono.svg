@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="235" viewBox="0 0 760 235" font-family="Arial, Helvetica, sans-serif">
+<rect width="760" height="235" fill="#ffffff"/>
+<text x="380" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">En tu guitarra: cada traste sube un semitono</text>
+<line x1="70" y1="94" x2="70" y2="146" stroke="#111111" stroke-width="6"/>
+<line x1="122.5" y1="94" x2="122.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="96.25" y="164" text-anchor="middle" font-size="12" fill="#555555">1</text>
+<line x1="175" y1="94" x2="175" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="148.75" y="164" text-anchor="middle" font-size="12" fill="#555555">2</text>
+<line x1="227.5" y1="94" x2="227.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="201.25" y="164" text-anchor="middle" font-size="12" fill="#555555">3</text>
+<line x1="280" y1="94" x2="280" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="253.75" y="164" text-anchor="middle" font-size="12" fill="#555555">4</text>
+<line x1="332.5" y1="94" x2="332.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="306.25" y="164" text-anchor="middle" font-size="12" fill="#555555">5</text>
+<line x1="385" y1="94" x2="385" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="358.75" y="164" text-anchor="middle" font-size="12" fill="#555555">6</text>
+<line x1="437.5" y1="94" x2="437.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="411.25" y="164" text-anchor="middle" font-size="12" fill="#555555">7</text>
+<line x1="490" y1="94" x2="490" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="463.75" y="164" text-anchor="middle" font-size="12" fill="#555555">8</text>
+<line x1="542.5" y1="94" x2="542.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="516.25" y="164" text-anchor="middle" font-size="12" fill="#555555">9</text>
+<line x1="595" y1="94" x2="595" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="568.75" y="164" text-anchor="middle" font-size="12" fill="#555555">10</text>
+<line x1="647.5" y1="94" x2="647.5" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="621.25" y="164" text-anchor="middle" font-size="12" fill="#555555">11</text>
+<line x1="700" y1="94" x2="700" y2="146" stroke="#888888" stroke-width="2.5"/>
+<text x="673.75" y="164" text-anchor="middle" font-size="12" fill="#555555">12</text>
+<line x1="40" y1="120" x2="720" y2="120" stroke="#333333" stroke-width="2.5"/>
+<circle cx="306.25" cy="80" r="4" fill="#bbbbbb"/>
+<circle cx="411.25" cy="80" r="4" fill="#bbbbbb"/>
+<circle cx="673.75" cy="74" r="4" fill="#bbbbbb"/><circle cx="673.75" cy="86" r="4" fill="#bbbbbb"/>
+<text x="58" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#22883a">Mi</text>
+<text x="58" y="64" text-anchor="middle" font-size="11" fill="#555555">al aire</text>
+<text x="745" y="186" text-anchor="end" font-size="14" font-weight="bold" fill="#22883a">traste 12: otra vez Mi</text>
+<text x="745" y="204" text-anchor="end" font-size="12" fill="#333333">la misma nota, una octava arriba</text>
+<polyline points="74,58 118.5,58" fill="none" stroke="#cc2222" stroke-width="2"/>
+<polygon points="120.5,58 112.5,53 112.5,63" fill="#cc2222"/>
+<text x="130.5" y="62" font-size="13" font-weight="bold" fill="#cc2222">1 traste = 1 semitono (el paso más chico)</text>
+<text x="380" y="222" text-anchor="middle" font-size="13" fill="#333333">12 semitonos = 1 octava. Por eso el traste 12 repite la nota de la cuerda al aire.</text>
+</svg>

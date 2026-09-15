@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="748" height="330" viewBox="0 0 748 330" font-family="Arial, Helvetica, sans-serif">
+<rect width="748" height="330" fill="#ffffff"/>
+<text x="374" y="26" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Tu rango vocal (medido 2026-09-14)</text>
+<rect x="120" y="42" width="14" height="14" fill="#dbe9f9" stroke="#333333" stroke-width="1"/>
+<text x="142" y="54" font-size="13" fill="#333333">todo lo que tu voz alcanzó (Sol2 → Mi5)</text>
+<rect x="430" y="42" width="14" height="14" fill="#c4e6c9" stroke="#333333" stroke-width="1"/>
+<text x="452" y="54" font-size="13" fill="#333333">zona cómoda (Do3 → Sol4)</text>
+<rect x="34" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="58" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="82" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="106" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="130" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="154" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="178" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="202" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="226" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="250" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="274" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="298" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="322" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="346" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="370" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="394" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="418" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="442" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="466" y="96" width="24" height="110" fill="#c4e6c9" stroke="#333333" stroke-width="1.5"/>
+<rect x="490" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="514" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="538" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="562" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="586" y="96" width="24" height="110" fill="#dbe9f9" stroke="#333333" stroke-width="1.5"/>
+<rect x="610" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="634" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="658" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="682" y="96" width="24" height="110" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+<rect x="51" y="96" width="14" height="66" fill="#222222"/>
+<rect x="75" y="96" width="14" height="66" fill="#222222"/>
+<rect x="123" y="96" width="14" height="66" fill="#222222"/>
+<rect x="147" y="96" width="14" height="66" fill="#222222"/>
+<rect x="171" y="96" width="14" height="66" fill="#222222"/>
+<rect x="219" y="96" width="14" height="66" fill="#222222"/>
+<rect x="243" y="96" width="14" height="66" fill="#222222"/>
+<rect x="291" y="96" width="14" height="66" fill="#222222"/>
+<rect x="315" y="96" width="14" height="66" fill="#222222"/>
+<rect x="339" y="96" width="14" height="66" fill="#222222"/>
+<rect x="387" y="96" width="14" height="66" fill="#222222"/>
+<rect x="411" y="96" width="14" height="66" fill="#222222"/>
+<rect x="459" y="96" width="14" height="66" fill="#222222"/>
+<rect x="483" y="96" width="14" height="66" fill="#222222"/>
+<rect x="507" y="96" width="14" height="66" fill="#222222"/>
+<rect x="555" y="96" width="14" height="66" fill="#222222"/>
+<rect x="579" y="96" width="14" height="66" fill="#222222"/>
+<rect x="627" y="96" width="14" height="66" fill="#222222"/>
+<rect x="651" y="96" width="14" height="66" fill="#222222"/>
+<rect x="675" y="96" width="14" height="66" fill="#222222"/>
+<line x1="142" y1="210" x2="142" y2="224" stroke="#2266cc" stroke-width="2"/>
+<text x="142" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#2266cc">Sol2</text>
+<text x="142" y="256" text-anchor="middle" font-size="12" fill="#2266cc">tu más grave</text>
+<line x1="598" y1="210" x2="598" y2="224" stroke="#2266cc" stroke-width="2"/>
+<text x="598" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#2266cc">Mi5</text>
+<text x="598" y="256" text-anchor="middle" font-size="12" fill="#2266cc">tu más aguda</text>
+<polyline points="202,264 202,274 490,274 490,264" fill="none" stroke="#22883a" stroke-width="2"/>
+<text x="346" y="292" text-anchor="middle" font-size="13" font-weight="bold" fill="#22883a">zona cómoda Do3 → Sol4 — contra ESTO se decide el tono de cada canción</text>
+<text x="374" y="318" text-anchor="middle" font-size="13" fill="#333333">Los bordes (Sol2, Mi5) salen empujando o en voz de cabeza; no se les exige canciones todavía.</text>
+</svg>

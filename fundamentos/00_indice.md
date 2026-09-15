@@ -9,7 +9,7 @@ estado: EN-CURSO
 > - **Apunte** (`claseNN_<tema>.md`) → se lee **lejos de la guitarra**. Conceptos, porqués, diagramas de referencia.
 > - **Práctica** (`claseNN_practica_<tema>.md`) → se usa **con la guitarra**. Objetivo en claro, tiempo mínimo y natural, el gráfico de qué practicar, los 3 errores típicos y su arreglo.
 >
-> El prefijo **`claseNN_`** = nació de esa clase de la academia. Una práctica nacida del mapa (no de una clase) lleva su sección: `practica_4.4_<tema>.md`.
+> El prefijo **`claseNN_`** = nació de esa clase de la academia. Lo nacido del mapa (no de una clase) lleva su sección: `practica_4.4_<tema>.md` o `apunte_2.5_<tema>.md`.
 
 ## Reglas
 
@@ -58,7 +58,12 @@ _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_guitar
 | [[canto/m1/clase01_respiracion\|Respirar para cantar]] | 📖 apunte | Diafragma y costados (costo-diafragmática) · el apoyo · por qué el papel y el trino miden el aire |
 | [[canto/m1/clase01_practica_respiracion-trino\|🎤 Aire y trino]] | 🎤 práctica | Ejercicios de la clase 1 — **es también el calentamiento permanente** (1.5) |
 
-### canto/m2-m8
+### canto/m2 · Producir el sonido
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [[canto/m2/apunte_2.5_notas-octavas-rango\|El mapa de las notas: octavas, semitonos y tu rango]] | 📖 apunte | La escalera completa: notas que se repiten → octava → el número → semitono (= 1 traste) → rango y zona cómoda → tono y transportar → tipos de voz. Con tu medición del 09-14. Base compartida con guitarra M7 |
+
+### canto/m3-m8
 _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_canto.md`)_
 
 ## Reciclable de la era piano

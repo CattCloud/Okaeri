@@ -117,7 +117,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 2.2 | Voz de pecho y voz de cabeza | Distinguir las dos en tu propia voz y producir cada una a propósito |
 | 2.3 | Sirenas sin quiebre | Subir y bajar entre las dos voces sin el "gallo" (el salto brusco), dentro de tu zona cómoda |
 | 2.4 | Las cinco vocales | A-E-I-O-U con la boca abierta y el sonido "adelante", sin cambiar de posición al subir |
-| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo |
+| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo — *adelantada: medida 2026-09-14 (Sesión 0); apunte en `fundamentos/canto/m2/`. Se revalida al llegar M2* |
 | 2.6 | Cantar una escala | Do-Re-Mi-Fa-Sol subiendo y bajando, afinado, desde una nota que te den |
 
 **Conceptos:** afinación (cantar la misma altura que la referencia) · **registro** (pecho: la voz de hablar fuerte; cabeza: la voz liviana y aguda) · quiebre o "gallo" (el salto entre registros) · **rango** (de tu nota más grave a la más aguda) · zona cómoda (*tesitura*: donde cantas sin esfuerzo) · resonancia (dónde "suena" la voz: pecho, boca, nariz) · escala.
