@@ -23,10 +23,10 @@
 | Campo | Valor |
 |---|---|
 | **Temario** | `contexto/plan_estudio/temario_canto.md` |
-| **Módulo actual** | **Sesión 0 — diagnóstico** (antes de M1): medir el rango vocal |
+| **Módulo actual** | **M1 — evaluación pendiente** (Sesión 0: rango vocal ✅ 2026-09-14) |
 | **Secciones completadas** | 0 / 40 |
 | **Vistas en clase (🏫), no completadas** | M1: respiración costo-diafragmática, papel, trino (clase 1) |
-| **Próxima acción** | Medir el **rango vocal** — el territorio de tu voz, de tu nota más grave a tu más aguda cómodas — **con la app de test que elijas** (propuesta en `NOTAS.md`). *Hosanna* llegó al límite: hay que saber con qué voz se trabaja antes de decidir tonos. Después: evaluación de M1 (siseo ≥20 s, nota 8 s estable). |
+| **Próxima acción** | **Rango medido: cómodo Do3–Sol4, total ~Sol2–Mi5, tenor** (detalle en el perfil). Ahora: evaluación de M1 (siseo parejo ≥20 s · nota cómoda 8 s estable) con la práctica de aire/trino. En la próxima sesión de canto: ubicar la nota más aguda del coro de *Hosanna* y decidir cuántos semitonos baja su tono para caber bajo Sol4. |
 
 ---
 
@@ -39,7 +39,7 @@
 | **Reporte canto** | ✅ Clases 1-2 (recibido 14-sep): respiración diafragma+costados · papel en pared · trino · consigna: elegir 2-3 canciones para trabajar cada clase |
 | **Tarea del profesor (guitarra)** | Las 4 progresiones → `fundamentos/guitarra/m1/clase02_practica_progresiones.md` — 🔵 6 min/día |
 | **Tarea del profesor (canto)** | Practicar el repertorio elegido (ver `repertorio/00_indice.md` §canto). Base técnica: `fundamentos/canto/m1/clase01_practica_respiracion-trino.md` — 🔵 5 min/día |
-| **Plan de la semana** | 1. Guitarra: araña 🔵 + progresiones + drill Anki 3 min (la evaluación de M1 en marcha). 2. Canto: calentamiento aire/trino 🔵 + **elegir la app de test de rango y medirse una vez** (reportar el resultado tal como lo dé la app). 3. El repertorio de canto se canta con calentamiento previo, sin forzar los agudos de *Hosanna* hasta tener el rango medido. 4. Registrar cada sesión en `practica/` con su carril. 5. Martes → reporte guitarra clase 3 · Jueves → reporte canto clase 3. |
+| **Plan de la semana** | 1. Guitarra: araña 🔵 + progresiones + drill Anki 3 min (la evaluación de M1 en marcha). 2. Canto: calentamiento aire/trino 🔵 a diario + repertorio del profesor **en tonos que quepan bajo Sol4** (los agudos de *Hosanna* no se empujan). 3. El repertorio de canto se canta con calentamiento previo, sin forzar los agudos de *Hosanna* hasta tener el rango medido. 4. Registrar cada sesión en `practica/` con su carril. 5. Martes → reporte guitarra clase 3 · Jueves → reporte canto clase 3. |
 
 ---
 

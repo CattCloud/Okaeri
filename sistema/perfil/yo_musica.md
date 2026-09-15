@@ -23,7 +23,7 @@
 - **Meta general:** tocar —y después cantar a la vez— las canciones que le tocan el corazón. Canciones que ya existen.
 - **Destino concreto: la banda de su iglesia.** Real y accesible: sigue en contacto y podría entrar cuando esté listo. Es el objetivo visualizable que faltaba.
 - **Secuencia elegida:** instrumental → acompañarse cantando → banda. Reordenada a **base primero** (acordes + rasgueo). **Actualización 2026-09-14:** el canto entró antes de lo planeado — matrícula real (jueves, misma academia) → carril propio con temario y piso de tiempo (`decision_canto_segundo_mapa.md`). La meta de **juntarlos** sigue siendo posterior: canto M7 exige los dos M4 cerrados.
-- **Rango vocal (el territorio de la voz, de la nota más grave a la más aguda cómodas): sin medir.** *Hosanna* (Witt) llegó al límite de agudos — no se fuerza. Se mide con una app de test de rango (propuesta en `NOTAS.md`); el resultado se anota aquí.
+- **Rango vocal (el territorio de la voz, de la nota más grave a la más aguda): medido 2026-09-14** con 3 tests web (capturas en `sistema/perfil/img/`), resultados coincidentes: **total ~Sol2 → Mi5 (~2.8 octavas) · zona cómoda Do3–Sol4 · clasificación: tenor** (voz masculina aguda; la escala grave→aguda es bajo, barítono, tenor). **El número de trabajo es la zona cómoda Do3–Sol4**: los tonos de las canciones se deciden contra ella, no contra los extremos. Es la foto de hoy: se remide en ~1 mes, y la medición del profesor (clases 7-8) manda sobre las apps.
 - **NO es compositor. NO busca virtuosismo ni conservatorio.** La música es *"parte de mi vida, una forma de expresar el corazón"*.
 
 ## Repertorio

@@ -25,7 +25,7 @@
 - [X]  Matrícula (S/50).
 - [X]  **Comprar capo.** Instalar afinador.
 - [ ]  Pedir a la banda de la iglesia la lista de 5-6 canciones que más repiten.
-- [ ]  **Medir el rango vocal con una app** (tu rango = de tu nota más grave a tu más aguda cómodas; desbloquea el tono de *Hosanna* y de todo el repertorio de canto). **Propuesta 09-14, en orden:** ① **Vocaberry** (Android, gratis; trae test de rango guiado y te da el resultado en notas) · ② **Sing Sharp** (test de rango similar) · ③ manual: piano de app + Vocal Pitch Monitor grabándote. Regla: calentar antes (aire/trino 🔵) y **no forzar el agudo** — la app mide lo cómodo de hoy, no lo que se alcanza apretando. Reportar el resultado tal cual lo dé la app.
+- [X]  **Medir el rango vocal** → hecho 2026-09-14 con 3 tests web coincidentes: **cómodo Do3–Sol4 · total ~Sol2–Mi5 · tenor**. En el perfil, con capturas en `sistema/perfil/img/`. Lección: los extremos varían 1-3 semitonos entre apps (ruido de borde); la zona cómoda es el dato de trabajo.
 - [ ]  Decidir la **3ª canción del profesor de canto**: *Al que está sentado en el trono* (Brunet) o *10,000 Razones* (esp.) — ambas suman doble (ya están en la lista de guitarra).
 - [ ]  **Apps de canto** (el profe recomendó varias; se decide aparte): propuesta del 09-14 → **Moises** (pista sin voz + cambio de tono) y **AnkiDroid** (oído y acordes). Vocal Pitch Monitor solo para verificar grabaciones, nunca en vivo.
 - [ ]  Importar el mazo Anki de acordes de guitarra.
