@@ -48,7 +48,7 @@ Entre las notas hay pasos. El paso más chico que usa nuestra música se llama *
 
 Tu voz también vive en este mapa. Llega hasta una nota grave y hasta una aguda; ese territorio es tu **rango vocal**. Y dentro del rango hay dos zonas distintas:
 
-- **Los extremos:** las notas que salen empujando, o en la voz liviana de arriba. Existen, pero cansan y fallan.
+- **Los extremos:** las notas que salen empujando, o en la voz liviana de arriba. El sonido sale, pero no se deja moldear — en tus palabras: 'parece un sonido que puedo hacer', no una nota que puedas cantar con cuerpo. Existen, pero no se les pide canciones.
 - **La zona cómoda** (nombre técnico: **tesitura**): donde tu voz suena con cuerpo y sin esfuerzo. **Es el único número con el que se trabaja.**
 
 ![Teclado con el rango vocal medido: total de Sol2 a Mi5 en azul, zona cómoda de Do3 a Sol4 en verde.](img/rango-teclado.png)
