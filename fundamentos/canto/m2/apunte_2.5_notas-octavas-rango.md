@@ -28,6 +28,15 @@ Esa distancia — de un Do al siguiente Do, de un Mi al siguiente Mi — se llam
 
 "Do3", "Sol4", "Mi5": la nota dice **cuál** de las 7 es, y el número dice **en qué octava** — a mayor número, más agudo. Así dos personas pueden hablar de notas sin ambigüedad: no "un Sol agudo", sino **Sol4**. El Do central del piano es Do4, y es la referencia universal.
 
+Tres precisiones que evitan confusiones:
+
+- **El número cambia justo en cada Do**, no en La ni en otra nota. Después de Si3 viene **Do4**: Do3-Re3-Mi3-Fa3-Sol3-La3-Si3 → Do4.
+- **La numeración empieza en 0**, y el piano completo no arranca en un Do: su tecla más grave es **La0** y la más aguda **Do8** — 88 teclas, poco más de 7 octavas.
+- **Ahí no se acaban los números, se acaba la música.** Más abajo de La0 el oído siente vibración sin distinguir la nota; más arriba de Do8 es un silbido. Todo lo que vas a tocar y cantar vive dentro: tu guitarra va de Mi2 a cerca de Si5, y tu voz de Sol2 a Mi5 — casi el mismo territorio, por eso la guitarra es buena referencia para tu voz.
+
+![El piano completo de 88 teclas, de La0 a Do8, con los ocho Do numerados y la zona cómoda del usuario resaltada.](img/piano-completo-octavas.png)
+*El teclado de los diagramas anteriores es solo la rebanada central de este.*
+
 ## 4. El semitono: el paso más chico
 
 Entre las notas hay pasos. El paso más chico que usa nuestra música se llama **semitono**, y tu guitarra lo tiene construido: **cada traste sube exactamente un semitono**. Doce semitonos completan una octava — por eso el traste 12 repite la nota de la cuerda al aire.

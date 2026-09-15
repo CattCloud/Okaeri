@@ -114,7 +114,7 @@ Permitido: ✅ señalar una ubicación · ✅ resaltar una forma de acorde · �
 | Figuras rítmicas + compás 4/4 con ejemplos | `guitarra/m3/img/clase01-figuras-compas.svg` → `.png` | ✅ apunte y práctica de ritmo |
 | Respiración alta vs. baja (comparación) | `canto/m1/img/clase01-respiracion-alta-vs-baja.svg` → `.png` | ✅ apunte de respiración (canto) |
 | El ejercicio del papel en la pared | `canto/m1/img/clase01-papel-pared.svg` → `.png` | ✅ apunte y práctica de aire (canto) |
-| Octavas en el teclado · rango vocal medido · el traste como semitono | `canto/m2/img/*.svg` → `.png` | ✅ apunte de octavas/rango (canto) |
+| Octavas · rango medido · traste como semitono · piano completo 88 teclas | `canto/m2/img/*.svg` → `.png` | ✅ apunte de octavas/rango (canto) |
 | Partes de la guitarra, señaladas | `img/consulta-partes-guitarra.svg` → `.png` | ✅ nota de consulta |
 | 8 acordes + 4 variantes + anatomía del diagrama + hoja imprimible | `guitarra/m1/img/acorde-*.svg`, `clase02-*.svg`, `hoja-8-acordes.svg` | ✅ generados por `_generador.js` (clase 2) |
 | Las 4 progresiones en compases | `guitarra/m1/img/clase02-progresiones.svg` → `.png` | ✅ práctica clase 2 |
