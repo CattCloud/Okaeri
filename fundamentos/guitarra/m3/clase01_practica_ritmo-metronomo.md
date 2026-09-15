@@ -16,7 +16,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**Que el reloj esté en tu cabeza, no en la app.** Esta es la habilidad que separa "notas correctas" de "una canción": tocar lo correcto *en el momento* correcto. Es también, literalmente, la cura de tu historia con Yousician — allá la pista te prestaba el ritmo y por eso no quedaba nada; aquí lo construyes tú.
+**Llevar el pulso por dentro, sin depender de la app.** Es la habilidad de tocar cada nota *en el momento* correcto, no solo la nota correcta. Es lo contrario de Yousician: allá la pista marcaba el ritmo por ti y por eso no quedaba nada; aquí el pulso lo llevas tú.
 
 **Lo vas a notar** el día que apagues el metrónomo, sigas tocando, lo vuelvas a encender… y sigas cuadrado con él. Ese día el reloj ya es tuyo.
 
@@ -76,6 +76,10 @@ Tu nota **se come al clic**: suenan tan juntos que parecen un solo sonido. Si es
 
 Una sola: haz el paso 1 **también sin guitarra** en cualquier momento del día — palmas con el metrónomo del celular, 60 bpm, contando en voz alta. Dos minutos en el bus valen. El reloj interno se entrena a todas horas, no solo con el instrumento.
 
-## Hasta cuándo
+## Hasta cuándo / cuándo ya está
 
-Tarea semanal, hasta la clase 2 (martes 08-sep). Igual que la araña: no se "aprueba", se incorpora — contar en voz alta te va a acompañar hasta que cuente solo tu cabeza.
+Fue la tarea de la clase 1. No se "aprueba", se incorpora: contar en voz alta acompaña toda práctica con ritmo hasta que el conteo salga solo, por dentro. **Está lista** cuando pasas el test del reloj (nivel 🔥) tres días seguidos.
+
+## Qué sigue
+
+El rasgueo de M3 en el temario: de 3.3 (rasgueo hacia abajo) a 3.6 (rasguear sin parar mientras cambias de acorde), sobre este mismo pulso.

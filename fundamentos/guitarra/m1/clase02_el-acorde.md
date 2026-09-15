@@ -10,19 +10,19 @@ estado: ESCRITA
 
 > **Un acorde es tocar tres o más notas al mismo tiempo, elegidas para que suenen bien juntas.** Es la unidad con la que se acompañan las canciones: cuando escuchas la guitarra "rellenando" debajo de una voz en un worship, eso son acordes.
 
-Una nota sola suena fina, sola. Junta tres bien elegidas y aparece **cuerpo, emoción, color**. En la guitarra, una forma de la mano izquierda + un rasgueo = las 3-4 notas del acorde sonando a la vez (aunque pises 3 cuerdas y suenen 5 o 6: las de al aire también son notas del acorde).
+Una nota sola suena delgada. Junta tres bien elegidas y el sonido se vuelve lleno: eso es lo que acompaña a una voz. En la guitarra, una forma de la mano izquierda + un rasgueo = las 3-4 notas del acorde sonando a la vez (aunque pises 3 cuerdas y suenen 5 o 6: las de al aire también son notas del acorde).
 
 ## Mayor y menor: los dos colores
 
 Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se **oye** antes de entenderse:
 
 
-| Familia   | Cómo suena                             | Se escribe                            |
-| --------- | --------------------------------------- | ------------------------------------- |
-| **Mayor** | Estable, completo, "alegre" — luz      | Solo el nombre:**C**, **G**, **D**    |
-| **Menor** | Melancólico, emotivo — sombra cálida | Nombre +**m**: **Am**, **Em**, **Dm** |
+| Familia   | Cómo suena                        | Se escribe                              |
+| --------- | --------------------------------- | --------------------------------------- |
+| **Mayor** | Estable, resuelto, "alegre"       | Solo el nombre: **C**, **G**, **D**     |
+| **Menor** | Melancólico, más oscuro, "triste" | Nombre + **m**: **Am**, **Em**, **Dm**  |
 
-La diferencia física es mínima —**una sola nota** del acorde baja un poquito— y cambia todo el color. El menor no es "peor": es la herramienta de la emoción. Las canciones que tocan el corazón usan los dos: el mayor da firmeza, el menor da el nudo en la garganta.
+La diferencia física es mínima: **una sola nota** del acorde baja un traste. En la guitarra se ve entre Mi y Mim: se levanta el dedo 1 (más abajo, en "Un acorde puede vivir dentro de otro"). El menor no es "peor" ni más difícil: casi toda canción de tu repertorio usa los dos. *No hay lugar más alto*, por ejemplo, va con Sol, Do y Re (mayores) y Mim (menor).
 
 ## ⚠️ La trampa del vocabulario: "mayor" es el apellido por defecto
 
@@ -52,9 +52,9 @@ Ambos sentidos siguen la regla de siempre: **el acorde son sus notas** — si de
 > 📋 **Repaso en una pantalla**
 >
 > - **Acorde** = 3+ notas a la vez que suenan bien juntas. La base del acompañamiento.
-> - **Mayor** = estable/alegre, se escribe a secas (C, G, D, E, A). **Menor** = emotivo, lleva **m** (Am, Em, Dm).
+> - **Mayor** = estable/alegre, se escribe a secas (C, G, D, E, A). **Menor** = melancólico, lleva **m** (Am, Em, Dm).
 > - **No hay tres categorías:** todo acorde es mayor o menor; "mayor" es el apellido que no se escribe.
-> - La diferencia física es una sola nota; la diferencia emocional es todo.
+> - La diferencia física es una sola nota, que baja un traste (Mi → Mim: se levanta el dedo 1).
 > - **Un acorde puede vivir dentro de otro:** en los dedos (Mi − dedo 1 = Mim) y en las notas (Am7 contiene a Do y a Lam). El acorde son sus notas.
 
 ---

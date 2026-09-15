@@ -9,7 +9,7 @@ estado: ESCRITA
 
 # 🎼 El mapa de las notas: octavas, semitonos y tu rango
 
-> **Se lee lejos del instrumento.** Es la teoría que la medición del rango puso sobre la mesa, en el orden en que un concepto abre el siguiente. Al final, los resultados de tus tests significan algo.
+> **Se lee lejos del instrumento.** Las notas, las octavas y los semitonos, en el orden en que un concepto abre el siguiente, hasta llegar a tu rango vocal y al tono de una canción.
 
 ## 1. Las 7 notas se repiten
 
@@ -32,7 +32,7 @@ Tres precisiones que evitan confusiones:
 
 - **El número cambia justo en cada Do**, no en La ni en otra nota. Después de Si3 viene **Do4**: Do3-Re3-Mi3-Fa3-Sol3-La3-Si3 → Do4.
 - **La numeración empieza en 0**, y el piano completo no arranca en un Do: su tecla más grave es **La0** y la más aguda **Do8** — 88 teclas, poco más de 7 octavas.
-- **Ahí no se acaban los números, se acaba la música.** Más abajo de La0 el oído siente vibración sin distinguir la nota; más arriba de Do8 es un silbido. Todo lo que vas a tocar y cantar vive dentro: tu guitarra va de Mi2 a cerca de Si5, y tu voz de Sol2 a Mi5 — casi el mismo territorio, por eso la guitarra es buena referencia para tu voz.
+- **Fuera del piano quedan sonidos, pero no notas útiles.** Más abajo de La0 el oído siente vibración sin distinguir la nota; más arriba de Do8 es un silbido. Todo lo que vas a tocar y cantar vive dentro: tu guitarra va de Mi2 a cerca de Si5, y tu voz de Sol2 a Mi5 — casi el mismo territorio, por eso la guitarra es buena referencia para tu voz.
 
 ![El piano completo de 88 teclas, de La0 a Do8, con los ocho Do numerados y la zona cómoda del usuario resaltada.](img/piano-completo-octavas.png)
 *El teclado de los diagramas anteriores es solo la rebanada central de este.*
@@ -56,7 +56,7 @@ Tu voz también vive en este mapa. Llega hasta una nota grave y hasta una aguda;
 
 ## 6. El tono de una canción — y por qué se puede mover
 
-Una canción usa un puñado de notas que viven en cierta altura del mapa: eso es su **tono**. Si el coro de una canción sube hasta Si4 y tu techo cómodo es Sol4, no es que "no puedas cantarla": está en el tono de otro cantante. **Transportar** es mover la canción entera, todos sus acordes y toda su melodía, la misma cantidad de semitonos hacia abajo (o arriba) hasta que quepa en tu zona. En la guitarra, el capo transporta hacia arriba sin cambiar las formas; para bajar, se cambian las formas de los acordes (eso se aprende en M5). La canción sigue siendo la misma — solo cambia de piso. *(El detalle completo, en M4.)*
+Una canción usa un puñado de notas que viven en cierta altura del mapa: eso es su **tono**. Si el coro de una canción sube hasta Si4 y tu techo cómodo es Sol4, no es que "no puedas cantarla": está en el tono de otro cantante. **Transportar** es mover la canción entera, todos sus acordes y toda su melodía, la misma cantidad de semitonos hacia abajo (o arriba) hasta que quepa en tu zona. En la guitarra, el capo transporta hacia arriba sin cambiar las formas; para bajar, se cambian las formas de los acordes (eso se aprende en M5). La canción sigue siendo la misma; solo suena más grave o más aguda. *(El detalle completo, en M4.)*
 
 ## 7. Los tipos de voz
 
@@ -66,7 +66,7 @@ Las voces se agrupan según dónde cae su zona cómoda. De grave a aguda: en hom
 > - 7 notas que **se repiten**; la repetición está a una **octava**; el número (Do3, Sol4) dice la octava.
 > - **Semitono** = el paso más chico = **1 traste** de tu guitarra; 12 semitonos = 1 octava.
 > - **Rango** = de tu nota más grave a la más aguda; **zona cómoda (tesitura)** = donde la voz suena sin esfuerzo — el único número de trabajo.
-> - **Tono** = el piso donde vive una canción; **transportar** = moverla entera (en semitonos) hasta tu zona. El capo transporta.
+> - **Tono** = la altura en la que está una canción; **transportar** = moverla entera (en semitonos) hasta tu zona. El capo transporta.
 > - Voces de grave a aguda: bajo, barítono, **tenor** (la tuya) · contralto, mezzosoprano, soprano.
 
 ---

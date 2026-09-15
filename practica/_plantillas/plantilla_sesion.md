@@ -1,6 +1,7 @@
 ---
 fecha: YYYY-MM-DD
-duracion_min:            # minutos reales con la guitarra
+carril: ""               # guitarra | canto | ambos
+duracion_min:            # minutos reales con el instrumento o la voz
 sesion_n:                # número de sesión (0 = diagnóstico)
 sensacion: ""            # fluido | trabado | cansado | motivado | frustrado
 ---
@@ -11,7 +12,7 @@ sensacion: ""            # fluido | trabado | cansado | motivado | frustrado
 
 ## Qué se hizo
 <!-- Marca lo que tocaste hoy. -->
-- [ ] Afiné al inicio
+- [ ] Afiné la guitarra / calenté la voz al inicio
 - [ ] **Tarea del profesor:** _(cuál)_
 - [ ] **Sección del mapa:** _(N.N — nombre)_
 - [ ] Drill Anki — acordes

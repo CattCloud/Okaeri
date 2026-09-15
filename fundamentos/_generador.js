@@ -1,7 +1,6 @@
 // Generador de diagramas de acorde (SVG) — Okaeri, era guitarra.
 // Node puro, sin dependencias:  node _generador.js   → escribe los .svg en guitarra/m1/img/
-// Convenciones: fundamentos/_estilo-visual.md §3 (vertical, 6ª a la izquierda, colores por dedo).
-// Rasterizar a PNG: sharp con density 200 (ver _estilo-visual.md §5).
+// Convenciones y rasterizado a PNG: .claude/skills/crear-diagrama/SKILL.md.
 
 const fs = require('fs');
 const path = require('path');

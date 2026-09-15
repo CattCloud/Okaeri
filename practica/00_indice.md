@@ -27,7 +27,7 @@
 | 2 | 2026-09-08 | ✅ | Acordes: diagramas · los 8 (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio · corrección de digitaciones (G a 4 dedos, D estándar) | Las 4 progresiones (práctica en `fundamentos/guitarra/m1/`) | ✅ 09-11 |
 | 3 | 2026-09-15 | | | | |
 
-> Una falta se registra sin drama. La semana siguiente se pregunta "qué me perdí" y el agente cubre el hueco. **Okaeri no reprocha una ausencia — tampoco una de la academia.**
+> Una falta se registra sin drama; el reporte siguiente incluye "qué me perdí" (RG3).
 
 ---
 
@@ -54,9 +54,7 @@
 
 ## 🔔 Chequeo de constancia (semanal, no diario)
 
-**Mínimo irreducible (guitarra):** 15 min, **3-4 sesiones por semana**. **Piso del canto:** 10 min, 3 veces por semana (propuesta; el calentamiento de aire/trino cuenta). El piso de guitarra no se negocia por el canto. Una sesión puede partirse en dos días — cuenta como una.
-
-**El chequeo se hace el miércoles**, junto al reporte del martes: *¿la semana pasada tuvo ≥3 sesiones registradas?* Si no, se nombra el hecho con exactitud y se abre la puerta. No hay alarma diaria: la presión diaria fue parte del problema.
+Piso por carril: R9 (guitarra 15 min × 3-4 por semana · canto 10 min × 3; el calentamiento de aire y trino cuenta). Cómo se hace el chequeo: RG2 en `practica/AGENTS.md`.
 
 | Semana | Sesiones | Mínimo (3) | Nota |
 |---|:-:|:-:|---|

@@ -20,7 +20,7 @@ estado: VIGENTE — crece con cada pregunta nueva
 | ¿Puedo cantar después de comer? ¿Qué alimentos evitar? | [Comida y voz](#comida-y-voz) |
 | ¿Qué es el tono original? ¿Debo llegar a él? | [El tono: la regla de oro](#el-tono-la-regla-de-oro) |
 | ¿Qué hace el siseo? | [Apunte de respiración](m1/clase01_respiracion.md) |
-| ¿Qué es la voz mixta? | Explicada en chat 09-14; su apunte nace en M6 |
+| ¿Qué es la voz mixta? | La mezcla de la voz de pecho (la de hablar fuerte) y la voz de cabeza (la liviana y aguda) que permite subir sin gritar ni quebrar la voz. Se entrena en canto M6 (sección 6.1); su apunte nace ahí |
 
 ---
 

@@ -1,6 +1,6 @@
 # Decisión: el temario es la columna, la canción es el vehículo; bloques sin ping-pong
 
-> **Estado:** decidida. **Fecha:** 2026-08-28. Nace del diagnóstico de `decision_guitarra_academia_primero.md`.
+> **Estado:** vigente. **Fecha:** 2026-08-28. Nace del diagnóstico de `decision_guitarra_academia_primero.md`. Las reglas operativas que nacieron aquí viven hoy en `AGENTS.md` (R4, R5, R6) y `fundamentos/AGENTS.md` (F2, F4-F6); este archivo guarda el porqué.
 
 ## 1. El temario es independiente de la canción
 

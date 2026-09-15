@@ -19,7 +19,7 @@
 
 ## 1. Errores de práctica (cómo se estudia) — los más mortales
 
-Arruinan todo lo demás. Atados a la metodología de §2 (práctica deliberada, chunking, manos separadas).
+Arruinan todo lo demás. Atados a la pedagogía del manual §5 (práctica deliberada, trocear, partes separadas).
 
 - **Tocar de corrido sin trocear.** Intentar la canción entera una y otra vez en vez de dominar fragmentos. Genera frustración y partes que nunca salen. (Anti-chunking.)
 - **Repetir en piloto automático.** Tocar muchas veces sin atención, creyendo que la repetición sola enseña. *Fosiliza errores* en lugar de corregirlos.
@@ -30,7 +30,7 @@ Arruinan todo lo demás. Atados a la metodología de §2 (práctica deliberada, 
 
 ## 2. Errores de técnica (el cuerpo) — los que el profesor debe ver
 
-Físicos. Son por los que se fijó la fecha dura del profesor (§6 del base). La IA no puede verlos.
+Físicos. Los ve el profesor en clase; la IA no puede verlos (R8).
 
 - **Muñecas tensas o caídas.** Generan fatiga, frenan el progreso y a largo plazo pueden lesionar.
 - **Dedos planos en vez de curvos.** Tocar con dedos estirados en lugar de curvos (como sosteniendo una pelota) quita control y velocidad.
@@ -72,11 +72,11 @@ Atados a la dimensión Interpretación.
 
 - **Tocar todo plano, sin dinámicas.** Mismo volumen todo el tiempo, sonido robótico. Notas correctas pero sin música.
 - **Esperar a "ser bueno" para interpretar.** Posponer la emoción hasta dominar la técnica, cuando la interpretación debe estar desde el día uno.
-- **Rigidez total.** Tocar mecánicamente exacto sin respiración ni rubato, especialmente dañino en el repertorio del usuario (lofi, Einaudi).
+- **Rigidez total.** Tocar mecánicamente exacto, sin respiración ni rubato (acelerar y frenar levemente con intención). Especialmente dañino en adoración, donde la dinámica es parte de lo que la canción dice.
 
 ## 7. Errores de motivación y constancia — la zona de riesgo del usuario
 
-Los errores que el usuario ya conoce de carne propia. La categoría que el accountability mínimo (§6 del base) vigila más de cerca.
+Los errores que el usuario ya conoce de carne propia. La categoría que el chequeo semanal (RG2) vigila más de cerca.
 
 - **Atracones esporádicos.** Muchas horas un día y nada el resto de la semana. La música necesita constancia diaria; los atracones queman y no fijan.
 - **Saltar de método/ruta constantemente.** Cambiar de app, profesor, enfoque o canción cada poco, sin sostener nada. (El patrón del usuario.)
@@ -92,8 +92,8 @@ Los errores que el usuario ya conoce de carne propia. La categoría que el accou
 |---|---|
 | Al armar la ruta | 5.4 (piezas muy difíciles), 1.x (estructura de práctica), 3.x (incluir comprensión) |
 | Al registrar práctica | 1.x (cómo se practicó), 4.x (ritmo), 5.x (memoria real) |
-| Al llegar el profesor | 2.x (técnica/cuerpo) — prioridad de las primeras clases |
-| En el accountability | 7.x (constancia) — la zona de riesgo principal |
+| Tras cada clase | 2.x (técnica/cuerpo) — lo que el profesor corrigió se anota y manda |
+| En el chequeo semanal | 7.x (constancia) — la zona de riesgo principal |
 
 ---
 

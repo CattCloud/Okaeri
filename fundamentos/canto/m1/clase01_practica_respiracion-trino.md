@@ -16,7 +16,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**El control de la salida del aire** — el cimiento de todo lo demás. Sin aire parejo no hay nota sostenida, no hay afinación estable y no hay frase completa: la voz tiembla, se corta o se queda sin gasolina a media frase.
+**El control de la salida del aire** — la base de todo lo demás. Sin aire parejo no hay nota sostenida, no hay afinación estable y no hay frase completa: la voz tiembla, se corta o se queda sin aire a media frase.
 
 **Lo vas a notar** cuando el siseo y el trino duren más semana a semana sin esfuerzo, y cuando cantar una frase larga deje de sentirse como llegar ahogado al final.
 
@@ -83,3 +83,7 @@ Todo el Natural, y además:
 ## Hasta cuándo / cuándo ya está
 
 Este no se retira: **es el calentamiento permanente** (sección 1.5 del mapa). Los objetivos del módulo (evaluación de M1): siseo parejo ≥ 20 s · nota cómoda sostenida 8 s estable · sin tensión visible. Cuando eso salga, el ejercicio sigue, pero como calentamiento de 5 min, no como práctica principal.
+
+## Qué sigue
+
+Con la evaluación de M1 cumplida, canto M2: afinar una nota que oyes (2.1) y distinguir la voz de pecho de la voz de cabeza (2.2). Mientras tanto, el repertorio que pidió el profesor va primero en cada sesión de canto.

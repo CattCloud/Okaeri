@@ -13,7 +13,7 @@ estado: ESCRITA
 
 ## Las figuras: cuánto dura cada nota
 
-Una **figura rítmica** es el símbolo que dice cuánto dura una nota. En la clase viste tres:
+Una **figura rítmica** es el símbolo que dice cuánto dura una nota. Las tres primeras:
 
 | Figura | Dura |
 |---|---|
@@ -66,7 +66,7 @@ El BPM dice **qué tan seguido late** la canción. No dice **cuánto trabaja tu 
 
 > **Regla de dos líneas:** tempo = qué tan rápido late la canción · dificultad = cuánto haces tú entre latido y latido. Por eso el repertorio se ordena por lo segundo, no por el número.
 
-## El metrónomo — andamio, no muleta
+## El metrónomo: se calibra y se suelta
 
 Regla del sistema: el metrónomo se usa para **calibrar** tu pulso, y luego se suelta. Contar **en voz alta** mientras tocas hace lo contrario que la vieja "pista que cae": te instala el reloj **por dentro**, en vez de prestártelo desde afuera.
 

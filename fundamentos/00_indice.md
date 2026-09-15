@@ -13,14 +13,7 @@ estado: EN-CURSO
 
 ## Reglas
 
-- **Un concepto se define en el módulo donde aparece por primera vez** — nunca antes, nunca en glosario previo. Si la academia adelanta un concepto (como la TAB en la clase 1), se escribe donde se necesitó y se marca 🏫.
-- **Las notas nacen con las clases y las sesiones**, con tus palabras y lo que te costó. No se escriben 40 de golpe.
-- **La práctica nunca trae lo que debes producir de memoria** (formas de acorde del drill o de la canción; en canto, la letra o la melodía de la canción — eso vive en el apunte, en Anki o en tu memoria). Sí trae el gráfico de **qué practicar** (TAB del ejercicio, figuras, el esquema de un ejercicio de aire).
-- **En canto la verificación es la grabadora:** se canta sin mirar nada, se graba, se escucha al final. La grabación es el reverso de Anki.
-- **Todo ejemplo visual se muestra, no se cuenta.** Si un apunte nombra una forma, posición o comparación, lleva sus diagramas — lado a lado cuando compara.
-- **Un mismo ejercicio puede vivir en ambos archivos, con roles distintos:** el apunte explica **qué entrena y por qué funciona** (para practicarlo con comprensión, no en piloto automático); la práctica prescribe **la rutina exacta** (repeticiones, minutos, niveles). Prescribir es exclusivo de la práctica.
-- **El apunte es atemporal, no un chat.** Solo la lección: nada de referencias al hilo del día, disculpas ni meta-comentarios del sistema (eso va al chat, a `estado_actual.md` o al frontmatter). Quien lo relea en tres semanas solo debe encontrar la lección. La personalización pedagógica (tus ejemplos, tu repertorio) sí entra.
-- **Cada apunte tiene dos modos:** 📖 cuerpo desarrollado (tema nuevo) · 📋 repaso en una pantalla.
+Viven en `fundamentos/AGENTS.md` (F1-F12): dónde va cada archivo y cómo se nombra, qué secciones lleva una práctica, qué no puede mostrar, por qué el apunte es atemporal, y lo propio del canto. Cada apunte tiene dos modos: 📖 cuerpo desarrollado (tema nuevo) · 📋 repaso en una pantalla.
 
 ## Consulta (no es un paso del mapa)
 

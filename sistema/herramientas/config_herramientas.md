@@ -1,8 +1,8 @@
 # 🛠️ Configuración de herramientas — Rol operativo
 
-> **Propósito:** con qué se ejecuta cada cosa y cuál es su rol. Versión corta de `contexto/okaeri-herramientas.md` (era piano; el modelo de 3 capas sigue vigente).
-> **Principio:** la herramienta se elige *después* del método. **Anti-muleta:** ninguna app en modo "pista que cae".
-> **Actualizado:** 2026-08-28 (guitarra).
+> **Propósito:** con qué se ejecuta cada cosa y cuál es su rol. Versión corta de `_archivo/diseno_original/okaeri-herramientas.md` (era piano; el modelo de 3 capas sigue vigente).
+> **Principio:** la herramienta se elige *después* del método. Toda herramienta pasa el filtro anti-muleta (R2).
+> **Actualizado:** 2026-09-15. Las apps de canto y su rol están en `fundamentos/canto/_consulta-voz.md`.
 
 ---
 
@@ -21,11 +21,11 @@
 | Herramienta | Rol | ¿Nueva? | Regla clave |
 |---|---|---|---|
 | **Guitarra clásica (nylon)** | El instrumento. Todo el aprendizaje real ocurre aquí | No (ya se tiene) | Se afina **cada vez** antes de tocar (`fundamentos/_consulta-instrumento.md`) |
-| **Capo** | Tocar en el tono de la grabación con formas abiertas, sin cejilla | **Sí — por comprar** | No es muleta: los dedos aprenden las formas reales. Equivale al Transpose del Casio |
+| **Capo** | Tocar en el tono de la grabación con formas abiertas, sin cejilla | ✅ Comprado | No es muleta (R2): los dedos aprenden las formas reales; solo cambia dónde suena |
 | **Afinador** (app o pinza) | Afinar | App gratuita | Un minuto al inicio de cada sesión |
 | **Metrónomo** (app) | Pulso | App gratuita | Se calibra y se suelta. No vivir pegado |
-| **Academia** (martes 8-10 pm, grupo de 4) | Técnica física en vivo, corrección del cuerpo, presentación de fin de nivel | **Sí** — desde 2026-09-01 | Cubre ~80% de la técnica. **No mueve el marcador del mapa.** Protocolo en `sistema/prompts/integracion_academia_sistema.md` |
-| **Anki — drill de acordes** | Recall: frente = nombre, tú formas, reverso verifica | No (reusada) | Mazo por **reconstruir con formas de guitarra** en M1. Método en `sistema/decisiones/decision_acordes_recall_anki.md` |
+| **Academias** (guitarra martes · canto jueves, 8-10 pm) | Técnica física en vivo, corrección del cuerpo y de la voz, presentación de fin de nivel | **Sí** — desde 2026-09-01 (guitarra) y 2026-09-03 (canto) | Cubren ~80% de la técnica. No mueven el marcador (R4). Cómo se procesa cada clase: skill `procesar-clase` |
+| **Anki — drill de acordes** | Recall: frente = nombre, tú formas, reverso verifica | No (reusada) | Mazo de guitarra hecho: `sistema/herramientas/anki-acordes/` (8 acordes). Método en `sistema/decisiones/decision_acordes_recall_anki.md` |
 | **Anki — mazo de oído** | Mayor/menor, intervalos | No (ya existe) | `sistema/herramientas/anki-oido/`. Es de música, sirve igual para guitarra |
 | **YouTube / Spotify** | La grabación de cada canción; referencia de interpretación | No | Tocar *sobre* la grabación no es muleta: el oído manda, no una pista que cae |
 | **Cifrados públicos** (Cifra Club, La Cuerda, Ultimate Guitar) | Leer el cifrado de una canción | No | Varían entre sí: se fija **uno** por canción en su ficha. Se usan mientras se aprende; el test es sin ellos |
@@ -51,14 +51,8 @@
 - Se pone justo **detrás** del traste (pegado a la barrita, lado de la pala), recto, con presión suficiente para que ninguna cuerda zumbe. Se explica en M4 (4.1).
 
 ### Los diagramas (los genera la IA)
-- SVG por código, reglas en `fundamentos/_estilo-visual.md`. Los diagramas de **acorde** (lo que se produce de memoria) van en el **apunte** y en el **reverso** de Anki — nunca en la práctica. La **práctica** lleva solo el gráfico de *qué practicar* (TAB del ejercicio, figuras rítmicas).
+- SVG por código, con el procedimiento `crear-diagrama`. Dónde va cada diagrama: F6 y F8 en `fundamentos/AGENTS.md`.
 
 ---
 
-## Reglas
-
-1. **Anti-muleta:** ninguna app en modo pista que cae. La práctica nunca trae el diagrama de lo que debe salir de memoria.
-2. **El temario manda; la academia alimenta; la IA sostiene.**
-3. **Markdown es la fuente de verdad.** La academia enseña, las apps ejecutan, el `.md` registra.
-
-> **La pieza que de verdad importa no es ninguna app.** Es (1) el mapa bien armado, (2) el martes con el profesor, y (3) el hábito mínimo de 15 minutos.
+> **La pieza que de verdad importa no es ninguna app.** Es (1) el mapa bien armado, (2) las clases con los profesores, y (3) el piso mínimo de cada carril (R9).

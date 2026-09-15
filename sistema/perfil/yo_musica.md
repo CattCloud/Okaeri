@@ -1,7 +1,7 @@
 # 🎸 Perfil musical del usuario
 
 > **Propósito:** calibrar al agente antes de proponer repertorio, ajustar el mapa o armar una semana. Leer ANTES de generar cualquier cosa. Define quién es el usuario en el dominio música, qué quiere de verdad, y —lo más importante— el patrón que lo derrotó antes.
-> **Actualizado:** 2026-08-28 (rediseño guitarra). Base original en `contexto/okaeri-base.md` §1-2.
+> **Actualizado:** 2026-09-15. Base original en `_archivo/diseno_original/okaeri-base.md` §1-2.
 
 ---
 
@@ -9,7 +9,7 @@
 
 - **Tocó guitarra hace años.** No es cero: conoce algo de acordes y de cómo se agarra. Pero sin estructura y oxidado. Necesita **reactivar**, no empezar de cero.
 - También tiene base dormida en **piano** (tres sesiones en 2026) y en **canto** (iglesia, voz de pecho/cabeza, no profesional).
-- **La primera sesión es diagnóstico con la guitarra en la mano** (Sesión 0): se prueban los 5 acordes de M1 y se marca lo que está vivo. No se diagnostica hablando.
+- **Lo que ya está vivo se diagnostica tocando o cantando, no hablando:** se marca ✅ en el temario y se salta.
 
 ## Instrumento y stack
 
@@ -55,23 +55,25 @@ Todo el rediseño existe para neutralizar estos cuatro.
 | Yousician / Synthesia | Guitar Hero: la pista cae, él reacciona. Nada quedaba. | **Anti-muleta.** |
 | Pentagrama | Lo dejó, no por incapacidad. | **Cifrado primero.** Pentagrama fuera del nivel base. |
 | Guitarra (hace años) | Base que se durmió. | Reactivar, no arrancar de cero. |
-| Canto (iglesia) | Base no profesional, dejada por inconsistencia. | Etapa posterior, sobre la guitarra. |
+| Canto (iglesia) | Base no profesional, dejada por inconsistencia. | Desde 2026-09: carril propio, con academia y temario (`decision_canto_segundo_mapa.md`). |
 | **Piano — Okaeri V1 (2026)** | 3 sesiones. Sin temario, con fecha dura, sin destino. | **Temario + academia + banda + bloques sin ping-pong.** |
 
 ## Tiempo real (honesto, no aspiracional)
 
-- **Mínimo irreducible: 15 min, 3-4 veces por semana.** Piso, no meta.
-- **Técnica de los 5 minutos:** engañar al cerebro — empezar es lo difícil; una vez dentro, el tiempo se estira solo.
+- **Piso de presencia:** guitarra 15 min × 3-4 por semana; canto 10 min × 3 (R9). Piso, no meta.
+- **Técnica de los 5 minutos:** empezar es lo difícil; una vez dentro, el tiempo se estira solo.
 - **Una sesión puede tomar 1-2 días.** Hace una parte, la cierra, la sigue. No es una clase con asistencia.
-- **Sin horario fijo todavía.** Se acerca progresivamente. Lo único fijo: martes 8-10 pm (academia).
+- **Sin horario fijo todavía.** Se acerca progresivamente. Lo único fijo: las academias (guitarra martes · canto jueves, 8-10 pm).
 - **El temario NO se dimensiona al mínimo.** Se diseña completo.
 
 ## Cómo tratar al usuario (calibración)
 
-- **Dale la ruta, no el menú.** Un camino concreto; alternativas acotadas, pocas.
-- **Lenguaje llano.** Lo pidió explícitamente: *"usas lenguaje técnico musical y no tengo la menor idea de lo que hablas"*. Todo término se define donde aparece o no se usa.
-- **Directo al grano.** Sin relleno, sin marketing, sin historia.
-- **Entrega bloques, no preguntas.** Si no responde, está tocando.
+Las reglas están en `AGENTS.md`; aquí, de dónde vienen:
+
+- **Dale la ruta, no el menú.** Un camino concreto; alternativas acotadas, pocas (R5).
+- **Lenguaje llano** (R6, R7). Lo pidió explícitamente: *"usas lenguaje técnico musical y no tengo la menor idea de lo que hablas"*. Y el 2026-09-14, tras un término usado sin explicar: *"estás saltando conceptos básicos como instructor"*. Okaeri explica aunque la academia lo haya tocado primero.
+- **Mediciones con herramientas hechas para eso** (R8): el 2026-09-14 pidió eliminar una práctica casera para medir el rango y eligió apps de test de rango.
+- **Entrega bloques, no preguntas.** Si no responde, está tocando (R5).
 - **Gratificación temprana protege la constancia.** Que toque algo reconocible pronto pesa más que la técnica perfecta.
 - **La interpretación desde el día uno.**
-- **Zona de riesgo:** saltar de canción (una sola a la vez), atracones esporádicos, compararse con virtuosos, abandonar en la meseta (mes 2-3), y el **martes 8-10 pm** como punto donde se decide todo. Ver `sistema/referencia/errores-comunes-musica.md` §7.
+- **Zona de riesgo:** saltar de canción (una sola a la vez), atracones esporádicos, compararse con virtuosos, abandonar en la meseta (mes 2-3), y las noches de academia como punto donde se decide todo. Ver `sistema/referencia/errores-comunes-musica.md` §7.

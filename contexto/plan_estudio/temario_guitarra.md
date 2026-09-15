@@ -29,18 +29,13 @@ inicio: 2026-08-28
 
 **La ruta es secuencial.** Se recorre en orden: cada módulo depende del anterior (no hay cejilla sin acordes abiertos; no hay arpegio sin acorde; no hay ritmo sin pulso). El **marcador** (dónde vas) vive en `sistema/estado/estado_actual.md` y avanza **solo cuando completas tus secciones, en orden**.
 
-**La academia no mueve el marcador.** Lo que se vea el martes en clase se **marca** en este mapa (✅ "visto en clase") y se profundiza esa semana, pero tú sigues en tu sección. Si la clase adelanta algo del módulo 7 cuando vas en el 3, lo guardas: cuando llegues al 7, ya está medio andado. Protocolo completo en `sistema/prompts/integracion_academia_sistema.md`.
+**La academia no mueve el marcador.** Lo que se vea el martes en clase se **marca** en este mapa (✅ "visto en clase") y se profundiza esa semana, pero tú sigues en tu sección. Si la clase adelanta algo del módulo 7 cuando vas en el 3, lo guardas: cuando llegues al 7, ya está medio andado. Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
 
 **Sección ≠ sesión.** Una sección puede tomar 10 minutos o tres días. El mapa mide **contenido**; tu día mide **tiempo**. Mínimo irreducible: **15 min, 3-4 veces por semana** — es el piso para presentarte, no el techo del contenido.
 
-**Teoría y práctica son archivos distintos, lado a lado** (regla anti-muleta hecha archivo). Ambos viven en `fundamentos/<instrumento>/mN/` — la carpeta dice en qué punto del temario está cada cosa:
-- `claseNN_<tema>.md` → el **apunte**: se lee **lejos de la guitarra**.
-- `claseNN_practica_<tema>.md` → la **práctica**: se usa **con la guitarra**. Trae objetivo en lenguaje claro, tiempo mínimo y natural, el gráfico de **qué practicar** (SVG), y los 3 errores típicos con arreglo. **Nunca trae el diagrama de lo que hay que producir de memoria** (formas de acorde del drill o de la canción) — eso es copiar, no recordar.
-- Prefijo `claseNN_` = nació de esa clase de la academia; una práctica nacida del mapa lleva su sección (`practica_4.4_...`).
+**Teoría y práctica son archivos distintos, lado a lado** en `fundamentos/guitarra/mN/`: el apunte se lee lejos de la guitarra; la práctica se usa con ella y nunca muestra lo que hay que producir de memoria. Reglas completas: `fundamentos/AGENTS.md`.
 
-> Límite: *si lo puedes hacer sin la guitarra en la mano, es apunte; si necesitas la guitarra, es práctica.*
-
-**Los conceptos se definen donde aparecen por primera vez. Nunca antes.** Regla define-or-link: ninguna sección usa un término sin que su apunte exista o se defina en una frase. Las notas **no se escriben todas de golpe**: nacen cuando su módulo las pide, con lo conversado en la sesión.
+**Los conceptos se definen donde aparecen por primera vez, nunca antes** (R6), y las notas nacen cuando su módulo las pide (R11).
 
 **Fuentes** (verificadas 2026-08-28):
 

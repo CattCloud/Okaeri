@@ -1,7 +1,6 @@
-# 📘 Manual de Okaeri
+# 📘 Manual de Okaeri — el porqué
 
-> **Propósito:** guía de operación del sistema. Define cómo opera Okaeri, qué filosofía sigue su construcción, y qué queda explícitamente fuera.
-> **Fuente de verdad del QUÉ y el PORQUÉ:** `contexto/okaeri-base.md` (escrito en la era piano; principios vigentes). **El rediseño de 2026-08-28** está en `sistema/decisiones/decision_guitarra_academia_primero.md` y `decision_temario_mapa_cancion_vehiculo.md`.
+> **Qué es este archivo:** la filosofía del sistema, es decir, por qué es como es. **No contiene reglas operativas:** esas viven en `AGENTS.md` (R1-R12), en las reglas de cada carpeta y en los procedimientos de `.claude/skills/`. Aquí se citan por su número. Diseño original (era piano, 2026-06): `_archivo/diseno_original/okaeri-base.md`.
 
 ---
 
@@ -9,136 +8,114 @@
 
 > **Okaeri existe para que el usuario aprenda música de verdad —comprendiéndola y reteniéndola— al servicio de la expresión, no de la ejecución mecánica. No reemplaza al instrumento ni al profesor: estructura el aprendizaje para que la base dormida despierte y no se abandone.**
 
-Toda decisión se evalúa contra las **tres capas**:
+Toda decisión se evalúa contra **tres capas**:
 
-1. **Mecánica** — ¿construye la habilidad física real?
-2. **Comprensión** — ¿el usuario entiende *por qué*, no solo *qué* apretar?
-3. **Expresión y memoria** — ¿queda retenido y al servicio del sentimiento, o se evapora?
+1. **Mecánica:** ¿construye la habilidad física real?
+2. **Comprensión:** ¿el usuario entiende *por qué*, no solo *qué* apretar?
+3. **Expresión y memoria:** ¿queda retenido y al servicio de lo que la canción dice, o se evapora?
 
-> Si una actividad no aporta a alguna de las tres, no entra.
+Si una actividad no aporta a ninguna de las tres, no entra.
 
-El nombre describe la función. El obstáculo histórico del usuario fue siempre *irse*: empezar y abandonar. *Okaeri* (おかえり) es lo que se le dice al que vuelve: **"bienvenido de vuelta"**. No ataca el patrón con una orden: lo ataca **quitándole el costo al regreso**. Regla de tono: **nunca se reprocha una ausencia; se registra la verdad y se recibe.** Origen del nombre —y de Toni— en `contexto/okaeri-base.md` §0.
-
----
-
-## 2. El principio anti-muleta (el corazón del sistema)
-
-**Qué es la muleta:** la pista que cae (Guitar Hero, Yousician en modo juego, Synthesia) que dice qué apretar *justo cuando* hay que apretarlo. El cerebro se apoya en ella y nunca construye el conocimiento por debajo.
-
-**Por qué falla:** no construye comprensión ni memoria. *"Tocaba la canción esa vez pero luego no quedaba nada."*
-
-**La regla de "aprendido":**
-> **Una canción no está aprendida hasta que se puede tocar SIN cifrado, DE MEMORIA, SOLA.**
-
-Tres estados por pieza: `APRENDIENDO` → `TOCO-CON-AYUDA` → `TOCO-DE-MEMORIA-SOLO`. Solo el tercero cuenta.
-
-**Cómo se aplica:**
-- **Teoría y práctica: archivos distintos, lado a lado en `fundamentos/<instrumento>/mN/`.** El apunte (`claseNN_<tema>`) se lee lejos de la guitarra; la práctica (`claseNN_practica_<tema>`) se usa con la guitarra. La práctica trae el gráfico de **qué practicar**, pero **nunca el diagrama de lo que hay que producir de memoria** (formas del drill o de la canción — solo en el apunte y en Anki). Es la regla del drill (frente = nombre, reverso = verificación) hecha archivo.
-- La memoria se construye **por capas**: muscular (dedos), visual (la forma en el mástil), auditiva (cómo suena), estructural (la progresión). La muscular sola es frágil.
-- **El capo no es muleta.** Los dedos aprenden las formas reales; solo cambia dónde suena. Es práctica estándar en toda banda.
-- Los diagramas son **mapas estáticos para entender**, nunca secuencia (`fundamentos/_estilo-visual.md`).
-- Cualquier sugerencia que induzca dependencia se descarta.
+**El nombre.** El obstáculo histórico del usuario fue siempre *irse*: empezar y abandonar. *Okaeri* (おかえり) es lo que en japonés se le dice al que vuelve a casa: "bienvenido de vuelta". El sistema no ataca el patrón con una orden; lo ataca quitándole el costo al regreso (R3). Viene de Toni, el lorito que tenía las alas intactas y aun así volvía al hombro (`_archivo/diseno_original/okaeri-base.md` §0).
 
 ---
 
-## 3. El modelo: temario · academia · Okaeri
+## 2. Por qué anti-muleta (R2)
 
-| Pieza | Rol |
-|---|---|
-| **Temario** (`contexto/plan_estudio/temario_guitarra.md`) | La columna. Un **mapa** de competencias ordenado por dependencia. Dice dónde estás. **Sobrevive a cualquier canción.** |
-| **Academia** (martes, grupos de 4) | Cubre ~80% de la técnica en vivo. Ve las manos. Pone la **presentación de fin de nivel** — el objetivo visualizable que sustituye a la fecha dura. **No mueve el marcador del mapa.** |
-| **Okaeri** | Consolida entre martes y martes. Lidera solo lo que la academia no toca: repertorio worship, memoria (M4), banda (M9), capa transversal. |
+**La muleta** es la pista que cae (Guitar Hero, Yousician en modo juego, Synthesia): dice qué apretar *justo cuando* hay que apretarlo. El cerebro se apoya en ella y nunca construye el conocimiento por debajo. En palabras del usuario: *"Tocaba la canción esa vez pero luego no quedaba nada."* Entrena reacción, no música.
 
-Protocolo completo: `sistema/prompts/integracion_academia_sistema.md`. Regla corta: **no te saltas, pero haces la tarea. La tarea va primero.**
+Por eso:
+
+- **"Aprendida" tiene un solo criterio:** sin nada delante, de memoria, sola. Todo lo demás es un paso intermedio (`repertorio/AGENTS.md`, RP1).
+- **La memoria se construye por capas.** En guitarra: muscular (dedos), visual (la forma en el mástil), auditiva (cómo suena) y estructural (la progresión). En canto: la letra recitada, la melodía por frases, la estructura de la canción y dónde se respira. Una capa sola es frágil; varias se sostienen entre sí.
+- **Apunte y práctica van separados** (F2): tener la teoría a la vista mientras se toca invita a leer en vez de recordar.
+- **El capo no es muleta:** los dedos aprenden las formas reales; solo cambia dónde suena. Es práctica estándar en toda banda.
+- **Medir no es muleta:** un afinador o una app de rango usados sobre una grabación o en una medición puntual verifican; lo vetado es cantar siguiendo una línea en la pantalla.
+
+---
+
+## 3. Por qué el temario manda (R4)
+
+El piano falló, entre otras cosas, porque **el usuario no sabía dónde estaba**: la ruta era un plan construido sobre una canción, y terminar la canción no decía qué sabía hacer. De ahí el modelo, heredado de Cloud en TESLA:
+
+| Pieza | Rol | Por qué así |
+|---|---|---|
+| **Temarios** (`contexto/plan_estudio/`) | La columna: mapas de competencias ordenados por dependencia real | Dicen dónde estás y cuánto falta. Sobreviven a cualquier canción |
+| **Academias** (guitarra martes · canto jueves) | Cubren ~80% de la técnica en vivo, ven y oyen, ponen la presentación de fin de nivel | Lo que sostiene al usuario es una persona mirándolo (perfil). La presentación reemplaza a la vieja fecha dura: misma fuerza, pero es un destino y no una deuda |
+| **Okaeri** | Consolida entre clase y clase; lidera lo que la academia no toca: repertorio worship, memoria, cantar y tocar a la vez, la banda | Ninguna academia mide la memoria ni conoce la banda de su iglesia |
+
+**Las canciones son vehículos.** Si se borra la canción, el temario sigue en pie; si una canción no mueve al usuario, entra otra que ejercite lo mismo.
 
 ### Las 7 dimensiones
 
-| Capa | Dimensiones |
-|---|---|
-| **Mecánica** | Técnica · Lectura (cifrado; TAB en M8; pentagrama fuera del nivel base) · Ritmo |
-| **Comprensión** | Teoría aplicada · Oído |
-| **Expresión** | Repertorio (con memoria) · Interpretación |
+| Capa | Dimensiones | En los mapas |
+|---|---|---|
+| **Mecánica** | Técnica · Lectura (cifrado; TAB en guitarra M8; pentagrama fuera del nivel base) · Ritmo | Guitarra M1-M3, M6-M8 · canto M1-M3 |
+| **Comprensión** | Teoría aplicada · Oído | Capa transversal + guitarra M5 · canto M5 |
+| **Expresión** | Repertorio (con memoria) · Interpretación | M4 de ambos mapas, guitarra M9, canto M7-M8 + capa transversal |
 
-La **interpretación atraviesa todo desde M1**. El **canto** es el segundo mapa desde 2026-09-14 (`decision_canto_segundo_mapa.md`): mismo modelo, carril propio (jueves), anti-muleta propio, la grabadora como verificación.
-
-### Cómo se conduce una sesión — bloques, no ping-pong
-
-El agente entrega **un bloque completo** y el usuario se va a tocar:
-
-1. **Objetivo en lenguaje claro** — qué mejora y cómo lo va a notar (motivación, no jerga)
-2. **Los 3 niveles del día** — 🔵 mínimo (sin ganas) / 🟢 natural / 🔥 motivado — cada uno con rutina **exacta**: qué, cuántas repeticiones, minutos por parte, metrónomo sí/no. Cada nivel incluye al anterior. "Pon cronómetro; cuando suena, paras"
-3. Explicación corta (define-or-link)
-4. El gráfico de qué practicar, si hay (SVG generado por el agente)
-5. **Cómo se hace cada parte** (referencia, descrita una vez; los niveles prescriben cantidades)
-6. **Cómo suena cuando está bien**
-7. **Los 3 errores típicos y su arreglo** — por adelantado
-8. Hasta cuándo / cuándo ya está, y qué sigue
-
-Los ejercicios del profesor son **propuestas, no límites**: si hay una práctica mejor para el mismo objetivo, el agente la plantea con confianza ("Afinación del instructor"), sin desviarse.
-
-**El silencio del usuario = está tocando.** No se le pregunta por cada movimiento. Se pregunta solo al cerrar un módulo, tras el martes, o cuando él diga que algo no sale. Esto corrige el protocolo viejo (*explico → tocas → confirmas → sigo*), que el usuario identificó como causa del fallo.
-
-**Sección ≠ sesión.** Mínimo **15 min, 3-4 veces por semana**. Una sesión puede partirse en días; el estado la guarda.
-
-### Pedagogía propia de la música
-- **Práctica deliberada, no repetición mecánica.** Repetir en piloto automático fosiliza errores.
-- **Chunking.** Fragmentos, dominar cada uno, coser. Nunca de corrido.
-- **Manos separadas → juntas** (en guitarra: la forma de la izquierda hasta que salga sola; el patrón de la derecha sobre un solo acorde; recién entonces juntas).
-- **Lento es rápido.** Precisión antes que velocidad.
-- **Memoria por comprensión.** Entender la progresión es lo que hace que una pieza se quede.
-- **Vocabulario donde aparece, nunca antes.** Un concepto se define en el módulo que lo pide. Las notas nacen con la sesión, no en bloque.
+La interpretación atraviesa todo desde el primer módulo: un acorde solo ya se puede tocar con intención.
 
 ---
 
-## 4. Lo que Okaeri NO hace
+## 4. Por qué bloques y no ping-pong (R5)
 
-| Veto | Por qué |
-|---|---|
-| ❌ Muleta (pista que cae) | Entrena reacción, no música. |
-| ❌ Reemplazar al instrumento | Se aprende tocando. |
-| ❌ Reemplazar al profesor en lo físico | El agente no ve las manos. Si el profesor corrige el cuerpo, eso manda. |
-| ❌ Composición · virtuosismo · exámenes | Intérprete. Expresión, no destreza. |
-| ❌ Imponer repertorio ajeno | El material es lo que la banda de su iglesia toca y lo que a él lo mueve. |
-| ❌ Gamificar | Motivación frágil. Solo el registro honesto. |
-| ❌ **Relleno** | Historia, marketing, biografías, teoría que no ilumina lo que toca. Solo lo que cambie algo que va a tocar. |
-| ❌ **Ping-pong** | Preguntar tras cada movimiento rompe la práctica. |
-| ❌ Varias canciones del mapa a la vez | Una por carril (guitarra / canto) hasta que salga de memoria. El repertorio del profesor es tarea, no canción del mapa. |
-| ❌ Fecha dura | Murió con el rediseño. Lo que obliga ahora es la presentación de la academia. |
+El protocolo viejo era *explico → tocas → me respondes → sigo*. Exigía soltar la guitarra, escribir, esperar y volver por cada movimiento: no era practicar, era chatear con la guitarra al lado. El usuario lo identificó como una de las causas del fallo del piano.
 
-> ⚠️ **Cuidado con sobre-construir.** Nada de APIs, dashboards, módulos de canto, ni escribir 40 notas de golpe.
+Un bloque completo trae resuelto por adelantado lo que antes se preguntaba: qué hacer, cuánto, cómo suena bien y qué hacer si sale mal (skill `sesion`). El silencio pasa a significar que está tocando. Los 3 niveles del día (F5) existen porque el ánimo varía: un día sin ganas también cumple si hace el mínimo.
 
 ---
 
-## 5. Filosofía de construcción (heredada de TESLA/Oráculo)
+## 5. Pedagogía propia de la música
 
-- **El método manda, la herramienta se elige después.**
-- **El temario manda, la clase alimenta.** (Cloud en TESLA.)
-- **Define-or-link, y nunca antes.** Jerga huérfana = bug del sistema.
-- **Diagramas pedagógicos, no decorativos.** SVG por código.
-- **Pragmatismo: avanzar > pulir.**
-- **Construir con el dolor real, no antes.** Las notas nacen con la sesión; el mapa se extiende cuando la banda lo pida.
-- **Progresión de fricción:** barrera baja al inicio. *Un método mejor que abandonas pierde contra uno peor que mantienes.*
-- **Preguntas con alternativas concretas, y pocas.**
-- **Lenguaje llano.** El usuario lo pidió: si no puede saber qué significa, no se dice sin explicar.
-- **El usuario ajusta en vivo.** El `.md` es la única fuente de verdad.
+- **Práctica deliberada, no repetición mecánica.** Repetir en piloto automático fija los errores.
+- **Trocear (chunking).** Fragmentos pequeños: dominar cada uno y después coserlos. Nunca de corrido desde el primer día.
+- **Partes separadas → juntas.** En guitarra: la forma de la mano izquierda hasta que salga sola; el patrón de la derecha sobre un solo acorde; recién después, juntas. En canto: la letra, luego la melodía, luego juntas. En canto M7 son tres partes (manos y voz), y no se juntan hasta que cada una salga sola.
+- **Lento es rápido.** Precisión antes que velocidad; la velocidad llega sola.
+- **Memoria por comprensión.** Entender por qué la progresión va así es lo que hace que una pieza se quede.
+- **Vocabulario donde aparece, nunca antes** (R6). Un glosario previo es el muro de material que siempre derrotó al usuario.
 
 ---
 
-## 6. La salvaguarda contra el abandono
+## 6. Lo que Okaeri no hace — y por qué
 
-El patrón (el dato más importante del sistema): **sin estructura y sin guía clara, el usuario se pierde entre opciones y abandona, incluso amando el dominio.** Le pasó en el inglés, en Yousician, en la guitarra (hace años), en el canto, y en el piano (2026).
-
-Lo que lo cura ahora —diseñado desde el diagnóstico del fallo del piano:
-
-1. **Un temario que dice dónde estás.** Antes no lo había.
-2. **Un objetivo que jala, no una deuda que empuja.** La banda de la iglesia + la presentación de fin de nivel. La fecha dura del profesor medía el futuro; esto mide el presente.
-3. **La academia desde el día uno.** Dinero pagado, grupo de 4, un martes fijo. Accountability real, no gamificación.
-4. **Mínimo irreducible de 15 min, 3-4 veces por semana** + la técnica de los 5 minutos. El piso es de presencia, no de contenido.
-5. **Registro honesto.** Cada sesión en `practica/`. El chequeo es semanal (¿hubo ≥3 sesiones?), no una alarma diaria.
-6. **Okaeri.** Si se va, se le recibe. Se retoma donde quedó, sin cobrar.
-
-> Esto es la diferencia entre que esta vez funcione o sea otro intento archivado.
+| Veto | Por qué | Regla |
+|---|---|---|
+| Muleta (pista que cae) | Entrena reacción, no música | R2 |
+| Reemplazar al instrumento | Se aprende tocando y cantando, no leyendo | F2 |
+| Reemplazar al profesor en lo físico | El agente no ve las manos ni oye la voz | R8 |
+| Composición · virtuosismo · conservatorio | El usuario es intérprete; busca expresión, no destreza | — |
+| Imponer repertorio ajeno | El material es lo que toca la banda de su iglesia y lo que lo mueve | RP6 |
+| Gamificar | La motivación por puntos es frágil; solo el registro honesto | RG4 |
+| Relleno (historia, biografías, marketing) | Solo entra lo que cambie algo que va a tocar o cantar | R7 |
+| Ping-pong | Rompe la práctica | R5 |
+| Varias canciones del mapa a la vez | Saltar de canción está en su zona de riesgo | R9 |
+| Fecha dura | Medía una deuda futura; la reemplaza la presentación de la academia | — |
 
 ---
 
-> El detalle de cada dimensión vive en `contexto/okaeri-metodologia.md` (era piano, principios vigentes); el mapa en `contexto/plan_estudio/temario_guitarra.md`; el perfil en `sistema/perfil/yo_musica.md`.
+## 7. Filosofía de construcción
+
+- **El método manda; la herramienta se elige después.** No se amolda el aprendizaje a una app.
+- **Progresión de fricción:** barrera baja al inicio. *Un método mejor que se abandona pierde contra uno peor que se mantiene.*
+- **Avanzar > pulir.**
+- **Construir con el dolor real, no antes** (R11): las notas nacen con la sesión; el mapa se extiende cuando la banda o el siguiente nivel lo pidan.
+- **Presentar antes de construir** (R10): el usuario aprueba los cambios estructurales.
+- **Una regla, un lugar** (R12): las reglas copiadas en varios archivos terminan contradiciéndose, y el agente obedece la copia que lea primero (`sistema/decisiones/decision_arquitectura_reglas.md`).
+
+---
+
+## 8. La salvaguarda contra el abandono
+
+El dato más importante del sistema: **sin estructura y sin guía clara, el usuario se pierde entre opciones y abandona, incluso amando el dominio.** Le pasó con el inglés, con Yousician, con la guitarra hace años, con el canto y con el piano en 2026.
+
+Lo que lo cura ahora, diseñado desde el diagnóstico del piano:
+
+1. **Temarios que dicen dónde está.** Antes no los había.
+2. **Un objetivo que jala, no una deuda que empuja:** la banda de la iglesia y las presentaciones de fin de nivel.
+3. **Las academias desde el primer día:** dinero pagado, grupo pequeño, una noche fija por carril. Accountability real, no gamificación.
+4. **Un piso de presencia por carril** (R9) y la técnica de los 5 minutos: empezar es el trabajo; el tiempo se estira solo.
+5. **Registro honesto**, con chequeo semanal y no diario (RG2).
+6. **Okaeri.** Si se va, se le recibe y se retoma donde quedó, sin cobrar (R3).
+
+> Esta es la diferencia entre que esta vez funcione o sea otro intento archivado.

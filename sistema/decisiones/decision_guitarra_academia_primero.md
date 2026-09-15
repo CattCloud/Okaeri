@@ -1,6 +1,6 @@
 # Decisión: guitarra clásica, academia primero, sin fecha dura
 
-> **Estado:** decidida. **Fecha:** 2026-08-28. **Supersede:** `decision_autodidacta_luego_profesor.md` y `_archivo/piano/sistema/decisiones/decision_piano_primero.md`.
+> **Estado:** decidida. **Fecha:** 2026-08-28. **Supersede:** `decision_autodidacta_luego_profesor.md` y `_archivo/piano/sistema/decisiones/decision_piano_primero.md`. **Enmendada** por `decision_canto_segundo_mapa.md` (2026-09-14): el canto ya no va "después"; es carril propio con academia y temario.
 
 ## La decisión
 

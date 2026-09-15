@@ -30,7 +30,7 @@ Tiene nombre técnico: **respiración costo-diafragmática** ("costo" por las co
 ![Comparación: respiración alta con hombros subidos y poco aire, contra respiración baja con abdomen y costillas expandiéndose.](img/clase01-respiracion-alta-vs-baja.png)
 *Izquierda: lo que se corrige. Derecha: lo que se entrena.*
 
-**Por qué la respiración alta (hombros) está mal:** llena solo la parte alta de los pulmones (poco aire) y tensa cuello y hombros — exactamente la zona por donde sale la voz. Cantar tenso desde el aire es empezar perdiendo.
+**Por qué la respiración alta (hombros) está mal:** llena solo la parte alta de los pulmones (poco aire) y tensa cuello y hombros, que es la zona por donde sale la voz: esa tensión pasa a la voz, que sale apretada y se cansa antes.
 
 ## El ejercicio del papel: la presión hecha visible
 

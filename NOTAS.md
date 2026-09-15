@@ -6,6 +6,7 @@
 
 ## Decisiones resueltas
 
+- ✅ **2026-09-15 — Arquitectura de reglas (aprobada, camino A):** constitución `AGENTS.md` (R1-R12) · reglas por carpeta (`fundamentos/` F1-F12, `repertorio/` RP1-RP6, `practica/` RG1-RG4) · procedimientos en `.claude/skills/` · guardianes en modo avisar · revisor independiente. Detalle en `sistema/decisiones/decision_arquitectura_reglas.md`. Misma arquitectura para TESLA.
 - ✅ **2026-09-11 — Todo ejemplo visual se muestra, no se cuenta (regla del usuario):** si un apunte nombra una forma, posición o comparación, lleva sus diagramas, lado a lado cuando compara. En CLAUDE.md, `fundamentos/00_indice.md` y `_estilo-visual.md`. El generador ya soporta cejilla y traste inicial.
 - ✅ **2026-09-08 — El apunte es atemporal, no un chat (regla del usuario):** nada que solo tenga sentido en el hilo del día vive en un apunte — solo la lección. Personalización pedagógica sí; conversación no. En CLAUDE.md y `fundamentos/00_indice.md`. Apuntes existentes auditados y limpiados.
 - ✅ **2026-09-08 — Niveles de avance en las prácticas (pedido del usuario):** cada práctica prescribe **3 niveles con rutina exacta** (🔵 mínimo / 🟢 natural / 🔥 motivado): qué, cuántas repeticiones, minutos por parte, metrónomo sí/no. Sin rangos vagos. Aplicado a las 2 prácticas de la clase 1 y a la plantilla.
@@ -32,7 +33,6 @@
 
 ## Pendientes del sistema (cuando toque, no antes)
 
-- **Sesión 0** → ajustar M1 con lo que esté vivo.
 - ~~Cuando entren los acordes~~ → **Hecho 2026-09-11** (clase 2): apuntes de acorde/diagramas/8 acordes, `_generador.js` con `chord()`, mazo nuevo `sistema/herramientas/anki-acordes/` (8 acordes). Pendiente del usuario: importarlo.
 - ✅ **2026-09-14 — Canto integrado como segundo mapa (aprobado y ejecutado):** `fundamentos/guitarra/` + `fundamentos/canto/` · dos marcadores · dos academias · dos estados por pieza · `decision_canto_segundo_mapa.md` (retira el veto "canto en paralelo"). Clases 1-2 de canto procesadas; repertorio del profesor registrado.
 - **M4.1** → confirmar el capo de *No hay lugar más alto* contra la grabación (4 o 2).
@@ -41,7 +41,6 @@
 ## Para más adelante (NO ahora)
 
 - **Guitarra de acero** cuando entre a la banda (M9). No antes.
-- **Canto:** después de que los acordes salgan sin pensar. Criterio de transición a definir entonces.
 - **Repaso espaciado de piezas** cuando haya >1 de memoria.
 - **Extender el mapa** más allá del nivel base con lo que Básico II y la banda pidan.
 - **Reusar texto de la era piano** (`02_cifrado`, `04_acorde-mayor`, `05_ritmo`) al escribir M1 y M3.

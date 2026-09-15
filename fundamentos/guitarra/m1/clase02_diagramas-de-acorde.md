@@ -7,9 +7,9 @@ secciones_mapa: "1.2"
 estado: ESCRITA
 ---
 
-# 📐 El diagrama de acorde: la foto de la forma
+# 📐 El diagrama de acorde: cómo se lee
 
-> **El diagrama es una foto del mástil, de frente y parado, que dice dónde pisar y qué cuerdas tocar.** Es el idioma en que se comunican las formas de acorde — como la TAB es el de los ejercicios ([[clase01_tablatura]]).
+> **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([[clase01_tablatura]]).
 
 ![Anatomía del diagrama de acorde: X, O, cejuela, puntos con número de dedo, orden de cuerdas.](img/clase02-anatomia-diagrama.png)
 *Todo lo que un diagrama puede decir, en un solo ejemplo.*

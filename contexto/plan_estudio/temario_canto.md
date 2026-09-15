@@ -29,7 +29,7 @@ inicio: 2026-09-11
 
 **La ruta es secuencial.** No se afina sin aire controlado; no hay canción sin afinar; no se canta tocando sin que la canción salga sola y la guitarra salga sola. El **marcador** vive en `sistema/estado/estado_actual.md` y avanza solo cuando completas tus secciones, en orden.
 
-**La academia no mueve el marcador.** Lo que se vea el jueves se marca 🏫 y se profundiza esa semana. El repertorio que el profesor trae a clase es **tarea del profesor**: va primero, se practica como él pida. La canción del mapa es otra cosa (M4). Protocolo en `sistema/prompts/integracion_academia_sistema.md` — aplica igual, cambiando martes por jueves.
+**La academia no mueve el marcador.** Lo que se vea el jueves se marca 🏫 y se profundiza esa semana. El repertorio que el profesor trae a clase es **tarea del profesor**: va primero, se practica como él pida. La canción del mapa es otra cosa (M4). Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
 
 **El agente no oye.** Menos todavía que en guitarra, donde al menos hay una forma que describir. Consecuencias:
 - **Lo físico de la voz lo manda el profesor.** Si corrige postura, respiración o cómo abres la boca, eso va sobre cualquier apunte.
@@ -38,7 +38,7 @@ inicio: 2026-09-11
 
 **Sección ≠ sesión.** Piso de presencia: **10 min, 3 veces por semana** (propuesta, a ajustar con el tiempo real). El calentamiento de M1 se puede hacer justo antes de la guitarra: 5 minutos que sirven a los dos carriles.
 
-**Teoría y práctica son archivos distintos, lado a lado**, con las mismas reglas que en guitarra (`fundamentos/00_indice.md`). En canto casi no hay diagramas: hay **audio de referencia y grabaciones tuyas**. Una práctica de canto trae: qué ejercicio, cuántas repeticiones, en qué notas (dadas con la guitarra), y cómo suena bien. **Nunca trae la melodía dibujada ni la letra de lo que debe salir de memoria.**
+**Teoría y práctica son archivos distintos, lado a lado**, con las mismas reglas que en guitarra (`fundamentos/AGENTS.md`; lo propio del canto en F12). En canto casi no hay diagramas: hay **audio de referencia y grabaciones tuyas**.
 
 **Los conceptos se definen donde aparecen por primera vez. Nunca antes.**
 

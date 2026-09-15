@@ -1,0 +1,51 @@
+{
+  "modo": "avisar",
+  "alcance": [
+    "fundamentos/",
+    "repertorio/",
+    "practica/",
+    "sistema/estado/",
+    "sistema/perfil/",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "NOTAS.md"
+  ],
+  "excluir": ["_archivo/", "_plantillas/", ".claude/"],
+  "estado_duplicado": {
+    "regla": "R12",
+    "permitido": ["sistema/estado/estado_actual.md"],
+    "patrones": ["Marcador (guitarra|canto)\\s*:", "\\*\\*Módulo actual\\*\\*", "Secciones completadas"]
+  },
+  "frases_prohibidas": [
+    { "regla": "R7", "motivo": "frase de efecto", "patron": "literalmente", "tipos": ["apunte", "practica", "consulta"] },
+    { "regla": "R7", "motivo": "frase de efecto", "patron": "\\bel viaje\\b|la foto de", "tipos": ["apunte", "practica", "consulta"] },
+    { "regla": "R7", "motivo": "metáfora que no explica un movimiento ni un sonido", "patron": "gasolina|nudo en la garganta|empezar perdiendo|sombra cálida", "tipos": ["apunte", "practica", "consulta"] },
+    { "regla": "F9", "motivo": "referencia a la conversación (el apunte es atemporal)", "patron": "tu duda|como vimos|en la clase viste|como te dije|en el chat", "tipos": ["apunte"] },
+    { "regla": "F9", "motivo": "disculpa o comentario sobre el sistema", "patron": "\\bperd[oó]n\\b|\\bdisculp", "tipos": ["apunte", "practica"] },
+    { "regla": "F11", "motivo": "respuesta que quedó solo en el chat", "patron": "explicad[oa] en (el )?chat", "tipos": ["consulta"] }
+  ],
+  "practica": {
+    "campos": ["tipo", "modulo", "origen", "titulo", "apunte", "tiempo_minimo", "tiempo_natural", "tiempo_motivado", "estado"],
+    "secciones": [
+      { "regla": "F4", "nombre": "Qué estás mejorando (en claro)", "patron": "^## .*Qué estás mejorando" },
+      { "regla": "F4", "nombre": "Cómo se hace (referencia)", "patron": "^## .*Cómo se hace" },
+      { "regla": "F5", "nombre": "Los 3 niveles del día", "patron": "^## .*Los 3 niveles del día" },
+      { "regla": "F4", "nombre": "Cómo suena cuando está bien", "patron": "^## .*Cómo suena" },
+      { "regla": "F4", "nombre": "Si sale mal — los 3 típicos", "patron": "^## .*Si sale mal" },
+      { "regla": "F4", "nombre": "Hasta cuándo", "patron": "^## .*Hasta cuándo" },
+      { "regla": "F4", "nombre": "Qué sigue", "patron": "^## .*Qué sigue" }
+    ],
+    "niveles": ["🔵", "🟢", "🔥"],
+    "imagenes_prohibidas": ["acorde-", "hoja-8-acordes"]
+  },
+  "apunte": {
+    "campos": ["tipo", "modulo", "origen", "titulo", "estado"],
+    "repaso": "📋 \\*\\*Repaso"
+  },
+  "repertorio": {
+    "indice": "repertorio/00_indice.md",
+    "seccion_en_curso": "## En curso",
+    "max_en_curso": 1
+  }
+}
