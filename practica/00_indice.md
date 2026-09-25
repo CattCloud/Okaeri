@@ -25,7 +25,8 @@
 |---|---|:-:|---|---|---|
 | 1 | 2026-09-01 | ✅ | Notas y cuerdas · cifrado americano · TAB · dedos 1-4 · ejercicio 1-2-3-4 (4 versiones) · figuras rítmicas, 4/4, metrónomo. El profe preguntó la base previa y aceleró — buena dinámica | El 1-2-3-4 + figuras con metrónomo (prácticas en `fundamentos/guitarra/m1/` y `m3/`) | ✅ 09-05 |
 | 2 | 2026-09-08 | ✅ | Acordes: diagramas · los 8 (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio · corrección de digitaciones (G a 4 dedos, D estándar) | Las 4 progresiones (práctica en `fundamentos/guitarra/m1/`) | ✅ 09-11 |
-| 3 | 2026-09-15 | | | | |
+| 3 | 2026-09-15 | ✅ | Poco teórica, muy práctica · la corchea (½ tiempo) y la barra que une dos · lectura rítmica: el profe dibuja compases con las 4 figuras y se tocan a tiempo, con metrónomo · la pentatónica de La menor, posición 1 (trastes 5-8) — sin teoría, solo práctica | Lectura rítmica + pentatónica (prácticas en `fundamentos/guitarra/m6/` y `m8/`) | ✅ 09-16 |
+| 4 | 2026-09-22 | | | | |
 
 > Una falta se registra sin drama; el reporte siguiente incluye "qué me perdí" (RG3).
 
@@ -60,7 +61,8 @@ Piso por carril: R9 (guitarra 15 min × 3-4 por semana · canto 10 min × 3; el 
 |---|:-:|:-:|---|
 | 2026-08-25 → 08-31 | 0 | — | Pre-arranque. Rediseño del sistema. |
 | 2026-09-01 → 09-07 | 0 | ✗ | Clase 1 ✅ · Ninguna sesión registrada en `practica/`. |
-| 2026-09-08 → 09-14 | 0 | en curso | Clase 2 ✅ · Sin sesiones registradas aún al 09-11. |
+| 2026-09-08 → 09-14 | 0 | ✗ | Clases ✅ (guitarra 2 · canto 2) · Ninguna sesión registrada en `practica/`. Las clases se asistieron; la práctica en casa aún no arranca — la puerta sigue abierta. |
+| 2026-09-15 → 09-21 | 0 | en curso | Clase 3 de guitarra ✅ (15-sep) · Canto clase 3: jueves 17-sep. |
 
 **Última sesión registrada:** ninguna en la era guitarra. *(Era piano: 2026-07-03 — archivada.)*
 

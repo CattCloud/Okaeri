@@ -13,7 +13,7 @@
 | **Temario** | `contexto/plan_estudio/temario_guitarra.md` |
 | **Módulo actual** | **Evaluación de M1** (absorbió a la Sesión 0) |
 | **Secciones completadas** | 0 / 53 |
-| **Vistas en clase (🏫), no completadas** | M1: casi completo · M2: anclas y cambios · M3: pulso, figuras, 4/4, metrónomo · M5: La, Mi, Rem + progresiones · M8: la TAB |
+| **Vistas en clase (🏫), no completadas** | M1: casi completo · M2: anclas y cambios · M3: pulso, figuras, 4/4, metrónomo · M5: La, Mi, Rem + progresiones · M6: la corchea, lectura rítmica (clase 3) · M8: la TAB · pentatónica de La, posición 1 (clase 3) |
 | **Próxima acción** | Con el drill de Anki, producir los 8 acordes de memoria, limpios, en <5 s. Al salir 2 días seguidos → M1 ✅, marcador a M2 (pre-cargado por la clase 2). |
 
 ## 🗺️ Marcador — Canto
@@ -32,12 +32,12 @@
 
 | Campo | Valor |
 |---|---|
-| **Semana** | 2026-09-08 → 09-14 (cierra hoy) · Guitarra clase 3: **martes 15-sep** · Canto clase 3: **jueves 17-sep** |
-| **Reporte guitarra** | ✅ Clase 2 (11-sep): los 8 acordes, progresiones, anclas |
-| **Reporte canto** | ✅ Clases 1-2 (recibido 14-sep): respiración diafragma+costados · papel en pared · trino · consigna: elegir 2-3 canciones para trabajar cada clase |
-| **Tarea del profesor (guitarra)** | Las 4 progresiones → `fundamentos/guitarra/m1/clase02_practica_progresiones.md` — 🔵 6 min/día |
+| **Semana** | 2026-09-15 → 09-21 · Canto clase 3: **jueves 17-sep** · Guitarra clase 4: martes 22-sep |
+| **Reporte guitarra** | ✅ Clase 3 (recibido 16-sep): la corchea + lectura rítmica con metrónomo · pentatónica de La menor, posición 1 (práctica, sin teoría — la teoría quedó en el apunte) |
+| **Reporte canto** | Pendiente: clase 3 es el jueves 17-sep → reporte el viernes |
+| **Tarea del profesor (guitarra)** | 1º Lectura rítmica → `fundamentos/guitarra/m6/clase03_practica_lectura-ritmica.md` — 🔵 5 min · 2º Pentatónica → `fundamentos/guitarra/m8/clase03_practica_pentatonica.md` — 🔵 5 min |
 | **Tarea del profesor (canto)** | Practicar el repertorio elegido (ver `repertorio/00_indice.md` §canto). Base técnica: `fundamentos/canto/m1/clase01_practica_respiracion-trino.md` — 🔵 5 min/día |
-| **Plan de la semana** | 1. Guitarra: araña 🔵 + progresiones + drill Anki 3 min (la evaluación de M1 en marcha). 2. Canto: calentamiento aire/trino 🔵 a diario + repertorio del profesor **en tonos que quepan bajo Sol4** (los agudos de *Hosanna* no se empujan). 3. El repertorio de canto sigue la rutina de `fundamentos/canto/_consulta-voz.md` (calentar → frases → enfriar). *Hosanna* se practica **bajada de tono con Moises** hasta que el coro quepa cómodo; el número de semitonos se anota al encontrarlo. 4. Registrar cada sesión en `practica/` con su carril. 5. Martes → reporte guitarra clase 3 · Jueves → reporte canto clase 3, **llevando esta pregunta al profe: '¿me escuchas los registros? siento la voz de pecho más fácil que la de cabeza'** (observación del 14-sep, pendiente de confirmación experta). |
+| **Plan de la semana** | 1. Guitarra: araña de calentamiento + **tarea de la clase 3 primero** (lectura rítmica 🔵 + pentatónica 🔵) + drill Anki 3 min (la evaluación de M1 sigue en marcha) + progresiones cuando alcance. Si un día solo hay 15 min: la tarea gana (R4). 2. Canto: calentamiento aire/trino 🔵 a diario + repertorio del profesor **en tonos que quepan bajo Sol4**; *Hosanna* bajada de tono con Moises hasta que el coro quepa cómodo (anotar los semitonos al encontrarlos). 3. Registrar cada sesión en `practica/` con su carril — **la semana pasada cerró con 0 registradas**; la técnica de los 5 minutos aplica. 4. Jueves → clase 3 de canto, **llevando la pregunta al profe: '¿me escuchas los registros? siento la voz de pecho más fácil que la de cabeza'** (observación del 14-sep, pendiente de confirmación experta) → reporte el viernes. |
 
 ---
 

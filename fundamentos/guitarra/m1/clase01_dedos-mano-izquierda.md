@@ -31,4 +31,4 @@ estado: ESCRITA
 > - El 3 y el 4 vienen pegados de fábrica. Separarlos es entrenamiento, no talento.
 
 ---
-[[clase01_tablatura|← La tablatura]] · [[00_indice|índice]]
+[← La tablatura](clase01_tablatura.md) · [índice](../../00_indice.md)

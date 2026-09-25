@@ -8,7 +8,7 @@ estado: ESCRITA
 ---
 # 🎤 Respirar para cantar: diafragma, costados y presión de aire
 
-> **Se lee lejos del ensayo.** La técnica de la clase 1 de canto, explicada. Su práctica: [[clase01_practica_respiracion-trino]].
+> **Se lee lejos del ensayo.** La técnica de la clase 1 de canto, explicada. Su práctica: [Aire y trino](clase01_practica_respiracion-trino.md).
 
 ## Por qué la respiración va primero
 
@@ -72,4 +72,4 @@ Por qué es el ejercicio favorito de todos los profesores:
 
 ---
 
-[[00_indice|índice]] · su práctica: [[clase01_practica_respiracion-trino]]
+[índice](../../00_indice.md) · su práctica: [Aire y trino](clase01_practica_respiracion-trino.md)

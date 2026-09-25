@@ -3,7 +3,7 @@ tipo: practica
 modulo: m1
 origen: clase02 (2026-09-08) — ejercicio del profesor
 titulo: "Las 4 progresiones: el cambio de acorde"
-apunte: "[[clase02_los-8-acordes]] · [[clase02_el-acorde]]"
+apunte: "[los 8 acordes](clase02_los-8-acordes.md) · [El acorde, y mayor vs. menor](clase02_el-acorde.md)"
 tiempo_minimo: "6 min"
 tiempo_natural: "14 min"
 tiempo_motivado: "20 min"
@@ -29,7 +29,7 @@ estado: EN-CURSO
 - **Una vuelta** = la progresión completa, de inicio a fin, y regresas al primer acorde.
 - **Modo A — un rasgueo por compás:** rasgueo hacia abajo en el "1", sostienes 2-3-4 mientras preparas el cambio. En caja partida: rasgueo en el 1 **y** en el 3.
 - **Modo B — un rasgueo por tiempo:** cuatro rasgueos abajo por compás, contando en voz alta. En caja partida: dos y dos.
-- **Antes de tocar una progresión: busca el ancla de cada cambio** (tabla en [[clase02_los-8-acordes]]). Es la mitad del ejercicio.
+- **Antes de tocar una progresión: busca el ancla de cada cambio** (tabla en [los 8 acordes](clase02_los-8-acordes.md)). Es la mitad del ejercicio.
 - **Los 4 niveles de velocidad:** ① sin metrónomo → ② 60 BPM → ③ 70 → ④ 80. **Cada progresión está en un nivel, y avanza por su cuenta** (la P4 puede ir en 60 mientras la P2 sigue sin metrónomo). Una progresión **pasa al siguiente nivel** cuando da **2 vueltas seguidas limpias, sin frenar en ningún cambio**, en su nivel actual. Nunca se salta un nivel. Marca aquí dónde va cada una:
 
 | Progresión | ① Sin metrónomo | ② 60 | ③ 70 | ④ 80 |

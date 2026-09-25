@@ -25,4 +25,4 @@ estado: ESCRITA
 > - [Punto 2]
 
 ---
-[[anterior|← Anterior]] · [[00_indice|índice]] · su práctica: [[claseNN_practica_tema]]
+[← Anterior](anterior.md) · [índice](00_indice.md) · su práctica: [texto](claseNN_practica_tema.md)

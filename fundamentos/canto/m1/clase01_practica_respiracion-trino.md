@@ -3,7 +3,7 @@ tipo: practica
 modulo: canto/m1
 origen: "clase01 canto (2026-09-03) — ejercicios del profesor"
 titulo: "Aire y trino: el calentamiento base"
-apunte: "[[clase01_respiracion]]"
+apunte: "[Respirar para cantar](clase01_respiracion.md)"
 tiempo_minimo: "5 min"
 tiempo_natural: "10 min"
 tiempo_motivado: "14 min"

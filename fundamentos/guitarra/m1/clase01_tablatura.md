@@ -17,7 +17,7 @@ estado: ESCRITA
 ## Las reglas
 
 1. **6 líneas = tus 6 cuerdas.** Y aquí el detalle que confunde a todos: **la línea de ARRIBA es la 1ª cuerda (la más fina)**, y la de abajo es la 6ª (la gruesa). Parece al revés — es como si miraras el mástil de tu guitarra inclinándolo hacia ti.
-2. **Los números son TRASTES, no dedos.** Un `3` en una línea = pisa el traste 3 de esa cuerda. Qué dedo usar lo dice el ejercicio o el contexto. *(¿Qué es un traste? Las barritas de metal que cruzan el mástil; pisas entre dos, no encima → [[../_consulta-instrumento]].)*
+2. **Los números son TRASTES, no dedos.** Un `3` en una línea = pisa el traste 3 de esa cuerda. Qué dedo usar lo dice el ejercicio o el contexto. *(¿Qué es un traste? Las barritas de metal que cruzan el mástil; pisas entre dos, no encima → [la guía del instrumento](../../_consulta-instrumento.md).)*
 3. **`0` = cuerda al aire.** Tócala sin pisar nada.
 4. **Se lee de izquierda a derecha**, como un texto.
 5. **Números en columna (uno sobre otro) = suenan a la vez.** Así se escriben los acordes en TAB. Números separados = uno tras otro.
@@ -30,4 +30,4 @@ Un ejemplo real ya lo tienes: el gráfico de tu práctica del 1-2-3-4 (`clase01_
 > - Izquierda → derecha. En columna = a la vez (acorde).
 
 ---
-[[clase01_notas-y-cuerdas|← Las notas y cuerdas]] · [[00_indice|índice]] · [[clase01_dedos-mano-izquierda|siguiente → Los dedos]]
+[← Las notas y cuerdas](clase01_notas-y-cuerdas.md) · [índice](../../00_indice.md) · [siguiente → Los dedos](clase01_dedos-mano-izquierda.md)

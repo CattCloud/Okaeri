@@ -54,4 +54,4 @@ Antes de tocar una progresión nueva, **busca el ancla de cada cambio**. Cambiar
 > - Las formas se estudian aquí y en Anki; **se producen de memoria** en la práctica.
 
 ---
-[[clase02_diagramas-de-acorde|← El diagrama]] · [[00_indice|índice]] · su práctica: [[clase02_practica_progresiones]]
+[← El diagrama](clase02_diagramas-de-acorde.md) · [índice](../../00_indice.md) · su práctica: [Las 4 progresiones](clase02_practica_progresiones.md)

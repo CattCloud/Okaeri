@@ -9,7 +9,7 @@ estado: ESCRITA
 
 # 📐 El diagrama de acorde: cómo se lee
 
-> **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([[clase01_tablatura]]).
+> **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([La tablatura (TAB)](clase01_tablatura.md)).
 
 ![Anatomía del diagrama de acorde: X, O, cejuela, puntos con número de dedo, orden de cuerdas.](img/clase02-anatomia-diagrama.png)
 *Todo lo que un diagrama puede decir, en un solo ejemplo.*
@@ -77,4 +77,4 @@ Por ahora se usan solo las **formas abiertas**. Las demás posiciones entran en 
 > - **Digitación** (qué dedos) ≠ **posición** (en qué lugar del mástil). Un mismo acorde vive en varios lugares; mientras suenen sus notas, es ese acorde. Por ahora: formas abiertas; el resto, en M7.
 
 ---
-[[clase02_el-acorde|← El acorde]] · [[00_indice|índice]] · [[clase02_los-8-acordes|siguiente → Los 8 acordes]]
+[← El acorde](clase02_el-acorde.md) · [índice](../../00_indice.md) · [siguiente → Los 8 acordes](clase02_los-8-acordes.md)

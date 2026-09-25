@@ -4,7 +4,7 @@ carril: guitarra          # guitarra | canto
 modulo: mN
 origen: ""                # claseNN (AAAA-MM-DD) — ejercicio del profesor | sección N.N del mapa
 titulo: ""
-apunte: "[[...]]"         # el apunte que la respalda (se lee antes, lejos del instrumento)
+apunte: "[texto](ruta.md)" # el apunte que la respalda (se lee antes, lejos del instrumento)
 tiempo_minimo: ""         # nivel 🔵
 tiempo_natural: ""        # nivel 🟢
 tiempo_motivado: ""       # nivel 🔥

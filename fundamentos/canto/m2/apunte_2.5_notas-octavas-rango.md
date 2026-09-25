@@ -13,7 +13,7 @@ estado: ESCRITA
 
 ## 1. Las 7 notas se repiten
 
-Ya sabes las 7 notas y su cifrado: Do Re Mi Fa Sol La Si = C D E F G A B ([[../../guitarra/m1/clase01_notas-y-cuerdas|el apunte de la clase 1 de guitarra]]). Lo que falta decir: después de Si **no hay una octava nota nueva** — vuelve a venir Do, y otra vez Re, y así. La música entera usa esas 7 notas (más sus alteraciones, los sostenidos `#`), repetidas una y otra vez de lo grave a lo agudo.
+Ya sabes las 7 notas y su cifrado: Do Re Mi Fa Sol La Si = C D E F G A B ([el apunte de la clase 1 de guitarra](../../guitarra/m1/clase01_notas-y-cuerdas.md)). Lo que falta decir: después de Si **no hay una octava nota nueva** — vuelve a venir Do, y otra vez Re, y así. La música entera usa esas 7 notas (más sus alteraciones, los sostenidos `#`), repetidas una y otra vez de lo grave a lo agudo.
 
 **Pruébalo en tu guitarra:** la cuerda 6 al aire es Mi, y la cuerda 1 al aire también es Mi. Son la misma nota — una gruesa y grave, la otra fina y aguda. Tu oído las reconoce como "la misma, pero más arriba".
 
@@ -70,4 +70,4 @@ Las voces se agrupan según dónde cae su zona cómoda. De grave a aguda: en hom
 > - Voces de grave a aguda: bajo, barítono, **tenor** (la tuya) · contralto, mezzosoprano, soprano.
 
 ---
-[[../../00_indice|índice]] · [[../../guitarra/m1/clase01_notas-y-cuerdas|← Las notas y las cuerdas]]
+[índice](../../00_indice.md) · [← Las notas y las cuerdas](../../guitarra/m1/clase01_notas-y-cuerdas.md)

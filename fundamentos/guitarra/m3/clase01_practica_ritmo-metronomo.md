@@ -3,7 +3,7 @@ tipo: practica
 modulo: m3
 origen: clase01 (2026-09-01) — ejercicio del profesor
 titulo: "Figuras con metrónomo"
-apunte: "[[clase01_ritmo-basico]]"
+apunte: "[Ritmo básico](clase01_ritmo-basico.md)"
 tiempo_minimo: "5 min"
 tiempo_natural: "10 min"
 tiempo_motivado: "15 min"

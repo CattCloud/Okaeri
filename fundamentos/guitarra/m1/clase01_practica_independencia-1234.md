@@ -3,7 +3,7 @@ tipo: practica
 modulo: m1
 origen: clase01 (2026-09-01) — ejercicio del profesor
 titulo: "El 1-2-3-4: independencia de dedos y pisada limpia"
-apunte: "[[clase01_tablatura]] · [[clase01_dedos-mano-izquierda]]"
+apunte: "[La tablatura (TAB)](clase01_tablatura.md) · [Los dedos de la mano izquierda](clase01_dedos-mano-izquierda.md)"
 tiempo_minimo: "5 min"
 tiempo_natural: "12 min"
 tiempo_motivado: "20 min"
@@ -95,4 +95,4 @@ Tarea de la clase 1. No se "aprueba": queda como **calentamiento de la mano izqu
 
 ## Qué sigue
 
-Los acordes de M1 ([[clase02_los-8-acordes]]) y el cambio de acorde de M2: los dedos que ya se mueven solos son los que caen juntos al formar un acorde.
+Los acordes de M1 ([los 8 acordes](clase02_los-8-acordes.md)) y el cambio de acorde de M2: los dedos que ya se mueven solos son los que caen juntos al formar un acorde.

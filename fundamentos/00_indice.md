@@ -19,44 +19,56 @@ Viven en `fundamentos/AGENTS.md` (F1-F12): dónde va cada archivo y cómo se nom
 
 | Nota | Qué es |
 |---|---|
-| [[_consulta-instrumento\|La guitarra: partes, sostenerla, afinar, cuidado]] | Lo que era el "módulo 0". **Afinar sí es obligatorio, cada vez.** |
-| [[canto/_consulta-voz\|La voz: cuidarla, calentarla, y la rutina de toda sesión]] | El espejo para el canto Y el archivo de tus preguntas, con índice interno que crece con cada duda nueva: rutina antes/durante/después, señales de parar, hidratación, comida, el tono, las apps. **Calentar sí es obligatorio, cada vez.** |
+| [La guitarra: partes, sostenerla, afinar, cuidado](_consulta-instrumento.md) | Lo que era el "módulo 0". **Afinar sí es obligatorio, cada vez.** |
+| [La voz: cuidarla, calentarla, y la rutina de toda sesión](canto/_consulta-voz.md) | El espejo para el canto Y el archivo de tus preguntas, con índice interno que crece con cada duda nueva: rutina antes/durante/después, señales de parar, hidratación, comida, el tono, las apps. **Calentar sí es obligatorio, cada vez.** |
 
 ## Lo escrito, por módulo
 
 ### guitarra/m1 · Los primeros acordes
 | Archivo | Tipo | Qué es |
 |---|---|---|
-| [[guitarra/m1/clase01_notas-y-cuerdas\|Las notas y las 6 cuerdas]] | 📖 apunte | Las 7 notas, Do-Re-Mi = A-B-C, cada cuerda es una nota |
-| [[guitarra/m1/clase01_tablatura\|La tablatura (TAB)]] | 📖 apunte | Cómo se lee — 🏫 concepto de M8 adelantado por la academia |
-| [[guitarra/m1/clase01_dedos-mano-izquierda\|Los dedos de la mano izquierda]] | 📖 apunte | Numeración 1-4, "un dedo por traste" |
-| [[guitarra/m1/clase01_practica_independencia-1234\|🎸 El 1-2-3-4 (la araña)]] | 🎸 práctica | Tarea de la clase 1 — independencia y pisada limpia. **Sigue como calentamiento** |
-| [[guitarra/m1/clase02_el-acorde\|El acorde, y mayor vs. menor]] | 📖 apunte | Qué es un acorde · los dos colores · la trampa del "mayor a secas" · un acorde dentro de otro (Mi − dedo 1 = Mim) |
-| [[guitarra/m1/clase02_diagramas-de-acorde\|El diagrama de acorde]] | 📖 apunte | Cómo se lee · **por qué un acorde tiene varias digitaciones** y cuál elegir |
-| [[guitarra/m1/clase02_los-8-acordes\|Los 8 acordes abiertos]] | 📖 apunte | C·D·E·G·A·Em·Am·Dm con diagramas + **la tabla de anclas** + 🖨️ hoja imprimible (`m1/img/hoja-8-acordes.png`) |
-| [[guitarra/m1/clase02_practica_progresiones\|🎸 Las 4 progresiones]] | 🎸 práctica | Tarea de la clase 2 — el cambio de acorde, con escalera de metrónomo |
+| [Las notas y las 6 cuerdas](guitarra/m1/clase01_notas-y-cuerdas.md) | 📖 apunte | Las 7 notas, Do-Re-Mi = A-B-C, cada cuerda es una nota |
+| [La tablatura (TAB)](guitarra/m1/clase01_tablatura.md) | 📖 apunte | Cómo se lee — 🏫 concepto de M8 adelantado por la academia |
+| [Los dedos de la mano izquierda](guitarra/m1/clase01_dedos-mano-izquierda.md) | 📖 apunte | Numeración 1-4, "un dedo por traste" |
+| [🎸 El 1-2-3-4 (la araña)](guitarra/m1/clase01_practica_independencia-1234.md) | 🎸 práctica | Tarea de la clase 1 — independencia y pisada limpia. **Sigue como calentamiento** |
+| [El acorde, y mayor vs. menor](guitarra/m1/clase02_el-acorde.md) | 📖 apunte | Qué es un acorde · los dos colores · la trampa del "mayor a secas" · un acorde dentro de otro (Mi − dedo 1 = Mim) |
+| [El diagrama de acorde](guitarra/m1/clase02_diagramas-de-acorde.md) | 📖 apunte | Cómo se lee · **por qué un acorde tiene varias digitaciones** y cuál elegir |
+| [Los 8 acordes abiertos](guitarra/m1/clase02_los-8-acordes.md) | 📖 apunte | C·D·E·G·A·Em·Am·Dm con diagramas + **la tabla de anclas** + 🖨️ hoja imprimible (`m1/img/hoja-8-acordes.png`) |
+| [🎸 Las 4 progresiones](guitarra/m1/clase02_practica_progresiones.md) | 🎸 práctica | Tarea de la clase 2 — el cambio de acorde, con escalera de metrónomo |
 
 *Pendiente de M1: 1.9 "que suene limpio" (diagnóstico de zumbidos) — cuando la clase o el mapa lo pidan.*
 
 ### guitarra/m3 · Mano derecha: pulso y ritmo
 | Archivo | Tipo | Qué es |
 |---|---|---|
-| [[guitarra/m3/clase01_ritmo-basico\|Ritmo básico]] | 📖 apunte | Pulso, figuras (redonda/blanca/negra), **el 4/4 explicado en claro**, **tempo y BPM** (qué significa el "60"), metrónomo — 🏫 adelantado |
-| [[guitarra/m3/clase01_practica_ritmo-metronomo\|🎸 Figuras con metrónomo]] | 🎸 práctica | Tarea de la clase 1 — el reloj interno |
+| [Ritmo básico](guitarra/m3/clase01_ritmo-basico.md) | 📖 apunte | Pulso, figuras (redonda/blanca/negra), **el 4/4 explicado en claro**, **tempo y BPM** (qué significa el "60"), metrónomo — 🏫 adelantado |
+| [🎸 Figuras con metrónomo](guitarra/m3/clase01_practica_ritmo-metronomo.md) | 🎸 práctica | Tarea de la clase 1 — el reloj interno |
 
-### guitarra/m2, m4-m9
+### guitarra/m6 · Ritmo de verdad
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [La corchea: media negra](guitarra/m6/clase03_la-corchea.md) | 📖 apunte | La 4ª figura (½ tiempo) · corchete y barra · la cuenta «1 y 2 y» · subdivisión — 🏫 concepto de M6 adelantado |
+| [🎸 Lectura rítmica con corcheas](guitarra/m6/clase03_practica_lectura-ritmica.md) | 🎸 práctica | Tarea de la clase 3 — 8 ejercicios de compases dibujados, como los del profesor |
+
+### guitarra/m8 · Punteo y arpegio
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [La pentatónica de La menor](guitarra/m8/clase03_la-pentatonica.md) | 📖 apunte | Qué es una escala · las 5 notas · la posición 1 (trastes 5-8) con diagrama — 🏫 adelantado (8.6), la teoría que la clase no dio |
+| [🎸 La pentatónica, posición 1](guitarra/m8/clase03_practica_pentatonica.md) | 🎸 práctica | Tarea de la clase 3 — subir y bajar la caja, metrónomo en 60 |
+
+### guitarra/m2, m4-m5, m7, m9
 _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_guitarra.md`)_
 
 ### canto/m1 · Cuerpo y aire
 | Archivo | Tipo | Qué es |
 |---|---|---|
-| [[canto/m1/clase01_respiracion\|Respirar para cantar]] | 📖 apunte | Diafragma y costados (costo-diafragmática) · el apoyo · por qué el papel y el trino miden el aire |
-| [[canto/m1/clase01_practica_respiracion-trino\|🎤 Aire y trino]] | 🎤 práctica | Ejercicios de la clase 1 — **es también el calentamiento permanente** (1.5) |
+| [Respirar para cantar](canto/m1/clase01_respiracion.md) | 📖 apunte | Diafragma y costados (costo-diafragmática) · el apoyo · por qué el papel y el trino miden el aire |
+| [🎤 Aire y trino](canto/m1/clase01_practica_respiracion-trino.md) | 🎤 práctica | Ejercicios de la clase 1 — **es también el calentamiento permanente** (1.5) |
 
 ### canto/m2 · Producir el sonido
 | Archivo | Tipo | Qué es |
 |---|---|---|
-| [[canto/m2/apunte_2.5_notas-octavas-rango\|El mapa de las notas: octavas, semitonos y tu rango]] | 📖 apunte | La escalera completa: notas que se repiten → octava → el número → semitono (= 1 traste) → rango y zona cómoda → tono y transportar → tipos de voz. Con tu medición del 09-14. Base compartida con guitarra M7 |
+| [El mapa de las notas: octavas, semitonos y tu rango](canto/m2/apunte_2.5_notas-octavas-rango.md) | 📖 apunte | La escalera completa: notas que se repiten → octava → el número → semitono (= 1 traste) → rango y zona cómoda → tono y transportar → tipos de voz. Con tu medición del 09-14. Base compartida con guitarra M7 |
 
 ### canto/m3-m8
 _(pendientes — el mapa completo está en `contexto/plan_estudio/temario_canto.md`)_

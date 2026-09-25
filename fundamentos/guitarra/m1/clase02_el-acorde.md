@@ -59,4 +59,4 @@ Ambos sentidos siguen la regla de siempre: **el acorde son sus notas** — si de
 
 ---
 
-[[00_indice|índice]] · [[clase02_diagramas-de-acorde|siguiente → Cómo se lee un diagrama]]
+[índice](../../00_indice.md) · [siguiente → Cómo se lee un diagrama](clase02_diagramas-de-acorde.md)

@@ -10,6 +10,8 @@
 
 **F3 · Se escriben cuando la sección se toca** (R11), y cada archivo nuevo tiene su fila en `fundamentos/00_indice.md`.
 
+**F13 · Enlaces en formato Markdown estándar.** El usuario no usa Obsidian: todo enlace entre notas se escribe `[texto](ruta.md)`, con la ruta relativa al archivo que enlaza — nunca `[[wikilinks]]`. Es el formato que abren VS Code, GitHub y cualquier visor Markdown sin depender de un programa externo.
+
 ## Prácticas
 
 **F4 · Secciones obligatorias:** Qué estás mejorando (en claro) · Cómo se hace (referencia) · Los 3 niveles del día · Cómo suena cuando está bien · Si sale mal — los 3 típicos · Hasta cuándo · Qué sigue. Opcionales: El gráfico (en guitarra, obligatorio si hay algo que mostrar), Afinación del instructor, Verificación. Toda referencia interna ("ver Afinación 1") apunta a algo que existe en el archivo. Plantilla: `.claude/skills/escribir-practica/plantilla.md`.

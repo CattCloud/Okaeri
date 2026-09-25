@@ -87,7 +87,7 @@ function revisar(rel) {
 function revisarImagenesYEnlaces(lineas, abs, tipo, aviso) {
   const dir = path.dirname(abs);
   const reImg = /!\[([^\]]*)\]\(([^)\s]+)\)/g;
-  const reWiki = /\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]/g;
+  const reLink = /(?<!!)\[([^\]]*)\]\(([^)\s]+\.md)\)/g;
   lineas.forEach((l, i) => {
     for (const [, alt, src] of l.matchAll(reImg)) {
       if (/^https?:/.test(src)) continue;
@@ -97,8 +97,8 @@ function revisarImagenesYEnlaces(lineas, abs, tipo, aviso) {
         aviso('F6', `la práctica muestra una forma que debe salir de memoria: ${src}`, i + 1);
       }
     }
-    for (const [, destino] of l.matchAll(reWiki)) {
-      if (!existeNota(destino, dir)) aviso('F10', `enlace a una nota que no existe: [[${destino}]]`, i + 1);
+    for (const [, , destino] of l.matchAll(reLink)) {
+      if (!existeNota(destino.replace(/\.md$/, ''), dir)) aviso('F10', `enlace a una nota que no existe: (${destino})`, i + 1);
     }
   });
 }

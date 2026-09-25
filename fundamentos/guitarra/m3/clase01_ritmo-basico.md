@@ -79,4 +79,4 @@ Regla del sistema: el metrónomo se usa para **calibrar** tu pulso, y luego se s
 > - El **"1"** es el tiempo fuerte. Contar en voz alta: 1-2-3-4.
 
 ---
-[[00_indice|índice]] · su práctica: [[clase01_practica_ritmo-metronomo]]
+[índice](../../00_indice.md) · su práctica: [Figuras con metrónomo](clase01_practica_ritmo-metronomo.md)

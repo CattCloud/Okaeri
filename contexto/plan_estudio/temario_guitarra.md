@@ -60,9 +60,9 @@ inicio: 2026-08-28
 | 3 | Mano derecha: pulso y rasgueo | 6 | ✅ | 🏫 parcial (clase 1: pulso, figuras, 4/4, metrónomo) |
 | 4 | **Tu primera canción completa** 🎯 | 6 | ❌ **Okaeri solo** | ⬜ |
 | 5 | Ampliar el vocabulario | 6 | ✅ parcial | 🏫 parcial (clase 2: La, Mi, Rem + progresiones dictadas) |
-| 6 | Ritmo de verdad | 5 | ✅ | ⬜ |
+| 6 | Ritmo de verdad | 5 | ✅ | 🏫 parcial (clase 3: la corchea, lectura rítmica — concepto subdivisión) |
 | 7 | La cejilla | 5 | ✅ | ⬜ |
-| 8 | Punteo y arpegio | 6 | ✅ **temprano** (clases 5-8) | 🏫 TAB vista (clase 1) |
+| 8 | Punteo y arpegio | 6 | ✅ **temprano** (clases 5-8) | 🏫 TAB (clase 1) · pentatónica de La, posición 1 (clase 3 — 8.6) |
 | 9 | **Tocar con otros** (la banda) | 5 | ❌ **Okaeri solo** | ⬜ |
 | — | Capa transversal (memoria · oído · teoría aplicada · interpretación) | — | ❌ **Okaeri solo** | siempre |
 

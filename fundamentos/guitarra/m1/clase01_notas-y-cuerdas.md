@@ -48,4 +48,4 @@ Fíjate: la primera y la última son **las dos Mi** — una grave y una aguda. P
 > - El afinador habla en letras: E A D G B E.
 
 ---
-[[00_indice|índice]] · [[clase01_tablatura|siguiente → La tablatura]]
+[índice](../../00_indice.md) · [siguiente → La tablatura](clase01_tablatura.md)

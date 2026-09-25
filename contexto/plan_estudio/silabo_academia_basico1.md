@@ -59,4 +59,5 @@ En el módulo IV **el alumno elige la pieza** de su concierto. Si el profesor ac
 |:-:|---|---|---|
 | 1 | 2026-09-01 | Notas musicales · cada cuerda es una nota · cifrado americano · TAB (introducción) · dedos 1-4 · ejercicio 1-2-3-4 en 4 versiones progresivas · figuras (redonda/blanca/negra) · compás 4/4 · metrónomo. *Más de lo anunciado: el brochure decía "primeras melodías"; en la práctica fue técnica + ritmo + lectura de TAB* | 1-2-3-4 + figuras con metrónomo |
 | 2 | 2026-09-08 | Diagramas de acorde · los 8 acordes abiertos (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos (4t/2t) · rasgueo por compás y por tiempo, sin y con metrónomo · técnica de cambio: anclas, no levantar la mano · corrección de digitaciones. *El brochure decía "Primeros acordes" para la clase 2 — cuadra* | Las 4 progresiones |
-| 3 | 2026-09-15 | | |
+| 3 | 2026-09-15 | La corchea (½ tiempo) y la barra de unión · lectura rítmica: compases dibujados con las 4 figuras, tocados a tiempo con metrónomo · la pentatónica de La menor, posición 1 (trastes 5-8), solo práctica, sin teoría. *El brochure decía "Primeros acordes y ritmos sencillos" — el ritmo cuadra; la pentatónica adelanta el picado del módulo II (M8 del temario)* | Lectura rítmica + pentatónica |
+| 4 | 2026-09-22 | | |

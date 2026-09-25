@@ -31,7 +31,7 @@ estado: VIGENTE — crece con cada pregunta nueva
 | Qué | Cuánto |
 |---|---|
 | Agua a temperatura ambiente | unos sorbos |
-| [[m1/clase01_practica_respiracion-trino\|Aire y trino, nivel 🔵]] | 5 min |
+| [Aire y trino, nivel 🔵](m1/clase01_practica_respiracion-trino.md) | 5 min |
 | Dos notas cómodas sostenidas en "ah" | ~1 min |
 
 **Por qué no se salta:** la voz es músculo. Cantar en frío rinde peor y es la forma más fácil de lastimarse. **Calentar de más tampoco:** pasados ~10 min ya no calienta, gasta — llegas a la canción con la voz cansada.
@@ -85,7 +85,7 @@ Comer no daña la voz, pero **cantar con el estómago muy lleno sí molesta**: e
 
 ## El tono: la regla de oro
 
-Toda canción tiene su **tono original** — aquel en que el artista la grabó, elegido para SU voz. **Llegar al tono original no es la meta.** La meta es cantarla en **tu tono**: transportada (subida o bajada entera en semitonos, [[m2/apunte_2.5_notas-octavas-rango|apunte]]) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa versión no es "la fácil": es **tu** versión final. En la banda el tono se elige según quien canta; es práctica universal, no un atajo. Si tu rango crece (M6), podrás subirla — por gusto, no por deuda.
+Toda canción tiene su **tono original** — aquel en que el artista la grabó, elegido para SU voz. **Llegar al tono original no es la meta.** La meta es cantarla en **tu tono**: transportada (subida o bajada entera en semitonos, [apunte](m2/apunte_2.5_notas-octavas-rango.md)) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa versión no es "la fácil": es **tu** versión final. En la banda el tono se elige según quien canta; es práctica universal, no un atajo. Si tu rango crece (M6), podrás subirla — por gusto, no por deuda.
 
 **Cómo encontrar tu tono de una canción (con Moises):** baja el tono de la pista de 1 en 1 semitono y canta el coro (la parte más aguda). Quédate donde salga **con cuerpo y sin apretar la garganta**. Si dudas entre dos, el más bajo. Anota el número de semitonos en la ficha de la canción.
 
