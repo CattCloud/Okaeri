@@ -8,6 +8,8 @@ estado: ESCRITA
 ---
 # 🎤 Respirar para cantar: diafragma, costados y presión de aire
 
+**Antes de esto necesitas:** nada: es el punto de partida.
+
 > **Se lee lejos del ensayo.** La técnica de la clase 1 de canto, explicada. Su práctica: [Aire y trino](clase01_practica_respiracion-trino.md).
 
 ## Por qué la respiración va primero

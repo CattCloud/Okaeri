@@ -6,7 +6,7 @@
 ## Qué hay aquí
 
 - `acordes.tsv` — el mazo importable: los **8 acordes de la clase 2 de la academia** (C, D, E, G, A, Em, Am, Dm).
-- `acorde-*.png` — los diagramas del reverso (los mismos de `fundamentos/guitarra/m1/`, generados con `fundamentos/_generador.js`).
+- `acorde-*.png` — los diagramas del reverso (los mismos de `fundamentos/guitarra/img/`, generados con `fundamentos/_generador.js`).
 
 ## Cómo importarlo (una vez)
 

@@ -12,7 +12,7 @@
 
 Okaeri estructura el aprendizaje musical de alguien que ama la música pero, sin guía clara, siempre terminaba abandonando. La meta no es el virtuosismo ni componer: es ser **intérprete** — tocar y cantar a la vez las canciones que tocan el corazón. **Destino concreto: la banda de su iglesia.**
 
-**Dos carriles:** **guitarra clásica** (desde 2026-08-28) y **canto** (desde 2026-09). Cada uno tiene un temario (el mapa de todo lo que hay que aprender, en orden), una academia presencial (guitarra los martes, canto los jueves) y un marcador de avance. El piano fue el primer intento (2026-06 → 2026-08) y está archivado en `_archivo/piano/`.
+**Dos carriles:** **guitarra clásica** (desde 2026-08-28) y **canto** (desde 2026-09). Cada uno tiene un temario (el mapa de todo lo que hay que aprender y de qué depende cada cosa), una academia presencial (guitarra los martes, canto los jueves) —cuyas clases marcan la ruta— y un marcador (última clase, evaluación en curso y cola de conceptos). El piano fue el primer intento (2026-06 → 2026-08) y está archivado en `_archivo/piano/`.
 
 **El principio anti-muleta:** una canción no está aprendida hasta salir **sin cifrado ni letra delante, de memoria, sola**. Nada de "pista que cae" tipo Guitar Hero: entrena reacción, no música.
 
@@ -47,7 +47,7 @@ okaeri/
 │   ├── decisiones/              ← registro de decisiones
 │   └── herramientas/ · referencia/
 │
-├── fundamentos/                 ← apuntes (lejos del instrumento) y prácticas (con él), por módulo
+├── fundamentos/                 ← apuntes (lejos del instrumento) y prácticas (con él), por clase
 ├── repertorio/                  ← las canciones y su estado de memoria
 ├── practica/                    ← registro de sesiones, constancia y academias
 └── _archivo/                    ← la era piano y el diseño original (solo consulta)

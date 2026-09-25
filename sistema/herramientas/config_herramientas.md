@@ -24,7 +24,7 @@
 | **Capo** | Tocar en el tono de la grabación con formas abiertas, sin cejilla | ✅ Comprado | No es muleta (R2): los dedos aprenden las formas reales; solo cambia dónde suena |
 | **Afinador** (app o pinza) | Afinar | App gratuita | Un minuto al inicio de cada sesión |
 | **Metrónomo** (app) | Pulso | App gratuita | Se calibra y se suelta. No vivir pegado |
-| **Academias** (guitarra martes · canto jueves, 8-10 pm) | Técnica física en vivo, corrección del cuerpo y de la voz, presentación de fin de nivel | **Sí** — desde 2026-09-01 (guitarra) y 2026-09-03 (canto) | Cubren ~80% de la técnica. No mueven el marcador (R4). Cómo se procesa cada clase: skill `procesar-clase` |
+| **Academias** (guitarra martes · canto jueves, 8-10 pm) | Técnica física en vivo, corrección del cuerpo y de la voz, presentación de fin de nivel | **Sí** — desde 2026-09-01 (guitarra) y 2026-09-03 (canto) | Cubren ~80% de la técnica. Su tarea va primero (R4). Cómo se procesa cada clase: skill `procesar-clase` |
 | **Anki — drill de acordes** | Recall: frente = nombre, tú formas, reverso verifica | No (reusada) | Mazo de guitarra hecho: `sistema/herramientas/anki-acordes/` (8 acordes). Método en `sistema/decisiones/decision_acordes_recall_anki.md` |
 | **Anki — mazo de oído** | Mayor/menor, intervalos | No (ya existe) | `sistema/herramientas/anki-oido/`. Es de música, sirve igual para guitarra |
 | **YouTube / Spotify** | La grabación de cada canción; referencia de interpretación | No | Tocar *sobre* la grabación no es muleta: el oído manda, no una pista que cae |

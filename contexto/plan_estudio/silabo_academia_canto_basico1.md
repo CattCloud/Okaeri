@@ -9,7 +9,7 @@ rol: insumo del temario de canto, NO ruta de estudio
 
 # 🏫 Sílabo Academia — Canto Básico I
 
-> **Rol:** insumo de `temario_canto.md`, igual que `silabo_academia_basico1.md` lo es del temario de guitarra. **El temario manda, la clase alimenta.** Es la **misma academia** que la guitarra: mismos niveles, misma estructura de módulos y clases, misma lógica de presentación al cerrar el nivel.
+> **Rol:** insumo de `temario_canto.md`, igual que `silabo_academia_basico1.md` lo es del temario de guitarra. **La clase manda la ruta; el temario es el mapa (R4).** Es la **misma academia** que la guitarra: mismos niveles, misma estructura de módulos y clases, misma lógica de presentación al cerrar el nivel.
 >
 > **Dato clave:** en cada clase se canta el **repertorio del curso** (canciones que el profesor elige) y el nivel cierra con la **presentación de 1 canción**. Ese repertorio es la tarea del profesor y va primero; la canción worship del mapa es carril de Okaeri.
 

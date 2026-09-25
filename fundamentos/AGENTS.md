@@ -4,7 +4,7 @@
 
 ## Organización
 
-**F1 · Ubicación y nombre.** `fundamentos/<carril>/mN/`, donde `mN` es el módulo del temario donde el concepto aparece por primera vez. El nombre dice el origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica) si nació de la clase NN de la academia; `apunte_N.N_<tema>.md` y `practica_N.N_<tema>.md` si nació de la sección N.N del mapa. Imágenes en `mN/img/`. Nombres en minúsculas, con guiones, sin tildes.
+**F1 · Ubicación y nombre.** Una carpeta por clase de la academia: `fundamentos/<carril>/claseNN/`. Ahí vive todo lo que esa clase abrió —sus apuntes, sus prácticas y los conceptos previos que hubo que escribir para entenderla—, y una clase posterior que lo necesite lo enlaza. Lo que no nació de una clase (teoría de base, una sección del mapa) va en `fundamentos/<carril>/base/`. El nombre dice el origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica); en `base/`, `apunte_N.N_<tema>.md` y `practica_N.N_<tema>.md`, con N.N la sección del mapa. Imágenes de una clase en su `claseNN/img/`; las que usan varias clases (los diagramas de acorde) en `<carril>/img/`. Nombres en minúsculas, con guiones, sin tildes.
 
 **F2 · Apunte y práctica son archivos distintos.** Si se puede hacer sin el instrumento, es apunte: se lee lejos de él. Si necesita el instrumento, es práctica: se usa con él en la mano. Mezclarlos induce a leer mientras se toca (R2). Un mismo ejercicio puede aparecer en los dos con roles distintos: el apunte explica qué entrena y por qué funciona; la práctica prescribe cuánto. Prescribir cantidades es exclusivo de la práctica.
 
@@ -29,6 +29,8 @@
 **F9 · El apunte es atemporal, no un chat.** Solo la lección: nada que dependa de la conversación del día ("tu duda", "como vimos hoy"), ni disculpas, ni deudas o comentarios sobre el sistema. Quien lo relea en tres semanas solo debe encontrar la lección. La personalización pedagógica sí entra: sus ejemplos, su repertorio, lo que le cuesta. Lo operativo va a `estado_actual.md` o `NOTAS.md`; lo del sistema, al frontmatter.
 
 **F10 · Un concepto se escribe una vez.** La teoría común a los dos carriles (notas, octavas, escala) vive en un solo apunte y se enlaza desde el otro. Cada apunte cierra con `📋 Repaso en una pantalla`. Plantilla: `.claude/skills/escribir-apunte/plantilla.md`.
+
+**F14 · Sin huecos.** Antes de escribir un apunte se lista lo que hay que entender para comprender su concepto y se marca cada prerrequisito: explicado (con enlace) o faltante. Un faltante se presenta al usuario y se escribe como su propio apunte antes que el concepto que lo necesita, nunca como una frase dentro del apunte de arriba. Un apunte explica un solo concepto y abre, debajo del título, con la línea «Antes de esto necesitas: …» con los enlaces a sus prerrequisitos (o «nada: es el punto de partida»). La academia puede saltar temas; el sistema no.
 
 ## Consultas y canto
 

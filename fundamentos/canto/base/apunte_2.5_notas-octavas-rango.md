@@ -9,11 +9,13 @@ estado: ESCRITA
 
 # 🎼 El mapa de las notas: octavas, semitonos y tu rango
 
+**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../../guitarra/clase01/clase01_notas-y-cuerdas.md)
+
 > **Se lee lejos del instrumento.** Las notas, las octavas y los semitonos, en el orden en que un concepto abre el siguiente, hasta llegar a tu rango vocal y al tono de una canción.
 
 ## 1. Las 7 notas se repiten
 
-Ya sabes las 7 notas y su cifrado: Do Re Mi Fa Sol La Si = C D E F G A B ([el apunte de la clase 1 de guitarra](../../guitarra/m1/clase01_notas-y-cuerdas.md)). Lo que falta decir: después de Si **no hay una octava nota nueva** — vuelve a venir Do, y otra vez Re, y así. La música entera usa esas 7 notas (más sus alteraciones, los sostenidos `#`), repetidas una y otra vez de lo grave a lo agudo.
+Ya sabes las 7 notas y su cifrado: Do Re Mi Fa Sol La Si = C D E F G A B ([el apunte de la clase 1 de guitarra](../../guitarra/clase01/clase01_notas-y-cuerdas.md)). Lo que falta decir: después de Si **no hay una octava nota nueva** — vuelve a venir Do, y otra vez Re, y así. La música entera usa esas 7 notas (más sus alteraciones, los sostenidos `#`), repetidas una y otra vez de lo grave a lo agudo.
 
 **Pruébalo en tu guitarra:** la cuerda 6 al aire es Mi, y la cuerda 1 al aire también es Mi. Son la misma nota — una gruesa y grave, la otra fina y aguda. Tu oído las reconoce como "la misma, pero más arriba".
 
@@ -70,4 +72,4 @@ Las voces se agrupan según dónde cae su zona cómoda. De grave a aguda: en hom
 > - Voces de grave a aguda: bajo, barítono, **tenor** (la tuya) · contralto, mezzosoprano, soprano.
 
 ---
-[índice](../../00_indice.md) · [← Las notas y las cuerdas](../../guitarra/m1/clase01_notas-y-cuerdas.md)
+[índice](../../00_indice.md) · [← Las notas y las cuerdas](../../guitarra/clase01/clase01_notas-y-cuerdas.md)

@@ -46,8 +46,8 @@ Diagrama de libro técnico. Fondo blanco puro. Líneas y texto en negro y gris o
 
 ## 4. Cómo se generan
 
-1. **Acordes:** `fundamentos/_generador.js` (Node puro, sin dependencias). Para un acorde nuevo, agregar su línea a `ACORDES` (va al mazo Anki) o a `VARIANTES` (solo apuntes) y correr `node fundamentos/_generador.js`. Escribe los SVG en `fundamentos/guitarra/m1/img/`.
-2. **Otros diagramas:** escribir el `.svg` a mano, con geometría exacta, en `fundamentos/<carril>/mN/img/`.
+1. **Acordes:** `fundamentos/_generador.js` (Node puro, sin dependencias). Para un acorde nuevo, agregar su línea a `ACORDES` (va al mazo Anki) o a `VARIANTES` (solo apuntes) y correr `node fundamentos/_generador.js`. Escribe los diagramas de acorde y la hoja de los 8 en `fundamentos/guitarra/img/` (los usan varias clases) y el de anatomía en `fundamentos/guitarra/clase02/img/`.
+2. **Otros diagramas:** escribir el `.svg` a mano, con geometría exacta, en `fundamentos/<carril>/claseNN/img/` (o en `<carril>/base/img/` si no nació de una clase).
 3. **Rasterizar a PNG** con `sharp` (`density: 200`) para que se vea en cualquier visor. El `.svg` es la fuente; el `.png` es lo que se embebe. Si `sharp` no está instalado, instalarlo en una carpeta temporal fuera del repositorio.
 
 **Nombres:** `claseNN-<concepto>.svg` si nace de una clase · `<concepto>.svg` si nace del mapa · `acorde-<nombre>.svg` para acordes. Minúsculas, guiones, sin tildes.

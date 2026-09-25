@@ -38,7 +38,7 @@ fecha_inicio: 2026-08-28
 > Esqueleto. El reparto exacto frase → acorde se valida contra la grabación en M4 (sección 4.2) y se escribe aquí. Hasta entonces, esto es lo verificado en los cifrados públicos.
 
 - **Tono de la grabación:** La / Si (fuentes discrepan; se confirma de oído en 4.1).
-- **Formas con capo:** **Sol · Do · Re · Mim** (I · IV · V · vi). → `fundamentos/guitarra/m1/` para las formas · la progresión se explica en M5.
+- **Formas con capo:** **Sol · Do · Re · Mim** (I · IV · V · vi). → `fundamentos/guitarra/clase02/` para las formas · la progresión se explica en M5.
 - **Acordes que traen los cifrados y se simplifican al inicio:** Re/Fa# → se toca **Re**; Sol/Si → se toca **Sol**. El bajo distinto entra en M5 (5.4).
 - **Secciones:**
   - **Verso** — íntimo, acordes largos.

@@ -10,11 +10,13 @@ estado: ESCRITA
 
 # 🎵 La corchea: media negra
 
+**Antes de esto necesitas:** [Ritmo básico](../clase01/clase01_ritmo-basico.md)
+
 > **La corchea es la figura que dura medio tiempo: en cada clic del metrónomo caben dos.** Con ella el ritmo deja de ir "una nota por clic" y empieza a moverse *entre* los clics — la base del rasgueo abajo-arriba y de casi todo el worship.
 
 ## La cuarta figura
 
-Ya conoces tres [figuras rítmicas](../m3/clase01_ritmo-basico.md): redonda (4 tiempos), blanca (2) y negra (1). La serie sigue con la misma regla — **cada figura dura la mitad de la anterior**:
+Ya conoces tres [figuras rítmicas](../clase01/clase01_ritmo-basico.md): redonda (4 tiempos), blanca (2) y negra (1). La serie sigue con la misma regla — **cada figura dura la mitad de la anterior**:
 
 | Figura | Dura |
 |---|---|
@@ -39,7 +41,7 @@ Partir el tiempo en partes iguales se llama **subdivisión**. Es una habilidad n
 
 ## La suma del compás no cambia
 
-La caja del [4/4](../m3/clase01_ritmo-basico.md) sigue sumando exactamente 4 tiempos; solo hay una moneda nueva de ½. Dos corcheas unidas = 1 tiempo, así que ocupan lo mismo que una negra: donde cabía una negra caben dos corcheas.
+La caja del [4/4](../clase01/clase01_ritmo-basico.md) sigue sumando exactamente 4 tiempos; solo hay una moneda nueva de ½. Dos corcheas unidas = 1 tiempo, así que ocupan lo mismo que una negra: donde cabía una negra caben dos corcheas.
 
 ## Para qué la vas a usar
 
@@ -53,4 +55,4 @@ En la guitarra de acompañamiento, la corchea **es la mano derecha**: cuando lle
 > - El rasgueo abajo-arriba son corcheas: abajo en el número, arriba en la «y».
 
 ---
-[← Ritmo básico](../m3/clase01_ritmo-basico.md) · [índice](../../00_indice.md) · su práctica: [Lectura rítmica con corcheas](clase03_practica_lectura-ritmica.md)
+[← Ritmo básico](../clase01/clase01_ritmo-basico.md) · [índice](../../00_indice.md) · su práctica: [Lectura rítmica con corcheas](clase03_practica_lectura-ritmica.md)

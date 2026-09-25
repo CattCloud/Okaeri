@@ -34,7 +34,7 @@ Por eso:
 
 ---
 
-## 3. Por qué el temario manda (R4)
+## 3. Por qué la clase manda la ruta y el temario es el mapa (R4)
 
 El piano falló, entre otras cosas, porque **el usuario no sabía dónde estaba**: la ruta era un plan construido sobre una canción, y terminar la canción no decía qué sabía hacer. De ahí el modelo, heredado de Cloud en TESLA:
 
@@ -43,6 +43,8 @@ El piano falló, entre otras cosas, porque **el usuario no sabía dónde estaba*
 | **Temarios** (`contexto/plan_estudio/`) | La columna: mapas de competencias ordenados por dependencia real | Dicen dónde estás y cuánto falta. Sobreviven a cualquier canción |
 | **Academias** (guitarra martes · canto jueves) | Cubren ~80% de la técnica en vivo, ven y oyen, ponen la presentación de fin de nivel | Lo que sostiene al usuario es una persona mirándolo (perfil). La presentación reemplaza a la vieja fecha dura: misma fuerza, pero es un destino y no una deuda |
 | **Okaeri** | Consolida entre clase y clase; lidera lo que la academia no toca: repertorio worship, memoria, cantar y tocar a la vez, la banda | Ninguna academia mide la memoria ni conoce la banda de su iglesia |
+
+**Qué cambió el 2026-09-25.** El temario nació como ruta secuencial con un marcador. Con las clases en marcha resultó que la academia trae los temas en su propio orden y salta prerrequisitos, y el marcador quedaba quieto mientras la clase avanzaba: dos relojes que respondían distinto a "qué sigue". El sistema existe justamente para cubrir esos huecos, así que la clase pasó a marcar la ruta y el temario a ser el mapa contra el que se audita qué le falta a cada concepto (R4, F14). Por eso el material se organiza por clase, no por módulo (F1).
 
 **Las canciones son vehículos.** Si se borra la canción, el temario sigue en pie; si una canción no mueve al usuario, entra otra que ejercite lo mismo.
 

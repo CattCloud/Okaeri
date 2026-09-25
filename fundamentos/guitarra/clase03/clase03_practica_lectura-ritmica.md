@@ -16,7 +16,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**Leer un ritmo escrito y tocarlo a tiempo, con el pulso partido en dos.** Es el paso que sigue a [Figuras con metrónomo](../m3/clase01_practica_ritmo-metronomo.md): allá cada figura duraba tiempos enteros; aquí entra la corchea y tu mano tiene que caer también *entre* los clics. **Lo vas a notar** cuando un compás nuevo del profesor te salga a la primera, sin descifrarlo nota por nota — y cuando el rasgueo abajo-arriba llegue, la «y» ya va a vivir en tu mano.
+**Leer un ritmo escrito y tocarlo a tiempo, con el pulso partido en dos.** Es el paso que sigue a [Figuras con metrónomo](../clase01/clase01_practica_ritmo-metronomo.md): allá cada figura duraba tiempos enteros; aquí entra la corchea y tu mano tiene que caer también *entre* los clics. **Lo vas a notar** cuando un compás nuevo del profesor te salga a la primera, sin descifrarlo nota por nota — y cuando el rasgueo abajo-arriba llegue, la «y» ya va a vivir en tu mano.
 
 ## El gráfico
 

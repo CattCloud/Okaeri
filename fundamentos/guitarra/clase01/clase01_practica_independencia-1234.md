@@ -95,4 +95,4 @@ Tarea de la clase 1. No se "aprueba": queda como **calentamiento de la mano izqu
 
 ## Qué sigue
 
-Los acordes de M1 ([los 8 acordes](clase02_los-8-acordes.md)) y el cambio de acorde de M2: los dedos que ya se mueven solos son los que caen juntos al formar un acorde.
+Los acordes de M1 ([los 8 acordes](../clase02/clase02_los-8-acordes.md)) y el cambio de acorde de M2: los dedos que ya se mueven solos son los que caen juntos al formar un acorde.

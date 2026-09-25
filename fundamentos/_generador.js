@@ -1,5 +1,5 @@
 // Generador de diagramas de acorde (SVG) — Okaeri, era guitarra.
-// Node puro, sin dependencias:  node _generador.js   → escribe los .svg en guitarra/m1/img/
+// Node puro, sin dependencias:  node _generador.js   → acordes y hoja en guitarra/img/, anatomía en guitarra/clase02/img/
 // Convenciones y rasterizado a PNG: .claude/skills/crear-diagrama/SKILL.md.
 
 const fs = require('fs');
@@ -146,9 +146,11 @@ function hoja8SVG() {
   return L.join('\n');
 }
 
-const OUT = path.join(__dirname, 'guitarra', 'm1', 'img');
+const OUT = path.join(__dirname, 'guitarra', 'img');
+const OUT_CLASE02 = path.join(__dirname, 'guitarra', 'clase02', 'img');
 fs.mkdirSync(OUT, { recursive: true });
+fs.mkdirSync(OUT_CLASE02, { recursive: true });
 for (const a of [...ACORDES, ...VARIANTES]) fs.writeFileSync(path.join(OUT, a.file + '.svg'), chordSVG(a));
-fs.writeFileSync(path.join(OUT, 'clase02-anatomia-diagrama.svg'), anatomiaSVG());
+fs.writeFileSync(path.join(OUT_CLASE02, 'clase02-anatomia-diagrama.svg'), anatomiaSVG());
 fs.writeFileSync(path.join(OUT, 'hoja-8-acordes.svg'), hoja8SVG());
-console.log(`ok: ${ACORDES.length} acordes + ${VARIANTES.length} variantes + anatomía → ${OUT}`);
+console.log(`ok: ${ACORDES.length} acordes + ${VARIANTES.length} variantes + hoja → ${OUT} · anatomía → ${OUT_CLASE02}`);

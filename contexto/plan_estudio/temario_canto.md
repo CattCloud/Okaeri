@@ -19,7 +19,7 @@ inicio: 2026-09-11
 
 | Es | No es |
 |---|---|
-| Un **mapa** de competencias, secuencial por dependencia | Un calendario ni una lista de ejercicios |
+| Un **mapa** de competencias, ordenado por dependencia | Un calendario ni una lista de ejercicios |
 | Lo que sobrevive a cualquier canción — si borras la canción, sigue en pie | Un plan construido sobre una canción |
 | Lo que dice dónde estás | Lo que dice qué hacer hoy — eso es el plan semanal (`sistema/estado/estado_actual.md`) |
 
@@ -27,9 +27,9 @@ inicio: 2026-09-11
 
 ## Cómo usarlo
 
-**La ruta es secuencial.** No se afina sin aire controlado; no hay canción sin afinar; no se canta tocando sin que la canción salga sola y la guitarra salga sola. El **marcador** vive en `sistema/estado/estado_actual.md` y avanza solo cuando completas tus secciones, en orden.
+**El orden de dependencias.** No se afina sin aire controlado; no hay canción sin afinar; no se canta tocando sin que la canción salga sola y la guitarra salga sola. Ese orden **no es tu ruta**: dice qué necesita qué, y sirve para auditar que a ningún concepto le falte un prerrequisito (F14). Tu ruta la marcan las clases.
 
-**La academia no mueve el marcador.** Lo que se vea el jueves se marca 🏫 y se profundiza esa semana. El repertorio que el profesor trae a clase es **tarea del profesor**: va primero, se practica como él pida. La canción del mapa es otra cosa (M4). Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
+**La clase marca la ruta.** Lo que se vea el jueves se marca 🏫 y pasa a ✅ solo cuando pasa su evaluación. El repertorio que el profesor trae a clase es **tarea del profesor**: va primero, se practica como él pida. La canción del mapa es otra cosa (M4). Si a un concepto le falta un prerrequisito, se escribe antes, de a uno por sesión y con tu OK. Dónde vas (última clase, evaluación en curso, cola de conceptos) vive en `sistema/estado/estado_actual.md`. Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
 
 **El agente no oye.** Menos todavía que en guitarra, donde al menos hay una forma que describir. Consecuencias:
 - **Lo físico de la voz lo manda el profesor.** Si corrige postura, respiración o cómo abres la boca, eso va sobre cualquier apunte.
@@ -65,7 +65,7 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 
 ## 📊 Índice
 
-> **El orden de los números ES el orden de estudio.**
+> **El orden de los números es el orden de dependencia, no el de estudio:** se estudia en el orden de las clases.
 
 | # | Módulo | Secciones | Cubre la academia | Estado |
 |---|---|:-:|:-:|---|
@@ -79,7 +79,7 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 | 8 | **Cantar con otros** (escenario y banda) | 5 | ✅ parcial (clase 16, proyecto) | ⬜ |
 | — | Capa transversal (memoria · oído · teoría aplicada · interpretación · **salud vocal**) | — | parcial | siempre |
 
-Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) · 🏫 visto en clase (adelantado, no completado).
+Estados: ⬜ pendiente · 🔄 en curso · ✅ evaluado (pasó su evaluación) · 🏫 visto en clase, sin evaluar.
 
 > **Sesión 0 — diagnóstico.** Con la grabadora encendida: siseo largo, una nota sostenida, una sirena, cinco notas dictadas con la guitarra — y **la medición del rango vocal con una app de test de rango** (sección 2.5, adelantada: el repertorio del profesor ya la exige — *Hosanna* llegó al límite; herramienta: ver `NOTAS.md`). Se marca lo que ya sale. No se diagnostica hablando: se diagnostica cantando.
 
@@ -117,7 +117,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 2.2 | Voz de pecho y voz de cabeza | Distinguir las dos en tu propia voz y producir cada una a propósito |
 | 2.3 | Sirenas sin quiebre | Subir y bajar entre las dos voces sin el "gallo" (el salto brusco), dentro de tu zona cómoda |
 | 2.4 | Las cinco vocales | A-E-I-O-U con la boca abierta y el sonido "adelante", sin cambiar de posición al subir |
-| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo — *adelantada: medida 2026-09-14 (Sesión 0); apunte en `fundamentos/canto/m2/`. Se revalida al llegar M2* |
+| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo — *adelantada: medida 2026-09-14 (Sesión 0); apunte en `fundamentos/canto/base/`. Se revalida al llegar M2* |
 | 2.6 | Cantar una escala | Do-Re-Mi-Fa-Sol subiendo y bajando, afinado, desde una nota que te den |
 
 **Conceptos:** afinación (cantar la misma altura que la referencia) · **registro** (pecho: la voz de hablar fuerte; cabeza: la voz liviana y aguda) · quiebre o "gallo" (el salto entre registros) · **rango** (de tu nota más grave a la más aguda) · zona cómoda (*tesitura*: donde cantas sin esfuerzo) · resonancia (dónde "suena" la voz: pecho, boca, nariz) · escala.
@@ -141,7 +141,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 3.3 | Dónde respirar | Marcar en la letra las respiraciones (al final de frase, nunca a mitad de palabra) y cumplirlas |
 | 3.4 | Hablar la letra a ritmo | Recitar la estrofa con metrónomo, a tiempo, antes de ponerle melodía |
 
-**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás (ya definidos en guitarra M3, `fundamentos/guitarra/m3/`).
+**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás (ya definidos en guitarra M3, `fundamentos/guitarra/clase01/`).
 
 **Repertorio:** una estrofa de la canción en curso o del repertorio de la clase.
 
@@ -152,6 +152,8 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 ## M4 · Tu primera canción cantada 🎯 — *Okaeri solo*
 
 **Resultado:** una canción de worship de principio a fin, **afinada, de memoria, sin letra ni voz original delante**. El hito del nivel base y el anti-muleta hecho módulo.
+
+**Se activa cuando** pasan las evaluaciones de M1, M2 y M3 (aire, afinar, ritmo y letra), sin importar en qué orden las trajo la clase.
 
 | # | Sección | Qué sabes hacer al terminar |
 |---|---|---|
@@ -283,7 +285,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 
 | | Módulos | Cómo opera Okaeri ahí |
 |---|---|---|
-| **La academia** (sílabo: `silabo_academia_canto_basico1.md`) | Módulo I → M1-M3 · Módulo II → M2.5, M6 + teoría · Módulo III → M6, M5 · Módulo IV → interpretación, M8.3 · Módulo V → la presentación | Consolida y profundiza lo del jueves. Tarea del profesor primero; lo adelantado se marca 🏫 sin mover el marcador. **Todo lo físico de la voz lo manda el profesor** |
+| **La academia** (sílabo: `silabo_academia_canto_basico1.md`) | Módulo I → M1-M3 · Módulo II → M2.5, M6 + teoría · Módulo III → M6, M5 · Módulo IV → interpretación, M8.3 · Módulo V → la presentación | Consolida y profundiza lo del jueves. Tarea del profesor primero; lo que la clase trae se marca 🏫 y pasa a ✅ al evaluarse. **Todo lo físico de la voz lo manda el profesor** |
 | **Okaeri solo** | **M4** (memoria), **M7** (cantar y tocar), **M8** (banda), oído desde M2, salud vocal | Lidera. Aquí no entra nadie más |
 
 ---

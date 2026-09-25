@@ -10,7 +10,7 @@ Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F12). Este archivo
 ## Pasos
 
 1. **Leer antes:** el apunte que la respalda (si hace falta y no existe, escribirlo primero con `escribir-apunte`), la tarea exacta del profesor o la sección del temario, y `sistema/perfil/yo_musica.md` si el ejercicio depende del nivel del usuario.
-2. **Ubicación y nombre** (F1): `fundamentos/<carril>/mN/claseNN_practica_<tema>.md` si nace de una clase; `practica_N.N_<tema>.md` si nace del mapa.
+2. **Ubicación y nombre** (F1): `fundamentos/<carril>/claseNN/claseNN_practica_<tema>.md` si nace de una clase; `fundamentos/<carril>/base/practica_N.N_<tema>.md` si nace del mapa.
 3. **Copiar `plantilla.md`** (en esta carpeta) y llenarla sección por sección. Las marcadas como opcionales se borran si no aplican; las demás son obligatorias (F4).
 4. **El gráfico** (F6): muestra lo que se practica, nunca lo que debe salir de memoria. Se genera con `crear-diagrama`.
 5. **Los 3 niveles** (F5): cifras exactas en cada fila; la suma de "Cuánto" coincide con los minutos del título; cada nivel incluye al anterior.

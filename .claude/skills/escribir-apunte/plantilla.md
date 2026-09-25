@@ -10,6 +10,8 @@ estado: ESCRITA
 
 # [emoji] [Título que dice de qué trata]
 
+**Antes de esto necesitas:** [texto](ruta.md) · [texto](ruta.md) <!-- F14: enlaces a los apuntes que lo explican; si no hay ninguno, «nada: es el punto de partida» -->
+
 > **[La definición o la idea central, en una o dos frases.]** [Para qué le sirve al usuario, en una frase.]
 
 ## [Sección 1: el concepto base]

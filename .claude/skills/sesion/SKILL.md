@@ -9,7 +9,7 @@ Reglas que rigen: R1 (estado primero) · R3 (sin reproche) · R4 (tarea primero)
 
 ## 1. Leer el estado
 
-`sistema/estado/estado_actual.md` → el marcador del carril, "Semana en curso" y "Sesión en curso".
+`sistema/estado/estado_actual.md` → el bloque "Marcador" del carril (última clase, evaluación en curso, cola de conceptos), "Semana en curso" y "Sesión en curso".
 
 | Estado de la sesión | Qué se hace |
 |---|---|
@@ -21,7 +21,7 @@ Si pasó más de una semana sin sesión registrada: nombrar el hecho con fechas 
 ## 2. Abrir
 
 1. **Carril:** guitarra o canto. Si no está claro, una pregunta con las dos alternativas.
-2. **Orden fijo:** la tarea del profesor de ese carril → la sección del mapa que sigue en su temario.
+2. **Orden fijo:** la tarea del profesor de ese carril → la evaluación en curso → el concepto que sigue en la cola.
 3. **Escribir en "Sesión en curso":** estado `EN-CURSO`, carril, fecha y los bloques del día.
 4. **Entregar el primer bloque completo** (paso 3) y dejar tocar.
 
@@ -50,11 +50,11 @@ Si la práctica ya existe en `fundamentos/`, el bloque la enlaza y dice qué niv
 
 1. "Sesión en curso" → `CERRADA`.
 2. Registrar según `practica/AGENTS.md`.
-3. Si se completó una sección del mapa: actualizar el marcador en `estado_actual.md` y su marca en el temario.
+3. Si un concepto pasó su evaluación: su marca ✅ en el temario, y actualizar "Evaluación en curso" y la cola en `estado_actual.md`.
 
 ## 6. Cerrar un módulo
 
 1. Correr la **Evaluación** del módulo tal como está escrita en el temario del carril.
 2. Anotar el resultado tal cual: salió / a medias / no salió.
 3. **Aquí sí se pregunta:** ¿avanzamos o repetimos?
-4. Si avanza: módulo ✅ en el índice del temario y marcador al siguiente módulo en `estado_actual.md`.
+4. Si avanza: módulo ✅ en el índice del temario, y "Evaluación en curso" apunta en `estado_actual.md` a la siguiente evaluación pendiente.

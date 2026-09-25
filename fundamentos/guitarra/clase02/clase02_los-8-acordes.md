@@ -9,22 +9,24 @@ estado: ESCRITA
 
 # 🎸 Los 8 acordes abiertos del arranque
 
+**Antes de esto necesitas:** [El diagrama de acorde](clase02_diagramas-de-acorde.md) · [El acorde, y mayor vs. menor](clase02_el-acorde.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md)
+
 > **Estas son las formas. Se estudian AQUÍ y se verifican aquí — nunca mirándolas mientras practicas.** El objetivo es producirlas de memoria al oír su nombre; para eso está el drill de Anki (`sistema/herramientas/anki-acordes/`), donde estos mismos diagramas son el reverso de verificación.
 >
-> 🖨️ **Versión imprimible:** los 8 en una sola hoja A4 apaisada → `img/hoja-8-acordes.png` (imprimir con "ajustar a página"). Misma regla: se mira para verificar, no mientras se toca.
+> 🖨️ **Versión imprimible:** los 8 en una sola hoja A4 apaisada → `../img/hoja-8-acordes.png` (imprimir con "ajustar a página"). Misma regla: se mira para verificar, no mientras se toca.
 
 ## Mayores
 
 | | | |
 |:-:|:-:|:-:|
-| ![Do (C)](img/acorde-do.png) | ![Re (D)](img/acorde-re.png) | ![Mi (E)](img/acorde-mi.png) |
-| ![Sol (G)](img/acorde-sol.png) | ![La (A)](img/acorde-la.png) | |
+| ![Do (C)](../img/acorde-do.png) | ![Re (D)](../img/acorde-re.png) | ![Mi (E)](../img/acorde-mi.png) |
+| ![Sol (G)](../img/acorde-sol.png) | ![La (A)](../img/acorde-la.png) | |
 
 ## Menores
 
 | | | |
 |:-:|:-:|:-:|
-| ![Mim (Em)](img/acorde-mim.png) | ![Lam (Am)](img/acorde-lam.png) | ![Rem (Dm)](img/acorde-rem.png) |
+| ![Mim (Em)](../img/acorde-mim.png) | ![Lam (Am)](../img/acorde-lam.png) | ![Rem (Dm)](../img/acorde-rem.png) |
 
 ## Las anclas: qué se queda quieto entre acordes
 

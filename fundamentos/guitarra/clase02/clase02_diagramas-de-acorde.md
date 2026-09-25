@@ -9,7 +9,9 @@ estado: ESCRITA
 
 # 📐 El diagrama de acorde: cómo se lee
 
-> **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([La tablatura (TAB)](clase01_tablatura.md)).
+**Antes de esto necesitas:** [El acorde, y mayor vs. menor](clase02_el-acorde.md) · [La tablatura (TAB)](../clase01/clase01_tablatura.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md)
+
+> **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([La tablatura (TAB)](../clase01/clase01_tablatura.md)).
 
 ![Anatomía del diagrama de acorde: X, O, cejuela, puntos con número de dedo, orden de cuerdas.](img/clase02-anatomia-diagrama.png)
 *Todo lo que un diagrama puede decir, en un solo ejemplo.*
@@ -31,13 +33,13 @@ Dos casos concretos de los 8 de la academia:
 
 **G con 4 dedos** (la del curso) vs. **G con 3 dedos**: suenan casi igual y las dos son Sol. La de 4 deja los dedos 3-4 plantados donde los cambios hacia C y D los necesitan. La de 3 no está *mal* — está optimizada para otra cosa.
 
-| ![Sol con 4 dedos](img/acorde-sol.png) | ![Sol con 3 dedos](img/acorde-sol-3dedos.png) |
+| ![Sol con 4 dedos](../img/acorde-sol.png) | ![Sol con 3 dedos](../img/acorde-sol-3dedos.png) |
 |:-:|:-:|
 | *La del curso: 4 dedos* | *La versión de 3 dedos — también es Sol* |
 
 **D con dos digitaciones**: aquí las casillas son **idénticas** — solo cambian los dedos. Digitación pura. La estándar (izquierda) comparte lógica con Dm y hace más corto el cambio D↔Dm.
 
-| ![Re digitación estándar](img/acorde-re.png) | ![Re otra digitación](img/acorde-re-alt.png) |
+| ![Re digitación estándar](../img/acorde-re.png) | ![Re otra digitación](../img/acorde-re-alt.png) |
 |:-:|:-:|
 | *La del curso: 1 en la 3ª, 2 en la 1ª* | *Mismas casillas, otros dedos* |
 
@@ -54,7 +56,7 @@ Son dos preguntas distintas sobre el mismo acorde:
 
 **Un mismo acorde existe en varios lugares del mástil.** El acorde son sus notas (Do = Do-Mi-Sol), y esas notas están repetidas por todo el diapasón: cualquier lugar donde las agarres juntas es un Do. Los tres de abajo **son el mismo acorde** — con distinto brillo (más grave o más agudo):
 
-| ![Do abierto](img/acorde-do.png) | ![Do en el traste 3](img/acorde-do-traste3.png) | ![Do en el traste 8](img/acorde-do-traste8.png) |
+| ![Do abierto](../img/acorde-do.png) | ![Do en el traste 3](../img/acorde-do-traste3.png) | ![Do en el traste 8](../img/acorde-do-traste8.png) |
 |:-:|:-:|:-:|
 | *Do abierto — el de los 8* | *El mismo Do, en el traste 3* | *Y en el traste 8* |
 

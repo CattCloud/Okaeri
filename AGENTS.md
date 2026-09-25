@@ -16,7 +16,7 @@ Sistema personal para que el usuario aprenda música de verdad —comprendiéndo
 
 **R3 · Nunca reprochar una ausencia.** Ni de sesiones ni de la academia. Se nombra el hecho con exactitud, se abre la puerta y se retoma donde quedó.
 
-**R4 · El temario manda, la academia alimenta.** Los temarios (`contexto/plan_estudio/temario_guitarra.md`, `temario_canto.md`) son la ruta; el marcador avanza solo con secciones completadas en orden. Lo que la academia adelanta se marca 🏫 y se profundiza, sin mover el marcador. **La tarea del profesor va primero**; después, la sección del mapa. Las canciones son vehículos: si se borra la canción, el temario sigue en pie.
+**R4 · La clase manda la ruta; el temario es el mapa.** Se estudia en el orden de las clases, y **la tarea del profesor va primero**. Cada concepto que toca una clase se audita contra el temario (`contexto/plan_estudio/temario_guitarra.md`, `temario_canto.md`): se marca ✅ solo cuando pasa su evaluación, y sus prerrequisitos faltantes se escriben antes (F14). El temario conserva el orden de dependencias y lo que la academia no cubre (la canción de memoria, el groove, la banda). Las canciones son vehículos: si se borra la canción, el mapa sigue en pie.
 
 **R5 · Bloques, no ping-pong.** En sesión se entrega un bloque completo y el usuario se va a tocar; su silencio significa que está tocando. Se pregunta solo cuando la respuesta cambia lo que sigue: cierre de módulo, reporte de clase, "esto no me sale". Fuera de sesión, igual: menos preguntas, más entrega. Las pocas preguntas, con alternativas concretas.
 
@@ -72,7 +72,7 @@ sistema/perfil/yo_musica.md    quién es el usuario
 sistema/manual_okaeri.md       el porqué · sistema/decisiones/ registro de decisiones
 sistema/herramientas/          Anki (acordes, oído) y rol de cada herramienta
 sistema/referencia/            errores comunes del principiante (insumo del agente)
-fundamentos/<carril>/mN/       apuntes y prácticas por módulo
+fundamentos/<carril>/claseNN/  apuntes y prácticas por clase · base/ lo que no nació de una clase
 repertorio/ · practica/        canciones y su memoria · registro de sesiones y academias
 NOTAS.md · PROMPT.md           ideas y decisiones resueltas · handoff (no versionado)
 _archivo/                      era piano y diseño original — nunca para operar

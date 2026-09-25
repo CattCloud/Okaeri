@@ -5,16 +5,18 @@ modulo: m8
 origen: clase03 (2026-09-15)
 titulo: "La pentatónica de La menor: tu primera escala"
 secciones_mapa: "8.6 escalas (adelantada por la academia 🏫) — la teoría que la clase no dio"
-estado: ESCRITA
+estado: PROVISIONAL — comprimido en un solo apunte; lo reemplaza la escalera de conceptos (cola en sistema/estado/estado_actual.md)
 ---
 # 🗺️ La pentatónica de La menor: tu primera escala
+
+**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md) · [El mapa de las notas: octavas, semitonos y tu rango](../../canto/base/apunte_2.5_notas-octavas-rango.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [El acorde, y mayor vs. menor](../clase02/clase02_el-acorde.md)
 
 > **Una escala es una lista ordenada de notas — de la más grave a la más aguda — que suenan bien juntas; la pentatónica es la escala de solo 5 notas.** En clase la tocaste sin la teoría; este apunte pone el nombre a lo que ya hicieron tus dedos.
 
 ## Qué es una escala
 
 
-De las 7 [notas](../m1/clase01_notas-y-cuerdas.md) (más sus **alteraciones** — las variantes con sostenido ♯, explicadas en [el mapa de las notas](../../canto/m2/apunte_2.5_notas-octavas-rango.md)), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
+De las 7 [notas](../clase01/clase01_notas-y-cuerdas.md) (más sus **alteraciones** — las variantes con sostenido ♯, explicadas en [el mapa de las notas](../../canto/base/apunte_2.5_notas-octavas-rango.md)), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
 
 ## Pentatónica: cinco notas
 
@@ -22,11 +24,11 @@ De las 7 [notas](../m1/clase01_notas-y-cuerdas.md) (más sus **alteraciones** �
 
 ## "De La menor": por qué se llama así
 
-Sus cinco notas son **La – Do – Re – Mi – Sol** (A – C – D – E – G). Se llama *de La* porque **La es su casa**: la escala empieza en La y las frases descansan ahí. Y *menor* porque su sonido tiene el color serio/triste que ya conoces de los [acordes menores](../m1/clase02_el-acorde.md): las tres notas de tu acorde de Lam (La–Do–Mi) están dentro de la escala.
+Sus cinco notas son **La – Do – Re – Mi – Sol** (A – C – D – E – G). Se llama *de La* porque **La es su casa**: la escala empieza en La y las frases descansan ahí. Y *menor* porque su sonido tiene el color serio/triste que ya conoces de los [acordes menores](../clase02/clase02_el-acorde.md): las tres notas de tu acorde de Lam (La–Do–Mi) están dentro de la escala.
 
 ## La posición 1: la caja de los trastes 5-8
 
-Una escala se toca en una **posición** (o "caja"): una zona de pocos trastes donde la mano se queda quieta y cada dedo atiende su traste — la regla de [un dedo por traste](../m1/clase01_dedos-mano-izquierda.md). Esta es la posición 1, la caja clásica:
+Una escala se toca en una **posición** (o "caja"): una zona de pocos trastes donde la mano se queda quieta y cada dedo atiende su traste — la regla de [un dedo por traste](../clase01/clase01_dedos-mano-izquierda.md). Esta es la posición 1, la caja clásica:
 
 ![Mástil horizontal con la 6ª cuerda abajo, trastes 4 a 9. La pentatónica de La menor en la posición 1: en todas las cuerdas el dedo 1 pisa el traste 5; el dedo 3 pisa el traste 7 en las cuerdas 5ª, 4ª y 3ª; el dedo 4 pisa el traste 8 en las cuerdas 6ª, 2ª y 1ª. Cada punto lleva su nota; los tres La van en rojo.](img/clase03-pentatonica-la.png)
 *Dos notas por cuerda, siempre. Dedo 1 al traste 5 en todas; el segundo dedo depende de la cuerda: traste 7 → dedo 3, traste 8 → dedo 4.*

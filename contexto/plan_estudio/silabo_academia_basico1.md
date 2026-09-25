@@ -9,7 +9,7 @@ rol: insumo del temario, NO ruta de estudio
 
 # 🏫 Sílabo Academia — Guitarra Básico 1
 
-> **Rol:** insumo de `temario_guitarra.md` — igual que `silabo_curso_aws_dva.md` en TESLA. **El temario manda, la clase alimenta.** Este archivo dice qué va a cubrir la academia y cuándo; el detalle real se anota clase a clase en `practica/00_indice.md` (el brochure es general a propósito).
+> **Rol:** insumo de `temario_guitarra.md` — igual que `silabo_curso_aws_dva.md` en TESLA. **La clase manda la ruta; el temario es el mapa (R4).** Este archivo dice qué va a cubrir la academia y cuándo; el detalle real se anota clase a clase en `practica/00_indice.md` (el brochure es general a propósito).
 >
 > Estructura confirmada por la coordinadora: parcial al cerrar el módulo II (clase 8) · final al cerrar el módulo IV (clase 16) · examen con jurado + **concierto de clausura en diciembre**.
 
@@ -39,7 +39,7 @@ rol: insumo del temario, NO ruta de estudio
 
 Mi mapa tenía punteo/arpegio en M8 (tarde, tras ritmo y cejilla). La academia lo pone en las clases 5-8 — pedagogía de guitarra clásica: en nylon, los dedos de la mano derecha entran pronto.
 
-**Cómo se maneja (regla ya definida):** el marcador no salta. Cuando lleguen las clases 5-8, la tarea del profesor (arpegios) se practica **primero** cada semana y M8 se va marcando 🏫; el marcador propio sigue su orden (M2→M3→M4). Cuando el marcador llegue a M8, estará ya casi cobrado. Sin drama: es exactamente el escenario "la clase te regala el paso 12".
+**Cómo se maneja (R4):** cuando lleguen las clases 5-8, la tarea del profesor (arpegios) se practica **primero** cada semana y M8 se va marcando 🏫; sus conceptos pasan a ✅ al evaluarse. Cada concepto nuevo se audita antes contra el mapa (F14): si le falta un prerrequisito, se escribe antes. Sin drama: es exactamente el escenario "la clase te regala el paso 12".
 
 ### 2. Clase 13: "Selección de tema" — LA oportunidad
 

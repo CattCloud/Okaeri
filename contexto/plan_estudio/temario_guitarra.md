@@ -19,7 +19,7 @@ inicio: 2026-08-28
 
 | Es | No es |
 |---|---|
-| Un **mapa** de competencias, secuencial por dependencia | Un calendario. No tiene fechas ni "semana 3" |
+| Un **mapa** de competencias, ordenado por dependencia | Un calendario. No tiene fechas ni "semana 3" |
 | La columna que **sobrevive a cualquier canción** — si borras la canción, el mapa sigue en pie | Un plan construido sobre una canción (el error de la era piano) |
 | Lo que dice **dónde estás y cuánto falta** | Lo que dice qué hacer hoy — eso es el plan semanal (`sistema/estado/estado_actual.md`) |
 
@@ -27,15 +27,15 @@ inicio: 2026-08-28
 
 ## Cómo usarlo
 
-**La ruta es secuencial.** Se recorre en orden: cada módulo depende del anterior (no hay cejilla sin acordes abiertos; no hay arpegio sin acorde; no hay ritmo sin pulso). El **marcador** (dónde vas) vive en `sistema/estado/estado_actual.md` y avanza **solo cuando completas tus secciones, en orden**.
+**El orden de dependencias.** Cada módulo depende del anterior (no hay cejilla sin acordes abiertos; no hay arpegio sin acorde; no hay ritmo sin pulso). Ese orden **no es tu ruta**: dice qué necesita qué, y sirve para auditar que a ningún concepto le falte un prerrequisito (F14). Tu ruta la marcan las clases.
 
-**La academia no mueve el marcador.** Lo que se vea el martes en clase se **marca** en este mapa (✅ "visto en clase") y se profundiza esa semana, pero tú sigues en tu sección. Si la clase adelanta algo del módulo 7 cuando vas en el 3, lo guardas: cuando llegues al 7, ya está medio andado. Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
+**La clase marca la ruta.** Se estudia en el orden en que la academia trae los temas, y la tarea del profesor va primero. Cada concepto que toca una clase se marca 🏫 en este mapa y pasa a ✅ solo cuando pasa su evaluación. Si a un concepto le falta un prerrequisito, se escribe antes, de a uno por sesión y con tu OK. Dónde vas (última clase, evaluación en curso, cola de conceptos) vive en `sistema/estado/estado_actual.md`. Cómo se procesa cada clase: `.claude/skills/procesar-clase/SKILL.md`.
 
 **Sección ≠ sesión.** Una sección puede tomar 10 minutos o tres días. El mapa mide **contenido**; tu día mide **tiempo**. Mínimo irreducible: **15 min, 3-4 veces por semana** — es el piso para presentarte, no el techo del contenido.
 
-**Teoría y práctica son archivos distintos, lado a lado** en `fundamentos/guitarra/mN/`: el apunte se lee lejos de la guitarra; la práctica se usa con ella y nunca muestra lo que hay que producir de memoria. Reglas completas: `fundamentos/AGENTS.md`.
+**Teoría y práctica son archivos distintos, lado a lado** en `fundamentos/guitarra/claseNN/`: el apunte se lee lejos de la guitarra; la práctica se usa con ella y nunca muestra lo que hay que producir de memoria. Reglas completas: `fundamentos/AGENTS.md`.
 
-**Los conceptos se definen donde aparecen por primera vez, nunca antes** (R6), y las notas nacen cuando su módulo las pide (R11).
+**Los conceptos se definen donde aparecen por primera vez, nunca antes** (R6), y las notas nacen cuando una clase o un prerrequisito las pide (R11, F14).
 
 **Fuentes** (verificadas 2026-08-28):
 
@@ -51,7 +51,7 @@ inicio: 2026-08-28
 
 ## 📊 Índice
 
-> **El orden de los números ES el orden de estudio.** Marcador y cobertura se actualizan en vivo.
+> **El orden de los números es el orden de dependencia, no el de estudio:** se estudia en el orden de las clases. Las marcas se actualizan en vivo.
 
 | # | Módulo | Secciones | Cubre la academia (probable) | Estado |
 |---|---|:-:|:-:|---|
@@ -66,7 +66,7 @@ inicio: 2026-08-28
 | 9 | **Tocar con otros** (la banda) | 5 | ❌ **Okaeri solo** | ⬜ |
 | — | Capa transversal (memoria · oído · teoría aplicada · interpretación) | — | ❌ **Okaeri solo** | siempre |
 
-Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) · 🏫 visto en clase (adelantado, no completado).
+Estados: ⬜ pendiente · 🔄 en curso · ✅ evaluado (pasó su evaluación) · 🏫 visto en clase, sin evaluar.
 
 > **Sesión 0 — diagnóstico.** El usuario tiene **base dormida** en guitarra (tocó hace años). Antes de M1: con la guitarra en la mano, se prueban los 5 acordes de M1 y se marca qué está vivo. Lo que ya sale, se marca ✅ y se salta. No se diagnostica hablando: se diagnostica tocando.
 
@@ -88,7 +88,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 1.8 | Do | Formarlo limpio — el que más cuesta de los cinco |
 | 1.9 | Que suene limpio: presión, punta y ángulo | Diagnosticar por qué zumba una cuerda y arreglarlo solo |
 
-**Conceptos (se definen aquí):** nota · cuerda al aire · traste · diapasón (mástil) · digitación · **acorde** · acorde mayor y menor · **cifrado** · **Do-Re-Mi vs. A-B-C** (equivalencia — va primero: sin ella no se lee ningún cifrado de internet).
+**Conceptos (se definen aquí):** nota · cuerda al aire · traste · diapasón (mástil) · digitación · **acorde** · acorde mayor y menor · **cifrado** · **Do-Re-Mi vs. A-B-C** (equivalencia — va primero: sin ella no se lee ningún cifrado de internet) · **sostenido (♯) y bemol (♭)** · **tono y semitono** · **nombrar la nota de un traste**.
 
 **Repertorio de práctica:** ninguna canción todavía — los acordes sueltos. Herramienta: **drill Anki por recall** (frente = nombre, tú formas, reverso verifica). Se reconstruye el mazo con formas de guitarra.
 
@@ -141,6 +141,8 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 
 **Resultado:** *No hay lugar más alto* de principio a fin, **de memoria, sin nada delante**. El hito del nivel base y el criterio anti-muleta hecho módulo.
 
+**Se activa cuando** pasan las evaluaciones de M1, M2 y M3 (acordes, cambios, rasgueo), sin importar en qué orden las trajo la clase.
+
 | # | Sección | Qué sabes hacer al terminar |
 |---|---|---|
 | 4.1 | El capo: qué es y cómo se pone | Ponerlo en el traste que la canción pide, sin que zumbe |
@@ -171,7 +173,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 5.5 | Qué acordes viven juntos en cada tono | La familia de Sol (Sol-Do-Re-Mim-Lam) y la de Do; por qué cinco canciones tuyas caben en cuatro formas |
 | 5.6 | Sacar un cifrado nuevo solo | Buscar una canción, leer su cifrado, decidir capo, tocarla sin ayuda del agente |
 
-**Conceptos:** escala mayor · **grados (I-IV-V-vi)** · **progresión** — la nota pendiente desde el piano · familia de acordes · séptima · sus2 / sus4 · acorde con bajo distinto (*slash chord*).
+**Conceptos:** **escala** (mayor y menor) · **tónica** (la nota que da nombre a la escala) · **grados (I-IV-V-vi)** · **progresión** — la nota pendiente desde el piano · familia de acordes · séptima · sus2 / sus4 · acorde con bajo distinto (*slash chord*).
 
 **Repertorio:** segunda canción (de la lista en espera o de la banda). Entra aquí, no antes.
 
@@ -211,7 +213,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 7.4 | Una forma, doce acordes | Mover la forma de Mi y la de La por el mástil y nombrar lo que sale |
 | 7.5 | Cuándo cejilla y cuándo capo | Decidir con criterio, no por miedo |
 
-**Conceptos:** **cejilla** · tono y semitono · el traste como semitono · forma móvil.
+**Conceptos:** **cejilla** · el traste como semitono (tono y semitono se definen en M1) · forma móvil.
 
 **Repertorio:** *Amor sin condición* (TWICE, capo 5) — entra completa aquí con el Fa real. *I'd Come For You* sin capo (Sim).
 
@@ -232,7 +234,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 | 8.5 | Puntear una melodía | La melodía de un coro, nota por nota, leyendo TAB |
 | 8.6 | Escalas: para qué sirven de verdad | La escala mayor en una posición — como mapa del mástil, no como ejercicio de velocidad |
 
-**Conceptos:** melodía vs. armonía · **arpegio** · punteo · p-i-m-a · escala · **tablatura (TAB)**.
+**Conceptos:** melodía vs. armonía · **arpegio** · punteo · p-i-m-a · escala (definida en M5) · **pentatónica** · posición o «caja» del mástil · **tablatura (TAB)**.
 
 **Repertorio:** *No hay lugar más alto* con verso arpegiado. Una pieza instrumental suave (a elegir entonces).
 
@@ -243,6 +245,8 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ completado (evaluación pasada) �
 ## M9 · Tocar con otros ← *la banda* — *Okaeri solo*
 
 **Resultado:** entrar a un ensayo de la banda de la iglesia y hacer tu parte.
+
+**Se activa cuando** pasa la evaluación de M4 (la primera canción de memoria).
 
 | # | Sección | Qué sabes hacer al terminar |
 |---|---|---|
@@ -298,7 +302,7 @@ No son módulos: son **lentes** con los que se practica todo lo demás, desde M1
 
 | | Módulos | Cómo opera Okaeri ahí |
 |---|---|---|
-| **La academia** (sílabo real: `silabo_academia_basico1.md`) | Módulo I → M1-M3 · Módulo II → **M8 (adelantado)** · Módulo III → M7 + M5 · Módulos IV-V → M4 parcial (repertorio, concierto) | Consolida y profundiza lo del martes. La tarea del profesor va primero; lo adelantado se marca 🏫 sin mover el marcador |
+| **La academia** (sílabo real: `silabo_academia_basico1.md`) | Módulo I → M1-M3 · Módulo II → **M8 (adelantado)** · Módulo III → M7 + M5 · Módulos IV-V → M4 parcial (repertorio, concierto) | Consolida y profundiza lo del martes. La tarea del profesor va primero; lo que la clase trae se marca 🏫 y pasa a ✅ al evaluarse |
 | **Okaeri solo** | **M4** (la memoria y tu canción), **M6** (el sílabo solo trae "ritmos sencillos"), **M9**, capa transversal | Lidera. Aquí no entra nadie más: tu canción, tu memoria, tu banda |
 
 > 🎯 **Clase 13 ("Selección de tema"):** el alumno elige la pieza de su concierto. Si el profesor acepta la worship en curso, la canción de Okaeri y la del concierto de diciembre son **la misma**. Preguntar los criterios antes de llegar ahí.

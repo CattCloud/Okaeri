@@ -130,6 +130,7 @@ function revisarApunte(lineas, fm, aviso) {
   for (const c of CONFIG.apunte.campos) if (!(c in fm)) aviso('F10', `falta el campo "${c}" en el frontmatter`);
   if (!lineas.some((l) => /^# /.test(l))) aviso('F10', 'falta el título principal (# ...)');
   if (!lineas.some((l) => new RegExp(CONFIG.apunte.repaso).test(l))) aviso('F10', 'falta el cierre "📋 Repaso en una pantalla"');
+  if (!lineas.some((l) => l.includes(CONFIG.apunte.prerrequisitos))) aviso('F14', 'falta la línea «Antes de esto necesitas: …» debajo del título');
 }
 
 function revisarRepertorio(lineas, aviso) {

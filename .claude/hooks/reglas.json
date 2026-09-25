@@ -15,7 +15,7 @@
   "estado_duplicado": {
     "regla": "R12",
     "permitido": ["sistema/estado/estado_actual.md"],
-    "patrones": ["Marcador (guitarra|canto)\\s*:", "\\*\\*Módulo actual\\*\\*", "Secciones completadas"]
+    "patrones": ["Marcador (guitarra|canto)\\s*:", "\\*\\*Cola de conceptos", "\\*\\*Evaluación en curso\\*\\*", "\\*\\*Última clase reportada\\*\\*"]
   },
   "frases_prohibidas": [
     { "regla": "R7", "motivo": "frase de efecto", "patron": "literalmente", "tipos": ["apunte", "practica", "consulta"] },
@@ -41,7 +41,8 @@
   },
   "apunte": {
     "campos": ["tipo", "modulo", "origen", "titulo", "estado"],
-    "repaso": "📋 \\*\\*Repaso"
+    "repaso": "📋 \\*\\*Repaso",
+    "prerrequisitos": "Antes de esto necesitas:"
   },
   "repertorio": {
     "indice": "repertorio/00_indice.md",

@@ -19,7 +19,7 @@ estado: VIGENTE — crece con cada pregunta nueva
 | ¿Es malo tomar agua constantemente al cantar? | [Hidratación](#hidratación) |
 | ¿Puedo cantar después de comer? ¿Qué alimentos evitar? | [Comida y voz](#comida-y-voz) |
 | ¿Qué es el tono original? ¿Debo llegar a él? | [El tono: la regla de oro](#el-tono-la-regla-de-oro) |
-| ¿Qué hace el siseo? | [Apunte de respiración](m1/clase01_respiracion.md) |
+| ¿Qué hace el siseo? | [Apunte de respiración](clase01/clase01_respiracion.md) |
 | ¿Qué es la voz mixta? | La mezcla de la voz de pecho (la de hablar fuerte) y la voz de cabeza (la liviana y aguda) que permite subir sin gritar ni quebrar la voz. Se entrena en canto M6 (sección 6.1); su apunte nace ahí |
 
 ---
@@ -31,7 +31,7 @@ estado: VIGENTE — crece con cada pregunta nueva
 | Qué | Cuánto |
 |---|---|
 | Agua a temperatura ambiente | unos sorbos |
-| [Aire y trino, nivel 🔵](m1/clase01_practica_respiracion-trino.md) | 5 min |
+| [Aire y trino, nivel 🔵](clase01/clase01_practica_respiracion-trino.md) | 5 min |
 | Dos notas cómodas sostenidas en "ah" | ~1 min |
 
 **Por qué no se salta:** la voz es músculo. Cantar en frío rinde peor y es la forma más fácil de lastimarse. **Calentar de más tampoco:** pasados ~10 min ya no calienta, gasta — llegas a la canción con la voz cansada.
@@ -85,7 +85,7 @@ Comer no daña la voz, pero **cantar con el estómago muy lleno sí molesta**: e
 
 ## El tono: la regla de oro
 
-Toda canción tiene su **tono original** — aquel en que el artista la grabó, elegido para SU voz. **Llegar al tono original no es la meta.** La meta es cantarla en **tu tono**: transportada (subida o bajada entera en semitonos, [apunte](m2/apunte_2.5_notas-octavas-rango.md)) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa versión no es "la fácil": es **tu** versión final. En la banda el tono se elige según quien canta; es práctica universal, no un atajo. Si tu rango crece (M6), podrás subirla — por gusto, no por deuda.
+Toda canción tiene su **tono original** — aquel en que el artista la grabó, elegido para SU voz. **Llegar al tono original no es la meta.** La meta es cantarla en **tu tono**: transportada (subida o bajada entera en semitonos, [apunte](base/apunte_2.5_notas-octavas-rango.md)) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa versión no es "la fácil": es **tu** versión final. En la banda el tono se elige según quien canta; es práctica universal, no un atajo. Si tu rango crece (M6), podrás subirla — por gusto, no por deuda.
 
 **Cómo encontrar tu tono de una canción (con Moises):** baja el tono de la pista de 1 en 1 semitono y canta el coro (la parte más aguda). Quédate donde salga **con cuerpo y sin apretar la garganta**. Si dudas entre dos, el más bajo. Anota el número de semitonos en la ficha de la canción.
 
