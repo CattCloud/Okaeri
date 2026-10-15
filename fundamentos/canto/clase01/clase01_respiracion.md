@@ -14,20 +14,20 @@ estado: ESCRITA
 
 ## Por qué la respiración va primero
 
-La voz es aire convertido en sonido: el aire pasa entre las cuerdas vocales y las hace vibrar. Hablar gasta poco aire en frases cortas. Cantar exige frases largas y notas sostenidas, así que necesitas dos cosas que hablar no pide: **entrar más aire** y —lo más importante— **soltarlo más lento y parejo**. Lo que se entrena no es inhalar mucho: es **controlar la salida**. Todos los ejercicios de la clase 1 entrenan eso.
+La voz es aire convertido en sonido: el aire pasa entre las cuerdas vocales y las hace vibrar. Hablar gasta poco aire en frases cortas. Cantar exige frases largas y notas sostenidas, así que necesitas dos cosas que hablar no pide: que entre más aire y, sobre todo, soltarlo más lento y parejo. Lo que se entrena es controlar la salida del aire, y todos los ejercicios de la clase 1 apuntan a eso.
 
 ## El diafragma: qué es y qué hace
 
-El **diafragma** es un músculo ancho en forma de cúpula, debajo de los pulmones. Al inhalar se contrae y **baja**, y los pulmones se llenan hacia abajo. Como el diafragma baja, empuja lo que tiene debajo: por eso **el abdomen sale** al inhalar bien. No es que "respiras con el estómago" — el aire siempre va a los pulmones; el abdomen se mueve porque el diafragma bajó.
+El **diafragma** es un músculo ancho en forma de cúpula, debajo de los pulmones. Al inhalar se contrae y baja, y los pulmones se llenan hacia abajo. Como el diafragma baja, empuja lo que tiene debajo: por eso el abdomen sale al inhalar bien. El aire siempre va a los pulmones, nunca al estómago; el abdomen se mueve porque el diafragma bajó.
 
 ## La respiración que enseñó el profesor: abdomen + costados
 
 Tiene nombre técnico: **respiración costo-diafragmática** ("costo" por las costillas). Suma dos expansiones:
 
 1. **Abajo:** el diafragma baja → el abdomen sale.
-2. **A los lados:** las costillas bajas (las flotantes) se **abren hacia afuera** → entra todavía más aire sin subir nada.
+2. **A los lados:** las costillas bajas (las flotantes) se abren hacia afuera → entra más aire sin subir nada.
 
-**Test con las manos:** una mano en el abdomen y otra en un costado bajo, sobre las últimas costillas. Al inhalar, **las dos manos deben ser empujadas hacia afuera**. Los hombros no se mueven.
+**Test con las manos:** una mano en el abdomen y otra en un costado bajo, sobre las últimas costillas. Al inhalar, las dos manos deben ser empujadas hacia afuera. Los hombros no se mueven.
 
 ![Comparación: respiración alta con hombros subidos y poco aire, contra respiración baja con abdomen y costillas expandiéndose.](img/clase01-respiracion-alta-vs-baja.png)
 *Izquierda: lo que se corrige. Derecha: lo que se entrena.*
@@ -36,33 +36,33 @@ Tiene nombre técnico: **respiración costo-diafragmática** ("costo" por las co
 
 ## El ejercicio del papel: la presión hecha visible
 
-Un papel de 5-10 cm contra la pared, sostenido solo por tu soplido. Lo que entrena tiene nombre: **apoyo** — mantener la presión de aire **constante** con los músculos del abdomen, no con la garganta.
+Un papel de 5-10 cm contra la pared, sostenido solo por tu soplido. Lo que entrena se llama **apoyo**: mantener la presión de aire constante con los músculos del abdomen, no con la garganta.
 
-El papel es un medidor honesto: se cae si el chorro es débil, si es intermitente (sueltas el aire a golpes) o si está desenfocado (soplas ancho). Sostenerlo exige exactamente lo que una nota larga exige: presión pareja, dirigida, sin picos ni caídas.
+El papel funciona como medidor: se cae si el chorro es débil, si es intermitente (sueltas el aire a golpes) o si está desenfocado (soplas ancho). Sostenerlo exige lo mismo que una nota larga: presión pareja, dirigida, sin picos ni caídas.
 
 ![Vista lateral del ejercicio: soplar un chorro fino y constante que mantiene un papel pegado a la pared.](img/clase01-papel-pared.png)
 *El mismo abdomen que empuja el papel es el que sostiene una nota de 8 segundos.*
 
 ## El siseo: la frase sin la voz
 
-Soltar el aire en una **"sssss" larga y pareja**. Los dientes casi cerrados dejan una rendija mínima, así que el aire dura mucho y cualquier irregularidad **se oye**: si la "s" tiembla, tu aire tiembla; si arranca fuerte y muere, soltaste todo al inicio. Cantar una frase larga es exactamente esto — aire parejo durante segundos — con la voz montada encima.
+Soltar el aire en una "sssss" larga y pareja. Los dientes casi cerrados dejan una rendija mínima, así que el aire dura mucho y cualquier irregularidad se oye: si la "s" tiembla, tu aire tiembla; si arranca fuerte y muere, soltaste todo al inicio. Cantar una frase larga es esto mismo, aire parejo durante segundos, con la voz encima.
 
 Dos virtudes que lo hacen ejercicio de todos los días:
 
 - **Se cronometra.** Es el único de los tres que da un número (segundos), y por eso mide tu avance: la evaluación de M1 pide ≥ 20 s parejos.
 - **No gasta la voz.** Las cuerdas vocales no vibran, así que puedes repetirlo sin cansarte ni lastimarte.
 
-**Papel vs. siseo, que no son lo mismo:** el papel entrena la presión *dirigida* a un punto (puntería del aire); el siseo entrena su *duración* en el tiempo (tanque del aire). Juntos son el apoyo completo.
+**Papel vs. siseo:** el papel entrena la presión *dirigida* a un punto; el siseo entrena su *duración* en el tiempo. Juntos son el apoyo completo.
 
 ## El trino de labios (lip trill)
 
-Labios sueltos vibrando con el aire — el "brrr" de caballo — mientras la voz suena por debajo. Subir y bajar la altura durante el trino es hacer una **sirena**.
+Labios sueltos vibrando con el aire (el "brrr" de caballo) mientras la voz suena por debajo. Subir y bajar la altura durante el trino es hacer una **sirena**.
 
-Por qué es el ejercicio favorito de todos los profesores:
+Por qué lo usan tanto los profesores:
 
-- **Solo funciona con aire parejo.** Si el aire llega a golpes o se acaba, los labios dejan de vibrar al instante. Es otro medidor honesto, como el papel.
+- **Solo funciona con aire parejo.** Si el aire llega a golpes o se acaba, los labios dejan de vibrar al instante. Mide igual que el papel.
 - **Protege la voz.** Los labios semicerrados frenan un poco la salida del aire, y ese freno deja a las cuerdas vocales vibrar con mínimo esfuerzo. Por eso se puede subir más agudo en trino que cantando abierto, sin dañarse.
-- **Conecta aire y voz.** Es las dos cosas a la vez — soltar aire parejo y hacer sonar la voz encima: el puente entre este módulo y el siguiente.
+- **Conecta aire y voz.** Hace las dos cosas a la vez, soltar aire parejo y hacer sonar la voz encima, y por eso es el puente entre este módulo y el siguiente.
 
 > 📋 **Repaso en una pantalla**
 >

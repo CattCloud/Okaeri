@@ -12,11 +12,11 @@ estado: EN-CURSO
 
 # 🎤 Práctica — Aire y trino (el calentamiento base)
 
-> **De pie o bien sentado, sin guitarra.** Son los ejercicios de la clase 1 de canto. Doble función: entrenan el aire **y** son tu calentamiento fijo antes de cantar — y sirven también antes de una sesión de guitarra si vas a cantar algo.
+> **De pie o bien sentado, sin guitarra.** Son los ejercicios de la clase 1 de canto. Entrenan el aire y son tu calentamiento fijo antes de cantar; también sirven antes de una sesión de guitarra si vas a cantar algo.
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**El control de la salida del aire** — la base de todo lo demás. Sin aire parejo no hay nota sostenida, no hay afinación estable y no hay frase completa: la voz tiembla, se corta o se queda sin aire a media frase.
+**El control de la salida del aire**, la base de lo demás. Sin aire parejo no hay nota sostenida, no hay afinación estable y no hay frase completa: la voz tiembla, se corta o se queda sin aire a media frase.
 
 **Lo vas a notar** cuando el siseo y el trino duren más semana a semana sin esfuerzo, y cuando cantar una frase larga deje de sentirse como llegar ahogado al final.
 
@@ -29,7 +29,7 @@ estado: EN-CURSO
 
 - **Respiración costo-diafragmática:** una mano en el abdomen, otra en el costado bajo. Inhala por la nariz en 4 s (las dos manos salen), suelta por la boca en 6-8 s. Hombros quietos.
 - **Papel en la pared:** papel de 5-10 cm, pégalo con la mano, sopla un chorro fino apuntado al centro y suelta la mano. Cuenta cuántos segundos se sostiene.
-- **Siseo:** inhala bajo y suelta una "sssss" pareja y larga. Cronometra. Termina cuando el sonido pierde fuerza, no cuando ya no queda nada — sin exprimirte.
+- **Siseo:** inhala bajo y suelta una "sssss" pareja y larga. Cronometra. Termina cuando el sonido pierde fuerza, no cuando ya no queda nada, sin exprimirte.
 - **Trino de labios:** labios sueltos, "brrr" con voz. **Sirena** = durante el trino, sube la voz hasta donde sea cómodo y baja, de corrido.
 - **Regla fija de todo el carril canto: si algo duele o raspa, para.** Cansancio muscular en el abdomen está bien; dolor en la garganta, nunca.
 
@@ -63,13 +63,13 @@ Todo el Natural, y además:
 
 | Qué | Cuánto |
 |---|---|
-| Nota sostenida en "ah", cómoda, **con grabadora** | 4 notas de ~8 s; escucha la grabación AL FINAL (~2.5 min) |
+| Nota sostenida en "ah", cómoda, con grabadora | 4 notas de ~8 s; escucha la grabación al final (~2.5 min) |
 | Sirenas más amplias (hasta el borde cómodo, sin empujar) | 6 sirenas (~1.5 min) |
 
 ## Cómo suena cuando está bien
 
-- El siseo es **parejo de inicio a fin** — no arranca fuerte y muere.
-- El trino **no se corta** a mitad de sirena: si vibra continuo, tu aire es continuo.
+- El siseo es parejo de inicio a fin, no arranca fuerte y muere.
+- El trino no se corta a mitad de sirena: si vibra continuo, tu aire es continuo.
 - En la grabación de la nota en "ah": volumen estable, sin temblor grande, y tu cara y hombros (si te ves en espejo) sin tensión.
 
 ## Si sale mal — los 3 típicos
@@ -82,7 +82,7 @@ Todo el Natural, y además:
 
 ## Hasta cuándo / cuándo ya está
 
-Este no se retira: **es el calentamiento permanente** (sección 1.5 del mapa). Los objetivos del módulo (evaluación de M1): siseo parejo ≥ 20 s · nota cómoda sostenida 8 s estable · sin tensión visible. Cuando eso salga, el ejercicio sigue, pero como calentamiento de 5 min, no como práctica principal.
+Este no se retira: es el calentamiento permanente (sección 1.5 del mapa). Los objetivos del módulo (evaluación de M1): siseo parejo ≥ 20 s · nota cómoda sostenida 8 s estable · sin tensión visible. Cuando eso salga, el ejercicio sigue, pero como calentamiento de 5 min, no como práctica principal.
 
 ## Qué sigue
 
