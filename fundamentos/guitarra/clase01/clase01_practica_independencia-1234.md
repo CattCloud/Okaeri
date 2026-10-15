@@ -15,12 +15,12 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-Dos cosas, y las vas a poder ver:
+Dos cosas, y las vas a poder comprobar:
 
-1. **Que cada dedo se mueva solo.** Hoy tu anular y tu meñique se mueven en manada — levantas uno y el otro se va detrás. Este ejercicio los separa. **Lo notarás** en unas semanas, cuando armes acordes y los dedos caigan cada uno en su sitio sin recolocarlos uno por uno.
+1. **Que cada dedo se mueva solo.** Hoy tu anular y tu meñique tienden a moverse juntos: si levantas uno, el otro lo sigue. Este ejercicio los separa. **Lo notarás** en unas semanas, cuando armes acordes y los dedos caigan cada uno en su sitio sin recolocarlos uno por uno.
 2. **Que cada nota salga limpia**, no ahogada ni zumbando. **Lo notarás** dentro del mismo ejercicio: cada día habrá menos notas "sucias" por vuelta.
 
-No es un ejercicio de velocidad: el criterio es **sonido limpio, no rápido**. La velocidad llega sola, después.
+El criterio es el **sonido limpio**, no la velocidad, que llega sola después.
 
 ## El gráfico
 
@@ -29,14 +29,14 @@ No es un ejercicio de velocidad: el criterio es **sonido limpio, no rápido**. L
 
 ## Cómo se hace (referencia) — las 4 versiones
 
-1. **V1 — subiendo:** en la 6ª cuerda pisa y toca traste 1, 2, 3, 4 (un dedo por traste, una nota a la vez). Pasa a la 5ª, igual. Sigue hasta la 1ª — y regresa bajando hasta la 6ª. **Eso es 1 ciclo.**
+1. **V1 — subiendo:** en la 6ª cuerda pisa y toca traste 1, 2, 3, 4 (un dedo por traste, una nota a la vez). Pasa a la 5ª, igual. Sigue hasta la 1ª y regresa bajando hasta la 6ª: eso es **1 ciclo**.
 2. **V2 — al revés:** lo mismo pero **4-3-2-1** en cada cuerda.
-3. **V3 — dedos que se quedan:** al pisar el 2, el 1 no se levanta; acumulas 1 → 1-2 → 1-2-3 → 1-2-3-4. Luego bajando con 4-3-2-1. *(La más valiosa y la más incómoda. Normal.)*
+3. **V3 — dedos que se quedan:** al pisar el 2, el 1 no se levanta; acumulas 1 → 1-2 → 1-2-3 → 1-2-3-4. Luego bajando con 4-3-2-1. *(Es la más valiosa y la más incómoda.)*
 4. **V4 — moviéndose:** V1 corriendo la posición: trastes 1-2-3-4 → 2-3-4-5 → hasta 4-5-6-7, y de vuelta.
 
 ## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
 
-**Pon cronómetro. Cuando suena, paras** — sin culpa y sin "una más". Cada nivel incluye al anterior.
+**Pon cronómetro. Cuando suena, paras**, sin culpa y sin "una más". Cada nivel incluye al anterior.
 
 ### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
 
@@ -68,7 +68,7 @@ Todo el Natural, y además:
 | V4 (moviendo posición) | 1 pasada, ida y vuelta (~4 min) |
 | **Metrónomo 60: V1, una nota por clic** | ~4 min |
 
-**La regla del metrónomo:** entra SOLO en la versión que ya te sale limpia sin él — por ahora, la V1. El día que la V1 con metrónomo salga cuadrada, el metrónomo pasa a la V2, y así una por una. Nunca metrónomo sobre una versión que aún suena sucia.
+**La regla del metrónomo:** entra solo en la versión que ya te sale limpia sin él (por ahora, la V1). El día que la V1 con metrónomo salga cuadrada, el metrónomo pasa a la V2, y así una por una. Nunca metrónomo sobre una versión que aún suena sucia.
 
 ## Cómo suena cuando está bien
 
@@ -81,7 +81,7 @@ Todo el Natural, y además:
 | Suena así | Casi siempre es | Arréglalo así |
 | --- | --- | --- |
 | **Zumba / vibra feo** | Estás pisando lejos del traste o con poca punta | Pisa **justo detrás de la barrita** del traste (no encima, no lejos) y con la **punta** del dedo |
-| **Se ahoga / no suena** | Un dedo vecino está rozando esa cuerda | Arquea más los dedos — cada uno cae de punta, como martillito, sin tocar a los vecinos |
+| **Se ahoga / no suena** | Un dedo vecino está rozando esa cuerda | Arquea más los dedos para que cada uno caiga de punta, como un martillito, sin tocar a los vecinos |
 | **Se acelera y ensucia** | El cuerpo quiere "terminar rápido" | El objetivo es limpio, no rápido: baja la velocidad hasta que TODAS suenen, y quédate ahí |
 
 ## Afinación del instructor

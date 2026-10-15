@@ -11,15 +11,15 @@ estado: ESCRITA
 
 **Antes de esto necesitas:** [Las notas y las 6 cuerdas](clase01_notas-y-cuerdas.md) · [La guitarra: partes, cómo sostenerla, afinar](../../_consulta-instrumento.md) (qué es un traste)
 
-> **La TAB es un dibujo de tus 6 cuerdas con números encima: cada número te dice qué traste pisar en esa cuerda.** No necesitas saber leer música para leerla — por eso es el idioma de los ejercicios y de media internet guitarrera.
+> **La TAB es un dibujo de tus 6 cuerdas con números encima: cada número te dice qué traste pisar en esa cuerda.** No necesitas saber leer música para leerla, y por eso es el idioma de los ejercicios y de gran parte del material guitarrero de internet.
 
 ![Anatomía de la TAB: la 1ª arriba, números = trastes, 0 = al aire, columna apilada = acorde.](img/clase01-anatomia-tab.png)
 *Todo lo que una TAB puede decir, en un solo ejemplo. La columna de la derecha es un acorde (Em).*
 
 ## Las reglas
 
-1. **6 líneas = tus 6 cuerdas.** Y aquí el detalle que confunde a todos: **la línea de ARRIBA es la 1ª cuerda (la más fina)**, y la de abajo es la 6ª (la gruesa). Parece al revés — es como si miraras el mástil de tu guitarra inclinándolo hacia ti.
-2. **Los números son TRASTES, no dedos.** Un `3` en una línea = pisa el traste 3 de esa cuerda. Qué dedo usar lo dice el ejercicio o el contexto. *(¿Qué es un traste? Las barritas de metal que cruzan el mástil; pisas entre dos, no encima → [la guía del instrumento](../../_consulta-instrumento.md).)*
+1. **6 líneas = tus 6 cuerdas.** El detalle que más confunde: **la línea de arriba es la 1ª cuerda (la más fina)** y la de abajo es la 6ª (la gruesa). Parece al revés, pero es como si miraras el mástil de tu guitarra inclinándolo hacia ti.
+2. **Los números son TRASTES, no dedos.** Un `3` en una línea = pisa el traste 3 de esa cuerda. Qué dedo usar lo dice el ejercicio o el contexto. *(Un traste es cada barrita de metal que cruza el mástil; se pisa entre dos, no encima. Más en [la guía del instrumento](../../_consulta-instrumento.md).)*
 3. **`0` = cuerda al aire.** Tócala sin pisar nada.
 4. **Se lee de izquierda a derecha**, como un texto.
 5. **Números en columna (uno sobre otro) = suenan a la vez.** Así se escriben los acordes en TAB. Números separados = uno tras otro.

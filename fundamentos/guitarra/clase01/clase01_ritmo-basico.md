@@ -11,7 +11,7 @@ estado: ESCRITA
 
 **Antes de esto necesitas:** nada: es el punto de partida.
 
-> **El ritmo es cuándo suena cada nota. Su corazón es el pulso: un "tic" parejo que no se acelera ni se frena** — lo que marcas con el pie cuando te gusta una canción. El metrónomo es una máquina que hace ese tic por ti mientras aprendes a llevarlo por dentro.
+> **El ritmo es cuándo suena cada nota. Se apoya en el pulso, un "tic" parejo que no se acelera ni se frena**, como el que marcas con el pie cuando te gusta una canción. El metrónomo es una máquina que hace ese tic por ti mientras aprendes a llevarlo por dentro.
 
 ## Las figuras: cuánto dura cada nota
 
@@ -26,20 +26,20 @@ Una **figura rítmica** es el símbolo que dice cuánto dura una nota. Las tres 
 Cada una dura **la mitad** de la anterior. Un "tiempo" = un clic del metrónomo.
 
 ![Las tres figuras con sus duraciones, y dos compases de 4/4 llenados como ejemplo.](img/clase01-figuras-compas.png)
-*Arriba las figuras; abajo la caja del compás llenándose — como una suma.*
+*Arriba las figuras; abajo la caja del compás llenándose.*
 
 ## El compás: la caja — y qué significa el 4/4
 
 El **compás** es una **caja de tiempo**: la música se corta en cajas iguales y cada caja se llena con figuras. Los dos números del **4/4** dicen cómo es la caja:
 
 - **El de ARRIBA** → **cuántos tiempos entran en cada caja.** Aquí: 4.
-- **El de ABAJO** → **qué figura vale UN tiempo.** El 4 de abajo es un código que significa "**la negra**".
+- **El de ABAJO** → **qué figura vale UN tiempo.** Aquí el 4 significa "la negra".
 
-O sea, 4/4 se lee: *"cajas de 4 tiempos, y cada negra ocupa uno"*. Y el llenado funciona como matemática: cada caja debe sumar **exactamente 4** — una redonda sola (4), o dos blancas (2+2), o cuatro negras (1+1+1+1), o mezclas (negra + negra + blanca = 4).
+Es decir, 4/4 se lee *"cajas de 4 tiempos, y cada negra ocupa uno"*. Cada caja debe sumar exactamente 4: una redonda sola (4), dos blancas (2+2), cuatro negras (1+1+1+1) o mezclas (negra + negra + blanca = 4).
 
-**El "1" es el tiempo fuerte** — el que más se siente, donde suelen caer los cambios. Se cuenta en voz alta: *1-2-3-4, 1-2-3-4…*
+El **tiempo fuerte** es el 1: el que más se siente y donde suelen caer los cambios. Se cuenta en voz alta: *1-2-3-4, 1-2-3-4…*
 
-*(¿Por qué existe el número de abajo, si podría ser siempre la negra? Porque hay compases que cuentan con otra figura — los verás más adelante, p. ej. el 6/8 de mucho worship lento. Por ahora: 4 abajo = negra, y punto.)*
+*(El número de abajo existe porque hay compases que cuentan con otra figura, como el 6/8 de mucho worship lento, que verás más adelante. Por ahora, 4 abajo = negra.)*
 
 ## El tempo: la velocidad de la canción
 
@@ -47,7 +47,7 @@ El **tempo** es cuántos pulsos entran en un minuto. Se mide en **BPM** (*beats 
 
 - **60 BPM** = 60 pulsos por minuto = **un pulso por segundo**. Por eso es el tempo de práctica: cómodo y parejo.
 - Número más alto = pulsos más seguidos = más rápido (120 = dos por segundo). Más bajo = más lento.
-- Cuando una práctica dice "sube a 70", pide exactamente eso: el mismo ejercicio, pulsos un poco más seguidos.
+- Cuando una práctica dice "sube a 70", pide el mismo ejercicio con pulsos un poco más seguidos.
 
 ### Cada canción tiene su tempo
 
@@ -61,16 +61,16 @@ El **tempo** es cuántos pulsos entran en un minuto. Se mide en **BPM** (*beats 
 
 ### Tempo no es dificultad — lo que el número no dice
 
-El BPM dice **qué tan seguido late** la canción. No dice **cuánto trabaja tu mano entre latido y latido** — y eso es lo que de verdad la hace fácil o difícil:
+El BPM dice qué tan seguido late la canción, pero no cuánto trabaja tu mano entre latido y latido, que es lo que la hace fácil o difícil:
 
-- *No hay lugar más alto* va a ~136 BPM y se siente lenta: sus **acordes duran compases enteros**, la mano casi no cambia aunque el pulso corra.
-- *Capitán* va a ~143 BPM y sí es exigente: la mano derecha trabaja **denso en cada pulso**.
+- *No hay lugar más alto* va a ~136 BPM y se siente lenta porque sus acordes duran compases enteros y la mano casi no cambia, aunque el pulso corra.
+- *Capitán* va a ~143 BPM y sí es exigente porque la mano derecha trabaja denso en cada pulso.
 
 > **Regla de dos líneas:** tempo = qué tan rápido late la canción · dificultad = cuánto haces tú entre latido y latido. Por eso el repertorio se ordena por lo segundo, no por el número.
 
 ## El metrónomo: se calibra y se suelta
 
-Regla del sistema: el metrónomo se usa para **calibrar** tu pulso, y luego se suelta. Contar **en voz alta** mientras tocas hace lo contrario que la vieja "pista que cae": te instala el reloj **por dentro**, en vez de prestártelo desde afuera.
+Regla del sistema: el metrónomo se usa para calibrar tu pulso y luego se suelta. Contar en voz alta mientras tocas hace lo contrario que la vieja "pista que cae": te instala el reloj por dentro, en vez de prestártelo desde afuera.
 
 > 📋 **Repaso en una pantalla**
 > - **Pulso** = el tic parejo. **Metrónomo** = la máquina del tic (se calibra y se suelta).

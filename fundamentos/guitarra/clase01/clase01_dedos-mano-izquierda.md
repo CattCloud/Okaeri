@@ -11,7 +11,7 @@ estado: ESCRITA
 
 **Antes de esto necesitas:** [La tablatura (TAB)](clase01_tablatura.md) · [La guitarra: partes, cómo sostenerla, afinar](../../_consulta-instrumento.md) (qué es un traste)
 
-> **En guitarra, los dedos que pisan (mano izquierda) se numeran del 1 al 4: índice, medio, anular, meñique. El pulgar no tiene número** — vive detrás del mástil, sosteniendo, y no pisa cuerdas (por ahora).
+> **En guitarra, los dedos que pisan (mano izquierda) se numeran del 1 al 4: índice, medio, anular, meñique. El pulgar no tiene número**, porque va detrás del mástil sosteniendo y no pisa cuerdas (por ahora).
 
 | Nº | Dedo | Color en los diagramas del sistema |
 |:-:|---|---|
@@ -23,14 +23,14 @@ estado: ESCRITA
 ![La mano izquierda con la palma hacia ti: dedos 1 a 4 numerados y coloreados; el pulgar sin número.](img/clase01-mano-izquierda.png)
 *Los mismos colores que usan todos los diagramas del sistema.*
 
-⚠️ Ojo con no confundir: en la **TAB los números son trastes**; los números de **dedo** son estos otros. Cuando un ejercicio dice "un dedo por traste", los dos coinciden a propósito: traste 1 → dedo 1, traste 2 → dedo 2, etc. Eso se llama estar **en posición**.
+⚠️ No confundas: en la TAB los números son **trastes**; los números de **dedo** son estos otros. Cuando un ejercicio dice "un dedo por traste", los dos coinciden a propósito: traste 1 → dedo 1, traste 2 → dedo 2, etc. Eso se llama estar **en posición**.
 
-**Lo que vas a descubrir practicando** (y es normal): los dedos 1 y 2 obedecen; el **3 y el 4 se mueven en manada** — cuando levantas uno, el otro se va con él. No es defecto tuyo: sus tendones vienen conectados de fábrica. El ejercicio 1-2-3-4 existe precisamente para separarlos.
+Al practicar notarás que los dedos 1 y 2 se mueven sin problema, pero el 3 y el 4 tienden a moverse juntos: si levantas uno, el otro lo sigue. Es normal, porque comparten tendones. El ejercicio 1-2-3-4 sirve para separarlos.
 
 > 📋 **Repaso en una pantalla**
 > - Mano izquierda: **1 índice · 2 medio · 3 anular · 4 meñique**. Pulgar sin número, detrás del mástil.
 > - "Un dedo por traste" = traste N se pisa con dedo N (estar *en posición*).
-> - El 3 y el 4 vienen pegados de fábrica. Separarlos es entrenamiento, no talento.
+> - El 3 y el 4 tienden a moverse juntos porque comparten tendones; se separan con entrenamiento.
 
 ---
 [← La tablatura](clase01_tablatura.md) · [índice](../../00_indice.md)
