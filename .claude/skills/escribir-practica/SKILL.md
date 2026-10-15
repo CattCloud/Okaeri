@@ -21,3 +21,4 @@ Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F12). Este archivo
    - [ ] Ningún término sin definir (R6) ni frase de efecto (R7).
    - [ ] "Hasta cuándo" da un criterio o una fecha; "Qué sigue" nombra el paso siguiente del mapa o de la academia.
 8. **Delegar la revisión** al revisor (`revisor-okaeri`) y corregir lo que confirme.
+9. **Panel y publicación.** Con la práctica ya revisada: agregarla al panel (`practicasData`, y su apunte y su tema en `recorrido`, dentro de `system.html`; reglas en `sistema/decisiones/decision_system-html.md`, sección «Recorrido y prácticas») y publicar con `node sistema/herramientas/publicar-panel.mjs`. En la versión publicada la práctica va sin estado ni fecha de la academia (`only-personal`).

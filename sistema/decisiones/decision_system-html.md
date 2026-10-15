@@ -52,6 +52,24 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 - **Paleta: 8º color, con tu OK.** El texto secundario del lector de apunte (prerrequisitos, pie, pie de figura, comentarios) no alcanzaba el contraste mínimo de lectura con los 7 colores originales. Se sumó **un solo color más**, en la misma familia que el acento: `--text-strong: #63707a` (azul grisáceo oscuro, mismo tono que `#7e9fb2`, más oscuro — cumple contraste AA sobre blanco). Reemplaza al gris medio `#8f9195` en ese rol; los 7 colores originales siguen declarados tal cual.
 - **Ancho del lector de apunte: uno solo para todo.** Primero se probó texto angosto (72ch) con tablas/figuras a ancho completo del panel — se veía disparejo (el diagrama más ancho que el párrafo de al lado). Se corrigió a **un único ancho para texto, tablas y figuras**: `960px`. Más ancho que el primer intento (72ch ≈ 700px), para que los diagramas (el mástil de la pentatónica, el mapa de notas) se lean sin esfuerzo, pero parejo en todo el apunte.
 
+## Recorrido y prácticas (2026-10-15, construido el mismo día)
+
+**Contexto:** el panel solo mostraba apuntes; las prácticas no aparecían en ninguna vista (se había dicho en la planificación inicial y quedó fuera). Y «Pendientes» solo listaba lo que faltaba escribir: un tema terminado desaparecía, así que no se veía el avance.
+
+**Decisiones del usuario:**
+1. **«Pendientes» se reemplaza por «Recorrido»**: un mapa plegable, estilo mapa mental (NotebookLM), de tres niveles: carril → módulos → temas; un tema con escalera la despliega como un cuarto nivel. Arranca con solo el módulo en curso abierto, para no sobrecargar la página.
+2. **El temario es el esqueleto, no la lista.** Aparecen los 9 módulos (8 en canto), cada uno con una barrita de un segmento por sección del temario (verde = lograda, gris = sin lograr) y el contador «N temas · X/M logradas». *Ajuste al construir:* se quitó el segmento azul «vista» del mockup, porque no hay forma honesta de saber cuántas secciones del temario cubre cada tema; el avance «visto» lo da el número de temas. Las tarjetas son solo de temas **vistos en clase** o **propuestos por la escalera**; lo que aún no se toca no tiene tarjeta. Un módulo sin temas tocados queda tenue y cerrado. Un tema terminado **no desaparece**.
+3. **Dos etiquetas por tarjeta: Apunte y Práctica.** Apunte en el acento (`#7e9fb2`), Práctica en negro (`#171717`): el contraste sale de dos colores de la paleta, sin color nuevo. Estado por el borde: punteado = falta, sólido = en curso (solo práctica), relleno = listo («Escrito» / «Hecha»).
+4. **Origen visible:** tarjeta de clase = blanca con «Clase N»; propuesta por la escalera = borde punteado con «Escalera».
+5. **«Lograda» = pasó su evaluación (✅ en el temario, R4)**, no basta con apunte escrito y práctica hecha. Se pinta con un **9º color: verde salvia `#9db39a`**. Porqué: es el estado más importante del mapa y debe leerse de un vistazo; el acento y el negro ya son las etiquetas, y reusarlos confundiría la tarjeta con su etiqueta. La alternativa sin color nuevo (tarjeta negra invertida) pesaba demasiado en un mapa que se llena de logros. **Excepción explícita** a «nada de ámbar ni verde» (2026-10-14), y solo para este estado.
+6. **La práctica en el resto del panel:** en la barra lateral cuelga como hija de su apunte (icono propio de ejercicio); al final de cada apunte, un enlace destacado «Práctica de este apunte»; la práctica se lee en el mismo lector (960px, fondo blanco), con sus 3 niveles marcados por barras de 1, 2 y 3 alturas en lugar de los emojis.
+
+7. **Versión publicada (GitHub Pages): opción (a), decidida 2026-10-15.** Las prácticas se publican como material de estudio, **sin** estado, chips de tiempo/clase ni «Hasta cuándo» (es avance personal); el criterio «Cuándo ya está» se queda. Vistas de apunte y de práctica aprobadas el mismo día.
+
+**Cómo se mantiene (a mano, sin hook):** en `system.html`, `recorrido` (módulos y temas; `done:true` solo cuando el tema pasa su evaluación) y `practicasData` (contenido de cada práctica, leído de su `.md`; sus apuntes enlazan; lo personal va en `only-personal`). Cada práctica nueva o cambiada se reconvierte al marcado del panel. La versión publicada oculta «Recorrido», «Clases en orden» y todo lo `only-personal`; `publicar-panel.mjs` lo hace y se niega si el panel cambia de forma.
+
+**Mockups:** en el scratchpad de la conversación del 2026-10-15 (`mockup-recorrido.html`, `mockup-practicas.html`); no se versionan.
+
 ## Consecuencias
 
 - Esta decisión es la fuente única de las reglas de `system.html`. Un cambio de regla (no de contenido) se anota aquí, no solo en memoria de conversación.

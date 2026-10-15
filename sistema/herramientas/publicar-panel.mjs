@@ -5,7 +5,7 @@
 //   node sistema/herramientas/publicar-panel.mjs           arma el sitio y lo sube a gh-pages
 //   node sistema/herramientas/publicar-panel.mjs --out <carpeta>   solo arma el sitio ahí (no sube nada)
 //
-// La versión publicada es la de estudio: sin "Pendientes" ni "Clases en orden", abre en el primer apunte
+// La versión publicada es la de estudio: sin "Recorrido" ni "Clases en orden" (avance personal) y sin el estado de las prácticas, abre en el primer apunte
 // y no pide a los buscadores que la indexen. No toca la rama actual ni el árbol de trabajo: arma el sitio
 // en una carpeta temporal con su propio repo y fuerza el push solo sobre gh-pages (rama generada).
 import fs from 'node:fs';
@@ -28,8 +28,8 @@ let html = fs.readFileSync(origen, 'utf8');
 
 // 1. Versión de estudio. Cada cambio debe coincidir exactamente una vez: si el panel cambia, se avisa en vez de publicar algo roto.
 const cambios = [
-  ['</head>', '<meta name="robots" content="noindex">\n<style>.app-menu,#view-escalera,#view-clase-timeline{display:none!important}</style>\n</head>'],
-  ['showView("escalera");', "{ const primero = document.querySelector('.nav-item[data-key]'); if (primero) primero.click(); }"],
+  ['</head>', '<meta name="robots" content="noindex">\n<style>.app-menu,#view-recorrido,#view-clase-timeline{display:none!important}.only-personal{display:none!important}.only-pub{display:block}</style>\n</head>'],
+  ['showView("recorrido");', "{ const primero = document.querySelector('.nav-item[data-key]'); if (primero) primero.click(); }"],
 ];
 for (const [de, a] of cambios) {
   const n = html.split(de).length - 1;
