@@ -17,7 +17,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-Dos cosas a la vez. **Mano izquierda:** la caja completa bajo los dedos con un dedo por traste — el meñique (dedo 4) trabaja de verdad por primera vez. **Mano derecha:** tocar cuerdas de una en una, parejo — el terreno del picado y los arpegios que la academia trae en las próximas clases (los dos términos, definidos en [el apunte](clase03_la-pentatonica.md)). **Lo vas a notar** cuando subas y bajes sin mirar el diagrama y sin tropiezos al cambiar de cuerda.
+Dos cosas a la vez. **Mano izquierda:** la caja completa bajo los dedos con un dedo por traste; el meñique (dedo 4) trabaja de verdad por primera vez. **Mano derecha:** tocar cuerdas de una en una, parejo, que es el terreno del picado y los arpegios que la academia trae en las próximas clases (los dos términos, definidos en [el apunte](clase03_la-pentatonica.md)). **Lo vas a notar** cuando subas y bajes sin mirar el diagrama y sin tropiezos al cambiar de cuerda.
 
 ## El gráfico
 
@@ -50,7 +50,7 @@ Todo el Mínimo, y además:
 
 | Qué | Cuánto |
 |---|---|
-| Vueltas **sin mirar** el diagrama (si te pierdes, termina la vuelta como salga y verifica al final) | 2 min |
+| Vueltas sin mirar el diagrama (si te pierdes, termina la vuelta como salga y verifica al final) | 2 min |
 | Vueltas empezando desde la 1ª cuerda (bajando primero) | 1 min |
 
 Metrónomo: sí, en 60, en las dos filas.
@@ -62,17 +62,17 @@ Todo el Natural, y además:
 | Qué | Cuánto |
 |---|---|
 | Metrónomo en 70, una nota por clic | 2 min |
-| Vuelta lenta **diciendo cada nota en voz alta** (La, Do, Re, Mi, Sol…), sin metrónomo | 2 min |
+| Vuelta lenta diciendo cada nota en voz alta (La, Do, Re, Mi, Sol…), sin metrónomo | 2 min |
 
 ## Cómo suena cuando está bien
 
-Una escalera pareja: todas las notas al mismo volumen y a la misma distancia, sin hueco al cambiar de cuerda. La nota del meñique suena igual de firme que la del índice. Cada nota suena limpia hasta que llega la siguiente — no se corta antes.
+Una escalera pareja: todas las notas al mismo volumen y a la misma distancia, sin hueco al cambiar de cuerda. La nota del meñique suena igual de firme que la del índice. Cada nota suena limpia hasta que llega la siguiente, sin cortarse antes.
 
 ## Si sale mal — los 3 típicos
 
 | Pasa esto | Casi siempre es | Arréglalo así |
 |---|---|---|
-| **La nota del dedo 4 zumba o sale débil** | El meñique pisa plano o lejos del traste metálico | Punta del dedo, pegado a la barrita. Es el dedo más débil de todos: firmeza, no fuerza |
+| **La nota del dedo 4 zumba o sale débil** | El meñique pisa plano o lejos del traste metálico | Punta del dedo, pegado a la barrita. Es el dedo más débil de todos y se apoya en la firmeza, sin forzar |
 | **Tropiezo al cambiar de cuerda** | La mano derecha no encuentra la cuerda nueva | Quita el metrónomo y haz el cambio lento 3 veces; el camino primero, la velocidad después |
 | **Los dedos "vuelan" al soltar** | Tensión: cada dedo se dispara lejos de la cuerda | Suéltalos a ras de cuerda. Menos distancia que recorrer = menos esfuerzo y más velocidad gratis |
 
@@ -82,7 +82,7 @@ Es tarea de la academia: hasta la próxima clase (martes 22-sep). **Está lista*
 
 ## Qué sigue
 
-La academia: picado y arpegios (módulo II del sílabo, clases 5-8; definidos en [el apunte](clase03_la-pentatonica.md)) — esta caja es su terreno de práctica. En el mapa: M8.6 (escalas como mapa del mástil), que quedará medio andada.
+La academia: picado y arpegios (módulo II del sílabo, clases 5-8; definidos en [el apunte](clase03_la-pentatonica.md)); esta caja es su terreno de práctica. En el mapa: M8.6 (escalas como mapa del mástil), que quedará medio andada.
 
 ## Verificación — mirar después de intentar
 

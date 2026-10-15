@@ -12,11 +12,11 @@ estado: ESCRITA
 
 **Antes de esto necesitas:** [Ritmo básico](../clase01/clase01_ritmo-basico.md)
 
-> **La corchea es la figura que dura medio tiempo: en cada clic del metrónomo caben dos.** Con ella el ritmo deja de ir "una nota por clic" y empieza a moverse *entre* los clics — la base del rasgueo abajo-arriba y de casi todo el worship.
+> **La corchea es la figura que dura medio tiempo: en cada clic del metrónomo caben dos.** Con ella el ritmo deja de ir "una nota por clic" y empieza a moverse *entre* los clics. Es la base del rasgueo abajo-arriba y de casi todo el worship.
 
 ## La cuarta figura
 
-Ya conoces tres [figuras rítmicas](../clase01/clase01_ritmo-basico.md): redonda (4 tiempos), blanca (2) y negra (1). La serie sigue con la misma regla — **cada figura dura la mitad de la anterior**:
+Ya conoces tres [figuras rítmicas](../clase01/clase01_ritmo-basico.md): redonda (4 tiempos), blanca (2) y negra (1). La serie sigue con la misma regla: cada figura dura la mitad de la anterior.
 
 | Figura | Dura |
 |---|---|
@@ -25,27 +25,27 @@ Ya conoces tres [figuras rítmicas](../clase01/clase01_ritmo-basico.md): redonda
 | Negra | 1 tiempo |
 | **Corchea** | **½ tiempo** |
 
-Se dibuja como una negra con una banderita en la punta del palito. Esa banderita se llama **corchete** — de ahí el nombre de la figura. Y cuando dos corcheas van seguidas, no se dibujan las dos banderitas: se unen con una **barra** por encima.
+Se dibuja como una negra con una banderita en la punta del palito. Esa banderita se llama **corchete**, de ahí el nombre de la figura. Cuando dos corcheas van seguidas, en vez de dos banderitas se unen con una **barra** por encima.
 
 ![Comparación de tres figuras: la negra que dura un tiempo, la corchea suelta con su corchete que dura medio tiempo, y dos corcheas unidas por una barra que juntas suman un tiempo. Debajo, un compás de 4/4 lleno con ocho corcheas en pares, contado «1 y 2 y 3 y 4 y», con el clic del metrónomo solo en los números.](img/clase03-corchea.png)
 *Arriba, la figura nueva y su barra; abajo, cómo se cuenta: el clic marca los números, la «y» va entre clic y clic.*
 
 ## Cómo se cuenta: la «y»
 
-Hasta ahora contabas *1-2-3-4*, una sílaba por clic. Con corcheas, cada tiempo se **parte en dos** y se cuenta **«1 y 2 y 3 y 4 y»**:
+Hasta ahora contabas *1-2-3-4*, una sílaba por clic. Con corcheas, cada tiempo se parte en dos y se cuenta **«1 y 2 y 3 y 4 y»**:
 
 - El **número** cae **con** el clic.
-- La **«y»** cae **exactamente a la mitad**, entre clic y clic. El metrónomo no la marca: la pones tú.
+- La **«y»** cae a la mitad, entre clic y clic. El metrónomo no la marca: la pones tú.
 
-Partir el tiempo en partes iguales se llama **subdivisión**. Es una habilidad nueva: ya no sigues el clic — lo **divides**.
+Partir el tiempo en partes iguales se llama **subdivisión**. Es una habilidad nueva: ya no sigues el clic, lo divides.
 
 ## La suma del compás no cambia
 
-La caja del [4/4](../clase01/clase01_ritmo-basico.md) sigue sumando exactamente 4 tiempos; solo hay una moneda nueva de ½. Dos corcheas unidas = 1 tiempo, así que ocupan lo mismo que una negra: donde cabía una negra caben dos corcheas.
+La caja del [4/4](../clase01/clase01_ritmo-basico.md) sigue sumando 4 tiempos; solo hay una figura nueva de ½ tiempo. Dos corcheas unidas = 1 tiempo, así que ocupan lo mismo que una negra: donde cabía una negra caben dos corcheas.
 
 ## Para qué la vas a usar
 
-En la guitarra de acompañamiento, la corchea **es la mano derecha**: cuando llegues al rasgueo abajo-arriba (sección 3.4 del temario), cada "abajo-arriba" dentro de un tiempo son dos corcheas — abajo en el número, arriba en la «y». Los patrones de rasgueo de tus canciones se escriben con esta figura.
+En la guitarra de acompañamiento, la corchea es el trabajo de la mano derecha: cuando llegues al rasgueo abajo-arriba (sección 3.4 del temario), cada "abajo-arriba" dentro de un tiempo son dos corcheas: abajo en el número, arriba en la «y». Los patrones de rasgueo de tus canciones se escriben con esta figura.
 
 > 📋 **Repaso en una pantalla**
 > - **Corchea = ½ tiempo.** Dos por clic. La banderita se llama *corchete*; dos corcheas seguidas se unen con una *barra*.

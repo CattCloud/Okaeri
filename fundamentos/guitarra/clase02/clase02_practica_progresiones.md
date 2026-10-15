@@ -15,7 +15,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**La velocidad y limpieza del CAMBIO de acorde** — no los acordes sueltos, sino el paso de uno a otro, que es donde los principiantes se atascan y la canción pierde el pulso. Concretamente: mover la menor cantidad de dedos (anclas), no despegar toda la mano, y que los dedos del acorde caigan todos a la vez.
+**La velocidad y limpieza del cambio de acorde**, no de los acordes sueltos sino del paso de uno a otro, que es donde los principiantes se atascan y la canción pierde el pulso. Concretamente: mover la menor cantidad de dedos (anclas), no despegar toda la mano, y que los dedos del acorde caigan todos a la vez.
 
 **Lo vas a notar** cuando el cambio deje de hacer "hueco" en tu conteo: hoy entre acorde y acorde hay un silencio de búsqueda; en unas semanas el siguiente acorde cae en su tiempo, sin detener el conteo.
 
@@ -27,10 +27,10 @@ estado: EN-CURSO
 ## Cómo se hace (referencia)
 
 - **Una vuelta** = la progresión completa, de inicio a fin, y regresas al primer acorde.
-- **Modo A — un rasgueo por compás:** rasgueo hacia abajo en el "1", sostienes 2-3-4 mientras preparas el cambio. En caja partida: rasgueo en el 1 **y** en el 3.
+- **Modo A — un rasgueo por compás:** rasgueo hacia abajo en el "1", sostienes 2-3-4 mientras preparas el cambio. En caja partida: rasgueo en el 1 y en el 3.
 - **Modo B — un rasgueo por tiempo:** cuatro rasgueos abajo por compás, contando en voz alta. En caja partida: dos y dos.
 - **Antes de tocar una progresión: busca el ancla de cada cambio** (tabla en [los 8 acordes](clase02_los-8-acordes.md)). Es la mitad del ejercicio.
-- **Los 4 niveles de velocidad:** ① sin metrónomo → ② 60 BPM → ③ 70 → ④ 80. **Cada progresión está en un nivel, y avanza por su cuenta** (la P4 puede ir en 60 mientras la P2 sigue sin metrónomo). Una progresión **pasa al siguiente nivel** cuando da **2 vueltas seguidas limpias, sin frenar en ningún cambio**, en su nivel actual. Nunca se salta un nivel. Marca aquí dónde va cada una:
+- **Los 4 niveles de velocidad:** ① sin metrónomo → ② 60 BPM → ③ 70 → ④ 80. Cada progresión está en un nivel y avanza por su cuenta (la P4 puede ir en 60 mientras la P2 sigue sin metrónomo). Una progresión pasa al siguiente nivel cuando da **2 vueltas seguidas limpias, sin frenar en ningún cambio**, en su nivel actual. Nunca se salta un nivel. Marca aquí dónde va cada una:
 
 | Progresión | ① Sin metrónomo | ② 60 | ③ 70 | ④ 80 |
 | --- | :-: | :-: | :-: | :-: |
@@ -74,17 +74,17 @@ Todo el Natural, y además:
 
 ## Cómo suena cuando está bien
 
-- El siguiente acorde **cae en su tiempo** — el conteo no se detiene a esperarte.
-- Cada acorde cae **de una** (los dedos aterrizan juntos), no dedo por dedo.
+- El siguiente acorde cae en su tiempo y el conteo no se detiene a esperarte.
+- Cada acorde cae de una (los dedos aterrizan juntos), no dedo por dedo.
 - En caja partida, el segundo acorde entra justo en el "3".
 
 ## Si sale mal — los 3 típicos
 
 | Pasa esto | Casi siempre es | Arréglalo así |
 | --- | --- | --- |
-| **Hueco largo en un cambio** | Ese par específico no está automatizado | Aísla SOLO ese par y hazlo 5 veces seguido — no repitas toda la vuelta (eso practica mil veces lo que ya sale) |
+| **Hueco largo en un cambio** | Ese par específico no está automatizado | Aísla solo ese par y hazlo 5 veces seguido; no repitas toda la vuelta, porque eso practica una y otra vez lo que ya sale |
 | **Levantas toda la mano al cambiar** | No buscaste el ancla | Antes de tocar, di en voz alta qué dedo(s) se quedan en ese cambio. Si hay ancla, que no se despegue |
-| **El acorde cae sucio, dedo por dedo** | Estás armando la forma en el aire | Piensa la forma completa antes de saltar y baja los dedos **todos a la vez** |
+| **El acorde cae sucio, dedo por dedo** | Estás armando la forma en el aire | Piensa la forma completa antes de saltar y baja los dedos todos a la vez |
 
 ## Afinación del instructor
 

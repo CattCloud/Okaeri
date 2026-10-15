@@ -16,7 +16,7 @@ Una nota sola suena delgada. Junta tres bien elegidas y el sonido se vuelve llen
 
 ## Mayor y menor: los dos colores
 
-Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se **oye** antes de entenderse:
+Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se oye antes de entenderse:
 
 
 | Familia   | Cómo suena                        | Se escribe                              |
@@ -24,13 +24,13 @@ Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se 
 | **Mayor** | Estable, resuelto, "alegre"       | Solo el nombre: **C**, **G**, **D**     |
 | **Menor** | Melancólico, más oscuro, "triste" | Nombre + **m**: **Am**, **Em**, **Dm**  |
 
-La diferencia física es mínima: **una sola nota** del acorde baja un traste. En la guitarra se ve entre Mi y Mim: se levanta el dedo 1 (más abajo, en "Un acorde puede vivir dentro de otro"). El menor no es "peor" ni más difícil: casi toda canción de tu repertorio usa los dos. *No hay lugar más alto*, por ejemplo, va con Sol, Do y Re (mayores) y Mim (menor).
+La diferencia física es mínima: una sola nota del acorde baja un traste. En la guitarra se ve entre Mi y Mim: se levanta el dedo 1 (más abajo, en "Un acorde puede vivir dentro de otro"). Casi toda canción de tu repertorio usa los dos, y el menor no es más difícil. *No hay lugar más alto*, por ejemplo, va con Sol, Do y Re (mayores) y Mim (menor).
 
 ## ⚠️ La trampa del vocabulario: "mayor" es el apellido por defecto
 
-Parece que hubiera tres cosas — "acordes", "acordes mayores" y "acordes menores" — pero no: **hay acordes, y cada uno es mayor o menor.** Lo confuso es la escritura:
+Pueden parecer tres cosas ("acordes", "acordes mayores" y "acordes menores"), pero hay acordes y cada uno es mayor o menor. Lo confuso es la escritura:
 
-> **Un acorde dicho "a secas" es mayor.** "C" o "Do" = Do **mayor** — el "mayor" no se escribe porque es el apellido por defecto. Lo menor siempre se marca: la **m** de Am.
+> **Un acorde dicho "a secas" es mayor.** "C" o "Do" = Do mayor; el "mayor" no se escribe porque es el apellido por defecto. Lo menor siempre se marca: la **m** de Am.
 
 Así, en la lista de la academia: **C, D, E, G, A** son mayores (a secas) y **Em, Dm, Am** son menores (llevan la m).
 
@@ -38,18 +38,18 @@ Así, en la lista de la academia: **C, D, E, G, A** son mayores (a secas) y **Em
 
 Dos sentidos, ambos reales:
 
-**1. En los dedos.** Algunas formas contienen otras completas. El caso perfecto de los 8: forma **Mi (E)** y levanta solo el dedo 1 — lo que queda es **Mim (Em)**, un acorde entero.
+**1. En los dedos.** Algunas formas contienen otras completas. El caso perfecto de los 8: forma **Mi (E)** y levanta solo el dedo 1: lo que queda es **Mim (Em)**, un acorde entero.
 
 
 | ![Mi (E)](../img/acorde-mi.png) | ![Mim (Em)](../img/acorde-mim.png) |
 | :--------------------------: | :-----------------------------: |
 |  *Mi (E) — con el dedo 1*  | *Levanta el dedo 1 → Mim (Em)* |
 
-Y el detalle instructivo: la nota que quitas al levantar ese dedo es **exactamente la que separa mayor de menor** — la sección anterior, vista en los dedos.
+La nota que quitas al levantar ese dedo es la que separa mayor de menor: es la sección anterior, vista en los dedos.
 
 **2. En las notas.** Un acorde con más notas contiene acordes simples adentro: **Am7** (La-Do-Mi-Sol) trae dentro al **Do** (Do-Mi-Sol) *y* al **Lam** (La-Do-Mi) a la vez. Por eso ciertos acordes suenan emparentados. Esto se vuelve herramienta con las séptimas (M5).
 
-Ambos sentidos siguen la regla de siempre: **el acorde son sus notas** — si dentro de un grupo de notas está completo el grupo de otro acorde, ese acorde está ahí adentro.
+Ambos sentidos siguen la regla de siempre, el acorde son sus notas: si dentro de un grupo de notas está completo el grupo de otro acorde, ese acorde está ahí adentro.
 
 > 📋 **Repaso en una pantalla**
 >
