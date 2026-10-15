@@ -4,6 +4,10 @@
 # Archivo de instrucciones al agente (scratchpad de trabajo, no es parte del sistema)
 PROMPT.md
 
+# Panel de consulta local (vista derivada de los .md, no contenido del sistema — ver sistema/decisiones/decision_system-html.md)
+system.html
+image copy.png
+
 # Grabaciones de práctica (audio/video): pesan demasiado para versionar en git
 audios/
 grabaciones/
