@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Okaeri · system</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* paleta extraída de image copy.png — solo estos 7 colores, sin inventar */
+    --bg:#eef0f1;        /* fondo general */
+    --white:#ffffff;     /* superficie / tarjetas */
+    --gray:#dedcda;      /* gris suave decorativo */
+    --accent:#7e9fb2;    /* el único acento: azul grisáceo apagado */
+    --black:#171717;     /* negro casi puro */
+    --text-mid:#8f9195;  /* texto gris medio */
+    --text-light:#aab0b4;/* texto gris claro */
+    --text-strong:#63707a; /* añadido 2026-10-15, con tu OK: mismo tono que --accent (familia azul grisácea), más oscuro — 5.1:1 sobre blanco, cumple AA. Ver decision_system-html.md */
+
+    --paper: var(--white);
+    --paper-dim: var(--gray);
+    --ink: var(--black);
+    --ink-soft: var(--text-strong);
+    --line: var(--gray);
+    --shadow:0 1px 2px rgba(23,23,23,.07), 0 8px 22px rgba(23,23,23,.08);
+    --sb-text:#ffffff;
+    --sb-text-soft: var(--white);
+    --sb-text-faint: rgba(255,255,255,.55);
+    --sb-tile:rgba(255,255,255,.08);
+    --sb-tile-line:rgba(255,255,255,.18);
+    --sb-hover:rgba(255,255,255,.1);
+  }
+  *{box-sizing:border-box;}
+  html{font-size:17px;}
+  html,body{height:100%;}
+  body{
+    margin:0; font-family:'IBM Plex Sans',sans-serif; color:var(--ink);
+    background:var(--bg);
+    display:grid; grid-template-columns:340px 1fr; min-height:100vh;
+  }
+  svg.icon{width:1.05em; height:1.05em; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:-2px; flex:none;}
+
+  /* ---------- Accesibilidad y superficies del navegador ---------- */
+  ::selection{background:var(--accent); color:var(--white);}
+  :focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px;}
+  .sidebar :focus-visible{outline-color:var(--black);}
+  .main{scrollbar-width:thin; scrollbar-color:var(--gray) transparent;}
+  .main::-webkit-scrollbar{width:10px;}
+  .main::-webkit-scrollbar-track{background:transparent;}
+  .main::-webkit-scrollbar-thumb{background:var(--gray); border-radius:20px;}
+  .main::-webkit-scrollbar-thumb:hover{background:var(--text-light);}
+  .sidebar{scrollbar-width:thin; scrollbar-color:var(--sb-tile-line) transparent;}
+  .sidebar::-webkit-scrollbar{width:10px;}
+  .sidebar::-webkit-scrollbar-track{background:transparent;}
+  .sidebar::-webkit-scrollbar-thumb{background:var(--sb-tile-line); border-radius:20px;}
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar{
+    background:var(--accent);
+    padding:26px 18px 30px; overflow-y:auto;
+  }
+  .brand{display:flex; align-items:baseline; gap:9px; margin:2px 4px 22px;}
+  .brand h1{font-family:'Fraunces',serif; font-weight:650; font-size:27px; margin:0; color:var(--sb-text);}
+  .brand span{font-size:13px; color:var(--sb-text-faint); font-style:italic; font-family:'Fraunces',serif;}
+
+  .carril-toggle{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    background:var(--sb-tile); border:1.5px solid var(--sb-tile-line); border-radius:30px;
+    padding:7px 11px; margin-bottom:20px; cursor:pointer; user-select:none;
+  }
+  .ct-label{font-size:13.5px; font-weight:600; color:var(--sb-text-faint); display:flex; align-items:center; gap:5px; transition:color .2s;}
+  .carril-toggle[data-carril="guitarra"] .ct-label.left{color:var(--sb-text);}
+  .carril-toggle[data-carril="canto"] .ct-label.right{color:var(--sb-text);}
+  .ct-track{
+    position:relative; width:40px; height:22px; border-radius:20px;
+    background:rgba(255,255,255,.28); transition:background .25s; flex:none;
+  }
+  .ct-knob{
+    position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%;
+    background:var(--white); box-shadow:var(--shadow); transition:transform .25s, background .25s;
+  }
+  .carril-toggle[data-carril="canto"] .ct-knob{transform:translateX(18px);}
+
+  .search{position:relative; margin-bottom:20px;}
+  .search input{
+    width:100%; padding:10px 12px 10px 34px; border:1px solid var(--sb-tile-line); border-radius:9px;
+    background:var(--sb-tile); color:var(--sb-text); font-family:inherit; font-size:14.5px; outline:none;
+  }
+  .search input::placeholder{color:var(--sb-text-faint);}
+  .search input:focus{border-color:var(--white);}
+  .search svg.icon{position:absolute; left:11px; top:50%; transform:translateY(-50%); color:var(--sb-text-faint);}
+
+  .tree{margin-top:4px;}
+  .mod-head{
+    display:flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--sb-text);
+    margin:18px 2px 8px;
+  }
+  .mod-head svg.icon{color:var(--sb-text);}
+  .nav-item{
+    display:flex; align-items:flex-start; gap:9px; padding:8px 10px; border-radius:7px;
+    cursor:pointer; font-size:15px; font-weight:500; color:var(--sb-text-soft); line-height:1.4; margin-left:4px;
+  }
+  .nav-item svg.icon{margin-top:2px; color:var(--sb-text-faint); flex:none;}
+  .nav-item:hover{background:var(--sb-hover);}
+  .nav-item.active{background:var(--white); color:var(--black);}
+  .nav-item.active svg.icon{color:var(--black);}
+
+  /* ---------- Main ---------- */
+  .main{overflow-y:auto; padding:32px 46px 70px; background:var(--paper);}
+
+  .app-menu{position:relative; display:inline-block; margin-bottom:22px;}
+  .menu-btn{
+    display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:9px;
+    background:var(--paper-dim); border:1px solid var(--line); color:var(--ink);
+    font-family:inherit; font-size:14px; font-weight:600; cursor:pointer;
+  }
+  .menu-btn:hover{border-color:var(--accent);}
+  .menu-dropdown{
+    display:none; position:absolute; top:calc(100% + 6px); left:0; min-width:220px;
+    background:var(--white); border:1px solid var(--line); border-radius:12px;
+    box-shadow:var(--shadow); padding:6px; z-index:10;
+  }
+  .menu-dropdown.open{display:block;}
+  .menu-item{
+    display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:8px;
+    font-size:14px; font-weight:500; color:var(--ink-soft); cursor:pointer;
+  }
+  .menu-item svg.icon{color:var(--accent);}
+  .menu-item:hover{background:var(--paper-dim);}
+  .menu-item.active{color:var(--ink); font-weight:600;}
+
+  .topbar{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:28px;}
+  .crumbs{font-size:12.5px; color:var(--ink-soft);}
+  .crumbs b{color:var(--ink);}
+
+  .view{display:none; animation:rise .4s cubic-bezier(.22,1,.36,1) both;}
+  .view.active{display:block;}
+  @keyframes rise{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+
+  h2.page-title{font-family:'Fraunces',serif; font-weight:650; font-size:31px; margin:0 0 6px; text-wrap:balance;}
+  p.page-sub{color:var(--ink-soft); font-size:15px; margin:0 0 28px; max-width:64ch;}
+
+  /* ---------- Pendientes: tarjetas sucesivas ---------- */
+  .thread-label{font-size:12px; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-soft); margin:30px 0 12px 2px; font-weight:600;}
+  .thread-label:first-child{margin-top:0;}
+
+  .pend-list{list-style:none; margin:0 0 8px; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:14px;}
+  .pend-card{
+    display:flex; align-items:flex-start; gap:14px; padding:15px 18px;
+    background:var(--white); border:1px solid var(--line); border-radius:12px; box-shadow:var(--shadow);
+    animation:cardIn .45s cubic-bezier(.22,1,.36,1) both; transition:transform .15s, box-shadow .15s;
+  }
+  .pend-card:hover{transform:translateY(-3px); box-shadow:0 2px 4px rgba(23,23,23,.08), 0 14px 28px rgba(23,23,23,.1);}
+  @keyframes cardIn{from{opacity:0; transform:translateY(10px) scale(.98);} to{opacity:1; transform:translateY(0) scale(1);}}
+  .pend-list li:nth-child(1){animation-delay:.02s}
+  .pend-list li:nth-child(2){animation-delay:.06s}
+  .pend-list li:nth-child(3){animation-delay:.1s}
+  .pend-list li:nth-child(4){animation-delay:.14s}
+  .pend-list li:nth-child(5){animation-delay:.18s}
+  .pend-list li:nth-child(6){animation-delay:.22s}
+  .pend-list li:nth-child(7){animation-delay:.26s}
+  .pend-list li:nth-child(8){animation-delay:.3s}
+  .pend-list li:nth-child(9){animation-delay:.34s}
+  .pend-num{
+    flex:none; font-family:'Fraunces',serif; font-weight:650; font-size:30px; line-height:1;
+    color:var(--gray); margin-top:-2px; min-width:1.1em;
+  }
+  .pend-card:hover .pend-num{color:var(--accent);}
+  .pend-num.dot{font-size:20px; color:var(--text-light); min-width:auto;}
+  .pend-num.dot::before{content:"–";}
+  .pend-body{flex:1; min-width:0;}
+  .pend-top{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .pend-title{font-weight:600; font-size:15px; margin:0;}
+  .pend-badge{font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:.02em; flex:none;}
+  .pend-badge.falta{background:var(--gray); color:var(--ink);}
+  .pend-badge.hecho{background:var(--accent); color:var(--ink);}
+  .pend-comment{font-size:12.5px; color:var(--ink-soft); margin:4px 0 0;}
+
+  /* ---------- Timeline ---------- */
+  .timeline{border-left:2px solid var(--line); margin-left:9px; padding-left:24px;}
+  .t-item{position:relative; margin-bottom:24px; max-width:660px;}
+  .t-item::before{content:""; position:absolute; left:-30px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--paper); border:2px solid var(--accent);}
+  .t-head{display:flex; align-items:center; gap:10px; margin-bottom:4px; flex-wrap:wrap;}
+  .t-date{font-family:'Fraunces',serif; font-weight:650; font-size:15px; display:flex; align-items:center; gap:6px;}
+  .t-date svg.icon{color:var(--ink-soft);}
+  .t-body{font-size:14px; color:var(--ink-soft); line-height:1.55;}
+  .t-link{font-size:12.5px; color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:1.5px; text-underline-offset:3px; font-weight:600; display:inline-flex; align-items:center; gap:4px;}
+  .t-link:hover{text-decoration-color:var(--ink);}
+  .t-link svg.icon{color:var(--accent);}
+  .t-pending{font-size:12.5px; color:var(--ink-soft); font-weight:600;}
+
+  /* ---------- Apunte reader: WHITE, calm ---------- */
+  .apunte-panel{background:var(--paper); border-radius:18px; box-shadow:var(--shadow); padding:44px 54px 56px;}
+  .apunte-title{font-family:'Fraunces',serif; font-weight:650; font-size:34px; margin:0 0 22px; max-width:960px; text-wrap:balance;}
+  .apunte{max-width:960px; font-family:'Source Serif 4', serif; font-size:19px; line-height:1.7;}
+  .apunte .stub{border:1.5px dashed var(--line); border-radius:12px; padding:18px 20px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:var(--ink-soft); margin-bottom:22px; display:flex; gap:10px; align-items:flex-start;}
+  .apunte .stub svg.icon{color:var(--accent); margin-top:2px;}
+  .apunte h3.pre{font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:var(--ink-soft); margin:0 0 22px; font-weight:500;}
+  .apunte h3.pre a,.apunte .foot a{color:var(--ink); text-decoration:underline; text-decoration-color:var(--accent); text-decoration-thickness:1.5px; text-underline-offset:3px; font-weight:600;}
+  .apunte h3.pre a:hover,.apunte .foot a:hover{text-decoration-color:var(--ink);}
+  .apunte blockquote{margin:0 0 22px; padding:4px 0 4px 16px; border-left:3px solid var(--accent); font-size:19px; color:var(--ink);}
+  .apunte h4{font-family:'IBM Plex Sans',sans-serif; font-weight:600; font-size:17px; margin:30px 0 10px; color:var(--ink);}
+  .apunte table{border-collapse:collapse; width:100%; margin:14px 0 20px; font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-variant-numeric:tabular-nums;}
+  .apunte th,.apunte td{border:1px solid var(--line); padding:7px 11px; text-align:left;}
+  .apunte th{background:var(--paper-dim);}
+  .apunte img{max-width:100%; border-radius:10px; border:1px solid var(--line); margin:4px 0 6px; display:block;}
+  .apunte figcaption{font-family:'IBM Plex Sans',sans-serif; font-size:12px; color:var(--ink-soft); margin-bottom:20px;}
+  .apunte .recap{background:var(--paper-dim); border:1px solid var(--line); border-radius:12px; padding:17px 20px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; margin-top:28px;}
+  .apunte .recap .recap-head{display:flex; align-items:center; gap:7px; font-weight:600; margin-bottom:8px; color:var(--ink);}
+  .apunte .recap .recap-head svg.icon{color:var(--accent);}
+  .apunte .recap p{margin:0 0 6px;}
+  .apunte .recap p:last-child{margin-bottom:0;}
+  .apunte .foot{margin-top:24px; font-family:'IBM Plex Sans',sans-serif; font-size:12.5px; color:var(--ink-soft);}
+
+  /* ---------- Prácticas y Recorrido (decision_system-html.md · 2026-10-15) ---------- */
+  :root{ --done:#9db39a; /* 9º color, solo para "lograda" — ver decision_system-html.md */ }
+  .apunte ul,.apunte ol{margin:0 0 14px; padding-left:1.3em;}
+  .apunte li{margin-bottom:4px;}
+  .apunte code{font-size:.88em; background:var(--paper-dim); padding:1px 6px; border-radius:5px;}
+  .only-pub{display:none;}
+
+  .pr-chip{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; padding:3px 11px; border-radius:20px; letter-spacing:.02em; white-space:nowrap; font-family:'IBM Plex Sans',sans-serif;}
+  .pr-chip i{width:9px; height:9px; border-radius:50%; display:block; flex:none;}
+  .pr-chip.curso{color:var(--text-strong); border:1.5px solid var(--accent);}
+  .pr-chip.curso i{background:linear-gradient(90deg,var(--accent) 50%,transparent 50%); border:1.5px solid var(--accent);}
+  .apunte .p-meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:-8px 0 26px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:var(--ink-soft);}
+  .apunte .p-meta .pill{border:1px solid var(--line); border-radius:20px; padding:3px 12px; display:inline-flex; gap:6px; align-items:center;}
+  .apunte .levels{display:grid; gap:14px; margin:14px 0 22px;}
+  .apunte .level{border:1px solid var(--line); border-radius:14px; overflow:hidden; font-family:'IBM Plex Sans',sans-serif;}
+  .apunte .level-head{display:flex; align-items:center; gap:12px; padding:13px 18px; background:var(--bg); font-weight:600; font-size:16px; flex-wrap:wrap;}
+  .apunte .level-head .mins{margin-left:auto; font-family:'Fraunces',serif; font-weight:650; font-size:19px;}
+  .apunte .level-head .sub{font-weight:400; font-size:13px; color:var(--ink-soft);}
+  .bars{display:inline-flex; align-items:flex-end; gap:3px; height:18px;}
+  .bars b{width:5px; border-radius:2px; background:var(--gray);}
+  .bars b:nth-child(1){height:7px} .bars b:nth-child(2){height:12px} .bars b:nth-child(3){height:18px}
+  .bars.l1 b:nth-child(1), .bars.l2 b:nth-child(-n+2), .bars.l3 b{background:var(--black);}
+  .apunte .level-body{padding:4px 18px 6px; background:var(--white); font-size:16px; line-height:1.55;}
+  .apunte .level-body p.inc{font-size:13px; color:var(--ink-soft); margin:12px 0 0; font-family:'IBM Plex Sans',sans-serif;}
+  .apunte .level-body table{margin:10px 0 12px;}
+
+  .practica-link{display:flex; align-items:center; gap:18px; margin-top:22px; padding:18px 22px; border:1.5px solid var(--black); border-radius:14px; background:var(--white); color:var(--ink) !important; font-family:'IBM Plex Sans',sans-serif; text-decoration:none !important; width:100%; transition:background .2s, color .2s, transform .2s cubic-bezier(.22,1,.36,1);}
+  .practica-link:hover{background:var(--black); color:#fff !important; transform:translateY(-2px);}
+  .practica-link:hover .pl-meta{color:var(--text-light);}
+  .practica-link:hover .pl-ico{background:var(--accent); color:var(--black);}
+  .pl-ico{width:46px; height:46px; border-radius:12px; background:var(--bg); display:grid; place-items:center; color:var(--black); transition:background .2s; flex:none;}
+  .pl-ico svg.icon{width:24px; height:24px;}
+  .pl-body{flex:1; min-width:0;}
+  .pl-label{font-size:13px; font-weight:600; color:var(--accent); margin-bottom:2px;}
+  .pl-title{font-family:'Fraunces',serif; font-weight:650; font-size:21px; line-height:1.25;}
+  .pl-meta{font-size:13px; color:var(--ink-soft); margin-top:3px; transition:color .2s; font-weight:400;}
+  .pl-arrow svg.icon{width:24px; height:24px;}
+  .practica-links{margin-top:34px;}
+  .practica-links + .foot{margin-top:18px;}
+
+  /* barra lateral: la práctica cuelga de su apunte */
+  .nav-child{margin-left:27px !important; font-size:14px; padding:6px 10px; position:relative;}
+  .nav-child::before{content:""; position:absolute; left:-12px; top:-4px; width:10px; height:17px; border-left:1.5px solid var(--sb-tile-line); border-bottom:1.5px solid var(--sb-tile-line); border-bottom-left-radius:6px;}
+  .nav-child svg.icon{margin-top:1px !important;}
+
+  /* Recorrido */
+  .rc-head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap;}
+  .rc-tools{display:flex; gap:8px; margin-top:4px;}
+  .rc-btn{border:1px solid var(--line); background:var(--bg); padding:8px 15px; border-radius:9px; font-size:13.5px; font-weight:600; cursor:pointer; font-family:inherit; color:var(--ink);}
+  .rc-btn:hover{border-color:var(--accent);}
+  .rc-legend{display:flex; flex-wrap:wrap; gap:10px 24px; align-items:center; font-size:12.5px; color:var(--ink-soft); padding:12px 16px; background:var(--bg); border-radius:12px; margin-bottom:30px;}
+  .rc-legend > span{display:inline-flex; align-items:center; gap:8px;}
+  .rc-sw{width:14px; height:14px; border-radius:4px; display:inline-block;}
+  .rc-wrap{position:relative; padding:6px 4px 20px;}
+  .rc-map{position:relative; display:inline-block; min-width:100%;}
+  svg.rc-wires{position:absolute; inset:0; pointer-events:none; overflow:visible;}
+  svg.rc-wires path{fill:none; stroke:var(--gray); stroke-width:1.6;}
+  svg.rc-wires path.hot{stroke:var(--accent);}
+  .rc-branch{display:flex; align-items:center;}
+  .rc-kids{display:flex; flex-direction:column; gap:12px; margin-left:64px; padding:6px 0;}
+  .rc-kids[hidden]{display:none;}
+  .rc-root{font-family:'Fraunces',serif; font-weight:650; font-size:22px; padding:14px 22px; border-radius:16px; background:var(--black); color:#fff; display:flex; align-items:center; gap:10px; white-space:nowrap;}
+  .rc-mod{display:flex; align-items:center; gap:12px; padding:11px 14px 11px 16px; border-radius:14px; border:1.5px solid var(--line); background:var(--white); cursor:pointer; min-width:340px; text-align:left; box-shadow:var(--shadow); font-family:inherit; color:var(--ink); transition:border-color .2s, transform .2s cubic-bezier(.22,1,.36,1);}
+  .rc-mod:hover{border-color:var(--accent); transform:translateX(2px);}
+  .rc-mod .num{font-family:'Fraunces',serif; font-weight:650; font-size:20px; color:var(--text-strong); min-width:34px;}
+  .rc-mod .name{font-weight:600; font-size:15px; line-height:1.3;}
+  .rc-mod .prog{display:flex; gap:3px; margin-top:6px;}
+  .rc-mod .prog i{width:16px; height:5px; border-radius:3px; background:var(--gray);}
+  .rc-mod .prog i.done{background:var(--done);}
+  .rc-mod .cnt{font-size:12px; color:var(--ink-soft); margin-left:auto; white-space:nowrap; padding-left:10px; font-variant-numeric:tabular-nums;}
+  .rc-mod .chev,.rc-sub .chev{transition:transform .25s cubic-bezier(.22,1,.36,1);}
+  .rc-mod[aria-expanded="true"] .chev,.rc-sub[aria-expanded="true"] .chev{transform:rotate(90deg);}
+  .rc-mod[aria-expanded="true"]{border-color:var(--black);}
+  .rc-mod.idle{background:var(--bg); box-shadow:none; cursor:default; border-style:dashed;}
+  .rc-mod.idle:hover{transform:none; border-color:var(--line);}
+  .rc-mod.idle .name,.rc-mod.idle .num{color:var(--text-mid);}
+  .rc-topic{width:360px; padding:12px 15px 13px; border-radius:12px; background:var(--white); border:1px solid var(--line); box-shadow:var(--shadow); text-align:left; transition:transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s;}
+  .rc-topic.open-able{cursor:pointer;}
+  .rc-topic:hover{transform:translateY(-2px); box-shadow:0 2px 4px rgba(23,23,23,.08),0 14px 28px rgba(23,23,23,.1);}
+  .rc-topic .row{display:flex; align-items:baseline; gap:10px;}
+  .rc-topic .t{font-weight:600; font-size:15px; line-height:1.3; flex:1;}
+  .rc-topic .orig{font-size:11.5px; color:var(--ink-soft); white-space:nowrap; font-weight:500;}
+  .rc-topic.esc{border-style:dashed; border-color:var(--text-light); box-shadow:none;}
+  .rc-topic.done{background:var(--done); border-color:var(--done);}
+  .rc-topic.done .orig{color:var(--black);}
+  .rc-done{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; margin-top:9px; color:var(--black);}
+  .rc-sub{display:inline-flex; align-items:center; gap:6px; margin-top:10px; font-size:12.5px; font-weight:600; color:var(--text-strong); background:var(--bg); border:0; border-radius:20px; padding:4px 11px; cursor:pointer; font-family:inherit;}
+  .rc-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:10px;}
+  .rc-tag{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; padding:3px 10px 3px 8px; border-radius:20px; white-space:nowrap; border:1.5px solid; background:var(--white); font-family:'IBM Plex Sans',sans-serif; color:inherit;}
+  .rc-tag svg.icon{width:13px; height:13px; stroke-width:2;}
+  .rc-tag .k{font-weight:600; opacity:.85;}
+  .rc-tag.ap{border-color:var(--accent); color:var(--text-strong);}
+  .rc-tag.ap.ok{background:var(--accent); color:var(--black);}
+  .rc-tag.pr{border-color:var(--black); color:var(--black);}
+  .rc-tag.pr.curso{box-shadow:inset 0 -2px 0 var(--black);}
+  .rc-tag.pr.ok{background:var(--black); color:#fff;}
+  .rc-tag.falta{border-style:dashed;}
+  button.rc-tag{cursor:pointer;}
+  .rc-kids.anim > *{animation:rcPop .35s cubic-bezier(.22,1,.36,1) both;}
+  @keyframes rcPop{from{opacity:0; transform:translateX(-8px);} to{opacity:1; transform:none;}}
+</style>
+<meta name="robots" content="noindex">
+<style>.app-menu,#view-recorrido,#view-clase-timeline{display:none!important}.only-personal{display:none!important}.only-pub{display:block}</style>
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-stairs" viewBox="0 0 24 24"><polyline points="3 21 3 15 9 15 9 9 15 9 15 3 21 3"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-pick" viewBox="0 0 24 24"><path d="M12 2C8 2 5 6 5 10c0 5 4 9 7 12 3-3 7-7 7-12 0-4-3-8-7-8z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+  <symbol id="i-ejer" viewBox="0 0 24 24"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 9l1.6 1.6L12.6 7.6M8 15.5h8"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="8" rx="1.5"/><path d="M6 17v4h12v-4"/></symbol>
+</svg>
+
+<aside class="sidebar">
+  <div class="brand"><h1>Okaeri</h1><span>mapa del sistema</span></div>
+
+  <div class="carril-toggle" id="carrilToggle" data-carril="guitarra" role="switch" tabindex="0" aria-checked="false" aria-label="Carril: Guitarra. Activar para cambiar.">
+    <span class="ct-label left"><svg class="icon"><use href="#i-pick"/></svg>Guitarra</span>
+    <span class="ct-track"><span class="ct-knob"></span></span>
+    <span class="ct-label right">Canto<svg class="icon"><use href="#i-mic"/></svg></span>
+  </div>
+
+  <div class="search"><svg class="icon"><use href="#i-search"/></svg><input id="searchInput" type="text" placeholder="Buscar un apunte…"></div>
+
+  <div class="tree" id="tree"></div>
+</aside>
+
+<main class="main">
+
+  <div class="app-menu">
+    <button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false"><svg class="icon"><use href="#i-list"/></svg>Ver</button>
+    <div class="menu-dropdown" id="menuDropdown" role="menu">
+      <div class="menu-item" data-view="recorrido" role="menuitem" tabindex="0"><svg class="icon"><use href="#i-route"/></svg>Recorrido</div>
+      <div class="menu-item" data-view="clase-timeline" role="menuitem" tabindex="0"><svg class="icon"><use href="#i-calendar"/></svg>Clases en orden</div>
+    </div>
+  </div>
+
+  <!-- ===================== VISTA: RECORRIDO (reemplaza a Pendientes, 2026-10-15) ===================== -->
+  <section class="view active" id="view-recorrido">
+    <div class="rc-head">
+      <div>
+        <h2 class="page-title">Recorrido</h2>
+        <p class="page-sub">Lo que viste en clase y lo que la escalera propone para entenderlo. Toca un módulo para abrir sus temas.</p>
+      </div>
+      <div class="rc-tools"><button class="rc-btn" id="rcAbrir">Abrir todo</button><button class="rc-btn" id="rcCerrar">Cerrar todo</button></div>
+    </div>
+    <div class="rc-legend">
+      <span><i class="rc-sw" style="background:var(--done)"></i>Lograda: pasó su evaluación (✓ en el temario)</span>
+      <span><i class="rc-sw" style="background:var(--white);border:1px solid var(--line)"></i>Vista en clase</span>
+      <span><i class="rc-sw" style="background:var(--white);border:1.5px dashed var(--text-light)"></i>Propuesta por la escalera</span>
+      <span><span class="rc-tag ap ok"><svg class="icon"><use href="#i-doc"/></svg><span class="k">Apunte</span></span> <span class="rc-tag pr ok"><svg class="icon"><use href="#i-ejer"/></svg><span class="k">Práctica</span></span> punteado = falta · sólido = en curso · relleno = listo</span>
+    </div>
+    <div class="rc-wrap"><div class="rc-map" id="rcMap"><svg class="rc-wires" id="rcWires"></svg><div id="rcTree"></div></div></div>
+  </section>
+
+  <!-- ===================== VISTA: TIMELINE ===================== -->
+  <section class="view" id="view-clase-timeline">
+    <div class="topbar"><div class="crumbs">Okaeri › <b>Clases en orden</b></div></div>
+    <h2 class="page-title">Lo que pasó, clase a clase</h2>
+    <p class="page-sub">La misma fuente que <code>practica/00_indice.md</code>, en orden cronológico.</p>
+    <div class="timeline" id="tl-standalone"></div>
+  </section>
+
+  <!-- ===================== VISTA: APUNTE (blanco, calmo) ===================== -->
+  <section class="view" id="view-apunte">
+    <div class="apunte-panel">
+      <h2 class="apunte-title" id="apunte-title"></h2>
+      <article class="apunte" id="apunte-body"></article>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* ---------- datos ---------- */
+const gruposGuitarra = {"c1":"Clase 1 · 01-sep", "c2":"Clase 2 · 08-sep", "c3":"Clase 3 · 15-sep"};
+const gruposCanto = {"c1":"Clase 1 · 03-sep", "c4":"Clase 4 · 24-sep", "c5":"Clase 5 · 01-oct", "c6":"Clase 6 · 08-oct"};
+
+const apuntesGuitarra = [
+  {grupo:"c1", t:"Las notas y las 6 cuerdas", key:"g-notas-cuerdas", path:"fundamentos/guitarra/clase01/clase01_notas-y-cuerdas.md", conectado:true},
+  {grupo:"c1", t:"La tablatura (TAB): cómo se lee", key:"g-tablatura", path:"fundamentos/guitarra/clase01/clase01_tablatura.md", conectado:true},
+  {grupo:"c1", t:"Los dedos de la mano izquierda", key:"g-dedos-izq", path:"fundamentos/guitarra/clase01/clase01_dedos-mano-izquierda.md", conectado:true},
+  {grupo:"c1", t:"Ritmo básico: pulso, figuras y el compás de 4/4", key:"g-ritmo-basico", path:"fundamentos/guitarra/clase01/clase01_ritmo-basico.md", conectado:true},
+  {grupo:"c2", t:"El acorde, y mayor vs. menor", key:"g-el-acorde", path:"fundamentos/guitarra/clase02/clase02_el-acorde.md", conectado:true},
+  {grupo:"c2", t:"El diagrama de acorde", key:"g-diagramas", path:"fundamentos/guitarra/clase02/clase02_diagramas-de-acorde.md", conectado:true},
+  {grupo:"c2", t:"Los 8 acordes abiertos del arranque", key:"g-8-acordes", path:"fundamentos/guitarra/clase02/clase02_los-8-acordes.md", conectado:true},
+  {grupo:"c3", t:"La corchea: media negra", key:"g-corchea", path:"fundamentos/guitarra/clase03/clase03_la-corchea.md", conectado:true},
+  {grupo:"c3", t:"La pentatónica de La menor: tu primera escala", key:"g-pentatonica", path:"fundamentos/guitarra/clase03/clase03_la-pentatonica.md", conectado:true},
+];
+const apuntesCanto = [
+  {grupo:"c1", t:"Respirar para cantar: diafragma, costados, presión", key:"c-respiracion", path:"fundamentos/canto/clase01/clase01_respiracion.md", conectado:true},
+  {grupo:"c4", t:"El pulso, el metrónomo y el compás de 4/4", key:"c-pulso-compas", path:"fundamentos/canto/clase04/clase04_pulso-y-compas.md", conectado:true},
+  {grupo:"c4", t:"Las figuras rítmicas: redonda, blanca y negra", key:"c-figuras", path:"fundamentos/canto/clase04/clase04_figuras.md", conectado:true},
+  {grupo:"c4", t:"La corchea y la cuenta «1 y 2 y»", key:"c-corchea", path:"fundamentos/canto/clase04/clase04_corchea.md", conectado:true},
+  {grupo:"c4", t:"Los silencios", key:"c-silencios", path:"fundamentos/canto/clase04/clase04_silencios.md", conectado:true},
+  {grupo:"c5", t:"Las notas y las octavas", key:"c-notas-octavas", path:"fundamentos/canto/clase05/clase05_notas-y-octavas.md", conectado:true},
+  {grupo:"c5", t:"El semitono", key:"c-semitono", path:"fundamentos/canto/clase05/clase05_semitono.md", conectado:true},
+  {grupo:"c5", t:"Afinación: cantar la altura que oyes", key:"c-afinacion", path:"fundamentos/canto/clase05/clase05_afinacion.md", conectado:true},
+  {grupo:"c5", t:"Tesitura, rango y tipos de voz", key:"c-tesitura-rango", path:"fundamentos/canto/clase05/clase05_tesitura-y-rango.md", conectado:true},
+  {grupo:"c5", t:"Registro de voz: pecho, cabeza y el quiebre", key:"c-registro", path:"fundamentos/canto/clase05/clase05_registro-de-voz.md", conectado:true},
+  {grupo:"c5", t:"Resonancia: dónde suena la voz", key:"c-resonancia", path:"fundamentos/canto/clase05/clase05_resonancia.md", conectado:true},
+  {grupo:"c5", t:"Las vocales y la gesticulación", key:"c-vocales", path:"fundamentos/canto/clase05/clase05_vocales-y-gesticulacion.md", conectado:true},
+  {grupo:"c5", t:"Articulación: que se entienda lo que cantas", key:"c-articulacion", path:"fundamentos/canto/clase05/clase05_articulacion.md", conectado:true},
+  {grupo:"c5", t:"Vocalización: ejercicios para preparar la voz", key:"c-vocalizacion", path:"fundamentos/canto/clase05/clase05_vocalizacion.md", conectado:true},
+  {grupo:"c6", t:"La semicorchea y la cuenta «1 e y a»", key:"c-semicorchea", path:"fundamentos/canto/clase06/clase06_semicorchea.md", conectado:true},
+  {grupo:"c6", t:"El contratiempo: cantar en la «y»", key:"c-contratiempo", path:"fundamentos/canto/clase06/clase06_contratiempo.md", conectado:true}
+];
+
+const clasesGuitarra = [
+  {n:1, f:"2026-09-01", q:"Notas y cuerdas · cifrado · TAB · dedos 1-4 · figuras rítmicas, 4/4, metrónomo.", apunte:true},
+  {n:2, f:"2026-09-08", q:"Diagramas de acorde · los 8 acordes abiertos · 4 progresiones · técnica de cambio.", apunte:true},
+  {n:3, f:"2026-09-15", q:"La corchea · lectura rítmica con metrónomo · pentatónica de La menor, posición 1.", apunte:true},
+  {n:4, f:"2026-09-22", q:"Más cajas de la pentatónica de La menor (trastes 2-5 y 7-10).", apunte:false},
+  {n:5, f:"2026-09-29", q:"Evaluación general de lo anterior · arpegio: p-i-m-a, corrección de dedos pegados a la cuerda.", apunte:false},
+  {n:6, f:"2026-10-06", q:"No asistió.", apunte:null},
+  {n:7, f:"2026-10-13", q:"Más ejercicios de arpegio, sin concepto teórico nuevo.", apunte:false},
+];
+const clasesCanto = [
+  {n:1, f:"2026-09-03", q:"Respiración costo-diafragmática · papel en la pared · trino de labios.", apunte:true},
+  {n:2, f:"2026-09-10", q:"Apps recomendadas · elegir el repertorio de la clase.", apunte:true},
+  {n:3, f:"2026-09-17", q:"No se recuerda con precisión — el reporte se perdió.", apunte:null},
+  {n:4, f:"2026-09-24", q:"Figuras musicales y sus silencios, con cronómetro.", apunte:true},
+  {n:5, f:"2026-10-01", q:"Articular, gesticular, vocalización · tesitura · rangos vocales · resonancia.", apunte:true},
+  {n:6, f:"2026-10-08", q:"Figuras y silencios otra vez, más a fondo · contratiempos · subdivisión.", apunte:true},
+];
+
+let carrilActual = "guitarra";
+
+/* ---------- prácticas: contenido real, leído de cada .md (archivos clase*_practica_*.md) ---------- */
+const practicasData = {"p-g-1234":{"titulo":"Práctica — El 1-2-3-4: independencia de dedos y pisada limpia","tituloCorto":"El 1-2-3-4: independencia de dedos y pisada limpia","apuntes":["g-dedos-izq","g-tablatura"],"carril":"guitarra","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>5 · 12 · 20 min</span><span class=\"pill\">clase01 (2026-09-01) — ejercicio del profesor</span></div>\n<blockquote><b>Con la guitarra en la mano, afinada.</b> Es la tarea del profesor de la clase 1. Se enseña en casi toda escuela porque separa los dedos que la mano mueve juntos.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p>Dos cosas, y las vas a poder comprobar:</p>\n<ol><li><b>Que cada dedo se mueva solo.</b> Hoy tu anular y tu meñique tienden a moverse juntos: si levantas uno, el otro lo sigue. Este ejercicio los separa. <b>Lo notarás</b> en unas semanas, cuando armes acordes y los dedos caigan cada uno en su sitio sin recolocarlos uno por uno.</li><li><b>Que cada nota salga limpia</b>, no ahogada ni zumbando. <b>Lo notarás</b> dentro del mismo ejercicio: cada día habrá menos notas \"sucias\" por vuelta.</li></ol>\n<p>El criterio es el <b>sonido limpio</b>, no la velocidad, que llega sola después.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/guitarra/clase01/img/clase01-tab-1234.png\" alt=\"TAB del ejercicio 1-2-3-4: trastes 1 a 4 en cada cuerda, empezando por la 6ª, con la leyenda de qué dedo usa cada traste.\"><figcaption>Cada número es el traste. Un dedo por traste: 1-índice, 2-medio, 3-anular, 4-meñique.</figcaption></figure>\n<h4>Cómo se hace (referencia) — las 4 versiones</h4>\n<ol><li><b>V1 — subiendo:</b> en la 6ª cuerda pisa y toca traste 1, 2, 3, 4 (un dedo por traste, una nota a la vez). Pasa a la 5ª, igual. Sigue hasta la 1ª y regresa bajando hasta la 6ª: eso es <b>1 ciclo</b>.</li><li><b>V2 — al revés:</b> lo mismo pero <b>4-3-2-1</b> en cada cuerda.</li><li><b>V3 — dedos que se quedan:</b> al pisar el 2, el 1 no se levanta; acumulas 1 → 1-2 → 1-2-3 → 1-2-3-4. Luego bajando con 4-3-2-1. <i>(Es la más valiosa y la más incómoda.)</i></li><li><b>V4 — moviéndose:</b> V1 corriendo la posición: trastes 1-2-3-4 → 2-3-4-5 → hasta 4-5-6-7, y de vuelta.</li></ol>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras</b>, sin culpa y sin \"una más\". Cada nivel incluye al anterior.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">5 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>V1, lenta</td><td>1 ciclo completo (~2 min)</td></tr><tr><td>V2</td><td>1 ciclo (~2 min)</td></tr><tr><td>Presión mínima (ver Afinación 1)</td><td>3 notas en una cuerda (~1 min)</td></tr></table>\n<p>Sin metrónomo. Nada más.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">12 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td><b>V3 (dedos que se quedan)</b></td><td>2 ciclos (~5 min)</td></tr><tr><td>V1 otra vez, vigilando <b>dedos cerca</b> (ver Afinación 2)</td><td>1 ciclo (~2 min)</td></tr></table>\n<p>Sin metrónomo todavía.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">20 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>V4 (moviendo posición)</td><td>1 pasada, ida y vuelta (~4 min)</td></tr><tr><td><b>Metrónomo 60: V1, una nota por clic</b></td><td>~4 min</td></tr></table>\n<p><b>La regla del metrónomo:</b> entra solo en la versión que ya te sale limpia sin él (por ahora, la V1). El día que la V1 con metrónomo salga cuadrada, el metrónomo pasa a la V2, y así una por una. Nunca metrónomo sobre una versión que aún suena sucia.</p></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<ul><li>Cada nota <b>limpia y entera</b> — sin zumbidos, sin sonar ahogada.</li><li><b>Parejas</b>: la del dedo 4 suena igual de fuerte que la del dedo 1 (el meñique tiende a sonar más débil).</li><li>A un ritmo <b>constante</b>, aunque sea lento. Lento y parejo gana a rápido y a tropezones.</li></ul>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Suena así</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>Zumba / vibra feo</b></td><td>Estás pisando lejos del traste o con poca punta</td><td>Pisa <b>justo detrás de la barrita</b> del traste (no encima, no lejos) y con la <b>punta</b> del dedo</td></tr><tr><td><b>Se ahoga / no suena</b></td><td>Un dedo vecino está rozando esa cuerda</td><td>Arquea más los dedos para que cada uno caiga de punta, como un martillito, sin tocar a los vecinos</td></tr><tr><td><b>Se acelera y ensucia</b></td><td>El cuerpo quiere \"terminar rápido\"</td><td>El objetivo es limpio, no rápido: baja la velocidad hasta que TODAS suenen, y quédate ahí</td></tr></table>\n<h4>Afinación del instructor</h4>\n<ol><li><b>Presión mínima.</b> Pisa una nota y afloja el dedo hasta que empiece a zumbar; después aprieta apenas lo justo para que vuelva a sonar limpia. Esa es la presión de trabajo. Apretar de más cansa la mano y hace más lentos los cambios.</li><li><b>Dedos cerca.</b> Los dedos que no están pisando se quedan a 1-2 cm de las cuerdas, sin levantarse lejos. Menos distancia = llegan antes a su traste.</li></ol>\n<h4>Qué sigue</h4>\n<p>Los acordes de M1 (<a href=\"#\" data-key=\"g-8-acordes\">los 8 acordes</a>) y el cambio de acorde de M2: los dedos que ya se mueven solos son los que caen juntos al formar un acorde.</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Tarea de la clase 1. No se \"aprueba\": queda como <b>calentamiento de la mano izquierda</b> (el nivel , 5 min) antes de cada sesión de guitarra. <b>Como ejercicio está lista</b> cuando la V3 sale limpia dos ciclos seguidos.</p></div>\n<div class=\"only-pub\"><h4>Cuándo ya está</h4><p><b>Como ejercicio está lista</b> cuando la V3 sale limpia dos ciclos seguidos.</p></div>\n"},"p-g-ritmo":{"titulo":"Práctica — Figuras con metrónomo","tituloCorto":"Figuras con metrónomo","apuntes":["g-ritmo-basico"],"carril":"guitarra","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>5 · 10 · 15 min</span><span class=\"pill\">clase01 (2026-09-01) — ejercicio del profesor</span></div>\n<blockquote><b>Con la guitarra afinada y el metrónomo en 60.</b> Es la segunda tarea de la clase 1.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p><b>Llevar el pulso por dentro, sin depender de la app.</b> Es la habilidad de tocar cada nota en el momento correcto, además de tocar la nota correcta. En Yousician la pista marcaba el ritmo por ti y por eso no quedaba nada; aquí el pulso lo llevas tú.</p>\n<p><b>Lo vas a notar</b> el día que apagues el metrónomo, sigas tocando, lo vuelvas a encender y sigas cuadrado con él.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/guitarra/clase01/img/clase01-figuras-compas.png\" alt=\"Las tres figuras con sus duraciones, y dos compases de 4/4 llenados como ejemplo.\"><figcaption>Esto es lo que vas a tocar: cajas de 4 tiempos llenadas con negras, blancas y redondas.</figcaption></figure>\n<h4>Cómo se hace cada paso (referencia)</h4>\n<p>Siempre: metrónomo en <b>60</b>, una sola cuerda al aire (la 6ª, bien grave, porque el ejercicio es de tiempo y no de dedos), y <b>contando en voz alta: 1-2-3-4</b>.</p>\n<ul><li><b>Negras:</b> una nota por clic — cada número con su nota.</li><li><b>Blancas:</b> tocas en el <b>1</b> y en el <b>3</b>; en el 2 y el 4 la nota <b>sigue sonando</b> (la sostienes, no la cortas).</li><li><b>Redondas:</b> tocas solo en el <b>1</b> y dejas sonar los 4 tiempos.</li></ul>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras.</b> Cada nivel incluye al anterior. Aquí el metrónomo va <b>siempre</b>, porque en esta práctica el metrónomo es el ejercicio.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">5 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Negras</td><td>~2 min de cajas seguidas</td></tr><tr><td>Blancas</td><td>~1.5 min</td></tr><tr><td>Redondas</td><td>~1.5 min</td></tr></table></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">10 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td><b>La mezcla, sin parar entre cajas:</b> 2 cajas de negras → 2 de blancas → 1 redonda, en bucle</td><td>~3 min</td></tr><tr><td>La araña V1 con metrónomo, una nota por clic (aquí se juntan tus dos tareas)</td><td>~2 min</td></tr></table></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">15 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td><b>El test del reloj:</b> en plenas negras, apaga el metrónomo, sigue tocando y contando 2 cajas, préndelo de nuevo y revisa si sigues cuadrado con el clic.</td><td>~3 min</td></tr><tr><td>Sube a <b>70</b> y repite las negras</td><td>~2 min</td></tr></table>\n<p>El test del reloj es la meta de toda esta práctica: el día que lo pases seguido, el reloj ya es tuyo.</p></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<p>Tu nota y el clic suenan tan juntos que parecen un solo sonido. Si escuchas \"clic-nota\" como dos cosas separadas, vas tarde (o temprano).</p>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Pasa esto</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>Te adelantas al clic</b></td><td>Ansiedad de \"ya sé lo que viene\"</td><td>No anticipes: <b>espera</b> oírlo. Contar en voz alta y fuerte te ancla</td></tr><tr><td><b>Te pierdes en la cuenta</b></td><td>Vas más rápido de lo que tu cabeza procesa</td><td>Baja a 50 y practica en un tempo donde sí puedes ir cuadrado</td></tr><tr><td><b>Te tensas</b> (hombros, mandíbula)</td><td>Concentración convertida en rigidez</td><td>Suelta hombros entre caja y caja. El pulso sale mejor con el cuerpo relajado</td></tr></table>\n<h4>Afinación del instructor</h4>\n<p>Una sola: haz el paso 1 <b>también sin guitarra</b> en cualquier momento del día — palmas con el metrónomo del celular, 60 bpm, contando en voz alta. Dos minutos en el bus valen. El reloj interno se entrena a todas horas, no solo con el instrumento.</p>\n<h4>Qué sigue</h4>\n<p>El rasgueo de M3 en el temario: de 3.3 (rasgueo hacia abajo) a 3.6 (rasguear sin parar mientras cambias de acorde), sobre este mismo pulso.</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Fue la tarea de la clase 1 y no se \"aprueba\": se incorpora. Contar en voz alta acompaña toda práctica con ritmo hasta que el conteo salga solo, por dentro. <b>Está lista</b> cuando pasas el test del reloj (nivel ) tres días seguidos.</p></div>\n<div class=\"only-pub\"><h4>Cuándo ya está</h4><p><b>Está lista</b> cuando pasas el test del reloj (nivel ) tres días seguidos.</p></div>\n"},"p-g-progresiones":{"titulo":"Práctica — Las 4 progresiones: el cambio de acorde","tituloCorto":"Las 4 progresiones: el cambio de acorde","apuntes":["g-8-acordes","g-el-acorde"],"carril":"guitarra","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>6 · 14 · 20 min</span><span class=\"pill\">clase02 (2026-09-08) — ejercicio del profesor</span></div>\n<blockquote><b>Con la guitarra afinada.</b> Es la tarea de la clase 2. Una <b>progresión</b> es una secuencia de acordes que se repite en bucle. Las canciones están hechas de progresiones, así que estas cuatro entrenan los mismos cambios que vas a usar en tu repertorio.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p><b>La velocidad y limpieza del cambio de acorde</b>, no de los acordes sueltos sino del paso de uno a otro, que es donde los principiantes se atascan y la canción pierde el pulso. Concretamente: mover la menor cantidad de dedos (anclas), no despegar toda la mano, y que los dedos del acorde caigan todos a la vez.</p>\n<p><b>Lo vas a notar</b> cuando el cambio deje de hacer \"hueco\" en tu conteo: hoy entre acorde y acorde hay un silencio de búsqueda; en unas semanas el siguiente acorde cae en su tiempo, sin detener el conteo.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/guitarra/clase02/img/clase02-progresiones.png\" alt=\"Las 4 progresiones en compases de 4/4; las cajas partidas indican dos acordes en un mismo compás.\"><figcaption>Cada caja es un compás. Caja partida: el cambio cae en el tiempo 3.</figcaption></figure>\n<h4>Cómo se hace (referencia)</h4>\n<ul><li><b>Una vuelta</b> = la progresión completa, de inicio a fin, y regresas al primer acorde.</li><li><b>Modo A — un rasgueo por compás:</b> rasgueo hacia abajo en el \"1\", sostienes 2-3-4 mientras preparas el cambio. En caja partida: rasgueo en el 1 y en el 3.</li><li><b>Modo B — un rasgueo por tiempo:</b> cuatro rasgueos abajo por compás, contando en voz alta. En caja partida: dos y dos.</li><li><b>Antes de tocar una progresión: busca el ancla de cada cambio</b> (tabla en <a href=\"#\" data-key=\"g-8-acordes\">los 8 acordes</a>). Es la mitad del ejercicio.</li><li><b>Los 4 niveles de velocidad:</b> ① sin metrónomo → ② 60 BPM → ③ 70 → ④ 80. Cada progresión está en un nivel y avanza por su cuenta (la P4 puede ir en 60 mientras la P2 sigue sin metrónomo). Una progresión pasa al siguiente nivel cuando da <b>2 vueltas seguidas limpias, sin frenar en ningún cambio</b>, en su nivel actual. Nunca se salta un nivel. Marca aquí dónde va cada una:</li></ul>\n<table><tr><th>Progresión</th><th>① Sin metrónomo</th><th>② 60</th><th>③ 70</th><th>④ 80</th></tr><tr><td>P1</td><td></td><td></td><td></td><td></td></tr><tr><td>P2</td><td></td><td></td><td></td><td></td></tr><tr><td>P3</td><td></td><td></td><td></td><td></td></tr><tr><td>P4</td><td></td><td></td><td></td><td></td></tr></table>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras.</b> Cada nivel incluye al anterior.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">6 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>P4 (A-D-E-A), modo A</td><td>3 vueltas (~2 min)</td></tr><tr><td>P1, modo A</td><td>2 vueltas (~3 min)</td></tr><tr><td>Cambios fantasma del par que más te trabó (ver Afinación del instructor)</td><td>5 saltos (~1 min)</td></tr></table>\n<p>Sin metrónomo.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">14 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>P2, modo A</td><td>2 vueltas (~2.5 min)</td></tr><tr><td>P3, modo A</td><td>2 vueltas (~2.5 min)</td></tr><tr><td><b>P1, modo B, metrónomo 60</b></td><td>3 vueltas (~3 min)</td></tr></table></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">20 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>P2, P3 y P4 en modo B a 60</td><td>1 vuelta c/u (~4 min)</td></tr><tr><td>La progresión que ya dio 2 vueltas limpias a 60 → <b>súbela a 70</b> (y a 80 solo desde 70 limpio)</td><td>~2 min</td></tr></table></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<ul><li>El siguiente acorde cae en su tiempo y el conteo no se detiene a esperarte.</li><li>Cada acorde cae de una (los dedos aterrizan juntos), no dedo por dedo.</li><li>En caja partida, el segundo acorde entra justo en el \"3\".</li></ul>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Pasa esto</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>Hueco largo en un cambio</b></td><td>Ese par específico no está automatizado</td><td>Aísla solo ese par y hazlo 5 veces seguido; no repitas toda la vuelta, porque eso practica una y otra vez lo que ya sale</td></tr><tr><td><b>Levantas toda la mano al cambiar</b></td><td>No buscaste el ancla</td><td>Antes de tocar, di en voz alta qué dedo(s) se quedan en ese cambio. Si hay ancla, que no se despegue</td></tr><tr><td><b>El acorde cae sucio, dedo por dedo</b></td><td>Estás armando la forma en el aire</td><td>Piensa la forma completa antes de saltar y baja los dedos todos a la vez</td></tr></table>\n<h4>Afinación del instructor</h4>\n<p><b>Cambio fantasma</b> (el del nivel ): el cambio de acorde sin rasguear. Formas el primer acorde, levantas los dedos apenas, sin despegar la mano del mástil, y aterrizas el segundo con todos los dedos a la vez; luego vuelves al primero. Ida y vuelta = 1 salto. Entrena solo la mano izquierda, que es donde está el hueco, sin gastar tiempo en el rasgueo.</p>\n<h4>Qué sigue</h4>\n<p>M2 del temario, el cambio de acorde: dedos ancla (2.2) y cambiar sin mirar la mano (2.3). Y la tarea que deje la clase 3.</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Tarea de la clase 2, hasta la clase 3 (martes 15-sep). Después sigue como práctica del cambio de acorde (M2). <b>Una progresión está lista</b> cuando da 2 vueltas limpias a 80 BPM en modo B; la tabla de niveles de velocidad lleva la cuenta.</p></div>\n<div class=\"only-pub\"><h4>Cuándo ya está</h4><p><b>Una progresión está lista</b> cuando da 2 vueltas limpias a 80 BPM en modo B; la tabla de niveles de velocidad lleva la cuenta.</p></div>\n"},"p-g-lectura":{"titulo":"Práctica — Lectura rítmica con corcheas","tituloCorto":"Lectura rítmica con corcheas","apuntes":["g-corchea"],"carril":"guitarra","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>5 · 10 · 15 min</span><span class=\"pill\">clase03 (2026-09-15) — ejercicio del profesor</span></div>\n<blockquote><b>Con la guitarra afinada y el metrónomo en 60.</b> Es la tarea de la clase 3: el profesor dibuja compases con figuras y tú los tocas a tiempo. Aquí tienes ocho, del mismo tipo, ordenados de menos a más.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p><b>Leer un ritmo escrito y tocarlo a tiempo, con el pulso partido en dos.</b> Es el paso que sigue a Figuras con metrónomo: allá cada figura duraba tiempos enteros; aquí entra la corchea y tu mano tiene que caer también <i>entre</i> los clics. <b>Lo vas a notar</b> cuando un compás nuevo del profesor te salga a la primera, sin descifrarlo nota por nota, y cuando el rasgueo abajo-arriba llegue, la «y» ya estará en tu mano.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/guitarra/clase03/img/clase03-ejercicios-ritmicos.png\" alt=\"Ocho ejercicios de lectura rítmica numerados, cada uno con dos compases de 4/4 que combinan redondas, blancas, negras y pares de corcheas. Bajo cada compás está la cuenta: los números de los tiempos y una «y» roja donde caen corcheas.\"><figcaption>Esto es lo que se toca: cada caja suma 4. La «y» roja marca dónde la nota cae entre clics.</figcaption></figure>\n<h4>Cómo se hace (referencia)</h4>\n<p>Siempre: metrónomo en <b>60</b>, una sola cuerda al aire (la 6ª, porque el ejercicio trabaja el tiempo y no los dedos), y <b>contando en voz alta: «1 y 2 y 3 y 4 y»</b>.</p>\n<ul><li><b>Redonda / blanca / negra:</b> igual que siempre, tocas en su número y la dejas sonar lo que dura.</li><li><b>Par de corcheas:</b> primera nota <b>con el clic</b>, segunda en la <b>«y»</b>, justo a la mitad, con la misma fuerza que la primera.</li><li><b>Antes de tocar un ejercicio, léelo:</b> dilo en voz alta con la cuenta («1 y-2, 3, 4…») sin guitarra.</li></ul>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras.</b> Cada nivel incluye al anterior. El metrónomo va siempre.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">5 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Ejercicios 1 y 2, cada uno en bucle hasta que salga 2 veces seguidas</td><td>2 min</td></tr><tr><td>Ejercicios 3 y 4, igual</td><td>3 min</td></tr></table>\n<p class=\"inc\">Metrónomo: sí, en 60.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">10 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Ejercicios 5 y 6</td><td>3 min</td></tr><tr><td>El que peor salió hoy, solo, en bucle</td><td>2 min</td></tr></table></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">15 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Ejercicios 7 y 8</td><td>3 min</td></tr><tr><td><b>Test del reloj con corcheas:</b> en pleno ejercicio 5, apaga el metrónomo, sigue 2 compases contando, préndelo y fíjate si sigues cuadrado.</td><td>2 min</td></tr></table></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<p>Las dos corcheas de cada par suenan idénticas: mismo volumen, misma distancia. La primera se come al clic; la «y» cae sola en el medio exacto. Si el par suena \"cojo\" (larga-corta, como un galope), la «y» está llegando tarde.</p>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Pasa esto</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>El par suena a galope</b> (larga-corta)</td><td>La «y» cae tarde, pegada al clic siguiente</td><td>Di la cuenta en voz alta sin tocar hasta que las sílabas salgan parejas; luego toca encima de tu propia voz</td></tr><tr><td><b>Te aceleras en las corcheas</b></td><td>Más notas se sienten como \"más rápido\" y el cuerpo se va</td><td>El clic manda: vuelve a un compás de solo negras, ancla el pulso, y reintenta</td></tr><tr><td><b>Te pierdes al cambiar de figura</b></td><td>Lees la nota cuando ya hay que tocarla</td><td>Lee el compás completo en voz alta antes de tocarlo; ojos una caja adelante, como al leer</td></tr></table>\n<h4>Afinación del instructor</h4>\n<ol><li><b>Sin guitarra vale:</b> palmas con el metrónomo del celular, contando «1 y 2 y…». Dos minutos en el bus entrenan lo mismo.</li><li><b>Escribe los tuyos:</b> dibuja en papel 2-3 compases que sumen 4 (con la figura nueva de ½ tiempo) y tócalos. Escribir un ritmo es la prueba de que lo entiendes, y además te da ejercicios sin fin, como los del profesor.</li></ol>\n<h4>Qué sigue</h4>\n<p>En el mapa: el rasgueo de M3 (3.3 → 3.6), con estas mismas corcheas, hechas mano derecha (abajo en el número, arriba en la «y»). Más adelante, M6: acentos, silencios y más patrones de rasgueo.</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Es tarea de la academia: hasta la próxima clase (martes 22-sep). <b>Está lista</b> cuando los ejercicios 7 y 8 salen a la primera, con clic en 60 y la cuenta en voz alta.</p></div>\n<div class=\"only-pub\"><h4>Cuándo ya está</h4><p><b>Está lista</b> cuando los ejercicios 7 y 8 salen a la primera, con clic en 60 y la cuenta en voz alta.</p></div>\n"},"p-g-pentatonica":{"titulo":"Práctica — La pentatónica de La menor, posición 1","tituloCorto":"La pentatónica de La menor, posición 1","apuntes":["g-pentatonica"],"carril":"guitarra","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>5 · 8 · 12 min</span><span class=\"pill\">clase03 (2026-09-15) — ejercicio del profesor</span></div>\n<blockquote><b>Con la guitarra afinada.</b> Es lo que practicaron en la clase 3: subir y bajar la caja de los trastes 5-8. Si el profesor te indicó otra digitación o mano derecha, la suya manda.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p>Dos cosas a la vez. <b>Mano izquierda:</b> la caja completa bajo los dedos con un dedo por traste; el meñique (dedo 4) trabaja de verdad por primera vez. <b>Mano derecha:</b> tocar cuerdas de una en una, parejo, que es el terreno del picado y los arpegios que la academia trae en las próximas clases (los dos términos, definidos en <a href=\"#\" data-key=\"g-pentatonica\">el apunte</a>). <b>Lo vas a notar</b> cuando subas y bajes sin mirar el diagrama y sin tropiezos al cambiar de cuerda.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/guitarra/clase03/img/clase03-pentatonica-la.png\" alt=\"Mástil horizontal con la 6ª cuerda abajo, trastes 4 a 9. La pentatónica de La menor en posición 1: dedo 1 al traste 5 en todas las cuerdas; dedo 3 al traste 7 en las cuerdas 5ª, 4ª y 3ª; dedo 4 al traste 8 en las cuerdas 6ª, 2ª y 1ª. Cada punto lleva su nota; los tres La en rojo.\"><figcaption>Dos notas por cuerda: primero la del dedo 1, después la del 3 o el 4. Mientras es nueva, se mira; la meta es que salga sin mirar.</figcaption></figure>\n<h4>Cómo se hace (referencia)</h4>\n<ul><li><b>El recorrido:</b> de la 6ª a la 1ª (de grave a agudo), dos notas por cuerda, y de vuelta. Subir y bajar completo = 1 vuelta.</li><li><b>Mano izquierda:</b> dedo 1 al traste 5, dedo 3 al 7, dedo 4 al 8. Pisa con la punta, cerca de la barrita metálica del traste, y deja los dedos cerca de las cuerdas al soltar.</li><li><b>Mano derecha:</b> alterna índice y medio (en nylon, lo natural), o como lo hizo el profesor en clase.</li><li><b>Con metrónomo en 60:</b> una nota por clic.</li></ul>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras.</b> Cada nivel incluye al anterior.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">5 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Vueltas lentas mirando el diagrama, sin metrónomo, cuidando que cada nota suene limpia</td><td>2 min</td></tr><tr><td>Vueltas con metrónomo en 60, una nota por clic</td><td>3 min</td></tr></table>\n<p class=\"inc\">Metrónomo: solo en la segunda parte.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">8 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Vueltas sin mirar el diagrama (si te pierdes, termina la vuelta como salga y verifica al final)</td><td>2 min</td></tr><tr><td>Vueltas empezando desde la 1ª cuerda (bajando primero)</td><td>1 min</td></tr></table>\n<p class=\"inc\">Metrónomo: sí, en 60, en las dos filas.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">12 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Metrónomo en 70, una nota por clic</td><td>2 min</td></tr><tr><td>Vuelta lenta diciendo cada nota en voz alta (La, Do, Re, Mi, Sol…), sin metrónomo</td><td>2 min</td></tr></table></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<p>Una escalera pareja: todas las notas al mismo volumen y a la misma distancia, sin hueco al cambiar de cuerda. La nota del meñique suena igual de firme que la del índice. Cada nota suena limpia hasta que llega la siguiente, sin cortarse antes.</p>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Pasa esto</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>La nota del dedo 4 zumba o sale débil</b></td><td>El meñique pisa plano o lejos del traste metálico</td><td>Punta del dedo, pegado a la barrita. Es el dedo más débil de todos y se apoya en la firmeza, sin forzar</td></tr><tr><td><b>Tropiezo al cambiar de cuerda</b></td><td>La mano derecha no encuentra la cuerda nueva</td><td>Quita el metrónomo y haz el cambio lento 3 veces; el camino primero, la velocidad después</td></tr><tr><td><b>Los dedos \"vuelan\" al soltar</b></td><td>Tensión: cada dedo se dispara lejos de la cuerda</td><td>Suéltalos a ras de cuerda. Menos distancia que recorrer = menos esfuerzo y más velocidad gratis</td></tr></table>\n<h4>Qué sigue</h4>\n<p>La academia: picado y arpegios (módulo II del sílabo, clases 5-8; definidos en <a href=\"#\" data-key=\"g-pentatonica\">el apunte</a>); esta caja es su terreno de práctica. En el mapa: M8.6 (escalas como mapa del mástil), que quedará medio andada.</p>\n<h4>Verificación — mirar después de intentar</h4>\n<p>Después de las vueltas sin mirar, abre el diagrama y comprueba: ¿usaste el traste 7 en las cuerdas 5ª-4ª-3ª y el 8 en las 6ª-2ª-1ª? ¿El dedo 1 nunca salió del traste 5?</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Es tarea de la academia: hasta la próxima clase (martes 22-sep). <b>Está lista</b> cuando subes y bajas sin mirar, con metrónomo en 60, sin tropiezos, dos días seguidos.</p></div>\n<div class=\"only-pub\"><h4>Cuándo ya está</h4><p><b>Está lista</b> cuando subes y bajas sin mirar, con metrónomo en 60, sin tropiezos, dos días seguidos.</p></div>\n"},"p-c-respiracion":{"titulo":"Práctica — Aire y trino: el calentamiento base","tituloCorto":"Aire y trino: el calentamiento base","apuntes":["c-respiracion"],"carril":"canto","estado":"EN-CURSO","html":"<div class=\"p-meta only-personal\"><span class=\"pr-chip curso\"><i></i>En curso</span><span class=\"pill\"><svg class=\"icon\"><use href=\"#i-clock\"/></svg>5 · 10 · 14 min</span><span class=\"pill\">clase01 canto (2026-09-03) — ejercicios del profesor</span></div>\n<blockquote><b>De pie o bien sentado.</b> Son los ejercicios de la clase 1 de canto. Entrenan el aire y son tu calentamiento fijo antes de cantar.</blockquote>\n<h4>Qué estás mejorando (en claro)</h4>\n<p><b>El control de la salida del aire</b>, la base de lo demás. Sin aire parejo no hay nota sostenida, no hay afinación estable y no hay frase completa: la voz tiembla, se corta o se queda sin aire a media frase.</p>\n<p><b>Lo vas a notar</b> cuando el siseo y el trino duren más semana a semana sin esfuerzo, y cuando cantar una frase larga deje de sentirse como llegar ahogado al final.</p>\n<h4>El gráfico</h4>\n<figure><img src=\"fundamentos/canto/clase01/img/clase01-papel-pared.png\" alt=\"El ejercicio del papel: chorro de aire fino y constante sosteniendo un papel contra la pared.\"><figcaption>El ejercicio 2. Empieza a ~30 cm; si lo sostienes 10 s, un paso atrás.</figcaption></figure>\n<h4>Cómo se hace (referencia)</h4>\n<ul><li><b>Respiración costo-diafragmática:</b> una mano en el abdomen, otra en el costado bajo. Inhala por la nariz en 4 s (las dos manos salen), suelta por la boca en 6-8 s. Hombros quietos.</li><li><b>Papel en la pared:</b> papel de 5-10 cm, pégalo con la mano, sopla un chorro fino apuntado al centro y suelta la mano. Cuenta cuántos segundos se sostiene.</li><li><b>Siseo:</b> inhala bajo y suelta una \"sssss\" pareja y larga. Cronometra. Termina cuando el sonido pierde fuerza, no cuando ya no queda nada, sin exprimirte.</li><li><b>Trino de labios:</b> labios sueltos, \"brrr\" con voz. <b>Sirena</b> = durante el trino, sube la voz hasta donde sea cómodo y baja, de corrido.</li><li><b>Regla fija de todo el carril canto: si algo duele o raspa, para.</b> Cansancio muscular en el abdomen está bien; dolor en la garganta, nunca.</li></ul>\n<h4>Los 3 niveles del día</h4>\n<p><b>Pon cronómetro. Cuando suena, paras.</b> Cada nivel incluye al anterior.</p>\n<div class=\"levels\">\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l1\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Mínimo <span class=\"sub\">día sin ganas; hecho esto, CUMPLISTE</span><span class=\"mins\">5 min</span></div><div class=\"level-body\"><table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Respiración costo-diafragmática, manos puestas</td><td>4 respiraciones lentas (~1 min)</td></tr><tr><td>Papel en la pared</td><td>4 intentos, buscando ≥ 5 s cada uno (~2 min)</td></tr><tr><td>Trino de labios con sirena suave</td><td>6 sirenas (~2 min)</td></tr></table>\n<p>Sin grabadora, sin metrónomo.</p></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l2\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Natural <span class=\"sub\">el día normal</span><span class=\"mins\">10 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Mínimo, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Siseo cronometrado</td><td>4 siseos, anota el mejor tiempo (~2.5 min)</td></tr><tr><td>Papel en la pared</td><td>3 intentos buscando ≥ 10 s (~1.5 min)</td></tr><tr><td>Trino sostenido en una nota cómoda (dala con un piano o una app de piano)</td><td>4 trinos de ~5 s en la misma nota (~1 min)</td></tr></table></div></div>\n<div class=\"level\"><div class=\"level-head\"><span class=\"bars l3\" aria-hidden=\"true\"><b></b><b></b><b></b></span>Motivado<span class=\"mins\">14 min</span></div><div class=\"level-body\"><p class=\"inc\">Todo el Natural, y además:</p>\n<table><tr><th>Qué</th><th>Cuánto</th></tr><tr><td>Nota sostenida en \"ah\", cómoda, con grabadora</td><td>4 notas de ~8 s; escucha la grabación al final (~2.5 min)</td></tr><tr><td>Sirenas más amplias (hasta el borde cómodo, sin empujar)</td><td>6 sirenas (~1.5 min)</td></tr></table></div></div>\n</div>\n<h4>Cómo suena cuando está bien</h4>\n<ul><li>El siseo es parejo de inicio a fin, no arranca fuerte y muere.</li><li>El trino no se corta a mitad de sirena: si vibra continuo, tu aire es continuo.</li><li>En la grabación de la nota en \"ah\": volumen estable, sin temblor grande, y tu cara y hombros (si te ves en espejo) sin tensión.</li></ul>\n<h4>Si sale mal — los 3 típicos</h4>\n<table><tr><th>Pasa esto</th><th>Casi siempre es</th><th>Arréglalo así</th></tr><tr><td><b>Los hombros suben al inhalar</b></td><td>El hábito viejo de respiración alta</td><td>Hazlo sentado frente a un espejo, o acuéstate con un libro en el abdomen: acostado, la respiración baja sale sola. Luego, de pie, repite esa sensación</td></tr><tr><td><b>El trino se corta o no arranca</b></td><td>Labios apretados o aire a golpes</td><td>Suelta más los labios y las mejillas (puedes sostener las mejillas con los dedos). Piensa en empujar el aire desde el abdomen, parejo, no en hacer sonar los labios</td></tr><tr><td><b>Mareo ligero</b></td><td>Hiperventilación — más aire del que gastas</td><td>Es común al inicio. Pausa, respira normal 30 s y sigue. Baja el número de respiraciones seguidas</td></tr></table>\n<h4>Qué sigue</h4>\n<p>Con la evaluación de M1 cumplida, canto M2: afinar una nota que oyes (2.1) y distinguir la voz de pecho de la voz de cabeza (2.2). Mientras tanto, el repertorio que pidió el profesor va primero en cada sesión de canto.</p>\n<div class=\"only-personal\"><h4>Hasta cuándo</h4><p>Este no se retira: es el calentamiento permanente (sección 1.5 del mapa). Los objetivos del módulo (evaluación de M1): siseo parejo ≥ 20 s · nota cómoda sostenida 8 s estable · sin tensión visible. Cuando eso salga, el ejercicio sigue, pero como calentamiento de 5 min, no como práctica principal.</p></div>\n"}};
+const practicasDe = key => Object.entries(practicasData).filter(([k,p])=>p.apuntes.includes(key));
+const PR_ESTADO = {"EN-CURSO":"curso", "HECHA":"ok"};
+
+/* ---------- Recorrido: módulos del temario (esqueleto) y temas vistos o propuestos ---------- */
+/* Cómo se actualiza (a mano, en la misma tarea que regenera el panel): un tema = {k: clave del apunte | null, o: origen si no hay apunte,
+   prac: [claves de práctica], done: true solo cuando el tema pasó su evaluación (✅ en el temario, R4), esc: {label, open, steps}} */
+const recorrido = {
+  guitarra: {root:"Guitarra", icon:"i-pick", mods:[
+    {n:"M1", name:"Los primeros acordes", total:9, topics:[
+      {k:"g-notas-cuerdas"}, {k:"g-dedos-izq", prac:["p-g-1234"]}, {k:"g-el-acorde", prac:["p-g-progresiones"]},
+      {k:"g-diagramas"}, {k:"g-8-acordes", prac:["p-g-progresiones"]}]},
+    {n:"M2", name:"El cambio de acorde", total:5, topics:[
+      {t:"Anclas y cambios en progresión", o:"Clase 2", prac:["p-g-progresiones"]}]},
+    {n:"M3", name:"Mano derecha: pulso y rasgueo", total:6, topics:[{k:"g-ritmo-basico", prac:["p-g-ritmo"]}]},
+    {n:"M4", name:"Tu primera canción completa", total:6, topics:[]},
+    {n:"M5", name:"Ampliar el vocabulario", total:6, topics:[]},
+    {n:"M6", name:"Ritmo de verdad", total:5, topics:[{k:"g-corchea", prac:["p-g-lectura"]}]},
+    {n:"M7", name:"La cejilla", total:5, topics:[]},
+    {n:"M8", name:"Punteo y arpegio", total:6, open:true, topics:[
+      {k:"g-tablatura", prac:["p-g-1234"]},
+      {k:"g-pentatonica", prac:["p-g-pentatonica"], esc:{label:"Escalera: 7 pasos", open:true, steps:[
+        "1 · Sostenido y bemol","2 · Tono y semitono","3 · Nombrar la nota de un traste","4 · La escala y su tónica",
+        "5 · La escala menor","6 · La pentatónica","7 · La caja del mástil"]}},
+      {t:"p-i-m-a y arpegio", o:"Clases 5-7", esc:{label:"Escalera: 2 pasos", steps:["8 · p-i-m-a (dedos de la mano derecha)","9 · Arpegio sobre acordes"]}}]},
+    {n:"M9", name:"Tocar con otros", total:5, topics:[]},
+  ]},
+  canto: {root:"Canto", icon:"i-mic", mods:[
+    {n:"M1", name:"Cuerpo y aire", total:5, topics:[{k:"c-respiracion", prac:["p-c-respiracion"]}]},
+    {n:"M2", name:"Producir el sonido: afinar, registros, vocales", total:6, topics:[
+      {k:"c-notas-octavas"},{k:"c-semitono"},{k:"c-afinacion"},{k:"c-tesitura-rango"},{k:"c-registro"},{k:"c-resonancia"},{k:"c-vocales"},{k:"c-vocalizacion"}]},
+    {n:"M3", name:"Ritmo y letra", total:5, open:true, topics:[
+      {k:"c-pulso-compas"},{k:"c-figuras"},{k:"c-corchea"},{k:"c-silencios"},{k:"c-articulacion"},{k:"c-semicorchea"},{k:"c-contratiempo"}]},
+    {n:"M4", name:"Tu primera canción cantada", total:6, topics:[]},
+    {n:"M5", name:"Oído aplicado a la voz", total:4, topics:[]},
+    {n:"M6", name:"Ampliar la voz: rango, resistencia, color", total:5, topics:[]},
+    {n:"M7", name:"Cantar y tocar a la vez", total:5, topics:[]},
+    {n:"M8", name:"Cantar con otros", total:5, topics:[]},
+  ]},
+};
+
+/* ---------- árbol lateral ---------- */
+function renderTree(){
+  const grupos = carrilActual === "guitarra" ? gruposGuitarra : gruposCanto;
+  const items = carrilActual === "guitarra" ? apuntesGuitarra : apuntesCanto;
+  let html = "";
+  Object.keys(grupos).forEach(gKey=>{
+    const del = items.filter(a=>a.grupo===gKey);
+    if(!del.length) return;
+    html += `<div class="mod-head"><svg class="icon"><use href="#i-calendar"/></svg>${grupos[gKey]}</div>`;
+    del.forEach(a=>{
+      html += `<div class="nav-item" data-view="apunte" data-key="${a.key}" role="button" tabindex="0"><svg class="icon"><use href="#i-doc"/></svg><span>${a.t}</span></div>`;
+      practicasDe(a.key).forEach(([pk,p])=>{
+        html += `<div class="nav-item nav-child" data-view="apunte" data-key="${pk}" role="button" tabindex="0"><svg class="icon"><use href="#i-ejer"/></svg><span>Práctica: ${p.tituloCorto}</span></div>`;
+      });
+    });
+  });
+  document.getElementById("tree").innerHTML = html;
+  bindNavItems();
+}
+
+function applyCarril(c){
+  carrilActual = c;
+  const toggle = document.getElementById("carrilToggle");
+  toggle.dataset.carril = c;
+  toggle.setAttribute("aria-checked", c === "canto");
+  toggle.setAttribute("aria-label", "Carril: " + (c === "guitarra" ? "Guitarra" : "Canto") + ". Activar para cambiar.");
+  document.querySelectorAll(".carril-block").forEach(b=>b.classList.toggle("active", b.dataset.carril===c));
+  const label = c === "guitarra" ? "Guitarra" : "Canto";
+  renderTree();
+  renderTimeline(document.getElementById('tl-standalone'), c==='guitarra'?clasesGuitarra:clasesCanto, label, c);
+  renderRecorrido();
+}
+
+document.getElementById("carrilToggle").addEventListener("click", ()=>{
+  applyCarril(carrilActual === "guitarra" ? "canto" : "guitarra");
+});
+document.getElementById("carrilToggle").addEventListener("keydown", e=>{
+  if(e.key === "Enter" || e.key === " "){ e.preventDefault(); e.target.click(); }
+});
+
+/* ---------- timeline ---------- */
+function renderTimeline(el, clases, tag, cls){
+  if(!el) return;
+  el.innerHTML = clases.map(c => {
+    const link = c.apunte===true ? `<a class="t-link" href="#"><svg class="icon"><use href="#i-arrow"/></svg>ver apunte</a>`
+               : c.apunte===false ? `<span class="t-pending">material pendiente</span>`
+               : `<span class="t-pending" style="color:var(--ink-soft)">sin registro</span>`;
+    return `<div class="t-item">
+      <div class="t-head"><span class="t-date"><svg class="icon"><use href="#i-calendar"/></svg>Clase ${c.n} · ${c.f}</span><span class="badge ${c.apunte? 'seen':'queued'}">${tag}</span></div>
+      <div class="t-body">${c.q}</div>
+      <div style="margin-top:6px">${link}</div>
+    </div>`;
+  }).join("");
+}
+
+/* ---------- vistas ---------- */
+function showView(id){
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("active"));
+  document.getElementById("view-"+id).classList.add("active");
+  if(id==="recorrido") requestAnimationFrame(rcDraw);
+}
+function bindNavItems(){
+  document.querySelectorAll("[data-view]").forEach(el=>{
+    el.onclick = ()=>{
+      document.querySelectorAll(".nav-item, .menu-item").forEach(n=>n.classList.remove("active"));
+      el.classList.add("active");
+      showView(el.dataset.view);
+      if(el.dataset.key) loadApunte(el.dataset.key);
+    };
+    el.onkeydown = e=>{
+      if(e.key === "Enter" || e.key === " "){ e.preventDefault(); el.click(); }
+    };
+  });
+}
+const menuBtn = document.getElementById("menuBtn");
+const menuDropdown = document.getElementById("menuDropdown");
+menuBtn.addEventListener("click", ()=>{
+  const open = menuDropdown.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", open);
+});
+document.querySelectorAll(".menu-item").forEach(mi=>{
+  mi.addEventListener("click", ()=>{
+    menuDropdown.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+document.addEventListener("click", e=>{
+  if(!e.target.closest(".app-menu")){
+    menuDropdown.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
+});
+document.addEventListener("keydown", e=>{
+  if(e.key === "Escape" && menuDropdown.classList.contains("open")){
+    menuDropdown.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.focus();
+  }
+});
+
+/* ---------- buscador ---------- */
+document.getElementById("searchInput").addEventListener("input", e=>{
+  const q = e.target.value.trim().toLowerCase();
+  document.querySelectorAll(".sidebar .nav-item").forEach(item=>{
+    item.style.display = item.textContent.toLowerCase().includes(q) ? "" : "none";
+  });
+});
+
+/* ---------- apuntes: contenido real, leído de cada .md ---------- */
+const apuntesData = {
+  "g-notas-cuerdas": {
+    titulo: "Las notas y las 6 cuerdas",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: La guitarra: partes, cómo sostenerla, afinar (consulta del instrumento)</h3>
+    <blockquote>Solo hay 7 notas: Do, Re, Mi, Fa, Sol, La, Si, y luego se repiten. Toda la música que vas a tocar está hecha de esas siete, y cada cuerda de tu guitarra, tocada sin pisar nada, suena a una de ellas.</blockquote>
+    <h4>Los dos nombres de cada nota</h4>
+    <p>Las notas tienen dos escrituras: la nuestra (Do, Re, Mi...) y la <b>americana</b>, con letras. Son la misma cosa y necesitas las dos, porque todo lo que encuentres en internet (cifrados, tablaturas, tu afinador) habla en letras:</p>
+    <table><tr><th>Do</th><th>Re</th><th>Mi</th><th>Fa</th><th>Sol</th><th>La</th><th>Si</th></tr><tr><td><b>C</b></td><td><b>D</b></td><td><b>E</b></td><td><b>F</b></td><td><b>G</b></td><td><b>A</b></td><td><b>B</b></td></tr></table>
+    <p>Truco para no perderse: las letras empiezan en La, no en Do (La = A, Si = B, Do = C...). Si memorizas <b>Do = C</b>, el resto sale contando.</p>
+    <h4>Cada cuerda al aire es una nota</h4>
+    <p>"Al aire" = tocarla sin pisar ningún traste. De la más gruesa a la más fina:</p>
+    <table><tr><th>Cuerda</th><th>Nota</th><th>Letra</th></tr>
+    <tr><td><b>6ª</b> (la más gruesa, arriba cuando la sostienes)</td><td><b>Mi</b></td><td>E</td></tr>
+    <tr><td><b>5ª</b></td><td><b>La</b></td><td>A</td></tr>
+    <tr><td><b>4ª</b></td><td><b>Re</b></td><td>D</td></tr>
+    <tr><td><b>3ª</b></td><td><b>Sol</b></td><td>G</td></tr>
+    <tr><td><b>2ª</b></td><td><b>Si</b></td><td>B</td></tr>
+    <tr><td><b>1ª</b> (la más fina, abajo)</td><td><b>Mi</b></td><td>e</td></tr>
+    </table>
+    <p>La primera y la última cuerda son las dos Mi, una grave y otra aguda, así que el orden se dice rápido: <b>Mi-La-Re-Sol-Si-Mi</b>.</p>
+    <figure>
+      <img src="fundamentos/guitarra/clase01/img/clase01-cuerdas-notas.png" alt="Las 6 cuerdas al aire con sus notas, de la gruesa (6ª, Mi) a la fina (1ª, Mi).">
+      <figcaption>El grosor del dibujo es el grosor real: la 6ª es la gorda de arriba.</figcaption>
+    </figure>
+    <p>Tu afinador ya usa estas letras: cuando afinas, la app te muestra <b>E, A, D, G, B, E</b>, que son Mi, La, Re, Sol, Si, Mi.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>7 notas: <b>Do Re Mi Fa Sol La Si</b> = <b>C D E F G A B</b>. Las letras empiezan en La (A). Ancla: <b>Do = C</b>.</p>
+      <p>Cuerdas al aire, de gruesa a fina: <b>Mi La Re Sol Si Mi</b> (E A D G B e).</p>
+      <p>6ª = la gruesa de arriba · 1ª = la fina de abajo. Las dos puntas son Mi.</p>
+      <p>El afinador habla en letras: E A D G B E.</p>
+    </div>
+    <p class="foot">Siguiente → <a href="#" data-key="g-tablatura">La tablatura (TAB)</a></p>
+    `
+  },
+  "g-tablatura": {
+    titulo: "La tablatura (TAB): cómo se lee",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-notas-cuerdas">Las notas y las 6 cuerdas</a> · La guitarra: partes, cómo sostenerla, afinar — qué es un traste (consulta del instrumento)</h3>
+    <blockquote>La TAB es un dibujo de tus 6 cuerdas con números encima: cada número te dice qué traste pisar en esa cuerda. No necesitas saber leer música para leerla, y por eso es el idioma de los ejercicios y de gran parte del material guitarrero de internet.</blockquote>
+    <figure>
+      <img src="fundamentos/guitarra/clase01/img/clase01-anatomia-tab.png" alt="Anatomía de la TAB: la 1ª arriba, números = trastes, 0 = al aire, columna apilada = acorde.">
+      <figcaption>Todo lo que una TAB puede decir, en un solo ejemplo. La columna de la derecha es un acorde (Em).</figcaption>
+    </figure>
+    <h4>Las reglas</h4>
+    <p>1. <b>6 líneas = tus 6 cuerdas.</b> El detalle que más confunde: <b>la línea de arriba es la 1ª cuerda (la más fina)</b> y la de abajo es la 6ª (la gruesa). Parece al revés, pero es como si miraras el mástil de tu guitarra inclinándolo hacia ti.</p>
+    <p>2. <b>Los números son TRASTES, no dedos.</b> Un <code>3</code> en una línea = pisa el traste 3 de esa cuerda. Qué dedo usar lo dice el ejercicio o el contexto. <i>(Un traste es cada barrita de metal que cruza el mástil; se pisa entre dos, no encima.)</i></p>
+    <p>3. <b><code>0</code> = cuerda al aire.</b> Tócala sin pisar nada.</p>
+    <p>4. <b>Se lee de izquierda a derecha</b>, como un texto.</p>
+    <p>5. <b>Números en columna (uno sobre otro) = suenan a la vez.</b> Así se escriben los acordes en TAB. Números separados = uno tras otro.</p>
+    <p>Un ejemplo real ya lo tienes: el gráfico de tu práctica del 1-2-3-4 está escrito en TAB.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>6 líneas = 6 cuerdas. <b>Arriba = 1ª (fina)</b>, abajo = 6ª (gruesa).</p>
+      <p>Número = <b>traste</b> (no dedo). <code>0</code> = al aire.</p>
+      <p>Izquierda → derecha. En columna = a la vez (acorde).</p>
+    </div>
+    <p class="foot">← <a href="#" data-key="g-notas-cuerdas">Las notas y cuerdas</a> · Siguiente → <a href="#" data-key="g-dedos-izq">Los dedos de la mano izquierda</a></p>
+    `
+  },
+  "g-dedos-izq": {
+    titulo: "Los dedos de la mano izquierda",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-tablatura">La tablatura (TAB)</a> · La guitarra: partes, cómo sostenerla, afinar — qué es un traste (consulta del instrumento)</h3>
+    <blockquote>En guitarra, los dedos que pisan (mano izquierda) se numeran del 1 al 4: índice, medio, anular, meñique. El pulgar no tiene número, porque va detrás del mástil sosteniendo y no pisa cuerdas (por ahora).</blockquote>
+    <table><tr><th>Nº</th><th>Dedo</th><th>Color en los diagramas del sistema</th></tr>
+    <tr><td><b>1</b></td><td>Índice</td><td>rojo</td></tr>
+    <tr><td><b>2</b></td><td>Medio</td><td>naranja</td></tr>
+    <tr><td><b>3</b></td><td>Anular</td><td>verde</td></tr>
+    <tr><td><b>4</b></td><td>Meñique</td><td>azul</td></tr>
+    </table>
+    <figure>
+      <img src="fundamentos/guitarra/clase01/img/clase01-mano-izquierda.png" alt="La mano izquierda con la palma hacia ti: dedos 1 a 4 numerados y coloreados; el pulgar sin número.">
+      <figcaption>Los mismos colores que usan todos los diagramas del sistema.</figcaption>
+    </figure>
+    <p>No confundas: en la TAB los números son <b>trastes</b>; los números de <b>dedo</b> son estos otros. Cuando un ejercicio dice "un dedo por traste", los dos coinciden a propósito: traste 1 → dedo 1, traste 2 → dedo 2, etc. Eso se llama estar <b>en posición</b>.</p>
+    <p>Al practicar notarás que los dedos 1 y 2 se mueven sin problema, pero el 3 y el 4 tienden a moverse juntos: si levantas uno, el otro lo sigue. Es normal, porque comparten tendones. El ejercicio 1-2-3-4 sirve para separarlos.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>Mano izquierda: <b>1 índice · 2 medio · 3 anular · 4 meñique</b>. Pulgar sin número, detrás del mástil.</p>
+      <p>"Un dedo por traste" = traste N se pisa con dedo N (estar <i>en posición</i>).</p>
+      <p>El 3 y el 4 tienden a moverse juntos porque comparten tendones; se separan con entrenamiento.</p>
+    </div>
+    <p class="foot">← <a href="#" data-key="g-tablatura">La tablatura</a></p>
+    `
+  },
+  "g-ritmo-basico": {
+    titulo: "Ritmo básico: pulso, figuras y el compás de 4/4",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: nada, es el punto de partida.</h3>
+    <blockquote>El ritmo es cuándo suena cada nota. Se apoya en el pulso, un "tic" parejo que no se acelera ni se frena, como el que marcas con el pie cuando te gusta una canción. El metrónomo es una máquina que hace ese tic por ti mientras aprendes a llevarlo por dentro.</blockquote>
+    <h4>Las figuras: cuánto dura cada nota</h4>
+    <p>Una <b>figura rítmica</b> es el símbolo que dice cuánto dura una nota. Las tres primeras:</p>
+    <table><tr><th>Figura</th><th>Dura</th></tr>
+    <tr><td><b>Redonda</b> (bolita hueca, sin palito)</td><td><b>4 tiempos</b></td></tr>
+    <tr><td><b>Blanca</b> (bolita hueca con palito)</td><td><b>2 tiempos</b></td></tr>
+    <tr><td><b>Negra</b> (bolita rellena con palito)</td><td><b>1 tiempo</b></td></tr>
+    </table>
+    <p>Cada una dura <b>la mitad</b> de la anterior. Un "tiempo" = un clic del metrónomo.</p>
+    <figure>
+      <img src="fundamentos/guitarra/clase01/img/clase01-figuras-compas.png" alt="Las tres figuras con sus duraciones, y dos compases de 4/4 llenados como ejemplo.">
+      <figcaption>Arriba las figuras; abajo la caja del compás llenándose.</figcaption>
+    </figure>
+    <h4>El compás: la caja — y qué significa el 4/4</h4>
+    <p>El <b>compás</b> es una <b>caja de tiempo</b>: la música se corta en cajas iguales y cada caja se llena con figuras. Los dos números del <b>4/4</b> dicen cómo es la caja:</p>
+    <p>— El de ARRIBA → <b>cuántos tiempos entran en cada caja.</b> Aquí: 4.<br>— El de ABAJO → <b>qué figura vale UN tiempo.</b> Aquí el 4 significa "la negra".</p>
+    <p>Es decir, 4/4 se lee <i>"cajas de 4 tiempos, y cada negra ocupa uno"</i>. Cada caja debe sumar exactamente 4: una redonda sola (4), dos blancas (2+2), cuatro negras (1+1+1+1) o mezclas (negra + negra + blanca = 4).</p>
+    <p>El <b>tiempo fuerte</b> es el 1: el que más se siente y donde suelen caer los cambios. Se cuenta en voz alta: <i>1-2-3-4, 1-2-3-4…</i></p>
+    <p><i>(El número de abajo existe porque hay compases que cuentan con otra figura, como el 6/8 de mucho worship lento, que verás más adelante. Por ahora, 4 abajo = negra.)</i></p>
+    <h4>El tempo: la velocidad de la canción</h4>
+    <p>El <b>tempo</b> es cuántos pulsos entran en un minuto. Se mide en <b>BPM</b> (<i>beats per minute</i> — pulsos por minuto).</p>
+    <p>— <b>60 BPM</b> = 60 pulsos por minuto = <b>un pulso por segundo</b>. Por eso es el tempo de práctica: cómodo y parejo.<br>— Número más alto = pulsos más seguidos = más rápido (120 = dos por segundo). Más bajo = más lento.<br>— Cuando una práctica dice "sube a 70", pide el mismo ejercicio con pulsos un poco más seguidos.</p>
+    <h4>Cada canción tiene su tempo</h4>
+    <table><tr><th>Canción</th><th>Tempo</th><th>Cómo se siente</th></tr>
+    <tr><td>I'd Come For You — Nickelback</td><td>~74 BPM</td><td>Lenta, balada</td></tr>
+    <tr><td>Eres — Un Corazón</td><td>~105 BPM</td><td>Tranquila</td></tr>
+    <tr><td>Renuévame — Marcos Witt</td><td>~111 BPM</td><td>Media</td></tr>
+    <tr><td>No hay lugar más alto — Miel San Marcos</td><td>~136 BPM</td><td>Pulso rápido… y aun así se siente lenta</td></tr>
+    <tr><td>Capitán — TWICE</td><td>~143 BPM</td><td>Rápida de verdad</td></tr>
+    </table>
+    <h4>Tempo no es dificultad — lo que el número no dice</h4>
+    <p>El BPM dice qué tan seguido late la canción, pero no cuánto trabaja tu mano entre latido y latido, que es lo que la hace fácil o difícil:</p>
+    <p>— <i>No hay lugar más alto</i> va a ~136 BPM y se siente lenta porque sus acordes duran compases enteros y la mano casi no cambia, aunque el pulso corra.<br>— <i>Capitán</i> va a ~143 BPM y sí es exigente porque la mano derecha trabaja denso en cada pulso.</p>
+    <blockquote><b>Regla de dos líneas:</b> tempo = qué tan rápido late la canción · dificultad = cuánto haces tú entre latido y latido. Por eso el repertorio se ordena por lo segundo, no por el número.</blockquote>
+    <h4>El metrónomo: se calibra y se suelta</h4>
+    <p>Regla del sistema: el metrónomo se usa para calibrar tu pulso y luego se suelta. Contar en voz alta mientras tocas hace lo contrario que la vieja "pista que cae": te instala el reloj por dentro, en vez de prestártelo desde afuera.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Pulso</b> = el tic parejo. <b>Metrónomo</b> = la máquina del tic (se calibra y se suelta).</p>
+      <p><b>Tempo</b> = velocidad del pulso, en <b>BPM</b> (pulsos por minuto). 60 = uno por segundo. Cada canción tiene el suyo.</p>
+      <p><b>Tempo alto ≠ difícil.</b> La dificultad es cuánto haces tú entre latido y latido, no qué tan rápido late.</p>
+      <p><b>Redonda 4 · Blanca 2 · Negra 1.</b> Cada una, la mitad de la anterior.</p>
+      <p><b>4/4:</b> arriba = 4 tiempos por caja; abajo = la negra vale 1 tiempo. Cada caja suma exactamente 4.</p>
+      <p>El <b>"1"</b> es el tiempo fuerte. Contar en voz alta: 1-2-3-4.</p>
+    </div>
+    `
+  },
+  "g-el-acorde": {
+    titulo: "El acorde, y mayor vs. menor",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-notas-cuerdas">Las notas y las 6 cuerdas</a> · <a href="#" data-key="g-dedos-izq">Los dedos de la mano izquierda</a></h3>
+    <blockquote>Un acorde es tocar tres o más notas al mismo tiempo, elegidas para que suenen bien juntas. Es la unidad con la que se acompañan las canciones: cuando escuchas la guitarra "rellenando" debajo de una voz en un worship, eso son acordes.</blockquote>
+    <p>Una nota sola suena delgada. Junta tres bien elegidas y el sonido se vuelve lleno: eso es lo que acompaña a una voz. En la guitarra, una forma de la mano izquierda + un rasgueo = las 3-4 notas del acorde sonando a la vez (aunque pises 3 cuerdas y suenen 5 o 6: las de al aire también son notas del acorde).</p>
+    <h4>Mayor y menor: los dos colores</h4>
+    <p>Todo acorde de los que usas ahora es de una de dos familias, y la diferencia se oye antes de entenderse:</p>
+    <table><tr><th>Familia</th><th>Cómo suena</th><th>Se escribe</th></tr>
+    <tr><td><b>Mayor</b></td><td>Estable, resuelto, "alegre"</td><td>Solo el nombre: <b>C</b>, <b>G</b>, <b>D</b></td></tr>
+    <tr><td><b>Menor</b></td><td>Melancólico, más oscuro, "triste"</td><td>Nombre + <b>m</b>: <b>Am</b>, <b>Em</b>, <b>Dm</b></td></tr>
+    </table>
+    <p>La diferencia física es mínima: una sola nota del acorde baja un traste. En la guitarra se ve entre Mi y Mim: se levanta el dedo 1. Casi toda canción de tu repertorio usa los dos, y el menor no es más difícil. <i>No hay lugar más alto</i>, por ejemplo, va con Sol, Do y Re (mayores) y Mim (menor).</p>
+    <h4>La trampa del vocabulario: "mayor" es el apellido por defecto</h4>
+    <p>Pueden parecer tres cosas ("acordes", "acordes mayores" y "acordes menores"), pero hay acordes y cada uno es mayor o menor. Lo confuso es la escritura:</p>
+    <blockquote><b>Un acorde dicho "a secas" es mayor.</b> "C" o "Do" = Do mayor; el "mayor" no se escribe porque es el apellido por defecto. Lo menor siempre se marca: la <b>m</b> de Am.</blockquote>
+    <p>Así, en la lista de la academia: <b>C, D, E, G, A</b> son mayores (a secas) y <b>Em, Dm, Am</b> son menores (llevan la m).</p>
+    <h4>Un acorde puede vivir dentro de otro</h4>
+    <p>Dos sentidos, ambos reales:</p>
+    <p><b>1. En los dedos.</b> Algunas formas contienen otras completas. El caso perfecto de los 8: forma <b>Mi (E)</b> y levanta solo el dedo 1: lo que queda es <b>Mim (Em)</b>, un acorde entero.</p>
+    <table><tr><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-mi.png" alt="Mi (E)" style="max-width:220px"><br><i>Mi (E) — con el dedo 1</i></td><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-mim.png" alt="Mim (Em)" style="max-width:220px"><br><i>Levanta el dedo 1 → Mim (Em)</i></td></tr></table>
+    <p>La nota que quitas al levantar ese dedo es la que separa mayor de menor: es la sección anterior, vista en los dedos.</p>
+    <p><b>2. En las notas.</b> Un acorde con más notas contiene acordes simples adentro: <b>Am7</b> (La-Do-Mi-Sol) trae dentro al <b>Do</b> (Do-Mi-Sol) <i>y</i> al <b>Lam</b> (La-Do-Mi) a la vez. Por eso ciertos acordes suenan emparentados. Esto se vuelve herramienta con las séptimas (M5).</p>
+    <p>Ambos sentidos siguen la regla de siempre, el acorde son sus notas: si dentro de un grupo de notas está completo el grupo de otro acorde, ese acorde está ahí adentro.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Acorde</b> = 3+ notas a la vez que suenan bien juntas. La base del acompañamiento.</p>
+      <p><b>Mayor</b> = estable/alegre, se escribe a secas (C, G, D, E, A). <b>Menor</b> = melancólico, lleva <b>m</b> (Am, Em, Dm).</p>
+      <p><b>No hay tres categorías:</b> todo acorde es mayor o menor; "mayor" es el apellido que no se escribe.</p>
+      <p>La diferencia física es una sola nota, que baja un traste (Mi → Mim: se levanta el dedo 1).</p>
+      <p><b>Un acorde puede vivir dentro de otro:</b> en los dedos (Mi − dedo 1 = Mim) y en las notas (Am7 contiene a Do y a Lam). El acorde son sus notas.</p>
+    </div>
+    <p class="foot">Siguiente → <a href="#" data-key="g-diagramas">Cómo se lee un diagrama</a></p>
+    `
+  },
+  "g-diagramas": {
+    titulo: "El diagrama de acorde",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-el-acorde">El acorde, y mayor vs. menor</a> · <a href="#" data-key="g-tablatura">La tablatura (TAB)</a> · <a href="#" data-key="g-dedos-izq">Los dedos de la mano izquierda</a> · <a href="#" data-key="g-notas-cuerdas">Las notas y las 6 cuerdas</a></h3>
+    <blockquote>El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar. Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios.</blockquote>
+    <figure>
+      <img src="fundamentos/guitarra/clase02/img/clase02-anatomia-diagrama.png" alt="Anatomía del diagrama de acorde: X, O, cejuela, puntos con número de dedo, orden de cuerdas.">
+      <figcaption>Todo lo que un diagrama puede decir, en un solo ejemplo.</figcaption>
+    </figure>
+    <p>Las reglas, en orden de lectura:</p>
+    <p>1. <b>6 líneas verticales = tus 6 cuerdas.</b> Izquierda = 6ª (la gruesa), derecha = 1ª (la fina). <i>(Ojo: es lo contrario de la TAB, que es horizontal y pone la 1ª arriba.)</i><br>2. <b>La barra gruesa de arriba = la cejuela</b> (el traste 0). Las líneas horizontales = los trastes.<br>3. <b>Punto = dónde pisa un dedo; el número dentro = cuál dedo</b> (1 índice · 2 medio · 3 anular · 4 meñique).<br>4. <b>✕ arriba de una cuerda = no se toca. ○ = se toca al aire.</b> El rasgueo abarca solo las cuerdas sin ✕.</p>
+    <h4>¿Por qué un mismo acorde tiene varias digitaciones?</h4>
+    <p>Porque <b>el acorde son las notas, no los dedos.</b> Mientras suenen esas notas, el acorde es ese, con 3 dedos, con 4 o con la digitación que sea. Entonces, ¿por qué existe "la forma correcta"? Porque la digitación no se elige por el acorde solo:</p>
+    <blockquote><b>Regla: la digitación correcta es la que hace más corto el siguiente cambio.</b> Se elige mirando qué acorde viene después, no el acorde solo: menos dedos que mover = cambio más rápido y más limpio.</blockquote>
+    <p>Dos casos concretos de los 8 de la academia:</p>
+    <p><b>G con 4 dedos</b> (la del curso) vs. <b>G con 3 dedos</b>: suenan casi igual y las dos son Sol. La de 4 deja los dedos 3-4 plantados donde los cambios hacia C y D los necesitan. La de 3 está pensada para otros cambios.</p>
+    <table><tr><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-sol.png" alt="Sol con 4 dedos" style="max-width:220px"><br><i>La del curso: 4 dedos</i></td><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-sol-3dedos.png" alt="Sol con 3 dedos" style="max-width:220px"><br><i>La versión de 3 dedos — también es Sol</i></td></tr></table>
+    <p><b>D con dos digitaciones</b>: aquí las casillas son idénticas y solo cambian los dedos. La estándar (izquierda) comparte lógica con Dm y hace más corto el cambio D↔Dm.</p>
+    <table><tr><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-re.png" alt="Re digitación estándar" style="max-width:220px"><br><i>La del curso: 1 en la 3ª, 2 en la 1ª</i></td><td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-re-alt.png" alt="Re otra digitación" style="max-width:220px"><br><i>Mismas casillas, otros dedos</i></td></tr></table>
+    <p><b>¿Y si ya tocabas un acorde con otra digitación?</b> Si sonaba limpia, no estaba incorrecta, solo sin optimizar para los cambios que vienen. La regla operativa: <b>la digitación del profesor manda</b>, por dos razones: él ve tu mano (el agente no), y su digitación está eligiendo por ti los cambios del curso completo. Reaprender una digitación cuesta unos días; arrastrar una ineficiente cuesta meses.</p>
+    <h4>No confundir: digitación vs. posición</h4>
+    <table><tr><th></th><th>Responde</th><th>Qué cambia</th></tr>
+    <tr><td><b>Digitación</b></td><td>¿Con qué dedos piso estas casillas?</td><td>Solo los dedos. Mismas casillas, mismo sonido. (El caso del D)</td></tr>
+    <tr><td><b>Posición / forma</b></td><td>¿En qué lugar del mástil armo este acorde?</td><td>Las casillas enteras. Mismo acorde, otro brillo</td></tr>
+    </table>
+    <p><b>Un mismo acorde existe en varios lugares del mástil.</b> El acorde son sus notas (Do = Do-Mi-Sol), y esas notas están repetidas por todo el diapasón: cualquier lugar donde las agarres juntas es un Do. Los tres de abajo son el mismo acorde, con distinto brillo (más grave o más agudo):</p>
+    <table><tr>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-do.png" alt="Do abierto" style="max-width:180px"><br><i>Do abierto — el de los 8</i></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-do-traste3.png" alt="Do en el traste 3" style="max-width:180px"><br><i>El mismo Do, en el traste 3</i></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-do-traste8.png" alt="Do en el traste 8" style="max-width:180px"><br><i>Y en el traste 8</i></td>
+    </tr></table>
+    <p><i>(Las dos versiones con barra roja llevan cejilla y se aprenden en M7. Están aquí para que veas que es el mismo acorde, no para tocarlas todavía. El número gris a la izquierda dice en qué traste empieza el diagrama.)</i></p>
+    <blockquote><b>La regla que une todo: mientras las notas que suenan sean las del acorde, es ese acorde</b>, sin importar en qué lugar del mástil ni con qué dedos.</blockquote>
+    <p>Dos consecuencias: el <b>G de 3 vs. 4 dedos</b> cae entre las dos categorías — la versión de 4 dedos no solo cambia dedos, cambia una nota (por otra que también pertenece a Sol), y sigue siendo Sol por la regla de arriba. Y <b>el capo funciona por esto mismo:</b> forma de Sol + capo en el traste 4 = acorde de Si. Es "el mismo acorde en otro lugar", conseguido sin cejilla.</p>
+    <p>Por ahora se usan solo las <b>formas abiertas</b>. Las demás posiciones entran en M7 (formas móviles): una forma corrida por el mástil produce los 12 acordes, que es este mismo concepto al revés.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>Diagrama = mástil de frente. Izquierda 6ª, derecha 1ª. Barra gruesa = cejuela.</p>
+      <p>Punto = dónde pisa; número = cuál dedo. ✕ no se toca · ○ al aire.</p>
+      <p><b>El acorde son las notas, no los dedos</b> → por eso hay varias digitaciones.</p>
+      <p><b>La digitación correcta = la que hace más corto el siguiente cambio.</b> La del profesor manda.</p>
+      <p><b>Digitación</b> (qué dedos) ≠ <b>posición</b> (en qué lugar del mástil). Un mismo acorde vive en varios lugares; mientras suenen sus notas, es ese acorde. Por ahora: formas abiertas; el resto, en M7.</p>
+    </div>
+    <p class="foot">← <a href="#" data-key="g-el-acorde">El acorde</a> · Siguiente → <a href="#" data-key="g-8-acordes">Los 8 acordes</a></p>
+    `
+  },
+  "g-8-acordes": {
+    titulo: "Los 8 acordes abiertos del arranque",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-diagramas">El diagrama de acorde</a> · <a href="#" data-key="g-el-acorde">El acorde, y mayor vs. menor</a> · <a href="#" data-key="g-dedos-izq">Los dedos de la mano izquierda</a></h3>
+    <blockquote>Estas son las formas. Se estudian y se verifican aquí, nunca mirándolas mientras practicas. El objetivo es producirlas de memoria al oír su nombre; para eso está el drill de Anki, donde estos mismos diagramas son el reverso de verificación.</blockquote>
+    <p><svg class="icon"><use href="#i-printer"/></svg> <b>Versión imprimible:</b> los 8 en una sola hoja A4 apaisada. Misma regla: se mira para verificar, no mientras se toca.</p>
+    <h4>Mayores</h4>
+    <table><tr>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-do.png" alt="Do (C)" style="max-width:150px"></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-re.png" alt="Re (D)" style="max-width:150px"></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-mi.png" alt="Mi (E)" style="max-width:150px"></td>
+    </tr><tr>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-sol.png" alt="Sol (G)" style="max-width:150px"></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-la.png" alt="La (A)" style="max-width:150px"></td>
+    <td></td>
+    </tr></table>
+    <h4>Menores</h4>
+    <table><tr>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-mim.png" alt="Mim (Em)" style="max-width:150px"></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-lam.png" alt="Lam (Am)" style="max-width:150px"></td>
+    <td style="text-align:center"><img src="fundamentos/guitarra/img/acorde-rem.png" alt="Rem (Dm)" style="max-width:150px"></td>
+    </tr></table>
+    <h4>Las anclas: qué se queda quieto entre acordes</h4>
+    <p>Los cambios rápidos salen moviendo menos dedos, no moviéndolos más rápido. Entre muchos pares de acordes hay dedos que no necesitan moverse (anclas) o formas que se repiten. Las de estos 8:</p>
+    <table><tr><th>Cambio</th><th>Qué se queda quieto</th></tr>
+    <tr><td><b>Am ↔ C</b></td><td>Los dedos <b>1 y 2</b> no se mueven; solo viaja el 3</td></tr>
+    <tr><td><b>Em ↔ E</b></td><td>Los dedos <b>2 y 3</b> no se mueven; solo entra/sale el 1</td></tr>
+    <tr><td><b>Am ↔ E</b></td><td><b>La misma forma</b>, corrida una cuerda (los tres dedos viajan juntos, en bloque)</td></tr>
+    <tr><td><b>D ↔ Dm</b></td><td>El dedo <b>3</b> (2ª cuerda, traste 3) no se mueve</td></tr>
+    </table>
+    <p>Antes de tocar una progresión nueva, <b>busca el ancla de cada cambio</b>. Cambiar con ancla es la diferencia entre "recolocar la mano" y "ajustar dos dedos".</p>
+    <h4>Notas de forma (lo que suele costar de cada uno)</h4>
+    <p>— <b>C (Do):</b> el estirón del dedo 3 hasta la 5ª cuerda. Es el que más práctica pide de los 8.<br>— <b>G (Sol):</b> cuatro dedos, pero cómodos: el 3 y el 4 caen juntos en las agudas.<br>— <b>D (Re) y Dm (Rem):</b> solo se rasguean <b>4 cuerdas</b> (las dos gruesas llevan ✕), así que el rasgueo se vuelve más corto y preciso.<br>— <b>E (Mi) y Em (Mim):</b> suenan las 6 cuerdas. Los más llenos y los más fáciles.<br>— <b>A (La):</b> tres dedos apretados en el mismo traste. Si no caben, prueba acomodarlos en diagonal.<br>— <b>Am (Lam):</b> la forma de E corrida una cuerda hacia abajo.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>5 mayores:</b> C · D · E · G · A; <b>3 menores:</b> Em · Am · Dm.</p>
+      <p>El cambio rápido = <b>mover menos dedos</b>, no moverlos más rápido. Anclas: Am↔C (queda 1-2) · Em↔E (queda 2-3) · Am↔E (forma en bloque) · D↔Dm (queda el 3).</p>
+      <p>Las formas se estudian aquí y en Anki; <b>se producen de memoria</b> en la práctica.</p>
+    </div>
+    <p class="foot">← <a href="#" data-key="g-diagramas">El diagrama</a> · su práctica: Las 4 progresiones</p>
+    `
+  },
+  "g-corchea": {
+    titulo: "La corchea: media negra",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-ritmo-basico">Ritmo básico</a></h3>
+    <blockquote>La corchea es la figura que dura medio tiempo: en cada clic del metrónomo caben dos. Con ella el ritmo deja de ir "una nota por clic" y empieza a moverse <em>entre</em> los clics. Es la base del rasgueo abajo-arriba y de casi todo el worship.</blockquote>
+    <h4>La cuarta figura</h4>
+    <p>Ya conoces tres figuras rítmicas: redonda (4 tiempos), blanca (2) y negra (1). La serie sigue con la misma regla: cada figura dura la mitad de la anterior:</p>
+    <table><tr><th>Figura</th><th>Dura</th></tr><tr><td>Redonda</td><td>4 tiempos</td></tr><tr><td>Blanca</td><td>2 tiempos</td></tr><tr><td>Negra</td><td>1 tiempo</td></tr><tr><td><b>Corchea</b></td><td><b>½ tiempo</b></td></tr></table>
+    <p>Se dibuja como una negra con una banderita en la punta del palito. Esa banderita se llama <em>corchete</em>, de ahí el nombre de la figura. Cuando dos corcheas van seguidas, en vez de dos banderitas se unen con una barra por encima.</p>
+    <figure>
+      <img src="fundamentos/guitarra/clase03/img/clase03-corchea.png" alt="Comparación de figuras y cómo se cuenta un compás de 4/4 con corcheas.">
+      <figcaption>Arriba, la figura nueva y su barra; abajo, cómo se cuenta: el clic marca los números, la «y» va entre clic y clic.</figcaption>
+    </figure>
+    <h4>Cómo se cuenta: la «y»</h4>
+    <p>Hasta ahora contabas <em>1-2-3-4</em>. Con corcheas, cada tiempo se parte en dos y se cuenta <b>«1 y 2 y 3 y 4 y»</b>: el número cae con el clic, la «y» cae exactamente a la mitad — el metrónomo no la marca, la pones tú. Partir el tiempo en partes iguales se llama <b>subdivisión</b>.</p>
+    <h4>Para qué la vas a usar</h4>
+    <p>En el rasgueo abajo-arriba, cada "abajo-arriba" dentro de un tiempo son dos corcheas. Los patrones de rasgueo de tus canciones se escriben con esta figura.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Corchea = ½ tiempo.</b> Dos por clic. La banderita es el <i>corchete</i>; dos corcheas seguidas se unen con una <i>barra</i>.</p>
+      <p>Se cuenta <b>«1 y 2 y 3 y 4 y»</b>: número = con el clic · «y» = a la mitad.</p>
+      <p><b>Subdivisión</b> = partir cada tiempo en partes iguales.</p>
+    </div>
+    <p class="foot">← <a href="#" data-key="g-ritmo-basico">Ritmo básico</a> · su práctica: Lectura rítmica con corcheas</p>
+    `
+  },
+  "g-pentatonica": {
+    titulo: "La pentatónica de La menor: tu primera escala",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="g-notas-cuerdas">Las notas y las 6 cuerdas</a> · <a href="#" data-key="c-notas-octavas">Las notas y las octavas</a> · <a href="#" data-key="c-semitono">El semitono</a> · <a href="#" data-key="g-dedos-izq">Los dedos de la mano izquierda</a> · <a href="#" data-key="g-el-acorde">El acorde, y mayor vs. menor</a></h3>
+    <blockquote>Una escala es una lista ordenada de notas — de la más grave a la más aguda — que suenan bien juntas; la pentatónica es la escala de solo 5 notas. En clase la tocaste sin la teoría; este apunte pone el nombre a lo que ya hicieron tus dedos.</blockquote>
+    <h4>Qué es una escala</h4>
+    <p>De las 7 notas (más sus <b>alteraciones</b>, las variantes con sostenido ♯), una <b>escala</b> elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los <b>punteos</b> (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un <b>mapa</b>: te dice qué notas "pertenecen" y dónde están en el mástil.</p>
+    <h4>Pentatónica: cinco notas</h4>
+    <p><i>Penta</i> = cinco. La <b>pentatónica</b> es la escala de 5 notas, y es la primera que aprende todo guitarrista por una razón práctica: al tener pocas notas y bien separadas, casi cualquier cosa que toques con ella suena bien. Es la escala con la que se puntea.</p>
+    <h4>"De La menor": por qué se llama así</h4>
+    <p>Sus cinco notas son <b>La – Do – Re – Mi – Sol</b> (A – C – D – E – G). Se llama <i>de La</i> porque La es su casa: la escala empieza en La y las frases descansan ahí. Y <i>menor</i> porque su sonido tiene el color serio/triste que ya conoces de los acordes menores: las tres notas de tu acorde de Lam (La–Do–Mi) están dentro de la escala.</p>
+    <h4>La posición 1: la caja de los trastes 5-8</h4>
+    <p>Una escala se toca en una <b>posición</b> (o "caja"): una zona de pocos trastes donde la mano se queda quieta y cada dedo atiende su traste, que es la regla de un dedo por traste. Esta es la posición 1, la caja clásica:</p>
+    <figure>
+      <img src="fundamentos/guitarra/clase03/img/clase03-pentatonica-la.png" alt="Mástil horizontal con la 6ª cuerda abajo, trastes 4 a 9. La pentatónica de La menor en la posición 1: dedo 1 al traste 5 en todas las cuerdas; dedo 3 al traste 7 en 5ª, 4ª y 3ª; dedo 4 al traste 8 en 6ª, 2ª y 1ª. Los tres La en rojo.">
+      <figcaption>Dos notas por cuerda, siempre. Dedo 1 al traste 5 en todas; el segundo dedo depende de la cuerda: traste 7 → dedo 3, traste 8 → dedo 4.</figcaption>
+    </figure>
+    <p>El patrón para memorizarla:</p>
+    <table><tr><th>Cuerdas</th><th>Trastes</th><th>Dedos</th></tr>
+    <tr><td>6ª · 2ª · 1ª</td><td>5 y <b>8</b></td><td>1 y <b>4</b> (meñique)</td></tr>
+    <tr><td>5ª · 4ª · 3ª</td><td>5 y <b>7</b></td><td>1 y <b>3</b> (anular)</td></tr>
+    </table>
+    <p>Fíjate en la simetría: las tres cuerdas del medio (5ª-4ª-3ª) usan traste 7; las tres de los extremos (6ª-2ª-1ª) usan traste 8. El dedo 1 nunca se mueve del traste 5.</p>
+    <h4>Para qué te sirve</h4>
+    <p>— <b>Hoy:</b> es tu primer ejercicio de tocar notas de una en una — prepara el <b>picado</b> (pulsar las cuerdas nota por nota, en vez de rasguearlas juntas) y los <b>arpegios</b> (las cuerdas de un acorde tocadas de una en una) que la academia trae en las próximas clases.<br>— <b>Después (M8):</b> de esta caja salen los punteos — la melodía de un coro, un adorno entre acordes. La forma además es <b>móvil</b>: movida a otros trastes da otras pentatónicas (eso llega con M7, la forma móvil).</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Escala</b> = lista ordenada de notas que suenan bien juntas; el mapa de un tono. <b>Pentatónica</b> = la de 5 notas: fácil que suene bien, la escala de los punteos.</p>
+      <p><b>La menor pentatónica: La–Do–Re–Mi–Sol</b> (A–C–D–E–G). La es la casa; menor = el color de Lam.</p>
+      <p><b>Posición 1 (trastes 5-8):</b> dos notas por cuerda. Dedo 1 siempre al traste 5 · traste 7 → dedo 3 (cuerdas 5ª-4ª-3ª) · traste 8 → dedo 4 (cuerdas 6ª-2ª-1ª).</p>
+      <p>Un dedo por traste: la mano no se desplaza, cada dedo atiende el suyo.</p>
+    </div>
+    <p class="stub"><svg class="icon"><use href="#i-clock"/></svg>Estado en el .md fuente: PROVISIONAL — comprimido en un solo apunte; lo reemplaza la escalera de conceptos en curso (sostenido/bemol, tono/semitono, nombrar notas, escala, escala menor, pentatónica, caja del mástil).</p>
+    `
+  },
+  "c-respiracion": {
+    titulo: "Respirar para cantar: diafragma, costados, presión",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: nada, es el punto de partida.</h3>
+    <blockquote>Se lee lejos del ensayo. La técnica de la clase 1 de canto, explicada.</blockquote>
+    <h4>Por qué la respiración va primero</h4>
+    <p>La voz es aire convertido en sonido: el aire pasa entre las cuerdas vocales y las hace vibrar. Hablar gasta poco aire en frases cortas. Cantar exige frases largas y notas sostenidas, así que necesitas dos cosas que hablar no pide: que entre más aire y, sobre todo, soltarlo más lento y parejo. Lo que se entrena es controlar la salida del aire, y todos los ejercicios de la clase 1 apuntan a eso.</p>
+    <h4>El diafragma: qué es y qué hace</h4>
+    <p>El <b>diafragma</b> es un músculo ancho en forma de cúpula, debajo de los pulmones. Al inhalar se contrae y baja, y los pulmones se llenan hacia abajo. Como el diafragma baja, empuja lo que tiene debajo: por eso el abdomen sale al inhalar bien. El aire siempre va a los pulmones, nunca al estómago; el abdomen se mueve porque el diafragma bajó.</p>
+    <h4>La respiración que enseñó el profesor: abdomen + costados</h4>
+    <p>Tiene nombre técnico: <b>respiración costo-diafragmática</b> ("costo" por las costillas). Suma dos expansiones:</p>
+    <p>1. <b>Abajo:</b> el diafragma baja → el abdomen sale.<br>2. <b>A los lados:</b> las costillas bajas (las flotantes) se abren hacia afuera → entra más aire sin subir nada.</p>
+    <p><b>Test con las manos:</b> una mano en el abdomen y otra en un costado bajo, sobre las últimas costillas. Al inhalar, las dos manos deben ser empujadas hacia afuera. Los hombros no se mueven.</p>
+    <figure>
+      <img src="fundamentos/canto/clase01/img/clase01-respiracion-alta-vs-baja.png" alt="Comparación: respiración alta con hombros subidos y poco aire, contra respiración baja con abdomen y costillas expandiéndose.">
+      <figcaption>Izquierda: lo que se corrige. Derecha: lo que se entrena.</figcaption>
+    </figure>
+    <p><b>Por qué la respiración alta (hombros) está mal:</b> llena solo la parte alta de los pulmones (poco aire) y tensa cuello y hombros, que es la zona por donde sale la voz: esa tensión pasa a la voz, que sale apretada y se cansa antes.</p>
+    <h4>El ejercicio del papel: la presión hecha visible</h4>
+    <p>Un papel de 5-10 cm contra la pared, sostenido solo por tu soplido. Lo que entrena se llama <b>apoyo</b>: mantener la presión de aire constante con los músculos del abdomen, no con la garganta.</p>
+    <p>El papel funciona como medidor: se cae si el chorro es débil, si es intermitente (sueltas el aire a golpes) o si está desenfocado (soplas ancho). Sostenerlo exige lo mismo que una nota larga: presión pareja, dirigida, sin picos ni caídas.</p>
+    <figure>
+      <img src="fundamentos/canto/clase01/img/clase01-papel-pared.png" alt="Vista lateral del ejercicio: soplar un chorro fino y constante que mantiene un papel pegado a la pared.">
+      <figcaption>El mismo abdomen que empuja el papel es el que sostiene una nota de 8 segundos.</figcaption>
+    </figure>
+    <h4>El siseo: la frase sin la voz</h4>
+    <p>Soltar el aire en una "sssss" larga y pareja. Los dientes casi cerrados dejan una rendija mínima, así que el aire dura mucho y cualquier irregularidad se oye: si la "s" tiembla, tu aire tiembla; si arranca fuerte y muere, soltaste todo al inicio. Cantar una frase larga es esto mismo, aire parejo durante segundos, con la voz encima.</p>
+    <p>Dos virtudes que lo hacen ejercicio de todos los días: <b>se cronometra</b> (es el único de los tres que da un número en segundos, y la evaluación de M1 pide ≥ 20 s parejos) y <b>no gasta la voz</b> (las cuerdas vocales no vibran, así que puedes repetirlo sin cansarte ni lastimarte).</p>
+    <p><b>Papel vs. siseo:</b> el papel entrena la presión <i>dirigida</i> a un punto; el siseo entrena su <i>duración</i> en el tiempo. Juntos son el apoyo completo.</p>
+    <h4>El trino de labios (lip trill)</h4>
+    <p>Labios sueltos vibrando con el aire (el "brrr" de caballo) mientras la voz suena por debajo. Subir y bajar la altura durante el trino es hacer una <b>sirena</b>.</p>
+    <p>Por qué lo usan tanto los profesores: <b>solo funciona con aire parejo</b> (si el aire llega a golpes o se acaba, los labios dejan de vibrar al instante; mide igual que el papel); <b>protege la voz</b> (los labios semicerrados frenan un poco la salida del aire, y ese freno deja a las cuerdas vocales vibrar con mínimo esfuerzo — por eso se puede subir más agudo en trino que cantando abierto, sin dañarse); y <b>conecta aire y voz</b> (hace las dos cosas a la vez, soltar aire parejo y hacer sonar la voz encima, y por eso es el puente hacia el siguiente módulo).</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>Cantar = controlar la <b>salida</b> del aire, no inhalar mucho.</p>
+      <p>Inhalar bien: el <b>abdomen sale</b> (diafragma baja) y las <b>costillas bajas se abren</b> (las manos en los costados lo comprueban). Hombros quietos.</p>
+      <p><b>Apoyo</b> = presión de aire constante desde el abdomen. El papel en la pared lo mide.</p>
+      <p><b>Siseo</b> = la frase sin la voz: duración del aire, cronometrable (meta M1: ≥ 20 s parejos), no gasta la voz.</p>
+      <p><b>Trino de labios</b>: solo vibra con aire parejo; protege las cuerdas; con subidas y bajadas es una sirena.</p>
+    </div>
+    `
+  },
+  "c-pulso-compas": {
+    titulo: "El pulso, el metrónomo y el compás de 4/4",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: nada, es el punto de partida.</h3>
+    <blockquote>El pulso es el latido parejo de una canción: golpes a la misma distancia, sin acelerar ni frenar. Es lo primero que se entiende del ritmo, porque cantar es poner sílabas sobre ese latido.</blockquote>
+    <h4>El pulso</h4>
+    <p>Cuando alguien escucha una canción y mueve el pie o aplaude sin pensarlo, lo que marca es el <b>pulso</b>. Se reconoce porque es siempre igual: el golpe número 50 llega a la misma distancia que el golpe número 2.</p>
+    <p>El pulso no es lo mismo que las sílabas de la letra. Una <b>sílaba</b> es cada golpe de voz de una palabra: <i>a-le-lu-ya</i> tiene cuatro. Las sílabas pueden ir más rápido que el pulso, más lento o dejar de sonar un rato. El pulso sigue igual por debajo. También se le llama <b>tiempo</b> ("el primer tiempo"). En estos apuntes se dice siempre <i>pulso</i>.</p>
+    <p>Una forma de comprobarlo: aplaude parejo, sin música. Eso es un pulso. Ahora di <i>a-le-lu-ya</i> con una sílaba en cada palmada. Las cuatro sílabas caen sobre cuatro pulsos.</p>
+    <h4>La velocidad: tempo y BPM</h4>
+    <p>El <b>tempo</b> es cuántos pulsos hay en un minuto. Se mide en <b>BPM</b>, que son las siglas de <i>beats per minute</i> (pulsos por minuto).</p>
+    <p><b>60 BPM</b> son 60 pulsos por minuto, es decir, <b>un pulso por segundo</b>.<br><b>120 BPM</b> son dos pulsos por segundo.<br>Más BPM significa pulsos más seguidos, o sea, más rápido. Menos BPM, más lento.</p>
+    <p>Cada canción tiene su tempo. El número solo dice qué tan seguido late la canción: a 70 BPM caen 70 pulsos por minuto y a 110, 110. El pulso es igual de parejo en las dos, solo que en la segunda los golpes llegan más seguidos.</p>
+    <h4>El metrónomo</h4>
+    <p>El <b>metrónomo</b> es un aparato, o una aplicación gratuita en el celular, que hace un clic parejo a los BPM que elijas. Es un pulso que se puede oír desde afuera.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-pulso-compas.png" alt="El pulso como una fila de golpes iguales, con un segundo marcado entre dos de ellos a 60 BPM, y el compás de 4/4 como cajas de cuatro pulsos con el primero resaltado.">
+      <figcaption>Arriba, el pulso: a 60 BPM cada golpe llega un segundo después del anterior. Abajo, el compás de 4/4.</figcaption>
+    </figure>
+    <p>Para qué sirve: para comprobar si tu pulso es parejo. Con el metrónomo en 60 BPM, cada clic es un pulso. Si tu palmada cae encima del clic, tu pulso va con él. Si se adelanta o se atrasa, se nota enseguida.</p>
+    <p>Se usa para calibrar y después se suelta. Primero se ajusta el pulso con el clic, luego se apaga y se repite lo mismo sin él. Si el pulso se mantiene parejo, ya lo llevas por dentro; si se desarma, hace falta volver a calibrar.</p>
+    <h4>El compás: la caja de pulsos</h4>
+    <p>Contar los pulsos de una canción sin parar no es práctico, así que la música los agrupa en cajas iguales. Cada caja se llama <b>compás</b>, y una línea vertical (la <b>barra de compás</b>) separa una de otra.</p>
+    <p>El <b>4/4</b> es el compás más común. Son dos números, uno sobre el otro:</p>
+    <p><b>El de arriba</b> dice cuántos pulsos hay en cada caja. Aquí son <b>4</b>.<br><b>El de abajo</b> dice qué figura vale un pulso. Eso necesita saber qué es una figura y se explica en <a href="#" data-key="c-figuras">Las figuras rítmicas</a>.</p>
+    <p>Entonces cada compás de 4/4 se cuenta <b>1-2-3-4</b>, y vuelve a empezar en 1: <i>1-2-3-4, 1-2-3-4</i>.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-compas.png" alt="Dos compases de 4/4 seguidos: cada caja tiene cuatro pulsos numerados del 1 al 4, una barra de compás las separa, el primer pulso va en rojo, y debajo las sílabas a-le-lu-ya, una por pulso. A la izquierda, la cifra 4/4 con el 4 de arriba en rojo.">
+      <figcaption>Dos compases de 4/4. El 4 de arriba cuenta los pulsos de la caja; la barra de compás marca dónde termina una y empieza la siguiente.</figcaption>
+    </figure>
+    <h4>El tiempo fuerte</h4>
+    <p>El primer pulso de cada compás es el <b>tiempo fuerte</b>: el que más se siente y donde suelen caer los comienzos de frase (una <b>frase</b> es un grupo de sílabas que se cantan seguidas y forman una idea, como un verso). Al contar en voz alta, el 1 sale un poco más marcado que el 2, el 3 y el 4.</p>
+    <p>Prueba con <i>a-le-lu-ya</i> repetido: cuatro sílabas, cuatro pulsos, una caja. La <i>a</i> cae en el tiempo fuerte. Al repetirlo, <i>a-le-lu-ya, a-le-lu-ya</i>, empieza el siguiente compás.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-tiempo-fuerte.png" alt="Dos compases de 4/4 como barras: la del pulso 1 es alta y roja, las de los pulsos 2, 3 y 4 son bajas y grises. Debajo, las sílabas a-le-lu-ya, con la a en el pulso 1.">
+      <figcaption>El tiempo fuerte es el pulso 1 de cada compás: el que más se marca.</figcaption>
+    </figure>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Pulso</b> = el latido parejo de una canción. También se dice <i>tiempo</i>.</p>
+      <p><b>Sílaba</b> = cada golpe de voz de una palabra. Las sílabas van sobre el pulso, pero no son el pulso.</p>
+      <p><b>Tempo</b> = pulsos por minuto, en <b>BPM</b>. 60 BPM = un pulso por segundo.</p>
+      <p><b>Metrónomo</b> = clic parejo a los BPM que eliges. Se usa para calibrar el pulso y después se suelta.</p>
+      <p><b>Compás</b> = caja de pulsos, separada por la barra de compás. En <b>4/4</b> hay 4 pulsos por caja.</p>
+      <p><b>Tiempo fuerte</b> = el 1, el primer pulso de cada compás.</p>
+    </div>
+    <p class="foot">siguiente: <a href="#" data-key="c-figuras">Las figuras rítmicas</a></p>
+    `
+  },
+  "c-figuras": {
+    titulo: "Las figuras rítmicas: redonda, blanca y negra",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-pulso-compas">El pulso, el metrónomo y el compás de 4/4</a></h3>
+    <blockquote>Una figura es el símbolo que dice cuánto dura un sonido, contado en pulsos. Con ellas se escribe el ritmo de una canción: cuántos pulsos se sostiene cada sílaba.</blockquote>
+    <h4>Las tres primeras figuras</h4>
+    <p>Cada figura se dibuja con una <b>cabeza</b> (el óvalo) y, en algunas, una <b>plica</b> (el palito vertical). Se distinguen por dos cosas: si la cabeza está hueca o rellena, y si lleva plica.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-partes-figura.png" alt="Las tres figuras con sus partes señaladas: la redonda tiene cabeza hueca y no lleva plica; la blanca, cabeza hueca y plica; la negra, cabeza rellena y plica.">
+      <figcaption>Las dos partes de una figura: la cabeza (hueca o rellena) y la plica.</figcaption>
+    </figure>
+    <table><tr><th>Figura</th><th>Cómo se dibuja</th><th>Dura</th></tr><tr><td><b>Redonda</b></td><td>Óvalo hueco, sin plica</td><td><b>4 pulsos</b></td></tr><tr><td><b>Blanca</b></td><td>Óvalo hueco, con plica</td><td><b>2 pulsos</b></td></tr><tr><td><b>Negra</b></td><td>Óvalo relleno, con plica</td><td><b>1 pulso</b></td></tr></table>
+    <p>Cada figura dura la mitad que la anterior: dos blancas llenan lo que una redonda, y dos negras lo que una blanca.</p>
+    <h4>El compás de 4/4, completo</h4>
+    <p>El 4/4 que se vio en <a href="#" data-key="c-pulso-compas">el apunte del pulso</a> tiene un segundo número, el de abajo. Dice <b>qué figura vale un pulso</b>: el 4 de abajo significa "la negra". Por eso el 4/4 se lee: <i>cajas de 4 pulsos, donde cada negra ocupa uno</i>.</p>
+    <p>Cada caja tiene que sumar exactamente 4 pulsos. Se puede llenar de varias maneras:</p>
+    <p>una redonda: 4<br>dos blancas: 2 + 2 = 4<br>cuatro negras: 1 + 1 + 1 + 1 = 4<br>mezclas: negra + negra + blanca = 1 + 1 + 2 = 4</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-figuras.png" alt="Las tres figuras con su duración en pulsos y tres compases de 4/4 llenos: una redonda, dos blancas y cuatro negras.">
+      <figcaption>Arriba, las tres figuras. Abajo, tres maneras de llenar un compás de 4/4. Los números 1 a 4 son los pulsos de la caja.</figcaption>
+    </figure>
+    <h4>Las figuras en la voz</h4>
+    <p>Cada sílaba tiene su figura, y la figura dice cuánto se sostiene la voz en esa sílaba.</p>
+    <p><b>Cuatro negras:</b> <i>a-le-lu-ya</i>, una sílaba por pulso.<br><b>Dos blancas:</b> <i>Glo-ria</i>, cada sílaba se sostiene dos pulsos. Se oye más lenta y más cantada.<br><b>Una redonda:</b> una sola sílaba sostenida los cuatro pulsos de un compás, como el final de una frase larga.</p>
+    <p>Una forma de comprobarlo: aplaude el pulso y di <i>a-le-lu-ya</i> con una sílaba por palmada. Luego di <i>Glo-ria</i> alargando cada sílaba hasta la tercera palmada y empezando la siguiente en ella. Se nota cómo la misma palabra cambia al cambiar la figura.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Figura</b> = símbolo que dice cuántos pulsos dura un sonido.</p>
+      <p><b>Redonda</b> (óvalo hueco, sin plica) = <b>4 pulsos</b>. <b>Blanca</b> (hueca, con plica) = <b>2</b>. <b>Negra</b> (rellena, con plica) = <b>1</b>.</p>
+      <p>Cada figura dura la mitad que la anterior.</p>
+      <p><b>4/4:</b> arriba = 4 pulsos por caja; abajo = la negra vale 1 pulso. Cada caja suma exactamente 4.</p>
+      <p>En la voz, la figura de una sílaba dice cuánto la sostienes.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-pulso-compas">← El pulso y el compás</a> · siguiente: <a href="#" data-key="c-corchea">La corchea</a></p>
+    `
+  },
+  "c-corchea": {
+    titulo: "La corchea y la cuenta «1 y 2 y»",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-figuras">Las figuras rítmicas: redonda, blanca y negra</a></h3>
+    <blockquote>La corchea es la figura que dura medio pulso: caben dos en cada pulso. Sirve para las sílabas que van más rápido que el pulso, y para contarlas se usa la «y».</blockquote>
+    <h4>Por qué hace falta una figura más corta</h4>
+    <p>Con la negra, la sílaba más rápida dura un pulso entero. Pero en muchas canciones hay sílabas que van más seguidas que el pulso: dos sílabas dentro de un mismo pulso. Para escribirlas hace falta una figura más corta.</p>
+    <p>Esa figura es la <b>corchea</b>. Dura <b>medio pulso</b>, la mitad de una negra. Dividir cada pulso en dos partes iguales se llama <b>subdivisión</b>.</p>
+    <h4>Cómo se dibuja</h4>
+    <p>La corchea tiene la cabeza rellena y una plica, igual que la negra, pero con un <b>corchete</b>: un rabito curvo en la punta de la plica. Cuando hay dos o más corcheas seguidas, el corchete se reemplaza por una <b>barra</b> que une las plicas.</p>
+    <p>Por eso, de un vistazo: una negra tiene solo plica; una corchea sola tiene plica y corchete; dos corcheas juntas se unen por una barra.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-corchea-dibujo.png" alt="Tres figuras con sus partes señaladas: la negra, con cabeza rellena y plica; la corchea sola, con plica y un corchete curvo en la punta; y dos corcheas juntas, con las plicas unidas por una barra.">
+      <figcaption>De la negra a la corchea: el corchete (corchea sola) o la barra (dos o más juntas) indican que la figura es más corta.</figcaption>
+    </figure>
+    <h4>La cuenta «1 y 2 y 3 y 4 y»</h4>
+    <p>Para contar las corcheas se agrega una <b>«y»</b> entre pulso y pulso. El número cae exactamente sobre el pulso, y la «y» cae justo en la mitad entre ese pulso y el siguiente.</p>
+    <p>Un compás de 4/4 lleno de corcheas tiene 8: se cuenta <b>1 y 2 y 3 y 4 y</b>.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-corchea.png" alt="Cuatro negras en un compás de 4/4 con su cuenta 1 2 3 4, y debajo ocho corcheas unidas de a dos por una barra con su cuenta 1 y 2 y 3 y 4 y.">
+      <figcaption>Arriba, cuatro negras: un sonido por pulso. Abajo, ocho corcheas: dos por pulso, con la «y» en rojo.</figcaption>
+    </figure>
+    <p>Dos corcheas siempre valen una negra: ½ + ½ = 1. Por eso se pueden mezclar con las demás figuras mientras el compás sume 4. Por ejemplo, negra + dos corcheas + negra + negra = 1 + ½ + ½ + 1 + 1 = 4, que se cuenta <b>1 · 2 y · 3 · 4</b>.</p>
+    <h4>La corchea en la voz</h4>
+    <p>Cada pulso ahora puede llevar una o dos sílabas.</p>
+    <p>Una palabra de dos sílabas rápidas dentro de un pulso: <i>pa-ta</i>, contada <b>1 y</b>.<br>Una frase mezclada: <i>a-le</i> en dos corcheas (pulso 1), <i>lu</i> en una negra (pulso 2), <i>ya</i> en una blanca (pulsos 3 y 4). Se cuenta <b>1 y · 2 · 3 · 4</b>.</p>
+    <p>Una forma de comprobarlo: aplaude el pulso y di <i>pa-ta, pa-ta, pa-ta, pa-ta</i> con las dos sílabas dentro de cada palmada. La primera sílaba cae sobre la palmada y la segunda en el punto medio.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Corchea</b> = <b>medio pulso</b>; caben <b>dos por pulso</b>. Valen la mitad de una negra.</p>
+      <p><b>Subdivisión</b> = dividir cada pulso en partes iguales (aquí, en dos).</p>
+      <p>Una corchea sola lleva <b>corchete</b>; dos o más seguidas se unen con una <b>barra</b>.</p>
+      <p>La cuenta es <b>1 y 2 y 3 y 4 y</b>: el número cae en el pulso, la «y» en la mitad.</p>
+      <p>Dos corcheas = una negra. Cada compás de 4/4 sigue sumando 4 pulsos.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-figuras">← Las figuras</a> · siguiente: <a href="#" data-key="c-silencios">Los silencios</a></p>
+    `
+  },
+  "c-silencios": {
+    titulo: "Los silencios",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-figuras">Las figuras rítmicas</a> · <a href="#" data-key="c-corchea">La corchea y la cuenta «1 y 2 y»</a></h3>
+    <blockquote>Un silencio es la señal de un pulso, o de una parte de pulso, en que no suena nada, y dura exactamente lo que dura la figura de su mismo nombre. El pulso sigue contando por dentro: lo único que cambia es que no cantas.</blockquote>
+    <h4>Un silencio por cada figura</h4>
+    <p>Cada figura tiene su silencio. Dura lo mismo que ella, pero se escribe con otro dibujo. Los dos rectángulos se dibujan sobre una línea del <b>pentagrama</b>, que son las cinco líneas horizontales donde se escribe la música.</p>
+    <table><tr><th>Silencio</th><th>Cómo se dibuja</th><th>Dura</th></tr><tr><td><b>De redonda</b></td><td>Rectángulo negro colgado de una línea</td><td><b>4 pulsos</b></td></tr><tr><td><b>De blanca</b></td><td>Rectángulo negro apoyado sobre una línea</td><td><b>2 pulsos</b></td></tr><tr><td><b>De negra</b></td><td>Línea quebrada en zigzag</td><td><b>1 pulso</b></td></tr><tr><td><b>De corchea</b></td><td>Parecido a un 7, con un punto arriba a la izquierda</td><td><b>½ pulso</b></td></tr></table>
+    <p>El de redonda y el de blanca se parecen: la diferencia es que uno cuelga y el otro se apoya.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-silencios.png" alt="Las cuatro figuras con su silencio debajo (redonda, blanca, negra y corchea), y un compás de 4/4 con negra, silencio de negra, negra y silencio de negra.">
+      <figcaption>Arriba, cada figura con su silencio y su duración. Abajo, un compás: suena en los pulsos 1 y 3, y los pulsos 2 y 4 son silencio.</figcaption>
+    </figure>
+    <h4>El pulso no se detiene</h4>
+    <p>Un silencio no es un descanso libre: el pulso sigue, y se cuenta por dentro. Si un compás es <i>negra, silencio de negra, negra, silencio de negra</i>, se cuenta <b>1-2-3-4</b> completo, pero solo suena en el 1 y en el 3. En el 2 y en el 4 no se canta nada y se sigue contando.</p>
+    <p>Los pulsos sin sonido suman igual que los demás. El compás de ese ejemplo suma 1 + 1 + 1 + 1 = 4, igual que cuatro negras que suenan.</p>
+    <p>Si el silencio no se cuenta, lo que viene después entra tarde. Por eso, al aprender un ritmo con silencios, se cuentan en voz alta, aunque no suenen, y después por dentro.</p>
+    <h4>Para qué sirven en una canción</h4>
+    <p><b>Separar frases.</b> El silencio marca dónde termina una frase y empieza otra.<br><b>Tomar aire.</b> Es el momento natural para respirar, sin perder el pulso. Una frase larga sin silencio no deja dónde respirar.<br><b>Dar forma al ritmo.</b> Un silencio entre dos sílabas cambia cómo se oye la frase.</p>
+    <h4>El silencio de corchea</h4>
+    <p>Dura medio pulso, la mitad de un silencio de negra. Se cuenta con la misma cuenta de las corcheas: en <b>1 y 2 y</b>, el silencio de corchea cubre la mitad que no suena, ya sea el número o la «y». Las dos mitades de un pulso pueden ser corchea y silencio de corchea, en cualquier orden. Una forma de comprobarlo: aplaude el pulso, di <i>a</i> en la palmada 1 y <i>le</i> en la 3; en la 2 y en la 4 no digas nada y cuenta en voz baja <i>2</i> y <i>4</i>. El silencio se oye mejor cuando el pulso por debajo sigue parejo.</p>
+    <figure>
+      <img src="fundamentos/canto/clase04/img/clase04-silencio-corchea.png" alt="Dos pulsos divididos en mitades. En el pulso 1, una corchea suena en el 1 y un silencio de corchea ocupa la «y». En el pulso 2, el silencio de corchea ocupa el 2 y la corchea suena en la «y». Cada pulso suma medio más medio.">
+      <figcaption>Un pulso son dos mitades: una suena y la otra es silencio de corchea, en cualquier orden.</figcaption>
+    </figure>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Silencio</b> = un pulso, o parte de uno, sin sonido. Dura lo que la figura de su mismo nombre.</p>
+      <p><b>De redonda</b> = 4 pulsos (rectángulo colgado). <b>De blanca</b> = 2 (rectángulo apoyado). <b>De negra</b> = 1 (zigzag). <b>De corchea</b> = ½ (como un 7 con punto).</p>
+      <p>El <b>pulso sigue contando</b> por dentro durante el silencio.</p>
+      <p>Cada compás de 4/4 suma 4 pulsos, suenen o no.</p>
+      <p>Sirven para separar frases, tomar aire y dar forma al ritmo.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-corchea">← La corchea</a> · siguiente: <a href="#" data-key="c-contratiempo">El contratiempo</a></p>
+    `
+  },
+  "c-notas-octavas": {
+    titulo: "Las notas y las octavas",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: nada, es el punto de partida.</h3>
+    <blockquote>Una nota es un sonido con una altura definida, y la música entera usa solo 7 nombres que se repiten de grave a agudo. Saber dónde está una nota en ese mapa es lo que permite hablar de tu voz con precisión.</blockquote>
+    <h4>La altura y los nombres de las notas</h4>
+    <p>Los sonidos pueden ser <b>graves</b> (como una voz de hombre al hablar bajo) o <b>agudos</b> (como un silbido). Esa característica se llama <b>altura</b>: qué tan grave o agudo suena algo.</p>
+    <p>Las notas son los sonidos que usa la música, cada una con una altura fija y un nombre. Son siete, en orden de grave a agudo:</p>
+    <p><b>Do · Re · Mi · Fa · Sol · La · Si</b></p>
+    <p>Después de Si no aparece ninguna nota nueva: vuelve a venir <b>Do</b>, algo más agudo, y otra vez Re, Mi y así. Toda la música se hace con estas 7 notas repetidas muchas veces, más las intermedias que se verán en <a href="#" data-key="c-semitono">El semitono</a>.</p>
+    <h4>La octava</h4>
+    <p>La distancia entre una nota y su repetición se llama <b>octava</b>: de un Do al siguiente Do, de un Sol al siguiente Sol. Se llama así porque, contando Do-Re-Mi-Fa-Sol-La-Si-Do, la repetición es la octava nota.</p>
+    <p>Dos sonidos separados por una octava se oyen como «la misma nota, pero más arriba». Por eso un hombre y una mujer pueden cantar la misma melodía (la secuencia de notas de una canción) juntos: él una octava más grave que ella, y suena como una sola línea.</p>
+    <h4>El teclado como mapa</h4>
+    <p>Un teclado de piano muestra todas las notas en fila, de grave (izquierda) a agudo (derecha). Las teclas <b>blancas</b> llevan los 7 nombres y el patrón se repite una y otra vez. Las teclas negras se explican en el apunte del semitono.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-octavas.png" alt="Un teclado de dos octavas, del Do3 al Do5, con los tres Do resaltados en verde y las dos octavas marcadas con llaves rojas.">
+      <figcaption>Cada Do verde abre una octava nueva. De un Do al siguiente están todas las notas una vez.</figcaption>
+    </figure>
+    <h4>El número: en qué octava está la nota</h4>
+    <p>Con solo el nombre no queda claro cuál: un Sol grave y un Sol agudo se llaman igual. Por eso cada nota lleva un <b>número</b> que dice en qué octava está: <b>Do3, Sol4, Mi5</b>. A mayor número, más agudo.</p>
+    <p>El número cambia justo en cada <b>Do</b>. Después de Si3 viene Do4: Do3-Re3-Mi3-Fa3-Sol3-La3-Si3 → Do4.<br>El <b>Do central</b> del piano es el <b>Do4</b>. Es la referencia que usa todo el mundo.<br>Así se habla sin ambigüedad: no «un Sol agudo», sino <b>Sol4</b>.</p>
+    <p>Una forma de comprobarlo: en un teclado o una aplicación de piano, toca un Do y luego el Do siguiente hacia la derecha. Suenan parecido, el segundo más agudo, y entre ellos están las 7 notas.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Altura</b> = qué tan grave o agudo suena un sonido.</p>
+      <p>7 notas: <b>Do Re Mi Fa Sol La Si</b>, y después vuelve Do.</p>
+      <p><b>Octava</b> = la distancia de una nota a su repetición (un Do al siguiente Do).</p>
+      <p>El <b>número</b> (Do3, Sol4) dice en qué octava está. Mayor número, más agudo. Cambia en cada Do.</p>
+      <p><b>Do4</b> = el Do central del piano.</p>
+    </div>
+    <p class="foot">siguiente: <a href="#" data-key="c-semitono">El semitono</a></p>
+    `
+  },
+  "c-semitono": {
+    titulo: "El semitono",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-notas-octavas">Las notas y las octavas</a></h3>
+    <blockquote>El semitono es el paso más pequeño entre dos notas. Es la unidad con la que se miden las distancias en la música: de una nota a otra, de una canción a otra más grave.</blockquote>
+    <h4>El paso más pequeño</h4>
+    <p>En un teclado, el semitono es la distancia de una tecla a la <b>tecla vecina</b>, sea blanca o negra. No hay ninguna tecla entre las dos.</p>
+    <p>Entre un Do y el Do siguiente hay <b>12 semitonos</b>. Eso es una octava.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-semitonos.png" alt="Una octava de teclado, de Do a Do, con cada tecla numerada del 0 al 12 y las parejas Mi-Fa y Si-Do marcadas en rojo porque no tienen tecla negra entre ellas.">
+      <figcaption>Cada número es un semitono más arriba que el anterior. Del 0 al 12 hay una octava.</figcaption>
+    </figure>
+    <p>Entre algunas notas blancas hay una tecla negra y entre otras no. <b>Entre Mi y Fa, y entre Si y Do, no hay tecla negra</b>: esas dos parejas ya están a un semitono. Las demás notas blancas vecinas (Do y Re, Re y Mi, Fa y Sol, Sol y La, La y Si) están a dos semitonos, con una tecla negra en medio.</p>
+    <h4>Sostenido y bemol</h4>
+    <p>Las teclas negras son las notas intermedias. Se nombran a partir de la blanca más cercana:</p>
+    <p><b>Sostenido</b> (<b>#</b>) sube un semitono. La tecla negra a la derecha de Do es <b>Do#</b>.<br><b>Bemol</b> (<b>b</b>) baja un semitono. La misma tecla negra, vista desde Re, es <b>Reb</b>.</p>
+    <p>Una tecla negra tiene entonces dos nombres: Do# y Reb son el mismo sonido.</p>
+    <h4>Para qué sirve contar semitonos</h4>
+    <p>Sirve para medir con exactitud una distancia. «Bajar una canción 3 semitonos» significa mover cada nota de la canción 3 teclas a la izquierda, contando también las negras. Por ejemplo, un Mi bajado 3 semitonos es un Do#: Mi → Re# → Re → Do#.</p>
+    <p>Así se pueden dar instrucciones precisas: «sube 2 semitonos», «baja 5».</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Semitono</b> = el paso más pequeño: de una tecla a la tecla vecina, blanca o negra.</p>
+      <p><b>12 semitonos</b> = una octava.</p>
+      <p><b>Mi-Fa</b> y <b>Si-Do</b> están a un semitono (no hay tecla negra entre ellas). Las otras parejas vecinas, a dos.</p>
+      <p><b>Sostenido (#)</b> sube un semitono. <b>Bemol (b)</b> baja un semitono. Do# y Reb son el mismo sonido.</p>
+      <p>Con semitonos se mide cuánto se baja o sube una canción.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-notas-octavas">← Las notas y las octavas</a> · siguiente: <a href="#" data-key="c-afinacion">Afinación</a></p>
+    `
+  },
+  "c-afinacion": {
+    titulo: "Afinación: cantar la altura que oyes",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-notas-octavas">Las notas y las octavas</a> · <a href="#" data-key="c-semitono">El semitono</a> · <a href="#" data-key="c-respiracion">Respirar para cantar</a></h3>
+    <blockquote>Cantar afinado es que tu voz suene a la misma altura que la nota de referencia. Se entrena con el oído: oír la nota, cantarla y comprobar si coincide.</blockquote>
+    <h4>Qué es estar afinado</h4>
+    <p>Una <b>nota de referencia</b> es una nota que suena afuera de ti, de un piano o un teclado, y que sirve de modelo. Estás <b>afinado</b> cuando tu voz suena a la misma altura que ella. Cuando las dos suenan a la vez, se oyen como un solo sonido: se <i>funden</i>.</p>
+    <p>Hay dos maneras de salirse:</p>
+    <p><b>Baja:</b> tu voz suena más grave que la referencia.<br><b>Alta:</b> tu voz suena más aguda que la referencia.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-afinacion.png" alt="Tres filas con una línea negra de referencia: en la primera la voz queda por debajo (baja), en la segunda sobre la línea (afinada) y en la tercera por encima (alta).">
+      <figcaption>La línea negra es la nota de referencia. La línea de color es tu voz.</figcaption>
+    </figure>
+    <p>A veces la diferencia es menor a un semitono (<a href="#" data-key="c-semitono">El semitono</a>) y igual se oye mal.</p>
+    <h4>Cómo se entrena</h4>
+    <p>El procedimiento es siempre el mismo, con tres pasos:</p>
+    <p>1. <b>Oír</b> la nota de referencia hasta tenerla clara.<br>2. <b>Cantarla</b>.<br>3. <b>Volver a oír</b> la referencia y comparar: ¿era más alta o más baja que la mía?</p>
+    <p>La referencia la da un piano, un teclado o una aplicación de piano. Una aplicación que dibuje la altura de tu voz mientras cantas hace el trabajo que debe hacer el oído, y entonces el oído no se entrena. La comprobación se hace después: se canta sin mirar nada, se graba y se escucha la grabación.</p>
+    <p>Una nota que sale <b>baja</b> con frecuencia tiene que ver con el apoyo del aire, que se explica en <a href="#" data-key="c-respiracion">Respirar para cantar</a>. Qué causa una nota baja concreta lo identifica el profesor, que oye la voz.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Afinado</b> = tu voz suena a la misma altura que la nota de referencia.</p>
+      <p><b>Baja</b> = más grave que la referencia. <b>Alta</b> = más aguda.</p>
+      <p><b>Referencia</b> = una nota de un piano, un teclado o una aplicación de piano.</p>
+      <p>Entrenar = oír, cantar, volver a oír y comparar. Se verifica después, con una grabación.</p>
+      <p>Una nota baja suele tener que ver con el apoyo del aire; el profesor identifica la causa.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-semitono">← El semitono</a> · siguiente: <a href="#" data-key="c-tesitura-rango">Tesitura, rango y tipos de voz</a></p>
+    `
+  },
+  "c-tesitura-rango": {
+    titulo: "Tesitura, rango y tipos de voz",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-notas-octavas">Las notas y las octavas</a> · <a href="#" data-key="c-semitono">El semitono</a></h3>
+    <blockquote>El rango es todo lo que tu voz alcanza; la tesitura es la parte de ese rango donde suena bien. Saber la tuya dice qué canciones te quedan cómodas y cuáles hay que mover.</blockquote>
+    <h4>El rango</h4>
+    <p>Tu voz llega hasta una nota grave y hasta una nota aguda. Todas las notas entre esas dos forman tu <b>rango vocal</b>. Se escribe con las notas de <a href="#" data-key="c-notas-octavas">el apunte de las notas</a>: por ejemplo, «de Do3 a Do5».</p>
+    <h4>La tesitura</h4>
+    <p>Dentro del rango no todas las notas suenan igual. Cerca de los extremos las notas salen, pero con esfuerzo o sin cuerpo: se pueden producir, pero no se les pide una canción. La zona donde la voz suena con cuerpo y sin esfuerzo se llama <b>tesitura</b>.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-rango-tesitura.png" alt="Teclado de cuatro octavas, del Do2 al Do6, con el rango marcado en azul arriba y la tesitura en verde, más corta, dentro de él.">
+      <figcaption>El ejemplo de la figura es solo un ejemplo: cada persona tiene su rango y su tesitura.</figcaption>
+    </figure>
+    <p>La tesitura es la zona con la que se trabaja. Una canción te queda cómoda cuando todas sus notas caen dentro de tu tesitura. Si no caen, la canción se puede cantar más grave o más aguda que como la grabó el artista, hasta que quepa.</p>
+    <p>El rango y la tesitura cambian con el tiempo: con práctica el rango crece y la tesitura se mueve con él.</p>
+    <h4>Los tipos de voz</h4>
+    <p>Las voces se clasifican según dónde queda su tesitura. De más grave a más aguda:</p>
+    <table><tr><th></th><th>Voz masculina</th><th>Voz femenina</th></tr><tr><td>Más grave</td><td><b>Bajo</b></td><td><b>Contralto</b></td></tr><tr><td>Intermedia</td><td><b>Barítono</b></td><td><b>Mezzosoprano</b></td></tr><tr><td>Más aguda</td><td><b>Tenor</b></td><td><b>Soprano</b></td></tr></table>
+    <p>Cada tipo tiene un rango típico en voces entrenadas:</p>
+    <table><tr><th>Tipo</th><th>Rango típico</th></tr><tr><td>Bajo</td><td>Mi2 a Mi4</td></tr><tr><td>Barítono</td><td>La2 a La4</td></tr><tr><td>Tenor</td><td>Do3 a Do5</td></tr><tr><td>Contralto</td><td>Fa3 a Fa5</td></tr><tr><td>Mezzosoprano</td><td>La3 a La5</td></tr><tr><td>Soprano</td><td>Do4 a Do6</td></tr></table>
+    <p>Son referencias, y varían de una persona a otra. Una voz sin entrenar suele tener un rango más corto que el de la tabla. Un tipo de voz no mide nivel ni calidad: describe dónde está la tesitura. Sirve para saber qué tonos le quedan bien a cada voz.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Rango</b> = de tu nota más grave a tu más aguda.</p>
+      <p><b>Tesitura</b> = la zona del rango donde suenas con cuerpo y sin esfuerzo. Es la zona de trabajo.</p>
+      <p>Los extremos del rango salen, pero no se le piden a una canción.</p>
+      <p>Una canción cómoda tiene todas sus notas dentro de tu tesitura.</p>
+      <p>Voces de grave a aguda: bajo, barítono, tenor · contralto, mezzosoprano, soprano.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-afinacion">← Afinación</a> · siguiente: <a href="#" data-key="c-registro">Registro de voz</a></p>
+    `
+  },
+  "c-registro": {
+    titulo: "Registro de voz: pecho, cabeza y el quiebre",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-tesitura-rango">Tesitura, rango y tipos de voz</a></h3>
+    <blockquote>Un registro es cada una de las dos maneras de producir el sonido: la voz de pecho para las notas más graves y la voz de cabeza para las más agudas. Es una sola voz que funciona de dos modos.</blockquote>
+    <h4>Los dos registros</h4>
+    <p><b>Voz de pecho:</b> más grave, con más cuerpo. Se parece a la voz con la que hablas fuerte o llamas a alguien. Se siente vibrar el pecho.<br><b>Voz de cabeza:</b> más aguda y más liviana. Se siente la vibración más arriba, en la cara y la cabeza.</p>
+    <p>Los dos registros no son voces distintas: son dos modos de la misma. Esta división en dos es la versión inicial: hay otras formas de producir la voz que se verán más adelante. Cada uno cubre una parte del rango y se superponen en una zona intermedia.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-registros.png" alt="Una barra horizontal de grave a agudo: voz de pecho a la izquierda en naranja, voz de cabeza a la derecha en azul, y entre las dos una zona de cambio en rojo.">
+      <figcaption>Cada persona tiene su zona de cambio en un lugar distinto de su tesitura.</figcaption>
+    </figure>
+    <h4>El quiebre</h4>
+    <p>Al subir, tarde o temprano la voz tiene que pasar de pecho a cabeza. Si ese paso es brusco, se oye un salto: es el <b>quiebre</b>, al que también se le dice <b>gallo</b>. Es normal y se trabaja con el tiempo.</p>
+    <p>El objetivo es pasar de un registro a otro sin que se note el corte. Se practica con una <b>sirena</b>: un ejercicio donde la voz sube y baja deslizando, sin cortes, como la sirena de una ambulancia, sobre una sola vocal. La sirena pasa por la zona de cambio muchas veces y enseña al cuerpo a hacer el paso suave.</p>
+    <h4>Lo que un apunte no puede decir</h4>
+    <p>Cómo se siente exactamente cada registro y dónde está tu zona de cambio lo identifica el profesor, que oye tu voz. Lo que lees aquí da el nombre y el mapa; el oído del profesor da la corrección.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Registro</b> = cada modo de producir la voz: <b>pecho</b> (más grave, con cuerpo) y <b>cabeza</b> (más aguda, liviana).</p>
+      <p>Son dos modos de la misma voz, con una zona intermedia donde se superponen.</p>
+      <p><b>Quiebre</b> o <b>gallo</b> = el salto que se oye cuando el paso de uno a otro es brusco.</p>
+      <p>La <b>sirena</b> (deslizar la voz subiendo y bajando sin cortes) entrena el paso suave.</p>
+      <p>Cómo se siente cada registro lo corrige el profesor.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-tesitura-rango">← Tesitura, rango y tipos de voz</a> · siguiente: <a href="#" data-key="c-resonancia">Resonancia</a></p>
+    `
+  },
+  "c-resonancia": {
+    titulo: "Resonancia: dónde suena la voz",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-registro">Registro de voz</a> · <a href="#" data-key="c-respiracion">Respirar para cantar</a></h3>
+    <blockquote>La resonancia es la amplificación y el color que los espacios del cuerpo le dan al sonido de las cuerdas vocales. Por eso la voz suena más fuerte y con más cuerpo de lo que sonaría saliendo solo de la garganta.</blockquote>
+    <h4>De dónde sale el sonido</h4>
+    <p>El sonido de la voz nace en las <b>cuerdas vocales</b>: dos pliegues dentro de la <b>laringe</b>, en el cuello, que vibran cuando pasa el aire. Solo, ese sonido es débil. Se hace fuerte y reconocible al pasar por una serie de espacios huecos del cuerpo, igual que un sonido se oye más en una habitación vacía que en un armario.</p>
+    <p>Esos espacios son los <b>resonadores</b>.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-resonancia.png" alt="Perfil de cabeza y torso con cuatro zonas marcadas: nariz y cabeza en azul, boca en naranja, garganta en verde y pecho en rojo.">
+      <figcaption>Los espacios donde resuena la voz, de arriba hacia abajo.</figcaption>
+    </figure>
+    <p><b>Nariz y cabeza:</b> los espacios de la cara y la parte alta del cráneo. Se asocian con las notas agudas y livianas.<br><b>Boca:</b> su forma cambia con los labios, la lengua y la mandíbula. Es el resonador que más se puede mover a voluntad.<br><b>Garganta:</b> el espacio sobre las cuerdas vocales.<br><b>Pecho:</b> el torso vibra con los sonidos graves.</p>
+    <h4>Resonancia y registro</h4>
+    <p>La resonancia explica por qué cada registro se siente en un lugar distinto (<a href="#" data-key="c-registro">Registro de voz</a>). En la voz de pecho se siente la vibración abajo, en el pecho. En la de cabeza, arriba, en la cara.</p>
+    <h4>El timbre</h4>
+    <p>El <b>timbre</b> es el color de una voz: lo que hace que dos personas que cantan la misma nota suenen distinto. Depende de cómo resuena cada cuerpo. También se puede cambiar un poco: al modificar la forma de la boca cambia el espacio de resonancia y cambia el color.</p>
+    <p>Una forma de comprobarlo: pon la mano en el pecho y di «mmm» con los labios cerrados en una nota grave; luego en una aguda. El pecho vibra más en la grave. Después pon un dedo en un lado de la nariz y repite «mmm»: la vibración se siente ahí. Cómo se siente en tu voz lo confirma el profesor.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>La voz nace en las <b>cuerdas vocales</b> (dentro de la laringe, en el cuello) y es débil por sí sola.</p>
+      <p><b>Resonancia</b> = el sonido se amplifica y toma color en los espacios del cuerpo: nariz y cabeza, boca, garganta y pecho.</p>
+      <p>Pecho = vibración abajo, en las notas graves. Cabeza = vibración arriba, en las agudas.</p>
+      <p><b>Timbre</b> = el color de una voz. Cambia un poco con la forma de la boca.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-registro">← Registro de voz</a> · siguiente: <a href="#" data-key="c-vocales">Las vocales y la gesticulación</a></p>
+    `
+  },
+  "c-vocales": {
+    titulo: "Las vocales y la gesticulación",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-resonancia">Resonancia</a></h3>
+    <blockquote>Gesticular es mover los labios, la mandíbula y las mejillas con amplitud al cantar, para que cada vocal tenga su forma de boca clara. Al hablar la boca se mueve poco, y al cantar eso no alcanza.</blockquote>
+    <h4>Cada vocal tiene su forma de boca</h4>
+    <p>Las cinco vocales (A, E, I, O, U) se distinguen por la forma de la boca y la posición de la lengua, es decir, por el espacio que el sonido atraviesa (<a href="#" data-key="c-resonancia">Resonancia</a>). Cambiar la forma de la boca cambia el color de la voz sin cambiar la nota.</p>
+    <figure>
+      <img src="fundamentos/canto/clase05/img/clase05-vocales.png" alt="Cinco bocas dibujadas de frente, una por vocal: la A muy abierta, la E ancha, la I con los labios estirados y casi cerrada, la O redonda y mediana, la U redonda y pequeña.">
+      <figcaption>El tamaño y la forma de la abertura es lo que cambia de una vocal a otra.</figcaption>
+    </figure>
+    <table><tr><th>Vocal</th><th>Forma de la boca</th></tr><tr><td><b>A</b></td><td>Muy abierta, la mandíbula baja</td></tr><tr><td><b>E</b></td><td>Ancha, abierta a medias</td></tr><tr><td><b>I</b></td><td>Labios estirados hacia los lados, boca casi cerrada</td></tr><tr><td><b>O</b></td><td>Redonda, abertura media</td></tr><tr><td><b>U</b></td><td>Redonda y pequeña, labios hacia adelante</td></tr></table>
+    <h4>Gesticular</h4>
+    <p><b>Gesticular</b> es moverse con amplitud entre esas formas. Al hablar, las vocales son breves y se entienden por el contexto, así que la boca apenas se mueve. Al cantar, las notas son largas y más fuertes, y una boca casi quieta deja las vocales poco claras y el sonido apagado.</p>
+    <p>Gesticular bien significa dos cosas:</p>
+    <p>La mandíbula <b>baja</b> al abrir, sin forzarla ni empujarla hacia adelante.<br>Los labios y las mejillas <b>acompañan</b> la forma de cada vocal.</p>
+    <p>La vocal I y la U tienden a cerrarse al subir a notas agudas, porque su forma ya es pequeña. Si la boca se cierra más, el sonido se aprieta. Mantener la boca bien abierta en las notas agudas es parte de gesticular. El profesor corrige cuánto abrir y dónde sobra tensión.</p>
+    <p>Una forma de comprobarlo: frente a un espejo, canta A-E-I-O-U sobre una sola nota, sin cambiarla. La boca cambia en cada vocal y la nota se queda igual.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p>Cada vocal tiene su <b>forma de boca</b>: A muy abierta · E ancha · I estirada y casi cerrada · O redonda media · U redonda pequeña.</p>
+      <p><b>Gesticular</b> = mover labios, mandíbula y mejillas con amplitud al cantar.</p>
+      <p>Al cantar, la boca se mueve más que al hablar.</p>
+      <p>La mandíbula baja sin forzarse. I y U tienden a cerrarse en las notas agudas: mantener la boca abierta.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-resonancia">← Resonancia</a> · siguiente: <a href="#" data-key="c-articulacion">Articulación</a></p>
+    `
+  },
+  "c-articulacion": {
+    titulo: "Articulación: que se entienda lo que cantas",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-vocales">Las vocales y la gesticulación</a> · <a href="#" data-key="c-corchea">La corchea y la cuenta «1 y 2 y»</a></h3>
+    <blockquote>Articular es formar los sonidos de las palabras con la lengua, los labios y los dientes, con precisión. Si la gesticulación abre la boca, la articulación hace que se entienda cada palabra.</blockquote>
+    <h4>Vocales y consonantes</h4>
+    <p>Una palabra se compone de dos tipos de sonido:</p>
+    <p>Las <b>vocales</b> (A, E, I, O, U) llevan el sonido: son donde la voz se sostiene y suena.<br>Las <b>consonantes</b> (P, T, K, M, L, S, entre otras) se forman cerrando o estrechando el paso del aire con la lengua, los labios o los dientes. Dan forma a la palabra.</p>
+    <p>Las vocales sostienen el sonido; las consonantes hacen que se entienda lo que se dice. Esa claridad se llama <b>dicción</b>.</p>
+    <h4>Dónde se forman las consonantes</h4>
+    <p>Cada consonante se forma en un lugar de la boca:</p>
+    <table><tr><th>Dónde</th><th>Consonantes</th><th>Qué se mueve</th></tr><tr><td>Los labios</td><td>P, B, M</td><td>Los labios se juntan</td></tr><tr><td>Lengua y dientes</td><td>T, D, N, L</td><td>La punta de la lengua toca atrás de los dientes de arriba</td></tr><tr><td>Fondo de la boca</td><td>K (C, Q), G</td><td>La parte de atrás de la lengua sube hacia el paladar</td></tr></table>
+    <p>La tabla muestra tres lugares como ejemplo; otras consonantes, como S, F o R, se forman en otros puntos.</p>
+    <h4>Articular al cantar</h4>
+    <p>Gesticular y articular trabajan juntas pero hacen cosas distintas. <b>Gesticular</b> es la amplitud: cuánto se abre la boca. <b>Articular</b> es la precisión: que la lengua y los labios lleguen a su punto en el momento justo.</p>
+    <p>Cuanto más rápido va el ritmo, más cuenta la articulación. Las sílabas rápidas, como las corcheas (<a href="#" data-key="c-corchea">La corchea</a>), dejan poco tiempo para formar cada consonante, y si esa tarea se hace a medias la palabra se vuelve borrosa. La solución es marcar las consonantes con más decisión, sin tensar la mandíbula ni apretar la garganta. Si aparece tensión, el profesor la corrige.</p>
+    <p>Una forma de comprobarlo: di en voz alta, despacio y luego más rápido, <i>pa-ta-ka, pa-ta-ka</i>. Se nota cómo los labios, la lengua y el fondo de la boca trabajan en ese orden. Un trabalenguas corto, como <i>tres tristes tigres</i>, pone a prueba la T y la R.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Articular</b> = formar los sonidos de las palabras con lengua, labios y dientes.</p>
+      <p><b>Vocales</b> llevan el sonido. <b>Consonantes</b> dan forma a la palabra.</p>
+      <p><b>Dicción</b> = qué tan claro se entiende lo que se canta.</p>
+      <p>P-B-M se forman con los labios; T-D-N-L con la lengua tras los dientes; K-G en el fondo de la boca.</p>
+      <p>Gesticular = amplitud; articular = precisión. Cuanto más rápido el ritmo, más hay que marcar las consonantes.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-vocales">← Las vocales y la gesticulación</a> · siguiente: <a href="#" data-key="c-vocalizacion">Vocalización</a></p>
+    `
+  },
+  "c-vocalizacion": {
+    titulo: "Vocalización: ejercicios para preparar la voz",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-tesitura-rango">Tesitura, rango y tipos de voz</a> · <a href="#" data-key="c-afinacion">Afinación</a> · <a href="#" data-key="c-registro">Registro de voz</a> · <a href="#" data-key="c-vocales">Las vocales y la gesticulación</a> · <a href="#" data-key="c-respiracion">Respirar para cantar</a></h3>
+    <blockquote>Vocalizar es cantar ejercicios sin la letra de una canción, sobre una vocal o una sílaba, para preparar la voz y entrenar una habilidad concreta.</blockquote>
+    <h4>Qué se canta al vocalizar</h4>
+    <p>En lugar de palabras, se canta una vocal («aaa») o una sílaba corta («ma-me-mi-mo-mu»). Como no hay letra que recordar, la atención va entera a una sola cosa: la afinación, la forma de la boca, el paso entre registros o el aire.</p>
+    <p>Los ejercicios más comunes:</p>
+    <p><b>Escalas cortas:</b> una <b>escala</b> son notas consecutivas que suben una a una, por ejemplo Do-Re-Mi-Fa-Sol, cantadas sobre una vocal.<br><b>Sirenas:</b> deslizar la voz subiendo y bajando, como se explica en <a href="#" data-key="c-registro">Registro de voz</a>.<br><b>Sílabas cambiando de vocal:</b> <i>ma-me-mi-mo-mu</i> sobre la misma nota, para practicar las formas de boca.<br><b>Trino de labios:</b> vibrar los labios mientras suena la voz, que ya se vio en <a href="#" data-key="c-respiracion">Respirar para cantar</a>.</p>
+    <h4>Para qué sirve</h4>
+    <p><b>Calentar:</b> la voz se prepara antes de cantar canciones, en lugar de empezar fría.<br><b>Mover la voz entre registros</b> sin quiebre, con sirenas y escalas.<br><b>Fijar la forma de la boca</b> de cada vocal.<br><b>Entrenar el oído:</b> cada escala se canta contra una nota de referencia (<a href="#" data-key="c-afinacion">Afinación</a>).</p>
+    <h4>Con qué cuidado</h4>
+    <p>Los ejercicios se hacen dentro de la tesitura propia (<a href="#" data-key="c-tesitura-rango">Tesitura, rango y tipos de voz</a>), sin empujar hacia los extremos. Dolor o carraspera son motivo para parar. Si la voz se siente cansada o rasposa, se descansa; el profesor ajusta qué ejercicios y cuánto.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Vocalizar</b> = cantar ejercicios sin letra, sobre una vocal o una sílaba.</p>
+      <p><b>Escala</b> = notas consecutivas que suben una a una (Do-Re-Mi-Fa-Sol).</p>
+      <p>Ejercicios comunes: escalas cortas, sirenas, sílabas con cambio de vocal, trino de labios.</p>
+      <p>Sirve para calentar, pasar entre registros sin quiebre, fijar la boca y entrenar el oído.</p>
+      <p>Dentro de la tesitura. Dolor o carraspera: parar.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-articulacion">← Articulación</a></p>
+    `
+  },
+  "c-contratiempo": {
+    titulo: "El contratiempo: cantar en la «y»",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-pulso-compas">El pulso y el compás</a> · <a href="#" data-key="c-figuras">Las figuras</a> · <a href="#" data-key="c-corchea">La corchea y la cuenta «1 y 2 y»</a> · <a href="#" data-key="c-silencios">Los silencios</a></h3>
+    <blockquote>Un sonido está a contratiempo cuando empieza en la «y», justo entre dos pulsos, y no sobre el pulso. El pulso sigue sonando por dentro y la voz entra en el espacio de en medio.</blockquote>
+    <h4>A tiempo y a contratiempo</h4>
+    <p>Cantar con cada sílaba sobre el pulso (en el 1, el 2, el 3 o el 4) es cantar <b>a tiempo</b>.</p>
+    <p>Cantar <b>a contratiempo</b> es hacer lo contrario: la sílaba empieza en la <b>«y»</b>, la mitad entre un pulso y el siguiente, en el punto que se cuenta en <a href="#" data-key="c-corchea">la corchea</a>. En el pulso no suena nada.</p>
+    <figure>
+      <img src="fundamentos/canto/clase06/img/clase06-contratiempo.png" alt="Dos filas, cada una de un compás de 4/4: arriba cuatro negras sobre los pulsos 1 2 3 4, y abajo, en cada pulso, un silencio de corchea seguido de una corchea que cae en la «y».">
+      <figcaption>Arriba, a tiempo: la voz suena en los números. Abajo, a contratiempo: la voz suena en las «y».</figcaption>
+    </figure>
+    <h4>Cómo se escribe</h4>
+    <p>El contratiempo se escribe con las dos figuras de medio pulso, en este orden: un <b>silencio de corchea</b> sobre el pulso y una <b>corchea</b> sobre la «y». Eso da la cuenta <b>(1) y (2) y (3) y (4) y</b>, donde los números entre paréntesis no suenan y las «y» sí.</p>
+    <p>Por eso el contratiempo depende de lo que se vio en el apunte de silencios: el pulso sigue contándose por dentro mientras no suena nada, y la voz entra justo en el medio.</p>
+    <h4>Por qué cuesta</h4>
+    <p>Todo el cuerpo tiende a caer en el pulso: el pie, las palmas, la cabeza. Cantar en la «y» pide lo contrario, que el pulso exista por dentro sin sonar y la voz llegue entre dos golpes. Si el pulso interno se afloja, las sílabas se corren hacia el pulso y el contratiempo se vuelve un ritmo a tiempo sin querer.</p>
+    <p>Una forma de comprobarlo: marca el pulso con el pie (o con un metrónomo) y di «ta» solo en cada «y», entre dos golpes del pie. La sílaba tiene que caer a la mitad entre un golpe y el siguiente, sin acompañar ninguno. Si cae justo con el pie, está a tiempo.</p>
+    <p>El contratiempo también se canta con palabras: cada sílaba cae en una «y» en lugar de en un número.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>A tiempo</b> = el sonido empieza sobre el pulso (1, 2, 3, 4).</p>
+      <p><b>A contratiempo</b> = el sonido empieza en la «y», entre dos pulsos.</p>
+      <p>Se escribe con un <b>silencio de corchea</b> sobre el pulso y una <b>corchea</b> en la «y».</p>
+      <p>El <b>pulso sigue</b> contándose por dentro mientras no suena.</p>
+      <p>Cuesta porque el cuerpo tiende a caer en el pulso.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-silencios">← Los silencios</a></p>
+    `
+  },
+  "c-semicorchea": {
+    titulo: "La semicorchea y la cuenta «1 e y a»",
+    html: `
+    <h3 class="pre">Antes de esto necesitas: <a href="#" data-key="c-pulso-compas">El pulso y el compás</a> · <a href="#" data-key="c-corchea">La corchea y la cuenta «1 y 2 y»</a> · <a href="#" data-key="c-silencios">Los silencios</a> · <a href="#" data-key="c-articulacion">Articulación</a></h3>
+    <blockquote>La semicorchea es la figura que dura un cuarto de pulso: caben cuatro en cada pulso. Sirve para las sílabas muy seguidas, y se cuenta con 1 e y a.</blockquote>
+    <h4>Un cuarto de pulso</h4>
+    <p>La corchea divide el pulso en dos partes iguales. La <b>semicorchea</b> lo divide en <b>cuatro</b>, así que dura <b>un cuarto de pulso</b>, la mitad de una corchea.</p>
+    <p>Las equivalencias salen directas:</p>
+    <p>2 semicorcheas = 1 corchea.<br>4 semicorcheas = 1 negra, es decir, un pulso.<br>En un compás de 4/4 caben <b>16 semicorcheas</b>.</p>
+    <figure>
+      <img src="fundamentos/canto/clase06/img/clase06-semicorchea.png" alt="Tres filas de un compás de 4/4: cuatro negras, ocho corcheas y dieciséis semicorcheas, cada una con su cuenta debajo, y abajo los silencios de corchea y de semicorchea.">
+      <figcaption>Cada fila llena el mismo compás de 4/4: cada vez más sonidos dentro de los mismos cuatro pulsos.</figcaption>
+    </figure>
+    <h4>Cómo se dibuja</h4>
+    <p>Tiene la cabeza rellena y la plica, como la corchea, pero con <b>dos</b> corchetes en vez de uno. Cuando hay varias seguidas, los corchetes se reemplazan por <b>dos barras</b> paralelas que unen las plicas, como se ve en la figura. Eso las distingue de las corcheas, que llevan una sola barra.</p>
+    <figure>
+      <img src="fundamentos/canto/clase06/img/clase06-semicorchea-dibujo.png" alt="Cuatro formas lado a lado: la corchea sola con un corchete, la semicorchea sola con dos corchetes, dos corcheas unidas por una barra y cuatro semicorcheas unidas por dos barras.">
+      <figcaption>Una semicorchea lleva un corchete o una barra más que la corchea: dos corchetes si va sola, dos barras si va unida a otras.</figcaption>
+    </figure>
+    <h4>La cuenta «1 e y a»</h4>
+    <p>Con cuatro sonidos por pulso hacen falta cuatro sílabas de conteo. Se cuenta <b>1 e y a · 2 e y a · 3 e y a · 4 e y a</b>:</p>
+    <p>El <b>número</b> cae sobre el pulso.<br>La <b>«y»</b> cae en la mitad del pulso, igual que en la cuenta de las corcheas.<br>La <b>«e»</b> y la <b>«a»</b> caen en los cuartos que quedan: la «e» entre el número y la «y», la «a» entre la «y» y el número siguiente.</p>
+    <p>Las semicorcheas se pueden mezclar con las demás figuras mientras el compás sume 4 pulsos. Por ejemplo, una negra y cuatro semicorcheas ocupan dos pulsos: 1 + 4 × ¼ = 2.</p>
+    <h4>El silencio de semicorchea</h4>
+    <p>Dura un cuarto de pulso y se dibuja como el silencio de corchea, pero con <b>dos</b> banderas en lugar de una (ver la figura). Cumple la misma función: el pulso sigue contándose por dentro mientras no suena nada.</p>
+    <h4>La semicorchea en la voz</h4>
+    <p>Cada pulso puede llevar hasta cuatro sílabas. Es el ritmo de las frases rápidas, donde la articulación pesa más (<a href="#" data-key="c-articulacion">Articulación</a>): con cuatro sílabas dentro de un pulso, cada consonante dispone de muy poco tiempo.</p>
+    <p>Una forma de comprobarlo: marca el pulso con el pie o con un metrónomo y di <i>a-le-lu-ya</i> con las cuatro sílabas dentro de un solo golpe del pie, contando <b>1 e y a</b>. Luego repite con otras cuatro sílabas, como <i>pa-ra-ca-ta</i>, una por cada parte de la cuenta.</p>
+    <div class="recap">
+      <div class="recap-head"><svg class="icon"><use href="#i-list"/></svg>Repaso en una pantalla</div>
+      <p><b>Semicorchea</b> = <b>¼ de pulso</b>; caben <b>cuatro por pulso</b> y 16 en un compás de 4/4.</p>
+      <p>2 semicorcheas = 1 corchea · 4 semicorcheas = 1 negra.</p>
+      <p>Se dibuja con <b>dos corchetes</b> (o <b>dos barras</b> si van unidas).</p>
+      <p>Cuenta: <b>1 e y a</b>. El número cae en el pulso, la «y» en la mitad, la «e» y la «a» en los cuartos.</p>
+      <p><b>Silencio de semicorchea</b> = ¼ de pulso, con dos banderas. El pulso sigue contando.</p>
+    </div>
+    <p class="foot"><a href="#" data-key="c-silencios">← Los silencios</a> · siguiente: <a href="#" data-key="c-contratiempo">El contratiempo</a></p>
+    `
+  }
+};
+function loadApunte(key){
+  const panel = document.getElementById("apunte-body");
+  const title = document.getElementById("apunte-title");
+  const data = apuntesData[key];
+  if(data){
+    title.textContent = data.titulo;
+    const prs = practicasDe(key);
+    const enlaces = prs.length ? `<div class="practica-links">${prs.map(([pk,p])=>`<a class="practica-link" href="#" data-key="${pk}"><span class="pl-ico"><svg class="icon"><use href="#i-ejer"/></svg></span><span class="pl-body"><div class="pl-label">Práctica de este apunte</div><div class="pl-title">${p.tituloCorto}</div><div class="pl-meta">Con ${p.carril==="canto"?"la voz lista":"la guitarra"} · 3 niveles</div></span><span class="pl-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>`).join("")}</div>` : "";
+    const i = data.html.lastIndexOf('<p class="foot">');
+    panel.innerHTML = i >= 0 ? data.html.slice(0,i) + enlaces + data.html.slice(i) : data.html + enlaces;
+    return;
+  }
+  const pr = practicasData[key];
+  if(pr){
+    title.textContent = pr.titulo;
+    const vuelta = pr.apuntes.map(ak=>{ const a = [...apuntesGuitarra, ...apuntesCanto].find(x=>x.key===ak); return a ? `<a class="practica-link" href="#" data-key="${ak}"><span class="pl-ico"><svg class="icon"><use href="#i-doc"/></svg></span><span class="pl-body"><div class="pl-label">Apunte de esta práctica</div><div class="pl-title">${a.t}</div></span><span class="pl-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span></a>` : ""; }).join("");
+    panel.innerHTML = pr.html + `<div class="practica-links">${vuelta}</div>`;
+    return;
+  }
+  const all = [...apuntesGuitarra, ...apuntesCanto];
+  const meta = all.find(a=>a.key===key);
+  title.textContent = meta ? meta.t : "";
+  panel.innerHTML = `<p class="stub"><svg class="icon"><use href="#i-clock"/></svg>Este apunte aún no está conectado aquí.</p>`;
+}
+
+/* ---------- Recorrido ---------- */
+const rcIco = id => `<svg class="icon"><use href="#${id}"/></svg>`;
+const rcChev = '<svg class="icon chev"><use href="#i-chev"/></svg>';
+const RC_AP = {falta:"Falta", ok:"Escrito"};
+const RC_PR = {falta:"Falta", curso:"En curso", ok:"Hecha"};
+const claseDe = a => ({c1:"Clase 1",c2:"Clase 2",c3:"Clase 3",c4:"Clase 4",c5:"Clase 5",c6:"Clase 6"})[a.grupo];
+function rcTopic(x, esStep){
+  const all = [...apuntesGuitarra, ...apuntesCanto];
+  const a = x.k ? all.find(v=>v.key===x.k) : null;
+  const titulo = esStep ? x : (a ? a.t : x.t);
+  const orig = esStep ? "Escalera" : (a ? claseDe(a) : x.o);
+  const ap = a ? "ok" : "falta";
+  const ps = (x.prac||[]).map(k=>practicasData[k]).filter(Boolean);
+  const pr = ps.length ? (PR_ESTADO[ps[0].estado]||"curso") : "falta";
+  const prKey = ps.length ? x.prac[0] : null;
+  const abre = a ? ` data-key="${x.k}"` : "";
+  let h = `<div class="rc-branch"><div class="rc-topic${x.done?" done":""}${esStep?" esc":""}${a?" open-able":""}" data-node${abre}><div class="row"><span class="t">${titulo}</span><span class="orig">${orig}</span></div>`;
+  if(x.done){ h += `<div class="rc-done">${rcIco("i-check")}Lograda</div>`; }
+  else {
+    h += `<div class="rc-tags"><span class="rc-tag ap ${ap}${ap==="falta"?" falta":""}">${rcIco("i-doc")}<span class="k">Apunte</span> ${RC_AP[ap]}</span>`;
+    h += prKey ? `<button class="rc-tag pr ${pr}" data-key="${prKey}">${rcIco("i-ejer")}<span class="k">Práctica</span> ${RC_PR[pr]}</button>` : `<span class="rc-tag pr falta">${rcIco("i-ejer")}<span class="k">Práctica</span> Falta</span>`;
+    h += `</div>`;
+  }
+  if(x.esc) h += `<button class="rc-sub" aria-expanded="${!!x.esc.open}">${rcIco("i-stairs")}${x.esc.label}${rcChev}</button>`;
+  h += `</div>`;
+  if(x.esc) h += `<div class="rc-kids"${x.esc.open?"":" hidden"}>${x.esc.steps.map(t=>rcTopic(t,true)).join("")}</div>`;
+  return h + `</div>`;
+}
+function rcMod(m){
+  const hechos = m.topics.filter(t=>t.done).length;
+  const idle = m.topics.length===0;
+  const bars = Array.from({length:m.total},(_,i)=> i<hechos?'<i class="done"></i>':'<i></i>').join("");
+  const cnt = idle ? "sin tocar" : `${m.topics.length} ${m.topics.length===1?"tema":"temas"} · ${hechos}/${m.total} logradas`;
+  let h = `<div class="rc-branch"><button class="rc-mod${idle?" idle":""}" ${idle?'aria-disabled="true"':`aria-expanded="${!!m.open}"`} data-node><span class="num">${m.n}</span><span><div class="name">${m.name}</div><div class="prog">${bars}</div></span><span class="cnt">${cnt}</span>${idle?"":rcChev}</button>`;
+  if(!idle) h += `<div class="rc-kids"${m.open?"":" hidden"}>${m.topics.map(t=>rcTopic(t,false)).join("")}</div>`;
+  return h + `</div>`;
+}
+function renderRecorrido(){
+  const D = recorrido[carrilActual];
+  document.getElementById("rcTree").innerHTML = `<div class="rc-branch"><div class="rc-root" data-node>${rcIco(D.icon)}${D.root}</div><div class="rc-kids">${D.mods.map(rcMod).join("")}</div></div>`;
+  requestAnimationFrame(rcDraw);
+}
+function rcDraw(){
+  const map = document.getElementById("rcMap"), wires = document.getElementById("rcWires");
+  if(!map || !map.offsetParent) return;
+  const box = map.getBoundingClientRect(); const paths = [];
+  wires.setAttribute("width", map.scrollWidth); wires.setAttribute("height", map.scrollHeight);
+  map.querySelectorAll(".rc-branch").forEach(br=>{
+    const node = br.querySelector(":scope > [data-node]"), kids = br.querySelector(":scope > .rc-kids");
+    if(!node || !kids || kids.hidden) return;
+    const a = node.getBoundingClientRect(), x1 = a.right-box.left, y1 = a.top+a.height/2-box.top;
+    const hot = node.classList.contains("rc-mod") && node.getAttribute("aria-expanded")==="true";
+    kids.querySelectorAll(":scope > .rc-branch > [data-node]").forEach(c=>{
+      const b = c.getBoundingClientRect(), x2 = b.left-box.left, y2 = b.top+b.height/2-box.top, mx = (x1+x2)/2;
+      paths.push(`<path class="${hot?"hot":""}" d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}"/>`);
+    });
+  });
+  wires.innerHTML = paths.join("");
+}
+function rcToggle(btn){
+  const kids = btn.closest(".rc-branch").querySelector(":scope > .rc-kids");
+  const open = btn.getAttribute("aria-expanded") !== "true";
+  btn.setAttribute("aria-expanded", String(open)); kids.hidden = !open;
+  if(open){ kids.classList.remove("anim"); void kids.offsetWidth; kids.classList.add("anim"); }
+  rcDraw();
+}
+document.getElementById("rcMap").addEventListener("click", e=>{
+  const pr = e.target.closest(".rc-tag.pr[data-key]");
+  if(pr){ abrirClave(pr.dataset.key); return; }
+  const sub = e.target.closest(".rc-sub"); if(sub){ rcToggle(sub); return; }
+  const mod = e.target.closest(".rc-mod:not(.idle)"); if(mod){ rcToggle(mod); return; }
+  const top = e.target.closest(".rc-topic[data-key]"); if(top) abrirClave(top.dataset.key);
+});
+function rcTodo(open){
+  document.querySelectorAll("#rcMap .rc-mod:not(.idle), #rcMap .rc-sub").forEach(b=>{
+    b.setAttribute("aria-expanded", String(open));
+    b.closest(".rc-branch").querySelector(":scope > .rc-kids").hidden = !open;
+  });
+  rcDraw();
+}
+document.getElementById("rcAbrir").onclick = ()=>rcTodo(true);
+document.getElementById("rcCerrar").onclick = ()=>rcTodo(false);
+window.addEventListener("resize", rcDraw);
+if(document.fonts) document.fonts.ready.then(rcDraw);
+
+/* ---------- enlaces internos dentro de un apunte (prerrequisitos, pie) ---------- */
+function abrirClave(key){
+  showView("apunte");
+  loadApunte(key);
+  document.querySelectorAll(".nav-item, .menu-item").forEach(n=>n.classList.toggle("active", n.dataset.key===key));
+  document.querySelector(".main").scrollTo({top:0, behavior:"instant"});
+}
+document.getElementById("apunte-body").addEventListener("click", e=>{
+  const a = e.target.closest("a[data-key]");
+  if(!a) return;
+  e.preventDefault();
+  abrirClave(a.dataset.key);
+});
+
+/* ---------- init ---------- */
+applyCarril("guitarra");
+{ const primero = document.querySelector('.nav-item[data-key]'); if (primero) primero.click(); }
+</script>
+</body>
+</html>
