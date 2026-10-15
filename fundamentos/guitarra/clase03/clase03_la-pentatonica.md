@@ -9,14 +9,14 @@ estado: PROVISIONAL — comprimido en un solo apunte; lo reemplaza la escalera d
 ---
 # 🗺️ La pentatónica de La menor: tu primera escala
 
-**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md) · [El mapa de las notas: octavas, semitonos y tu rango](../../canto/base/apunte_2.5_notas-octavas-rango.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [El acorde, y mayor vs. menor](../clase02/clase02_el-acorde.md)
+**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md) · [Las notas y las octavas](../../canto/clase05/clase05_notas-y-octavas.md) · [El semitono](../../canto/clase05/clase05_semitono.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [El acorde, y mayor vs. menor](../clase02/clase02_el-acorde.md)
 
 > **Una escala es una lista ordenada de notas — de la más grave a la más aguda — que suenan bien juntas; la pentatónica es la escala de solo 5 notas.** En clase la tocaste sin la teoría; este apunte pone el nombre a lo que ya hicieron tus dedos.
 
 ## Qué es una escala
 
 
-De las 7 [notas](../clase01/clase01_notas-y-cuerdas.md) (más sus **alteraciones**, las variantes con sostenido ♯, explicadas en [el mapa de las notas](../../canto/base/apunte_2.5_notas-octavas-rango.md)), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
+De las 7 [notas](../clase01/clase01_notas-y-cuerdas.md) (más sus **alteraciones**, las variantes con sostenido ♯, explicadas en [el apunte del semitono](../../canto/clase05/clase05_semitono.md)), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
 
 ## Pentatónica: cinco notas
 

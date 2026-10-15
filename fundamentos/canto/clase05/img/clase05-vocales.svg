@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="330" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Las cinco vocales: la forma de la boca</text>
+  <ellipse cx="90" cy="150" rx="52" ry="62" fill="#f3d5d5" stroke="#555555" stroke-width="2"/>
+  <ellipse cx="90" cy="150" rx="40" ry="50" fill="#3a1d1d" stroke="#111111" stroke-width="3"/>
+  <text x="90" y="255" text-anchor="middle" font-size="34" font-weight="bold" fill="#111111">A</text>
+  <text x="90" y="285" text-anchor="middle" font-size="12"  fill="#555555">muy abierta</text>
+  <ellipse cx="270" cy="150" rx="64" ry="38" fill="#f3d5d5" stroke="#555555" stroke-width="2"/>
+  <ellipse cx="270" cy="150" rx="52" ry="26" fill="#3a1d1d" stroke="#111111" stroke-width="3"/>
+  <text x="270" y="255" text-anchor="middle" font-size="34" font-weight="bold" fill="#111111">E</text>
+  <text x="270" y="285" text-anchor="middle" font-size="12"  fill="#555555">ancha, abierta a medias</text>
+  <ellipse cx="450" cy="150" rx="72" ry="21" fill="#f3d5d5" stroke="#555555" stroke-width="2"/>
+  <ellipse cx="450" cy="150" rx="60" ry="9" fill="#3a1d1d" stroke="#111111" stroke-width="3"/>
+  <text x="450" y="255" text-anchor="middle" font-size="34" font-weight="bold" fill="#111111">I</text>
+  <text x="450" y="285" text-anchor="middle" font-size="12"  fill="#555555">labios estirados, casi cerrada</text>
+  <ellipse cx="630" cy="150" rx="40" ry="46" fill="#f3d5d5" stroke="#555555" stroke-width="2"/>
+  <ellipse cx="630" cy="150" rx="28" ry="34" fill="#3a1d1d" stroke="#111111" stroke-width="3"/>
+  <text x="630" y="255" text-anchor="middle" font-size="34" font-weight="bold" fill="#111111">O</text>
+  <text x="630" y="285" text-anchor="middle" font-size="12"  fill="#555555">redonda, media</text>
+  <ellipse cx="810" cy="150" rx="28" ry="30" fill="#f3d5d5" stroke="#555555" stroke-width="2"/>
+  <ellipse cx="810" cy="150" rx="16" ry="18" fill="#3a1d1d" stroke="#111111" stroke-width="3"/>
+  <text x="810" y="255" text-anchor="middle" font-size="34" font-weight="bold" fill="#111111">U</text>
+  <text x="810" y="285" text-anchor="middle" font-size="12"  fill="#555555">redonda y pequeña</text>
+  <text x="450" y="322" text-anchor="middle" font-size="12"  fill="#555555">Dibujo de frente. El tamaño de la abertura es lo que cambia de una vocal a otra.</text>
+</svg>

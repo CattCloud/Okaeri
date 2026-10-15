@@ -3,7 +3,7 @@ tipo: temario
 tema: canto — nivel base (afinar y respirar → tu primera canción → cantar y tocar → cantar con otros)
 instrumento: voz
 modulos: 8
-secciones: 40
+secciones: 41
 conceptos: ~35
 estado: EN PROGRESO
 inicio: 2026-09-11
@@ -70,8 +70,8 @@ La regla anti-muleta tiene cara propia aquí. Son muletas:
 | # | Módulo | Secciones | Cubre la academia | Estado |
 |---|---|:-:|:-:|---|
 | 1 | Cuerpo y aire | 5 | ✅ (clases 1-2) | 🏫 clase 1: respiración diafragma+costados, papel, trino |
-| 2 | Producir el sonido: afinar, registros, vocales | 6 | ✅ (clases 3, 7-8) | ⬜ |
-| 3 | Ritmo y letra | 4 | ✅ parcial (clase 4) | ⬜ |
+| 2 | Producir el sonido: afinar, registros, vocales | 6 | ✅ (clases 3, 7-8) | 🏫 parcial (clase 5): voz de pecho/cabeza, tesitura, rango vocal de hombres y mujeres, resonancia (partes del cuerpo que intervienen) — contenido recordado a medias, por confirmar |
+| 3 | Ritmo y letra | 5 | ✅ parcial (clase 4) | 🏫 parcial (clases 4 y 6): figuras rítmicas, corchea, semicorchea, silencios y contratiempos; apuntes escritos en `fundamentos/canto/clase04/` y `clase06/` |
 | 4 | **Tu primera canción cantada** 🎯 | 6 | ❌ **Okaeri solo** (la clase canta su repertorio; la memoria es nuestra) | ⬜ |
 | 5 | Oído aplicado a la voz | 4 | ✅ tarde (clases 11-12) | ⬜ |
 | 6 | Ampliar la voz: rango, resistencia, color | 5 | ✅ (clases 7-9) | ⬜ |
@@ -117,7 +117,7 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ evaluado (pasó su evaluación) �
 | 2.2 | Voz de pecho y voz de cabeza | Distinguir las dos en tu propia voz y producir cada una a propósito |
 | 2.3 | Sirenas sin quiebre | Subir y bajar entre las dos voces sin el "gallo" (el salto brusco), dentro de tu zona cómoda |
 | 2.4 | Las cinco vocales | A-E-I-O-U con la boca abierta y el sonido "adelante", sin cambiar de posición al subir |
-| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo — *adelantada: medida 2026-09-14 (Sesión 0); apunte en `fundamentos/canto/base/`. Se revalida al llegar M2* |
+| 2.5 | Tu rango hoy | Medir con una app de test de rango tu nota más grave y más aguda **cómodas**, y anotarlas. Es tu punto de partida, no un techo — *adelantada: medida 2026-09-14 (Sesión 0); apuntes en `fundamentos/canto/clase05/` (notas y octavas, semitono, tesitura y rango). Se revalida al llegar M2* |
 | 2.6 | Cantar una escala | Do-Re-Mi-Fa-Sol subiendo y bajando, afinado, desde una nota que te den |
 
 **Conceptos:** afinación (cantar la misma altura que la referencia) · **registro** (pecho: la voz de hablar fuerte; cabeza: la voz liviana y aguda) · quiebre o "gallo" (el salto entre registros) · **rango** (de tu nota más grave a la más aguda) · zona cómoda (*tesitura*: donde cantas sin esfuerzo) · resonancia (dónde "suena" la voz: pecho, boca, nariz) · escala.
@@ -140,12 +140,13 @@ Estados: ⬜ pendiente · 🔄 en curso · ✅ evaluado (pasó su evaluación) �
 | 3.2 | Consonantes claras | Que la letra se entienda grabada, sin exagerar |
 | 3.3 | Dónde respirar | Marcar en la letra las respiraciones (al final de frase, nunca a mitad de palabra) y cumplirlas |
 | 3.4 | Hablar la letra a ritmo | Recitar la estrofa con metrónomo, a tiempo, antes de ponerle melodía |
+| 3.5 | Figuras, silencios y subdivisión | Contar en voz alta un compás de 4/4 hecho de negras, corcheas, semicorcheas y silencios, y decir qué sílaba cae en cada parte de la cuenta. *Adelantada por la academia (clases 4 y 6); apuntes en `fundamentos/canto/clase04/` y `clase06/`* |
 
-**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás (ya definidos en guitarra M3, `fundamentos/guitarra/clase01/`).
+**Conceptos:** **dicción** (pronunciar claro) · **fraseo** (dónde empieza y termina cada frase musical) · entrada · respiración marcada · pulso y compás · figuras (redonda, blanca, negra, corchea, semicorchea) y sus silencios · cuenta «1 y 2 y» y «1 e y a» · contratiempo (definidos en `fundamentos/canto/clase04/` y `clase06/`).
 
 **Repertorio:** una estrofa de la canción en curso o del repertorio de la clase.
 
-**Evaluación:** una estrofa hablada a ritmo con metrónomo y luego cantada, con las respiraciones donde se marcaron, entendible en la grabación.
+**Evaluación:** una estrofa hablada a ritmo con metrónomo y luego cantada, con las respiraciones donde se marcaron, entendible en la grabación · un compás de 4/4 con corcheas y silencios contado en voz alta sin equivocarse (3.5).
 
 ---
 

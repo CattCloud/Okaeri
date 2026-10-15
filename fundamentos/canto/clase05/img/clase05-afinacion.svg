@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 410" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="410" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Afinación: la voz frente a la nota de referencia</text>
+  <line x1="200" y1="90" x2="700" y2="90" stroke="#111111" stroke-width="2.5" />
+  <text x="710" y="95" text-anchor="start" font-size="12"  fill="#555555">referencia</text>
+  <line x1="260" y1="116" x2="640" y2="116" stroke="#e8820c" stroke-width="7" stroke-linecap="round"/>
+  <text x="60" y="84" text-anchor="start" font-size="15.5" font-weight="bold" fill="#e8820c">Baja</text>
+  <text x="60" y="104" text-anchor="middle" font-size="13.5"  fill="#111111"></text>
+  <text x="450" y="146" text-anchor="middle" font-size="12.5"  fill="#555555">la voz suena más grave que la referencia</text>
+  <line x1="200" y1="210" x2="700" y2="210" stroke="#111111" stroke-width="2.5" />
+  <text x="710" y="215" text-anchor="start" font-size="12"  fill="#555555">referencia</text>
+  <line x1="260" y1="210" x2="640" y2="210" stroke="#2e9e44" stroke-width="7" stroke-linecap="round"/>
+  <text x="60" y="204" text-anchor="start" font-size="15.5" font-weight="bold" fill="#2e9e44">Afinada</text>
+  <text x="60" y="224" text-anchor="middle" font-size="13.5"  fill="#111111"></text>
+  <text x="450" y="246" text-anchor="middle" font-size="12.5"  fill="#555555">la voz y la referencia suenan a la misma altura</text>
+  <line x1="200" y1="330" x2="700" y2="330" stroke="#111111" stroke-width="2.5" />
+  <text x="710" y="335" text-anchor="start" font-size="12"  fill="#555555">referencia</text>
+  <line x1="260" y1="304" x2="640" y2="304" stroke="#e8820c" stroke-width="7" stroke-linecap="round"/>
+  <text x="60" y="324" text-anchor="start" font-size="15.5" font-weight="bold" fill="#e8820c">Alta</text>
+  <text x="60" y="344" text-anchor="middle" font-size="13.5"  fill="#111111"></text>
+  <text x="450" y="366" text-anchor="middle" font-size="12.5"  fill="#555555">la voz suena más aguda que la referencia</text>
+</svg>

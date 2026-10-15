@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Los silencios: cada figura tiene el suyo</text>
+  <text x="60" y="66" text-anchor="start" font-size="15.5" font-weight="bold" fill="#111111">Mismo tiempo, pero sin sonido</text>
+  <ellipse cx="150" cy="110" rx="17" ry="12" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <ellipse cx="370" cy="112" rx="14" ry="10" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <line x1="383" y1="110" x2="383" y2="68" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="590" cy="112" rx="14" ry="10" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="603" y1="110" x2="603" y2="68" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="790" cy="112" rx="14" ry="10" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="803" y1="110" x2="803" y2="68" stroke="#111111" stroke-width="2.4" />
+  <path d="M 803 68 Q 822 78 816 98" fill="none" stroke="#111111" stroke-width="3"/>
+  <line x1="100" y1="190" x2="200" y2="190" stroke="#999999" stroke-width="1.5" />
+  <line x1="320" y1="190" x2="420" y2="190" stroke="#999999" stroke-width="1.5" />
+  <line x1="540" y1="190" x2="640" y2="190" stroke="#999999" stroke-width="1.5" />
+  <line x1="740" y1="190" x2="840" y2="190" stroke="#999999" stroke-width="1.5" />
+  <rect x="136" y="190" width="28" height="11" fill="#111111"/>
+  <rect x="356" y="179" width="28" height="11" fill="#111111"/>
+  <path d="M 586 164 L 598 178 L 584 192 L 598 206 Q 582 204 586 220" fill="none" stroke="#111111" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="783" cy="176" r="4.5" fill="#111111"/>
+  <path d="M 786 177 Q 798 178 801 168" fill="none" stroke="#111111" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 801 168 L 786 216" fill="none" stroke="#111111" stroke-width="3.6" stroke-linecap="round"/>
+  <text x="150" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Silencio de redonda</text>
+  <text x="150" y="264" text-anchor="middle" font-size="13"  fill="#555555">4 pulsos</text>
+  <text x="370" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Silencio de blanca</text>
+  <text x="370" y="264" text-anchor="middle" font-size="13"  fill="#555555">2 pulsos</text>
+  <text x="590" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Silencio de negra</text>
+  <text x="590" y="264" text-anchor="middle" font-size="13"  fill="#555555">1 pulso</text>
+  <text x="790" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Silencio de corchea</text>
+  <text x="790" y="264" text-anchor="middle" font-size="13"  fill="#555555">½ pulso</text>
+  <text x="60" y="156" text-anchor="middle" font-size="13.5"  fill="#111111"></text>
+  <text x="150" y="146" text-anchor="middle" font-size="13"  fill="#555555">Redonda</text>
+  <text x="370" y="146" text-anchor="middle" font-size="13"  fill="#555555">Blanca</text>
+  <text x="590" y="146" text-anchor="middle" font-size="13"  fill="#555555">Negra</text>
+  <text x="790" y="146" text-anchor="middle" font-size="13"  fill="#555555">Corchea</text>
+  <line x1="60" y1="290" x2="840" y2="290" stroke="#dddddd" stroke-width="1.5" />
+  <text x="60" y="322" text-anchor="start" font-size="15.5" font-weight="bold" fill="#111111">Un silencio sigue contando: el pulso no se detiene</text>
+  <text x="60" y="346" text-anchor="start" font-size="13"  fill="#555555">Compás 1: negra, silencio, negra, silencio. Los números entre paréntesis son los pulsos que no suenan.</text>
+  <rect x="150" y="366" width="400" height="90" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="250" y1="366" x2="250" y2="456" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="350" y1="366" x2="350" y2="456" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="450" y1="366" x2="450" y2="456" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="200" cy="436" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="209" y1="434" x2="209" y2="392" stroke="#111111" stroke-width="2.4" />
+  <text x="200" y="478" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">1</text>
+  <path d="M 297 394 L 307 406 L 295 418 L 307 430 Q 294 428 297 442" fill="none" stroke="#555555" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="300" y="478" text-anchor="middle" font-size="15" font-weight="bold" fill="#555555">(2)</text>
+  <ellipse cx="400" cy="436" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="409" y1="434" x2="409" y2="392" stroke="#111111" stroke-width="2.4" />
+  <text x="400" y="478" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">3</text>
+  <path d="M 497 394 L 507 406 L 495 418 L 507 430 Q 494 428 497 442" fill="none" stroke="#555555" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="500" y="478" text-anchor="middle" font-size="15" font-weight="bold" fill="#555555">(4)</text>
+  <text x="560" y="400" text-anchor="start" font-size="13.5"  fill="#111111">Suena en 1 y 3.</text>
+  <text x="560" y="424" text-anchor="start" font-size="13.5"  fill="#111111">En 2 y 4 no suena nada,</text>
+  <text x="560" y="444" text-anchor="start" font-size="13.5"  fill="#111111">pero se siguen contando.</text>
+  <text x="450" y="520" text-anchor="middle" font-size="13" font-weight="bold" fill="#2e9e44">Suma del compás: 1 + 1 + 1 + 1 = 4 pulsos, igual que con cuatro negras que suenan.</text>
+</svg>

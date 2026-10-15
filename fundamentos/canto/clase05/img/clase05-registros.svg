@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="330" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Los dos registros y el quiebre</text>
+  <text x="80" y="100" text-anchor="start" font-size="12.5"  fill="#555555">más grave</text>
+  <text x="820" y="100" text-anchor="end" font-size="12.5"  fill="#555555">más agudo</text>
+  <rect x="80" y="150" width="380" height="60" fill="#e8820c"/>
+  <rect x="420" y="150" width="80" height="60" fill="#d23333"/>
+  <rect x="460" y="150" width="360" height="60" fill="#2b6cb0"/>
+  <rect x="420" y="150" width="80" height="60" fill="#d23333"/>
+  <text x="250" y="188" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">voz de pecho</text>
+  <text x="650" y="188" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">voz de cabeza</text>
+  <text x="460" y="246" text-anchor="middle" font-size="14" font-weight="bold" fill="#d23333">zona de cambio</text>
+  <text x="460" y="266" text-anchor="middle" font-size="12.5"  fill="#d23333">si el paso es brusco se oye el quiebre («gallo»)</text>
+  <text x="250" y="240" text-anchor="middle" font-size="12.5"  fill="#555555">más fuerte, parecida a hablar</text>
+  <text x="650" y="240" text-anchor="middle" font-size="12.5"  fill="#555555">más liviana y aguda</text>
+  <text x="450" y="290" text-anchor="middle" font-size="13"  fill="#555555">Cada persona tiene su zona de cambio en un lugar distinto de su tesitura.</text>
+</svg>

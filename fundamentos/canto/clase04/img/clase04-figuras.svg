@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="470" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Las figuras: cuántos pulsos dura cada una</text>
+  <ellipse cx="170" cy="112" rx="17" ry="12" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <text x="170" y="168" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Redonda</text>
+  <text x="170" y="188" text-anchor="middle" font-size="13"  fill="#555555">dura 4 pulsos</text>
+  <ellipse cx="450" cy="112" rx="14" ry="10" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <line x1="463" y1="110" x2="463" y2="68" stroke="#111111" stroke-width="2.4" />
+  <text x="450" y="168" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Blanca</text>
+  <text x="450" y="188" text-anchor="middle" font-size="13"  fill="#555555">dura 2 pulsos</text>
+  <ellipse cx="730" cy="112" rx="14" ry="10" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="743" y1="110" x2="743" y2="68" stroke="#111111" stroke-width="2.4" />
+  <text x="730" y="168" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Negra</text>
+  <text x="730" y="188" text-anchor="middle" font-size="13"  fill="#555555">dura 1 pulso</text>
+  <line x1="60" y1="214" x2="840" y2="214" stroke="#dddddd" stroke-width="1.5" />
+  <text x="60" y="246" text-anchor="start" font-size="14.5" font-weight="bold" fill="#111111">Cada figura llena una parte del compás de 4/4. Todas las cajas suman 4 pulsos:</text>
+  <text x="170" y="282" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e9e44">redonda = 4</text>
+  <rect x="50" y="294" width="240" height="90" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="110" y1="294" x2="110" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="170" y1="294" x2="170" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="230" y1="294" x2="230" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="80" cy="362" rx="13" ry="9" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <text x="80" y="408" text-anchor="middle" font-size="12"  fill="#888888">1</text>
+  <text x="140" y="408" text-anchor="middle" font-size="12"  fill="#888888">2</text>
+  <text x="200" y="408" text-anchor="middle" font-size="12"  fill="#888888">3</text>
+  <text x="260" y="408" text-anchor="middle" font-size="12"  fill="#888888">4</text>
+  <text x="450" y="282" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e9e44">blanca + blanca = 2 + 2 = 4</text>
+  <rect x="330" y="294" width="240" height="90" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="390" y1="294" x2="390" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="450" y1="294" x2="450" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="510" y1="294" x2="510" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="360" cy="362" rx="10" ry="7" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <line x1="369" y1="360" x2="369" y2="318" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="480" cy="362" rx="10" ry="7" fill="#ffffff" stroke="#111111" stroke-width="2.4"/>
+  <line x1="489" y1="360" x2="489" y2="318" stroke="#111111" stroke-width="2.4" />
+  <text x="360" y="408" text-anchor="middle" font-size="12"  fill="#888888">1</text>
+  <text x="420" y="408" text-anchor="middle" font-size="12"  fill="#888888">2</text>
+  <text x="480" y="408" text-anchor="middle" font-size="12"  fill="#888888">3</text>
+  <text x="540" y="408" text-anchor="middle" font-size="12"  fill="#888888">4</text>
+  <text x="730" y="282" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e9e44">negra + negra + negra + negra = 4</text>
+  <rect x="610" y="294" width="240" height="90" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="670" y1="294" x2="670" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="730" y1="294" x2="730" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="790" y1="294" x2="790" y2="384" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="640" cy="362" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="649" y1="360" x2="649" y2="318" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="700" cy="362" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="709" y1="360" x2="709" y2="318" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="760" cy="362" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="769" y1="360" x2="769" y2="318" stroke="#111111" stroke-width="2.4" />
+  <ellipse cx="820" cy="362" rx="10" ry="7" fill="#111111" stroke="#111111" stroke-width="2.4"/>
+  <line x1="829" y1="360" x2="829" y2="318" stroke="#111111" stroke-width="2.4" />
+  <text x="640" y="408" text-anchor="middle" font-size="12"  fill="#888888">1</text>
+  <text x="700" y="408" text-anchor="middle" font-size="12"  fill="#888888">2</text>
+  <text x="760" y="408" text-anchor="middle" font-size="12"  fill="#888888">3</text>
+  <text x="820" y="408" text-anchor="middle" font-size="12"  fill="#888888">4</text>
+  <text x="450" y="446" text-anchor="middle" font-size="12.5"  fill="#555555">Los números de abajo son los 4 pulsos de la caja.</text>
+</svg>

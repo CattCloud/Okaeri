@@ -12,7 +12,7 @@ estado: EN-CURSO
 
 # 🎤 Práctica — Aire y trino (el calentamiento base)
 
-> **De pie o bien sentado, sin guitarra.** Son los ejercicios de la clase 1 de canto. Entrenan el aire y son tu calentamiento fijo antes de cantar; también sirven antes de una sesión de guitarra si vas a cantar algo.
+> **De pie o bien sentado.** Son los ejercicios de la clase 1 de canto. Entrenan el aire y son tu calentamiento fijo antes de cantar.
 
 ## 🎯 Qué estás mejorando (en claro)
 
@@ -55,7 +55,7 @@ Todo el Mínimo, y además:
 |---|---|
 | Siseo cronometrado | 4 siseos, anota el mejor tiempo (~2.5 min) |
 | Papel en la pared | 3 intentos buscando ≥ 10 s (~1.5 min) |
-| Trino sostenido en una nota cómoda (dala con la guitarra o un piano de app) | 4 trinos de ~5 s en la misma nota (~1 min) |
+| Trino sostenido en una nota cómoda (dala con un piano o una app de piano) | 4 trinos de ~5 s en la misma nota (~1 min) |
 
 ### 🔥 Motivado — 14 min
 

@@ -26,7 +26,10 @@
 | 1 | 2026-09-01 | ✅ | Notas y cuerdas · cifrado americano · TAB · dedos 1-4 · ejercicio 1-2-3-4 (4 versiones) · figuras rítmicas, 4/4, metrónomo. El profe preguntó la base previa y aceleró — buena dinámica | El 1-2-3-4 + figuras con metrónomo (prácticas en `fundamentos/guitarra/clase01/`) | ✅ 09-05 |
 | 2 | 2026-09-08 | ✅ | Acordes: diagramas · los 8 (C, D, E, G, A, Em, Am, Dm) · 4 progresiones con tiempos · técnica de cambio · corrección de digitaciones (G a 4 dedos, D estándar) | Las 4 progresiones (práctica en `fundamentos/guitarra/clase02/`) | ✅ 09-11 |
 | 3 | 2026-09-15 | ✅ | Poco teórica, muy práctica · la corchea (½ tiempo) y la barra que une dos · lectura rítmica: el profe dibuja compases con las 4 figuras y se tocan a tiempo, con metrónomo · la pentatónica de La menor, posición 1 (trastes 5-8) — sin teoría, solo práctica | Lectura rítmica + pentatónica (prácticas en `fundamentos/guitarra/clase03/`) | ✅ 09-16 |
-| 4 | 2026-09-22 | | | | |
+| 4 | 2026-09-22 | ✅ | Más posiciones de la pentatónica de La menor: cajas en trastes 2-5 y 7-10 (además de la posición 1, trastes 5-8, de la clase 3) | Material pendiente de escribir (ver `estado_actual.md`) | ✅ 10-14 |
+| 5 | 2026-09-29 | ✅ | Evaluación general de lo visto en clases anteriores (acordes, cambios, ritmo) — se llevó casi toda la clase · arpegio: dedos p-i-m-a, ejercicio dibujado en TAB, corrección del profesor: mantener los dedos pegados a la cuerda, no levantarlos de más | Material pendiente de escribir | ✅ 10-14 |
+| 6 | 2026-10-06 | ❌ | No asistió | — | ✅ 10-14 |
+| 7 | 2026-10-13 | ✅ | Más ejercicios de arpegio, sin concepto teórico nuevo — toda la clase fue práctica | Material pendiente de escribir | ✅ 10-14 |
 
 > Una falta se registra sin drama; el reporte siguiente incluye "qué me perdí" (RG3).
 
@@ -49,7 +52,10 @@
 |---|---|:-:|---|---|---|
 | 1 | 2026-09-03 | ✅ | Respiración de diafragma + variante con costados (costo-diafragmática) · ejercicio del papel en la pared (presión de aire constante) · trino de labios con subidas y bajadas · práctica de canto | Practicar lo visto (apunte y práctica en `fundamentos/canto/clase01/`) | ✅ 09-14 |
 | 2 | 2026-09-10 | ✅ | Apps recomendadas (se define aparte, no es pedagógico) · canto sobre repertorio · consigna: **elegir 2-3 canciones propias** para trabajar cada clase | Elegir el repertorio → elegido (ver `repertorio/00_indice.md` §canto) | ✅ 09-14 |
-| 3 | 2026-09-17 | | | | |
+| 3 | 2026-09-17 | ✅ | Contenido no recordado con precisión — el reporte se perdió por no anotar a tiempo | — | ✅ 10-14 (tardío) |
+| 4 | 2026-09-24 | ✅ | Figuras musicales con sus silencios (de 1 tiempo a ½ tiempo): compás dibujado en la pizarra, practicado con cronómetro. Mnemotecnia del profesor: TA = redonda, TAA = blanca, TAAA = negra, TI-TI = corchea | Material pendiente de escribir | ✅ 10-14 |
+| 5 | 2026-10-01 | ✅ | Articular, gesticular y vocalización · tesitura vocal · rangos vocales de hombres y mujeres · partes del cuerpo que intervienen al cantar (la voz descrita como "una bolita" que se mueve sobre ellas) | Material pendiente de escribir | ✅ 10-14 |
+| 6 | 2026-10-08 | ✅ | Figuras musicales y sus silencios otra vez, más a fondo (profesor distinto): partes de una figura, de 1 tiempo a ¼ · dictado en pizarra, seguido con sonido + compás · contratiempos (medio silencio + medio sonido dentro de un tiempo) · la subdivisión ("1 y 2 y 3 y 4 y") combinada con el conteo del compás generó confusión | Material pendiente de escribir | ✅ 10-14 |
 
 ---
 

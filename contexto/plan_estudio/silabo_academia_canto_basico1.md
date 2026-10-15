@@ -62,4 +62,7 @@ Distinto de guitarra, donde el tema se elige recién en la clase 13: aquí **se 
 |:-:|---|---|---|
 | 1 | 2026-09-03 | Respiración de diafragma, más la variante que abre los **costados** (costo-diafragmática) · ejercicio del **papel en la pared** (chorro de aire fino y constante que lo sostiene) · **trino de labios** subiendo y bajando · práctica de canto. *Cuadra con el brochure (\"Introducción al canto\" + adelanto de \"Respiración I\")* | Practicar lo visto |
 | 2 | 2026-09-10 | Apps recomendadas para practicar (se evalúan aparte — no es contenido pedagógico) · canto sobre repertorio · consigna: **cada alumno elige 2-3 canciones** que se trabajan y mejoran clase a clase. *Poca teoría nueva a propósito* | Elegir las 2-3 canciones (elegidas → `repertorio/00_indice.md` §canto) |
-| 3 | 2026-09-17 | | |
+| 3 | 2026-09-17 | No se recuerda con precisión — reporte perdido por no anotar a tiempo | — |
+| 4 | 2026-09-24 | Figuras musicales con sus silencios (1 tiempo a ½). Compás dibujado en pizarra, practicado con cronómetro. Mnemotecnia: TA/TAA/TAAA/TI-TI. *No cuadra con el brochure ("Articulación y vocalización I") — la academia no sigue el orden al pie* | Material pendiente |
+| 5 | 2026-10-01 | Articular, gesticular, vocalización · tesitura vocal · rangos vocales de hombres y mujeres · partes del cuerpo usadas al cantar (la voz como "una bolita" que se mueve sobre ellas). *Esto sí cuadra con "Articulación y vocalización I" del brochure, aunque llegó una clase después* | Material pendiente |
+| 6 | 2026-10-08 | Figuras musicales y silencios otra vez, más a fondo (profesor distinto): partes de la figura, 1 tiempo a ¼ · contratiempos (medio silencio + medio sonido) · subdivisión combinada con el conteo del compás, confusa | Material pendiente |

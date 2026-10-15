@@ -85,7 +85,7 @@ Comer no daña la voz, pero cantar con el estómago muy lleno sí molesta: el di
 
 ## El tono: la regla de oro
 
-Toda canción tiene su **tono original** (aquel en que el artista la grabó, elegido para su voz). Llegar a él no es obligatorio: lo que buscas es cantarla en tu tono, transportada (subida o bajada entera en semitonos, [apunte](base/apunte_2.5_notas-octavas-rango.md)) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa es tu versión final. En la banda el tono se elige según quien canta, y es práctica universal. Si tu rango crece (M6), podrás subirla por gusto.
+Toda canción tiene su **tono original** (aquel en que el artista la grabó, elegido para su voz). Llegar a él no es obligatorio: lo que buscas es cantarla en tu tono, transportada (subida o bajada entera en semitonos, [apunte](clase05/clase05_semitono.md)) hasta que lo más agudo de la canción quepa en tu zona cómoda. Esa es tu versión final. En la banda el tono se elige según quien canta, y es práctica universal. Si tu rango crece (M6), podrás subirla por gusto.
 
 **Cómo encontrar tu tono de una canción (con Moises):** baja el tono de la pista de 1 en 1 semitono y canta el coro (la parte más aguda). Quédate donde salga con cuerpo y sin apretar la garganta. Si dudas entre dos, el más bajo. Anota el número de semitonos en la ficha de la canción.
 
@@ -101,4 +101,4 @@ Toda canción tiene su **tono original** (aquel en que el artista la grabó, ele
 
 ## Qué NO es esto
 
-❌ Un sustituto del profesor (lo físico de la voz lo manda él) · ❌ una rutina de YouTube (los ejercicios de mejora vienen del mapa y del profe, no de videos sueltos) · ❌ un paso del temario (es consulta, como afinar la guitarra).
+❌ Un sustituto del profesor (lo físico de la voz lo manda él) · ❌ una rutina de YouTube (los ejercicios de mejora vienen del mapa y del profe, no de videos sueltos) · ❌ un paso del temario (es consulta y se revisa siempre).

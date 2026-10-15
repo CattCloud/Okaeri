@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="430" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">A tiempo y a contratiempo</text>
+  <text x="60" y="125" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">A tiempo</text>
+  <text x="60" y="145" text-anchor="start" font-size="12"  fill="#555555">suena en el pulso</text>
+  <rect x="210" y="70" width="480" height="80" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="330" y1="70" x2="330" y2="150" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="450" y1="70" x2="450" y2="150" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="570" y1="70" x2="570" y2="150" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="235" cy="132" rx="10" ry="7" fill="#111111"/>
+  <line x1="244" y1="130" x2="244" y2="90" stroke="#111111" stroke-width="2.4" />
+  <text x="235" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">1</text>
+  <ellipse cx="355" cy="132" rx="10" ry="7" fill="#111111"/>
+  <line x1="364" y1="130" x2="364" y2="90" stroke="#111111" stroke-width="2.4" />
+  <text x="355" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">2</text>
+  <ellipse cx="475" cy="132" rx="10" ry="7" fill="#111111"/>
+  <line x1="484" y1="130" x2="484" y2="90" stroke="#111111" stroke-width="2.4" />
+  <text x="475" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">3</text>
+  <ellipse cx="595" cy="132" rx="10" ry="7" fill="#111111"/>
+  <line x1="604" y1="130" x2="604" y2="90" stroke="#111111" stroke-width="2.4" />
+  <text x="595" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">4</text>
+  <text x="60" y="285" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">A contratiempo</text>
+  <text x="60" y="305" text-anchor="start" font-size="12"  fill="#555555">suena en la «y»</text>
+  <rect x="210" y="230" width="480" height="80" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="330" y1="230" x2="330" y2="310" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="450" y1="230" x2="450" y2="310" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="570" y1="230" x2="570" y2="310" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <circle cx="229" cy="262" r="4" fill="#555555"/>
+  <path d="M 232 263 Q 244 264 247 254" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 247 254 L 232 300" fill="none" stroke="#555555" stroke-width="3.4" stroke-linecap="round"/>
+  <ellipse cx="285" cy="296" rx="10" ry="7" fill="#111111"/>
+  <line x1="294" y1="294" x2="294" y2="254" stroke="#111111" stroke-width="2.4" />
+  <path d="M 294 254 Q 311 262 306 280" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="235" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">1</text>
+  <text x="285" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <circle cx="349" cy="262" r="4" fill="#555555"/>
+  <path d="M 352 263 Q 364 264 367 254" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 367 254 L 352 300" fill="none" stroke="#555555" stroke-width="3.4" stroke-linecap="round"/>
+  <ellipse cx="405" cy="296" rx="10" ry="7" fill="#111111"/>
+  <line x1="414" y1="294" x2="414" y2="254" stroke="#111111" stroke-width="2.4" />
+  <path d="M 414 254 Q 431 262 426 280" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="355" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">2</text>
+  <text x="405" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <circle cx="469" cy="262" r="4" fill="#555555"/>
+  <path d="M 472 263 Q 484 264 487 254" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 487 254 L 472 300" fill="none" stroke="#555555" stroke-width="3.4" stroke-linecap="round"/>
+  <ellipse cx="525" cy="296" rx="10" ry="7" fill="#111111"/>
+  <line x1="534" y1="294" x2="534" y2="254" stroke="#111111" stroke-width="2.4" />
+  <path d="M 534 254 Q 551 262 546 280" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="475" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">3</text>
+  <text x="525" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <circle cx="589" cy="262" r="4" fill="#555555"/>
+  <path d="M 592 263 Q 604 264 607 254" fill="none" stroke="#555555" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 607 254 L 592 300" fill="none" stroke="#555555" stroke-width="3.4" stroke-linecap="round"/>
+  <ellipse cx="645" cy="296" rx="10" ry="7" fill="#111111"/>
+  <line x1="654" y1="294" x2="654" y2="254" stroke="#111111" stroke-width="2.4" />
+  <path d="M 654 254 Q 671 262 666 280" fill="none" stroke="#111111" stroke-width="3"/>
+  <text x="595" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">4</text>
+  <text x="645" y="336" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <text x="450" y="372" text-anchor="middle" font-size="13"  fill="#111111">El pulso sigue en 1, 2, 3 y 4 por dentro, pero la voz suena solo en cada «y», justo entre dos pulsos.</text>
+  <text x="450" y="396" text-anchor="middle" font-size="12.5"  fill="#555555">Gris: silencio de corchea (en el pulso). Negro: corchea (en la «y»).</text>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="580" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">La semicorchea: cuatro por cada pulso</text>
+  <text x="40" y="97" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">Negras</text>
+  <text x="40" y="117" text-anchor="start" font-size="12"  fill="#555555">1 por pulso</text>
+  <rect x="190" y="60" width="600" height="70" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="340" y1="60" x2="340" y2="130" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="490" y1="60" x2="490" y2="130" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="640" y1="60" x2="640" y2="130" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="40" y="212" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">Corcheas</text>
+  <text x="40" y="232" text-anchor="start" font-size="12"  fill="#555555">2 por pulso</text>
+  <rect x="190" y="175" width="600" height="70" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="340" y1="175" x2="340" y2="245" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="490" y1="175" x2="490" y2="245" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="640" y1="175" x2="640" y2="245" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="40" y="332" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">Semicorcheas</text>
+  <text x="40" y="352" text-anchor="start" font-size="12"  fill="#555555">4 por pulso</text>
+  <rect x="190" y="290" width="600" height="80" fill="none" stroke="#111111" stroke-width="1.8"/>
+  <line x1="340" y1="290" x2="340" y2="370" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="490" y1="290" x2="490" y2="370" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="640" y1="290" x2="640" y2="370" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <ellipse cx="218" cy="115" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="226" y1="113" x2="226" y2="77" stroke="#111111" stroke-width="2.2" />
+  <text x="218" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">1</text>
+  <ellipse cx="368" cy="115" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="376" y1="113" x2="376" y2="77" stroke="#111111" stroke-width="2.2" />
+  <text x="368" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">2</text>
+  <ellipse cx="518" cy="115" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="526" y1="113" x2="526" y2="77" stroke="#111111" stroke-width="2.2" />
+  <text x="518" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">3</text>
+  <ellipse cx="668" cy="115" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="676" y1="113" x2="676" y2="77" stroke="#111111" stroke-width="2.2" />
+  <text x="668" y="150" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">4</text>
+  <ellipse cx="218" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="226" y1="230" x2="226" y2="194" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="293" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="301" y1="230" x2="301" y2="194" stroke="#111111" stroke-width="2.2" />
+  <line x1="226" y1="195" x2="301" y2="195" stroke="#111111" stroke-width="5"/>
+  <text x="218" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">1</text>
+  <text x="293" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <ellipse cx="368" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="376" y1="230" x2="376" y2="194" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="443" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="451" y1="230" x2="451" y2="194" stroke="#111111" stroke-width="2.2" />
+  <line x1="376" y1="195" x2="451" y2="195" stroke="#111111" stroke-width="5"/>
+  <text x="368" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">2</text>
+  <text x="443" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <ellipse cx="518" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="526" y1="230" x2="526" y2="194" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="593" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="601" y1="230" x2="601" y2="194" stroke="#111111" stroke-width="2.2" />
+  <line x1="526" y1="195" x2="601" y2="195" stroke="#111111" stroke-width="5"/>
+  <text x="518" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">3</text>
+  <text x="593" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <ellipse cx="668" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="676" y1="230" x2="676" y2="194" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="743" cy="232" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="751" y1="230" x2="751" y2="194" stroke="#111111" stroke-width="2.2" />
+  <line x1="676" y1="195" x2="751" y2="195" stroke="#111111" stroke-width="5"/>
+  <text x="668" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">4</text>
+  <text x="743" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <ellipse cx="214" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="222" y1="353" x2="222" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="246" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="254" y1="353" x2="254" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="278" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="286" y1="353" x2="286" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="310" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="318" y1="353" x2="318" y2="315" stroke="#111111" stroke-width="2.2" />
+  <line x1="222" y1="316" x2="318" y2="316" stroke="#111111" stroke-width="5"/>
+  <line x1="222" y1="326" x2="318" y2="326" stroke="#111111" stroke-width="5"/>
+  <text x="214" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">1</text>
+  <text x="246" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">e</text>
+  <text x="278" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <text x="310" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">a</text>
+  <ellipse cx="364" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="372" y1="353" x2="372" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="396" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="404" y1="353" x2="404" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="428" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="436" y1="353" x2="436" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="460" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="468" y1="353" x2="468" y2="315" stroke="#111111" stroke-width="2.2" />
+  <line x1="372" y1="316" x2="468" y2="316" stroke="#111111" stroke-width="5"/>
+  <line x1="372" y1="326" x2="468" y2="326" stroke="#111111" stroke-width="5"/>
+  <text x="364" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">2</text>
+  <text x="396" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">e</text>
+  <text x="428" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <text x="460" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">a</text>
+  <ellipse cx="514" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="522" y1="353" x2="522" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="546" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="554" y1="353" x2="554" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="578" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="586" y1="353" x2="586" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="610" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="618" y1="353" x2="618" y2="315" stroke="#111111" stroke-width="2.2" />
+  <line x1="522" y1="316" x2="618" y2="316" stroke="#111111" stroke-width="5"/>
+  <line x1="522" y1="326" x2="618" y2="326" stroke="#111111" stroke-width="5"/>
+  <text x="514" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">3</text>
+  <text x="546" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">e</text>
+  <text x="578" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <text x="610" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">a</text>
+  <ellipse cx="664" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="672" y1="353" x2="672" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="696" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="704" y1="353" x2="704" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="728" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="736" y1="353" x2="736" y2="315" stroke="#111111" stroke-width="2.2" />
+  <ellipse cx="760" cy="355" rx="9" ry="6.5" fill="#111111"/>
+  <line x1="768" y1="353" x2="768" y2="315" stroke="#111111" stroke-width="2.2" />
+  <line x1="672" y1="316" x2="768" y2="316" stroke="#111111" stroke-width="5"/>
+  <line x1="672" y1="326" x2="768" y2="326" stroke="#111111" stroke-width="5"/>
+  <text x="664" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#2e9e44">4</text>
+  <text x="696" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">e</text>
+  <text x="728" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">y</text>
+  <text x="760" y="394" text-anchor="middle" font-size="15" font-weight="bold" fill="#d23333">a</text>
+  <text x="450" y="424" text-anchor="middle" font-size="12.5"  fill="#111111">La cuenta: «1 e y a 2 e y a 3 e y a 4 e y a». El número cae en el pulso, la «y» en la mitad, la «e» y la «a» en los cuartos.</text>
+  <line x1="60" y1="446" x2="840" y2="446" stroke="#dddddd" stroke-width="1.5"/>
+  <text x="60" y="474" text-anchor="start" font-size="15" font-weight="bold" fill="#111111">Los silencios de corchea y de semicorchea</text>
+  <circle cx="293" cy="505" r="4.5" fill="#111111"/>
+  <path d="M 296 506 Q 308 507 311 497" fill="none" stroke="#111111" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 311 497 L 296 543" fill="none" stroke="#111111" stroke-width="3.6" stroke-linecap="round"/>
+  <text x="300" y="566" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">Silencio de corchea: ½ pulso</text>
+  <circle cx="593" cy="505" r="4.5" fill="#111111"/>
+  <path d="M 596 506 Q 608 507 611 497" fill="none" stroke="#111111" stroke-width="3.2" stroke-linecap="round"/>
+  <circle cx="588" cy="521" r="4.5" fill="#111111"/>
+  <path d="M 591 522 Q 603 523 606 513" fill="none" stroke="#111111" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 611 497 L 591 551" fill="none" stroke="#111111" stroke-width="3.6" stroke-linecap="round"/>
+  <text x="600" y="566" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">Silencio de semicorchea: ¼ de pulso</text>
+</svg>

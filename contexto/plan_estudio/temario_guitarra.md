@@ -62,7 +62,7 @@ inicio: 2026-08-28
 | 5 | Ampliar el vocabulario | 6 | ✅ parcial | 🏫 parcial (clase 2: La, Mi, Rem + progresiones dictadas) |
 | 6 | Ritmo de verdad | 5 | ✅ | 🏫 parcial (clase 3: la corchea, lectura rítmica — concepto subdivisión) |
 | 7 | La cejilla | 5 | ✅ | ⬜ |
-| 8 | Punteo y arpegio | 6 | ✅ **temprano** (clases 5-8) | 🏫 TAB (clase 1) · pentatónica de La, posición 1 (clase 3 — 8.6) |
+| 8 | Punteo y arpegio | 6 | ✅ **temprano** (clases 5-8) | 🏫 TAB (clase 1) · pentatónica de La, posiciones 1, 2-5 y 7-10 (clases 3-4 — 8.6) · dedos p-i-m-a y arpegio sobre acordes, con corrección física del profesor (clases 5 y 7 — 8.1/8.2) |
 | 9 | **Tocar con otros** (la banda) | 5 | ❌ **Okaeri solo** | ⬜ |
 | — | Capa transversal (memoria · oído · teoría aplicada · interpretación) | — | ❌ **Okaeri solo** | siempre |
 

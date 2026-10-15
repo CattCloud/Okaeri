@@ -5,7 +5,7 @@ description: Escribir o corregir un apunte de Okaeri (teoría que se lee lejos d
 
 # Escribir un apunte
 
-Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F14). Este archivo solo da los pasos.
+Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F15). Este archivo solo da los pasos.
 
 ## Pasos
 
@@ -23,4 +23,5 @@ Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F14). Este archivo
    - [ ] Cada término técnico está definido aquí o enlazado (R6).
    - [ ] Sin frases de efecto (R7).
    - [ ] Cada imagen existe, tiene texto alternativo y pie.
-10. **Delegar la revisión** al revisor (`revisor-okaeri`) y corregir lo que confirme.
+10. **Pasar el texto por `agatha:redaccion-humana`** (cambia el estilo, no el contenido): quita exageración, analogías de relleno, «no es X, es Y» y rayas. Va antes del revisor, para que este lea el texto final.
+11. **Delegar la revisión** al revisor (`revisor-okaeri`) y corregir lo que confirme.

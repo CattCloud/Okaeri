@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="390" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">El semitono: el paso más pequeño</text>
+  <rect x="130" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="210" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="290" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="370" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="450" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="530" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="610" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="690" y="80" width="80" height="170" fill="#ffffff" stroke="#111111" stroke-width="1.3"/>
+  <rect x="186.8" y="80" width="46.4" height="102" fill="#111111"/>
+  <rect x="266.8" y="80" width="46.4" height="102" fill="#111111"/>
+  <rect x="426.8" y="80" width="46.4" height="102" fill="#111111"/>
+  <rect x="506.8" y="80" width="46.4" height="102" fill="#111111"/>
+  <rect x="586.8" y="80" width="46.4" height="102" fill="#111111"/>
+  <text x="170" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Do</text>
+  <circle cx="170" cy="238" r="0" fill="none"/>
+  <text x="170" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">0</text>
+  <text x="250" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Re</text>
+  <circle cx="250" cy="238" r="0" fill="none"/>
+  <text x="250" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">2</text>
+  <text x="330" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Mi</text>
+  <circle cx="330" cy="238" r="0" fill="none"/>
+  <text x="330" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">4</text>
+  <text x="410" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Fa</text>
+  <circle cx="410" cy="238" r="0" fill="none"/>
+  <text x="410" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">5</text>
+  <text x="490" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Sol</text>
+  <circle cx="490" cy="238" r="0" fill="none"/>
+  <text x="490" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">7</text>
+  <text x="570" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">La</text>
+  <circle cx="570" cy="238" r="0" fill="none"/>
+  <text x="570" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">9</text>
+  <text x="650" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Si</text>
+  <circle cx="650" cy="238" r="0" fill="none"/>
+  <text x="650" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">11</text>
+  <text x="730" y="216" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">Do</text>
+  <circle cx="730" cy="238" r="0" fill="none"/>
+  <text x="730" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#555555">12</text>
+  <circle cx="210" cy="164" r="11" fill="#ffffff"/>
+  <text x="210" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">1</text>
+  <circle cx="290" cy="164" r="11" fill="#ffffff"/>
+  <text x="290" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">3</text>
+  <circle cx="450" cy="164" r="11" fill="#ffffff"/>
+  <text x="450" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">6</text>
+  <circle cx="530" cy="164" r="11" fill="#ffffff"/>
+  <text x="530" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">8</text>
+  <circle cx="610" cy="164" r="11" fill="#ffffff"/>
+  <text x="610" y="169" text-anchor="middle" font-size="13" font-weight="bold" fill="#111111">10</text>
+  <text x="450" y="62" text-anchor="middle" font-size="13.5"  fill="#111111">Cada número es un semitono más arriba que el anterior. Del 0 al 12 hay una octava.</text>
+  <line x1="330" y1="298" x2="410" y2="298" stroke="#d23333" stroke-width="3" />
+  <line x1="330" y1="292" x2="330" y2="304" stroke="#d23333" stroke-width="3" />
+  <line x1="410" y1="292" x2="410" y2="304" stroke="#d23333" stroke-width="3" />
+  <text x="370" y="320" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d23333">Mi y Fa: sin tecla negra</text>
+  <line x1="650" y1="298" x2="730" y2="298" stroke="#d23333" stroke-width="3" />
+  <line x1="650" y1="292" x2="650" y2="304" stroke="#d23333" stroke-width="3" />
+  <line x1="730" y1="292" x2="730" y2="304" stroke="#d23333" stroke-width="3" />
+  <text x="690" y="320" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d23333">Si y Do: sin tecla negra</text>
+  <text x="450" y="372" text-anchor="middle" font-size="12.5"  fill="#555555">Entre esas dos parejas el semitono va de una tecla blanca a la siguiente.</text>
+</svg>
