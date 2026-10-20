@@ -25,3 +25,8 @@ grabaciones/
 # Basura de sistema
 Thumbs.db
 .DS_Store
+
+# Impeccable: bocetos, sorteos y respaldo del panel (no son contenido del sistema)
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/system.antes-glitch.html
