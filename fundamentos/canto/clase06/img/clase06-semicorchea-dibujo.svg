@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="390" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Cómo se dibuja la semicorchea: un corchete o una barra más</text>
+  <ellipse cx="97" cy="220" rx="17" ry="12" fill="#111111"/>
+  <line x1="113" y1="216" x2="113" y2="120" stroke="#111111" stroke-width="3"/>
+  <path d="M 113 120 C 119 130 133 134 128 152 C 126 140 120 138 113 136 Z" fill="#111111" stroke="#111111" stroke-width="1.2"/>
+  <text x="113" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">1 corchete</text>
+  <line x1="113" y1="98" x2="113" y2="112" stroke="#2b6cb0" stroke-width="2"/>
+  <ellipse cx="292" cy="220" rx="17" ry="12" fill="#111111"/>
+  <line x1="308" y1="216" x2="308" y2="120" stroke="#111111" stroke-width="3"/>
+  <path d="M 308 120 C 314 130 328 134 323 152 C 321 140 315 138 308 136 Z" fill="#111111" stroke="#111111" stroke-width="1.2"/>
+  <path d="M 308 140 C 314 148 328 152 323 170 C 321 158 315 156 308 154 Z" fill="#111111" stroke="#111111" stroke-width="1.2"/>
+  <text x="308" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">2 corchetes</text>
+  <line x1="308" y1="98" x2="308" y2="112" stroke="#2b6cb0" stroke-width="2"/>
+  <ellipse cx="490" cy="220" rx="17" ry="12" fill="#111111"/>
+  <ellipse cx="550" cy="220" rx="17" ry="12" fill="#111111"/>
+  <line x1="506" y1="216" x2="506" y2="120" stroke="#111111" stroke-width="3"/>
+  <line x1="566" y1="216" x2="566" y2="120" stroke="#111111" stroke-width="3"/>
+  <rect x="504.5" y="120" width="63" height="9" fill="#111111"/>
+  <text x="536" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">1 barra</text>
+  <line x1="536" y1="98" x2="536" y2="112" stroke="#2b6cb0" stroke-width="2"/>
+  <ellipse cx="704" cy="220" rx="17" ry="12" fill="#111111"/>
+  <ellipse cx="748" cy="220" rx="17" ry="12" fill="#111111"/>
+  <ellipse cx="792" cy="220" rx="17" ry="12" fill="#111111"/>
+  <ellipse cx="836" cy="220" rx="17" ry="12" fill="#111111"/>
+  <line x1="720" y1="216" x2="720" y2="120" stroke="#111111" stroke-width="3"/>
+  <line x1="764" y1="216" x2="764" y2="120" stroke="#111111" stroke-width="3"/>
+  <line x1="808" y1="216" x2="808" y2="120" stroke="#111111" stroke-width="3"/>
+  <line x1="852" y1="216" x2="852" y2="120" stroke="#111111" stroke-width="3"/>
+  <rect x="718.5" y="120" width="135" height="9" fill="#111111"/>
+  <rect x="718.5" y="135" width="135" height="9" fill="#111111"/>
+  <text x="786" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">2 barras</text>
+  <line x1="786" y1="98" x2="786" y2="112" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="105" y="290" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Corchea sola</text>
+  <text x="105" y="312" text-anchor="middle" font-size="13" fill="#555555">½ pulso</text>
+  <text x="300" y="290" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Semicorchea sola</text>
+  <text x="300" y="312" text-anchor="middle" font-size="13" fill="#555555">¼ de pulso</text>
+  <text x="528" y="290" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Dos corcheas juntas</text>
+  <text x="528" y="312" text-anchor="middle" font-size="13" fill="#555555">1 pulso entre las dos</text>
+  <text x="786" y="290" text-anchor="middle" font-size="15.5" font-weight="bold" fill="#111111">Cuatro semicorcheas juntas</text>
+  <text x="786" y="312" text-anchor="middle" font-size="13" fill="#555555">1 pulso entre las cuatro</text>
+  <text x="450" y="362" text-anchor="middle" font-size="13" fill="#555555">Cada corchete o barra de más divide la duración a la mitad.</text>
+</svg>

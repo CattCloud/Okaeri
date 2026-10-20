@@ -54,11 +54,17 @@ El **4/4** es el compás más común. Son dos números, uno sobre el otro:
 
 Entonces cada compás de 4/4 se cuenta **1-2-3-4**, y vuelve a empezar en 1: *1-2-3-4, 1-2-3-4*.
 
+![Dos compases de 4/4 seguidos: cada caja tiene cuatro pulsos numerados del 1 al 4, una barra de compás las separa, el primer pulso va en rojo, y debajo las sílabas a-le-lu-ya, una por pulso. A la izquierda, la cifra 4/4 con el 4 de arriba en rojo.](img/clase04-compas.png)
+*Dos compases de 4/4. El 4 de arriba cuenta los pulsos de la caja; la barra de compás marca dónde termina una y empieza la siguiente.*
+
 ### El tiempo fuerte
 
 El primer pulso de cada compás es el **tiempo fuerte**: el que más se siente y donde suelen caer los comienzos de frase (una **frase** es un grupo de sílabas que se cantan seguidas y forman una idea, como un verso). Al contar en voz alta, el 1 sale un poco más marcado que el 2, el 3 y el 4.
 
 Prueba con *a-le-lu-ya* repetido: cuatro sílabas, cuatro pulsos, una caja. La *a* cae en el tiempo fuerte. Al repetirlo, *a-le-lu-ya, a-le-lu-ya*, empieza el siguiente compás.
+
+![Dos compases de 4/4 como barras: la del pulso 1 es alta y roja, las de los pulsos 2, 3 y 4 son bajas y grises. Debajo, las sílabas a-le-lu-ya, con la a en el pulso 1.](img/clase04-tiempo-fuerte.png)
+*El tiempo fuerte es el pulso 1 de cada compás: el que más se marca.*
 
 > 📋 **Repaso en una pantalla**
 > - **Pulso** = el latido parejo de una canción. También se dice *tiempo*.

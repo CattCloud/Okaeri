@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="380" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Las partes de una figura: cabeza y plica</text>
+  <ellipse cx="170" cy="170" rx="34" ry="24" fill="#ffffff" stroke="#111111" stroke-width="4"/>
+  <text x="214" y="175" font-size="14" font-style="italic" fill="#888888">sin plica</text>
+  <line x1="170" y1="198" x2="170" y2="222" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="170" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">cabeza: hueca</text>
+  <text x="170" y="300" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Redonda</text>
+  <text x="170" y="322" text-anchor="middle" font-size="13" fill="#555555">dura 4 pulsos</text>
+  <ellipse cx="450" cy="170" rx="34" ry="24" fill="#ffffff" stroke="#111111" stroke-width="4"/>
+  <line x1="483" y1="166" x2="483" y2="70" stroke="#111111" stroke-width="4"/>
+  <line x1="487" y1="92" x2="513" y2="92" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="519" y="97" font-size="15" font-weight="bold" fill="#2b6cb0">plica</text>
+  <line x1="450" y1="198" x2="450" y2="222" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="450" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">cabeza: hueca</text>
+  <text x="450" y="300" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Blanca</text>
+  <text x="450" y="322" text-anchor="middle" font-size="13" fill="#555555">dura 2 pulsos</text>
+  <ellipse cx="730" cy="170" rx="34" ry="24" fill="#111111" stroke="#111111" stroke-width="4"/>
+  <line x1="763" y1="166" x2="763" y2="70" stroke="#111111" stroke-width="4"/>
+  <line x1="767" y1="92" x2="793" y2="92" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="799" y="97" font-size="15" font-weight="bold" fill="#2b6cb0">plica</text>
+  <line x1="730" y1="198" x2="730" y2="222" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="730" y="242" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">cabeza: rellena</text>
+  <text x="730" y="300" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Negra</text>
+  <text x="730" y="322" text-anchor="middle" font-size="13" fill="#555555">dura 1 pulso</text>
+  <text x="450" y="362" text-anchor="middle" font-size="13" fill="#555555">Se distinguen por dos cosas: si la cabeza está hueca o rellena, y si lleva plica.</text>
+</svg>

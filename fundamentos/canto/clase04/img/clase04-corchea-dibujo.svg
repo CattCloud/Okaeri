@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">Cómo se dibuja la corchea: corchete y barra</text>
+  <ellipse cx="170" cy="250" rx="34" ry="24" fill="#111111" stroke="#111111" stroke-width="4"/>
+  <line x1="203" y1="246" x2="203" y2="130" stroke="#111111" stroke-width="4"/>
+  <line x1="207" y1="190" x2="233" y2="190" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="239" y="195" font-size="15" font-weight="bold" fill="#2b6cb0">plica</text>
+  <ellipse cx="450" cy="250" rx="34" ry="24" fill="#111111" stroke="#111111" stroke-width="4"/>
+  <line x1="483" y1="246" x2="483" y2="130" stroke="#111111" stroke-width="4"/>
+  <path d="M 483 130 C 493 160 525 168 515 210 C 513 182 497 176 483 172 Z" fill="#111111" stroke="#111111" stroke-width="2"/>
+  <line x1="521" y1="150" x2="549" y2="150" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="555" y="155" font-size="15" font-weight="bold" fill="#2b6cb0">corchete</text>
+  <ellipse cx="690" cy="250" rx="34" ry="24" fill="#111111" stroke="#111111" stroke-width="4"/>
+  <ellipse cx="770" cy="250" rx="34" ry="24" fill="#111111" stroke="#111111" stroke-width="4"/>
+  <line x1="723" y1="246" x2="723" y2="130" stroke="#111111" stroke-width="4"/>
+  <line x1="803" y1="246" x2="803" y2="130" stroke="#111111" stroke-width="4"/>
+  <rect x="721" y="130" width="84" height="14" fill="#111111"/>
+  <line x1="763" y1="104" x2="763" y2="124" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="763" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">barra</text>
+  <text x="170" y="318" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Negra</text>
+  <text x="170" y="340" text-anchor="middle" font-size="13" fill="#555555">1 pulso</text>
+  <text x="450" y="318" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Corchea sola</text>
+  <text x="450" y="340" text-anchor="middle" font-size="13" fill="#555555">medio pulso</text>
+  <text x="730" y="318" text-anchor="middle" font-size="17" font-weight="bold" fill="#111111">Dos corcheas juntas</text>
+  <text x="730" y="340" text-anchor="middle" font-size="13" fill="#555555">1 pulso entre las dos</text>
+  <text x="450" y="378" text-anchor="middle" font-size="13" fill="#555555">La cabeza rellena y la plica son las de la negra. El corchete o la barra son lo que indica «más corta».</text>
+</svg>

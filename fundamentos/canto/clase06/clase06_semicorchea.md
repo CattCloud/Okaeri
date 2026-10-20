@@ -31,6 +31,9 @@ Las equivalencias salen directas:
 
 Tiene la cabeza rellena y la plica, como la corchea, pero con **dos** corchetes en vez de uno. Cuando hay varias seguidas, los corchetes se reemplazan por **dos barras** paralelas que unen las plicas, como se ve en la figura. Eso las distingue de las corcheas, que llevan una sola barra.
 
+![Cuatro formas lado a lado: la corchea sola con un corchete, la semicorchea sola con dos corchetes, dos corcheas unidas por una barra y cuatro semicorcheas unidas por dos barras.](img/clase06-semicorchea-dibujo.png)
+*Una semicorchea lleva un corchete o una barra más que la corchea: dos corchetes si va sola, dos barras si va unida a otras.*
+
 ## La cuenta «1 e y a»
 
 Con cuatro sonidos por pulso hacen falta cuatro sílabas de conteo. Se cuenta **1 e y a · 2 e y a · 3 e y a · 4 e y a**:

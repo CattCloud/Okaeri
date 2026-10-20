@@ -26,6 +26,9 @@ La corchea tiene la cabeza rellena y una plica, igual que la negra, pero con un 
 
 Por eso, de un vistazo: una negra tiene solo plica; una corchea sola tiene plica y corchete; dos corcheas juntas se unen por una barra.
 
+![Tres figuras con sus partes señaladas: la negra, con cabeza rellena y plica; la corchea sola, con plica y un corchete curvo en la punta; y dos corcheas juntas, con las plicas unidas por una barra.](img/clase04-corchea-dibujo.png)
+*De la negra a la corchea: el corchete (corchea sola) o la barra (dos o más juntas) indican que la figura es más corta.*
+
 ## La cuenta «1 y 2 y 3 y 4 y»
 
 Para contar las corcheas se agrega una **«y»** entre pulso y pulso. El número cae exactamente sobre el pulso, y la «y» cae justo en la mitad entre ese pulso y el siguiente.

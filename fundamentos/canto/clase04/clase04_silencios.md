@@ -49,6 +49,9 @@ Si el silencio no se cuenta, lo que viene después entra tarde. Por eso, al apre
 Dura medio pulso, la mitad de un silencio de negra. Se cuenta con la misma cuenta de las corcheas: en **1 y 2 y**, el silencio de corchea cubre la mitad que no suena, ya sea el número o la «y». Las dos mitades de un pulso pueden ser corchea y silencio de corchea, en cualquier orden.
 Una forma de comprobarlo: aplaude el pulso, di *a* en la palmada 1 y *le* en la 3; en la 2 y en la 4 no digas nada y cuenta en voz baja *2* y *4*. El silencio se oye mejor cuando el pulso por debajo sigue parejo.
 
+![Dos pulsos divididos en mitades. En el pulso 1, una corchea suena en el 1 y un silencio de corchea ocupa la «y». En el pulso 2, el silencio de corchea ocupa el 2 y la corchea suena en la «y». Cada pulso suma medio más medio.](img/clase04-silencio-corchea.png)
+*Un pulso son dos mitades: una suena y la otra es silencio de corchea, en cualquier orden.*
+
 > 📋 **Repaso en una pantalla**
 > - **Silencio** = un pulso, o parte de uno, sin sonido. Dura lo que la figura de su mismo nombre.
 > - **De redonda** = 4 pulsos (rectángulo colgado). **De blanca** = 2 (rectángulo apoyado). **De negra** = 1 (zigzag). **De corchea** = ½ (como un 7 con punto).

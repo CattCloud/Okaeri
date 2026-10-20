@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="900" height="420" fill="#ffffff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#111111">El compás de 4/4: dos cajas de 4 pulsos</text>
+  <!-- llaves de compás -->
+  <line x1="175" y1="112" x2="495" y2="112" stroke="#555555" stroke-width="1.8"/>
+  <line x1="175" y1="106" x2="175" y2="118" stroke="#555555" stroke-width="1.8"/>
+  <line x1="495" y1="106" x2="495" y2="118" stroke="#555555" stroke-width="1.8"/>
+  <text x="335" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">un compás</text>
+  <line x1="505" y1="112" x2="825" y2="112" stroke="#555555" stroke-width="1.8"/>
+  <line x1="505" y1="106" x2="505" y2="118" stroke="#555555" stroke-width="1.8"/>
+  <line x1="825" y1="106" x2="825" y2="118" stroke="#555555" stroke-width="1.8"/>
+  <text x="665" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#111111">el siguiente compás</text>
+  <!-- barra de compás -->
+  <text x="500" y="158" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2b6cb0">barra de compás</text>
+  <line x1="500" y1="166" x2="500" y2="186" stroke="#2b6cb0" stroke-width="2"/>
+  <!-- barras -->
+  <line x1="170" y1="190" x2="170" y2="270" stroke="#111111" stroke-width="3"/>
+  <line x1="500" y1="190" x2="500" y2="270" stroke="#111111" stroke-width="3"/>
+  <line x1="830" y1="190" x2="830" y2="270" stroke="#111111" stroke-width="3"/>
+  <line x1="170" y1="230" x2="830" y2="230" stroke="#dddddd" stroke-width="1.5"/>
+  <!-- cifra 4/4 -->
+  <text x="95" y="228" text-anchor="middle" font-size="56" font-weight="bold" fill="#d23333">4</text>
+  <text x="95" y="275" text-anchor="middle" font-size="56" font-weight="bold" fill="#111111">4</text>
+  <!-- pulsos compás 1 -->
+  <circle cx="215" cy="230" r="22" fill="#d23333"/>
+  <text x="215" y="237" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">1</text>
+  <circle cx="295" cy="230" r="17" fill="#555555"/>
+  <text x="295" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">2</text>
+  <circle cx="375" cy="230" r="17" fill="#555555"/>
+  <text x="375" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">3</text>
+  <circle cx="455" cy="230" r="17" fill="#555555"/>
+  <text x="455" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">4</text>
+  <!-- pulsos compás 2 -->
+  <circle cx="545" cy="230" r="22" fill="#d23333"/>
+  <text x="545" y="237" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">1</text>
+  <circle cx="625" cy="230" r="17" fill="#555555"/>
+  <text x="625" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">2</text>
+  <circle cx="705" cy="230" r="17" fill="#555555"/>
+  <text x="705" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">3</text>
+  <circle cx="785" cy="230" r="17" fill="#555555"/>
+  <text x="785" y="237" text-anchor="middle" font-size="17" font-weight="bold" fill="#ffffff">4</text>
+  <!-- tiempo fuerte -->
+  <text x="215" y="284" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d23333">tiempo fuerte</text>
+  <text x="545" y="284" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#d23333">tiempo fuerte</text>
+  <!-- sílabas -->
+  <text x="215" y="320" text-anchor="middle" font-size="17" fill="#111111">a</text>
+  <text x="295" y="320" text-anchor="middle" font-size="17" fill="#111111">le</text>
+  <text x="375" y="320" text-anchor="middle" font-size="17" fill="#111111">lu</text>
+  <text x="455" y="320" text-anchor="middle" font-size="17" fill="#111111">ya</text>
+  <text x="545" y="320" text-anchor="middle" font-size="17" fill="#111111">a</text>
+  <text x="625" y="320" text-anchor="middle" font-size="17" fill="#111111">le</text>
+  <text x="705" y="320" text-anchor="middle" font-size="17" fill="#111111">lu</text>
+  <text x="785" y="320" text-anchor="middle" font-size="17" fill="#111111">ya</text>
+  <!-- explicación de la cifra -->
+  <text x="60" y="366" text-anchor="start" font-size="13.5" fill="#111111"><tspan font-weight="bold" fill="#d23333">4 de arriba</tspan>: cuántos pulsos hay en cada caja.</text>
+  <text x="60" y="390" text-anchor="start" font-size="13.5" fill="#111111"><tspan font-weight="bold">4 de abajo</tspan>: qué figura vale un pulso (se explica en el apunte de las figuras rítmicas).</text>
+</svg>

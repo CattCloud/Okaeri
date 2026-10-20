@@ -18,6 +18,9 @@ estado: ESCRITA
 
 Cada figura se dibuja con una **cabeza** (el óvalo) y, en algunas, una **plica** (el palito vertical). Se distinguen por dos cosas: si la cabeza está hueca o rellena, y si lleva plica.
 
+![Las tres figuras con sus partes señaladas: la redonda tiene cabeza hueca y no lleva plica; la blanca, cabeza hueca y plica; la negra, cabeza rellena y plica.](img/clase04-partes-figura.png)
+*Las dos partes de una figura: la cabeza (hueca o rellena) y la plica.*
+
 | Figura | Cómo se dibuja | Dura |
 |---|---|---|
 | **Redonda** | Óvalo hueco, sin plica | **4 pulsos** |
