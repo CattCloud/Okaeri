@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T22:00:20+00:00",
+  "title": "Design System: Okaeri",
+  "extensions": {
+    "colorMeta": {
+      "papel-hueso": {
+        "role": "neutral",
+        "displayName": "Papel hueso",
+        "canonical": "oklch(93.9% 0.007 97)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#252420",
+          "#41403c",
+          "#5e5e59",
+          "#7e7d79",
+          "#9f9e9a",
+          "#c5c4bf",
+          "#f0eee9"
+        ],
+        "theme": "light",
+        "cssVar": "--k"
+      },
+      "tinta-casi-negra": {
+        "role": "neutral",
+        "displayName": "Tinta casi negra",
+        "canonical": "oklch(19.1% 0.002 107)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403f",
+          "#5e5e5c",
+          "#7d7d7c",
+          "#9e9e9d",
+          "#c4c4c3",
+          "#eeeeed"
+        ],
+        "theme": "light",
+        "cssVar": "--w"
+      },
+      "rojo-risografia": {
+        "role": "primary",
+        "displayName": "Rojo de risografía",
+        "canonical": "oklch(54.8% 0.211 29)",
+        "tonalRamp": [
+          "#220000",
+          "#4d0000",
+          "#7d0001",
+          "#b20101",
+          "#df3125",
+          "#ff6554",
+          "#fcada0",
+          "#fdeae6"
+        ],
+        "theme": "light",
+        "cssVar": "--r"
+      },
+      "rojo-risografia-texto": {
+        "role": "primary",
+        "displayName": "Rojo para texto (claro)",
+        "canonical": "oklch(49.0% 0.189 29)",
+        "tonalRamp": [
+          "#220000",
+          "#4c0000",
+          "#7e0000",
+          "#af110a",
+          "#d64133",
+          "#fe6654",
+          "#feac9f",
+          "#fee9e5"
+        ],
+        "theme": "light",
+        "cssVar": "--rt"
+      },
+      "cian-risografia": {
+        "role": "secondary",
+        "displayName": "Cian de risografía",
+        "canonical": "oklch(50.6% 0.094 223)",
+        "tonalRamp": [
+          "#000e16",
+          "#002935",
+          "#00475a",
+          "#016882",
+          "#2e89a6",
+          "#54abc9",
+          "#7bd2f1",
+          "#daf3fd"
+        ],
+        "theme": "light",
+        "cssVar": "--c"
+      },
+      "gris-grafito": {
+        "role": "neutral",
+        "displayName": "Gris grafito",
+        "canonical": "oklch(48.1% 0.010 99)",
+        "tonalRamp": [
+          "#0c0b07",
+          "#25241f",
+          "#41403a",
+          "#5f5e58",
+          "#7e7d77",
+          "#a09f98",
+          "#c5c4bd",
+          "#f0efe8"
+        ],
+        "theme": "light",
+        "cssVar": "--g"
+      },
+      "superficie-1-claro": {
+        "role": "neutral",
+        "displayName": "Superficie 1 (claro)",
+        "canonical": "oklch(96.4% 0.005 95)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252421",
+          "#40403d",
+          "#5e5e5a",
+          "#7e7d7a",
+          "#9f9e9b",
+          "#c5c4c0",
+          "#efeeea"
+        ],
+        "theme": "light",
+        "cssVar": "--k1"
+      },
+      "superficie-2-claro": {
+        "role": "neutral",
+        "displayName": "Superficie 2 (claro)",
+        "canonical": "oklch(97.9% 0.004 91)",
+        "tonalRamp": [
+          "#0c0b09",
+          "#252422",
+          "#40403d",
+          "#5e5d5b",
+          "#7e7d7a",
+          "#9f9e9b",
+          "#c5c4c1",
+          "#efeeeb"
+        ],
+        "theme": "light",
+        "cssVar": "--k2"
+      },
+      "superficie-3-claro": {
+        "role": "neutral",
+        "displayName": "Superficie 3 (claro)",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ],
+        "theme": "light",
+        "cssVar": "--k3"
+      },
+      "linea-claro": {
+        "role": "neutral",
+        "displayName": "Línea (claro)",
+        "canonical": "oklch(85.7% 0.011 95)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241e",
+          "#414039",
+          "#5f5e57",
+          "#7f7d76",
+          "#a09e97",
+          "#c6c4bc",
+          "#f1efe6"
+        ],
+        "theme": "light",
+        "cssVar": "--line"
+      },
+      "linea-fuerte-claro": {
+        "role": "neutral",
+        "displayName": "Línea fuerte (claro)",
+        "canonical": "oklch(72.7% 0.013 96)",
+        "tonalRamp": [
+          "#0d0b06",
+          "#26241d",
+          "#424038",
+          "#605e56",
+          "#7f7d75",
+          "#a19f96",
+          "#c6c4bb",
+          "#f1efe5"
+        ],
+        "theme": "light",
+        "cssVar": "--line2"
+      },
+      "glitch-rojo-claro": {
+        "role": "neutral",
+        "displayName": "Franja roja del glitch (claro)",
+        "canonical": "oklch(62.1% 0.225 28)",
+        "tonalRamp": [
+          "#220000",
+          "#4c0000",
+          "#7c0204",
+          "#b20308",
+          "#e5221e",
+          "#ff6556",
+          "#ffab9f",
+          "#fceae7"
+        ],
+        "theme": "light",
+        "cssVar": "--gl-a"
+      },
+      "glitch-cian-claro": {
+        "role": "neutral",
+        "displayName": "Franja cian del glitch (claro)",
+        "canonical": "oklch(72.3% 0.124 217)",
+        "tonalRamp": [
+          "#000e14",
+          "#002933",
+          "#054856",
+          "#06697c",
+          "#088ca5",
+          "#08b1d0",
+          "#4fd8f8",
+          "#d6f5fe"
+        ],
+        "theme": "light",
+        "cssVar": "--gl-b"
+      },
+      "negro-pantalla": {
+        "role": "neutral",
+        "displayName": "Negro de pantalla",
+        "canonical": "oklch(14.5% 0.000 90)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#7d7d7d",
+          "#9e9e9e",
+          "#c4c4c4",
+          "#eeeeee"
+        ],
+        "theme": "dark",
+        "cssVar": "--k"
+      },
+      "blanco-hueso": {
+        "role": "neutral",
+        "displayName": "Blanco hueso",
+        "canonical": "oklch(93.9% 0.007 97)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#252420",
+          "#41403c",
+          "#5e5e59",
+          "#7e7d79",
+          "#9f9e9a",
+          "#c5c4bf",
+          "#f0eee9"
+        ],
+        "theme": "dark",
+        "cssVar": "--w"
+      },
+      "rojo-senal": {
+        "role": "primary",
+        "displayName": "Rojo señal",
+        "canonical": "oklch(64.3% 0.243 28)",
+        "tonalRamp": [
+          "#220000",
+          "#4c0002",
+          "#7d0005",
+          "#b10710",
+          "#e90a18",
+          "#fe6659",
+          "#fdaca1",
+          "#fee9e6"
+        ],
+        "theme": "dark",
+        "cssVar": "--r"
+      },
+      "cian-sintonia": {
+        "role": "secondary",
+        "displayName": "Cian de sintonía",
+        "canonical": "oklch(83.7% 0.141 212)",
+        "tonalRamp": [
+          "#000e13",
+          "#002a31",
+          "#004854",
+          "#0c6978",
+          "#0e8ca0",
+          "#0db1ca",
+          "#17dbf9",
+          "#d1f6ff"
+        ],
+        "theme": "dark",
+        "cssVar": "--c"
+      },
+      "gris-ceniza": {
+        "role": "neutral",
+        "displayName": "Gris ceniza",
+        "canonical": "oklch(64.9% 0.007 107)",
+        "tonalRamp": [
+          "#0b0b08",
+          "#242420",
+          "#40403c",
+          "#5e5e59",
+          "#7e7e79",
+          "#9f9f9a",
+          "#c4c4bf",
+          "#efefe9"
+        ],
+        "theme": "dark",
+        "cssVar": "--g"
+      },
+      "superficie-1-oscuro": {
+        "role": "neutral",
+        "displayName": "Superficie 1 (oscuro)",
+        "canonical": "oklch(17.7% 0.002 107)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403f",
+          "#5e5e5c",
+          "#7d7d7c",
+          "#9e9e9d",
+          "#c4c4c3",
+          "#eeeeed"
+        ],
+        "theme": "dark",
+        "cssVar": "--k1"
+      },
+      "superficie-2-oscuro": {
+        "role": "neutral",
+        "displayName": "Superficie 2 (oscuro)",
+        "canonical": "oklch(20.9% 0.002 107)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242423",
+          "#40403f",
+          "#5e5e5c",
+          "#7d7d7c",
+          "#9e9e9d",
+          "#c4c4c3",
+          "#eeeeed"
+        ],
+        "theme": "dark",
+        "cssVar": "--k2"
+      },
+      "superficie-3-oscuro": {
+        "role": "neutral",
+        "displayName": "Superficie 3 (oscuro)",
+        "canonical": "oklch(25.1% 0.004 107)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#242422",
+          "#40403e",
+          "#5e5e5b",
+          "#7d7d7b",
+          "#9e9e9c",
+          "#c4c4c1",
+          "#efefec"
+        ],
+        "theme": "dark",
+        "cssVar": "--k3"
+      },
+      "linea-oscuro": {
+        "role": "neutral",
+        "displayName": "Línea (oscuro)",
+        "canonical": "oklch(28.4% 0.004 107)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#242422",
+          "#40403e",
+          "#5e5e5b",
+          "#7d7d7b",
+          "#9e9e9c",
+          "#c4c4c2",
+          "#efefec"
+        ],
+        "theme": "dark",
+        "cssVar": "--line"
+      },
+      "linea-fuerte-oscuro": {
+        "role": "neutral",
+        "displayName": "Línea fuerte (oscuro)",
+        "canonical": "oklch(38.9% 0.005 107)",
+        "tonalRamp": [
+          "#0b0b09",
+          "#242421",
+          "#40403d",
+          "#5e5e5b",
+          "#7d7d7a",
+          "#9f9f9b",
+          "#c4c4c1",
+          "#efefeb"
+        ],
+        "theme": "dark",
+        "cssVar": "--line2"
+      }
+    },
+    "themes": {
+      "default": "light",
+      "attribute": "html[data-theme]",
+      "storageKey": "okaeri-tema",
+      "themeColor": {
+        "light": "#ecebe6",
+        "dark": "#0a0a0a"
+      },
+      "derived": {
+        "light": {
+          "--scan": "rgba(20,20,19,.05)",
+          "--top-bg": "rgba(236,235,230,.9)",
+          "--rail-bg": "rgba(236,235,230,.96)",
+          "--scrim-bg": "rgba(20,20,19,.35)",
+          "--aire": "rgba(208,28,20,.10)",
+          "--falta-bg": "rgba(95,94,88,.14)",
+          "--gl-blend": "multiply",
+          "--plate": "#ffffff",
+          "--pop": "rgba(20,20,19,.22)"
+        },
+        "dark": {
+          "--scan": "rgba(236,235,230,.035)",
+          "--top-bg": "rgba(10,10,10,.88)",
+          "--rail-bg": "rgba(10,10,10,.94)",
+          "--scrim-bg": "rgba(10,10,10,.72)",
+          "--aire": "rgba(255,42,42,.17)",
+          "--falta-bg": "rgba(143,143,138,.16)",
+          "--gl-blend": "screen",
+          "--plate": "#ecebe6",
+          "--pop": "rgba(0,0,0,.7)"
+        }
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Nombre del carril en el Recorrido, con glitch; en minúscula."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Título de vista, con glitch; en minúscula."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Título del apunte o la práctica en el lector, con glitch; en minúscula."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "M1 a M9, número de clase, minutos de nivel."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Subtítulos dentro del apunte, con guion de 16x2px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto del apunte, 70ch, AA en los dos temas."
+      },
+      "body-sub": {
+        "displayName": "Body sub",
+        "purpose": "Introducción de vista, 62ch."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Riel, nombres de canal, búsqueda."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Botones, selector de carril, enlaces de acción; mayúsculas."
+      },
+      "label-sm": {
+        "displayName": "Label sm",
+        "purpose": "Estados, grupos del menú, metadatos; mayúsculas."
+      },
+      "brand": {
+        "displayName": "Brand",
+        "purpose": "OKAERI // TRANSMISIÓN."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Código en línea dentro del apunte."
+      }
+    },
+    "fonts": {
+      "embedding": "woff2 en base64 dentro de system.html, subconjunto con los caracteres del panel",
+      "families": {
+        "Major Mono Display": [
+          "400"
+        ],
+        "Chakra Petch": [
+          "400",
+          "500",
+          "600",
+          "700"
+        ],
+        "Atkinson Hyperlegible": [
+          "400",
+          "700",
+          "400 italic",
+          "700 italic"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "flotante-dial",
+        "value": "0 18px 40px -12px var(--pop)",
+        "purpose": "Menú del dial desplegado; única sombra difusa del sistema."
+      },
+      {
+        "name": "canal-abierto",
+        "value": "inset 0 2px 0 var(--w)",
+        "purpose": "Canal con su panel abierto; con var(--r) si está en el aire."
+      },
+      {
+        "name": "lineas-de-escaneo",
+        "value": "repeating-linear-gradient(180deg, var(--scan) 0 1px, transparent 1px 3px)",
+        "purpose": "Capa de fondo fija detrás de las superficies opacas."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Curva única del sistema."
+      },
+      {
+        "name": "tune-in",
+        "value": "0.5s (paneles 0.45s): opacity .35 + blur(2px) a nítido",
+        "purpose": "Entrada de cada vista."
+      },
+      {
+        "name": "tear",
+        "value": "0.42s steps(5)",
+        "purpose": "Rasgado de las franjas rojo/cian de los titulares al sintonizar."
+      },
+      {
+        "name": "estatica-carril",
+        "value": "300ms",
+        "purpose": "Ruido a pantalla completa al cambiar de carril."
+      },
+      {
+        "name": "estatica-tema",
+        "value": "200ms",
+        "purpose": "Ruido al cambiar de tema claro/oscuro."
+      },
+      {
+        "name": "desarmar",
+        "value": "250ms",
+        "purpose": "El nombre del canal se desarma y se recompone al pasar o enfocar."
+      },
+      {
+        "name": "riel",
+        "value": "0.4s",
+        "purpose": "Apertura y cierre del riel o del cajón."
+      },
+      {
+        "name": "knob-carril",
+        "value": "0.35s",
+        "purpose": "Barra roja del selector de carril."
+      },
+      {
+        "name": "hover",
+        "value": "0.15s a 0.25s",
+        "purpose": "Fondos y contornos de controles."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Sin animaciones, transiciones ni estática: corte limpio."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "canales-en-filas",
+        "value": "@container (max-width: 820px)",
+        "purpose": "Canales en filas, regla compacta, indicador En el aire."
+      },
+      {
+        "name": "movil",
+        "value": "@media (max-width: 760px)",
+        "purpose": "Cabecera en filas, riel como cajón, página con desplazamiento normal."
+      }
+    ],
+    "layout": {
+      "top": "64px",
+      "rail": "312px",
+      "railDefault": {
+        "escritorio": "cerrado",
+        "publicada": "abierto",
+        "storageKey": "okaeri-riel"
+      },
+      "readerMax": "1010px",
+      "textMax": "880px / 70ch",
+      "minTarget": "44px"
+    },
+    "publishHooks": {
+      "script": "sistema/herramientas/publicar-panel.mjs",
+      "exactOnce": [
+        "</head>",
+        "showView(\"recorrido\");"
+      ],
+      "hidden": [
+        ".app-menu",
+        "#view-recorrido",
+        "#view-clase-timeline",
+        ".only-personal"
+      ],
+      "shown": [
+        ".only-pub"
+      ],
+      "firstItem": ".nav-item[data-key]",
+      "images": "src relativo a la raíz del repo; deben existir"
+    }
+  },
+  "components": [
+    {
+      "name": "Botón de contorno",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Acción secundaria de la pantalla (Abrir todo, Cerrar todo).",
+      "html": "<button class=\"ds-btn\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><polyline points=\"6 5 12 11 18 5\"/><polyline points=\"6 13 12 19 18 13\"/></svg>Abrir todo</button>",
+      "css": ".ds-icon{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter;flex:none;}.ds-btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;background:transparent;border:1px solid var(--line2,#a9a79e);border-radius:0;color:var(--w,#141413);font-family:'Chakra Petch',system-ui,sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s;} .ds-btn:hover{border-color:var(--w,#141413);background:var(--k2,#f9f8f5);} .ds-btn:focus-visible{outline:2px solid var(--w,#141413);outline-offset:3px;}"
+    },
+    {
+      "name": "Selector de carril",
+      "kind": "nav",
+      "refersTo": "carril-toggle-activo",
+      "description": "Cambia todo el panel entre Guitarra y Canto; un carril a la vez.",
+      "html": "<div class=\"ds-ct\" role=\"switch\" tabindex=\"0\" aria-checked=\"false\"><span class=\"ds-ct-l on\">Guitarra</span><span class=\"ds-ct-l\">Canto</span><span class=\"ds-ct-k\"></span></div>",
+      "css": ".ds-ct{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;height:40px;border:1px solid var(--line2,#a9a79e);background:var(--k,#ecebe6);cursor:pointer;font-family:'Chakra Petch',system-ui,sans-serif;} .ds-ct-l{display:flex;align-items:center;justify-content:center;padding:8px 16px;font-weight:600;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--g,#5f5e58);transition:color .25s,background .25s;} .ds-ct-l:hover{color:var(--w,#141413);} .ds-ct-l.on{color:var(--w,#141413);background:var(--k2,#f9f8f5);} .ds-ct-k{position:absolute;left:0;bottom:-1px;width:50%;height:2px;background:var(--r,#d01c14);transition:transform .35s cubic-bezier(.16,1,.3,1);} .ds-ct:focus-visible{outline:2px solid var(--w,#141413);outline-offset:3px;}"
+    },
+    {
+      "name": "Búsqueda",
+      "kind": "input",
+      "refersTo": "input-busqueda",
+      "description": "Filtra la guía de apuntes del carril activo.",
+      "html": "<label class=\"ds-search\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"6\"/><line x1=\"16\" y1=\"16\" x2=\"20\" y2=\"20\"/></svg><input type=\"text\" placeholder=\"Buscar un apunte…\"></label>",
+      "css": ".ds-icon{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter;flex:none;}.ds-search{position:relative;display:block;width:250px;} .ds-search .ds-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--g,#5f5e58);} .ds-search input{width:100%;height:40px;padding:0 12px 0 38px;background:var(--k1,#f4f3ef);border:1px solid var(--line2,#a9a79e);border-radius:0;color:var(--w,#141413);font:500 15px 'Chakra Petch',system-ui,sans-serif;letter-spacing:.03em;outline:none;caret-color:var(--w,#141413);} .ds-search input::placeholder{color:var(--g,#5f5e58);} .ds-search input:focus{border-color:var(--w,#141413);}"
+    },
+    {
+      "name": "Elemento del riel",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Apunte o práctica en la guía de programación; el activo se invierte.",
+      "html": "<div class=\"ds-nav\"><div class=\"ds-ni\">Las notas y las 6 cuerdas</div><div class=\"ds-ni on\">Los 8 acordes abiertos del arranque</div><div class=\"ds-ni ch\">Práctica: Las 4 progresiones</div></div>",
+      "css": ".ds-nav{width:280px;font-family:'Chakra Petch',system-ui,sans-serif;} .ds-ni{position:relative;display:flex;align-items:center;min-height:44px;padding:10px;border:1px solid transparent;font-weight:500;font-size:15px;line-height:1.38;color:var(--w,#141413);cursor:pointer;transition:background .15s,border-color .15s;} .ds-ni:hover{background:var(--k2,#f9f8f5);border-color:var(--line,#d2d0c8);} .ds-ni.on{background:var(--w,#141413);color:var(--k,#ecebe6);border-color:var(--w,#141413);} .ds-ni.ch{margin-left:24px;font-size:14px;min-height:40px;padding:8px 10px;} .ds-ni.ch::before{content:'';position:absolute;left:-13px;top:-3px;width:9px;height:20px;border-left:1px solid var(--line2,#a9a79e);border-bottom:1px solid var(--line2,#a9a79e);}"
+    },
+    {
+      "name": "Canal",
+      "kind": "custom",
+      "refersTo": "canal",
+      "description": "Un módulo del temario como canal, con estado y barras de señal; variante en el aire.",
+      "html": "<div class=\"ds-chs\"><button class=\"ds-ch\"><span class=\"n\">M1</span><span class=\"nm\">Los primeros acordes</span><span class=\"st\">Señal estable</span><span class=\"bars\"><i></i><i class=\"s\"></i><i class=\"f\"></i></span></button><button class=\"ds-ch aire\"><span class=\"n\">M8</span><span class=\"nm\">Punteo y arpegio</span><span class=\"st\">En el aire</span><span class=\"bars\"><i></i><i class=\"f\"></i></span></button></div>",
+      "css": ".ds-chs{display:grid;grid-template-columns:repeat(2,160px);height:260px;} .ds-ch{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:18px 12px 16px 14px;background:transparent;border:0;border-left:1px solid var(--line,#d2d0c8);color:var(--w,#141413);text-align:left;font-family:'Chakra Petch',system-ui,sans-serif;cursor:pointer;transition:background .25s cubic-bezier(.16,1,.3,1);} .ds-ch:hover{background:var(--k2,#f9f8f5);} .ds-ch:focus-visible{outline:2px solid var(--w,#141413);outline-offset:-2px;} .ds-ch .n{font-family:'Major Mono Display','Chakra Petch',monospace;font-size:32px;line-height:1;} .ds-ch .nm{font-weight:500;font-size:15.5px;line-height:1.3;} .ds-ch .st{font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--g,#5f5e58);} .ds-ch .bars{margin-top:auto;width:100%;display:flex;flex-direction:column-reverse;gap:4px;} .ds-ch .bars i{height:10px;background:var(--w,#141413);} .ds-ch .bars i.s{background:var(--c,#00708c);} .ds-ch .bars i.f{background:transparent;outline:1px dashed var(--g,#5f5e58);outline-offset:-1px;} .ds-ch.aire{background:linear-gradient(180deg,rgba(208,28,20,.10),rgba(208,28,20,0) 72%);border-left-color:var(--r,#d01c14);} .ds-ch.aire .n{color:var(--r,#d01c14);} .ds-ch.aire .st{color:var(--rt,#b3170f);}"
+    },
+    {
+      "name": "Etiquetas de tema",
+      "kind": "chip",
+      "refersTo": "chip-en-curso",
+      "description": "Apunte en contorno, Práctica en relleno; el color dice el estado.",
+      "html": "<div class=\"ds-tags\"><span class=\"ds-tag ok\">Apunte</span><span class=\"ds-tag ok pr\">Práctica</span><span class=\"ds-tag cur pr\">En curso</span><span class=\"ds-tag falta\">Falta</span></div>",
+      "css": ".ds-tags{display:flex;flex-wrap:wrap;gap:8px;} .ds-tag{display:inline-flex;align-items:center;min-height:32px;padding:6px 10px;border:1px solid;font-family:'Chakra Petch',system-ui,sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;} .ds-tag.ok{border-color:var(--w,#141413);color:var(--w,#141413);} .ds-tag.ok.pr{background:var(--w,#141413);color:var(--k,#ecebe6);} .ds-tag.cur{border-color:var(--r,#d01c14);background:var(--r,#d01c14);color:var(--k,#ecebe6);} .ds-tag.falta{border-style:dashed;border-color:var(--g,#5f5e58);color:var(--g,#5f5e58);}"
+    },
+    {
+      "name": "Práctica de este apunte",
+      "kind": "button",
+      "refersTo": "practica-link",
+      "description": "La acción principal del lector, en rojo señal.",
+      "html": "<a class=\"ds-pl\" href=\"#\"><span class=\"ico\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"16\"/><polyline points=\"9 12 11 14 15 10\"/></svg></span><span class=\"b\"><span class=\"lab\">Práctica de este apunte</span><span class=\"t\">Las 4 progresiones: el cambio de acorde</span></span><span class=\"ar\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><line x1=\"4\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline points=\"13 6 19 12 13 18\"/></svg></span></a>",
+      "css": ".ds-icon{width:1.1em;height:1.1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:square;stroke-linejoin:miter;flex:none;}.ds-pl{display:flex;align-items:center;gap:20px;width:520px;padding:20px 24px;border:1px solid var(--r,#d01c14);background:var(--k,#ecebe6);color:var(--w,#141413);text-decoration:none;font-family:'Chakra Petch',system-ui,sans-serif;transition:background .25s,color .25s;} .ds-pl .ico{display:grid;place-items:center;width:52px;height:52px;border:1px solid var(--r,#d01c14);color:var(--r,#d01c14);flex:none;} .ds-pl .ico .ds-icon,.ds-pl .ar .ds-icon{width:24px;height:24px;} .ds-pl .b{flex:1;display:flex;flex-direction:column;} .ds-pl .lab{font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--rt,#b3170f);} .ds-pl .t{font-weight:600;font-size:21px;line-height:1.25;} .ds-pl .ar .ds-icon{transition:transform .3s cubic-bezier(.16,1,.3,1);} .ds-pl:hover,.ds-pl:focus-visible{background:var(--r,#d01c14);color:var(--k,#ecebe6);outline:none;} .ds-pl:hover .ico,.ds-pl:focus-visible .ico{border-color:var(--k,#ecebe6);color:var(--k,#ecebe6);} .ds-pl:hover .lab,.ds-pl:focus-visible .lab{color:var(--k,#ecebe6);} .ds-pl:hover .ar .ds-icon{transform:translateX(4px);}"
+    },
+    {
+      "name": "Placa del lector",
+      "kind": "card",
+      "refersTo": "panel-apunte",
+      "description": "Teletexto limpio: placa opaca, título con glitch, texto Atkinson a 70ch.",
+      "html": "<article class=\"ds-rd\"><h2 class=\"ds-gl\" data-text=\"los 8 acordes abiertos\">los 8 acordes abiertos</h2><p class=\"meta\">Guitarra · Clase 2 · Apunte</p><p class=\"tx\">Estas son las formas. Se estudian y se verifican aquí, nunca mirándolas mientras practicas.</p></article>",
+      "css": ".ds-rd{max-width:640px;background:var(--k1,#f4f3ef);border:1px solid var(--line,#d2d0c8);border-top:2px solid var(--w,#141413);padding:40px 48px;color:var(--w,#141413);} .ds-gl{position:relative;isolation:isolate;margin:0 0 14px;font:400 40px/1.16 'Major Mono Display','Chakra Petch',monospace;letter-spacing:-.01em;text-transform:lowercase;} .ds-gl::before,.ds-gl::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;mix-blend-mode:var(--gl-blend,multiply);} .ds-gl::before{color:var(--gl-a,#f0322a);transform:translateX(.03em);clip-path:inset(18% 0 54% 0);} .ds-gl::after{color:var(--gl-b,#1fb8d8);transform:translateX(-.03em);clip-path:inset(62% 0 8% 0);} .ds-rd .meta{margin:0 0 28px;font-family:'Chakra Petch',system-ui,sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--g,#5f5e58);} .ds-rd .tx{margin:0;max-width:70ch;font:400 18px/1.68 'Atkinson Hyperlegible',system-ui,sans-serif;}"
+    },
+    {
+      "name": "Menú del dial",
+      "kind": "nav",
+      "refersTo": "menu-dial",
+      "description": "Carátula de sintonizador con los grupos Vistas (solo personal) y Tema.",
+      "html": "<div class=\"ds-dp\" role=\"menu\"><div class=\"sc\"></div><p class=\"lb\">Vistas</p><button class=\"mi on\"><span class=\"mk\"></span>Recorrido</button><button class=\"mi\"><span class=\"mk\"></span>Clases en orden</button><p class=\"lb\">Tema</p><div class=\"seg\"><button class=\"mi on\">Claro</button><button class=\"mi\">Oscuro</button></div></div>",
+      "css": ".ds-dp{width:288px;background:var(--k1,#f4f3ef);border:1px solid var(--line2,#a9a79e);border-top:2px solid var(--w,#141413);padding:6px 16px 14px;box-shadow:0 18px 40px -12px var(--pop,rgba(20,20,19,.22));font-family:'Chakra Petch',system-ui,sans-serif;} .ds-dp .sc{height:16px;margin:6px 0 4px;border-bottom:1px solid var(--line2,#a9a79e);background:linear-gradient(90deg,var(--line2,#a9a79e) 0 1px,transparent 1px) 0 100%/12px 6px repeat-x;} .ds-dp .lb{margin:10px 0 8px;font-weight:700;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--g,#5f5e58);} .ds-dp .mi{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:8px 12px;background:transparent;border:1px solid transparent;color:var(--w,#141413);font:600 14px 'Chakra Petch',system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-align:left;cursor:pointer;} .ds-dp .mi:hover,.ds-dp .mi:focus-visible{background:var(--k2,#f9f8f5);border-color:var(--line,#d2d0c8);outline:none;} .ds-dp .mk{width:10px;height:10px;border:1px solid var(--g,#5f5e58);} .ds-dp .mi.on .mk{background:var(--r,#d01c14);border-color:var(--r,#d01c14);} .ds-dp .seg{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line2,#a9a79e);} .ds-dp .seg .mi{justify-content:center;border:0;} .ds-dp .seg .mi+.mi{border-left:1px solid var(--line2,#a9a79e);} .ds-dp .seg .mi.on{background:var(--w,#141413);color:var(--k,#ecebe6);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Señal glitch",
+    "overview": "Okaeri es una transmisión que se sintoniza. Cada carril (guitarra o canto) es una frecuencia, cada módulo del temario es un canal y lo que se estudia ahora está «en el aire». La interfaz toma el vocabulario de un receptor: una regla de frecuencia con marcas, barras de señal, estática al cambiar de emisora y titulares con el desplazamiento rojo/cian de una señal mal sintonizada. El mundo se apoya en el rock alternativo electrónico que el usuario eligió en su galería de gustos.\n\nEl ruido vive solo en los bordes. Los titulares tiemblan, los canales se desarman al pasar el cursor y la pantalla se llena de estática 300 ms al cambiar de carril; el lector de apuntes, en cambio, es un teletexto limpio: placa opaca, Atkinson Hyperlegible a 18px, 70 caracteres por línea, contraste AA. Estudiar va primero y la aventura nunca estorba la lectura.\n\nEl tema claro es el de fábrica: papel hueso, tinta casi negra y rojo y cian de risografía. El oscuro es la pantalla negra original del contrato y se elige en el menú del dial. Los dos comparten forma, escala y reglas; solo cambian los valores de los mismos papeles. El sistema rechaza el panel de progreso de app educativa: tarjetas blancas redondeadas, barras verdes, rachas.",
+    "keyCharacteristics": [
+      "Esquinas rectas en todo, líneas de 1px y trazo discontinuo para lo que falta.",
+      "Cuatro estados de señal en orden fijo, cada uno con su forma y su color.",
+      "Glitch RGB solo en titulares; estática solo en transiciones; ningún efecto sobre párrafos.",
+      "Tres familias con papeles separados: Major Mono (titulares y numerales), Chakra Petch (interfaz), Atkinson Hyperlegible (lectura).",
+      "Líneas de escaneo tenues de fondo, detrás de superficies opacas.",
+      "Iconos SVG de trazo con terminación cuadrada; ningún emoji."
+    ],
+    "rules": [
+      {
+        "name": "La Regla de los Cuatro Estados",
+        "body": "Los estados de un módulo van siempre en este orden y con esta codificación: sin señal (falta: contorno discontinuo gris), señal estable (visto o escrito: barra llena de tinta), en el aire (en curso: rojo), sintonizado (lograda: cian). No se agregan estados ni se reordenan, y la leyenda los muestra en esa secuencia.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de la Señal Verdadera",
+        "body": "El cian solo aparece cuando el tema pasó su evaluación. Un apunte escrito es «señal estable», nunca «sintonizado».",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla AA en los Dos Temas",
+        "body": "Todo texto cumple 4.5:1 sobre su fondo real en claro y en oscuro, incluido el brillo «en el aire». Medido en el build: gris sobre fondo 5.45 (claro) y 6.09 (oscuro), cian claro 4.76, rojo claro 4.56, rojo para texto 5.78, texto sobre rojo 4.56 (claro) y 5.3 (oscuro). Un color nuevo entra solo con su par medido en ambos temas.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla de la Minúscula",
+        "body": "Los titulares en Major Mono se escriben en minúscula (en código, `text-transform: lowercase` o el texto ya en minúscula) para evitar sus glifos alternos de mayúscula; la fuente dibuja la minúscula con forma de versal. Los numerales de canal (M1 a M9) son la única excepción.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de Tres Voces",
+        "body": "Major Mono nunca compone texto corrido ni rótulos de interfaz; Atkinson nunca rotula controles; Chakra no compone párrafos de apunte.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Lector Opaco",
+        "body": "Las líneas de escaneo y la estática pasan por detrás o por encima de todo, pero el texto de un apunte siempre se apoya en una superficie opaca.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** mostrar un solo carril a la vez: el selector cambia todo el panel y guitarra y canto nunca comparten pantalla ni cifras.",
+      "**Do** usar los cuatro estados en su orden fijo (sin señal, señal estable, en el aire en rojo, sintonizado en cian) y con su forma de barra, chip y marca.",
+      "**Do** escribir los titulares en Major Mono en minúscula.",
+      "**Do** medir cada par de texto y fondo en los dos temas antes de entrar; 4.5:1 como piso.",
+      "**Do** dar a todo control al menos 44px de alto en la pantalla y en el menú.",
+      "**Do** marcar como «no conectado» o mockup lo que no se leyó completo; solo se muestra contenido real.",
+      "**Do** respetar los ganchos de `sistema/herramientas/publicar-panel.mjs`: una sola coincidencia de `</head>` y de `showView(\"recorrido\");`; el menú de vistas dentro de `.app-menu`; las vistas en `#view-recorrido` y `#view-clase-timeline`; lo personal en `.only-personal` y lo de la versión publicada en `.only-pub`; elementos del riel como `.nav-item[data-key]`; imágenes con `src` relativo a la raíz del repo. Si el panel cambia de forma, se ajusta el script en la misma tarea.",
+      "**Do** incrustar las fuentes como woff2 en subconjunto para que el panel funcione sin red."
+    ],
+    "donts": [
+      "**Don't** aplicar glitch, estática, desarme de texto ni líneas de escaneo sobre un párrafo; el glitch vive en titulares, nombres de canal y transiciones.",
+      "**Don't** usar emojis en la interfaz: iconos SVG de trazo; los emojis de un apunte se muestran con su icono equivalente.",
+      "**Don't** pintar cian algo que no pasó su evaluación, ni rojo algo que no está en curso, seleccionado ahora o que no sea la acción principal.",
+      "**Don't** redondear esquinas, agregar sombras a tarjetas ni usar barras verdes, rachas o avisos de ausencia.",
+      "**Don't** mostrar el Recorrido, Clases en orden ni el estado de las prácticas en la versión publicada."
+    ]
+  }
+}

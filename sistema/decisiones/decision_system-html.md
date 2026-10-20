@@ -70,6 +70,32 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 
 **Mockups:** en el scratchpad de la conversación del 2026-10-15 (`mockup-recorrido.html`, `mockup-practicas.html`); no se versionan.
 
+## Rediseño desde cero (2026-10-20, decisión del usuario) — en curso
+
+**Qué:** se rehace el aspecto completo de `system.html` (layout, paleta, tipografía) con `impeccable`, sin cambiar el contenido. Porqué: el usuario quiere que usar el panel sea una aventura, con una temática, y no una página estática; más adelante se le sumará gamificación.
+
+**Reglas que se mantienen:**
+- **Un carril a la vez.** Guitarra y canto nunca se muestran juntos ni se combinan sus contenidos, para estudiar con foco en uno solo.
+- **Sin emojis.** Iconos e ilustraciones propias (SVG) en su lugar, también en la temática.
+- **Versión publicada sin avance personal** (sin «Recorrido», «Clases en orden» ni estado de las prácticas), como decidió el 2026-10-15.
+- **Solo contenido real** (regla 6).
+
+**Reglas que se liberan:**
+- **Paleta de 9 colores** (correcciones del 2026-10-14 y 10-15): la reemplaza la del rediseño. Lo que sí sigue es el significado de los estados del Recorrido (falta / en curso / listo / lograda).
+- **Tres piezas fijas** (barra lateral, escalera/Recorrido, lector): pueden cambiar de forma, lugar y reparto.
+- **Lector sobrio sobre blanco a 960px:** el lector también viste la temática, cuidando el contraste para leer largo.
+- **Solo pantalla de 18":** se diseña para escritorio grande como principal y para que funcione bien en celular.
+
+**Dirección elegida (2026-10-20): «Señal glitch».** Okaeri es una transmisión que se sintoniza: cada carril es una frecuencia, cada módulo un canal y lo que se estudia está «en el aire». Porqué: el usuario escucha rock alternativo (su banda favorita es Linkin Park), música clásica y lofi; de las propuestas sacadas de esos gustos eligió esta sobre «Caja de vinilos» y «Muro de esténcil». Estados en orden fijo: sin señal (falta), señal estable (visto), en el aire (en curso, rojo `#ff2a2a`), sintonizado (lograda, cian `#27e1ff`). El glitch nunca toca un párrafo. Contrato completo (paleta, tipografía, primera pantalla, gestos): `.impeccable/surfaces/system-html.md`. Bocetos de todas las propuestas: `.impeccable/mocks/decision/galeria.html`.
+
+**Ajustes del usuario sobre la construcción (2026-10-20):**
+- **Tema claro por defecto, oscuro opcional.** El negro como base se sentía «tema oscuro»; el claro (hueso `#ecebe6`, tinta `#141413`, rojo `#d01c14`, cian `#00708c`) lleva el glitch como tinta mal registrada de risografía. El navegador recuerda la elección.
+- **Menú de icono, sin texto, con forma de dial** (SVG elegido por el usuario: `dial-svgrepo-com.svg`). Agrupa «Vistas» (Recorrido, Clases en orden) y «Tema». En la versión publicada solo se ve «Tema».
+- **Guía (barra lateral) cerrada por defecto en escritorio**, para que el Recorrido tenga la escala del boceto; abierta en la versión publicada, donde es la navegación principal.
+- **Fuentes incrustadas en el archivo** (+196 KB): el panel se ve igual sin internet.
+
+Sistema visual completo (tokens, componentes, reglas): `DESIGN.md` en la raíz del repo.
+
 ## Consecuencias
 
 - Esta decisión es la fuente única de las reglas de `system.html`. Un cambio de regla (no de contenido) se anota aquí, no solo en memoria de conversación.
