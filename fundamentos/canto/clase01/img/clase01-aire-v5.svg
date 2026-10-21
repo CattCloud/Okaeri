@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" font-family="Segoe UI, Arial, sans-serif">
+<rect width="960" height="360" fill="#ffffff"/>
+<text x="40" y="44" text-anchor="start" font-size="24" font-weight="bold" fill="#111111">V5 · nota sostenida con grabadora</text>
+<text x="40" y="74" text-anchor="start" font-size="16" font-weight="normal" fill="#333333">Una nota cómoda en «ah», de pie y sin tensión en cara ni hombros.</text>
+<text x="40" y="96" text-anchor="start" font-size="16" font-weight="normal" fill="#333333">Con la grabadora puesta; la escuchas cuando terminas las 4.</text>
+<line x1="150" y1="210" x2="810" y2="210" stroke="#2b6cb0" stroke-width="4"/><text x="480" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#2b6cb0">«ahhh»: volumen estable, sin temblor grande</text><line x1="150" y1="250" x2="810" y2="250" stroke="#999999" stroke-width="1.5"/><line x1="150" y1="244" x2="150" y2="256" stroke="#999999" stroke-width="1.5"/><line x1="810" y1="244" x2="810" y2="256" stroke="#999999" stroke-width="1.5"/><text x="480" y="274" text-anchor="middle" font-size="14" font-weight="normal" fill="#555555">~8 segundos</text><text x="480" y="322" text-anchor="middle" font-size="15" font-weight="bold" fill="#111111">Grabas las 4 notas y escuchas al final, sin mirar nada mientras cantas.</text>
+</svg>
