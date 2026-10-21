@@ -302,10 +302,15 @@ La regla de frecuencia es una línea de 2px con marcas cada 12px y una marca alt
 Franja de 52px, borde rojo, brillo rojo hacia la derecha, cuadro rojo, rótulo «En el aire» y el nombre del módulo; aparece solo en anchos angostos y abre ese módulo.
 
 ### Lector (teletexto limpio)
-Placa opaca con borde superior de tinta, título con glitch, línea de metadatos en mayúsculas separada por guiones de 14px, banda de prerrequisitos entre dos líneas, citas con escuadras, tablas con cabecera en Chakra y cifras tabulares, figuras sobre placa clara con pie en Chakra, y resumen con cabecera invertida. Las prácticas muestran tres niveles con barras de 1, 2 o 3 alturas. Un apunte no conectado se muestra como aviso discontinuo con reloj, nunca como contenido inventado.
+Placa opaca con borde superior de tinta, título con glitch, línea de metadatos en mayúsculas separada por guiones de 14px, banda de prerrequisitos entre dos líneas, citas con escuadras, tablas con cabecera en Chakra y cifras tabulares, figuras sobre placa clara con pie en Chakra, y resumen con cabecera invertida. Las prácticas se leen en cuatro pestañas (Practicar, Entender, Si falla, Avance) que fluyen con la hoja: barra de 4 columnas con contorno de 1px, la activa invertida, 50px de alto. En Practicar, un selector de tres niveles con barras de 1, 2 o 3 alturas (la activa invertida, barras en rojo) y debajo los pasos numerados en Major Mono, cada uno con su imagen a todo el ancho del texto sobre placa clara; un botón discontinuo lleva a Si falla. Un apunte no conectado se muestra como aviso discontinuo con reloj, nunca como contenido inventado.
 
 ### Transiciones de señal
 Cada vista entra con `tuneIn` (0.5s, opacidad 0.35 y desenfoque de 2px a nítido). Al sintonizar, las franjas rojo/cian de los titulares se rasgan en 5 pasos (0.42s) y vuelven a su sitio. La estática es un lienzo de ruido gris con líneas rojas y cianes al 92% que cubre la pantalla. Curva de todo el sistema: `cubic-bezier(.16, 1, .3, 1)`. Con `prefers-reduced-motion` no hay animación, ni transición, ni estática: todo es corte limpio.
+
+**Gestos de los features nuevos (decisión del usuario, 2026-10-21).** No hay un límite de gestos: cada feature que se integre (por ejemplo, la futura tarjeta de personaje con stats o marcar un ejercicio como hecho) lleva los gestos que pida, porque la variedad hace el panel más interactivo. Tres condiciones:
+- **Un mismo lenguaje:** todos salen de la señal (estática, sintonizar, rasgado rojo/cian, desarme y recomposición de texto, interferencia que se aclara). Nada de gestos de otro mundo.
+- **Un gesto por acción, con significado:** acciones distintas se sienten distintas. Por ejemplo, sumar un punto a un criterio no se anima igual que cambiar de carril.
+- **Nunca sobre un párrafo**, y con `prefers-reduced-motion` todos pasan a corte limpio.
 
 ## Do's and Don'ts
 
