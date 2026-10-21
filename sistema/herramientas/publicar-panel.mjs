@@ -38,7 +38,8 @@ for (const [de, a] of cambios) {
 }
 
 // 2. Imágenes que el panel usa (rutas relativas a la raíz del repo).
-const imagenes = [...new Set([...html.matchAll(/src="([^"#?]+)"/g)].map((m) => m[1]).filter((s) => !/^(https?:|data:|\/\/)/.test(s)))];
+// También las de practicasData, donde el HTML va escapado como src=\"…\".
+const imagenes = [...new Set([...html.matchAll(/src=\\?"([^"\\#?]+)\\?"/g)].map((m) => m[1]).filter((s) => !/^(https?:|data:|\/\/)/.test(s)))];
 const faltan = imagenes.filter((r) => !fs.existsSync(path.join(RAIZ, r)));
 if (faltan.length) falla(`el panel usa imágenes que no existen:\n  ${faltan.join('\n  ')}`);
 

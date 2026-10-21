@@ -1,6 +1,6 @@
 # Decisión: `system.html` — la cara del sistema, y sus reglas de diseño
 
-> **Estado:** vigente, pulido con la skill `impeccable` (2026-10-15). **Fecha:** 2026-10-14. **Aprobada por el usuario:** sí, con correcciones ya aplicadas — ver «Correcciones del usuario» más abajo. Integrado a la constitución en `AGENTS.md` (Mapa · Dónde vive cada cosa).
+> **Estado:** vigente. **Diseño actual: «Señal glitch» (2026-10-20)**; sus reglas visuales (tokens, componentes, temas) viven en `DESIGN.md` y su contexto de producto en `PRODUCT.md`, en la raíz del repo. Las secciones de paleta, ancho de lector y escala de las rondas anteriores quedan como historia. Antes: pulido con la skill `impeccable` (2026-10-15). **Fecha:** 2026-10-14. **Aprobada por el usuario:** sí, con correcciones ya aplicadas — ver «Correcciones del usuario» más abajo. Integrado a la constitución en `AGENTS.md` (Mapa · Dónde vive cada cosa).
 
 ## Contexto
 
@@ -38,7 +38,9 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 
 **Detalles:** Pages sirve desde `gh-pages` en `/`. Lo publicado es solo el panel y sus imágenes; el resto de la repo ya era público. Probado antes de subir: 24 apuntes, 38 imágenes, cero errores.
 
-## Correcciones del usuario (2026-10-14, segunda ronda) — ya aplicadas
+## Correcciones del usuario (2026-10-14, segunda ronda) — reemplazadas el 2026-10-20
+
+> **Reemplazado:** la paleta de 7 colores, el selector y la escala de esta ronda los reemplaza el rediseño «Señal glitch» (ver abajo y `DESIGN.md`). Siguen vigentes: sin emojis, la barra lateral solo con lo escrito y el selector de carril global.
 
 - **Paleta (revisada 2026-10-14, tercera ronda):** la de `image.png` no convenció. Se reemplazó por la de `image copy.png` — casi monocromática, un solo acento. Son exactamente estos 7 colores, **sin inventar ninguno más**: fondo `#eef0f1` · blanco `#ffffff` · gris suave `#dedcda` · acento único azul grisáceo `#7e9fb2` · negro `#171717` · texto gris medio `#8f9195` · texto gris claro `#aab0b4`. El negro reemplazó al morado (barra lateral, texto fuerte); el acento único reemplazó a lima/lila — ya no hay un color por carril, la distinción es tipográfica y de posición, no de color. Los estados "en cola"/"esperando tu OK"/"visto en clase" se diferencian por **peso** del mismo acento (texto vs. relleno vs. anillo), nunca por un color nuevo (nada de ámbar ni verde).
 - **Sin emojis en la interfaz.** Un sprite de iconos SVG en línea (`<symbol>` + `<use>`) cubre búsqueda, escalera, calendario, módulo, documento, flecha, check, reloj, lista, pick (guitarra) y micrófono (canto). Los emojis que ya existen **dentro del contenido original de un apunte** (p. ej. "📋 Repaso en una pantalla") se muestran con su icono equivalente al renderizar, sin tocar el `.md` fuente.
@@ -47,7 +49,9 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 - **Selector de carril:** interruptor deslizante (Guitarra ⟷ Canto) en la cabecera de la barra lateral. Es **global**: cambia la barra lateral, la escalera y el timeline a la vez. Nunca se muestran los dos carriles juntos.
 - **Escala para pantalla de 18":** tipografía base subida a 17px y componentes con más aire — no es un diseño pensado para pantallas chicas.
 
-## Correcciones del usuario (2026-10-15, pulido con `impeccable`) — ya aplicadas
+## Correcciones del usuario (2026-10-15, pulido con `impeccable`) — reemplazadas el 2026-10-20
+
+> **Reemplazado:** el 8º color y el lector a 960px los reemplaza «Señal glitch»: el texto del lector va a 70ch y tablas y figuras a un ancho parejo (`DESIGN.md`).
 
 - **Paleta: 8º color, con tu OK.** El texto secundario del lector de apunte (prerrequisitos, pie, pie de figura, comentarios) no alcanzaba el contraste mínimo de lectura con los 7 colores originales. Se sumó **un solo color más**, en la misma familia que el acento: `--text-strong: #63707a` (azul grisáceo oscuro, mismo tono que `#7e9fb2`, más oscuro — cumple contraste AA sobre blanco). Reemplaza al gris medio `#8f9195` en ese rol; los 7 colores originales siguen declarados tal cual.
 - **Ancho del lector de apunte: uno solo para todo.** Primero se probó texto angosto (72ch) con tablas/figuras a ancho completo del panel — se veía disparejo (el diagrama más ancho que el párrafo de al lado). Se corrigió a **un único ancho para texto, tablas y figuras**: `960px`. Más ancho que el primer intento (72ch ≈ 700px), para que los diagramas (el mástil de la pentatónica, el mapa de notas) se lean sin esfuerzo, pero parejo en todo el apunte.
@@ -70,7 +74,7 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 
 **Mockups:** en el scratchpad de la conversación del 2026-10-15 (`mockup-recorrido.html`, `mockup-practicas.html`); no se versionan.
 
-## Rediseño desde cero (2026-10-20, decisión del usuario) — en curso
+## Rediseño desde cero (2026-10-20, decisión del usuario) — cerrado el 2026-10-20
 
 **Qué:** se rehace el aspecto completo de `system.html` (layout, paleta, tipografía) con `impeccable`, sin cambiar el contenido. Porqué: el usuario quiere que usar el panel sea una aventura, con una temática, y no una página estática; más adelante se le sumará gamificación.
 
@@ -94,7 +98,12 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 - **Guía (barra lateral) cerrada por defecto en escritorio**, para que el Recorrido tenga la escala del boceto; abierta en la versión publicada, donde es la navegación principal.
 - **Fuentes incrustadas en el archivo** (+196 KB): el panel se ve igual sin internet.
 
-Sistema visual completo (tokens, componentes, reglas): `DESIGN.md` en la raíz del repo.
+**Cierre (2026-10-20):**
+- **Práctica sin apunte** (`apuntes: []`, como la del arpegio de la clase 8): en la Guía va como entrada propia en el grupo de su clase. Se le pone `"grupo":"cN"` en `practicasData` y, si falta, el grupo en `gruposGuitarra`/`gruposCanto`. Sin eso no aparecía en la barra lateral ni en la versión publicada.
+- **`publicar-panel.mjs` copia también las imágenes de las prácticas** (en `practicasData` van como `src=\"…\"`); antes se publicaban sin sus TAB.
+- **«Lograda» = cian `#00708c` / `#27e1ff`** («sintonizado»); reemplaza al verde salvia `#9db39a`.
+
+Sistema visual completo (tokens, componentes, reglas): `DESIGN.md` en la raíz del repo. Es la fuente de las reglas visuales; este archivo guarda el porqué.
 
 ## Consecuencias
 
