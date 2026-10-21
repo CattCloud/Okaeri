@@ -115,6 +115,10 @@ Las prácticas ganan una quinta pestaña, **Libre**, la primera y la que abre po
 
 **Modo foco:** el botón «Pantalla completa» (o la tecla F) abre todas las versiones a la vez en una cuadrícula que se ajusta para caber sin scroll, porque se usa con el instrumento en la mano; sin menú ni pestañas alrededor. Tocar una versión la agranda y otro toque la devuelve. Se sale con la X (60 px), Esc o F. Pide la pantalla completa del navegador y que la pantalla no se apague, si se puede. Se descartó la pizarra infinita con desplazamiento libre. En celular vertical las versiones salen pequeñas: conviene horizontal o agrandar una. Código: `ptLibreHtml(carril)` (la línea general cambia en canto: «Si algo duele o raspa, para»), `PT_LIBRE`, `focoAbrir` y `focoAjustar` en `system.html`.
 
+## Visor de imágenes (2026-10-21, decisión del usuario)
+
+Cualquier imagen de un apunte o de una práctica fuera de Libre se amplía al tocarla (o con Enter si se llega por teclado): se abre sola, lo más grande que quepa, sobre el fondo del tema, con la X de 60 px. Flechas del teclado o botones de 64 px pasan a la imagen anterior o siguiente del mismo documento (solo las visibles, sin repetidas; Inicio y Fin saltan a la primera y la última), con contador «3 / 8». Se cierra con la X, Esc o tocando el margen. En vertical, el contador va arriba y las flechas abajo. También sale en la versión publicada. En Libre no aplica: ahí está el modo foco. Porqué: los diagramas de acorde y de mástil salen chicos a tamaño de lectura. Código: `visorAbrir`, `visorIr` y `visorPreparar` en `system.html`.
+
 ## Consecuencias
 
 - Esta decisión es la fuente única de las reglas de `system.html`. Un cambio de regla (no de contenido) se anota aquí, no solo en memoria de conversación.
