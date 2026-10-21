@@ -11,11 +11,11 @@
 | Campo | Valor |
 |---|---|
 | **Temario (el mapa)** | `contexto/plan_estudio/temario_guitarra.md` |
-| **Última clase reportada** | 7 (2026-10-13): arpegio, pura práctica, sin concepto teórico nuevo. Clases 4-7 ya registradas (`practica/00_indice.md`), sin hueco |
+| **Última clase reportada** | 8 (2026-10-20): arpegio otra vez, con metrónomo subiendo la velocidad; 5 fragmentos distintos en TAB, sin concepto teórico nuevo. Clases 4-8 ya registradas (`practica/00_indice.md`), sin hueco |
 | **Vistas en clase (🏫), sin evaluar** | M1: casi completo · M2: anclas y cambios · M3: pulso, figuras, 4/4, metrónomo · M5: La, Mi, Rem + progresiones · M6: la corchea, lectura rítmica · M8: la TAB · pentatónica de La, posiciones 1, 2-5 y 7-10 (trastes) · dedos p-i-m-a y arpegio sobre acordes (con corrección física: dedos pegados a la cuerda) |
 | **Evaluación en curso** | M1: los 8 acordes de memoria, limpios, en <5 s, 2 días seguidos (drill de Anki). Al salir → M1 ✅. **Pendiente:** la clase 5 (29-sep) trajo una evaluación general de acordes/cambios/ritmo — falta saber el resultado para saber si M1/M2/M3 pasan a ✅ |
 | **Cola de conceptos** (uno por sesión, cada uno con su esquema aprobado antes de escribirse) | La escalera de la pentatónica: 1. Sostenido y bemol · 2. Tono y semitono · 3. Nombrar la nota de un traste · 4. La escala y su tónica · 5. La escala menor · 6. La pentatónica · 7. La caja del mástil. **Segundo hilo abierto por la clase 5 (M8 instrumental):** 8. p-i-m-a (dedos de la mano derecha) — esquema presentado 2026-10-13, **esperando OK** · 9. Arpegio sobre acordes — espera a que 8 esté escrito |
-| **Próxima acción** | 1º la tarea del profesor (ver «Semana en curso») · 2º el drill de Anki de M1 · 3º el OK del esquema de p-i-m-a (concepto 8) para escribirlo · 4º el resultado de la evaluación de la clase 5 |
+| **Próxima acción** | 1º la tarea del profesor: la práctica de arpegio (`fundamentos/guitarra/clase08/clase08_practica_arpegio.md`) · 2º el drill de Anki de M1 · 3º el OK del esquema de p-i-m-a (concepto 8) para escribirlo · 4º el resultado de la evaluación de la clase 5 |
 
 ## 🗺️ Marcador — Canto
 
@@ -34,10 +34,10 @@
 
 | Campo | Valor |
 |---|---|
-| **Semana** | 2026-10-13 → 10-19 · Canto clase 7: **jueves 15-oct** · Guitarra clase 8: martes 20-oct |
-| **Reporte guitarra** | ✅ Clases 4-7 (recibidas 14-oct, atrasadas): pentatónica en más cajas · evaluación general (resultado pendiente de contar) · arpegio con p-i-m-a |
+| **Semana** | 2026-10-20 → 10-26 · Guitarra clase 9: martes 27-oct · Canto clase 8: jueves 22-oct (la clase 7 del 15-oct sigue sin reportar) |
+| **Reporte guitarra** | ✅ Clase 8 (20-oct): arpegio, 5 fragmentos distintos en TAB, con metrónomo subiendo la velocidad. Antes, clases 4-7: pentatónica en más cajas · evaluación general (resultado pendiente de contar) · arpegio con p-i-m-a |
 | **Reporte canto** | ✅ Clases 3-6 (recibidas 14-oct, atrasadas): clase 3 sin detalle (reporte perdido) · figuras/silencios · articulación/tesitura/rango · contratiempos |
-| **Tarea del profesor (guitarra)** | Seguir el arpegio (p-i-m-a + patrón, corrección: dedos pegados a la cuerda) y las cajas nuevas de la pentatónica de La menor — material pendiente de escribir con el OK del usuario |
+| **Tarea del profesor (guitarra)** | Practicar los 5 fragmentos de arpegio con metrónomo subiendo de velocidad (corrección: dedos pegados a la cuerda) — **práctica escrita 2026-10-20**: `fundamentos/guitarra/clase08/clase08_practica_arpegio.md`. Las cajas de la pentatónica siguen sin práctica escrita |
 | **Tarea del profesor (canto)** | Practicar el repertorio elegido (ver `repertorio/00_indice.md` §canto) + lo nuevo de figuras/silencios y articulación — material pendiente de escribir |
 | **Plan de la semana** | 1. Resolver primero las dos decisiones abiertas: el OK del esquema de p-i-m-a (guitarra) y el orden de la cola nueva de canto (tesitura/registro/resonancia vs. silencios/contratiempo). 2. Guitarra: drill Anki 3 min (M1 sigue en evaluación) + arpegio y pentatónica de tarea. 3. Canto: calentamiento aire/trino 🔵 a diario + repertorio del profesor **en tonos que quepan bajo Sol4**; *Hosanna* bajada de tono con Moises hasta que el coro quepa cómodo. 4. Registrar cada sesión en `practica/` con su carril — sigue en 0 registradas; la técnica de los 5 minutos aplica. |
 

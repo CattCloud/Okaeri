@@ -20,5 +20,6 @@ Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F12). Este archivo
    - [ ] Cada referencia interna ("ver Afinación 1") apunta a algo que existe en el archivo.
    - [ ] Ningún término sin definir (R6) ni frase de efecto (R7).
    - [ ] "Hasta cuándo" da un criterio o una fecha; "Qué sigue" nombra el paso siguiente del mapa o de la academia.
-8. **Delegar la revisión** al revisor (`revisor-okaeri`) y corregir lo que confirme.
-9. **Panel y publicación.** Con la práctica ya revisada: agregarla al panel (`practicasData`, y su apunte y su tema en `recorrido`, dentro de `system.html`; reglas en `sistema/decisiones/decision_system-html.md`, sección «Recorrido y prácticas») y publicar con `node sistema/herramientas/publicar-panel.mjs`. En la versión publicada la práctica va sin estado ni fecha de la academia (`only-personal`).
+8. **Pasar el texto por `agatha:redaccion-humana`** (cambia el estilo, no el contenido): quita exageración, analogías de relleno, «no es X, es Y» y rayas. Va antes del revisor, para que este lea el texto final.
+9. **Delegar la revisión** al revisor (`revisor-okaeri`) y corregir lo que confirme.
+10. **Panel y publicación.** Con la práctica ya revisada: agregarla al panel (`practicasData`, y su apunte y su tema en `recorrido`, dentro de `system.html`; reglas en `sistema/decisiones/decision_system-html.md`, sección «Recorrido y prácticas») y publicar con `node sistema/herramientas/publicar-panel.mjs`. En la versión publicada la práctica va sin estado ni fecha de la academia (`only-personal`).

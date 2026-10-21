@@ -64,3 +64,4 @@ En el módulo IV **el alumno elige la pieza** de su concierto. Si el profesor ac
 | 5 | 2026-09-29 | Evaluación general de lo anterior (acordes, cambios, ritmo) — casi toda la clase · arpegio: dedos p-i-m-a, ejercicio en TAB, corrección del profesor sobre mantener los dedos pegados a la cuerda | Material pendiente |
 | 6 | 2026-10-06 | No asistió | — |
 | 7 | 2026-10-13 | Más ejercicios de arpegio, sin concepto teórico nuevo — toda práctica | Material pendiente |
+| 8 | 2026-10-20 | Arpegio otra vez, subiendo la velocidad con metrónomo; 5 fragmentos distintos en TAB del profesor, todos practicados, sin concepto teórico nuevo | Practicar los fragmentos a velocidad creciente |

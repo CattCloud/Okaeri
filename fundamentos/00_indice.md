@@ -56,6 +56,11 @@ Cada clase nueva agrega aquí su sección al procesarse. Una clase que necesite 
 | [La pentatónica de La menor](guitarra/clase03/clase03_la-pentatonica.md) | 📖 apunte | Qué es una escala · las 5 notas · la posición 1 (trastes 5-8) con diagrama — 🏫 adelantado (8.6), la teoría que la clase no dio |
 | [🎸 La pentatónica, posición 1](guitarra/clase03/clase03_practica_pentatonica.md) | 🎸 práctica | Tarea de la clase 3 — subir y bajar la caja, metrónomo en 60 |
 
+### 🎸 Guitarra · clase 08 (2026-10-20)
+| Archivo | Tipo | Qué es |
+|---|---|---|
+| [🎸 Arpegio: 5 fragmentos con metrónomo](guitarra/clase08/clase08_practica_arpegio.md) | 🎸 práctica | Tarea de las clases 7 y 8 — los 5 fragmentos en TAB del profesor, metrónomo 60 → 70 → 80 |
+
 ### 🎤 Canto · clase 01 (2026-09-03)
 | Archivo | Tipo | Qué es |
 |---|---|---|

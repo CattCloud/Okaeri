@@ -30,6 +30,7 @@
 | 5 | 2026-09-29 | ✅ | Evaluación general de lo visto en clases anteriores (acordes, cambios, ritmo) — se llevó casi toda la clase · arpegio: dedos p-i-m-a, ejercicio dibujado en TAB, corrección del profesor: mantener los dedos pegados a la cuerda, no levantarlos de más | Material pendiente de escribir | ✅ 10-14 |
 | 6 | 2026-10-06 | ❌ | No asistió | — | ✅ 10-14 |
 | 7 | 2026-10-13 | ✅ | Más ejercicios de arpegio, sin concepto teórico nuevo — toda la clase fue práctica | Material pendiente de escribir | ✅ 10-14 |
+| 8 | 2026-10-20 | ✅ | Continuó el arpegio de la clase 7, ahora subiendo la velocidad con metrónomo; el profe pasó 5 fragmentos de arpegio distintos en TAB (imágenes en la raíz), todos practicados en clase | Practicar esos fragmentos a velocidad creciente | ✅ 10-20 |
 
 > Una falta se registra sin drama; el reporte siguiente incluye "qué me perdí" (RG3).
 
