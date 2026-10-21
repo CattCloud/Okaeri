@@ -1,6 +1,6 @@
 # Contexto — Okaeri
 
-> Última actualización: 2026-10-21 (F16 en las 7 prácticas; falta commit y publicar la de canto)
+> Última actualización: 2026-10-21 (F16 en las 7 prácticas, commiteado y publicado)
 
 ## Estado
 
@@ -28,7 +28,7 @@ Viven en `NOTAS.md` → "Decisiones resueltas" (cada una con fecha y porqué). L
 
 **Commit `c599410` + push y publicación en https://cattcloud.github.io/Okaeri/ hechos el 2026-10-21** (6 prácticas de guitarra con F16, pestaña Libre y modo foco). Sin versionar queda solo `system.html` (por diseño). 
 
-**Las 7 prácticas siguen F16 (2026-10-21).** La de canto (`clase01_practica_respiracion-trino`: V1 respiración, V2 papel, V3 siseo, V4 trino con sirena y sostenido, V5 nota sostenida con grabadora; imágenes `canto/clase01/img/clase01-aire-v1..v5`; generador `gen-aire.js` en el scratchpad de la conversación 191af544) está escrita, revisada y en el panel, **sin commit ni publicación todavía**. `PR_TABS` y `PR_LIBRE` se quitaron: todas las prácticas tienen pestañas y Libre. Falta: commit + push + `publicar-panel.mjs` (pedido del usuario el 2026-10-21: primero guitarra; la de canto, `clase01_practica_respiracion-trino`, queda para después). En cada una: imágenes por versión con `crear-diagrama` (TAB con el traste en el color de su dedo), niveles según F16, `redaccion-humana`, revisor (definición en `.claude/agents/revisor-okaeri.md`; desde el hub se lanza como agente general), y pasarla al panel. Al terminar todas: quitar `PR_TABS` para que las pestañas apliquen a todas, publicar con `node sistema/herramientas/publicar-panel.mjs` (antes revisar que sus ganchos sigan funcionando con las pestañas) y commitear prácticas, imágenes y reglas.
+**Las 7 prácticas siguen F16 (2026-10-21).** La de canto (`clase01_practica_respiracion-trino`: V1 respiración, V2 papel, V3 siseo, V4 trino con sirena y sostenido, V5 nota sostenida con grabadora; imágenes `canto/clase01/img/clase01-aire-v1..v5`; generador `gen-aire.js` en el scratchpad de la conversación 191af544) está escrita, revisada y en el panel; commit `3a79e52` + push y publicación hechos el 2026-10-21. `PR_TABS` y `PR_LIBRE` se quitaron: todas las prácticas tienen pestañas y Libre. Con esto cierra el trabajo de F16. (pedido del usuario el 2026-10-21: primero guitarra; la de canto, `clase01_practica_respiracion-trino`, queda para después). En cada una: imágenes por versión con `crear-diagrama` (TAB con el traste en el color de su dedo), niveles según F16, `redaccion-humana`, revisor (definición en `.claude/agents/revisor-okaeri.md`; desde el hub se lanza como agente general), y pasarla al panel. Al terminar todas: quitar `PR_TABS` para que las pestañas apliquen a todas, publicar con `node sistema/herramientas/publicar-panel.mjs` (antes revisar que sus ganchos sigan funcionando con las pestañas) y commitear prácticas, imágenes y reglas.
 
 **Hechas el 2026-10-21** (con `redaccion-humana` y el revisor aplicado; en `practicasData` y en `PR_TABS`, que hoy tiene `p-g-1234`, `p-g-arpegio`, `p-g-ritmo`, `p-g-progresiones`, `p-g-lectura` y `p-g-pentatonica`):
 - **arpegio:** V1-V5 = los 5 fragmentos; `clase08/img/clase08-arpegio-1..5` sobrescritas con color de dedo y p-i-m-a.
