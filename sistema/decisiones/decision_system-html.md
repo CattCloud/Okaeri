@@ -105,6 +105,16 @@ R11 dice *"nada de dashboards, APIs ni módulos futuros"*. `system.html` es, lit
 
 Sistema visual completo (tokens, componentes, reglas): `DESIGN.md` en la raíz del repo. Es la fuente de las reglas visuales; este archivo guarda el porqué.
 
+## Práctica en pestañas (2026-10-21, decisión del usuario)
+
+El usuario abre una práctica para tocar, y la hoja larga lo obligaba a leerla para ubicar qué hacer. La práctica se muestra en cuatro pestañas que fluyen con la hoja (no quedan fijas al hacer scroll; lo pidió así): **Practicar** (abre por defecto: la regla del cronómetro, el selector de nivel Mínimo / Natural / Motivado, que recuerda el último en `okaeri-nivel`, y los pasos acumulados de ese nivel, cada uno con la imagen de su versión o la línea de su afinación), **Entender** (qué estás mejorando, cómo suena, la galería de versiones y el apunte), **Si falla** (los 3 típicos y la afinación del instructor) y **Avance** (estado, minutos y origen, qué sigue, hasta cuándo). En Practicar, un botón lleva a Si falla. El panel arma las pestañas desde el mismo HTML de la práctica, por el texto de sus `h4`; enlaza paso e imagen por `figure[data-ref]` (V1…, A1…) y `ol.afinacion`. Contenido: F16 en `fundamentos/AGENTS.md`. Hoy aplica a las prácticas de `PR_TABS` (la 1-2-3-4); las demás pasan cuando sigan F16.
+
+## Práctica libre y modo foco (2026-10-21, decisión del usuario)
+
+Las prácticas ganan una quinta pestaña, **Libre**, la primera y la que abre por defecto: las versiones del ejercicio (sus imágenes) y las afinaciones, sin niveles, cronómetro, minutos ni velocidades por versión; solo una línea general («Elige qué tocar y por cuánto tiempo. Con metrónomo si te ayuda»). Porqué: en práctica libre las reglas duras de tiempo son fricción; el usuario elige qué tocar y cuánto. Cuenta como práctica cumplida (el registro llega con la gamificación) y sale también en la versión publicada, porque no lleva estado. Se arma sola del HTML de la práctica (`figure[data-ref]` y `ol.afinacion`), sin cambiar F16.
+
+**Modo foco:** el botón «Pantalla completa» (o la tecla F) abre todas las versiones a la vez en una cuadrícula que se ajusta para caber sin scroll, porque se usa con el instrumento en la mano; sin menú ni pestañas alrededor. Tocar una versión la agranda y otro toque la devuelve. Se sale con la X (60 px), Esc o F. Pide la pantalla completa del navegador y que la pantalla no se apague, si se puede. Se descartó la pizarra infinita con desplazamiento libre. En celular vertical las versiones salen pequeñas: conviene horizontal o agrandar una. Código: `PR_LIBRE`, `ptLibreHtml`, `focoAbrir` y `focoAjustar` en `system.html`.
+
 ## Consecuencias
 
 - Esta decisión es la fuente única de las reglas de `system.html`. Un cambio de regla (no de contenido) se anota aquí, no solo en memoria de conversación.

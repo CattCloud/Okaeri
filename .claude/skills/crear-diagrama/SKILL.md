@@ -10,7 +10,7 @@ description: Crear o corregir un diagrama de Okaeri (acordes, TAB, figuras rítm
 ## 1. Dónde va (antes de dibujar)
 
 - **Apunte:** cualquier diagrama que explique, incluidas las formas que deben salir de memoria (F8).
-- **Práctica:** solo el gráfico de qué practicar: TAB del ejercicio, figuras, esquema del ejercicio. Nunca una forma de acorde del drill o de la canción (F6).
+- **Práctica:** solo el gráfico de qué practicar: TAB del ejercicio, figuras, esquema del ejercicio. Nunca una forma de acorde del drill o de la canción (F6). Una imagen por versión (F16): arriba el nombre («V1 · subiendo») y una línea de indicación; en TAB, cada número de traste en el color de su dedo, con la leyenda «Color = dedo». Ejemplo: `fundamentos/guitarra/clase01/img/clase01-1234-v1.svg` a `-v4.svg`.
 - **Anki:** los diagramas de acorde van al reverso de las tarjetas (`sistema/herramientas/anki-acordes/`).
 
 **Test anti-muleta (R2):** si la imagen tiene un eje de tiempo, cuerdas o trastes iluminados en un orden, o flechas que digan *cuándo* tocar, se rehace. Permitido: señalar una ubicación, resaltar una forma, números de **dedo** (no de orden).

@@ -20,16 +20,19 @@ estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 <!-- F4. Sin jerga. Qué habilidad construye, para qué le sirve y CÓMO va a notar la mejora. -->
 
 ## El gráfico
-<!-- Opcional en canto. F6: muestra QUÉ practicar (TAB, figuras, esquema). Nunca la forma que debe salir de memoria. -->
+<!-- Solo si el ejercicio NO tiene versiones (si las tiene, borra esta sección: sus imágenes van en «Cómo se hace», F16). F6: muestra QUÉ practicar; nunca la forma que debe salir de memoria. -->
 ![Descripción completa de lo que muestra el gráfico.](img/archivo.png)
 *Pie en cursiva: qué hay que ver.*
 
 ## Cómo se hace (referencia)
-<!-- Cada parte o versión del ejercicio, descrita UNA vez. Los niveles solo prescriben cantidades. -->
+<!-- F16: una imagen por versión, con su nombre y su indicación dentro (crear-diagrama). Una línea de introducción como máximo; nada de describir con palabras lo que la imagen muestra. Los niveles solo prescriben cantidades. -->
+![V1, [nombre]: descripción completa de lo que muestra.](img/claseNN-[tema]-v1.png)
 
 ## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
 
 **Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
+
+<!-- F16: cada fila nombra su versión («V1, lenta») o su afinación («ver Afinación N»), y dónde (cuerda, trastes, dedos) si su imagen no lo dice. Una nota por nivel, de dos líneas como máximo. -->
 
 ### 🔵 Mínimo — X min (día sin ganas; hecho esto, CUMPLISTE)
 

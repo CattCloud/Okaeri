@@ -14,11 +14,13 @@
 
 ## Prácticas
 
-**F4 · Secciones obligatorias:** Qué estás mejorando (en claro) · Cómo se hace (referencia) · Los 3 niveles del día · Cómo suena cuando está bien · Si sale mal — los 3 típicos · Hasta cuándo · Qué sigue. Opcionales: El gráfico (en guitarra, obligatorio si hay algo que mostrar), Afinación del instructor, Verificación. Toda referencia interna ("ver Afinación 1") apunta a algo que existe en el archivo. Plantilla: `.claude/skills/escribir-practica/plantilla.md`.
+**F4 · Secciones obligatorias:** Qué estás mejorando (en claro) · Cómo se hace (referencia) · Los 3 niveles del día · Cómo suena cuando está bien · Si sale mal — los 3 típicos · Hasta cuándo · Qué sigue. Opcionales: El gráfico (solo si el ejercicio no tiene versiones; si las tiene, sus imágenes van en «Cómo se hace», F16), Afinación del instructor, Verificación. Toda referencia interna ("ver Afinación 1") apunta a algo que existe en el archivo. Plantilla: `.claude/skills/escribir-practica/plantilla.md`.
 
 **F5 · Los 3 niveles son rutinas exactas.** 🔵 mínimo / 🟢 natural / 🔥 motivado, cada uno con sus minutos en el título y filas de qué + cuánto (repeticiones, ciclos o minutos por parte), y si lleva metrónomo. Nada de rangos vagos ("10-15 min las versiones"). Cada nivel incluye al anterior.
 
 **F6 · La práctica nunca muestra lo que debe salir de memoria.** Sí trae el gráfico de qué practicar: la TAB de un ejercicio, las figuras rítmicas, el esquema de un ejercicio de aire. No trae formas de acorde del drill o de la canción, ni la letra o la melodía de una canción de memoria: eso vive en el apunte, en Anki o en la memoria del usuario.
+
+**F16 · Una imagen por versión, y cada paso con la suya.** Cada versión o parte del ejercicio es una imagen (`crear-diagrama`) que trae dentro su nombre y su indicación en una o dos líneas; «Cómo se hace» es esa galería, con una línea de introducción como máximo. Cada fila de los 3 niveles nombra su versión («V1, lenta») o su afinación («ver Afinación N»), y así el panel le pone al lado su imagen o su línea. Sin párrafos en los niveles: una nota por nivel, de dos líneas como máximo; lo que explica va en «Qué estás mejorando», «Si sale mal» o «Afinación del instructor». Cada fila dice también dónde (cuerda, trastes, dedos) si no lo dice su imagen. En guitarra, el número de traste va en el color de su dedo. Motivo: el usuario abre la práctica para tocar, y tener que leer la hoja para saber qué hacer es fricción (decisión 2026-10-21).
 
 **F7 · Verificar después, no durante.** Una práctica puede cerrar con "Verificación — mirar después de intentar" (el reverso, como en Anki). Mientras una forma es nueva, mirarla se permite; lo prohibido es tocar siempre mirando. En canto la verificación es la grabadora: se canta sin mirar nada, se graba y se escucha al final.
 
