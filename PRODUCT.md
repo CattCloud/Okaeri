@@ -33,7 +33,7 @@ El avance que muestra es real y medible: un tema solo cuenta como «logrado» cu
 - **Solo contenido real:** lo que no se leyó completo se marca como mockup / no conectado.
 - **Versión publicada:** sin Recorrido, Clases en orden ni estado de las prácticas; abre en el primer apunte; `noindex`.
 - **Pantallas:** escritorio de 18" como principal; debe funcionar bien en celular.
-- **Gamificación (futura, no se construye ahora; el diseño la deja prevista):** una tarjeta de personaje a pantalla completa, tipo hero, por carril («mi yo guitarrista»), con sus stats al lado. Cada stat es un criterio que el músico debe desarrollar (p. ej. dedos rápidos, velocidad de cambio de acordes). Al marcar un ejercicio como realizado desde la interfaz, sube un punto en el criterio correspondiente.
+- **Gamificación (futura, no se construye ahora; el diseño la deja prevista):** una tarjeta de personaje a pantalla completa por carril (un personaje, no un héroe; «hero» se refería a la sección de pantalla completa) («mi yo guitarrista»), con sus stats al lado. Cada stat es un criterio que el músico debe desarrollar (p. ej. dedos rápidos, velocidad de cambio de acordes). Al marcar un ejercicio como realizado desde la interfaz, sube un punto en el criterio correspondiente.
 - **Decisiones abiertas:** la lista de criterios por carril y qué ejercicio alimenta cada uno; dónde se guarda lo marcado (el panel hoy es estático, sin persistencia); si la gamificación también llega a la hermana en la versión publicada.
 
 ## Brand Commitments
