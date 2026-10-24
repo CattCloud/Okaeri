@@ -43,6 +43,28 @@
 
 ---
 
+## 🎯 Bolsa de objetivos
+
+> La fuente de la vista «Hoy» de `system.html` (decisión: `sistema/decisiones/decision_hoy.md`; la vista aún no existe). Cada objetivo es de proceso, con su variante mínima de 2 min y, si aplica, una en silencio. El panel muestra uno solo por día; esta lista no se le enseña al usuario como lista. Prioridad: tarea del profesor → evaluación en curso → cola de conceptos. **Abre** = lo que aparece cuando este se cierra.
+
+| # | Carril | Prioridad | Objetivo (versión completa) | Mínimo (2 min) | En silencio | Abre |
+|---|---|---|---|---|---|---|
+| G1 | guitarra | tarea | Fragmento 1 del arpegio con metrónomo, 10 min (`clase08_practica_arpegio.md`) | V1 del arpegio, una vuelta | drill de Anki de M1, 3 min | G2 |
+| G2 | guitarra | tarea | Fragmentos 2 y 3 del arpegio, 10 min | V2, una vuelta | drill de Anki de M1 | G3 |
+| G3 | guitarra | tarea | Fragmentos 4 y 5 del arpegio, 10 min | V4, una vuelta | drill de Anki de M1 | — |
+| G4 | guitarra | evaluación | Drill de Anki de M1: los 8 acordes en <5 s, 3 min | 3 tarjetas | mismo (no suena) | M1 ✅ si sale 2 días seguidos |
+| G5 | guitarra | cola | Dar el OK o corregir el esquema de p-i-m-a (concepto 8), en conversación | leer el esquema | mismo | escribir el apunte de p-i-m-a |
+| C1 | canto | tarea | Cantar el coro de *Hosanna* una vez y marcar la palabra de la nota más aguda (sala, 2-5 pm) | escucharlo y marcar la palabra | escucharlo y marcar la palabra | C2 |
+| C2 | canto | tarea | Decidir cuántos semitonos baja *Hosanna* para caber bajo Sol4 (con Moises) | probar un tono | mismo | C3 |
+| C3 | canto | tarea | Cantar el coro en el tono nuevo, 10 min (sala, 2-5 pm) | una vez | respiración costo-diafragmática, 2 min | — |
+| C4 | canto | evaluación | Siseo parejo ≥20 s + nota cómoda 8 s estable, 5 min | un siseo contando | siseo y respiración | M1 canto ✅ |
+| R1 | canto | reporte | Reportar la clase 7 (15-oct) en conversación | tres líneas, aunque sea «no me acuerdo bien» | mismo | — |
+| R2 | canto | reporte | Reportar la clase 8 (22-oct) en conversación | tres líneas | mismo | — |
+
+**Ventanas:** guitarra, cuarto con luz prendida, cualquier hora · canto con voz, sala, 2-5 pm · fuera de ventana, la columna «En silencio». Martes y jueves el objetivo es la clase; el día siguiente, reportarla (R1, R2 y los que vengan).
+
+---
+
 ## 🎸🎤 Sesión en curso
 
 | Campo | Valor |

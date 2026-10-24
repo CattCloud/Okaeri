@@ -49,6 +49,7 @@ Sistema personal para que el usuario aprenda música de verdad —comprendiéndo
 | Proponer repertorio o ajustar un temario | `sistema/perfil/yo_musica.md` + el temario del carril |
 | Entender por qué algo es como es | `sistema/manual_okaeri.md` · `sistema/decisiones/` |
 | Consultar qué apuntes ya existen y qué conceptos faltan, sin abrir el repo | `system.html` (no versionado) — excepción a R11 y porqué en `sistema/decisiones/decision_system-html.md`; reglas visuales en `DESIGN.md` y contexto de producto en `PRODUCT.md`. Se regenera manualmente dentro de la misma tarea cuando se cierra una clase o se escribe un apunte o una práctica nuevos; sin hook. Luego se publica con `node sistema/herramientas/publicar-panel.mjs` (GitHub Pages, rama `gh-pages`) |
+| Proponer qué practicar hoy, o tocar la vista «Hoy» del panel | `sistema/estado/estado_actual.md` → «Bolsa de objetivos» (un objetivo por día, de proceso, con mínimo de 2 min; sin mostrar la bolsa) · reglas y porqué en `sistema/decisiones/decision_hoy.md`. La vista aún no está construida |
 | "Coloca en PROMPT.md" | Actualizar `PROMPT.md` (no versionado): dónde está el trabajo · qué sigue · prompt listo para pegar |
 
 *Agentes distintos de Claude Code: cada procedimiento es un Markdown en `.claude/skills/<nombre>/SKILL.md`; léelo directamente antes de la tarea.*

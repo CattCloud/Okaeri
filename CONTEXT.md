@@ -1,6 +1,8 @@
 # Contexto — Okaeri
 
-> Última actualización: 2026-10-21 (F16 en las 7 prácticas, Libre y modo foco, conversor versionado; todo publicado; sigue reportar la clase 7 de canto)
+> Última actualización: 2026-10-24 (vista «Hoy» diseñada y aprobada, sin construir; la construcción espera al cambio de diseño del panel)
+
+**Vista «Hoy» (2026-10-24, aprobada, sin construir):** un objetivo de proceso por día como vista inicial de `system.html`, con mínimo de 2 min, bolsa invisible, votos en vez de rachas, salidas hecho/hoy no/cambiar, ventanas por carril (guitarra: cuarto; canto con voz: sala 2-5 pm; si no, en silencio) y registro libre que personaliza el ancla. Entrevista hecha con el lente conductual/TCC y *Hábitos atómicos*; el usuario pidió explícitamente ese rol. Escrito: `sistema/decisiones/decision_hoy.md`, sección «Bolsa de objetivos» en `estado_actual.md` (11 objetivos iniciales), fila en `AGENTS.md`, entrada en `NOTAS.md`. **El usuario decidió no construir la vista ni el script todavía porque va a cambiar el diseño del panel.** Queda por elegir (a) script local `hoy.mjs` que sirve el panel y escribe en `practica/` (recomendada) o (b) `localStorage` + copiar registro. Sin commit todavía. Al construir: `impeccable` con Sonnet, actualizar `DESIGN.md`/`PRODUCT.md`, y decidir si el registro de «Hoy» reemplaza `plantilla_sesion.md` (RG1, vía `nueva-regla`).
 
 ## Estado
 
@@ -26,7 +28,7 @@ Viven en `NOTAS.md` → "Decisiones resueltas" (cada una con fecha y porqué). L
 
 **Cerrado el 2026-10-21:** F16 en las 7 prácticas (6 de guitarra y la de canto), pestañas, pestaña Libre con modo foco y el conversor `sistema/herramientas/panel-practica.mjs`. Commits hasta `bd8391c`, publicado en https://cattcloud.github.io/Okaeri/. Lo de cada práctica (versiones, imágenes) vive en las propias prácticas y en `sistema/decisiones/decision_system-html.md`; los generadores de imágenes `gen-*.js` son desechables y no están versionados (scratchpad de las conversaciones 191af544 y 41bd19e1; usan el `sharp` de `C:/dev/entertechschool/app_enterbase/node_modules/sharp`, porque `npm` no está en el PATH).
 
-**Primera acción:** reportar la clase 7 de canto (15-oct) con `procesar-clase`. La clase 8 de canto es el jueves 22-oct y la 9 de guitarra el martes 27-oct (la tarea del profesor va primero, R4).
+**Primera acción:** reportar las clases 7 (15-oct) y 8 (22-oct) de canto con `procesar-clase` (son R1 y R2 de la bolsa). Luego, cuando el usuario lo pida: el nuevo diseño del panel y, con él, la vista «Hoy». La clase 8 de canto es el jueves 22-oct y la 9 de guitarra el martes 27-oct (la tarea del profesor va primero, R4).
 
 Después, a elegir: el OK del esquema de p-i-m-a (concepto 8 de la cola) · las prácticas de lo nuevo en canto, cuando las pida (R11) · más features del panel, con la gamificación como candidata.
 
