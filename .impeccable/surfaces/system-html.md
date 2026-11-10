@@ -7,32 +7,38 @@ related_targets: []
 
 ## Alcance
 
-`system.html`, el panel completo (versión personal y la versión de estudio que arma `sistema/herramientas/publicar-panel.mjs`). Rediseño: mundo visual nuevo, mismo contenido y mismas funciones.
+`system.html`, la web de apuntes de guitarra (versión personal y la de estudio que arma `sistema/herramientas/publicar-panel.mjs`). Rediseño: mundo visual nuevo (el universo pixel del árbol-conservatorio), mismo contenido. Solo carril guitarra (canto se dejó el 2026-11-06).
 
 ## Modo
 
-Experiencia. El mundo carga toda la página: fondo, superficies, navegación, Recorrido y lector. Dentro del lector el texto mantiene contraste AA y un ancho de lectura real.
+Lectura, con un hero de Experiencia. El mundo es dueño del marco (hero, escenas, franja de módulos, drawer); la columna del apunte queda tranquila: blanco, 750 px, contraste AA.
 
 ## Estrategia de la superficie
 
-- Uso: antes de practicar (ubicar qué toca y abrirlo), con el instrumento en la mano (panel al lado) y leyendo con calma. La hermana lee canto en la versión publicada.
-- Portada (personal): el Recorrido del carril activo. La publicada abre en el primer apunte.
-- Futuro: tarjeta de personaje a pantalla completa por carril, con stats por criterio; cada ejercicio marcado suma un punto. No se construye ahora; el mundo le deja lugar.
+- Uso: antes de practicar, con la guitarra en la mano y leyendo con calma.
+- Un módulo a la vez; la franja abre con el módulo en curso. Primera mitad del módulo con la fogata, segunda con el muelle (impar: la primera lleva uno más).
+- Prácticas: se cambia de teoría a práctica en el sitio del apunte, sin scroll; también desde el drawer.
+- Escenas existentes: `.impeccable/mocks/lugares/fogata/fogata_anim.html`, `.impeccable/mocks/lugares/muelle/muelle_anim.html`.
+- Futuro: tarjeta de personaje con stats; no se construye ahora.
 
 ## Direction contract
 
-THESIS: Okaeri es una transmisión que sintonizas. Cada carril es una frecuencia y cada módulo un canal; lo que estudias está «en el aire». Rechaza el panel de progreso de app educativa (tarjetas blancas, barras verdes, rachas).
+THESIS: entrar a Okaeri es volver al árbol: ves el paisaje, cruzas el bosque y estudias junto a la fogata o en el muelle. Rechaza el panel de progreso con tarjetas y barras y el sitio de documentación con barra lateral.
 
-OWN-WORLD: negro de pantalla #0a0a0a, blanco hueso #ecebe6, rojo señal #ff2a2a solo para «en el aire» y la acción principal, cian #27e1ff para «sintonizado» (lograda), gris #8f8f8a para lo secundario. Líneas de escaneo tenues, desplazamiento RGB rojo/cian en títulos, Major Mono Display en titulares, Chakra Petch en interfaz, Atkinson Hyperlegible en el texto de los apuntes. Iconos SVG de trazo, sin emojis.
+OWN-WORLD: todo lo dibujado es pixel art del mismo lugar (hero de día pleno; escenas de noche: azul de lago, ámbar de fuego). El apunte va sobre blanco a 750 px en fuente de lectura; títulos, botones y drawer en fuente pixel, nunca la lectura. Sin emojis.
 
-STORY: entras, ves en qué canal estás y cuánta señal tiene cada módulo, abres el apunte o la práctica y lo lees como un teletexto limpio.
+STORY: abres y ves el árbol; tocas sonido y entra la música celta; eliges módulo (ya viene el tuyo); bajas, el bosque cubre todo y aparece la fogata con el primer apunte; a mitad del módulo pasa al muelle y el sonido funde al pantano; al final, «Módulo siguiente →».
 
-FIRST VIEWPORT: cabecera fina con «OKAERI // TRANSMISIÓN», selector de frecuencia Guitarra/Canto y búsqueda; el nombre del carril enorme con desplazamiento RGB; una regla de frecuencia; nueve canales en columnas (M1-M9) con sus barras de señal; M8 «en el aire» en rojo. La guía de programación (apuntes escritos) en un riel lateral plegable. Móvil: los canales pasan a filas.
+FIRST VIEWPORT: paisaje pixel a pantalla completa, cámara frontal, el gran árbol al centro con el río a sus pies; «okaeri» arriba, botón de sonido en una esquina, señal discreta para bajar. Nada más. Debajo, la franja de módulos.
 
-FORM: «Señal glitch», propuesta fundada nº 1 de la galería de gustos del usuario (rock alternativo electrónico), elegida por él sobre «Caja de vinilos». Gesto distintivo: sintonizar; cambiar de carril llena la pantalla de estática 300 ms y entra la otra señal; al pasar sobre un canal su texto se desarma y se recompone. Estados en secuencia fija: sin señal (falta), señal estable (visto), en el aire (en curso), sintonizado (lograda). El glitch nunca toca un párrafo; con `prefers-reduced-motion` todo es corte limpio. Tarjeta de personaje futura: la imagen del personaje entra con interferencia y se aclara al subir los stats, medidos en la misma escala de barras. seed: none (unavailable)
+FORM: dirección fijada por el usuario (hero tipo Firewatch + escenas de dos cortes); sin sorteo. Gestos: capas del hero que se desplazan a distinta velocidad al scroll hasta que el bosque del frente cubre la pantalla; cambio de escena a mitad del módulo; fundido de audio por escena; teoría/práctica en su sitio. Sobre el apunte solo el botón del drawer. Con `prefers-reduced-motion`, capas quietas y cortes limpios. seed: none (unavailable)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Pendiente
 
-- Criterios por carril, dónde se guardan las marcas y si la hermana tiene gamificación.
+- Archivar el carril de canto en el repositorio (R10).
+- Fuentes (usuario, 2026-11-09): pixel = Jersey 15 (títulos, botones, franja, drawer; ~1.3x el tamaño de referencia); lectura = Atkinson Hyperlegible. Descartadas: DotGothic16 (letras pegadas), Pixelify Sans (letras chicas), Silkscreen. Comparación: `.impeccable/mocks/fuentes/comparar2.html`.
+- Drawer (usuario, 2026-11-09): ruta de apuntes del módulo con su práctica colgando + los otros módulos + buscador + Clases en orden (solo versión personal).
+- Prototipo: un módulo real (el en curso) leído de los .md; los demás módulos solo como botones en la franja. Superficie de Lectura → code-led (sin comp).
+- Capas del hero: hechas y aprobadas (usuario, 2026-11-09): `.impeccable/mocks/lugares/hero/capas/` (script `capas.cjs`, prueba `prueba.html`).

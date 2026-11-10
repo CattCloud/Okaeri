@@ -1,332 +1,306 @@
 ---
 name: Okaeri
-description: Panel de estudio de guitarra y canto como una transmisión que se sintoniza («Señal glitch»).
+description: El árbol-conservatorio en pixel art. Paisaje de día en el hero, escenas de noche (azul de lago, ámbar de fuego) y apuntes blancos de lectura tranquila.
 colors:
-  # Tema claro (por defecto)
-  papel-hueso: "#ecebe6"
-  tinta-casi-negra: "#141413"
-  rojo-risografia: "#d01c14"
-  rojo-risografia-texto: "#b3170f"
-  cian-risografia: "#00708c"
-  gris-grafito: "#5f5e58"
-  superficie-1-claro: "#f4f3ef"
-  superficie-2-claro: "#f9f8f5"
-  superficie-3-claro: "#ffffff"
-  linea-claro: "#d2d0c8"
-  linea-fuerte-claro: "#a9a79e"
-  glitch-rojo-claro: "#f0322a"
-  glitch-cian-claro: "#1fb8d8"
-  # Tema oscuro (opcional)
-  negro-pantalla: "#0a0a0a"
-  blanco-hueso: "#ecebe6"
-  rojo-senal: "#ff2a2a"
-  cian-sintonia: "#27e1ff"
-  gris-ceniza: "#8f8f8a"
-  superficie-1-oscuro: "#111110"
-  superficie-2-oscuro: "#181817"
-  superficie-3-oscuro: "#222220"
-  linea-oscuro: "#2a2a28"
-  linea-fuerte-oscuro: "#454542"
+  cielo: "#78cbf7"
+  noche: "#040e10"
+  bosque: "#0b1b18"
+  pino: "#1c3a31"
+  niebla: "#e8efe9"
+  bruma: "#9fb3a8"
+  papel: "#ffffff"
+  tinta: "#26241f"
+  tinta-2: "#4a463d"
+  crema: "#f7f1e3"
+  linea: "#d9d2c0"
+  ladrillo: "#8a3a2a"
+  ambar: "#ffb53c"
+  lago: "#7fc0e0"
+  musgo: "#74b64f"
+  logo-azul: "#0d3250"
+  logo-borde: "#c4e9fc"
+  marco-suave: "#52705f"
 typography:
+  logo:
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "clamp(5.5rem, 17vw, 12rem)"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.02em"
   display:
-    fontFamily: "'Major Mono Display', 'Chakra Petch', monospace"
-    fontSize: "clamp(56px, 12.4cqi, 176px)"
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "clamp(2.75rem, 4.4vw, 3.5rem)"
     fontWeight: 400
-    lineHeight: 0.92
-    letterSpacing: "-0.02em"
+    lineHeight: 0.95
   headline:
-    fontFamily: "'Major Mono Display', 'Chakra Petch', monospace"
-    fontSize: "clamp(38px, 6cqi, 88px)"
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "clamp(2rem, 3vw, 2.375rem)"
     fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "-0.02em"
+    lineHeight: 1.02
   title:
-    fontFamily: "'Major Mono Display', 'Chakra Petch', monospace"
-    fontSize: "clamp(30px, 3.6cqi, 46px)"
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "1.75rem"
     fontWeight: 400
-    lineHeight: 1.16
-    letterSpacing: "-0.01em"
-  numeral:
-    fontFamily: "'Major Mono Display', 'Chakra Petch', monospace"
-    fontSize: "clamp(26px, 2.5cqi, 36px)"
-    fontWeight: 400
-    lineHeight: 1
-  section:
-    fontFamily: "'Chakra Petch', system-ui, sans-serif"
-    fontSize: "20.5px"
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: "0.015em"
-  body:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
-    fontSize: "18px"
-    fontWeight: 400
-    lineHeight: 1.68
-  body-sub:
-    fontFamily: "'Atkinson Hyperlegible', system-ui, sans-serif"
-    fontSize: "17px"
-    fontWeight: 400
-    lineHeight: 1.55
-  ui:
-    fontFamily: "'Chakra Petch', system-ui, sans-serif"
-    fontSize: "15px"
-    fontWeight: 500
-    lineHeight: 1.38
+    lineHeight: 1.05
   label:
-    fontFamily: "'Chakra Petch', system-ui, sans-serif"
-    fontSize: "13.5px"
-    fontWeight: 600
-    letterSpacing: "0.14em"
-  label-sm:
-    fontFamily: "'Chakra Petch', system-ui, sans-serif"
-    fontSize: "11.5px"
-    fontWeight: 700
-    letterSpacing: "0.16em"
-  brand:
-    fontFamily: "'Chakra Petch', system-ui, sans-serif"
-    fontSize: "15px"
-    fontWeight: 700
-    letterSpacing: "0.22em"
-  code:
-    fontFamily: "ui-monospace, 'Cascadia Mono', Consolas, monospace"
-    fontSize: "0.84em"
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1.1
+  label-small:
+    fontFamily: "Jersey 15, ui-monospace, monospace"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.2
+  body:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "1.1875rem"
+    fontWeight: 400
+    lineHeight: 1.65
+  body-mobile:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.65
+  caption:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.45
 rounded:
   none: "0px"
 spacing:
-  hair: "4px"
-  tight: "8px"
-  base: "14px"
-  block: "18px"
-  section: "44px"
-  gutter: "48px"
-  gutter-movil: "16px"
+  xs: "6px"
+  sm: "12px"
+  md: "16px"
+  lg: "24px"
+  xl: "32px"
 components:
-  button-outline:
-    backgroundColor: "transparent"
-    textColor: "{colors.tinta-casi-negra}"
+  button-pixel:
+    backgroundColor: "{colors.noche}"
+    textColor: "{colors.niebla}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
-    padding: "0 18px"
-    height: "44px"
-  button-outline-hover:
-    backgroundColor: "{colors.superficie-2-claro}"
-  carril-toggle-activo:
-    backgroundColor: "{colors.superficie-2-claro}"
-    textColor: "{colors.tinta-casi-negra}"
+    padding: "0.5em 1em"
+    height: "56px"
+  button-pixel-hover:
+    backgroundColor: "{colors.bosque}"
+    textColor: "{colors.ambar}"
+  button-icon:
+    backgroundColor: "{colors.noche}"
+    textColor: "{colors.niebla}"
+    rounded: "{rounded.none}"
+    size: "60px"
+  modulo-ficha:
+    backgroundColor: "{colors.noche}"
+    textColor: "{colors.niebla}"
+    rounded: "{rounded.none}"
+    width: "76px"
+    height: "64px"
+  modulo-ficha-activo:
+    backgroundColor: "{colors.bosque}"
+    textColor: "{colors.ambar}"
+  modulo-ficha-fuera:
+    backgroundColor: "{colors.noche}"
+    textColor: "{colors.bruma}"
+  vista-boton:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
     typography: "{typography.label}"
-    padding: "8px 16px"
-    height: "40px"
-  carril-toggle-inactivo:
-    backgroundColor: "{colors.papel-hueso}"
-    textColor: "{colors.gris-grafito}"
-  input-busqueda:
-    backgroundColor: "{colors.superficie-1-claro}"
-    textColor: "{colors.tinta-casi-negra}"
-    typography: "{typography.ui}"
     rounded: "{rounded.none}"
-    padding: "0 12px 0 38px"
-    height: "40px"
-    width: "250px"
-  nav-item:
-    backgroundColor: "transparent"
-    textColor: "{colors.tinta-casi-negra}"
-    typography: "{typography.ui}"
-    padding: "10px"
-    height: "44px"
-  nav-item-activo:
-    backgroundColor: "{colors.tinta-casi-negra}"
-    textColor: "{colors.papel-hueso}"
-  canal:
-    backgroundColor: "transparent"
-    textColor: "{colors.tinta-casi-negra}"
-    padding: "18px 12px 16px 14px"
-  canal-en-el-aire:
-    textColor: "{colors.rojo-risografia}"
-  practica-link:
-    backgroundColor: "{colors.papel-hueso}"
-    textColor: "{colors.tinta-casi-negra}"
+    height: "48px"
+    padding: "0 1.1rem"
+  vista-boton-activo:
+    backgroundColor: "{colors.tinta}"
+    textColor: "{colors.papel}"
+  callout-clave:
+    backgroundColor: "{colors.crema}"
+    textColor: "{colors.tinta}"
     rounded: "{rounded.none}"
-    padding: "20px 24px"
-  practica-link-hover:
-    backgroundColor: "{colors.rojo-risografia}"
-    textColor: "{colors.papel-hueso}"
-  chip-en-curso:
-    backgroundColor: "{colors.rojo-risografia}"
-    textColor: "{colors.papel-hueso}"
-    typography: "{typography.label-sm}"
-    padding: "0 12px"
-    height: "32px"
-  panel-apunte:
-    backgroundColor: "{colors.superficie-1-claro}"
-    textColor: "{colors.tinta-casi-negra}"
+    padding: "0.9rem 1.2rem"
+  callout-nota:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
+    rounded: "{rounded.none}"
+    padding: "0.9rem 1.2rem"
+  tabla-cabecera:
+    backgroundColor: "{colors.crema}"
+    textColor: "{colors.tinta}"
+    typography: "{typography.label-small}"
+  drawer:
+    backgroundColor: "{colors.noche}"
+    textColor: "{colors.niebla}"
+    rounded: "{rounded.none}"
+    width: "27rem"
+    padding: "16px 20px 48px"
+  drawer-item:
+    textColor: "{colors.niebla}"
+    typography: "{typography.label}"
+    height: "48px"
+    padding: "10px 8px"
+  drawer-item-activo:
+    backgroundColor: "{colors.bosque}"
+    textColor: "{colors.ambar}"
+  apunte:
+    backgroundColor: "{colors.papel}"
+    textColor: "{colors.tinta}"
     typography: "{typography.body}"
-    padding: "54px 64px 64px"
-  menu-dial:
-    backgroundColor: "{colors.superficie-1-claro}"
-    textColor: "{colors.tinta-casi-negra}"
-    padding: "6px 0 14px"
-    width: "288px"
+    width: "750px"
 ---
 
 # Design System: Okaeri
 
 ## Overview
 
-**Creative North Star: "Señal glitch"**
+**Creative North Star: "El árbol-conservatorio"**
 
-Okaeri es una transmisión que se sintoniza. Cada carril (guitarra o canto) es una frecuencia, cada módulo del temario es un canal y lo que se estudia ahora está «en el aire». La interfaz toma el vocabulario de un receptor: una regla de frecuencia con marcas, barras de señal, estática al cambiar de emisora y titulares con el desplazamiento rojo/cian de una señal mal sintonizada. El mundo se apoya en el rock alternativo electrónico que el usuario eligió en su galería de gustos.
+Entrar a Okaeri es volver al árbol: se ve el paisaje, se cruza el bosque y se estudia junto a la fogata o en el muelle. Todo lo dibujado es pixel art del mismo lugar: el hero es de día pleno (cielo #78cbf7) y las escenas de estudio son de noche, en dos temperaturas: azul de lago y ámbar de fuego. No hay emojis ni ilustración ajena a ese mundo.
 
-El ruido vive solo en los bordes. Los titulares tiemblan, los canales se desarman al pasar el cursor y la pantalla se llena de estática 300 ms al cambiar de carril; el lector de apuntes, en cambio, es un teletexto limpio: placa opaca, Atkinson Hyperlegible a 18px, 70 caracteres por línea, contraste AA. Estudiar va primero y la aventura nunca estorba la lectura.
+El sistema tiene dos registros que no se mezclan. El registro del lugar (hero, franja de módulos, escenas, drawer, botones) es oscuro, pixel, con marcos de píxel y acento ámbar. El registro del apunte es una columna blanca de 750 px, tinta cálida y fuente de lectura, con ladrillo como único acento. La transición entre ambos es la escena: un lienzo oscuro cuyo borde derecho se disuelve en blanco.
 
-El tema claro es el de fábrica: papel hueso, tinta casi negra y rojo y cian de risografía. El oscuro es la pantalla negra original del contrato y se elige en el menú del dial. Los dos comparten forma, escala y reglas; solo cambian los valores de los mismos papeles. El sistema rechaza el panel de progreso de app educativa: tarjetas blancas redondeadas, barras verdes, rachas.
+Radio cero en todo. Sin sombras de caja: la profundidad la dan el contraste noche/niebla y los marcos de píxel.
 
 **Key Characteristics:**
-- Esquinas rectas en todo, líneas de 1px y trazo discontinuo para lo que falta.
-- Cuatro estados de señal en orden fijo, cada uno con su forma y su color.
-- Glitch RGB solo en titulares; estática solo en transiciones; ningún efecto sobre párrafos.
-- Tres familias con papeles separados: Major Mono (titulares y numerales), Chakra Petch (interfaz), Atkinson Hyperlegible (lectura).
-- Líneas de escaneo tenues de fondo, detrás de superficies opacas.
-- Iconos SVG de trazo con terminación cuadrada; ningún emoji.
+- Pixel (Jersey 15) en títulos, botones, franja y drawer; Atkinson solo en la lectura.
+- Marcos de píxel por `border-image`, no bordes CSS lisos ni esquinas redondeadas.
+- Ámbar como acento en el lugar (hover, activo, foco); ladrillo como acento en el apunte.
+- Cortes limpios donde la escena se encuentra con otras superficies: sin degradados ni dither en el borde.
+- Íconos pixel 12x12 con `currentColor`.
+- Movimiento por capas (parallax del hero) y por escenas; con `prefers-reduced-motion`, todo queda quieto y los cortes son limpios.
 
 ## Colors
 
-Dos temas sobre los mismos cinco papeles (fondo, tinta, rojo, cian, gris), en código `--k`, `--w`, `--r`, `--c`, `--g` sobre `html[data-theme]`. El tema claro rige por defecto; el oscuro se guarda en `localStorage` con la clave `okaeri-tema` y el script de cabecera lo aplica antes de pintar, junto con el `theme-color`. Las superficies y líneas de cada tema se derivan de su fondo y su tinta, sin matices nuevos.
+Paleta de dos mundos: día de cielo claro y bosque profundo; noche de lago y fuego; y blanco cálido para estudiar.
 
 ### Primary
-- **Rojo de risografía** (claro) / **Rojo señal** (oscuro): lo que está transmitiendo ahora y la acción principal. Marca el módulo «en el aire» (numeral, borde, brillo de fondo, marca alta en la regla), el chip y la etiqueta «En curso», el enlace «Práctica de este apunte», el carril activo en el selector (barra de 2px bajo la etiqueta), la opción marcada del menú y la doble barra del logotipo. El contrato lo limitaba a «en el aire» y la acción principal; el build lo extiende a lo seleccionado ahora y al logotipo, y esa extensión queda como regla.
-- **Rojo para texto** (`rojo-risografia-texto` en claro; en oscuro es el mismo rojo señal): texto chico rojo sobre el brillo «en el aire» y en las etiquetas de estado, donde el rojo base no llegaría a AA.
+- **Ámbar de fuego** (`ambar`): hover, estado activo, foco (en el lugar), números y encabezados del drawer, botón de sonido encendido. Es el acento del mundo oscuro.
+- **Ladrillo** (`ladrillo`): acento del apunte: títulos de práctica, marcadores de lista, enlaces internos, cabeceras de callout, foco dentro de los apuntes y del cierre.
 
 ### Secondary
-- **Cian de risografía** (claro) / **Cian de sintonía** (oscuro): «sintonizado», es decir, lograda: el tema pasó su evaluación del temario. Barras de señal, marca de la regla, borde de la tarjeta de tema logrado y la línea «Lograda». No se usa para otra cosa.
+- **Cielo de día** (`cielo`): fondo del hero; solo ahí.
+- **Azul de lago** (`lago`): luz de las escenas nocturnas junto al agua.
+- **Musgo** (`musgo`): selección de texto.
+- **Azul del logo** (`logo-azul`) y **borde del logo** (`logo-borde`): el título «okaeri» y su sombra de un paso.
 
 ### Neutral
-- **Papel hueso** / **Negro de pantalla**: fondo de la página y texto sobre las superficies invertidas (elemento activo, pestaña marcada).
-- **Tinta casi negra** / **Blanco hueso**: todo el texto, las barras de «señal estable», el borde superior de 2px de las placas y el anillo de foco.
-- **Gris grafito** / **Gris ceniza**: lo secundario: estados de canal, conteos, metadatos, placeholder, «sin señal».
-- **Superficies 1, 2 y 3**: placa del lector y tarjetas (1), hover y bloques internos como citas, cabeceras de tabla y niveles (2), código en línea (3).
-- **Línea** y **línea fuerte**: divisiones de estructura (1px) y contornos de controles, respectivamente.
-- **Franjas del glitch** (`glitch-rojo-claro`, `glitch-cian-claro`; en oscuro, el rojo y el cian de base): solo en las copias desplazadas de los titulares, con fusión `multiply` en claro y `screen` en oscuro. Nunca como color de texto.
-- **Placa de diagrama**: los diagramas de fondo claro se montan sobre blanco (claro) o blanco hueso (oscuro) para que se lean igual en los dos temas.
+- **Noche** (`noche`): fondo de página, suelo de la franja, letterbox de la escena, botones, drawer, cierre.
+- **Bosque** (`bosque`): fondo de hover/activo sobre noche.
+- **Pino** (`pino`): borde del drawer, marco de la búsqueda, conector de prácticas.
+- **Niebla** (`niebla`): texto sobre noche.
+- **Bruma** (`bruma`): texto secundario sobre noche, estados deshabilitados.
+- **Marco suave** (`marco-suave`): marco de elementos fuera de alcance o sin audio.
+- **Papel** (`papel`): fondo del apunte.
+- **Tinta** (`tinta`) y **Tinta 2** (`tinta-2`): texto del apunte y su secundario.
+- **Crema** (`crema`): código en línea, callouts «clave», cabecera de tabla, hover de enlaces.
+- **Línea** (`linea`): separadores entre apuntes y filas de tabla.
 
 ### Named Rules
-**La Regla de los Cuatro Estados.** Los estados de un módulo van siempre en este orden y con esta codificación: sin señal (falta: contorno discontinuo gris), señal estable (visto o escrito: barra llena de tinta), en el aire (en curso: rojo), sintonizado (lograda: cian). No se agregan estados ni se reordenan, y la leyenda los muestra en esa secuencia.
+**The Dos Acentos Rule.** Ámbar solo sobre fondos oscuros; ladrillo solo sobre blanco. Nunca ámbar sobre papel ni ladrillo sobre noche.
 
-**La Regla de la Señal Verdadera.** El cian solo aparece cuando el tema pasó su evaluación. Un apunte escrito es «señal estable», nunca «sintonizado».
-
-**La Regla AA en los Dos Temas.** Todo texto cumple 4.5:1 sobre su fondo real en claro y en oscuro, incluido el brillo «en el aire». Medido en el build: gris sobre fondo 5.45 (claro) y 6.09 (oscuro), cian claro 4.76, rojo claro 4.56, rojo para texto 5.78, texto sobre rojo 4.56 (claro) y 5.3 (oscuro). Un color nuevo entra solo con su par medido en ambos temas.
+**The Noche Es Suelo Rule.** El negro del sistema es el verde-negro `noche`; no se usa #000.
 
 ## Typography
 
-**Display Font:** Major Mono Display (con Chakra Petch, monospace)
-**Body Font:** Atkinson Hyperlegible (con system-ui, sans-serif)
-**Label/Mono Font:** Chakra Petch para toda la interfaz; ui-monospace / Cascadia Mono / Consolas para código
+**Display Font:** Jersey 15 (con ui-monospace, monospace), incrustada, OFL.
+**Body Font:** Atkinson Hyperlegible (con system-ui, sans-serif), incrustada, OFL; pesos 400, 400 cursiva y 700.
+**Label/Mono Font:** Jersey 15. El código en línea usa ui-monospace/Consolas a .9em.
 
-**Character:** Major Mono pone la voz de máquina y de pantalla; Chakra Petch, de esquinas cortadas, hace de rotulación de equipo; Atkinson carga la lectura larga sin cansar. Las tres van incrustadas en el HTML como woff2 en subconjunto, así que el panel funciona sin red.
+**Character:** Una fuente pixel de un solo peso que da voz al lugar, y una fuente de lectura diseñada para legibilidad que entra cuando se estudia.
 
 ### Hierarchy
-- **Display** (400, clamp(56px, 12.4cqi, 176px), 0.92): el nombre del carril en el Recorrido, con glitch.
-- **Headline** (400, clamp(38px, 6cqi, 88px), 1): título de vista, por ejemplo «Clases en orden», con glitch.
-- **Title** (400, clamp(30px, 3.6cqi, 46px), 1.16): título del apunte o la práctica en el lector, con glitch, hasta 880px.
-- **Numeral** (400, clamp(26px, 2.5cqi, 36px), 1): M1 a M9 de los canales, número de clase (46px) y minutos de cada nivel (22px).
-- **Section** (Chakra 600, 20.5px, 1.3): subtítulos dentro del apunte, precedidos por un guion de 16x2px.
-- **Body** (Atkinson 400, 18px, 1.68; 17.5px en móvil): texto del apunte, máximo 70ch. Introducciones de vista en 17px/1.55 y 62ch.
-- **UI** (Chakra 500, 15px, 1.38): elementos del riel, nombres de canal y búsqueda.
-- **Label** (Chakra 600, 13.5px, 0.14em, mayúsculas): botones, selector de carril y enlaces de acción. **Label-sm** (700, 11.5 a 12.5px, 0.14 a 0.18em, mayúsculas): estados de canal, grupos del menú, metadatos del lector.
-- **Brand** (Chakra 700, 15px, 0.22em): «OKAERI // TRANSMISIÓN».
+- **Logo** (400, clamp(5.5rem, 17vw, 12rem), 1): «okaeri» en el hero.
+- **Display** (400, clamp(2.75rem, 4.4vw, 3.5rem), .95): título de apunte; la práctica usa clamp(2.25rem, 3.6vw, 2.875rem) en ladrillo.
+- **Franja** (400): título clamp(3rem, 6vw, 4.5rem); nombre del módulo clamp(2.75rem, 5.5vw, 4rem); resumen clamp(1.5rem, 2.4vw, 1.875rem).
+- **Headline** (400, clamp(2rem, 3vw, 2.375rem), 1.02): subtítulo `t2` dentro del apunte.
+- **Title** (400, 1.75rem, 1.05): `t3`, cabecera de callout, encabezados del drawer.
+- **Label** (400, 1.5rem a 1.75rem): botones, ítems del drawer, botones Teoría/Práctica, entrada de búsqueda.
+- **Label small** (400, 1.125rem a 1.375rem): metadatos, subtítulos de botón, cabecera de tabla, avisos.
+- **Body** (400, 1.1875rem, 1.65): lectura del apunte; 1.125rem bajo 640 px. Columna de 750 px máximo.
+- **Caption** (1rem, 1.45): pies de figura, texto previo.
 
 ### Named Rules
-**La Regla de la Minúscula.** Los titulares en Major Mono se escriben en minúscula (en código, `text-transform: lowercase` o el texto ya en minúscula) para evitar sus glifos alternos de mayúscula; la fuente dibuja la minúscula con forma de versal. Los numerales de canal (M1 a M9) son la única excepción.
+**The Pixel Nunca Lee Rule.** Jersey 15 no se usa para párrafos del apunte. Todo texto corrido de lectura va en Atkinson; los títulos, botones, franja y drawer van en Jersey.
 
-**La Regla de Tres Voces.** Major Mono nunca compone texto corrido ni rótulos de interfaz; Atkinson nunca rotula controles; Chakra no compone párrafos de apunte.
+**The Un Solo Peso Rule.** Jersey no se negrita ni se pone en cursiva; la jerarquía sale del tamaño. Solo Atkinson lleva 700.
 
 ## Layout
 
-Armazón en dos filas: cabecera fija de 64px y debajo un riel de 312px junto a la pantalla, con desplazamiento independiente. El riel («Guía de programación») está cerrado por defecto en escritorio y la preferencia se guarda en `okaeri-riel`; si la vista inicial es un apunte y no hay preferencia (la versión publicada), arranca abierto porque ahí es la navegación. Abre y cierra animando la columna (0.4s).
+Página en tres tramos: hero a pantalla completa (100svh, mínimo 520 px), franja de módulos, y por módulo uno o más cortes. Cada corte es una rejilla de dos columnas: escena sticky (100svh) a la izquierda y apuntes a la derecha en una columna de 750 px centrada. Ancho de escena: `min(92.2svh, 58cqw, 100cqw - 798px)` (el contenedor es el módulo). La escena conserva la proporción de su arte (368x399) y no se recorta; el sobrante se rellena con letterbox `noche`. El borde derecho del arte está disuelto en blanco a propósito para fundirse con el apunte.
 
-La pantalla tiene 44px arriba y 48px a los lados. En el Recorrido, el título del carril ocupa el ancho; debajo, la regla de frecuencia y los canales en tantas columnas como módulos, con altura clamp(340px, 46vh, 480px) y las barras de señal apiladas desde abajo. Los paneles de módulo abiertos se separan 44px y sus temas van en una rejilla de mínimo 310px. El lector se centra a 1010px, con una placa de 54px/64px de relleno y texto a 880px.
+Bajo 1200 px el corte se apila: la escena pasa arriba (ancho máx. min(100%, 78svh*368/399)) y el apunte debajo, con padding lateral de 20 px. Bajo 640 px la lista de módulos pasa a una sola fila con scroll horizontal y snap, y los botones Teoría/Práctica ocupan todo el ancho.
 
-El ritmo sale de una escala corta: 4px entre barras, 8px entre piezas de un control, 14px dentro de tarjetas, 18px en rellenos de bloque y 44px entre secciones. Todo objetivo de clic mide al menos 44px de alto (40px en controles de la cabecera), porque el panel se usa con el instrumento en la mano.
+El hero apila capas con posición absoluta sobre un paisaje de proporción 2576/1438: fondo, logo, árbol, medio y frente. Ritmo de espacio observado: 6 (marco), 12, 16, 24, 32 px; entre apuntes, clamp(40px, 6vw, 72px) con padding superior clamp(56px, 8vw, 88px). El `scrollbar-gutter` es estable.
 
-Hay dos cortes. Con el contenedor por debajo de 820px los canales pasan a filas (numeral, nombre, estado, conteo y barras horizontales), la regla de frecuencia se compacta y aparece el indicador «En el aire», que lleva directo al módulo en curso. Por debajo de 760px de ventana la cabecera se reparte en filas (marca y dial, selector de carril a todo el ancho, búsqueda junto al botón Guía), el riel pasa a cajón lateral de min(88vw, 360px) con velo, la página recupera el desplazamiento normal, la pantalla queda a 16px de lado y la placa del lector va a sangre.
+El botón del drawer va a la izquierda en ≥1200 px (para no tapar el apunte) y a la derecha debajo de ese ancho, donde se esconde al bajar y reaparece al subir. Está oculto sobre el hero.
 
 ## Elevation & Depth
 
-Plano por capas tonales. La profundidad la dan el fondo con líneas de escaneo (1px cada 3px, opacidad 5% en claro y 3.5% en oscuro), las superficies opacas encima y el borde superior de 2px en tinta de las placas principales. Solo el menú del dial flota con sombra difusa, porque es lo único que se superpone al contenido.
-
-### Shadow Vocabulary
-- **Flotante del dial** (`box-shadow: 0 18px 40px -12px var(--pop)`): menú desplegado; `--pop` es rgba(20,20,19,.22) en claro y rgba(0,0,0,.7) en oscuro.
-- **Línea de canal abierto** (`box-shadow: inset 0 2px 0 var(--w)`; en rojo si el canal está en el aire): marca el canal cuyo panel está abierto.
+Sin sombras de caja. La profundidad se logra por capas en el hero (parallax), por contraste entre superficies (noche contra niebla, blanco contra tinta) y por marcos de píxel. El único `text-shadow` es la sombra de un paso del logo. El velo del drawer abierto es noche al 62%.
 
 ### Named Rules
-**La Regla del Lector Opaco.** Las líneas de escaneo y la estática pasan por detrás o por encima de todo, pero el texto de un apunte siempre se apoya en una superficie opaca.
+**The Corte Limpio Rule.** Las superficies son planas; la escena empieza y termina con un corte recto contra la superficie vecina, sin degradados, sombras difusas ni dither en el borde (el usuario quitó el dither de los bordes de la escena el 2026-11-10). El dither solo vive dentro del arte del hero (el bosque del frente que se hunde en la franja). Excepción: los degradados de indicación de scroll de las tablas.
 
 ## Shapes
 
-Radio cero en todo. La forma la ponen las líneas: 1px sólido para estructura y controles, 2px para la placa principal y la marca activa, y discontinuo para lo que falta o es propuesta (estado «sin señal», etiquetas Falta, pendientes, temas sugeridos por la escalera). Las citas se enmarcan con dos escuadras de 14px en esquinas opuestas. Los iconos son SVG de trazo 1.6 con terminación cuadrada y unión en ángulo. Las señales son rectángulos: barras de 10px, cuadros de 8 a 10px para estados y marcas de regla de 2 a 3px.
+Radio cero. Todo marco grande es pixel: un SVG de 5x5 con las esquinas cortadas, usado como `border-image` con corte 2 y 6 px de borde (3 px por unidad de pixel de arte). Cinco colores de marco: claro (`niebla`), ámbar (hover/activo), suave (fuera de alcance), pino (búsqueda), tinta (sobre blanco). El aviso de sonido y la tabla usan bordes lisos de 3 px. Los íconos son rejillas de 12x12 con `shape-rendering: crispEdges`.
 
 ## Components
 
 ### Buttons
-Rotulación de equipo: contorno fino, mayúsculas espaciadas, sin relleno en reposo.
-- **Shape:** esquinas rectas (0px), contorno de 1px en línea fuerte, 44px de alto.
-- **Primario de contorno:** texto en tinta, rótulo Label, icono de trazo a la izquierda.
-- **Hover / Focus:** el contorno pasa a tinta y el fondo a superficie 2 (0.2s); foco con anillo de 2px en tinta separado 3px.
-- **Botón cuadrado:** 44x44 para cerrar paneles y para el dial.
-- **Acción principal («Práctica de este apunte»):** bloque a todo el ancho del texto con contorno rojo, icono en cuadro rojo de 52px, etiqueta roja, título 21px y flecha; al pasar se llena de rojo y el texto se invierte, y la flecha avanza 4px. La variante de vuelta («Apunte de esta práctica») usa contorno neutro y se llena de tinta.
+- **Shape:** marco pixel de 6 px, esquinas muescadas, sin radio.
+- **Pixel button:** fondo `noche`, texto `niebla`, Jersey 1.75rem, alto mínimo 56 px (48 px en versión chica), padding .5em 1em. Puede llevar subtítulo en `bruma`.
+- **Hover:** marco ámbar, fondo `bosque`, texto ámbar. **Active:** baja 3 px, sin transición suave.
+- **Sonido / drawer / cerrar:** botones cuadrados de ícono (60 px; cerrar 52 px) con fondo noche semitransparente sobre arte. Sonido encendido en ámbar; sin audio en `bruma` con marco suave.
 
-### Chips
-- **Etiquetas de tema (Apunte, Práctica):** el Apunte va en contorno y la Práctica en relleno; el color dice el estado: tinta (hecho), rojo (en curso), gris discontinuo (falta). 32px de alto (28px en pasos).
-- **Chip de estado de práctica:** relleno rojo con un cuadro de 8px y rótulo Label-sm; solo en la versión personal.
+### Module strip (franja)
+Fichas de 76x64 px con el número en Jersey 1.875rem. Activa: marco y texto ámbar sobre `bosque`. Fuera de alcance: marco suave y texto `bruma`. Debajo, el detalle del módulo (nombre, resumen, metadatos) sobre el suelo oscuro.
 
-### Cards / Containers
-- **Corner Style:** recto (0px).
-- **Background:** superficie 1 para tarjetas de tema y la placa del lector; superficie 2 para bloques internos (cita, nivel, resumen, pie de figura).
-- **Shadow Strategy:** ninguna; ver Elevation & Depth.
-- **Border:** 1px en línea fuerte; la tarjeta de tema logrado lleva borde cian; la placa del lector, 2px de tinta arriba.
-- **Internal Padding:** 16px/18px en tarjetas de tema, 20px en niveles, 54px/64px en la placa del lector.
+### Teoría / Práctica
+Dos botones de 48 px de alto con marco tinta sobre blanco; el activo se invierte (fondo tinta, texto blanco). Controlan qué parte del apunte se ve.
 
-### Inputs / Fields
-- **Style:** búsqueda de 250x40px sobre superficie 1, contorno de 1px en línea fuerte, radio 0, icono de lupa a 12px y texto Chakra 500 15px (16px y 46px de alto en móvil, para que el teléfono no haga zoom).
-- **Focus:** el contorno pasa a tinta; el cursor de texto también va en tinta.
+### Callouts (clave, repaso, nota)
+Marco pixel tinta, padding .9rem 1.2rem. Clave sobre crema (1.25rem/1.5); repaso y nota sobre blanco (nota 1.0625rem). La cabecera va en Jersey 1.75rem color ladrillo, con ícono.
 
-### Navigation
-- **Cabecera:** botón Guía, marca, selector de carril, búsqueda y dial, sobre el fondo al 90% de opacidad con línea inferior.
-- **Selector de carril:** dos mitades Guitarra / Canto con icono; la activa va en tinta sobre superficie 2 y la acompaña una barra roja de 2px que se desliza (0.35s). Al cambiar, la pantalla se llena de estática 300 ms y entra el otro carril.
-- **Riel:** encabezado por clase con línea que se extiende, elementos de 44px con icono gris, prácticas colgando de su apunte con una escuadra de 1px; el elemento activo se invierte (tinta de fondo, texto en papel).
-- **Menú del dial:** botón de 44px con el icono de dial del usuario; abierto se invierte y el dial gira 40°. La carátula (288px) lleva una regla de sintonizador arriba y dos grupos: Vistas (Recorrido, Clases en orden, con cuadro rojo en la opción marcada; se oculta en la versión publicada) y Tema (segmentado Claro / Oscuro, la opción activa invertida). Se maneja con flechas, Inicio, Fin y Escape. Cambiar de tema pasa por una estática de 200 ms.
+### Tables and figures
+Tabla con borde de 3 px tinta, cabecera crema en Jersey 1.375rem con filete de 3 px, filas separadas por 2 px `linea`, números tabulares; desplaza en horizontal con indicación de sombra y foco por teclado. Figuras a todo ancho sobre blanco con pie en caption.
 
-### Canales y regla de frecuencia (signature)
-La regla de frecuencia es una línea de 2px con marcas cada 12px y una marca alta por módulo: tinta (estable), gris corta (sin señal), cian (sintonizado), roja más alta y gruesa (en el aire). Debajo, un canal por módulo separado por líneas de 1px: numeral Major Mono, nombre, estado en Label-sm, conteo de temas y logradas en cifras tabulares, y barras de señal (una por tema; tinta si está visto, cian si está logrado, contorno discontinuo si falta). El canal en el aire lleva borde izquierdo rojo y un brillo rojo que se apaga hacia abajo. Al pasar el cursor o enfocar, el nombre se desarma con caracteres de ruido y se recompone en 250 ms. Un canal sin temas queda inerte y en gris.
+### Drawer
+Panel de 27rem (máx. 92vw) sobre `noche`, borde de 6 px `pino`, entra por la izquierda (≥1200 px) o la derecha en 350 ms. Contiene, en orden: cabecera con cierre, fila de sonido, buscador (marco pino, ámbar al enfocar), la ruta con sus prácticas colgando del apunte por un conector de píxel, otros módulos y las clases en orden. Ítem activo: fondo `bosque`, texto ámbar. Al abrirse, el fondo queda `inert`.
 
-### Indicador «En el aire» (móvil)
-Franja de 52px, borde rojo, brillo rojo hacia la derecha, cuadro rojo, rótulo «En el aire» y el nombre del módulo; aparece solo en anchos angostos y abre ese módulo.
+### Scene (escena)
+Lienzo `canvas` con `image-rendering: pixelated`, personajes en `auto`, bordes superior e inferior en corte recto. Pausada cuando está fuera de pantalla. Dos escenas por módulo: fogata (ámbar) y muelle (lago); el cambio ocurre a mitad del módulo. Entre las dos escenas hay una franja de papel (`.paso`, blanca y a todo el ancho) con una sola línea dorada (`#d09431`) de 2 pixeles del arte de grosor (10 px en escritorio, 8 en tableta, 6 o 4 en móvil), de borde a borde, sin adorno y sin margen (las dos escenas la tocan): el corte entre escenas es minimalista (decisión del usuario, 2026-11-10). Entre apuntes de la misma escena (`.sep`) van tres cuerdas doradas (`#d09431`) con una roseta chica al centro (núcleo `#f7af3a`), de unos 36 px de alto y dentro de la columna del apunte: el motivo de las cuerdas, ya sin el corte entre escenas, que ahora es una sola línea dorada a todo el ancho. La rama con luciérnagas (`ramita()`) y el adorno de rizos (`rizos()`) quedan disponibles en `separadores.cjs` como alternativas. Ambos son estáticos; en la franja entre escenas empieza el fundido de sonido a pantano.
 
-### Lector (teletexto limpio)
-Placa opaca con borde superior de tinta, título con glitch, línea de metadatos en mayúsculas separada por guiones de 14px, banda de prerrequisitos entre dos líneas, citas con escuadras, tablas con cabecera en Chakra y cifras tabulares, figuras sobre placa clara con pie en Chakra, y resumen con cabecera invertida. Las prácticas se leen en cinco pestañas (Libre, Practicar, Entender, Si falla, Avance) que fluyen con la hoja: barra de 5 columnas con contorno de 1px, la activa invertida, 50px de alto; Libre es la de entrada. En Libre, una línea general y un botón rojo de ancho completo (64px, «Pantalla completa», con la tecla F a la derecha, que se oculta en táctil) sobre las versiones apiladas en placas claras: es la acción principal de la pestaña, y el rojo es el de «en el aire». El botón abre el modo foco: una capa que cubre todo, sobre el fondo del tema, con todas las versiones a la vez en una cuadrícula que se calcula para caber sin scroll (la que deja más grande la imagen más chica), un solo botón de salida de 60px a la derecha (arriba en vertical), anillo de foco de 3px en rojo y una entrada de 280ms que no se anima con movimiento reducido. Tocar una versión la agranda y otro toque la devuelve; el resto de la página queda inerte mientras tanto. En Practicar, un selector de tres niveles con barras de 1, 2 o 3 alturas (la activa invertida, barras en rojo) y debajo los pasos numerados en Major Mono, cada uno con su imagen a todo el ancho del texto sobre placa clara; un botón discontinuo lleva a Si falla. Toda imagen del lector se amplía al tocarla en un visor que cubre la pantalla: la imagen sobre su placa clara, con flechas cuadradas de 64px a los lados (abajo en vertical), la misma X de 60px del modo foco, contador en Chakra tabular y la entrada de 280ms. Un apunte no conectado se muestra como aviso discontinuo con reloj, nunca como contenido inventado.
-
-### Transiciones de señal
-Cada vista entra con `tuneIn` (0.5s, opacidad 0.35 y desenfoque de 2px a nítido). Al sintonizar, las franjas rojo/cian de los titulares se rasgan en 5 pasos (0.42s) y vuelven a su sitio. La estática es un lienzo de ruido gris con líneas rojas y cianes al 92% que cubre la pantalla. Curva de todo el sistema: `cubic-bezier(.16, 1, .3, 1)`. Con `prefers-reduced-motion` no hay animación, ni transición, ni estática: todo es corte limpio.
-
-**Gestos de los features nuevos (decisión del usuario, 2026-10-21).** No hay un límite de gestos: cada feature que se integre (por ejemplo, la futura tarjeta de personaje con stats o marcar un ejercicio como hecho) lleva los gestos que pida, porque la variedad hace el panel más interactivo. Tres condiciones:
-- **Un mismo lenguaje:** todos salen de la señal (estática, sintonizar, rasgado rojo/cian, desarme y recomposición de texto, interferencia que se aclara). Nada de gestos de otro mundo.
-- **Un gesto por acción, con significado:** acciones distintas se sienten distintas. Por ejemplo, sumar un punto a un criterio no se anima igual que cambiar de carril.
-- **Nunca sobre un párrafo**, y con `prefers-reduced-motion` todos pasan a corte limpio.
+### Hero parallax and audio
+Velocidades de scroll por capa: fondo .55, logo .3, árbol .4, medio .22, frente 0 (el frente sube con la página y cubre el paisaje). El indicador de bajar cabecea 9 px en pasos. El audio funde entre pistas en 1.6 s: celta en hero, franja y fogata; pantano en muelle y cierre.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** mostrar un solo carril a la vez: el selector cambia todo el panel y guitarra y canto nunca comparten pantalla ni cifras.
-- **Do** usar los cuatro estados en su orden fijo (sin señal, señal estable, en el aire en rojo, sintonizado en cian) y con su forma de barra, chip y marca.
-- **Do** escribir los titulares en Major Mono en minúscula.
-- **Do** medir cada par de texto y fondo en los dos temas antes de entrar; 4.5:1 como piso.
-- **Do** dar a todo control al menos 44px de alto en la pantalla y en el menú.
-- **Do** marcar como «no conectado» o mockup lo que no se leyó completo; solo se muestra contenido real.
-- **Do** respetar los ganchos de `sistema/herramientas/publicar-panel.mjs`: una sola coincidencia de `</head>` y de `showView("recorrido");`; el menú de vistas dentro de `.app-menu`; las vistas en `#view-recorrido` y `#view-clase-timeline`; lo personal en `.only-personal` y lo de la versión publicada en `.only-pub`; elementos del riel como `.nav-item[data-key]`; imágenes con `src` relativo a la raíz del repo. Si el panel cambia de forma, se ajusta el script en la misma tarea.
-- **Do** incrustar las fuentes como woff2 en subconjunto para que el panel funcione sin red.
+- **Do** poner títulos, botones, franja y drawer en Jersey 15 y la lectura en Atkinson 19 px/1.65, columna máx. 750 px.
+- **Do** construir marcos con el SVG pixel de `border-image` (6 px); radio cero.
+- **Do** usar íconos 12x12 con `currentColor`; el build falla si queda un emoji.
+- **Do** usar foco visible de 3 px (ámbar sobre noche, ladrillo sobre blanco) con offset de 3 px.
+- **Do** mantener `scrollbar-gutter: stable`, `inert` en el fondo con el drawer abierto, y respetar `prefers-reduced-motion` (animaciones y transiciones a cero, cortes limpios).
+- **Do** firmar cada raster con su procedencia incrustada (`embed-prompt`); hay 30.
+- **Do** cortar la escena en recto contra la superficie vecina; sin dither ni degradado en el borde.
 
 ### Don't:
-- **Don't** aplicar glitch, estática, desarme de texto ni líneas de escaneo sobre un párrafo; el glitch vive en titulares, nombres de canal y transiciones.
-- **Don't** usar emojis en la interfaz: iconos SVG de trazo; los emojis de un apunte se muestran con su icono equivalente.
-- **Don't** pintar cian algo que no pasó su evaluación, ni rojo algo que no está en curso, seleccionado ahora o que no sea la acción principal.
-- **Don't** redondear esquinas, agregar sombras a tarjetas ni usar barras verdes, rachas o avisos de ausencia.
-- **Don't** mostrar el Recorrido, Clases en orden ni el estado de las prácticas en la versión publicada.
+- **Don't** usar Jersey 15 para texto corrido del apunte ni Atkinson en títulos, botones o drawer.
+- **Don't** usar emojis.
+- **Don't** usar radios, sombras de caja ni degradados suaves.
+- **Don't** convertir el módulo en un panel de progreso con tarjetas y barras, ni en un sitio de documentación con barra lateral fija.
+- **Don't** recortar la escena: su arte se muestra completo con letterbox `noche`.
+- **Don't** mezclar los acentos (ámbar sobre blanco, ladrillo sobre noche).
+
+## Pendientes y estado honesto
+
+Cierre del 2026-11-09: el revisor dejó la disposición «fix» tras dos rondas y el usuario decidió cerrar así. Lo siguiente es lo que la compilación lleva y no se hereda como regla para superficies nuevas:
+
+- La arista del apunte blanco contra el suelo de la franja es recta (el usuario quitó el dither de los bordes de la escena el 2026-11-10 y queda así). El suelo de la franja (`hero/suelo.png`) es ruido procedural generado por código y no se lee como bosque pixel dibujado; hay una línea horizontal en el borde inferior del hero al bajar.
+- El dither que hunde el bosque del frente llega al primer viewport en reposo y cambia la capa aprobada del hero.
+- En iOS Safari la pista inactiva sonaría a volumen pleno.
+- El botón del drawer cae sobre el arte cuando la escena llena el viewport.
+- Faltan `audio/celta.mp3` y `audio/pantano.mp3`: el mecanismo está hecho y el aviso «Sin audio» es honesto.
+- Los módulos M2 a M9 no están conectados.
+- Las imágenes de los apuntes no se amplían al tocarlas.
+- El prototipo vive aparte de `system.html` y no está enganchado a `sistema/herramientas/publicar-panel.mjs`.

@@ -1,0 +1,302 @@
+// Prototipo web de Okaeri (superficie system-html, rediseño del universo pixel). Uso: node build.cjs (desde .impeccable/prototipo/)
+// Lee el módulo en curso (M1) de los .md reales, el temario y el índice de clases; convierte las capas del hero; arma las dos escenas animadas
+// (fogata y muelle, de .impeccable/mocks/lugares/) con su motor intacto; y escribe index.html + hero/ + img/ junto a este archivo.
+// Las escenas van con imágenes en base64 a propósito: el motor lee píxeles del lienzo (getImageData) y desde file:// una imagen suelta lo bloquearía.
+const fs = require("fs"), path = require("path")
+const { convertir, inline, icono, esc } = require("./md.cjs")
+const { sprite } = require("./iconos.cjs")
+const { rosetaChica, cuerdas } = require("./separadores.cjs")
+const TRES = [70, 100, 70]
+
+const AQUI = __dirname
+const RAIZ = path.resolve(AQUI, "..", "..")
+const LUG = path.join(RAIZ, ".impeccable", "mocks", "lugares")
+const GUIT = path.join(RAIZ, "fundamentos", "guitarra")
+const leer = f => fs.readFileSync(f, "utf8").replace(/\r/g, "")
+const b64 = (f, t) => `data:${t};base64,` + fs.readFileSync(f).toString("base64")
+const aviso = m => console.warn("AVISO:", m)
+
+// ---------- 1. el módulo en curso: la ruta de apuntes (orden de las clases, R4) y su práctica colgando ----------
+const RUTA = [
+  { k: "notas-y-cuerdas", f: "clase01/clase01_notas-y-cuerdas.md" },
+  { k: "tablatura", f: "clase01/clase01_tablatura.md" },
+  { k: "dedos", f: "clase01/clase01_dedos-mano-izquierda.md", practica: "clase01/clase01_practica_independencia-1234.md" },
+  { k: "diagramas", f: "clase02/clase02_diagramas-de-acorde.md" },
+  { k: "acorde", f: "clase02/clase02_el-acorde.md" },
+  { k: "ocho-acordes", f: "clase02/clase02_los-8-acordes.md", practica: "clase02/clase02_practica_progresiones.md" }
+]
+// ¿hay algo de M1 escrito que la ruta no lleve? Se avisa, no se agrega solo.
+for (const c of fs.readdirSync(GUIT).filter(d => /^clase\d+$/.test(d)))
+  for (const f of fs.readdirSync(path.join(GUIT, c)).filter(x => x.endsWith(".md"))) {
+    const t = leer(path.join(GUIT, c, f)), m = t.match(/^modulo:\s*(\w+)/m), e = t.match(/^estado:\s*(\w+)/m)
+    const rel = `${c}/${f}`
+    if (m && m[1] === "m1" && e && e[1] !== "BORRADOR" && !RUTA.some(r => r.f === rel || r.practica === rel)) aviso(`M1 tiene ${rel} y la ruta del prototipo no lo incluye`)
+  }
+
+const IMG = new Map()   // ruta absoluta de la imagen -> nombre en img/
+const claveDe = new Map(RUTA.map(r => [path.basename(r.f), r.k]))
+const ctx = {
+  enlaces: archivo => { const k = claveDe.get(path.basename(archivo)); return k ? `#a-${k}` : null },
+  imagen: (abs, original) => {
+    if (!fs.existsSync(abs)) { aviso(`imagen que no existe: ${original}`); return original }
+    const n = path.basename(abs); if (IMG.has(abs) && IMG.get(abs) !== n) aviso("dos imágenes con el mismo nombre: " + n)
+    IMG.set(abs, n); return "img/" + n
+  }
+}
+for (const r of RUTA) {
+  r.t = convertir(path.join(GUIT, r.f), ctx)
+  if (r.practica) r.p = convertir(path.join(GUIT, r.practica), ctx)
+  const o = (r.t.fm.origen || "").match(/clase(\d+)\s*\((\d{4}-\d{2}-\d{2})\)/)
+  r.clase = o ? +o[1] : null; r.fecha = o ? o[2] : null; r.seccion = (r.t.fm.secciones_mapa || "").match(/^[\d.]+/)?.[0] || ""
+}
+const nFog = Math.ceil(RUTA.length / 2)      // impar: la primera mitad lleva uno más
+RUTA.forEach((r, i) => r.escena = i < nFog ? "fogata" : "muelle")
+
+// ---------- 2. temario (nombres de módulos y su resultado) y clases en orden ----------
+const limpia = s => s.replace(/\*\*/g, "").replace(/\p{Extended_Pictographic}\uFE0F?/gu, "").replace(/←.*$/, "").replace(/\s+/g, " ").trim()
+const tem = leer(path.join(RAIZ, "contexto", "plan_estudio", "temario_guitarra.md"))
+const MODS = []
+for (let n = 1; n <= 9; n++) {
+  const fila = tem.match(new RegExp(`^\\|\\s*${n}\\s*\\|\\s*(.+?)\\s*\\|\\s*(\\d+)\\s*\\|`, "m"))
+  const sec = tem.split(new RegExp(`^## M${n} ·`, "m"))[1] || ""
+  const res = (sec.match(/\*\*Resultado:\*\*\s*(.+)/) || [])[1]
+  MODS.push({ n, nombre: fila ? limpia(fila[1]) : `Módulo ${n}`, secciones: fila ? +fila[2] : 0, resultado: res ? limpia(res).replace(/^./, c => c.toUpperCase()) : "" })
+}
+
+const idx = leer(path.join(RAIZ, "practica", "00_indice.md"))
+const bloqueG = idx.split(/^## .*Guitarra.*$/m)[1].split(/^## /m)[0]
+const CLASES = []
+for (const l of bloqueG.split("\n")) {
+  const c = l.split("|").map(x => x.trim()); if (c.length < 7 || !/^\d+$/.test(c[1])) continue
+  const vio = limpia(c[4].replace(/`/g, ""))
+  CLASES.push({ n: +c[1], fecha: c[2], asistio: /✅/.test(c[3]), vio: /^No asisti/i.test(vio) ? "Sin clase registrada" : vio.split(" · ").slice(0, 3).join(" · ") })
+}
+const MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"]
+const fechaCorta = f => { const m = f.match(/^(\d{4})-(\d{2})-(\d{2})$/); return m ? `${+m[3]} ${MES[+m[2] - 1]}` : f }
+
+// ---------- 3. hero: capas (WebP si hay sharp; si no, el PNG tal cual) ----------
+const CAPAS = [["1_fondo", "fondo"], ["3_medio", "medio"], ["2_arbol", "arbol"], ["4_frente", "frente"]]
+let sharp = null; try { sharp = require("C:/dev/entertechschool/app_enterbase/node_modules/sharp") } catch { }
+const EXT = sharp ? "webp" : "png"
+
+async function frenteHundido(src, dst) {
+  // el bosque del frente se oscurece en bloques de 8 px (dither de Bayer 4x4) hacia el suelo de la franja, para que cubra la pantalla en vez de cortarse recto
+  const { data, info } = await sharp(src).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  const W = info.width, H = info.height, FIN = H - 240, INI = FIN - 380, B = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5], NO = [4, 14, 16]
+  for (let y = INI; y < FIN; y++) { const t = (y - INI) / (FIN - INI); for (let x = 0; x < W; x++) {
+    const i = (y * W + x) * 4; if (data[i + 3] < 255) continue
+    if (t * 1.15 > B[(((y / 8) | 0) % 4) * 4 + (((x / 8) | 0) % 4)] / 16 + .04) for (let k = 0; k < 3; k++) data[i + k] = (NO[k] + (data[i + k] - NO[k]) * .12) | 0 } }
+  await sharp(data, { raw: { width: W, height: H, channels: 4 } }).webp({ quality: 90, alphaQuality: 100, effort: 5 }).toFile(dst)
+}
+async function sueloFranja(dst) {
+  // suelo de bosque de la franja: manchas de copas oscuras en celdas de 8 px que aparecen bajo el frente y se apagan hacia abajo. Código puro, semilla fija.
+  const CEL = 8, W = 322, H = 90, PAL = [[4, 14, 16], [8, 25, 26], [13, 36, 32], [20, 53, 43]], LUZ = [31, 74, 57]
+  let s = 20261109; const az = () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296
+  const L = 40, lat = Array.from({ length: L }, () => Array.from({ length: L }, az)), sm = t => t * t * (3 - 2 * t)
+  const ruido = (x, y) => { const x0 = Math.floor(x), y0 = Math.floor(y), fx = sm(x - x0), fy = sm(y - y0), g = (i, j) => lat[((j % L) + L) % L][((i % L) + L) % L]
+    return g(x0, y0) * (1 - fx) * (1 - fy) + g(x0 + 1, y0) * fx * (1 - fy) + g(x0, y0 + 1) * (1 - fx) * fy + g(x0 + 1, y0 + 1) * fx * fy }
+  const paso = (a, b2, v) => sm(Math.min(1, Math.max(0, (v - a) / (b2 - a)))), BY = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5]
+  const buf = Buffer.alloc(W * CEL * H * CEL * 3)
+  for (let r = 0; r < H; r++) for (let q = 0; q < W; q++) {
+    const n = .6 * ruido(q / 9, r / 7) + .4 * ruido(q / 4 + 7, r / 3.5), env = paso(0, 14, r) * (1 - paso(34, H, r)), v = n * env * 1.4 + (BY[(r % 4) * 4 + (q % 4)] / 16 - .5) * .1
+    const col = v > .6 && az() < .16 ? LUZ : PAL[v < .2 ? 0 : v < .32 ? 1 : v < .44 ? 2 : 3]
+    for (let j = 0; j < CEL; j++) for (let i = 0; i < CEL; i++) { const o = (((r * CEL + j) * W * CEL) + q * CEL + i) * 3; buf[o] = col[0]; buf[o + 1] = col[1]; buf[o + 2] = col[2] } }
+  await sharp(buf, { raw: { width: W * CEL, height: H * CEL, channels: 3 } }).png({ palette: true, colors: 6, compressionLevel: 9 }).toFile(dst)
+}
+async function activos() {
+  fs.mkdirSync(path.join(AQUI, "hero"), { recursive: true }); fs.mkdirSync(path.join(AQUI, "img"), { recursive: true })
+  const mioT = fs.statSync(__filename).mtimeMs
+  for (const [f] of CAPAS) {
+    const src = path.join(LUG, "hero", "capas", f + ".png"), dst = path.join(AQUI, "hero", f + "." + EXT)
+    if (fs.existsSync(dst) && fs.statSync(dst).mtimeMs > Math.max(mioT, fs.statSync(src).mtimeMs)) continue
+    if (sharp && f === "4_frente") await frenteHundido(src, dst)
+    else if (sharp) await sharp(src).webp({ quality: 90, alphaQuality: 100, effort: 5 }).toFile(dst); else fs.copyFileSync(src, dst)
+  }
+  const sue = path.join(AQUI, "hero", "suelo.png")
+  if (sharp && !(fs.existsSync(sue) && fs.statSync(sue).mtimeMs > mioT)) await sueloFranja(sue)
+  for (const [abs, n] of IMG) fs.copyFileSync(abs, path.join(AQUI, "img", n))
+}
+
+// ---------- 4. escenas: el motor de cada una, intacto, dentro de su ámbito y con una compuerta que lo pausa fuera de pantalla ----------
+function escenaFogata() {
+  const L = path.join(LUG, "fogata")
+  const capas = Object.fromEntries(fs.readdirSync(path.join(L, "personajes", "capas")).map(f => [f.replace(".png", ""), b64(path.join(L, "personajes", "capas", f), "image/png")]))
+  const pj = leer(path.join(L, "pxl", "personajes.js")).replace('document.getElementById("pj")', "__pj")
+  return `(function(__c,__pj,requestAnimationFrame){
+${leer(path.join(L, "pxl", "escena.js"))}
+const im=new Image();im.onload=()=>iniciar(__c,im);im.src="${b64(path.join(L, "pxl", "fondo_personajes.png"), "image/png")}"
+const PJ=${leer(path.join(L, "personajes", "posiciones.json"))},SRC=${JSON.stringify(capas)}
+${pj}
+})`
+}
+function escenaMuelle() {
+  const L = path.join(LUG, "muelle")
+  const lista = [...fs.readdirSync(path.join(L, "personajes", "capas")).map(f => [f.replace(".png", ""), path.join(L, "personajes", "capas", f)]), ["soprano", path.join(L, "personajes", "soprano.png")], ["baculo", path.join(L, "personajes", "baculo.png")]]
+  const capas = Object.fromEntries(lista.map(([n, f]) => [n, b64(f, "image/png")]))
+  const pj = leer(path.join(L, "pxl", "personajes.js")).replace('document.getElementById("pj")', "__pj")
+  return `(function(__c,__pj,requestAnimationFrame){
+const KOI=${leer(path.join(L, "koi", "koi_dir.json"))},RUTAS=${leer(path.join(L, "koi", "recorridos.json"))}
+${leer(path.join(L, "pxl", "escena.js"))}
+const F=new Image(),Bc=new Image();let n=0;const listo=()=>{if(++n==2)iniciar(__c,F,Bc)};F.onload=Bc.onload=listo;F.src="${b64(path.join(L, "pxl", "fondo_mov.png"), "image/png")}";Bc.src="${b64(path.join(L, "pxl", "barca.png"), "image/png")}"
+const PJ=${leer(path.join(L, "personajes", "posiciones.json"))},SRC=${JSON.stringify(capas)}
+${pj}
+})`
+}
+const ESCENAS_JS = `// compuerta: la escena solo pide cuadros mientras está a la vista
+function compuerta(){let on=false,cola=[];return{raf:f=>{if(on)window.requestAnimationFrame(f);else cola.push(f)},set(v){on=v;if(v)cola.splice(0).forEach(f=>window.requestAnimationFrame(f))}}}
+window.COMPUERTAS={fogata:compuerta(),muelle:compuerta()}
+const fogata=${escenaFogata()};fogata(document.getElementById("c-fogata"),document.getElementById("pj-fogata"),COMPUERTAS.fogata.raf)
+const muelle=${escenaMuelle()};muelle(document.getElementById("c-muelle"),document.getElementById("pj-muelle"),COMPUERTAS.muelle.raf)`
+const ARIA = {
+  fogata: "Una fogata encendida en una loma junto a un río, con una mochila y dos tazas. Un gato naranja toca la guitarra sentado en un tronco; frente a él, un forastero con gorro de mago descansa en una piedra, con un perico que canta sobre el gorro. A lo lejos, un gran árbol con ventanas encendidas.",
+  muelle: "Un muelle de madera de noche en un lago con nenúfares gigantes cuyas flores brillan, un farol encendido y luciérnagas. Un forastero con gorro de mago pesca sentado al borde del muelle, con un perico dormido sobre el gorro; a su lado, una nota musical con moño mece las patitas en el agua. En una barca, una gata siamesa en kimono canta bajito. Bajo el agua nadan despacio cuatro peces koi."
+}
+
+// ---------- 5. piezas de la interfaz ----------
+const ico = (n, cl = "ico") => icono(n, cl)
+// marco pixel: 5x5 unidades con las esquinas cortadas; border-image-slice:2 y borde de 6px -> cada unidad mide 3px
+const marco = c => `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 5 5' shape-rendering='crispEdges' fill='${c}'><path d='M1 0h3v1H1zM0 1h1v3H0zM4 1h1v3H4zM1 4h3v1H1z'/></svg>`)}")`
+const conector = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='12' height='18' viewBox='0 0 12 18' shape-rendering='crispEdges' fill='%231c3a31'><path d='M0 0h2v14h10v2H0z'/></svg>`.replace("%23", "#"))}")`
+const fuentes = [
+  ["Jersey 15", 400, "normal", "jersey15.woff2"], ["Atkinson Hyperlegible", 400, "normal", "atkinson-400.woff2"],
+  ["Atkinson Hyperlegible", 700, "normal", "atkinson-700.woff2"], ["Atkinson Hyperlegible", 400, "italic", "atkinson-400-it.woff2"]
+].map(([f, w, s, a]) => `@font-face{font-family:"${f}";font-weight:${w};font-style:${s};font-display:swap;src:url(${b64(path.join(AQUI, "fonts", a), "font/woff2")}) format("woff2")}`).join("\n")
+
+const idPrac = r => `p-${r.k}`
+function apunteHtml(r, i) {
+  const meta = [r.clase ? `Clase ${r.clase}` : "", r.fecha ? fechaCorta(r.fecha) : "", r.seccion ? `sección ${r.seccion}` : ""].filter(Boolean).join(" · ")
+  const vista = r.p ? `<div class="vista" role="group" aria-label="Qué lees de este apunte"><button type="button" data-ver="teoria" aria-pressed="true">Teoría</button><button type="button" data-ver="practica" aria-pressed="false">Práctica</button></div>` : ""
+  return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="teoria">
+<header class="ap-cab">
+<h3 class="ap-titulo" tabindex="-1">${r.t.tituloHtml}</h3>
+${meta ? `<p class="ap-meta">${esc(meta)}</p>` : ""}
+${vista}
+</header>
+<div class="ap-cuerpo" data-panel="teoria">
+${r.t.html}
+</div>
+${r.p ? `<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}" hidden>
+<h4 class="ap-practica">Práctica: ${r.p.tituloHtml.replace(/^Práctica\s*[—–-]\s*/, "")}</h4>
+${r.p.html}
+</div>` : ""}
+</article>`
+}
+
+function corte(nombre, rs) {
+  return `<section class="corte corte-${nombre}" id="corte-${nombre}" aria-label="Apuntes con la escena ${nombre === "fogata" ? "de la fogata" : "del muelle"}">
+<div class="escena escena-${nombre}"><div class="lienzo"><canvas id="c-${nombre}" role="img" aria-label="${esc(ARIA[nombre])}"></canvas><canvas id="pj-${nombre}" class="pj" aria-hidden="true"></canvas></div></div>
+<div class="apuntes">
+${rs.map(apunteHtml).join(`\n<div class="sep" aria-hidden="true">${cuerdas("izq", TRES)}${rosetaChica()}${cuerdas("der", TRES)}</div>\n`)}
+</div>
+</section>`
+}
+
+const M1 = MODS[0], M2 = MODS[1]
+const nPrac = RUTA.filter(r => r.p).length
+const mods = MODS.map(m => `<li><button type="button" class="mod${m.n === 1 ? " act" : ""}${m.n === 1 ? "" : " fuera"}" data-mod="${m.n}" aria-pressed="${m.n === 1}" aria-label="Módulo ${m.n}: ${esc(m.nombre)}${m.n === 1 ? ", en curso" : ", sin conectar"}"><span>M${m.n}</span></button></li>`).join("")
+
+const rutaDrawer = RUTA.map((r, i) => `<li data-t="${esc((r.t.titulo + " " + r.t.texto + " " + (r.p ? r.p.titulo + " " + r.p.texto : "")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}">
+<a class="d-ap" href="#a-${r.k}" data-k="${r.k}"><span class="d-n">${i + 1}</span><span class="d-t">${r.t.tituloHtml}</span></a>
+${r.p ? `<a class="d-prac" href="#${idPrac(r)}" data-k="${r.k}" data-practica>Práctica: ${r.p.tituloHtml.replace(/^Práctica\s*[—–-]\s*/, "")}</a>` : ""}
+</li>`).join("\n")
+
+const clasesDrawer = CLASES.map(c => {
+  const dest = RUTA.find(r => r.clase === c.n)
+  const cuerpo = `<span class="d-n">${c.n}</span><span class="d-t">${esc(c.vio)}<small>${esc(fechaCorta(c.fecha))}</small></span>`
+  return `<li>${dest ? `<a class="d-ap" href="#a-${dest.k}">${cuerpo}</a>` : `<span class="d-ap d-quieto">${cuerpo}</span>`}</li>`
+}).join("\n")
+
+const otrosDrawer = MODS.slice(1).map(m => `<li><button type="button" class="d-mod" data-mod="${m.n}" aria-disabled="true"><span class="d-n">M${m.n}</span><span class="d-t">${esc(m.nombre)}</span></button></li>`).join("")
+
+const HTML = `<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#040e10">
+<meta name="robots" content="noindex">
+<title>Okaeri</title>
+<!-- Prototipo (2026-11-09). Lo arma build.cjs; no se edita a mano. Fuentes: Jersey 15 (pixel) y Atkinson Hyperlegible (lectura), ambas OFL. -->
+<style>
+${fuentes}
+:root{--m-claro:${marco("#e8efe9")};--m-tinta:${marco("#26241f")};--m-ambar:${marco("#ffb53c")};--m-pino:${marco("#1c3a31")};--m-suave:${marco("#52705f")};--conector:${conector}}
+${leer(path.join(AQUI, "src", "estilo.css"))}
+</style>
+</head>
+<body data-zona="hero">
+${sprite()}
+<a class="salto" href="#modulos">Saltar a los módulos</a>
+
+<header class="hero" id="inicio">
+<div class="paisaje" aria-hidden="true">
+<img class="capa fondo" src="hero/1_fondo.${EXT}" alt="" fetchpriority="high" decoding="async">
+<img class="capa medio" src="hero/3_medio.${EXT}" alt="" decoding="async">
+<img class="capa arbol" src="hero/2_arbol.${EXT}" alt="" decoding="async">
+<img class="capa frente" src="hero/4_frente.${EXT}" alt="" decoding="async">
+</div>
+<h1 class="logo">okaeri</h1>
+<div class="hero-sonido">
+<button type="button" class="btn-sonido" id="sonido" aria-pressed="false" aria-label="Activar el sonido"><svg class="ico" viewBox="0 0 12 12" aria-hidden="true"><use href="#i-sonido-off"/></svg></button>
+<p class="aviso-sonido" id="aviso-sonido" role="status"></p>
+</div>
+<a class="bajar" href="#modulos" aria-label="Bajar a los módulos">${ico("abajo")}</a>
+</header>
+
+<main>
+<section class="franja" id="modulos" aria-labelledby="fr-t">
+<div class="fr-in">
+<h2 class="fr-t" id="fr-t">Módulos</h2>
+<ul class="fr-lista" role="list">${mods}</ul>
+<div class="fr-det" id="fr-det" aria-live="polite">
+<h3 class="fr-nombre">${esc(M1.nombre)}</h3>
+<p class="fr-res">${esc(M1.resultado)}</p>
+<p class="fr-meta">En curso · ${RUTA.length} apuntes · ${nPrac} prácticas</p>
+<a class="btn-px" href="#corte-fogata">Entrar al módulo ${ico("derecha")}</a>
+</div>
+</div>
+</section>
+
+<div class="modulo" id="modulo">
+${corte("fogata", RUTA.filter(r => r.escena === "fogata"))}
+<div class="paso" aria-hidden="true"><i></i></div>
+${corte("muelle", RUTA.filter(r => r.escena === "muelle"))}
+<section class="cierre" aria-label="Fin del módulo">
+<p class="cierre-t">Fin de ${esc(M1.nombre)}</p>
+<a class="btn-px" href="#modulos" data-siguiente="2">Módulo siguiente ${ico("derecha")}<span class="btn-sub">M2 · ${esc(M2.nombre)}</span></a>
+</section>
+</div>
+</main>
+
+<button type="button" class="btn-drawer" id="abrir-drawer" aria-label="Abrir la ruta del módulo" aria-controls="drawer" aria-expanded="false">${ico("lista")}</button>
+<div class="velo" id="velo" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-titulo" inert>
+<div class="d-cab"><h2 id="d-titulo">M1 · ${esc(M1.nombre)}</h2><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div>
+<div class="d-fila"><button type="button" class="btn-px chico" id="sonido-drawer" aria-pressed="false">${ico("sonido-off")}<span>Sonido</span></button><p class="aviso-sonido" id="aviso-sonido-d" role="status"></p></div>
+<label class="d-buscar"><span class="vh">Buscar en los apuntes</span>${ico("lupa")}<input type="search" id="buscar" placeholder="Buscar en los apuntes" autocomplete="off" spellcheck="false"></label>
+<p class="d-vacio" id="d-vacio" role="status" hidden>Ningún apunte lo nombra.</p>
+<nav aria-label="Ruta de apuntes"><h3 class="d-h">Ruta del módulo</h3><ol class="d-ruta" id="d-ruta">
+${rutaDrawer}
+</ol></nav>
+<nav aria-label="Otros módulos"><h3 class="d-h">Otros módulos</h3><ul class="d-otros">${otrosDrawer}</ul><p class="d-nota" id="d-nota" role="status"></p></nav>
+<nav class="only-personal" aria-label="Clases en orden"><h3 class="d-h">Clases en orden</h3><ol class="d-clases">
+${clasesDrawer}
+</ol></nav>
+</aside>
+
+<script>
+const MODULOS=${JSON.stringify(MODS)};
+${leer(path.join(AQUI, "src", "app.js"))}
+</script>
+<script>
+${ESCENAS_JS}
+</script>
+</body>
+</html>
+`
+
+;(async () => {
+  await activos()
+  fs.writeFileSync(path.join(AQUI, "index.html"), HTML)
+  try { require("./procedencia.cjs")(AQUI, IMG) } catch (e) { aviso("procedencia: " + e.message) }
+  console.log(`ok index.html ${(HTML.length / 1024) | 0} KB · ${RUTA.length} apuntes (${RUTA.filter(r => r.escena === "fogata").length} fogata + ${RUTA.filter(r => r.escena === "muelle").length} muelle) · ${nPrac} prácticas · ${IMG.size} imágenes · hero .${EXT} · ${CLASES.length} clases`)
+})().catch(e => { console.error(e); process.exit(1) })
