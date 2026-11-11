@@ -1,4 +1,4 @@
 {
   "prompt": "Capa del hero de Okaeri (prototipo web). Origen: ilustración pixel art generada por el usuario con Gemini el 2026-11-07 (hero_gemini.jpg y capa1/3/4/5_*_gemini.jpg en .impeccable/mocks/lugares/hero/), aprobada por el usuario el 2026-11-09. Se separó en capas con .impeccable/mocks/lugares/hero/capas.cjs y el prototipo la convierte a WebP con build.cjs. El prompt exacto no se conservó en el repositorio.",
-  "createdAt": "2026-11-10T16:40:05.149Z"
+  "createdAt": "2026-11-10T19:21:38.903Z"
 }

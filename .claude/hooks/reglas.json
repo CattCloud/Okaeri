@@ -26,17 +26,16 @@
     { "regla": "F11", "motivo": "respuesta que quedó solo en el chat", "patron": "explicad[oa] en (el )?chat", "tipos": ["consulta"] }
   ],
   "practica": {
-    "campos": ["tipo", "modulo", "origen", "titulo", "apunte", "tiempo_minimo", "tiempo_natural", "tiempo_motivado", "estado"],
+    "campos": ["tipo", "modulo", "origen", "titulo", "apunte", "estado"],
     "secciones": [
       { "regla": "F4", "nombre": "Qué estás mejorando (en claro)", "patron": "^## .*Qué estás mejorando" },
       { "regla": "F4", "nombre": "Cómo se hace (referencia)", "patron": "^## .*Cómo se hace" },
-      { "regla": "F5", "nombre": "Los 3 niveles del día", "patron": "^## .*Los 3 niveles del día" },
       { "regla": "F4", "nombre": "Cómo suena cuando está bien", "patron": "^## .*Cómo suena" },
       { "regla": "F4", "nombre": "Si sale mal — los 3 típicos", "patron": "^## .*Si sale mal" },
       { "regla": "F4", "nombre": "Hasta cuándo", "patron": "^## .*Hasta cuándo" },
       { "regla": "F4", "nombre": "Qué sigue", "patron": "^## .*Qué sigue" }
     ],
-    "niveles": ["🔵", "🟢", "🔥"],
+    "sin_niveles": "^#{2,3} .*(Los 3 niveles|🔵|🟢|🔥|Mínimo|Natural|Motivado)|^(tiempo_minimo|tiempo_natural|tiempo_motivado):",
     "imagenes_prohibidas": ["acorde-", "hoja-8-acordes"]
   },
   "apunte": {

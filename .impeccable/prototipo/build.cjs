@@ -270,8 +270,8 @@ ${corte("muelle", RUTA.filter(r => r.escena === "muelle"))}
 <button type="button" class="btn-drawer" id="abrir-drawer" aria-label="Abrir la ruta del módulo" aria-controls="drawer" aria-expanded="false">${ico("lista")}</button>
 <div class="velo" id="velo" hidden></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-titulo" inert>
-<div class="d-cab"><h2 id="d-titulo">M1 · ${esc(M1.nombre)}</h2><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div>
-<div class="d-fila"><button type="button" class="btn-px chico" id="sonido-drawer" aria-pressed="false">${ico("sonido-off")}<span>Sonido</span></button><p class="aviso-sonido" id="aviso-sonido-d" role="status"></p></div>
+<div class="d-cab"><h2 id="d-titulo">M1 · ${esc(M1.nombre)}</h2><div class="d-acc"><button type="button" class="btn-sonido en-drawer" id="sonido-drawer" aria-pressed="false" aria-label="Activar el sonido" title="Activar el sonido">${ico("sonido-off")}</button><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div></div>
+<p class="aviso-sonido d-aviso" id="aviso-sonido-d" role="status"></p>
 <label class="d-buscar"><span class="vh">Buscar en los apuntes</span>${ico("lupa")}<input type="search" id="buscar" placeholder="Buscar en los apuntes" autocomplete="off" spellcheck="false"></label>
 <p class="d-vacio" id="d-vacio" role="status" hidden>Ningún apunte lo nombra.</p>
 <nav aria-label="Ruta de apuntes"><h3 class="d-h">Ruta del módulo</h3><ol class="d-ruta" id="d-ruta">

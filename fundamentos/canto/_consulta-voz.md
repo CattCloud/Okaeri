@@ -31,7 +31,7 @@ estado: VIGENTE — crece con cada pregunta nueva
 | Qué | Cuánto |
 |---|---|
 | Agua a temperatura ambiente | unos sorbos |
-| [Aire y trino, nivel 🔵](clase01/clase01_practica_respiracion-trino.md) | 5 min |
+| [Aire y trino](clase01/clase01_practica_respiracion-trino.md) | 5 min |
 | Dos notas cómodas sostenidas en "ah" | ~1 min |
 
 **Por qué no se salta:** la voz es músculo. Cantar en frío rinde peor y es la forma más fácil de lastimarse. Calentar de más tampoco sirve: pasados ~10 min ya no calienta, gasta, y llegas a la canción con la voz cansada.

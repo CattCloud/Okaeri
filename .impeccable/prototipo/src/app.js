@@ -118,7 +118,8 @@
   function pintarBotones() {
     const sin = faltan.size === N
     botones.forEach(b => { b.setAttribute("aria-pressed", String(sonando)); b.classList.toggle("sin-audio", sin); $("use", b).setAttribute("href", sonando ? "#i-sonido-on" : "#i-sonido-off") })
-    $("#sonido").setAttribute("aria-label", sin ? "Sonido no disponible: faltan los archivos de audio" : sonando ? "Apagar el sonido" : "Activar el sonido")
+    const txt = sin ? "Sonido no disponible: faltan los archivos de audio" : sonando ? "Apagar el sonido" : "Activar el sonido"
+    botones.forEach(b => { b.setAttribute("aria-label", txt); b.title = txt })
   }
   function pista(n) {
     if (pistas[n]) return pistas[n]

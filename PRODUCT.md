@@ -27,7 +27,7 @@ El avance que muestra es real y medible: un tema solo cuenta como «logrado» cu
 
 ## Capabilities and Constraints
 
-- **Vistas actuales:** barra lateral (árbol por módulo del temario, solo lo escrito, con las prácticas colgando de su apunte; búsqueda), Recorrido (mapa plegable carril → módulos → temas, con etiquetas Apunte y Práctica y estados falta / en curso / listo / lograda), Clases en orden (timeline), lector de apunte y de práctica (prácticas con 3 niveles).
+- **Vistas actuales:** barra lateral (árbol por módulo del temario, solo lo escrito, con las prácticas colgando de su apunte; búsqueda), Recorrido (mapa plegable carril → módulos → temas, con etiquetas Apunte y Práctica y estados falta / en curso / listo / lograda), Clases en orden (timeline), lector de apunte y de práctica (prácticas libres, sin niveles: las versiones tal cual).
 - **Un carril a la vez:** guitarra y canto nunca se muestran juntos ni se combinan; un selector global cambia todo el panel.
 - **Sin emojis** en la interfaz: iconos e ilustraciones propias (SVG). Los emojis dentro de un apunte se muestran con su icono equivalente.
 - **Solo contenido real:** lo que no se leyó completo se marca como mockup / no conectado.

@@ -74,6 +74,9 @@ a{color:inherit}
 .corte{display:grid;grid-template-columns:var(--escena) minmax(0,1fr);background:var(--papel);color:var(--tinta)}
 /* la escena conserva la proporción del arte (368x399): su borde derecho está disuelto en blanco para fundirse con el apunte, así que no se recorta */
 .escena{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;align-content:center;background:var(--papel)}
+/* si la ventana es más baja que el arte, el blanco sobrante se va al lado opuesto de la línea entre escenas: la fogata pegada abajo, el muelle pegado arriba */
+.escena-fogata{align-content:end}
+.escena-muelle{align-content:start}
 .lienzo{position:relative;width:var(--escena);height:calc(var(--escena)*399/368);overflow:hidden}
 .lienzo canvas{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;image-rendering:pixelated}
 .lienzo .pj{image-rendering:auto;pointer-events:none}
@@ -161,15 +164,18 @@ blockquote.repaso li{margin-bottom:.5em}
 body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
 .velo{position:fixed;inset:0;z-index:30;background:rgba(4,14,16,.62);opacity:0;transition:opacity .25s}
 .velo.abierto{opacity:1}
-.drawer{position:fixed;top:0;right:0;bottom:0;z-index:40;width:min(27rem,92vw);overflow-y:auto;overscroll-behavior:contain;background:var(--noche);color:var(--niebla);border-left:6px solid var(--pino);padding:16px 20px 48px;
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:40;width:min(36rem,92vw);overflow-y:auto;overscroll-behavior:contain;background:var(--noche);color:var(--niebla);border-left:6px solid var(--pino);padding:16px 20px 48px;
   transform:translateX(100%);visibility:hidden;transition:transform .35s var(--ease),visibility 0s .35s;scrollbar-color:#3d5f52 var(--noche)}
 .drawer.abierto{transform:none;visibility:visible;transition:transform .35s var(--ease)}
 .d-cab{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
 .d-cab h2{margin:6px 0 0;font:400 2.25rem/1 var(--px);text-wrap:balance}
 .btn-cerrar{flex:none;width:52px;height:52px;padding:0;display:grid;place-items:center}
 .btn-cerrar .ico{width:24px;height:24px}
-.d-fila{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
-.d-fila .aviso-sonido{max-width:none;flex:1 1 12rem}
+.d-acc{flex:none;display:flex;gap:8px}
+.btn-sonido.en-drawer{width:52px;height:52px}
+.btn-sonido.en-drawer .ico{width:30px;height:30px}
+.d-aviso{display:none;max-width:none;margin:0 0 12px}
+.d-aviso.ver{display:block}
 .d-buscar{display:flex;align-items:center;gap:10px;padding:0 10px;min-height:56px;cursor:text;margin-bottom:12px;border-image-source:var(--m-pino)}
 .d-buscar:focus-within{border-image-source:var(--m-ambar)}
 .d-buscar .ico{width:24px;height:24px;color:var(--bruma)}

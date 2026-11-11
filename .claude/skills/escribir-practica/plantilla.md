@@ -5,9 +5,6 @@ modulo: mN
 origen: ""                # claseNN (AAAA-MM-DD) — ejercicio del profesor | sección N.N del mapa
 titulo: ""
 apunte: "[texto](ruta.md)" # el apunte que la respalda (se lee antes, lejos del instrumento)
-tiempo_minimo: ""         # nivel 🔵
-tiempo_natural: ""        # nivel 🟢
-tiempo_motivado: ""       # nivel 🔥
 estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 ---
 
@@ -25,38 +22,13 @@ estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 *Pie en cursiva: qué hay que ver.*
 
 ## Cómo se hace (referencia)
-<!-- F16: una imagen por versión, con su nombre y su indicación dentro (crear-diagrama). Una línea de introducción como máximo; nada de describir con palabras lo que la imagen muestra. Los niveles solo prescriben cantidades. -->
+<!-- F16: una imagen por versión, con su nombre y su indicación dentro (crear-diagrama). Una línea de introducción como máximo; lo que vale para todas las versiones («metrónomo 60, la 6ª cuerda al aire») va en esa línea. Nada de describir con palabras lo que la imagen muestra. F5: la práctica es libre, sin niveles ni minutos o repeticiones por día. -->
 ![V1, [nombre]: descripción completa de lo que muestra.](img/claseNN-[tema]-v1.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-<!-- F16: cada fila nombra su versión («V1, lenta») o su afinación («ver Afinación N»), y dónde (cuerda, trastes, dedos) si su imagen no lo dice. Una nota por nivel, de dos líneas como máximo. -->
-
-### 🔵 Mínimo — X min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
-|---|---|
-| | |
-
-Metrónomo: sí / no.
-
-### 🟢 Natural — X min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| | |
-
-### 🔥 Motivado — X min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| | |
+<!-- Opcional (F16). Solo si el tempo, la cuerda, los trastes o los dedos cambian por versión y la imagen no lo dice. Si todo es igual en todas, borra la tabla. -->
+| Versión | Tempo | Dónde |
+|---|---|---|
+| V1 | | |
 
 ## Cómo suena cuando está bien
 <!-- Para que juzgue solo, sin preguntar. En canto: cómo suena en la grabación. -->
@@ -70,10 +42,10 @@ Todo el Natural, y además:
 | | | |
 
 ## Afinación del instructor
-<!-- Opcional. Mejoras al ejercicio del profesor para el MISMO objetivo. Si un nivel dice "ver Afinación N", la N debe estar aquí. -->
+<!-- Opcional. Mejoras al ejercicio del profesor para el MISMO objetivo. Si una versión dice "ver Afinación N", la N debe estar aquí. -->
 
 ## Hasta cuándo / cuándo ya está
-<!-- Tarea de la academia: hasta la próxima clase (y qué video grabar si lo piden). Del mapa: el criterio honesto para pasar. -->
+<!-- Tarea de la academia: hasta la próxima clase (y qué video grabar si lo piden). Del mapa: el criterio honesto para pasar. Aquí van también las condiciones para subir de tempo o de versión (F5), sin referirse a niveles. -->
 
 ## Qué sigue
 <!-- El paso siguiente: la sección del mapa o la tarea que continúa esta. -->

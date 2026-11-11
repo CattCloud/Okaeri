@@ -21,7 +21,7 @@ Lee completos:
 3. **F9 · Atemporal** (apuntes). Referencias a la conversación del día, disculpas o comentarios sobre el sistema.
 4. **R3 · Tono.** Cualquier reproche por ausencias o faltas.
 5. **F6 · Muleta en prácticas.** ¿Muestra una forma de acorde, una letra o una melodía que debe salir de memoria?
-6. **F5 · Niveles.** ¿Cada fila tiene cifras exactas? ¿La suma de "Cuánto" coincide con los minutos del título? ¿Cada nivel incluye al anterior?
+6. **F5 · Práctica libre.** ¿Quedó algún nivel (mínimo, natural, motivado), cronómetro o minutos y repeticiones prescritos por día? ¿El tempo y el dónde de cada versión están en «Cómo se hace» y no se perdieron? ¿«Hasta cuándo» no se refiere a niveles?
 7. **F8 · Ejemplos visuales.** ¿Nombra una forma, posición o comparación sin su diagrama?
 8. **Coherencia.** ¿Las secciones y módulos citados existen en el temario? ¿Lo que dice choca con `sistema/estado/estado_actual.md` o con el perfil?
 9. **Errores comunes** (prácticas). ¿La rutina induce alguno: tocar de corrido sin trocear, velocidad antes que precisión, repetir lo que ya sale?

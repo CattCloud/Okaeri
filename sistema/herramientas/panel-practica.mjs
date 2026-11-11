@@ -43,7 +43,6 @@ const claveDe = (nombre) => apuntePorArchivo[nombre] || practicaPorArchivo[nombr
 const raw = fs.readFileSync(archivo, 'utf8');
 const fm = (k) => (raw.match(new RegExp('^' + k + ': "?([^"\\n]*)', 'm')) || [])[1];
 const md = raw.replace(/^---[\s\S]*?\n---\n/, '');
-const mins = ['tiempo_minimo', 'tiempo_natural', 'tiempo_motivado'].map((k) => parseInt(fm(k))).join(' · ') + ' min';
 const dirImg = rel.replace(/[^/]+$/, '');
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const inl = (t) => esc(t.replace(/\p{Extended_Pictographic}\uFE0F?\s?/gu, ''))
@@ -99,28 +98,13 @@ for (const l of md.split('\n')) {
 }
 const cita = secs._top.join('\n').match(/^> (.+)$/m);
 if (!cita) falla('la práctica no tiene su línea de introducción con «> »');
-let h = `<div class="p-meta only-personal"><span class="pr-chip curso"><i></i>En curso</span><span class="pill"><svg class="icon"><use href="#i-clock"/></svg>${mins}</span><span class="pill">${esc(fm('origen'))}</span></div>\n`;
+let h = `<div class="p-meta only-personal"><span class="pr-chip curso"><i></i>En curso</span><span class="pill">${esc(fm('origen'))}</span></div>\n`;
 h += `<blockquote>${inl(cita[1])}</blockquote>\n`;
 
 for (const s of orden) {
   const L = secs[s];
   if (s.startsWith('Los 3 niveles')) {
-    const partes = L.join('\n').split(/^### /m);
-    h += `<h4>Los 3 niveles del día</h4>\n${render(partes[0].split('\n'))}\n<div class="levels">\n`;
-    partes.slice(1).forEach((p, i) => {
-      const [cab, ...resto] = p.split('\n');
-      const m = cab.match(/^\S+\s+(\S+) — (\d+ min)(?: \((.+)\))?/);
-      if (!m) falla(`no entiendo la cabecera de nivel: ${cab}`);
-      const sub = m[3] ? ` <span class="sub">${esc(m[3])}</span>` : '';
-      let cuerpo = '';
-      for (const b of bloques(resto)) {
-        if (b[0].startsWith('|')) cuerpo += tabla(b);
-        else if (/^Todo el /.test(b[0])) cuerpo += `<p class="inc">${inl(b.join(' '))}</p>`;
-        else cuerpo += `<p>${inl(b.join(' '))}</p>`;
-      }
-      h += `<div class="level"><div class="level-head"><span class="bars l${i + 1}" aria-hidden="true"><b></b><b></b><b></b></span>${m[1]}${sub}<span class="mins">${m[2]}</span></div><div class="level-body">${cuerpo}</div></div>\n`;
-    });
-    h += '</div>\n';
+    falla('la práctica aún trae «Los 3 niveles del día»: ya no existen (F5, decisión 2026-11-10). Quita la sección antes de pasarla al panel.');
   } else if (s.startsWith('Hasta cuándo')) {
     const txt = (bloques(L).map((b) => b.join(' ')).find((t) => t.includes('**')) || '').trim();
     const negritas = [...txt.matchAll(/\*\*[^*]+\*\*/g)];

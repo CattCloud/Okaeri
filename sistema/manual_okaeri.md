@@ -64,7 +64,7 @@ La interpretación atraviesa todo desde el primer módulo: un acorde solo ya se 
 
 El protocolo viejo era *explico → tocas → me respondes → sigo*. Exigía soltar la guitarra, escribir, esperar y volver por cada movimiento: no era practicar, era chatear con la guitarra al lado. El usuario lo identificó como una de las causas del fallo del piano.
 
-Un bloque completo trae resuelto por adelantado lo que antes se preguntaba: qué hacer, cuánto, cómo suena bien y qué hacer si sale mal (skill `sesion`). El silencio pasa a significar que está tocando. Los 3 niveles del día (F5) existen porque el ánimo varía: un día sin ganas también cumple si hace el mínimo.
+Un bloque completo trae resuelto por adelantado lo que antes se preguntaba: qué hacer, cuánto, cómo suena bien y qué hacer si sale mal (skill `sesion`). El silencio pasa a significar que está tocando. Desde 2026-11-10 la práctica es libre (F5): no hay niveles ni minutos por día, y el usuario decide cuánto toca cada versión. El piso semanal de presencia sigue en R9.
 
 ---
 

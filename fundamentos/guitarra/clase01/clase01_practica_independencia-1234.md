@@ -4,9 +4,6 @@ modulo: m1
 origen: clase01 (2026-09-01) — ejercicio del profesor
 titulo: "El 1-2-3-4: independencia de dedos y pisada limpia"
 apunte: "[La tablatura (TAB)](clase01_tablatura.md) · [Los dedos de la mano izquierda](clase01_dedos-mano-izquierda.md)"
-tiempo_minimo: "5 min"
-tiempo_natural: "12 min"
-tiempo_motivado: "20 min"
 estado: EN-CURSO
 ---
 # 🎸 Práctica — El 1-2-3-4 (la "araña")
@@ -34,41 +31,14 @@ Cada imagen es una versión, escrita en [tablatura (TAB)](clase01_tablatura.md).
 
 ![V4, moviéndose: solo en la 6ª cuerda, cuatro posiciones, trastes 1 a 4, 2 a 5, 3 a 6 y 4 a 7; el dedo 1 siempre en el primer traste del grupo. De la posición 1 a la 4 y de vuelta es una pasada.](img/clase01-1234-v4.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras**, sin culpa y sin "una más". Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
+| Versión | Tempo |
 | --- | --- |
-| V1, lenta | 1 ciclo (~2 min) |
-| V2 | 1 ciclo (~2 min) |
-| Presión mínima (ver Afinación 1) | 3ª cuerda, trastes 1-2-3 con los dedos 1-2-3, una vez cada nota (~1 min) |
+| V1 | Lenta, sin metrónomo y con los dedos cerca de las cuerdas (ver Afinación 2); con [metrónomo](clase01_ritmo-basico.md) a 60, una nota por clic |
+| V2 | Sin metrónomo |
+| V3 | Sin metrónomo |
+| V4 | Sin metrónomo |
 
-Sin metrónomo.
-
-### 🟢 Natural — 12 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-| --- | --- |
-| **V3** | 2 ciclos, de la 6ª a la 1ª y de vuelta (~5 min) |
-| V1 con dedos cerca (ver Afinación 2) | 1 ciclo (~2 min) |
-
-Sin metrónomo.
-
-### 🔥 Motivado — 20 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-| --- | --- |
-| V4, solo en la 6ª cuerda | 4 pasadas, de la posición 1 a la 4 y de vuelta (~1 min cada una) |
-| **V1 con metrónomo a 60**, una nota por clic | ~4 min |
-
-El [metrónomo](clase01_ritmo-basico.md) va solo en la versión que ya suena limpia sin él (hoy, V1). Cuando V1 salga pareja con metrónomo, pasa a V2.
+Además, la presión mínima (ver Afinación 1): en la 3ª cuerda, trastes 1-2-3 con los dedos 1-2-3, una vez cada nota.
 
 ## Cómo suena cuando está bien
 
@@ -94,7 +64,9 @@ El [metrónomo](clase01_ritmo-basico.md) va solo en la versión que ya suena lim
 
 ## Hasta cuándo / cuándo ya está
 
-Tarea de la clase 1. No se "aprueba": queda como **calentamiento de la mano izquierda** (el nivel 🔵 Mínimo, 5 min) antes de cada sesión de guitarra. **Como ejercicio está lista** cuando la V3 sale limpia dos ciclos seguidos.
+Tarea de la clase 1. No se "aprueba": se incorpora a tu práctica y puedes volver a ella cuando quieras calentar la mano izquierda. **Como ejercicio está lista** cuando la V3 sale limpia dos ciclos seguidos.
+
+El metrónomo va solo en la versión que ya suena limpia sin él (hoy, V1). Cuando V1 salga pareja con metrónomo, pasa a V2.
 
 ## Qué sigue
 

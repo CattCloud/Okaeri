@@ -5,9 +5,6 @@ modulo: m8
 origen: clase08 (2026-10-20) — ejercicio del profesor
 titulo: "Arpegio: 5 fragmentos con metrónomo"
 apunte: "pendiente — p-i-m-a (concepto 8 de la cola, en `sistema/estado/estado_actual.md`)"
-tiempo_minimo: "5 min"
-tiempo_natural: "10 min"
-tiempo_motivado: "15 min"
 estado: EN-CURSO
 ---
 
@@ -21,7 +18,7 @@ Trabajas la **mano derecha**. Un **arpegio** es tocar las cuerdas de una en una,
 
 ## Cómo se hace (referencia)
 
-Cada imagen es una versión en [TAB](../clase01/clase01_tablatura.md); el color del número dice qué [dedo](../clase01/clase01_dedos-mano-izquierda.md) de la mano izquierda pisa. Cada compás tiene 4 notas, una por clic del [metrónomo](../clase01/clase01_ritmo-basico.md).
+Se empieza con el metrónomo en 60 y mirando la TAB. Cada imagen es una versión en [TAB](../clase01/clase01_tablatura.md); el color del número dice qué [dedo](../clase01/clase01_dedos-mano-izquierda.md) de la mano izquierda pisa. Cada compás tiene 4 notas, una por clic del [metrónomo](../clase01/clase01_ritmo-basico.md).
 
 ![V1, fragmento 1: TAB de cuatro compases; p toca la 6ª cuerda al aire, i la 3ª al aire, m la 2ª al aire y a la 1ª en los trastes 5, 3, 2 y 0, uno por compás. El 5 va en azul (dedo 4), el 3 en naranja (dedo 2) y el 2 en rojo (dedo 1).](img/clase08-arpegio-1.png)
 
@@ -33,49 +30,12 @@ Cada imagen es una versión en [TAB](../clase01/clase01_tablatura.md); el color 
 
 ![V5, fragmento 5: igual que V4, pero la 1ª cuerda toca los trastes 5, 3, 5 y 2.](img/clase08-arpegio-5.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
+| Versión | Tempo (metrónomo) |
 |---|---|
-| V1, metrónomo 60 | 1 min |
-| V2, metrónomo 60 | 1 min |
-| V3, metrónomo 60 | 1 min |
-| V4, metrónomo 60 | 1 min |
-| V5, metrónomo 60 | 1 min |
+| V1, V2 y V3 | 60 → 70 → 80 |
+| V4 y V5 | 60 → 70 |
 
-Mirando la TAB. Si un compás tropieza, ver Afinación 2.
-
-### 🟢 Natural — 10 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V1, metrónomo 70 (ver Afinación 1) | 1 min |
-| V2, metrónomo 70 | 1 min |
-| V3, metrónomo 70 | 1 min |
-| V4, metrónomo 70 | 1 min |
-| V5, metrónomo 70 | 1 min |
-
-Sube a 70 solo la versión que ya cumple la Afinación 1; las demás siguen en 60.
-
-### 🔥 Motivado — 15 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V1, metrónomo 80 | 1 min |
-| V2, metrónomo 80 | 1 min |
-| V3, metrónomo 80 | 1 min |
-| V1, metrónomo 60, sin mirar la TAB (ver Afinación 3) | 1 min |
-| V4, metrónomo 60, sin mirar la TAB | 1 min |
-
-Sube a 80 solo la versión que ya cumple la Afinación 1 en 70; las demás siguen en 70.
+V1 y V4 también se tocan sin mirar la TAB, a 60 (ver Afinación 3). Si un compás tropieza, ver Afinación 2.
 
 ## Cómo suena cuando está bien
 
@@ -97,7 +57,7 @@ Las cuatro notas de cada compás suenan al mismo volumen y separadas por la mism
 
 ## Hasta cuándo / cuándo ya está
 
-Es tarea de la academia: hasta la próxima clase (martes 27-oct). **Está lista** cuando cada versión, de V1 a V5, sale limpia a 70 con la TAB delante, 4 compases seguidos, dos días seguidos; y V1 y V4 también salen sin mirarla, a 60. Si en clase el profesor llegó a una velocidad mayor, esa es tu meta.
+Es tarea de la academia: hasta la próxima clase (martes 27-oct). **Está lista** cuando cada versión, de V1 a V5, sale limpia a 70 con la TAB delante, 4 compases seguidos, dos días seguidos; y V1 y V4 también salen sin mirarla, a 60. Sube el metrónomo de una versión (de 60 a 70 y, en V1, V2 y V3, de 70 a 80) solo cuando esa versión te salió limpia dos veces seguidas en la velocidad actual; las demás siguen donde están (ver Afinación 1). Si en clase el profesor llegó a una velocidad mayor, esa es tu meta.
 
 ## Qué sigue
 

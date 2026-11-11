@@ -110,19 +110,11 @@ function revisarPractica(lineas, fm, aviso) {
   for (const s of cfg.secciones) {
     if (!titulos.some((t) => new RegExp(s.patron, 'i').test(t.l))) aviso(s.regla, `falta la sección "${s.nombre}"`);
   }
-  for (const e of cfg.niveles) {
-    const t = titulos.find((x) => x.l.startsWith('### ' + e));
-    if (!t) aviso('F5', `falta el nivel ${e}`);
-    else if (!/\d+(\.\d+)?\s*min/.test(t.l)) aviso('F5', `el nivel ${e} no dice sus minutos en el título`, t.i + 1);
-  }
+  // F5 (2026-11-10): la práctica es libre; no quedan niveles ni sus campos de tiempo.
+  const reNiveles = new RegExp(cfg.sin_niveles);
+  lineas.forEach((l, i) => { if (reNiveles.test(l)) aviso('F5', `las prácticas ya no llevan niveles ni tiempos por nivel: "${l.trim().slice(0, 60)}"`, i + 1); });
   if (lineas.some((l) => /ver Afinaci[oó]n/i.test(l)) && !titulos.some((t) => /^## Afinación del instructor/i.test(t.l))) {
     aviso('F4', 'cita "ver Afinación" pero no existe la sección "## Afinación del instructor"');
-  }
-  const inicio = lineas.findIndex((l) => l.startsWith('### ' + cfg.niveles[0]));
-  if (inicio >= 0) {
-    for (let i = inicio; i < lineas.length && !/^## /.test(lineas[i]); i++) {
-      if (/^\|/.test(lineas[i]) && /\b\d+\s*-\s*\d+\s*min\b/.test(lineas[i])) aviso('F5', `rango vago de minutos en un nivel: "${lineas[i].trim().slice(0, 80)}"`, i + 1);
-    }
   }
 }
 

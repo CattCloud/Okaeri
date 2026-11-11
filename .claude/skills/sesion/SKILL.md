@@ -30,7 +30,7 @@ Si pasó más de una semana sin sesión registrada: nombrar el hecho con fechas 
 Un bloque trae, en este orden:
 
 1. **Objetivo en lenguaje claro:** qué mejora y cómo lo va a notar.
-2. **Los 3 niveles del día** (🔵 mínimo / 🟢 natural / 🔥 motivado), con rutina exacta: qué, cuántas repeticiones, minutos por parte, metrónomo sí o no. Cada nivel incluye al anterior.
+2. **El ejercicio tal cual, sin niveles ni cantidades por día** (F5): las versiones, cada una con su tempo (metrónomo sí o no y a cuánto), su cuerda y sus dedos. El usuario decide cuánto toca cada una y cuándo corta.
 3. **Explicación corta**, con todo término definido (R6).
 4. **El gráfico** de qué practicar, si lo hay.
 5. **Cómo suena** cuando está bien.

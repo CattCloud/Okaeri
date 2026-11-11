@@ -131,7 +131,7 @@ components:
     backgroundColor: "{colors.noche}"
     textColor: "{colors.niebla}"
     rounded: "{rounded.none}"
-    width: "27rem"
+    width: "36rem"
     padding: "16px 20px 48px"
   drawer-item:
     textColor: "{colors.niebla}"
@@ -265,7 +265,7 @@ Marco pixel tinta, padding .9rem 1.2rem. Clave sobre crema (1.25rem/1.5); repaso
 Tabla con borde de 3 px tinta, cabecera crema en Jersey 1.375rem con filete de 3 px, filas separadas por 2 px `linea`, números tabulares; desplaza en horizontal con indicación de sombra y foco por teclado. Figuras a todo ancho sobre blanco con pie en caption.
 
 ### Drawer
-Panel de 27rem (máx. 92vw) sobre `noche`, borde de 6 px `pino`, entra por la izquierda (≥1200 px) o la derecha en 350 ms. Contiene, en orden: cabecera con cierre, fila de sonido, buscador (marco pino, ámbar al enfocar), la ruta con sus prácticas colgando del apunte por un conector de píxel, otros módulos y las clases en orden. Ítem activo: fondo `bosque`, texto ámbar. Al abrirse, el fondo queda `inert`.
+Panel de 36rem (máx. 92vw) sobre `noche`, borde de 6 px `pino`, entra por la izquierda (≥1200 px) o la derecha en 350 ms. Contiene, en orden: cabecera con el botón de sonido (solo icono, 52 px, ámbar si suena) y el cierre, aviso de audio solo cuando hace falta, buscador (marco pino, ámbar al enfocar), la ruta con sus prácticas colgando del apunte por un conector de píxel, otros módulos y las clases en orden. Ítem activo: fondo `bosque`, texto ámbar. Al abrirse, el fondo queda `inert`.
 
 ### Scene (escena)
 Lienzo `canvas` con `image-rendering: pixelated`, personajes en `auto`, bordes superior e inferior en corte recto. Pausada cuando está fuera de pantalla. Dos escenas por módulo: fogata (ámbar) y muelle (lago); el cambio ocurre a mitad del módulo. Entre las dos escenas hay una franja de papel (`.paso`, blanca y a todo el ancho) con una sola línea dorada (`#d09431`) de 2 pixeles del arte de grosor (10 px en escritorio, 8 en tableta, 6 o 4 en móvil), de borde a borde, sin adorno y sin margen (las dos escenas la tocan): el corte entre escenas es minimalista (decisión del usuario, 2026-11-10). Entre apuntes de la misma escena (`.sep`) van tres cuerdas doradas (`#d09431`) con una roseta chica al centro (núcleo `#f7af3a`), de unos 36 px de alto y dentro de la columna del apunte: el motivo de las cuerdas, ya sin el corte entre escenas, que ahora es una sola línea dorada a todo el ancho. La rama con luciérnagas (`ramita()`) y el adorno de rizos (`rizos()`) quedan disponibles en `separadores.cjs` como alternativas. Ambos son estáticos; en la franja entre escenas empieza el fundido de sonido a pantano.

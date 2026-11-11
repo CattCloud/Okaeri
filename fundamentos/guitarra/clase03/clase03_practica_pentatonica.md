@@ -5,9 +5,6 @@ modulo: m8
 origen: clase03 (2026-09-15) — ejercicio del profesor
 titulo: "La pentatónica de La menor, posición 1"
 apunte: "[La pentatónica de La menor](clase03_la-pentatonica.md)"
-tiempo_minimo: "5 min"
-tiempo_natural: "8 min"
-tiempo_motivado: "12 min"
 estado: EN-CURSO
 ---
 
@@ -23,7 +20,7 @@ Trabajas las dos manos a la vez. **Mano izquierda:** la caja completa bajo los d
 
 ## Cómo se hace (referencia)
 
-Siempre: la mano izquierda quieta en la caja, con el dedo 1 en el traste 5. Con metrónomo, una nota por clic.
+Siempre: la mano izquierda quieta en la caja, con el dedo 1 en el traste 5. Con metrónomo, una nota por clic, salvo donde la tabla diga sin metrónomo.
 
 ![V1, subir y bajar: TAB con la vuelta completa. Subiendo, dos notas por cuerda de la 6ª a la 1ª: trastes 5 y 8 en la 6ª, 5 y 7 en la 5ª, 4ª y 3ª, 5 y 8 en la 2ª y la 1ª; bajando, lo mismo al revés hasta la 6ª. El 5 va en rojo (dedo 1), el 7 en verde (dedo 3) y el 8 en azul (dedo 4).](img/clase03-pentatonica-v1.png)
 
@@ -31,36 +28,13 @@ Siempre: la mano izquierda quieta en la caja, con el dedo 1 en el traste 5. Con 
 
 ![V3, diciendo las notas: la TAB de V1 con el nombre de cada nota debajo: La, Do, Re, Mi, Sol, La, Do, Re, Mi, Sol, La, Do subiendo y lo mismo al revés bajando; las La van en rojo.](img/clase03-pentatonica-v3.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
+| Versión | Tempo |
 |---|---|
-| V1, lenta, mirando la imagen, sin metrónomo, cuidando que cada nota suene limpia | 2 min |
-| V1, metrónomo 60, mirando la imagen solo si te pierdes | 3 min |
+| V1 | Lenta, mirando la imagen y sin metrónomo; después, sin mirarla, con metrónomo 60 o 70 |
+| V2 | La primera vuelta lenta y sin metrónomo; después, metrónomo 60 |
+| V3 | Lenta, sin metrónomo |
 
-### 🟢 Natural — 8 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V1, sin mirar la imagen, metrónomo 60 | 2 min |
-| V2, la primera vuelta lenta y sin metrónomo, después con metrónomo 60 | 1 min |
-
-Si te pierdes sin mirar, termina la vuelta como salga y compruébala al final (ver Verificación).
-
-### 🔥 Motivado — 12 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V1, metrónomo 70 | 2 min |
-| V3, lenta, sin metrónomo | 2 min |
+Si te pierdes sin mirar la imagen, termina la vuelta como salga y compruébala al final (ver Verificación).
 
 ## Cómo suena cuando está bien
 

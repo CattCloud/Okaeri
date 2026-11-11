@@ -4,9 +4,6 @@ modulo: m3
 origen: clase01 (2026-09-01) — ejercicio del profesor
 titulo: "Figuras con metrónomo"
 apunte: "[Ritmo básico](clase01_ritmo-basico.md)"
-tiempo_minimo: "5 min"
-tiempo_natural: "10 min"
-tiempo_motivado: "15 min"
 estado: EN-CURSO
 ---
 
@@ -24,7 +21,7 @@ Se toca en una sola cuerda al aire, la 6ª, porque el ejercicio es de tiempo y n
 
 ## Cómo se hace (referencia)
 
-Siempre: metrónomo en 60, la 6ª cuerda al aire y contando en voz alta 1-2-3-4. Cada imagen es una versión; las figuras están explicadas en [Ritmo básico](clase01_ritmo-basico.md).
+Siempre: metrónomo en 60 (aquí el metrónomo es el ejercicio), la 6ª cuerda al aire y contando en voz alta 1-2-3-4. Cada imagen es una versión; las figuras están explicadas en [Ritmo básico](clase01_ritmo-basico.md).
 
 ![V1, negras: dos compases de 4/4 con cuatro negras cada uno, una en cada tiempo, con los números 1, 2, 3 y 4 debajo.](img/clase01-figuras-v1.png)
 
@@ -36,39 +33,7 @@ Siempre: metrónomo en 60, la 6ª cuerda al aire y contando en voz alta 1-2-3-4.
 
 ![V5, test del reloj: cuatro compases de negras; en el primero el metrónomo está prendido, en el segundo y el tercero (en gris) está apagado y en el cuarto se prende otra vez, con la pregunta «¿tu nota cae sobre el clic?».](img/clase01-figuras-v5.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
-|---|---|
-| V1, metrónomo 60 | 2 min |
-| V2, metrónomo 60 | 1 min 30 s |
-| V3, metrónomo 60 | 1 min 30 s |
-
-El metrónomo va en todos los niveles: en esta práctica, el metrónomo es el ejercicio.
-
-### 🟢 Natural — 10 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V4, metrónomo 60 | 3 min |
-| El 1-2-3-4 subiendo (la primera versión de [El 1-2-3-4](clase01_practica_independencia-1234.md)): de la 6ª a la 1ª cuerda, trastes 1-4 con los dedos 1-4, metrónomo 60, una nota por clic | 2 min |
-
-Con el 1-2-3-4 se juntan las dos tareas de la clase 1.
-
-### 🔥 Motivado — 15 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V5, metrónomo 60 | 3 min |
-| V1, metrónomo 70 (solo si V5 te salió cuadrado; si no, V5 otra vez a 60) | 2 min |
+Con la primera versión de [El 1-2-3-4](clase01_practica_independencia-1234.md), subiendo con metrónomo 60 y una nota por clic, se juntan las dos tareas de la clase 1.
 
 ## Cómo suena cuando está bien
 
@@ -88,7 +53,7 @@ Tu nota y el clic suenan tan juntos que parecen un solo sonido. Si escuchas «cl
 
 ## Hasta cuándo / cuándo ya está
 
-Fue la tarea de la clase 1 y no se «aprueba»: se incorpora. Contar en voz alta acompaña toda práctica con ritmo hasta que el conteo salga solo, por dentro. **Está lista** cuando pasas V5, el test del reloj, en tres días seguidos de nivel Motivado.
+Fue la tarea de la clase 1 y no se «aprueba»: se incorpora. Contar en voz alta acompaña toda práctica con ritmo hasta que el conteo salga solo, por dentro. **Está lista** cuando pasas V5, el test del reloj, en tres días seguidos. Cuando V5 te sale cuadrado, sube V1 a metrónomo 70.
 
 ## Qué sigue
 

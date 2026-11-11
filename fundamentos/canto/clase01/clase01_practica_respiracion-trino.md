@@ -4,9 +4,6 @@ modulo: canto/m1
 origen: "clase01 canto (2026-09-03) — ejercicios del profesor"
 titulo: "Aire y trino: el calentamiento base"
 apunte: "[Respirar para cantar](clase01_respiracion.md)"
-tiempo_minimo: "5 min"
-tiempo_natural: "10 min"
-tiempo_motivado: "14 min"
 estado: EN-CURSO
 ---
 
@@ -36,38 +33,11 @@ Los ejercicios usan dos sonidos. El **siseo** es una «sssss» pareja y larga. E
 
 ![V5, nota sostenida con grabadora: una línea recta de unos 8 segundos marcada «ahhh», con volumen estable y sin temblor grande; al pie, la indicación de grabar las 4 notas y escucharlas al final.](img/clase01-aire-v5.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
+| Versión | Qué buscar |
 |---|---|
-| V1, manos puestas | 4 respiraciones lentas (~1 min) |
-| V2, buscando 5 s o más en cada intento | 4 intentos (~2 min) |
-| V4, solo la sirena, suave | 6 sirenas (~2 min) |
-
-Sin grabadora y sin metrónomo.
-
-### 🟢 Natural — 10 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V3, anota el mejor tiempo | 4 siseos (~2.5 min) |
-| V2, buscando 10 s o más | 3 intentos (~1.5 min) |
-| V4, solo el sostenido, en la misma nota | 4 trinos de ~5 s (~1 min) |
-
-### 🔥 Motivado — 14 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V5, con grabadora; escúchala al final | 4 notas de ~8 s (~2.5 min) |
-| V4, solo la sirena, más amplia: hasta el borde cómodo, sin empujar | 6 sirenas (~1.5 min) |
+| V2 | 5 s o más en cada intento, y luego 10 s o más |
+| V3 | Anota tu mejor tiempo |
+| V4 | Sirena: empieza suave y amplía hasta el borde cómodo, sin empujar; el sostenido, siempre en la misma nota |
 
 ## Cómo suena cuando está bien
 

@@ -5,9 +5,6 @@ modulo: m6
 origen: clase03 (2026-09-15) — ejercicio del profesor
 titulo: "Lectura rítmica con corcheas"
 apunte: "[La corchea: media negra](clase03_la-corchea.md)"
-tiempo_minimo: "5 min"
-tiempo_natural: "10 min"
-tiempo_motivado: "15 min"
 estado: EN-CURSO
 ---
 # 🎸 Práctica — Lectura rítmica con corcheas
@@ -24,7 +21,7 @@ En un par de corcheas, la primera nota va con el clic y la segunda en la «y», 
 
 ## Cómo se hace (referencia)
 
-Siempre: metrónomo en 60, la 6ª cuerda al aire y la cuenta en voz alta, «1 y 2 y 3 y 4 y». Antes de tocar cada versión, dila una vez sin guitarra. Las figuras están en [La corchea](clase03_la-corchea.md).
+Siempre: metrónomo en 60, la 6ª cuerda al aire, cada ejercicio en bucle hasta que salga 2 veces seguidas, y la cuenta en voz alta, «1 y 2 y 3 y 4 y». Antes de tocar cada versión, dila una vez sin guitarra. Las figuras están en [La corchea](clase03_la-corchea.md).
 
 ![V1, ejercicio 1: dos compases de 4/4; el primero con cuatro negras y el segundo con par de corcheas, negra, par de corcheas y negra. Debajo, la cuenta 1 2 3 4, con una «y» roja donde cae la segunda corchea de cada par.](img/clase03-lectura-v1.png)
 
@@ -44,40 +41,7 @@ Siempre: metrónomo en 60, la 6ª cuerda al aire y la cuenta en voz alta, «1 y 
 
 ![V9, test del reloj: el ejercicio 5 en bucle en cuatro cajas; en la primera el metrónomo está prendido, en la segunda y la tercera (en gris) está apagado y en la cuarta se prende otra vez, con la pregunta «¿tu nota cae sobre el clic?».](img/clase03-lectura-v9.png)
 
-## ⏱️ Los 3 niveles del día — elige según cómo amaneciste
-
-**Pon cronómetro. Cuando suena, paras.** Cada nivel incluye al anterior.
-
-### 🔵 Mínimo — 5 min (día sin ganas; hecho esto, CUMPLISTE)
-
-| Qué | Cuánto |
-|---|---|
-| V1, en bucle hasta que salga 2 veces seguidas | 1 min |
-| V2, igual | 1 min |
-| V3, igual | 1 min 30 s |
-| V4, igual | 1 min 30 s |
-
-El metrónomo va en todos los niveles, en 60.
-
-### 🟢 Natural — 10 min (el día normal)
-
-Todo el Mínimo, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V5, en bucle hasta que salga 2 veces seguidas | 1 min 30 s |
-| V6, igual | 1 min 30 s |
-| El ejercicio que peor salió hoy, solo, en bucle | 2 min |
-
-### 🔥 Motivado — 15 min
-
-Todo el Natural, y además:
-
-| Qué | Cuánto |
-|---|---|
-| V7, en bucle hasta que salga 2 veces seguidas | 1 min 30 s |
-| V8, igual | 1 min 30 s |
-| V9, test del reloj | 2 min |
+Si un ejercicio sale peor que los demás, tócalo solo, en bucle.
 
 ## Cómo suena cuando está bien
 
