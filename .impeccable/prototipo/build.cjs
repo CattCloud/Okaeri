@@ -1,5 +1,5 @@
 // Prototipo web de Okaeri (superficie system-html, rediseño del universo pixel). Uso: node build.cjs (desde .impeccable/prototipo/)
-// Lee el módulo en curso (M1) de los .md reales, el temario y el índice de clases; convierte las capas del hero; arma las dos escenas animadas
+// Lee los apuntes y prácticas de todos los módulos (cada .md dice el suyo en `modulo:`), el temario y el índice de clases; convierte las capas del hero; arma las dos escenas animadas
 // (fogata y muelle, de .impeccable/mocks/lugares/) con su motor intacto; y escribe index.html + hero/ + img/ junto a este archivo.
 // Las escenas van con imágenes en base64 a propósito: el motor lee píxeles del lienzo (getImageData) y desde file:// una imagen suelta lo bloquearía.
 const fs = require("fs"), path = require("path")
@@ -16,41 +16,55 @@ const leer = f => fs.readFileSync(f, "utf8").replace(/\r/g, "")
 const b64 = (f, t) => `data:${t};base64,` + fs.readFileSync(f).toString("base64")
 const aviso = m => console.warn("AVISO:", m)
 
-// ---------- 1. el módulo en curso: la ruta de apuntes (orden de las clases, R4) y su práctica colgando ----------
-const RUTA = [
-  { k: "notas-y-cuerdas", f: "clase01/clase01_notas-y-cuerdas.md" },
-  { k: "tablatura", f: "clase01/clase01_tablatura.md" },
-  { k: "dedos", f: "clase01/clase01_dedos-mano-izquierda.md", practica: "clase01/clase01_practica_independencia-1234.md" },
-  { k: "diagramas", f: "clase02/clase02_diagramas-de-acorde.md" },
-  { k: "acorde", f: "clase02/clase02_el-acorde.md" },
-  { k: "ocho-acordes", f: "clase02/clase02_los-8-acordes.md", practica: "clase02/clase02_practica_progresiones.md" }
-]
-// ¿hay algo de M1 escrito que la ruta no lleve? Se avisa, no se agrega solo.
-for (const c of fs.readdirSync(GUIT).filter(d => /^clase\d+$/.test(d)))
-  for (const f of fs.readdirSync(path.join(GUIT, c)).filter(x => x.endsWith(".md"))) {
-    const t = leer(path.join(GUIT, c, f)), m = t.match(/^modulo:\s*(\w+)/m), e = t.match(/^estado:\s*(\w+)/m)
-    const rel = `${c}/${f}`
-    if (m && m[1] === "m1" && e && e[1] !== "BORRADOR" && !RUTA.some(r => r.f === rel || r.practica === rel)) aviso(`M1 tiene ${rel} y la ruta del prototipo no lo incluye`)
+// ---------- 1. los apuntes de todos los módulos: cada .md dice el suyo en `modulo:`; el orden es el de las clases (R4) ----------
+const EN_CURSO = 1   // el módulo que la franja abre ya elegido (marcador de guitarra en sistema/estado/estado_actual.md)
+// dentro de una misma clase el orden es el de enseñanza; lo que esta lista no nombra va después, por nombre de archivo
+const ORDEN_EN_CLASE = ["clase01_notas-y-cuerdas.md", "clase01_tablatura.md", "clase01_dedos-mano-izquierda.md"]
+const bloqueFm = t => (t.match(/^---\n([\s\S]*?)\n---/) || [])[1] || ""
+const campo = (b, k) => ((b.match(new RegExp(`^${k}:\\s*(.*)$`, "m")) || [])[1] || "").trim().replace(/^"(.*)"$/, "$1")
+const archivos = []
+for (const c of fs.readdirSync(GUIT).filter(d => /^clase\d+$/.test(d)).sort())
+  for (const f of fs.readdirSync(path.join(GUIT, c)).filter(x => x.endsWith(".md")).sort()) {
+    const b = bloqueFm(leer(path.join(GUIT, c, f))), mod = campo(b, "modulo").match(/^m([1-9])$/i), tipo = campo(b, "tipo"), estado = campo(b, "estado")
+    if (!mod || !["apunte", "practica"].includes(tipo)) { aviso(`${c}/${f}: sin modulo o sin tipo (apunte/practica); no entra`); continue }
+    if (estado === "BORRADOR") continue
+    archivos.push({ rel: `${c}/${f}`, f, tipo, mod: +mod[1], estado, apunte: campo(b, "apunte") })
   }
+const claseDe = rel => +rel.match(/^clase(\d+)/)[1]
+const rango = rel => { const i = ORDEN_EN_CLASE.indexOf(path.basename(rel)); return i < 0 ? 99 : i }
+const orden = (a, b) => a.mod - b.mod || claseDe(a.f) - claseDe(b.f) || rango(a.f) - rango(b.f) || a.f.localeCompare(b.f)
+const claveArchivo = rel => path.basename(rel, ".md").replace(/^clase\d+_/, "").replace(/^practica_/, "")
+
+const RUTA = archivos.filter(a => a.tipo === "apunte").map(a => ({ k: claveArchivo(a.rel), f: a.rel, mod: a.mod, estado: a.estado })).sort(orden)
+// una práctica cuelga del último apunte (en orden de ruta) que nombra en `apunte:`; si no nombra ninguno que exista, entra suelta en su módulo
+for (const pr of archivos.filter(a => a.tipo === "practica")) {
+  const citados = [...pr.apunte.matchAll(/\]\(([^)]+\.md)\)/g)].map(m => path.basename(m[1]))
+  const host = RUTA.filter(r => citados.includes(path.basename(r.f))).pop()
+  if (host && !host.practica) { host.practica = pr.rel; if (host.mod !== pr.mod) aviso(`${pr.rel} es de M${pr.mod} y cuelga de ${host.f} (M${host.mod})`) }
+  else { if (host) aviso(`${host.f} ya tiene práctica; ${pr.rel} entra suelta`); RUTA.push({ k: claveArchivo(pr.rel), f: pr.rel, mod: pr.mod, estado: pr.estado, solo: true }) }
+}
+RUTA.sort(orden)
+const repetidas = RUTA.map(r => r.k).filter((k, i, a) => a.indexOf(k) !== i)
+if (repetidas.length) throw new Error("claves repetidas entre apuntes: " + [...new Set(repetidas)].join(", "))
 
 const IMG = new Map()   // ruta absoluta de la imagen -> nombre en img/
-const claveDe = new Map(RUTA.map(r => [path.basename(r.f), r.k]))
+const enlaceDe = new Map(RUTA.flatMap(r => r.solo ? [[path.basename(r.f), `#a-${r.k}`]] : [[path.basename(r.f), `#a-${r.k}`], ...(r.practica ? [[path.basename(r.practica), `#p-${r.k}`]] : [])]))
 const ctx = {
-  enlaces: archivo => { const k = claveDe.get(path.basename(archivo)); return k ? `#a-${k}` : null },
+  enlaces: archivo => enlaceDe.get(path.basename(archivo)) || null,
   imagen: (abs, original) => {
     if (!fs.existsSync(abs)) { aviso(`imagen que no existe: ${original}`); return original }
     const n = path.basename(abs); if (IMG.has(abs) && IMG.get(abs) !== n) aviso("dos imágenes con el mismo nombre: " + n)
     IMG.set(abs, n); return "img/" + n
   }
 }
+const sinPrefijo = h => h.replace(/^Práctica\s*[—–-]\s*/, "")
 for (const r of RUTA) {
-  r.t = convertir(path.join(GUIT, r.f), ctx)
-  if (r.practica) r.p = convertir(path.join(GUIT, r.practica), ctx)
+  if (r.solo) { r.p = convertir(path.join(GUIT, r.f), ctx); r.t = r.p }   // suelta: la práctica es todo el apunte; su título es el del apunte
+  else { r.t = convertir(path.join(GUIT, r.f), ctx); if (r.practica) r.p = convertir(path.join(GUIT, r.practica), ctx) }
   const o = (r.t.fm.origen || "").match(/clase(\d+)\s*\((\d{4}-\d{2}-\d{2})\)/)
   r.clase = o ? +o[1] : null; r.fecha = o ? o[2] : null; r.seccion = (r.t.fm.secciones_mapa || "").match(/^[\d.]+/)?.[0] || ""
+  r.provisional = /^PROVISIONAL/.test(r.estado)
 }
-const nFog = Math.ceil(RUTA.length / 2)      // impar: la primera mitad lleva uno más
-RUTA.forEach((r, i) => r.escena = i < nFog ? "fogata" : "muelle")
 
 // ---------- 2. temario (nombres de módulos y su resultado) y clases en orden ----------
 const limpia = s => s.replace(/\*\*/g, "").replace(/\p{Extended_Pictographic}\uFE0F?/gu, "").replace(/←.*$/, "").replace(/\s+/g, " ").trim()
@@ -62,6 +76,17 @@ for (let n = 1; n <= 9; n++) {
   const res = (sec.match(/\*\*Resultado:\*\*\s*(.+)/) || [])[1]
   MODS.push({ n, nombre: fila ? limpia(fila[1]) : `Módulo ${n}`, secciones: fila ? +fila[2] : 0, resultado: res ? limpia(res).replace(/^./, c => c.toUpperCase()) : "" })
 }
+for (const m of MODS) {
+  m.rutas = RUTA.filter(r => r.mod === m.n)
+  m.nApuntes = m.rutas.filter(r => !r.solo).length
+  m.nPracticas = m.rutas.filter(r => r.p).length
+  m.enCurso = m.n === EN_CURSO
+  // dos escenas por módulo, fogata y luego muelle: la primera mitad de los apuntes va con la primera (impar: lleva uno más; uno solo = solo fogata)
+  const nFog = Math.ceil(m.rutas.length / 2)
+  m.rutas.forEach((r, i) => r.escena = i < nFog ? "fogata" : "muelle")
+}
+// lo que el navegador necesita de cada módulo (el HTML de sus apuntes va aparte, en <template>)
+const MODS_JS = MODS.map(m => ({ n: m.n, nombre: m.nombre, resultado: m.resultado, nApuntes: m.nApuntes, nPracticas: m.nPracticas, enCurso: m.enCurso, hayMuelle: m.rutas.some(r => r.escena === "muelle"), claves: m.rutas.map(r => r.k) }))
 
 const idx = leer(path.join(RAIZ, "practica", "00_indice.md"))
 const bloqueG = idx.split(/^## .*Guitarra.*$/m)[1].split(/^## /m)[0]
@@ -163,42 +188,56 @@ const fuentes = [
 ].map(([f, w, s, a]) => `@font-face{font-family:"${f}";font-weight:${w};font-style:${s};font-display:swap;src:url(${b64(path.join(AQUI, "fonts", a), "font/woff2")}) format("woff2")}`).join("\n")
 
 const idPrac = r => `p-${r.k}`
-function apunteHtml(r, i) {
-  const meta = [r.clase ? `Clase ${r.clase}` : "", r.fecha ? fechaCorta(r.fecha) : "", r.seccion ? `sección ${r.seccion}` : ""].filter(Boolean).join(" · ")
-  const vista = r.p ? `<div class="vista" role="group" aria-label="Qué lees de este apunte"><button type="button" data-ver="teoria" aria-pressed="true">Teoría</button><button type="button" data-ver="practica" aria-pressed="false">Práctica</button></div>` : ""
-  return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="teoria">
-<header class="ap-cab">
-<h3 class="ap-titulo" tabindex="-1">${r.t.tituloHtml}</h3>
+const tPractica = r => sinPrefijo(r.p.tituloHtml)
+function apunteHtml(r) {
+  const meta = [r.solo ? "Práctica" : "", r.clase ? `Clase ${r.clase}` : "", r.fecha ? fechaCorta(r.fecha) : "", r.seccion ? `sección ${r.seccion}` : "", r.provisional ? "provisional" : ""].filter(Boolean).join(" · ")
+  const cab = `<header class="ap-cab">
+<h3 class="ap-titulo" tabindex="-1">${r.solo ? tPractica(r) : r.t.tituloHtml}</h3>
 ${meta ? `<p class="ap-meta">${esc(meta)}</p>` : ""}
-${vista}
-</header>
+${r.p && !r.solo ? `<div class="vista" role="group" aria-label="Qué lees de este apunte"><button type="button" data-ver="teoria" aria-pressed="true">Teoría</button><button type="button" data-ver="practica" aria-pressed="false">Práctica</button></div>` : ""}
+</header>`
+  // práctica suelta (su apunte aún no existe): es todo el apunte, sin pestañas Teoría/Práctica
+  if (r.solo) return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="practica" data-solo>
+${cab}
+<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}">
+${r.p.html}
+</div>
+</article>`
+  return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="teoria">
+${cab}
 <div class="ap-cuerpo" data-panel="teoria">
 ${r.t.html}
 </div>
 ${r.p ? `<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}" hidden>
-<h4 class="ap-practica">Práctica: ${r.p.tituloHtml.replace(/^Práctica\s*[—–-]\s*/, "")}</h4>
+<h4 class="ap-practica">Práctica: ${tPractica(r)}</h4>
 ${r.p.html}
 </div>` : ""}
 </article>`
 }
 
-function corte(nombre, rs) {
+// el corte es el marco fijo (escena + columna); los apuntes de cada módulo entran en su columna desde las <template>
+function corte(nombre) {
   return `<section class="corte corte-${nombre}" id="corte-${nombre}" aria-label="Apuntes con la escena ${nombre === "fogata" ? "de la fogata" : "del muelle"}">
 <div class="escena escena-${nombre}"><div class="lienzo"><canvas id="c-${nombre}" role="img" aria-label="${esc(ARIA[nombre])}"></canvas><canvas id="pj-${nombre}" class="pj" aria-hidden="true"></canvas></div></div>
-<div class="apuntes">
-${rs.map(apunteHtml).join(`\n<div class="sep" aria-hidden="true">${cuerdas("izq", TRES)}${rosetaChica()}${cuerdas("der", TRES)}</div>\n`)}
-</div>
+<div class="apuntes"></div>
 </section>`
 }
+const SEP = `<div class="sep" aria-hidden="true">${cuerdas("izq", TRES)}${rosetaChica()}${cuerdas("der", TRES)}</div>`
+const buscable = r => (r.t.titulo + " " + r.t.texto + (r.p && !r.solo ? " " + r.p.titulo + " " + r.p.texto : "")).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+const rutaItem = (r, i) => `<li data-t="${esc(buscable(r))}">
+<a class="d-ap" href="#a-${r.k}" data-k="${r.k}"><span class="d-n">${i + 1}</span><span class="d-t">${r.solo ? "Práctica: " + tPractica(r) : r.t.tituloHtml}</span></a>
+${r.p && !r.solo ? `<a class="d-prac" href="#${idPrac(r)}" data-k="${r.k}" data-practica>Práctica: ${tPractica(r)}</a>` : ""}
+</li>`
+// los apuntes de cada módulo no se pintan hasta que se elige el módulo
+const plantillas = MODS.filter(m => m.rutas.length).map(m => {
+  const de = e => m.rutas.filter(r => r.escena === e)
+  return `<template id="m${m.n}-fogata">${de("fogata").map(apunteHtml).join(`\n${SEP}\n`)}</template>
+<template id="m${m.n}-muelle">${de("muelle").map(apunteHtml).join(`\n${SEP}\n`)}</template>
+<template id="m${m.n}-ruta">${m.rutas.map(rutaItem).join("\n")}</template>`
+}).join("\n")
 
-const M1 = MODS[0], M2 = MODS[1]
-const nPrac = RUTA.filter(r => r.p).length
-const mods = MODS.map(m => `<li><button type="button" class="mod${m.n === 1 ? " act" : ""}${m.n === 1 ? "" : " fuera"}" data-mod="${m.n}" aria-pressed="${m.n === 1}" aria-label="Módulo ${m.n}: ${esc(m.nombre)}${m.n === 1 ? ", en curso" : ", sin conectar"}"><span>M${m.n}</span></button></li>`).join("")
-
-const rutaDrawer = RUTA.map((r, i) => `<li data-t="${esc((r.t.titulo + " " + r.t.texto + " " + (r.p ? r.p.titulo + " " + r.p.texto : "")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""))}">
-<a class="d-ap" href="#a-${r.k}" data-k="${r.k}"><span class="d-n">${i + 1}</span><span class="d-t">${r.t.tituloHtml}</span></a>
-${r.p ? `<a class="d-prac" href="#${idPrac(r)}" data-k="${r.k}" data-practica>Práctica: ${r.p.tituloHtml.replace(/^Práctica\s*[—–-]\s*/, "")}</a>` : ""}
-</li>`).join("\n")
+const estadoMod = m => m.enCurso ? "en curso" : m.rutas.length ? "con apuntes" : "sin apuntes aún"
+const mods = MODS.map(m => `<li><button type="button" class="mod${m.n === EN_CURSO ? " act" : ""}${m.rutas.length ? "" : " fuera"}" data-mod="${m.n}" aria-pressed="${m.n === EN_CURSO}" aria-label="Módulo ${m.n}: ${esc(m.nombre)}, ${estadoMod(m)}"><span>M${m.n}</span></button></li>`).join("")
 
 const clasesDrawer = CLASES.map(c => {
   const dest = RUTA.find(r => r.clase === c.n)
@@ -206,7 +245,8 @@ const clasesDrawer = CLASES.map(c => {
   return `<li>${dest ? `<a class="d-ap" href="#a-${dest.k}">${cuerpo}</a>` : `<span class="d-ap d-quieto">${cuerpo}</span>`}</li>`
 }).join("\n")
 
-const otrosDrawer = MODS.slice(1).map(m => `<li><button type="button" class="d-mod" data-mod="${m.n}" aria-disabled="true"><span class="d-n">M${m.n}</span><span class="d-t">${esc(m.nombre)}</span></button></li>`).join("")
+// "Otros módulos": todos menos el que se está leyendo (app.js esconde el actual); los vacíos no llevan a ningún lado
+const otrosDrawer = MODS.map(m => `<li data-mod="${m.n}"><button type="button" class="d-mod" data-mod="${m.n}"${m.rutas.length ? "" : ' aria-disabled="true"'}><span class="d-n">M${m.n}</span><span class="d-t">${esc(m.nombre)}</span></button></li>`).join("")
 
 const HTML = `<!doctype html>
 <html lang="es">
@@ -216,7 +256,7 @@ const HTML = `<!doctype html>
 <meta name="theme-color" content="#040e10">
 <meta name="robots" content="noindex">
 <title>Okaeri</title>
-<!-- Prototipo (2026-11-09). Lo arma build.cjs; no se edita a mano. Fuentes: Jersey 15 (pixel) y Atkinson Hyperlegible (lectura), ambas OFL. -->
+<!-- Web de Okaeri. Lo arma build.cjs; no se edita a mano. Fuentes: Jersey 15 (pixel) y Atkinson Hyperlegible (lectura), ambas OFL. -->
 <style>
 ${fuentes}
 :root{--m-claro:${marco("#e8efe9")};--m-tinta:${marco("#26241f")};--m-ambar:${marco("#ffb53c")};--m-pino:${marco("#1c3a31")};--m-suave:${marco("#52705f")};--conector:${conector}}
@@ -247,22 +287,17 @@ ${sprite()}
 <div class="fr-in">
 <h2 class="fr-t" id="fr-t">Módulos</h2>
 <ul class="fr-lista" role="list">${mods}</ul>
-<div class="fr-det" id="fr-det" aria-live="polite">
-<h3 class="fr-nombre">${esc(M1.nombre)}</h3>
-<p class="fr-res">${esc(M1.resultado)}</p>
-<p class="fr-meta">En curso · ${RUTA.length} apuntes · ${nPrac} prácticas</p>
-<a class="btn-px" href="#corte-fogata">Entrar al módulo ${ico("derecha")}</a>
-</div>
+<div class="fr-det" id="fr-det" aria-live="polite"></div>
 </div>
 </section>
 
-<div class="modulo" id="modulo">
-${corte("fogata", RUTA.filter(r => r.escena === "fogata"))}
+<div class="modulo" id="modulo" hidden>
+${corte("fogata")}
 <div class="paso" aria-hidden="true"><i></i></div>
-${corte("muelle", RUTA.filter(r => r.escena === "muelle"))}
+${corte("muelle")}
 <section class="cierre" aria-label="Fin del módulo">
-<p class="cierre-t">Fin de ${esc(M1.nombre)}</p>
-<a class="btn-px" href="#modulos" data-siguiente="2">Módulo siguiente ${ico("derecha")}<span class="btn-sub">M2 · ${esc(M2.nombre)}</span></a>
+<p class="cierre-t" id="cierre-t"></p>
+<a class="btn-px" id="siguiente" href="#modulos" hidden>Módulo siguiente ${ico("derecha")}<span class="btn-sub" id="siguiente-sub"></span></a>
 </section>
 </div>
 </main>
@@ -270,21 +305,21 @@ ${corte("muelle", RUTA.filter(r => r.escena === "muelle"))}
 <button type="button" class="btn-drawer" id="abrir-drawer" aria-label="Abrir la ruta del módulo" aria-controls="drawer" aria-expanded="false">${ico("lista")}</button>
 <div class="velo" id="velo" hidden></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-titulo" inert>
-<div class="d-cab"><h2 id="d-titulo">M1 · ${esc(M1.nombre)}</h2><div class="d-acc"><button type="button" class="btn-sonido en-drawer" id="sonido-drawer" aria-pressed="false" aria-label="Activar el sonido" title="Activar el sonido">${ico("sonido-off")}</button><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div></div>
+<div class="d-cab"><h2 id="d-titulo"></h2><div class="d-acc"><button type="button" class="btn-sonido en-drawer" id="sonido-drawer" aria-pressed="false" aria-label="Activar el sonido" title="Activar el sonido">${ico("sonido-off")}</button><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div></div>
 <p class="aviso-sonido d-aviso" id="aviso-sonido-d" role="status"></p>
 <label class="d-buscar"><span class="vh">Buscar en los apuntes</span>${ico("lupa")}<input type="search" id="buscar" placeholder="Buscar en los apuntes" autocomplete="off" spellcheck="false"></label>
 <p class="d-vacio" id="d-vacio" role="status" hidden>Ningún apunte lo nombra.</p>
-<nav aria-label="Ruta de apuntes"><h3 class="d-h">Ruta del módulo</h3><ol class="d-ruta" id="d-ruta">
-${rutaDrawer}
-</ol></nav>
+<nav aria-label="Ruta de apuntes"><h3 class="d-h">Ruta del módulo</h3><ol class="d-ruta" id="d-ruta"></ol></nav>
 <nav aria-label="Otros módulos"><h3 class="d-h">Otros módulos</h3><ul class="d-otros">${otrosDrawer}</ul><p class="d-nota" id="d-nota" role="status"></p></nav>
-<nav class="only-personal" aria-label="Clases en orden"><h3 class="d-h">Clases en orden</h3><ol class="d-clases">
+<nav aria-label="Clases en orden"><h3 class="d-h">Clases en orden</h3><ol class="d-clases">
 ${clasesDrawer}
 </ol></nav>
 </aside>
 
+${plantillas}
+
 <script>
-const MODULOS=${JSON.stringify(MODS)};
+const MODULOS=${JSON.stringify(MODS_JS)},EN_CURSO=${EN_CURSO},ICO_DERECHA=${JSON.stringify(ico("derecha"))};
 ${leer(path.join(AQUI, "src", "app.js"))}
 </script>
 <script>
@@ -298,5 +333,5 @@ ${ESCENAS_JS}
   await activos()
   fs.writeFileSync(path.join(AQUI, "index.html"), HTML)
   try { require("./procedencia.cjs")(AQUI, IMG) } catch (e) { aviso("procedencia: " + e.message) }
-  console.log(`ok index.html ${(HTML.length / 1024) | 0} KB · ${RUTA.length} apuntes (${RUTA.filter(r => r.escena === "fogata").length} fogata + ${RUTA.filter(r => r.escena === "muelle").length} muelle) · ${nPrac} prácticas · ${IMG.size} imágenes · hero .${EXT} · ${CLASES.length} clases`)
+  console.log(`ok index.html ${(HTML.length / 1024) | 0} KB · ${RUTA.length} entradas en ${MODS.filter(m => m.rutas.length).length} módulos (${MODS.map(m => `M${m.n}:${m.rutas.length}`).join(" ")}) · ${RUTA.filter(r => r.p).length} prácticas · ${IMG.size} imágenes · hero .${EXT} · ${CLASES.length} clases`)
 })().catch(e => { console.error(e); process.exit(1) })

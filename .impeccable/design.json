@@ -380,7 +380,7 @@
       "name": "Ficha de módulo",
       "kind": "chip",
       "refersTo": "modulo-ficha",
-      "description": "Número de módulo en la franja; activa en ámbar, fuera de alcance en bruma.",
+      "description": "Número de módulo en la franja; activa en ámbar, sin apuntes en bruma.",
       "html": "<button class=\"ds-mod act\">1</button> <button class=\"ds-mod fuera\">2</button>",
       "css": ".ds-mod{border:6px solid transparent;border-image:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'5'%20height%3D'5'%20viewBox%3D'0%200%205%205'%20shape-rendering%3D'crispEdges'%20fill%3D'%23e8efe9'%3E%3Cpath%20d%3D'M1%200h3v1H1zM0%201h1v3H0zM4%201h1v3H4zM1%204h3v1H1z'%2F%3E%3C%2Fsvg%3E\") 2 stretch;background-clip:padding-box;width:76px;height:64px;padding:0;background-color:#040e10;color:#e8efe9;font-family:'Jersey 15',ui-monospace,monospace;font-size:1.875rem;cursor:pointer}.ds-mod.act{border-image-source:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'5'%20height%3D'5'%20viewBox%3D'0%200%205%205'%20shape-rendering%3D'crispEdges'%20fill%3D'%23ffb53c'%3E%3Cpath%20d%3D'M1%200h3v1H1zM0%201h1v3H0zM4%201h1v3H4zM1%204h3v1H1z'%2F%3E%3C%2Fsvg%3E\");color:#ffb53c;background-color:#0b1b18}.ds-mod.fuera{border-image-source:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'5'%20height%3D'5'%20viewBox%3D'0%200%205%205'%20shape-rendering%3D'crispEdges'%20fill%3D'%2352705f'%3E%3Cpath%20d%3D'M1%200h3v1H1zM0%201h1v3H0zM4%201h1v3H4zM1%204h3v1H1z'%2F%3E%3C%2Fsvg%3E\");color:#9fb3a8}.ds-mod:hover{background-color:#0b1b18}.ds-mod:focus-visible{outline:3px solid #ffb53c;outline-offset:3px}"
     },
@@ -469,7 +469,7 @@
       "**Do** usar íconos 12x12 con `currentColor`; el build falla si queda un emoji.",
       "**Do** usar foco visible de 3 px (ámbar sobre noche, ladrillo sobre blanco) con offset de 3 px.",
       "**Do** mantener `scrollbar-gutter: stable`, `inert` en el fondo con el drawer abierto, y respetar `prefers-reduced-motion` (animaciones y transiciones a cero, cortes limpios).",
-      "**Do** firmar cada raster con su procedencia incrustada (`embed-prompt`); hay 30.",
+      "**Do** firmar cada raster con su procedencia incrustada (`embed-prompt`); `build.cjs` firma los del hero y todos los de `img/` (55 hoy).",
       "**Do** cortar la escena en recto contra la superficie vecina; sin dither ni degradado en el borde."
     ],
     "donts": [

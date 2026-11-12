@@ -37,7 +37,7 @@ function inline(s, ctx = {}) {
     const m = h.match(/^([^#]*\.md)(#.*)?$/)
     if (!m) return `<a href="${h}">${t}</a>`
     const dest = ctx.enlaces ? ctx.enlaces(m[1]) : null
-    return dest ? `<a class="ref" href="${dest}">${t}</a>` : `<span class="ref ref-fuera" title="Fuera del módulo: no está conectado en el prototipo">${t}</span>`
+    return dest ? `<a class="ref" href="${dest}">${t}</a>` : `<span class="ref ref-fuera" title="Ese apunte no está en esta web">${t}</span>`
   })
   s = s.replace(/\u0000(\d+)\u0000/g, (_, i) => guardas[+i])
   return s

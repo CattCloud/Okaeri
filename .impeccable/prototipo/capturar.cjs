@@ -16,11 +16,11 @@ const TOMAS = {
     ["04-fogata-inicio", "document.querySelector('#corte-fogata').scrollIntoView({behavior:'instant'})"],
     ["05-fogata-medio", "scrollTo(0,document.querySelector('#corte-fogata').offsetTop+1500)"],
     ["05b-rama-entre-apuntes", "(()=>{const s=document.querySelector('.sep'),r=s.getBoundingClientRect();scrollTo(0,scrollY+r.top-(innerHeight-r.height)/2)})()"],
-    ["06-practica-en-sitio", "(()=>{const ap=document.querySelector('#a-dedos');ap.querySelector('[data-ver=practica]').click();ap.scrollIntoView({behavior:'instant'})})()"],
+    ["06-practica-en-sitio", "(()=>{const ap=document.querySelector('#a-dedos-mano-izquierda');ap.querySelector('[data-ver=practica]').click();ap.scrollIntoView({behavior:'instant'})})()"],
     ["06b-paso-brasas", "(()=>{const p=document.querySelector('.paso'),r=p.getBoundingClientRect();scrollTo(0,scrollY+r.top-(innerHeight-r.height)/2)})()"],
     ["06c-entrada-muelle", "scrollTo(0,document.querySelector('#corte-muelle').offsetTop-120)"],
     ["07-muelle-inicio", "document.querySelector('#corte-muelle').scrollIntoView({behavior:'instant'})"],
-    ["08-tablas-muelle", "scrollTo(0,document.querySelector('#a-ocho-acordes').offsetTop+document.querySelector('#corte-muelle').offsetTop+260)"],
+    ["08-tablas-muelle", "scrollTo(0,document.querySelector('#a-los-8-acordes').offsetTop+document.querySelector('#corte-muelle').offsetTop+260)"],
     ["09-cierre", "document.querySelector('.cierre').scrollIntoView({behavior:'instant'})"],
     ["10-drawer", "document.querySelector('#abrir-drawer').click()"]
   ] },
@@ -29,7 +29,7 @@ const TOMAS = {
     ["m2-franja", "document.querySelector('#modulos').scrollIntoView({behavior:'instant'})"],
     ["m3-fogata", "document.querySelector('#corte-fogata').scrollIntoView({behavior:'instant'})"],
     ["m4-apunte", "scrollTo(0,document.querySelector('#a-notas-y-cuerdas').getBoundingClientRect().top+scrollY+120)"],
-    ["m5-tabla", "scrollTo(0,document.querySelector('#a-dedos').getBoundingClientRect().top+scrollY+520)"],
+    ["m5-tabla", "scrollTo(0,document.querySelector('#a-dedos-mano-izquierda').getBoundingClientRect().top+scrollY+520)"],
     ["m6-drawer", "document.querySelector('#abrir-drawer').click()"]
   ] }
 }

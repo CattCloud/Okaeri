@@ -71,6 +71,8 @@ a{color:inherit}
 
 /* ---------- cortes: escena fija a la izquierda, apuntes a la derecha ---------- */
 .modulo{container-type:inline-size}
+/* un módulo sin apuntes, o con una sola escena, esconde lo que no usa (los display de .corte y .cierre pisarían el atributo hidden) */
+.modulo[hidden],.modulo [hidden]{display:none!important}
 .corte{display:grid;grid-template-columns:var(--escena) minmax(0,1fr);background:var(--papel);color:var(--tinta)}
 /* la escena conserva la proporción del arte (368x399): su borde derecho está disuelto en blanco para fundirse con el apunte, así que no se recorta */
 .escena{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;align-content:center;background:var(--papel)}

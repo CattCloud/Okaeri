@@ -32,7 +32,7 @@
 | **IA (Claude Code)** | Mantiene el mapa · escribe apuntes y ejercicios · **genera los diagramas** (SVG) · arma la semana · registra | No (stack) | Límite honesto: no ve las manos ni oye. Eso es de la academia |
 | **Profesor** | Lo físico | El ancla humana | Si corrige el cuerpo, eso manda sobre cualquier apunte |
 
-**Herramientas de código del panel** (`system.html`): `publicar-panel.mjs` lo sube a GitHub Pages y `panel-practica.mjs` pasa una práctica `.md` a su HTML dentro del panel (paso 10 de `escribir-practica`).
+**Herramientas de código de la web** (`.impeccable/prototipo/`): `node build.cjs` (Node 22) arma `index.html` leyendo los `.md` de `fundamentos/guitarra/`, el temario y `practica/00_indice.md` (pasos finales de `escribir-apunte` y `escribir-practica`); `capturar.cjs` saca capturas por CDP. No se publica. El panel anterior (`system.html`, `publicar-panel.mjs`, `panel-practica.mjs`) quedó archivado en `_archivo/panel-system-html/`.
 
 **Fuera del foco:** Casio CT-X800 (era piano) · Yousician (pagado; si algún día se usa para guitarra, **solo modo sheet**) · Oído Perfecto (reemplazada por Anki en 2026-07).
 

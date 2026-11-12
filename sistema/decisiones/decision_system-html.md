@@ -1,6 +1,8 @@
 # Decisión: `system.html` — la cara del sistema, y sus reglas de diseño
 
-> **Estado:** vigente. **Diseño actual: «Señal glitch» (2026-10-20)**; sus reglas visuales (tokens, componentes, temas) viven en `DESIGN.md` y su contexto de producto en `PRODUCT.md`, en la raíz del repo. Las secciones de paleta, ancho de lector y escala de las rondas anteriores quedan como historia. Antes: pulido con la skill `impeccable` (2026-10-15). **Fecha:** 2026-10-14. **Aprobada por el usuario:** sí, con correcciones ya aplicadas — ver «Correcciones del usuario» más abajo. Integrado a la constitución en `AGENTS.md` (Mapa · Dónde vive cada cosa).
+> **Reemplazada el 2026-11-11 por la web de `.impeccable/prototipo/`** (ver «Reemplazo por la web», al final). `system.html` y sus scripts están en `_archivo/panel-system-html/`; todo lo de abajo es historia de ese panel.
+
+> **Estado (del panel anterior):** vigente. **Diseño actual: «Señal glitch» (2026-10-20)**; sus reglas visuales (tokens, componentes, temas) viven en `DESIGN.md` y su contexto de producto en `PRODUCT.md`, en la raíz del repo. Las secciones de paleta, ancho de lector y escala de las rondas anteriores quedan como historia. Antes: pulido con la skill `impeccable` (2026-10-15). **Fecha:** 2026-10-14. **Aprobada por el usuario:** sí, con correcciones ya aplicadas — ver «Correcciones del usuario» más abajo. Integrado a la constitución en `AGENTS.md` (Mapa · Dónde vive cada cosa).
 
 ## Contexto
 
@@ -118,6 +120,20 @@ Las prácticas ganan una quinta pestaña, **Libre**, la primera y la que abre po
 ## Visor de imágenes (2026-10-21, decisión del usuario)
 
 Cualquier imagen de un apunte o de una práctica fuera de Libre se amplía al tocarla (o con Enter si se llega por teclado): se abre sola, lo más grande que quepa, sobre el fondo del tema, con la X de 60 px. Flechas del teclado o botones de 64 px pasan a la imagen anterior o siguiente del mismo documento (solo las visibles, sin repetidas; Inicio y Fin saltan a la primera y la última), con contador «3 / 8». Se cierra con la X, Esc o tocando el margen. En vertical, el contador va arriba y las flechas abajo. También sale en la versión publicada. En Libre no aplica: ahí está el modo foco. Porqué: los diagramas de acorde y de mástil salen chicos a tamaño de lectura. Código: `visorAbrir`, `visorIr` y `visorPreparar` en `system.html`.
+
+## Reemplazo por la web (2026-11-11, decisión del usuario)
+
+**Qué:** `system.html` deja de ser el panel vigente (archivado en `_archivo/panel-system-html/`, junto con `publicar-panel.mjs` y `panel-practica.mjs`). Lo reemplaza la web de `.impeccable/prototipo/` (`index.html`, que genera `build.cjs`): hero pixel, módulos, escenas con apuntes y drawer. Sus reglas visuales viven en `DESIGN.md`.
+
+**Qué se mantiene:** solo contenido real (un módulo sin apuntes dice «Sin apuntes aún» y un apunte provisional lo dice en su línea), sin emojis, un módulo a la vez, prácticas libres y sin niveles (F4, F5, F16). El avance personal («Clases en orden») sale de `practica/00_indice.md`.
+
+**Qué cambia:**
+1. No hay datos que regenerar a mano: `build.cjs` lee el `modulo:` del frontmatter de cada `.md`; una práctica cuelga del último apunte que cita en `apunte:` y, si no cita ninguno, entra suelta en su módulo (caso: arpegio, clase 8).
+2. **Ya no se publica.** El sitio de GitHub Pages era para la hermana del usuario, que dejó el canto; el usuario decidió no publicar más (2026-11-11). La rama `gh-pages` sigue en línea con el panel viejo hasta que el usuario decida retirarla.
+3. Se pierden, y por R11 no se reconstruyen salvo pedido: el Recorrido, las pestañas de práctica (Libre, Practicar, Entender, Si falla, Avance), el modo foco y el visor de imágenes.
+4. Las reglas de arriba sobre `publicar-panel.mjs`, `only-personal`, `recorrido`, `practicasData` y el visor valen solo como historia del panel anterior.
+
+**Porqué:** una sola cara del sistema (R12). La web ya hacía lo mismo con mejor lectura, y leer los `.md` tal cual quita el paso de regenerar datos a mano.
 
 ## Consecuencias
 

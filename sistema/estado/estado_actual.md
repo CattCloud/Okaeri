@@ -45,7 +45,7 @@
 
 ## 🎯 Bolsa de objetivos
 
-> La fuente de la vista «Hoy» de `system.html` (decisión: `sistema/decisiones/decision_hoy.md`; la vista aún no existe). Cada objetivo es de proceso, con su variante mínima de 2 min y, si aplica, una en silencio. El panel muestra uno solo por día; esta lista no se le enseña al usuario como lista. Prioridad: tarea del profesor → evaluación en curso → cola de conceptos. **Abre** = lo que aparece cuando este se cierra.
+> La fuente de la vista «Hoy» de la web (`.impeccable/prototipo/`; decisión: `sistema/decisiones/decision_hoy.md`; la vista aún no existe). Cada objetivo es de proceso, con su variante mínima de 2 min y, si aplica, una en silencio. El panel muestra uno solo por día; esta lista no se le enseña al usuario como lista. Prioridad: tarea del profesor → evaluación en curso → cola de conceptos. **Abre** = lo que aparece cuando este se cierra.
 
 | # | Carril | Prioridad | Objetivo (versión completa) | Mínimo (2 min) | En silencio | Abre |
 |---|---|---|---|---|---|---|

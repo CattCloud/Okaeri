@@ -51,4 +51,4 @@ Herramientas: `.impeccable/mocks/personajes/estilo-nuevo/` (`grid2`, `reproducir
 - **Estilo nuevo:** `.impeccable/mocks/personajes/estilo-nuevo/` → `erick_base.px.js` (versiones `.crudo`, `.90`, `.con_tony`), `tony/tony_*.px.js`, `tony/erick_tony_gorro.px.js`.
 - **Estilo anterior (reemplazado, solo referencia de rasgos):** `.impeccable/mocks/personajes/elencos.px.js` (`gato_*5`, `gata_soprano5`, `fig_*3`, `fig_clave3`, `erick_mago`).
 - **Generar:** `node C:/dev/agatha-os/skills/pixel-art/pxl/bin/pxl.js build <archivo>.px.js --out <carpeta temporal>`.
-- **Exportados (PNG, tiras):** por definir al construir el panel (carpeta de assets junto a `system.html`).
+- **Exportados (PNG, tiras):** por definir al construir el panel (carpeta de assets de la web, `.impeccable/prototipo/`).

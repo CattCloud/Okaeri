@@ -1,5 +1,7 @@
 # Decisión: la vista «Hoy» — un objetivo por día en `system.html`
 
+> **Nota (2026-11-11):** `system.html` fue reemplazado por la web de `.impeccable/prototipo/` (ver `decision_system-html.md` → «Reemplazo por la web»). Donde esta decisión dice «panel» o `system.html`, léase la web; `panel-practica.mjs` está archivado en `_archivo/panel-system-html/`.
+
 > **Estado:** aprobada el 2026-10-24, sin construir. Se construye cuando el usuario cambie el diseño del panel; hasta entonces solo existen esta decisión, la fila en `AGENTS.md` y la sección «Bolsa de objetivos» de `sistema/estado/estado_actual.md`. **Fecha:** 2026-10-24. **Aprobada por el usuario:** sí, tras una entrevista en la misma conversación. Diseñada con el lente de la psicología conductual y cognitivo-conductual, y con las cuatro leyes de *Hábitos atómicos* (Clear).
 
 ## Contexto

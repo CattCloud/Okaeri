@@ -1,4 +1,4 @@
-// Okaeri · prototipo. Sin dependencias. Con prefers-reduced-motion: capas quietas, cortes limpios.
+// Okaeri · web. Sin dependencias. Con prefers-reduced-motion: capas quietas, cortes limpios.
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)]
   const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -32,32 +32,67 @@
   const ioEscena = new IntersectionObserver(es => es.forEach(e => window.COMPUERTAS && COMPUERTAS[e.target.dataset.escena].set(e.isIntersecting)), { rootMargin: "10% 0px" })
   $$(".escena").forEach(el => { el.dataset.escena = el.classList.contains("escena-fogata") ? "fogata" : "muelle"; ioEscena.observe(el) })
 
-  // ---------- 3. franja de módulos: solo M1 está conectado en el prototipo ----------
-  const det = $("#fr-det")
-  const detM1 = det.innerHTML
-  $$(".mod").forEach(b => b.addEventListener("click", () => {
-    const n = +b.dataset.mod, m = MODULOS[n - 1]
-    $$(".mod").forEach(x => x.setAttribute("aria-pressed", String(x === b)))
-    $$(".mod").forEach(x => x.classList.toggle("act", x === b))
-    if (n === 1) { det.innerHTML = detM1; return }
-    det.innerHTML = `<h3 class="fr-nombre">${m.nombre}</h3>${m.resultado ? `<p class="fr-res">${m.resultado}</p>` : ""}<p class="fr-meta">Sin conectar en el prototipo: su ruta de apuntes todavía no se lee.</p>`
-  }))
-  $("[data-siguiente]").addEventListener("click", () => setTimeout(() => $(`.mod[data-mod="2"]`).click(), 0))
+  // ---------- 3. módulos: se elige uno en la franja (o en el drawer) y sus apuntes entran en las dos escenas ----------
+  const modulo = $("#modulo"), det = $("#fr-det"), apFogata = $("#corte-fogata .apuntes"), apMuelle = $("#corte-muelle .apuntes")
+  let actual = 0
+  const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+  const plural = (n, uno, varios) => n + " " + (n === 1 ? uno : varios)
+  const dePlantilla = id => { const t = document.getElementById(id); return t ? t.content.cloneNode(true) : document.createDocumentFragment() }
+  const modDe = k => (MODULOS.find(m => m.claves.includes(k)) || {}).n
+  function detalle(m) {
+    const hay = m.claves.length > 0
+    const meta = hay ? (m.enCurso ? "En curso · " : "") + plural(m.nApuntes, "apunte", "apuntes") + " · " + plural(m.nPracticas, "práctica", "prácticas") : "Sin apuntes aún"
+    det.innerHTML = `<h3 class="fr-nombre">${esc(m.nombre)}</h3>${m.resultado ? `<p class="fr-res">${esc(m.resultado)}</p>` : ""}<p class="fr-meta">${meta}</p>${hay ? `<a class="btn-px" href="#corte-fogata">Entrar al módulo ${ICO_DERECHA}</a>` : ""}`
+  }
+  function cargar(n) {
+    const m = MODULOS[n - 1]; if (!m || actual === n) return
+    actual = n
+    $$(".mod").forEach(b => { const on = +b.dataset.mod === n; b.setAttribute("aria-pressed", String(on)); b.classList.toggle("act", on) })
+    detalle(m)
+    const hay = m.claves.length > 0
+    modulo.hidden = !hay
+    apFogata.replaceChildren(hay ? dePlantilla(`m${n}-fogata`) : ""); apMuelle.replaceChildren(hay ? dePlantilla(`m${n}-muelle`) : "")
+    $("#corte-muelle").hidden = $(".paso").hidden = !m.hayMuelle
+    $("#cierre-t").textContent = "Fin de " + m.nombre
+    const sig = MODULOS[n], bsig = $("#siguiente")   // MODULOS[n] es el módulo n+1
+    bsig.hidden = !sig
+    if (sig) { bsig.dataset.siguiente = sig.n; $("#siguiente-sub").textContent = `M${sig.n} · ${sig.nombre}` }
+    // drawer: la ruta del módulo, sin búsqueda previa, y "Otros módulos" sin el actual
+    $("#d-titulo").textContent = `M${n} · ${m.nombre}`
+    $("#d-ruta").replaceChildren(hay ? dePlantilla(`m${n}-ruta`) : "")
+    $("#buscar").value = ""; $("#d-vacio").hidden = true; $("#d-nota").textContent = ""
+    $$(".d-otros li").forEach(li => { li.hidden = +li.dataset.mod === n })
+    observarApuntes()
+  }
+  $$(".mod").forEach(b => b.addEventListener("click", () => cargar(+b.dataset.mod)))
+  $("#siguiente").addEventListener("click", () => cargar(+$("#siguiente").dataset.siguiente))
 
-  // ---------- 4. teoría / práctica en el sitio del apunte ----------
+  // ---------- 4. teoría / práctica en el sitio del apunte, y saltos entre apuntes (aunque sean de otro módulo) ----------
   function ver(ap, v, fuera) {
+    if (ap.hasAttribute("data-solo")) { if (fuera) salto(ap, { suave: false }); return }   // práctica suelta: no tiene pestañas
     $$(".vista button", ap).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ver === v)))
     $$("[data-panel]", ap).forEach(p => { p.hidden = p.dataset.panel !== v })
     ap.dataset.vista = v
     // si el apunte empieza arriba de la pantalla, su cabecera vuelve a verse para que el otro panel empiece a la vista
     if (fuera || ap.getBoundingClientRect().top < 0) salto(ap, { suave: false })
   }
-  $$(".apunte").forEach(ap => $$(".vista button", ap).forEach(b => b.addEventListener("click", () => ver(ap, b.dataset.ver))))
-  const porHash = () => {
-    const h = decodeURIComponent(location.hash.slice(1)); if (!h) return
-    if (h.startsWith("p-")) { const ap = $(`#a-${h.slice(2)}`); if (ap) ver(ap, "practica", true) }
+  // id = "a-<clave>" lleva al apunte; "p-<clave>", a su práctica
+  function irA(id) {
+    const k = id.replace(/^[ap]-/, ""), n = modDe(k); if (!n) return
+    cargar(n)
+    const ap = $(`#a-${k}`)
+    if (id.startsWith("p-")) ver(ap, "practica", true); else if (ap.dataset.vista === "practica") ver(ap, "teoria", true); else salto(ap, { suave: false })
+    $(".ap-titulo", ap)?.focus({ preventScroll: true })
+    history.replaceState(null, "", "#" + id)
   }
-  addEventListener("hashchange", porHash); porHash()
+  modulo.addEventListener("click", e => {
+    const b = e.target.closest(".vista button"); if (b) return ver(b.closest(".apunte"), b.dataset.ver)
+    const a = e.target.closest('a.ref[href^="#"]'); if (!a) return
+    const id = a.getAttribute("href").slice(1)
+    if (!document.getElementById(id)) { e.preventDefault(); irA(id) }   // en este módulo el ancla lleva sola; si es de otro, se carga primero
+  })
+  const porHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (/^[ap]-/.test(h)) irA(h) }
+  addEventListener("hashchange", porHash)
 
   // ---------- 5. drawer ----------
   const drawer = $("#drawer"), velo = $("#velo"), abrir = $("#abrir-drawer"), cerrar = $("#cerrar-drawer")
@@ -86,15 +121,15 @@
     const a = e.target.closest("a[href^='#']"); if (!a) return
     e.preventDefault(); abreDrawer(false)
     const id = a.getAttribute("href").slice(1)
-    setTimeout(() => {
-      const ap = $(`#a-${a.dataset.k || id.replace(/^a-/, "")}`) || $(`#${id}`)
-      if (a.hasAttribute("data-practica")) ver(ap, "practica", true); else { if (ap.dataset.vista === "practica") ver(ap, "teoria", true); else salto(ap, { suave: false }) }
-      $(".ap-titulo", ap)?.focus({ preventScroll: true })
-      history.replaceState(null, "", "#" + (a.hasAttribute("data-practica") ? "p-" + a.dataset.k : "a-" + (a.dataset.k || id.replace(/^a-/, ""))))
-    }, 0)
+    setTimeout(() => irA(id), 0)
   })
-  // otros módulos: no conectados
-  $$(".d-mod").forEach(b => b.addEventListener("click", () => { $("#d-nota").textContent = `M${b.dataset.mod} todavía no está conectado en el prototipo.` }))
+  // otros módulos: con apuntes se abren desde el primero; sin apuntes avisan
+  $$(".d-mod").forEach(b => b.addEventListener("click", () => {
+    const n = +b.dataset.mod
+    if (!MODULOS[n - 1].claves.length) { $("#d-nota").textContent = `M${n} todavía no tiene apuntes.`; return }
+    abreDrawer(false); cargar(n)
+    setTimeout(() => salto($("#corte-fogata"), { suave: false }), 0)
+  }))
   // buscador de la ruta
   $("#buscar").addEventListener("input", e => {
     const q = norm(e.target.value.trim()); let n = 0
@@ -107,7 +142,7 @@
     $$(".d-ap[aria-current]", drawer).forEach(a => a.removeAttribute("aria-current"))
     $(`.d-ap[data-k="${e.target.dataset.k}"]`, drawer)?.setAttribute("aria-current", "location")
   }), { rootMargin: "-40% 0px -55% 0px" })
-  $$(".apunte").forEach(ap => ioAp.observe(ap))
+  function observarApuntes() { ioAp.disconnect(); $$(".apunte").forEach(ap => ioAp.observe(ap)) }
 
   // ---------- 6. sonido: celta en el hero, la franja y la fogata; pantano en el muelle. Los archivos van en audio/ (celta.mp3, pantano.mp3) ----------
   const PISTAS = { celta: "audio/celta.mp3", pantano: "audio/pantano.mp3" }
@@ -127,7 +162,7 @@
     a.addEventListener("error", () => { faltan.add(n); if (faltan.size === N) sonando = false; mensaje("Sin audio: faltan " + [...faltan].map(k => PISTAS[k].replace("audio/", "")).join(" y ") + " en la carpeta audio/."); pintarBotones() })
     return pistas[n] = a
   }
-  const pistaDeZona = () => ["paso", "muelle", "cierre"].includes(document.body.dataset.zona) ? "pantano" : "celta"
+  const pistaDeZona = () => { const z = document.body.dataset.zona; return z === "paso" || z === "muelle" || (z === "cierre" && MODULOS[actual - 1]?.hayMuelle) ? "pantano" : "celta" }
   function fundir(a, objetivo, ms = quieto ? 0 : 1600, pausar = false) {
     clearInterval(a._f); const ini = a.volume, t0 = performance.now()
     if (objetivo > 0 && a.paused) a.play().catch(() => { })
@@ -151,4 +186,8 @@
     if (faltan.size === N) { faltan.clear(); Object.keys(pistas).forEach(k => delete pistas[k]); mensaje("") }   // reintenta si el usuario los puso después
     sonido(!sonando)
   }))
+
+  // ---------- 7. arranque: el módulo en curso, o el del apunte que pida la dirección ----------
+  cargar(modDe(decodeURIComponent(location.hash.slice(1)).replace(/^[ap]-/, "")) || EN_CURSO)
+  porHash()
 })()

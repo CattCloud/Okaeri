@@ -7,7 +7,7 @@ related_targets: []
 
 ## Alcance
 
-`system.html`, la web de apuntes de guitarra (versión personal y la de estudio que arma `sistema/herramientas/publicar-panel.mjs`). Rediseño: mundo visual nuevo (el universo pixel del árbol-conservatorio), mismo contenido. Solo carril guitarra (canto se dejó el 2026-11-06).
+La web de apuntes de guitarra (`.impeccable/prototipo/index.html`, que genera `build.cjs`; reemplazó a `system.html` el 2026-11-11 y ya no se publica). Rediseño: mundo visual nuevo (el universo pixel del árbol-conservatorio), mismo contenido. Solo carril guitarra (canto se dejó el 2026-11-06).
 
 ## Modo
 
@@ -35,10 +35,35 @@ FORM: dirección fijada por el usuario (hero tipo Firewatch + escenas de dos cor
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
+## Carrusel de apuntes (definido 2026-11-12, aprobado por el usuario; sin construir)
+
+Porqué (usuario): con scroll continuo y separadores, el módulo se lee como un solo apunte largo; no se siente que entras a otro apunte.
+
+Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con sus separadores (tableta y móvil aparcados).
+
+- **Escenario:** el módulo pasa a ser un escenario de 100svh. La página sigue siendo hero → franja → escenario, y termina ahí: el cierre deja de ser una sección aparte.
+- **Una página por apunte**, más una página final de cierre. La escena queda a la izquierda y la hoja de 750 px a la derecha, como ahora. La hoja tiene su propio scroll vertical (`overflow-y:auto; overscroll-behavior:contain`) y vuelve arriba al entrar.
+- **Transición:** dentro de la misma escena, la escena queda quieta (es un solo lienzo) y solo se desliza la hoja. La nueva entra por la derecha con «siguiente» y por la izquierda con «anterior», y la saliente sale por el lado opuesto. Dura ~420 ms con ease-out exponencial (`cubic-bezier(.16,1,.3,1)`), solo `transform`. Al cruzar de la fogata al muelle (la mitad del módulo) se desliza el escenario entero, escena y hoja. Con `prefers-reduced-motion` el cambio es directo.
+- **Navegación:** barra al pie de la hoja, fija dentro de ella, sobre papel con filete `linea`:
+  - a la izquierda, «‹ Anterior» (no aparece en el primer apunte);
+  - al centro, «2 de 6» en Jersey label-small, `tinta-2`;
+  - a la derecha, «Siguiente: <título> ›», que en el último apunte dice «Fin del módulo ›».
+  - Los botones son de 48 px con marco tinta, como Teoría/Práctica.
+  - Las flechas ← → del teclado funcionan cuando el foco no está en un campo.
+  - Al llegar a una página, el foco pasa a su título (`preventScroll`).
+- **Página de cierre:** el escenario entero en `noche`, con «Fin de <módulo>», «Módulo siguiente» y «‹ Volver al último apunte». Su sonido es el pantano si el módulo tiene muelle.
+- **Saltos:** el drawer, los enlaces internos y el hash llegan con la misma animación. Si el salto es largo, se hace un solo deslizamiento hacia el destino. Teoría/Práctica sigue dentro de cada página.
+- **Accesibilidad:**
+  - el escenario lleva `aria-roledescription="carrusel"`;
+  - cada página lleva `role="group"`, `aria-roledescription="apunte"` y una etiqueta «2 de 6: <título>»;
+  - las páginas inactivas quedan `inert`.
+- **Se quitan en escritorio:** `.sep` (las cuerdas entre apuntes) y `.paso` (la línea dorada entre escenas). Las funciones quedan en `separadores.cjs` como referencia.
+- **Fuera de alcance:** deslizar con la rueda horizontal, el trackpad o el gesto de swipe (se activarían sin querer).
+
 ## Pendiente
 
 - Archivar el carril de canto en el repositorio (R10).
 - Fuentes (usuario, 2026-11-09): pixel = Jersey 15 (títulos, botones, franja, drawer; ~1.3x el tamaño de referencia); lectura = Atkinson Hyperlegible. Descartadas: DotGothic16 (letras pegadas), Pixelify Sans (letras chicas), Silkscreen. Comparación: `.impeccable/mocks/fuentes/comparar2.html`.
-- Drawer (usuario, 2026-11-09): ruta de apuntes del módulo con su práctica colgando + los otros módulos + buscador + Clases en orden (solo versión personal).
-- Prototipo: un módulo real (el en curso) leído de los .md; los demás módulos solo como botones en la franja. Superficie de Lectura → code-led (sin comp).
+- Drawer (usuario, 2026-11-09): ruta de apuntes del módulo con su práctica colgando + los otros módulos + buscador + Clases en orden (ya sin «solo versión personal»: no hay versión publicada).
+- Módulos (2026-11-11): `build.cjs` lee todos los módulos de los .md (`modulo:` del frontmatter); se elige uno en la franja o en el drawer y sus apuntes entran en las dos escenas. Hoy tienen apuntes M1, M3, M6 y M8; los demás dicen «Sin apuntes aún». Una práctica sin apunte (arpegio, M8) entra suelta. Superficie de Lectura → code-led (sin comp).
 - Capas del hero: hechas y aprobadas (usuario, 2026-11-09): `.impeccable/mocks/lugares/hero/capas/` (script `capas.cjs`, prueba `prueba.html`).

@@ -188,7 +188,7 @@ Paleta de dos mundos: día de cielo claro y bosque profundo; noche de lago y fue
 - **Pino** (`pino`): borde del drawer, marco de la búsqueda, conector de prácticas.
 - **Niebla** (`niebla`): texto sobre noche.
 - **Bruma** (`bruma`): texto secundario sobre noche, estados deshabilitados.
-- **Marco suave** (`marco-suave`): marco de elementos fuera de alcance o sin audio.
+- **Marco suave** (`marco-suave`): marco de módulos sin apuntes y de elementos sin audio.
 - **Papel** (`papel`): fondo del apunte.
 - **Tinta** (`tinta`) y **Tinta 2** (`tinta-2`): texto del apunte y su secundario.
 - **Crema** (`crema`): código en línea, callouts «clave», cabecera de tabla, hover de enlaces.
@@ -242,7 +242,7 @@ Sin sombras de caja. La profundidad se logra por capas en el hero (parallax), po
 
 ## Shapes
 
-Radio cero. Todo marco grande es pixel: un SVG de 5x5 con las esquinas cortadas, usado como `border-image` con corte 2 y 6 px de borde (3 px por unidad de pixel de arte). Cinco colores de marco: claro (`niebla`), ámbar (hover/activo), suave (fuera de alcance), pino (búsqueda), tinta (sobre blanco). El aviso de sonido y la tabla usan bordes lisos de 3 px. Los íconos son rejillas de 12x12 con `shape-rendering: crispEdges`.
+Radio cero. Todo marco grande es pixel: un SVG de 5x5 con las esquinas cortadas, usado como `border-image` con corte 2 y 6 px de borde (3 px por unidad de pixel de arte). Cinco colores de marco: claro (`niebla`), ámbar (hover/activo), suave (módulo sin apuntes), pino (búsqueda), tinta (sobre blanco). El aviso de sonido y la tabla usan bordes lisos de 3 px. Los íconos son rejillas de 12x12 con `shape-rendering: crispEdges`.
 
 ## Components
 
@@ -253,7 +253,7 @@ Radio cero. Todo marco grande es pixel: un SVG de 5x5 con las esquinas cortadas,
 - **Sonido / drawer / cerrar:** botones cuadrados de ícono (60 px; cerrar 52 px) con fondo noche semitransparente sobre arte. Sonido encendido en ámbar; sin audio en `bruma` con marco suave.
 
 ### Module strip (franja)
-Fichas de 76x64 px con el número en Jersey 1.875rem. Activa: marco y texto ámbar sobre `bosque`. Fuera de alcance: marco suave y texto `bruma`. Debajo, el detalle del módulo (nombre, resumen, metadatos) sobre el suelo oscuro.
+Fichas de 76x64 px con el número en Jersey 1.875rem. Activa: marco y texto ámbar sobre `bosque`. Sin apuntes: marco suave y texto `bruma` (se puede elegir; su detalle dice «Sin apuntes aún» y no ofrece entrar). Debajo, el detalle del módulo (nombre, resumen, metadatos) sobre el suelo oscuro. Al elegir un módulo, sus apuntes entran en las dos escenas, que son las mismas para todos; si el módulo tiene un solo apunte, solo lleva la fogata y no hay línea entre escenas.
 
 ### Teoría / Práctica
 Dos botones de 48 px de alto con marco tinta sobre blanco; el activo se invierte (fondo tinta, texto blanco). Controlan qué parte del apunte se ve.
@@ -268,7 +268,7 @@ Tabla con borde de 3 px tinta, cabecera crema en Jersey 1.375rem con filete de 3
 Panel de 36rem (máx. 92vw) sobre `noche`, borde de 6 px `pino`, entra por la izquierda (≥1200 px) o la derecha en 350 ms. Contiene, en orden: cabecera con el botón de sonido (solo icono, 52 px, ámbar si suena) y el cierre, aviso de audio solo cuando hace falta, buscador (marco pino, ámbar al enfocar), la ruta con sus prácticas colgando del apunte por un conector de píxel, otros módulos y las clases en orden. Ítem activo: fondo `bosque`, texto ámbar. Al abrirse, el fondo queda `inert`.
 
 ### Scene (escena)
-Lienzo `canvas` con `image-rendering: pixelated`, personajes en `auto`, bordes superior e inferior en corte recto. Pausada cuando está fuera de pantalla. Dos escenas por módulo: fogata (ámbar) y muelle (lago); el cambio ocurre a mitad del módulo. Entre las dos escenas hay una franja de papel (`.paso`, blanca y a todo el ancho) con una sola línea dorada (`#d09431`) de 2 pixeles del arte de grosor (10 px en escritorio, 8 en tableta, 6 o 4 en móvil), de borde a borde, sin adorno y sin margen (las dos escenas la tocan): el corte entre escenas es minimalista (decisión del usuario, 2026-11-10). Entre apuntes de la misma escena (`.sep`) van tres cuerdas doradas (`#d09431`) con una roseta chica al centro (núcleo `#f7af3a`), de unos 36 px de alto y dentro de la columna del apunte: el motivo de las cuerdas, ya sin el corte entre escenas, que ahora es una sola línea dorada a todo el ancho. La rama con luciérnagas (`ramita()`) y el adorno de rizos (`rizos()`) quedan disponibles en `separadores.cjs` como alternativas. Ambos son estáticos; en la franja entre escenas empieza el fundido de sonido a pantano.
+Lienzo `canvas` con `image-rendering: pixelated`, personajes en `auto`, bordes superior e inferior en corte recto. Pausada cuando está fuera de pantalla. Dos escenas por módulo: fogata (ámbar) y muelle (lago); el cambio ocurre a mitad del módulo (con un solo apunte, solo la fogata). Entre las dos escenas hay una franja de papel (`.paso`, blanca y a todo el ancho) con una sola línea dorada (`#d09431`) de 2 pixeles del arte de grosor (10 px en escritorio, 8 en tableta, 6 o 4 en móvil), de borde a borde, sin adorno y sin margen (las dos escenas la tocan): el corte entre escenas es minimalista (decisión del usuario, 2026-11-10). Entre apuntes de la misma escena (`.sep`) van tres cuerdas doradas (`#d09431`) con una roseta chica al centro (núcleo `#f7af3a`), de unos 36 px de alto y dentro de la columna del apunte: el motivo de las cuerdas, ya sin el corte entre escenas, que ahora es una sola línea dorada a todo el ancho. La rama con luciérnagas (`ramita()`) y el adorno de rizos (`rizos()`) quedan disponibles en `separadores.cjs` como alternativas. Ambos son estáticos; en la franja entre escenas empieza el fundido de sonido a pantano.
 
 ### Hero parallax and audio
 Velocidades de scroll por capa: fondo .55, logo .3, árbol .4, medio .22, frente 0 (el frente sube con la página y cubre el paisaje). El indicador de bajar cabecea 9 px en pasos. El audio funde entre pistas en 1.6 s: celta en hero, franja y fogata; pantano en muelle y cierre.
@@ -281,7 +281,7 @@ Velocidades de scroll por capa: fondo .55, logo .3, árbol .4, medio .22, frente
 - **Do** usar íconos 12x12 con `currentColor`; el build falla si queda un emoji.
 - **Do** usar foco visible de 3 px (ámbar sobre noche, ladrillo sobre blanco) con offset de 3 px.
 - **Do** mantener `scrollbar-gutter: stable`, `inert` en el fondo con el drawer abierto, y respetar `prefers-reduced-motion` (animaciones y transiciones a cero, cortes limpios).
-- **Do** firmar cada raster con su procedencia incrustada (`embed-prompt`); hay 30.
+- **Do** firmar cada raster con su procedencia incrustada (`embed-prompt`); `build.cjs` firma los del hero y todos los de `img/` (55 hoy).
 - **Do** cortar la escena en recto contra la superficie vecina; sin dither ni degradado en el borde.
 
 ### Don't:
@@ -301,6 +301,6 @@ Cierre del 2026-11-09: el revisor dejó la disposición «fix» tras dos rondas 
 - En iOS Safari la pista inactiva sonaría a volumen pleno.
 - El botón del drawer cae sobre el arte cuando la escena llena el viewport.
 - Faltan `audio/celta.mp3` y `audio/pantano.mp3`: el mecanismo está hecho y el aviso «Sin audio» es honesto.
-- Los módulos M2 a M9 no están conectados.
+- Solo M1, M3, M6 y M8 tienen apuntes escritos; M2, M4, M5, M7 y M9 muestran «Sin apuntes aún» (R11: no se escribe por adelantado). Un apunte provisional (hoy, la pentatónica de M8) lo dice en su línea de metadatos.
 - Las imágenes de los apuntes no se amplían al tocarlas.
-- El prototipo vive aparte de `system.html` y no está enganchado a `sistema/herramientas/publicar-panel.mjs`.
+- La web reemplazó a `system.html` (2026-11-11) y no se publica: se abre con doble clic en `.impeccable/prototipo/index.html`. Del panel anterior no se reconstruyeron el Recorrido, las pestañas de práctica, el modo foco ni el visor de imágenes.
