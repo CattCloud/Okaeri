@@ -353,6 +353,14 @@ ${clasesDrawer}
 </ol></nav>
 </aside>
 
+<dialog class="visor" id="visor" aria-label="Imagen ampliada">
+<p class="visor-cont" id="visor-cont" role="status" aria-live="polite"></p>
+<button type="button" class="visor-btn visor-x" id="visor-x" aria-label="Cerrar la imagen">${ico("cerrar")}</button>
+<button type="button" class="visor-btn visor-ant" id="visor-ant" aria-label="Imagen anterior">${ico("izquierda")}</button>
+<div class="visor-cuadro"><img id="visor-img" alt=""></div>
+<button type="button" class="visor-btn visor-sig" id="visor-sig" aria-label="Imagen siguiente">${ico("derecha")}</button>
+</dialog>
+
 ${plantillas}
 
 <script>

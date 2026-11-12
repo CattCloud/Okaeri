@@ -54,6 +54,7 @@
     const hay = m.claves.length > 0
     modulo.hidden = !hay
     apFogata.replaceChildren(hay ? dePlantilla(`m${n}-fogata`) : ""); apMuelle.replaceChildren(hay ? dePlantilla(`m${n}-muelle`) : "")
+    prepararImagenes()
     $("#corte-muelle").hidden = $(".paso").hidden = !m.hayMuelle
     $("#cierre-t").textContent = "Fin de " + m.nombre
     const sig = MODULOS[n], bsig = $("#siguiente")   // MODULOS[n] es el módulo n+1
@@ -141,7 +142,7 @@
   $("#volver").addEventListener("click", () => ir(hojas.length - 1))
   addEventListener("keydown", e => {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return
-    if (e.repeat || !carrusel() || modulo.hidden || !drawer.inert || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
+    if (e.repeat || !carrusel() || modulo.hidden || !drawer.inert || visor.open || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
     if (!DEL_MODULO.includes(document.body.dataset.zona)) return   // solo cuando el escenario es lo que se está mirando
     if (e.target.closest?.("input,textarea,select,[contenteditable],.tabla")) return   // en un campo o una tabla con scroll, las flechas son suyas
     e.preventDefault(); ir(pagina + (e.key === "ArrowRight" ? 1 : -1))
@@ -187,7 +188,7 @@
   const brillar = (n = 1) => { brillo.style.setProperty("--luz", n >= 2 ? 1 : .75); brillo.classList.add("on"); clearTimeout(tBrillo); tBrillo = setTimeout(() => brillo.classList.remove("on"), 450) }
   const aTope = () => scrollTo({ top: tope(), behavior: quieto ? "instant" : "smooth" })
   function alRueda(e) {
-    if (!carrusel() || modulo.hidden || e.ctrlKey || !drawer.inert) return
+    if (!carrusel() || modulo.hidden || e.ctrlKey || !drawer.inert || visor.open) return
     const ahora = performance.now()
     if (e.deltaY >= 0) { retenido = false; return }   // bajar siempre es libre y suelta el tope
     const dy = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? innerHeight : 1), mag = -dy
@@ -351,6 +352,67 @@
     if (faltan.size === N) { faltan.clear(); Object.keys(pistas).forEach(k => delete pistas[k]); mensaje("") }   // reintenta si el usuario los puso después
     sonido(!sonando)
   }))
+
+  // ---------- 6b. visor de imágenes (usuario, 2026-10-21; repuesto en la web 2026-11-12) ----------
+  // Clic (o Enter / Espacio con el foco en ella) en una imagen de un apunte o práctica la amplía en un <dialog> modal: lo más grande que quepa, sobre noche.
+  // Flechas del teclado o botones pasan a la anterior o siguiente del mismo apunte (solo las visibles, sin repetidas); Inicio y Fin saltan a la primera y la última.
+  // Se cierra con la X, Esc o tocando el margen. El <dialog> deja inerte el resto y atrapa el foco; al cerrar, el foco vuelve a la imagen.
+  const visor = $("#visor"), vImg = $("#visor-img"), vCont = $("#visor-cont"), vAnt = $("#visor-ant"), vSig = $("#visor-sig"), vX = $("#visor-x")
+  let vLista = [], vI = 0, vOrigen = null, vTok = 0
+  const srcDe = i => i.getAttribute("src")
+  // las imágenes de un apunte llegan con cada módulo cargado: se vuelven botones accesibles (foco por teclado y nombre) una sola vez
+  function prepararImagenes() {
+    $$(".apunte img").forEach(i => {
+      if (i.dataset.ampliar !== undefined) return
+      i.dataset.ampliar = ""; i.tabIndex = 0; i.setAttribute("role", "button"); i.title = "Ampliar"
+      i.setAttribute("aria-label", i.alt ? "Ampliar imagen: " + i.alt : "Ampliar imagen")
+    })
+  }
+  const imagenesDe = ap => { const vistas = new Set(); return $$("img[data-ampliar]", ap).filter(i => !i.closest("[hidden]") && !vistas.has(srcDe(i)) && vistas.add(srcDe(i))) }
+  // se espera a que la imagen esté decodificada antes de cambiarla, para que al pasar de una a otra no parpadee en blanco
+  const decodificar = src => new Promise(res => { const p = new Image(); p.src = src; p.decode ? p.decode().then(res, res) : (p.onload = p.onerror = res) })
+  async function verImagen(i) {
+    if (i < 0 || i >= vLista.length) return
+    const tok = ++vTok, enfocado = document.activeElement
+    vI = i
+    vCont.textContent = vLista.length > 1 ? `${i + 1} / ${vLista.length}` : ""
+    vAnt.hidden = vSig.hidden = vLista.length < 2
+    vAnt.disabled = i === 0; vSig.disabled = i === vLista.length - 1
+    if ((enfocado === vAnt && vAnt.disabled) || (enfocado === vSig && vSig.disabled)) (enfocado === vAnt ? vSig : vAnt).focus()   // el botón que acaba de llegar a su tope no puede quedarse con el foco
+    await decodificar(srcDe(vLista[i])); if (tok !== vTok) return
+    vImg.src = srcDe(vLista[i]); vImg.alt = vLista[i].alt
+    for (const j of [i - 1, i + 1]) if (vLista[j]) decodificar(srcDe(vLista[j]))   // las vecinas quedan en caché: pasar de una a otra es inmediato
+  }
+  function abrirVisor(img) {
+    const ap = img.closest(".apunte"); if (!ap || visor.open) return
+    vLista = imagenesDe(ap); vOrigen = img
+    document.documentElement.classList.add("sin-scroll")
+    visor.showModal()
+    verImagen(Math.max(0, vLista.findIndex(x => srcDe(x) === srcDe(img))))
+  }
+  visor.addEventListener("close", () => {
+    document.documentElement.classList.remove("sin-scroll"); vTok++; vImg.removeAttribute("src")
+    vOrigen?.focus({ preventScroll: true }); vOrigen = null
+  })
+  document.addEventListener("click", e => {
+    if (e.button || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
+    const i = e.target.closest?.(".apunte img[data-ampliar]"); if (i) { e.preventDefault(); abrirVisor(i) }
+  })
+  document.addEventListener("keydown", e => {
+    if ((e.key === "Enter" || e.key === " ") && !e.repeat && !e.altKey && !e.ctrlKey && !e.metaKey && e.target.matches?.(".apunte img[data-ampliar]")) { e.preventDefault(); abrirVisor(e.target) }
+  })
+  vAnt.addEventListener("click", () => verImagen(vI - 1)); vSig.addEventListener("click", () => verImagen(vI + 1)); vX.addEventListener("click", () => visor.close())
+  visor.addEventListener("click", e => { if (e.target === visor || e.target.classList.contains("visor-cuadro")) visor.close() })   // el margen cierra; la imagen y los botones no
+  visor.addEventListener("keydown", e => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return
+    if (e.key === "ArrowLeft") verImagen(vI - 1)
+    else if (e.key === "ArrowRight") verImagen(vI + 1)
+    else if (e.key === "Home") verImagen(0)
+    else if (e.key === "End") verImagen(vLista.length - 1)
+    else return
+    e.preventDefault()
+  })
+  visor.addEventListener("wheel", e => e.preventDefault(), { passive: false })   // la página de atrás no se mueve
 
   // ---------- 7. arranque: el módulo en curso, o el del apunte que pida la dirección ----------
   cargar(modDe(decodeURIComponent(location.hash.slice(1)).replace(/^[ap]-/, "")) || EN_CURSO)

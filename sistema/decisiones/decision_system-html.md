@@ -130,7 +130,7 @@ Cualquier imagen de un apunte o de una práctica fuera de Libre se amplía al to
 **Qué cambia:**
 1. No hay datos que regenerar a mano: `build.cjs` lee el `modulo:` del frontmatter de cada `.md`; una práctica cuelga del último apunte que cita en `apunte:` y, si no cita ninguno, entra suelta en su módulo (caso: arpegio, clase 8).
 2. **Ya no se publica.** El sitio de GitHub Pages era para la hermana del usuario, que dejó el canto; el usuario decidió no publicar más (2026-11-11). La rama `gh-pages` sigue en línea con el panel viejo hasta que el usuario decida retirarla.
-3. Se pierden, y por R11 no se reconstruyen salvo pedido: el Recorrido, las pestañas de práctica (Libre, Practicar, Entender, Si falla, Avance), el modo foco y el visor de imágenes.
+3. Se pierden, y por R11 no se reconstruyen salvo pedido: el Recorrido, las pestañas de práctica (Libre, Practicar, Entender, Si falla, Avance), el modo foco y el visor de imágenes. **El visor se repuso el 2026-11-12 a pedido del usuario** (vio que al tocar una imagen no se ampliaba): mismo comportamiento de 2026-10-21 (flechas, Inicio y Fin, contador, X, Esc, margen), adaptado al mundo pixel; reglas visuales en `DESIGN.md` → «Visor de imágenes». Ya no aplica el «fuera de Libre»: la web no tiene pestañas de práctica.
 4. Las reglas de arriba sobre `publicar-panel.mjs`, `only-personal`, `recorrido`, `practicasData` y el visor valen solo como historia del panel anterior.
 
 **Porqué:** una sola cara del sistema (R12). La web ya hacía lo mismo con mejor lectura, y leer los `.md` tal cual quita el paso de regenerar datos a mano.

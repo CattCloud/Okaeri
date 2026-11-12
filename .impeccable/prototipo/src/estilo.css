@@ -25,9 +25,9 @@ a{color:inherit}
 .ico-flecha{width:1.25em;height:1.25em;display:inline-block;vertical-align:-.28em}
 
 /* ---------- marcos pixel ---------- */
-.btn-px,.mod,.btn-sonido,.btn-drawer,.btn-cerrar,.d-buscar{border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:var(--noche);background-clip:padding-box;color:var(--niebla);font:400 1.75rem/1 var(--px);cursor:pointer;text-decoration:none}
+.btn-px,.mod,.btn-sonido,.btn-drawer,.btn-cerrar,.visor-btn,.d-buscar{border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:var(--noche);background-clip:padding-box;color:var(--niebla);font:400 1.75rem/1 var(--px);cursor:pointer;text-decoration:none}
 .btn-px{display:inline-flex;align-items:center;gap:.5em;padding:.5em 1em;min-height:56px;transition:transform .12s steps(1),background-color .2s}
-.btn-px:hover,.mod:hover,.btn-sonido:hover,.btn-drawer:hover,.btn-cerrar:hover{border-image-source:var(--m-ambar);background-color:var(--bosque);color:var(--ambar)}
+.btn-px:hover,.mod:hover,.btn-sonido:hover,.btn-drawer:hover,.btn-cerrar:hover,.visor-btn:hover{border-image-source:var(--m-ambar);background-color:var(--bosque);color:var(--ambar)}
 .btn-px:active,.mod:active,.btn-sonido:active,.btn-drawer:active{transform:translateY(3px)}
 .btn-px.chico{min-height:48px;font-size:1.5rem;padding:.35em .8em}
 .btn-px .btn-sub{display:block;font-size:1.125rem;color:var(--bruma)}
@@ -268,6 +268,31 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
   .vista{display:flex}.vista button{flex:1;min-width:0}
   .tabla th{padding:.45em .35em;font-size:1.125rem;white-space:normal}
   .tabla td{padding:.5em .35em;font-size:1rem}
+}
+/* ---------- visor de imágenes (usuario, 2026-10-21; repuesto en la web 2026-11-12) ---------- */
+/* clic o Enter en una imagen de un apunte la amplía en un <dialog> modal sobre noche, con marco pixel claro, flechas, contador y X; superficies planas, sin degradado ni sombra (Corte Limpio) */
+.apunte img[data-ampliar]{cursor:zoom-in}
+.visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--noche);color:var(--niebla);cursor:zoom-out}
+.visor[open]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr);grid-template-areas:". cont x" "ant img sig";gap:12px 16px;padding:16px 16px 20px}
+.visor::backdrop{background:var(--noche)}
+.visor-cont{grid-area:cont;align-self:center;justify-self:center;margin:0;font:400 2.5rem/1 var(--px);font-variant-numeric:tabular-nums;color:var(--ambar);cursor:default}
+.visor-cont:empty{display:none}
+.visor-btn{width:64px;height:64px;padding:0;display:grid;place-items:center;cursor:pointer}
+.visor-btn[hidden]{display:none}
+.visor-btn:disabled{border-image-source:var(--m-suave);color:var(--bruma);cursor:default}
+.visor-btn:disabled:hover{background-color:var(--noche);color:var(--bruma)}
+.visor-btn .ico{width:30px;height:30px}
+.visor-btn:active:not(:disabled){transform:translateY(3px)}
+.visor-x{grid-area:x;justify-self:end;width:60px;height:60px}
+.visor-ant{grid-area:ant;align-self:center}
+.visor-sig{grid-area:sig;align-self:center}
+.visor-cuadro{grid-area:img;position:relative;min-width:0;min-height:0}
+.visor-cuadro img{position:absolute;inset:0;margin:auto;display:block;width:auto;height:auto;max-width:100%;max-height:100%;border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:#fff;background-clip:padding-box;cursor:default}
+/* en vertical (o estrecho) el contador va arriba con la X y las flechas abajo, al alcance del pulgar */
+@media (max-aspect-ratio:1/1),(max-width:720px){
+  .visor[open]{grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"cont x" "img img" "ant sig"}
+  .visor-cont{justify-self:start}
+  .visor-ant{justify-self:start}.visor-sig{justify-self:end}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
