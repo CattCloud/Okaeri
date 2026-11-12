@@ -55,15 +55,15 @@ Todo el rediseño existe para neutralizar estos cuatro.
 | Yousician / Synthesia | Guitar Hero: la pista cae, él reacciona. Nada quedaba. | **Anti-muleta.** |
 | Pentagrama | Lo dejó, no por incapacidad. | **Cifrado primero.** Pentagrama fuera del nivel base. |
 | Guitarra (hace años) | Base que se durmió. | Reactivar, no arrancar de cero. |
-| Canto (iglesia) | Base no profesional, dejada por inconsistencia. | Desde 2026-09: carril propio, con academia y temario (`decision_canto_segundo_mapa.md`). |
+| Canto (iglesia) | Base no profesional, dejada por inconsistencia. | Desde 2026-09: carril propio, con academia y temario (`decision_canto_segundo_mapa.md`). Retirado el 2026-11-06 y archivado el 2026-11-12 (`_archivo/canto/`). |
 | **Piano — Okaeri V1 (2026)** | 3 sesiones. Sin temario, con fecha dura, sin destino. | **Temario + academia + banda + bloques sin ping-pong.** |
 
 ## Tiempo real (honesto, no aspiracional)
 
-- **Piso de presencia:** guitarra 15 min × 3-4 por semana; canto 10 min × 3 (R9). Piso, no meta.
+- **Piso de presencia:** guitarra 15 min × 3-4 por semana (R9). Piso, no meta.
 - **Técnica de los 5 minutos:** empezar es lo difícil; una vez dentro, el tiempo se estira solo.
 - **Una sesión puede tomar 1-2 días.** Hace una parte, la cierra, la sigue. No es una clase con asistencia.
-- **Sin horario fijo todavía.** Se acerca progresivamente. Lo único fijo: las academias (guitarra martes · canto jueves, 8-10 pm).
+- **Sin horario fijo todavía.** Se acerca progresivamente. Lo único fijo: la academia (guitarra, martes 8-10 pm).
 - **El temario NO se dimensiona al mínimo.** Se diseña completo.
 
 ## Cómo tratar al usuario (calibración)

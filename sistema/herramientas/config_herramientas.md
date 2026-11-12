@@ -2,7 +2,7 @@
 
 > **Propósito:** con qué se ejecuta cada cosa y cuál es su rol. Versión corta de `_archivo/diseno_original/okaeri-herramientas.md` (era piano; el modelo de 3 capas sigue vigente).
 > **Principio:** la herramienta se elige *después* del método. Toda herramienta pasa el filtro anti-muleta (R2).
-> **Actualizado:** 2026-09-15. Las apps de canto y su rol están en `fundamentos/canto/_consulta-voz.md`.
+> **Actualizado:** 2026-09-15. Las apps de canto y su rol están en `_archivo/canto/fundamentos/_consulta-voz.md`.
 
 ---
 

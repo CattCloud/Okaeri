@@ -1,6 +1,6 @@
 ---
 tipo: apunte
-carril: guitarra          # guitarra | canto | común
+carril: guitarra
 modulo: mN
 origen: ""                # claseNN (AAAA-MM-DD) | sección N.N del mapa
 titulo: ""

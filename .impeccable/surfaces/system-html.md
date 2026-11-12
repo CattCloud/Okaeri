@@ -62,7 +62,6 @@ Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con su
 
 ## Pendiente
 
-- Archivar el carril de canto en el repositorio (R10).
 - Fuentes (usuario, 2026-11-09): pixel = Jersey 15 (títulos, botones, franja, drawer; ~1.3x el tamaño de referencia); lectura = Atkinson Hyperlegible. Descartadas: DotGothic16 (letras pegadas), Pixelify Sans (letras chicas), Silkscreen. Comparación: `.impeccable/mocks/fuentes/comparar2.html`.
 - Drawer (usuario, 2026-11-09): ruta de apuntes del módulo con su práctica colgando + los otros módulos + buscador + Clases en orden (ya sin «solo versión personal»: no hay versión publicada).
 - Módulos (2026-11-11): `build.cjs` lee todos los módulos de los .md (`modulo:` del frontmatter); se elige uno en la franja o en el drawer y sus apuntes entran en las dos escenas. Hoy tienen apuntes M1, M3, M6 y M8; los demás dicen «Sin apuntes aún». Una práctica sin apunte (arpegio, M8) entra suelta. Superficie de Lectura → code-led (sin comp).

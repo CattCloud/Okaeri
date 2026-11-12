@@ -12,14 +12,14 @@
 
 Okaeri estructura el aprendizaje musical de alguien que ama la música pero, sin guía clara, siempre terminaba abandonando. La meta no es el virtuosismo ni componer: es ser **intérprete** — tocar y cantar a la vez las canciones que tocan el corazón. **Destino concreto: la banda de su iglesia.**
 
-**Dos carriles:** **guitarra clásica** (desde 2026-08-28) y **canto** (desde 2026-09). Cada uno tiene un temario (el mapa de todo lo que hay que aprender y de qué depende cada cosa), una academia presencial (guitarra los martes, canto los jueves) —cuyas clases marcan la ruta— y un marcador (última clase, evaluación en curso y cola de conceptos). El piano fue el primer intento (2026-06 → 2026-08) y está archivado en `_archivo/piano/`.
+**Un carril:** **guitarra clásica** (desde 2026-08-28). Tiene un temario (el mapa de todo lo que hay que aprender y de qué depende cada cosa), una academia presencial (los martes) —cuyas clases marcan la ruta— y un marcador (última clase, evaluación en curso y cola de conceptos). El piano fue el primer intento (2026-06 → 2026-08) y el canto el segundo carril (2026-09 → 2026-11); ambos están archivados en `_archivo/piano/` y `_archivo/canto/`.
 
 **El principio anti-muleta:** una canción no está aprendida hasta salir **sin cifrado ni letra delante, de memoria, sola**. Nada de "pista que cae" tipo Guitar Hero: entrena reacción, no música.
 
 ## Cómo se usa
 
-1. **Después de cada clase** (martes guitarra, jueves canto): tres líneas al agente — qué se vio, qué tarea dejaron, qué no se entendió.
-2. **Los otros días:** sesiones cortas (guitarra 15 min × 3-4 por semana; canto 10 min × 3). Primero la tarea del profesor, luego la sección del mapa. El agente entrega un bloque completo y uno se va a tocar: **el silencio significa que estás tocando**.
+1. **Después de cada clase** (martes): tres líneas al agente — qué se vio, qué tarea dejaron, qué no se entendió.
+2. **Los otros días:** sesiones cortas (15 min × 3-4 por semana). Primero la tarea del profesor, luego la sección del mapa. El agente entrega un bloque completo y uno se va a tocar: **el silencio significa que estás tocando**.
 3. **Cada sesión se registra** en `practica/`. Una sesión puede partirse en días; `sistema/estado/estado_actual.md` guarda dónde quedó.
 4. **Cada canción** tiene su ficha en `repertorio/` y avanza por tres estados de memoria. Solo el último cuenta. **Una canción del mapa por carril.**
 
@@ -38,7 +38,7 @@ okaeri/
 │
 ├── .claude/                     ← procedimientos (skills), guardianes (hooks) y revisor
 │
-├── contexto/plan_estudio/       ← ⭐ los temarios (guitarra, canto) y los sílabos de las academias
+├── contexto/plan_estudio/       ← ⭐ el temario de guitarra y el sílabo de la academia
 │
 ├── sistema/
 │   ├── estado/estado_actual.md  ← ⚡ dónde vas: marcadores, semana, sesión en curso

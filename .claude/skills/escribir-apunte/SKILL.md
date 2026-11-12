@@ -5,11 +5,11 @@ description: Escribir o corregir un apunte de Okaeri (teoría que se lee lejos d
 
 # Escribir un apunte
 
-Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F15). Este archivo solo da los pasos.
+Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F16). Este archivo solo da los pasos.
 
 ## Pasos
 
-1. **¿Apunte, práctica o consulta?** Si se puede hacer sin el instrumento, es apunte (F2). Si es una duda suelta sobre la voz o sobre la guitarra como objeto, va a su consulta (`canto/_consulta-voz.md` o `_consulta-instrumento.md`), con fila en su índice de preguntas y la respuesta escrita (F11).
+1. **¿Apunte, práctica o consulta?** Si se puede hacer sin el instrumento, es apunte (F2). Si es una duda suelta sobre la guitarra como objeto, va a su consulta (`_consulta-instrumento.md`), con fila en su índice de preguntas y la respuesta escrita (F11).
 2. **¿Ya existe?** Buscar en `fundamentos/00_indice.md` y con grep. Un concepto se escribe una vez y se enlaza (F10); si existe, se amplía ese.
 3. **Auditar prerrequisitos (F14).** Listar lo que hay que entender para comprender este concepto y marcar cada uno: explicado (con enlace) o faltante. Si falta uno, se presenta al usuario y se escribe **antes**, como su propio apunte; este espera. Un apunte, un concepto: si al explicarlo aparece un segundo concepto grande, es otro apunte.
 4. **Presentar el esquema y esperar el OK del usuario:** 3-5 líneas con el concepto, sus prerrequisitos y los ejemplos que usará. No se escribe antes.

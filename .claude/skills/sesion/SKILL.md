@@ -1,6 +1,6 @@
 ---
 name: sesion
-description: Abrir, retomar o cerrar una sesión de práctica de Okaeri (guitarra o canto), y cerrar un módulo con su evaluación. Usar cuando el usuario va a tocar o cantar, vuelve después de una pausa o una ausencia, dice que terminó, o cuenta que algo no le sale.
+description: Abrir, retomar o cerrar una sesión de práctica de Okaeri (guitarra), y cerrar un módulo con su evaluación. Usar cuando el usuario va a tocar o cantar, vuelve después de una pausa o una ausencia, dice que terminó, o cuenta que algo no le sale.
 ---
 
 # Sesión de práctica
@@ -20,8 +20,8 @@ Si pasó más de una semana sin sesión registrada: nombrar el hecho con fechas 
 
 ## 2. Abrir
 
-1. **Carril:** guitarra o canto. Si no está claro, una pregunta con las dos alternativas.
-2. **Orden fijo:** la tarea del profesor de ese carril → la evaluación en curso → el concepto que sigue en la cola.
+1. **Carril:** guitarra.
+2. **Orden fijo:** la tarea del profesor → la evaluación en curso → el concepto que sigue en la cola.
 3. **Escribir en "Sesión en curso":** estado `EN-CURSO`, carril, fecha y los bloques del día.
 4. **Entregar el primer bloque completo** (paso 3) y dejar tocar.
 

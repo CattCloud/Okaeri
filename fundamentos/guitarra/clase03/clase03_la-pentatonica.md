@@ -14,7 +14,7 @@ estado: PROVISIONAL — comprimido en un solo apunte; lo reemplaza la escalera d
 ## Qué es una escala
 
 
-De las 7 [notas](../clase01/clase01_notas-y-cuerdas.md) (más sus **alteraciones**, las variantes con sostenido ♯, explicadas en [el apunte del semitono](../../canto/clase05/clase05_semitono.md)), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
+De las 7 [notas](../clase01/clase01_notas-y-cuerdas.md) (más sus **alteraciones**, las variantes con sostenido ♯), una **escala** elige unas cuantas y las ordena de grave a agudo. De esas notas salen las melodías y los **punteos** (melodías tocadas nota por nota en la guitarra) de una canción, igual que sus acordes salen de su familia. Por eso la escala es un **mapa**: te dice qué notas "pertenecen" y dónde están en el mástil.
 
 ## Pentatónica: cinco notas
 

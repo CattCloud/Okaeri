@@ -5,9 +5,7 @@ tipo: ""                 # adoración | alabanza | otro
 formas: ""               # las formas que haces con los dedos, ej. "Sol · Do · Re · Mim"
 capo: ""                 # traste del capo, o "—"
 dificultad: ""           # fácil | media | difícil (al nivel del usuario)
-estado_memoria: APRENDIENDO   # guitarra: APRENDIENDO | TOCO-CON-AYUDA | TOCO-DE-MEMORIA-SOLO
-estado_memoria_canto: "—"     # canto: — | APRENDIENDO | CANTO-CON-AYUDA | CANTO-DE-MEMORIA-SOLA
-tono_canto: "—"               # semitonos respecto al original (RP5), o "—"
+estado_memoria: APRENDIENDO   # APRENDIENDO | TOCO-CON-AYUDA | TOCO-DE-MEMORIA-SOLO
 modulo_entrada: ""       # el módulo del mapa que esta canción ejercita
 fecha_inicio: YYYY-MM-DD
 ---
@@ -22,10 +20,9 @@ fecha_inicio: YYYY-MM-DD
 -
 
 ## Estado de memoria
-Los estados de cada carril están en `repertorio/AGENTS.md` (RP1). Solo el tercero cuenta.
+Los estados están en `repertorio/AGENTS.md` (RP1). Solo el tercero cuenta.
 
 - **Guitarra:** APRENDIENDO
-- **Canto:** —
 
 ## Estructura (para memoria por comprensión)
 <!-- Entender la estructura es lo que hace robusta la memoria. Reparto frase → acorde se valida contra la grabación y se escribe aquí. -->

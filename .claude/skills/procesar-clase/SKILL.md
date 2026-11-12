@@ -1,6 +1,6 @@
 ---
 name: procesar-clase
-description: Procesar lo que pasó en una clase de la academia de Okaeri (guitarra los martes, canto los jueves) — el reporte del usuario, la tarea del profesor o una falta. Usar cuando el usuario cuenta qué vieron en clase, comparte notas o fotos de la clase, o avisa que faltó.
+description: Procesar lo que pasó en una clase de la academia de Okaeri (guitarra, los martes) — el reporte del usuario, la tarea del profesor o una falta. Usar cuando el usuario cuenta qué vieron en clase, comparte notas o fotos de la clase, o avisa que faltó.
 ---
 
 # Procesar una clase de la academia
@@ -19,7 +19,6 @@ Reglas que rigen: R4 (la clase manda la ruta, la tarea va primero) · F14 (sin h
 | Carril | Clase | Reporte y proceso |
 |---|---|---|
 | Guitarra | martes 8-10 pm | miércoles |
-| Canto | jueves 8-10 pm | viernes |
 
 ## Pasos
 

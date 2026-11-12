@@ -1,6 +1,6 @@
 ---
 tipo: practica
-carril: guitarra          # guitarra | canto
+carril: guitarra
 modulo: mN
 origen: ""                # claseNN (AAAA-MM-DD) — ejercicio del profesor | sección N.N del mapa
 titulo: ""
@@ -9,9 +9,8 @@ estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 ---
 
 # 🎸 Práctica — [Título]
-<!-- 🎤 en canto -->
 
-> **Con la guitarra afinada** (en canto: **con la voz calentada**). [Origen en una línea: tarea de la clase N o sección N.N del mapa.]
+> **Con la guitarra afinada.** [Origen en una línea: tarea de la clase N o sección N.N del mapa.]
 
 ## 🎯 Qué estás mejorando (en claro)
 <!-- F4. Sin jerga. Qué habilidad construye, para qué le sirve y CÓMO va a notar la mejora. -->
@@ -31,7 +30,7 @@ estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 | V1 | | |
 
 ## Cómo suena cuando está bien
-<!-- Para que juzgue solo, sin preguntar. En canto: cómo suena en la grabación. -->
+<!-- Para que juzgue solo, sin preguntar. -->
 
 ## Si sale mal — los 3 típicos
 

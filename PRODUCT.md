@@ -22,7 +22,7 @@ El avance que muestra es real y medible: un tema solo cuenta como «logrado» cu
 
 - Archivo único `.impeccable/prototipo/index.html` (versionado, ya generado), que se abre con doble clic, sin servidor. Lo arma `node build.cjs` (Node 22) desde esa carpeta, leyendo los `.md` de `fundamentos/guitarra/` (cada uno dice su módulo en `modulo:`), el temario y `practica/00_indice.md`; se regenera dentro de la tarea que cierra una clase o escribe un apunte o práctica. No hay datos que editar a mano.
 - No se publica en internet (decisión del 2026-11-11). El panel anterior, `system.html`, y sus scripts quedaron archivados en `_archivo/panel-system-html/`.
-- Un carril activo, guitarra, con su temario (`contexto/plan_estudio/temario_guitarra.md`) y sus apuntes y prácticas por clase (`fundamentos/guitarra/claseNN/`). El carril de canto se dejó el 2026-11-06; su archivo en el repositorio está pendiente (R10).
+- Un carril activo, guitarra, con su temario (`contexto/plan_estudio/temario_guitarra.md`) y sus apuntes y prácticas por clase (`fundamentos/guitarra/claseNN/`). El carril de canto se dejó el 2026-11-06 y se archivó el 2026-11-12 en `_archivo/canto/`.
 
 ## Capabilities and Constraints
 

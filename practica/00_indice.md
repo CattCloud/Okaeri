@@ -1,6 +1,6 @@
 # 📒 Índice de práctica — Constancia, academias y accountability
 
-> **Fuente única de control de la constancia.** Aquí vive el registro de sesiones, el chequeo semanal, y todo lo de las **dos academias** (guitarra martes · canto jueves): clases, faltas, presentaciones de fin de nivel. La fecha dura del profesor **ya no existe** — los profesores están desde el día uno.
+> **Fuente única de control de la constancia.** Aquí vive el registro de sesiones, el chequeo semanal, y todo lo de la **academia** (guitarra, martes; la de canto se archivó, ver su sección): clases, faltas, presentaciones de fin de nivel. La fecha dura del profesor **ya no existe** — los profesores están desde el día uno.
 
 ---
 
@@ -36,23 +36,25 @@
 
 ---
 
-## 🏫 La academia — Canto (jueves)
+## 🏫 La academia — Canto (jueves) · archivada
+
+> El carril de canto se retiró el 2026-11-06 y se archivó el 2026-11-12 en `_archivo/canto/`. Aquí queda solo el registro de las clases a las que se asistió.
 
 | Campo | Valor |
 |---|---|
 | **Curso** | Canto para adultos — Básico I (misma academia y estructura que guitarra) |
 | **Formato** | Presencial, grupo de 3-4, **jueves 8:00-10:00 pm** |
 | **Inicio** | **2026-09-03** (matrícula y clase 1) |
-| **Sílabo** | `contexto/plan_estudio/silabo_academia_canto_basico1.md` (5 módulos × 4 clases) |
-| **Repertorio del curso** | Cada alumno elige **2-3 canciones** que se trabajan y mejoran clase a clase. Las elegidas: ver `repertorio/00_indice.md` §canto |
+| **Sílabo** | `_archivo/canto/contexto/plan_estudio/silabo_academia_canto_basico1.md` (5 módulos × 4 clases) |
+| **Repertorio del curso** | Cada alumno elige **2-3 canciones** que se trabajan y mejoran clase a clase. Las elegidas: ver `_archivo/canto/repertorio/00_indice_canto.md` |
 | **🎯 Presentación de clausura** | **1 canción** al cerrar el nivel — el objetivo visualizable del carril canto |
 
 **Clases:**
 
 | # | Fecha | Asistí | Qué se vio | Tarea | Reporte |
 |---|---|:-:|---|---|---|
-| 1 | 2026-09-03 | ✅ | Respiración de diafragma + variante con costados (costo-diafragmática) · ejercicio del papel en la pared (presión de aire constante) · trino de labios con subidas y bajadas · práctica de canto | Practicar lo visto (apunte y práctica en `fundamentos/canto/clase01/`) | ✅ 09-14 |
-| 2 | 2026-09-10 | ✅ | Apps recomendadas (se define aparte, no es pedagógico) · canto sobre repertorio · consigna: **elegir 2-3 canciones propias** para trabajar cada clase | Elegir el repertorio → elegido (ver `repertorio/00_indice.md` §canto) | ✅ 09-14 |
+| 1 | 2026-09-03 | ✅ | Respiración de diafragma + variante con costados (costo-diafragmática) · ejercicio del papel en la pared (presión de aire constante) · trino de labios con subidas y bajadas · práctica de canto | Practicar lo visto (apunte y práctica en `_archivo/canto/fundamentos/clase01/`) | ✅ 09-14 |
+| 2 | 2026-09-10 | ✅ | Apps recomendadas (se define aparte, no es pedagógico) · canto sobre repertorio · consigna: **elegir 2-3 canciones propias** para trabajar cada clase | Elegir el repertorio → elegido (ver `_archivo/canto/repertorio/00_indice_canto.md`) | ✅ 09-14 |
 | 3 | 2026-09-17 | ✅ | Contenido no recordado con precisión — el reporte se perdió por no anotar a tiempo | — | ✅ 10-14 (tardío) |
 | 4 | 2026-09-24 | ✅ | Figuras musicales con sus silencios (de 1 tiempo a ½ tiempo): compás dibujado en la pizarra, practicado con cronómetro. Mnemotecnia del profesor: TA = redonda, TAA = blanca, TAAA = negra, TI-TI = corchea | Material pendiente de escribir | ✅ 10-14 |
 | 5 | 2026-10-01 | ✅ | Articular, gesticular y vocalización · tesitura vocal · rangos vocales de hombres y mujeres · partes del cuerpo que intervienen al cantar (la voz descrita como "una bolita" que se mueve sobre ellas) | Material pendiente de escribir | ✅ 10-14 |
@@ -62,7 +64,7 @@
 
 ## 🔔 Chequeo de constancia (semanal, no diario)
 
-Piso por carril: R9 (guitarra 15 min × 3-4 por semana · canto 10 min × 3; el calentamiento de aire y trino cuenta). Cómo se hace el chequeo: RG2 en `practica/AGENTS.md`.
+Piso: R9 (guitarra 15 min × 3-4 por semana). Cómo se hace el chequeo: RG2 en `practica/AGENTS.md`.
 
 | Semana | Sesiones | Mínimo (3) | Nota |
 |---|:-:|:-:|---|
@@ -91,7 +93,7 @@ Piso por carril: R9 (guitarra 15 min × 3-4 por semana · canto 10 min × 3; el 
 
 ## 📍 Dónde estoy
 
-- **Marcadores (guitarra y canto):** ver `sistema/estado/estado_actual.md` — se lee ANTES de decidir qué toca.
+- **Marcador de guitarra:** ver `sistema/estado/estado_actual.md` — se lee ANTES de decidir qué toca.
 - **Canción única (guitarra):** *No hay lugar más alto* (Miel San Marcos) — `repertorio/no-hay-lugar-mas-alto/00_indice.md`.
-- **Próximos hitos:** guitarra M4.6 (la canción tocada de memoria) · canto M4.6 (cantada de memoria) · el puente: canto M7, cantarla y tocarla a la vez.
-- **Destino:** la banda de la iglesia (guitarra M9 · canto M8).
+- **Próximos hitos:** guitarra M4.6 (la canción tocada de memoria).
+- **Destino:** la banda de la iglesia (guitarra M9).

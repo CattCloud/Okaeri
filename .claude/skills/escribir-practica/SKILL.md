@@ -1,11 +1,11 @@
 ---
 name: escribir-practica
-description: Escribir o corregir una práctica de Okaeri — el archivo que se usa con la guitarra o la voz lista, libre, sin niveles ni minutos por día. Usar al convertir una tarea del profesor o una sección del temario en un ejercicio, o al corregir una práctica existente.
+description: Escribir o corregir una práctica de Okaeri — el archivo que se usa con la guitarra lista, libre, sin niveles ni minutos por día. Usar al convertir una tarea del profesor o una sección del temario en un ejercicio, o al corregir una práctica existente.
 ---
 
 # Escribir una práctica
 
-Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F12). Este archivo solo da los pasos.
+Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F16). Este archivo solo da los pasos.
 
 ## Pasos
 

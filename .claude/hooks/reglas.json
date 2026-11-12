@@ -15,7 +15,7 @@
   "estado_duplicado": {
     "regla": "R12",
     "permitido": ["sistema/estado/estado_actual.md"],
-    "patrones": ["Marcador (guitarra|canto)\\s*:", "\\*\\*Cola de conceptos", "\\*\\*Evaluación en curso\\*\\*", "\\*\\*Última clase reportada\\*\\*"]
+    "patrones": ["Marcador guitarra\\s*:", "\\*\\*Cola de conceptos", "\\*\\*Evaluación en curso\\*\\*", "\\*\\*Última clase reportada\\*\\*"]
   },
   "frases_prohibidas": [
     { "regla": "R7", "motivo": "frase de efecto", "patron": "literalmente", "tipos": ["apunte", "practica", "consulta"] },

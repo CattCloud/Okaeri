@@ -1,6 +1,6 @@
 ---
 name: crear-diagrama
-description: Crear o corregir un diagrama de Okaeri (acordes, TAB, figuras rítmicas, mástil, teclado, esquemas de ejercicios de voz) como SVG por código y PNG. Usar cuando un apunte o una práctica necesita mostrar una forma, una posición, una comparación o un ejercicio.
+description: Crear o corregir un diagrama de Okaeri (acordes, TAB, figuras rítmicas, mástil, teclado) como SVG por código y PNG. Usar cuando un apunte o una práctica necesita mostrar una forma, una posición, una comparación o un ejercicio.
 ---
 
 # Crear un diagrama
@@ -23,8 +23,8 @@ Diagrama de libro técnico. Fondo blanco puro. Líneas y texto en negro y gris o
 |---|---|
 | 🔴 Rojo `#d23333` | dedo 1 · la nota que cambia · señalar |
 | 🟠 Naranja `#e8820c` | dedo 2 · acorde menor |
-| 🟢 Verde `#2e9e44` | dedo 3 · acorde mayor resaltado · correcto · zona cómoda de la voz |
-| 🔵 Azul `#2b6cb0` | dedo 4 · cuerda al aire resaltada · rango total de la voz |
+| 🟢 Verde `#2e9e44` | dedo 3 · acorde mayor resaltado · correcto |
+| 🔵 Azul `#2b6cb0` | dedo 4 · cuerda al aire resaltada |
 | 🟣 Morado | capo · cejilla |
 | ⚫ Gris | X (cuerda que no se toca) · marcadores de traste |
 
@@ -42,7 +42,7 @@ Diagrama de libro técnico. Fondo blanco puro. Líneas y texto en negro y gris o
 
 **TAB:** 6 líneas, la 1ª cuerda **arriba**; números = trastes.
 
-**Teclado** (canto y teoría de notas): teclas blancas y negras reales, los Do numerados (Do3, Do4…); rango total en azul y zona cómoda en verde.
+**Teclado** (teoría de notas): teclas blancas y negras reales, los Do numerados (Do3, Do4…).
 
 ## 4. Cómo se generan
 

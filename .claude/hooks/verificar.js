@@ -122,7 +122,7 @@ function revisarApunte(lineas, fm, aviso, rel) {
   for (const c of CONFIG.apunte.campos) if (!(c in fm)) aviso('F10', `falta el campo "${c}" en el frontmatter`);
   if (!lineas.some((l) => /^# /.test(l))) aviso('F10', 'falta el título principal (# ...)');
   if (!lineas.some((l) => new RegExp(CONFIG.apunte.repaso).test(l))) aviso('F10', 'falta el cierre "📋 Repaso en una pantalla"');
-  // F14 (2026-11-12): los prerrequisitos se auditan antes de escribir, pero el apunte no los muestra. Solo guitarra: los apuntes de canto (por archivar) aún la traen.
+  // F14 (2026-11-12): los prerrequisitos se auditan antes de escribir, pero el apunte no los muestra. Solo guitarra (el carril de canto se archivó el 2026-11-12).
   if (rel.startsWith('fundamentos/guitarra/') && lineas.some((l) => l.includes(CONFIG.apunte.prerrequisitos))) aviso('F14', 'los apuntes ya no llevan la línea «Antes de esto necesitas: …»: los prerrequisitos se auditan, no se muestran');
 }
 
@@ -139,7 +139,7 @@ function revisarRepertorio(lineas, aviso) {
     if (cabecera) { cabecera = false; continue; }
     if (l.replace(/[|\s]/g, '')) filas++;
   }
-  if (filas > cfg.max_en_curso) aviso('RP2', `hay ${filas} canciones "En curso"; el máximo por carril es ${cfg.max_en_curso}`, inicio + 1);
+  if (filas > cfg.max_en_curso) aviso('RP2', `hay ${filas} canciones "En curso"; el máximo es ${cfg.max_en_curso}`, inicio + 1);
 }
 
 function formatear(avisos) {

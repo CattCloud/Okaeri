@@ -6,8 +6,7 @@ formas: "Sol · Do · Re · Mim"
 capo: 4 (a confirmar contra la grabación; si está en La → capo 2)
 dificultad: "fácil (sin cejilla con capo)"
 estado_memoria: APRENDIENDO
-estado_memoria_canto: "— (candidata a canción única de canto M4; el tono se decide tras medir el rango vocal)"
-modulo_entrada: M4 (guitarra) · M4 canto (futuro) · M7 canto (cantar y tocar)
+modulo_entrada: M4 (guitarra)
 fecha_inicio: 2026-08-28
 ---
 

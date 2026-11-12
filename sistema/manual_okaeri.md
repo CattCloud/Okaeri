@@ -1,5 +1,7 @@
 # 📘 Manual de Okaeri — el porqué
 
+> **Desde el 2026-11-12 el carril de canto está archivado** (`_archivo/canto/`); las menciones de canto de este manual son historia.
+>
 > **Qué es este archivo:** la filosofía del sistema, es decir, por qué es como es. **No contiene reglas operativas:** esas viven en `AGENTS.md` (R1-R12), en las reglas de cada carpeta y en los procedimientos de `.claude/skills/`. Aquí se citan por su número. Diseño original (era piano, 2026-06): `_archivo/diseno_original/okaeri-base.md`.
 
 ---

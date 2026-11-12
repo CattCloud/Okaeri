@@ -9,9 +9,8 @@
 ## Estados de memoria — por carril
 
 **Guitarra:** `APRENDIENDO` → `TOCO-CON-AYUDA` (con cifrado delante) → `TOCO-DE-MEMORIA-SOLO` ✅.
-**Canto:** `APRENDIENDO` → `CANTO-CON-AYUDA` (con letra o voz original delante) → `CANTO-DE-MEMORIA-SOLA` ✅.
 
-En ambos, **solo el tercero cuenta** (anti-muleta). La meta final de una pieza: los dos ✅ y luego **cantada y tocada a la vez** (canto M7).
+**Solo el tercero cuenta** (anti-muleta).
 
 ---
 
@@ -35,16 +34,6 @@ En ambos, **solo el tercero cuenta** (anti-muleta). La meta final de una pieza: 
 | I'd Come For You | Nickelback | Sol · Do · Re · Mim (capo 7) | 7 | M6 / M7 | La favorita no-worship. Por el rasgueo |
 | Capitán | TWICE | lleva Sim, 143 BPM | — | M6 + M7 | Alabanza rápida: ritmo + cejilla |
 
-## 🎤 Canto — el repertorio del profesor (tarea, elegido 2026-09-14)
-
-> Consigna de la clase 2: **2-3 canciones propias** que se trabajan y mejoran clase a clase, y de ahí saldrá la de la presentación. Son **tarea del profesor** (van primero en cada sesión de canto); ninguna cuenta como \"aprendida\" hasta pasar el M4.6 de canto como cualquier otra.
-
-| Canción | Artista | Estado (canto) | Nota |
-|---|---|---|---|
-| **Eres todo poderoso** | Danilo Montero | `APRENDIENDO` | — |
-| **Hosanna** | Marcos Witt | `APRENDIENDO` | ⚠️ Sus agudos exceden tu techo cómodo de hoy (Sol4, medido 09-14). **No se fuerza**: en la próxima sesión se ubica la nota más aguda de su coro y se baja el tono los semitonos que hagan falta |
-| _Tercera: por decidir_ | Marcos Brunet / Matt Redman | — | Entre **Al que está sentado en el trono** y **10,000 Razones (esp.)** — las dos están también en la lista de espera de guitarra: cualquiera que elijas sumará doble cuando llegue su módulo de guitarra |
-
 > **Las primeras cinco de guitarra viven en las mismas cuatro formas.** M1 + M2 es la llave de todas.
 >
 > **Pendiente:** la **lista de la banda de la iglesia** (5-6 que más repitan). Cuando llegue, se verifica cuáles son viables y esa lista manda sobre esta.
@@ -58,8 +47,6 @@ En ambos, **solo el tercero cuenta** (anti-muleta). La meta final de una pieza: 
 | Contador | Hoy | Meta nivel base | Meta banda |
 |---|:-:|:-:|:-:|
 | **Tocadas de memoria** (guitarra) | **0** | 1 (M4) | 3 (M9) |
-| **Cantadas de memoria** (canto) | **0** | 1 (M4) | — |
-| **Cantadas y tocadas a la vez** (canto M7 — la meta de siempre) | **0** | 1 | — |
 
 ---
 

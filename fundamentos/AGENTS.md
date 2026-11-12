@@ -4,7 +4,7 @@
 
 ## Organización
 
-**F1 · Ubicación y nombre.** Una carpeta por clase de la academia: `fundamentos/<carril>/claseNN/`. Ahí vive todo lo que esa clase abrió —sus apuntes, sus prácticas y los conceptos previos que hubo que escribir para entenderla—, y una clase posterior que lo necesite lo enlaza. Lo que no nació de una clase (teoría de base, una sección del mapa) va en `fundamentos/<carril>/base/`. El nombre dice el origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica); en `base/`, `apunte_N.N_<tema>.md` y `practica_N.N_<tema>.md`, con N.N la sección del mapa. Imágenes de una clase en su `claseNN/img/`; las que usan varias clases (los diagramas de acorde) en `<carril>/img/`. Nombres en minúsculas, con guiones, sin tildes.
+**F1 · Ubicación y nombre.** Una carpeta por clase de la academia: `fundamentos/guitarra/claseNN/`. Ahí vive todo lo que esa clase abrió —sus apuntes, sus prácticas y los conceptos previos que hubo que escribir para entenderla—, y una clase posterior que lo necesite lo enlaza. Lo que no nació de una clase (teoría de base, una sección del mapa) va en `fundamentos/<carril>/base/`. El nombre dice el origen: `claseNN_<tema>.md` (apunte) y `claseNN_practica_<tema>.md` (práctica); en `base/`, `apunte_N.N_<tema>.md` y `practica_N.N_<tema>.md`, con N.N la sección del mapa. Imágenes de una clase en su `claseNN/img/`; las que usan varias clases (los diagramas de acorde) en `<carril>/img/`. Nombres en minúsculas, con guiones, sin tildes.
 
 **F2 · Apunte y práctica son archivos distintos.** Si se puede hacer sin el instrumento, es apunte: se lee lejos de él. Si necesita el instrumento, es práctica: se usa con él en la mano. Mezclarlos induce a leer mientras se toca (R2). Un mismo ejercicio puede aparecer en los dos con roles distintos: el apunte explica qué entrena y por qué funciona; la práctica prescribe cuánto. Prescribir cantidades es exclusivo de la práctica.
 
@@ -22,7 +22,7 @@
 
 **F16 · Una imagen por versión.** Cada versión o parte del ejercicio es una imagen (`crear-diagrama`) que trae dentro su nombre y su indicación en una o dos líneas; «Cómo se hace» es esa galería, con una línea de introducción como máximo. Lo que vale para todas las versiones («metrónomo 60, la 6ª cuerda al aire») va en esa línea; lo que cambia por versión (tempo, cuerda, trastes, dedos) va en una tabla corta «Versión · Tempo · Dónde» debajo de la galería, si la imagen no lo dice. Sin párrafos: lo que explica va en «Qué estás mejorando», «Si sale mal» o «Afinación del instructor». En guitarra, el número de traste va en el color de su dedo. Motivo: el usuario abre la práctica para tocar, y tener que leer la hoja para saber qué hacer es fricción (decisión 2026-10-21; sin niveles desde 2026-11-10, F5).
 
-**F7 · Verificar después, no durante.** Una práctica puede cerrar con "Verificación — mirar después de intentar" (el reverso, como en Anki). Mientras una forma es nueva, mirarla se permite; lo prohibido es tocar siempre mirando. En canto la verificación es la grabadora: se canta sin mirar nada, se graba y se escucha al final.
+**F7 · Verificar después, no durante.** Una práctica puede cerrar con "Verificación — mirar después de intentar" (el reverso, como en Anki). Mientras una forma es nueva, mirarla se permite; lo prohibido es tocar siempre mirando.
 
 ## Apuntes
 
@@ -30,14 +30,10 @@
 
 **F9 · El apunte es atemporal, no un chat.** Solo la lección: nada que dependa de la conversación del día ("tu duda", "como vimos hoy"), ni disculpas, ni deudas o comentarios sobre el sistema. Quien lo relea en tres semanas solo debe encontrar la lección. La personalización pedagógica sí entra: sus ejemplos, su repertorio, lo que le cuesta. Lo operativo va a `estado_actual.md` o `NOTAS.md`; lo del sistema, al frontmatter.
 
-**F10 · Un concepto se escribe una vez.** La teoría común a los dos carriles (notas, octavas, escala) vive en un solo apunte y se enlaza desde el otro. Excepción: el carril canto no enlaza a guitarra (F15). Cada apunte cierra con `📋 Repaso en una pantalla`. Plantilla: `.claude/skills/escribir-apunte/plantilla.md`.
+**F10 · Un concepto se escribe una vez.** Un concepto vive en un solo apunte y se enlaza desde donde se necesita. Cada apunte cierra con `📋 Repaso en una pantalla`. Plantilla: `.claude/skills/escribir-apunte/plantilla.md`.
 
 **F14 · Sin huecos.** Antes de escribir un apunte se lista lo que hay que entender para comprender su concepto y se marca cada prerrequisito: explicado (con enlace) o faltante. Un faltante se presenta al usuario y se escribe como su propio apunte antes que el concepto que lo necesita, nunca como una frase dentro del apunte de arriba. Un apunte explica un solo concepto. La lista de prerrequisitos es de proceso y **no se muestra en el apunte**: sin la línea «Antes de esto necesitas» (el usuario la quitó el 2026-11-12); el apunte solo enlaza, en su cuerpo, lo que usa (R6). La academia puede saltar temas; el sistema no.
 
-## Consultas y canto
+## Consultas
 
-**F11 · Las consultas no son pasos del mapa.** `_consulta-instrumento.md` y `canto/_consulta-voz.md` se consultan siempre. Toda duda de consulta que se responda en el chat se archiva en la de su carril, con fila en su índice de preguntas **y la respuesta escrita** (nunca "explicado en el chat").
-
-**F12 · Canto.** El agente no oye: lo físico de la voz lo manda el profesor (R8). Regla fija de toda práctica de canto: **dolor o carraspera = parar**. La nota de referencia la da la guitarra o un piano de app, no una app que dibuje la afinación mientras se canta (R2).
-
-**F15 · Los apuntes de canto se explican por sí solos.** Los lee alguien sin conocimientos y sin guitarra: ningún apunte de canto enlaza a `fundamentos/guitarra/` ni la nombra (ni trastes, ni capo, ni cifrado de acordes). Un concepto común con guitarra (pulso, figuras, notas) se escribe completo, desde cero, en el apunte de canto. Hablan en general, sin los datos de una persona: su rango, su repertorio y su voz viven en `sistema/perfil/` y en las prácticas. Los ejemplos son neutros (palmas, sílabas, el teclado). Motivo: el temario de canto también lo estudia otra persona que no ve guitarra (decisión 2026-10-15).
+**F11 · Las consultas no son pasos del mapa.** `_consulta-instrumento.md` se consulta siempre. Toda duda de consulta que se responda en el chat se archiva ahí, con fila en su índice de preguntas **y la respuesta escrita** (nunca "explicado en el chat").
