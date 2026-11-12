@@ -19,7 +19,7 @@ const aviso = m => console.warn("AVISO:", m)
 // ---------- 1. los apuntes de todos los módulos: cada .md dice el suyo en `modulo:`; el orden es el de las clases (R4) ----------
 const EN_CURSO = 1   // el módulo que la franja abre ya elegido (marcador de guitarra en sistema/estado/estado_actual.md)
 // dentro de una misma clase el orden es el de enseñanza; lo que esta lista no nombra va después, por nombre de archivo
-const ORDEN_EN_CLASE = ["clase01_notas-y-cuerdas.md", "clase01_tablatura.md", "clase01_dedos-mano-izquierda.md"]
+const ORDEN_EN_CLASE = ["clase01_notas-y-cuerdas.md", "clase01_tablatura.md", "clase01_dedos-mano-izquierda.md", "clase02_el-acorde.md", "clase02_diagramas-de-acorde.md", "clase02_los-8-acordes.md"]
 const bloqueFm = t => (t.match(/^---\n([\s\S]*?)\n---/) || [])[1] || ""
 const campo = (b, k) => ((b.match(new RegExp(`^${k}:\\s*(.*)$`, "m")) || [])[1] || "").trim().replace(/^"(.*)"$/, "$1")
 const archivos = []
@@ -187,6 +187,15 @@ const fuentes = [
   ["Atkinson Hyperlegible", 700, "normal", "atkinson-700.woff2"], ["Atkinson Hyperlegible", 400, "italic", "atkinson-400-it.woff2"]
 ].map(([f, w, s, a]) => `@font-face{font-family:"${f}";font-weight:${w};font-style:${s};font-display:swap;src:url(${b64(path.join(AQUI, "fonts", a), "font/woff2")}) format("woff2")}`).join("\n")
 
+// Los .md cierran con un pie de enlaces («← anterior · índice · siguiente → X · su práctica: Y»). En el carrusel la barra al pie hace lo de anterior/siguiente,
+// así que se marcan esas partes para esconderlas allí (apilado se ven: no hay barra). «su práctica» se conserva; un pie sin ella se esconde entero.
+const pieNav = html => html.replace(/<p>((?:(?!<\/p>).)*?)<\/p>/gs, (m, dentro) => {
+  const partes = dentro.trim().split(" · ")
+  const esNav = p => /^<a[^>]*>(?:←|siguiente →)[^<]*<\/a>$/.test(p) || /^<span[^>]*>índice<\/span>$/.test(p)
+  if (!partes.some(p => /^<span[^>]*>índice<\/span>$/.test(p)) || !partes.every(p => esNav(p) || /^su práctica:/.test(p))) return m
+  const nav = partes.filter(esNav), prac = partes.filter(p => !esNav(p))
+  return `<p class="pie-nav${prac.length ? "" : " solo-nav"}"><span class="pn-nav">${nav.join(" · ")}</span>${prac.length ? `<span class="pn-sep"> · </span><span class="pn-prac">${prac.join(" · ")}</span>` : ""}</p>`
+})
 const idPrac = r => `p-${r.k}`
 const tPractica = r => sinPrefijo(r.p.tituloHtml)
 function apunteHtml(r) {
@@ -200,17 +209,17 @@ ${r.p && !r.solo ? `<div class="vista" role="group" aria-label="Qué lees de est
   if (r.solo) return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="practica" data-solo>
 ${cab}
 <div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}">
-${r.p.html}
+${pieNav(r.p.html)}
 </div>
 </article>`
   return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="teoria">
 ${cab}
 <div class="ap-cuerpo" data-panel="teoria">
-${r.t.html}
+${pieNav(r.t.html)}
 </div>
 ${r.p ? `<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}" hidden>
 <h4 class="ap-practica">Práctica: ${tPractica(r)}</h4>
-${r.p.html}
+${pieNav(r.p.html)}
 </div>` : ""}
 </article>`
 }
@@ -228,11 +237,33 @@ const rutaItem = (r, i) => `<li data-t="${esc(buscable(r))}">
 <a class="d-ap" href="#a-${r.k}" data-k="${r.k}"><span class="d-n">${i + 1}</span><span class="d-t">${r.solo ? "Práctica: " + tPractica(r) : r.t.tituloHtml}</span></a>
 ${r.p && !r.solo ? `<a class="d-prac" href="#${idPrac(r)}" data-k="${r.k}" data-practica>Práctica: ${tPractica(r)}</a>` : ""}
 </li>`
+// carrusel (≥1200 px): cada apunte es una hoja con su propio scroll y su barra al pie. Bajo 1200 px la hoja no existe (display:contents) y el módulo se lee apilado, con sus separadores.
+// «Siguiente» dice solo eso (usuario, 2026-11-12); el título del apunte que sigue en el orden del módulo (fogata y luego muelle) va en `title` y `aria-label`; el último dice «Fin del módulo».
+const tituloPlano = r => r.solo ? sinPrefijo(r.p.titulo) : r.t.titulo
+function hojaHtml(r, i, rutas) {
+  const ant = rutas[i - 1], sig = rutas[i + 1]
+  const botonSig = sig
+    ? `<button type="button" class="btn-hoja sig" data-dir="1" aria-label="Siguiente: ${esc(tituloPlano(sig))}" title="${esc(tituloPlano(sig))}"><span class="btn-txt">Siguiente</span>${ico("derecha")}</button>`
+    : `<button type="button" class="btn-hoja sig" data-dir="1"><span class="btn-txt">Fin del módulo</span>${ico("derecha")}</button>`
+  // la barra va dentro del scroll de la hoja, pegada al pie (sticky): comparte el ancho del apunte y no hace falta medir la barra de desplazamiento
+  return `<div class="hoja" data-k="${r.k}">
+<div class="hoja-scroll">
+${apunteHtml(r)}
+<nav class="hoja-nav" aria-label="Moverse entre los apuntes del módulo">
+${ant ? `<button type="button" class="btn-hoja ant" data-dir="-1">${ico("izquierda")}<span class="btn-txt">Anterior</span></button>` : "<span></span>"}
+<p class="hoja-cuenta">${i + 1} de ${rutas.length}</p>
+${botonSig}
+</nav>
+</div>
+</div>`
+}
+
 // los apuntes de cada módulo no se pintan hasta que se elige el módulo
 const plantillas = MODS.filter(m => m.rutas.length).map(m => {
-  const de = e => m.rutas.filter(r => r.escena === e)
-  return `<template id="m${m.n}-fogata">${de("fogata").map(apunteHtml).join(`\n${SEP}\n`)}</template>
-<template id="m${m.n}-muelle">${de("muelle").map(apunteHtml).join(`\n${SEP}\n`)}</template>
+  const de = e => m.rutas.map((r, i) => [r, i]).filter(([r]) => r.escena === e)
+  const hojas = e => de(e).map(([r, i]) => hojaHtml(r, i, m.rutas)).join(`\n${SEP}\n`)
+  return `<template id="m${m.n}-fogata">${hojas("fogata")}</template>
+<template id="m${m.n}-muelle">${hojas("muelle")}</template>
 <template id="m${m.n}-ruta">${m.rutas.map(rutaItem).join("\n")}</template>`
 }).join("\n")
 
@@ -292,13 +323,19 @@ ${sprite()}
 </section>
 
 <div class="modulo" id="modulo" hidden>
+<div class="escenario">
+<div class="brillo" id="brillo" aria-hidden="true"></div>
+<div class="pista" id="pista">
 ${corte("fogata")}
 <div class="paso" aria-hidden="true"><i></i></div>
 ${corte("muelle")}
 <section class="cierre" aria-label="Fin del módulo">
-<p class="cierre-t" id="cierre-t"></p>
+<h2 class="cierre-t" id="cierre-t" tabindex="-1"></h2>
 <a class="btn-px" id="siguiente" href="#modulos" hidden>Módulo siguiente ${ico("derecha")}<span class="btn-sub" id="siguiente-sub"></span></a>
+<button type="button" class="btn-px chico" id="volver">${ico("izquierda")}Volver al último apunte</button>
 </section>
+</div>
+</div>
 </div>
 </main>
 

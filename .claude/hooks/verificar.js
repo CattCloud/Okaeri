@@ -79,7 +79,7 @@ function revisar(rel) {
 
   if (TIPOS_CONTENIDO.includes(tipo)) revisarImagenesYEnlaces(lineas, abs, tipo, aviso);
   if (tipo === 'practica') revisarPractica(lineas, fm, aviso);
-  if (tipo === 'apunte') revisarApunte(lineas, fm, aviso);
+  if (tipo === 'apunte') revisarApunte(lineas, fm, aviso, rel.replace(/\\/g, '/'));
   if (rel === CONFIG.repertorio.indice) revisarRepertorio(lineas, aviso);
   return avisos;
 }
@@ -118,11 +118,12 @@ function revisarPractica(lineas, fm, aviso) {
   }
 }
 
-function revisarApunte(lineas, fm, aviso) {
+function revisarApunte(lineas, fm, aviso, rel) {
   for (const c of CONFIG.apunte.campos) if (!(c in fm)) aviso('F10', `falta el campo "${c}" en el frontmatter`);
   if (!lineas.some((l) => /^# /.test(l))) aviso('F10', 'falta el título principal (# ...)');
   if (!lineas.some((l) => new RegExp(CONFIG.apunte.repaso).test(l))) aviso('F10', 'falta el cierre "📋 Repaso en una pantalla"');
-  if (!lineas.some((l) => l.includes(CONFIG.apunte.prerrequisitos))) aviso('F14', 'falta la línea «Antes de esto necesitas: …» debajo del título');
+  // F14 (2026-11-12): los prerrequisitos se auditan antes de escribir, pero el apunte no los muestra. Solo guitarra: los apuntes de canto (por archivar) aún la traen.
+  if (rel.startsWith('fundamentos/guitarra/') && lineas.some((l) => l.includes(CONFIG.apunte.prerrequisitos))) aviso('F14', 'los apuntes ya no llevan la línea «Antes de esto necesitas: …»: los prerrequisitos se auditan, no se muestran');
 }
 
 function revisarRepertorio(lineas, aviso) {

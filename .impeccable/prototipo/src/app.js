@@ -21,9 +21,11 @@
   // ---------- 2. zona de la página (qué hay en el centro de la pantalla): manda el botón del drawer, el sonido y las escenas ----------
   const zonas = [["hero", ".hero"], ["franja", ".franja"], ["fogata", "#corte-fogata"], ["paso", ".paso"], ["muelle", "#corte-muelle"], ["cierre", ".cierre"]]
   const visibles = new Set()
+  const DEL_MODULO = ["fogata", "paso", "muelle", "cierre"]
   const ioZona = new IntersectionObserver(es => {
     for (const e of es) { const z = e.target.dataset.zona; e.isIntersecting ? visibles.add(z) : visibles.delete(z) }
-    const z = zonas.map(x => x[0]).find(x => visibles.has(x))
+    let z = zonas.map(x => x[0]).find(x => visibles.has(x))
+    if (z && carrusel() && DEL_MODULO.includes(z)) z = zonaCarrusel()   // en el escenario manda la página, no la tira de tramos que se ve mientras se desliza
     if (z && document.body.dataset.zona !== z) { document.body.dataset.zona = z; mezclar() }
   }, { rootMargin: "-50% 0px -50% 0px" })
   zonas.forEach(([z, s]) => { const el = $(s); el.dataset.zona = z; ioZona.observe(el) })
@@ -33,7 +35,7 @@
   $$(".escena").forEach(el => { el.dataset.escena = el.classList.contains("escena-fogata") ? "fogata" : "muelle"; ioEscena.observe(el) })
 
   // ---------- 3. módulos: se elige uno en la franja (o en el drawer) y sus apuntes entran en las dos escenas ----------
-  const modulo = $("#modulo"), det = $("#fr-det"), apFogata = $("#corte-fogata .apuntes"), apMuelle = $("#corte-muelle .apuntes")
+  const modulo = $("#modulo"), tira = $("#pista"), det = $("#fr-det"), apFogata = $("#corte-fogata .apuntes"), apMuelle = $("#corte-muelle .apuntes")
   let actual = 0
   const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;")
   const plural = (n, uno, varios) => n + " " + (n === 1 ? uno : varios)
@@ -42,7 +44,7 @@
   function detalle(m) {
     const hay = m.claves.length > 0
     const meta = hay ? (m.enCurso ? "En curso · " : "") + plural(m.nApuntes, "apunte", "apuntes") + " · " + plural(m.nPracticas, "práctica", "prácticas") : "Sin apuntes aún"
-    det.innerHTML = `<h3 class="fr-nombre">${esc(m.nombre)}</h3>${m.resultado ? `<p class="fr-res">${esc(m.resultado)}</p>` : ""}<p class="fr-meta">${meta}</p>${hay ? `<a class="btn-px" href="#corte-fogata">Entrar al módulo ${ICO_DERECHA}</a>` : ""}`
+    det.innerHTML = `<h3 class="fr-nombre" tabindex="-1">${esc(m.nombre)}</h3>${m.resultado ? `<p class="fr-res">${esc(m.resultado)}</p>` : ""}<p class="fr-meta">${meta}</p>${hay ? `<a class="btn-px" href="#modulo">Entrar al módulo ${ICO_DERECHA}</a>` : ""}`
   }
   function cargar(n) {
     const m = MODULOS[n - 1]; if (!m || actual === n) return
@@ -62,34 +64,201 @@
     $("#d-ruta").replaceChildren(hay ? dePlantilla(`m${n}-ruta`) : "")
     $("#buscar").value = ""; $("#d-vacio").hidden = true; $("#d-nota").textContent = ""
     $$(".d-otros li").forEach(li => { li.hidden = +li.dataset.mod === n })
+    armar(0)
     observarApuntes()
   }
   $$(".mod").forEach(b => b.addEventListener("click", () => cargar(+b.dataset.mod)))
-  $("#siguiente").addEventListener("click", () => cargar(+$("#siguiente").dataset.siguiente))
+  // el botón del cierre desaparece al cargar el módulo siguiente: el foco pasa al nombre del módulo en la franja, adonde lleva el enlace
+  $("#siguiente").addEventListener("click", () => { cargar(+$("#siguiente").dataset.siguiente); $(".fr-nombre", det)?.focus({ preventScroll: true }) })
+
+  // ---------- 3b. carrusel de apuntes (≥1200 px): una página por apunte y una de cierre; bajo ese ancho el módulo queda apilado ----------
+  // pagina: 0..hojas.length-1 = apuntes en el orden del módulo (fogata y luego muelle); hojas.length = el cierre.
+  // Dentro de un tramo (fogata o muelle) la escena queda quieta y solo se deslizan las hojas; entre tramos se desliza la pista entera.
+  const mqCarrusel = matchMedia("(min-width:1200px)")
+  const carrusel = () => mqCarrusel.matches
+  let hojas = [], nFog = 0, nTramos = 2, pagina = 0
+  const tramoDe = p => p < nFog ? 0 : p < hojas.length ? 1 : nTramos - 1
+  const zonaCarrusel = () => pagina >= hojas.length ? "cierre" : tramoDe(pagina) === 0 ? "fogata" : "muelle"
+  const sinAnimar = (clases, hacer) => { modulo.classList.add(...clases); hacer(); void modulo.offsetWidth; modulo.classList.remove(...clases) }
+  function marcarRuta(k) {
+    $$(".d-ap[aria-current]", drawer).forEach(a => a.removeAttribute("aria-current"))
+    if (k) $(`.d-ap[data-k="${k}"]`, drawer)?.setAttribute("aria-current", "location")
+  }
+  // deja las hojas del tramo de la página p en su sitio: las anteriores a la izquierda, la actual al centro, las siguientes a la derecha
+  function colocar(p) {
+    const t = tramoDe(p)
+    hojas.forEach((h, i) => {
+      if (tramoDe(i) !== t) return
+      h.classList.toggle("act", i === p); h.classList.toggle("antes", i < p)
+    })
+    if (hojas[p]) $(".hoja-scroll", hojas[p]).scrollTop = 0   // cada página abre arriba
+  }
+  const hojaDe = k => hojas.findIndex(h => h.dataset.k === k)
+  function fijarZona() {
+    if (!carrusel() || !DEL_MODULO.includes(document.body.dataset.zona)) return
+    const z = zonaCarrusel(); if (document.body.dataset.zona !== z) { document.body.dataset.zona = z; mezclar() }
+  }
+  // arma el escenario del módulo recién cargado (o al cruzar los 1200 px); sin animación
+  function armar(p) {
+    hojas = $$(".hoja", modulo); nFog = $$(".hoja", apFogata).length
+    const tramos = [$("#corte-fogata"), ...($("#corte-muelle").hidden ? [] : [$("#corte-muelle")]), $(".cierre")]
+    nTramos = tramos.length
+    const on = carrusel()
+    pagina = on ? Math.max(0, Math.min(hojas.length, p)) : 0
+    sinAnimar(["sin-hojas", "sin-pista"], () => {
+      if (on) { modulo.setAttribute("role", "region"); modulo.setAttribute("aria-roledescription", "carrusel"); modulo.setAttribute("aria-label", "Apuntes del módulo") }
+      else for (const attr of ["role", "aria-roledescription", "aria-label"]) modulo.removeAttribute(attr)
+      hojas.forEach((h, i) => {
+        h.classList.remove("act", "antes"); h.inert = on && i !== pagina
+        if (on) { h.setAttribute("role", "group"); h.setAttribute("aria-roledescription", "apunte"); h.setAttribute("aria-label", `${i + 1} de ${hojas.length}: ${$(".ap-titulo", h).textContent.trim()}`) }
+        else for (const attr of ["role", "aria-roledescription", "aria-label"]) h.removeAttribute(attr)
+      })
+      $(".cierre").inert = on && pagina !== hojas.length
+      if (on) colocar(pagina)
+      tira.style.transform = on && tramoDe(pagina) ? `translateX(${-100 * tramoDe(pagina)}%)` : ""
+    })
+    if (on) { marcarRuta(hojas[pagina]?.dataset.k); fijarZona() }
+    medir()
+  }
+  // va a la página p con la animación del carrusel: si cambia de tramo, desliza el escenario; si no, solo la hoja. Un salto largo es un solo deslizamiento
+  function ir(p, { foco = true } = {}) {
+    if (!carrusel()) return
+    p = Math.max(0, Math.min(hojas.length, p)); if (p === pagina) return
+    const cruza = tramoDe(p) !== tramoDe(pagina), t = tramoDe(p)
+    if (cruza) sinAnimar(["sin-hojas"], () => colocar(p))   // el tramo de destino ya espera en su sitio; el de origen no se toca, se va con la pista
+    else colocar(p)
+    pagina = p
+    hojas.forEach((h, i) => { h.inert = i !== p }); $(".cierre").inert = p !== hojas.length
+    tira.style.transform = t ? `translateX(${-100 * t}%)` : ""
+    marcarRuta(hojas[p]?.dataset.k); fijarZona()
+    alinear()
+    if (hojas[p]) history.replaceState(null, "", "#a-" + hojas[p].dataset.k)
+    if (foco) (hojas[p] ? $(".ap-titulo", hojas[p]) : $("#cierre-t")).focus({ preventScroll: true })
+  }
+  modulo.addEventListener("click", e => {
+    const b = e.target.closest(".btn-hoja"); if (b) ir(pagina + +b.dataset.dir)
+  })
+  $("#volver").addEventListener("click", () => ir(hojas.length - 1))
+  addEventListener("keydown", e => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return
+    if (e.repeat || !carrusel() || modulo.hidden || !drawer.inert || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
+    if (!DEL_MODULO.includes(document.body.dataset.zona)) return   // solo cuando el escenario es lo que se está mirando
+    if (e.target.closest?.("input,textarea,select,[contenteditable],.tabla")) return   // en un campo o una tabla con scroll, las flechas son suyas
+    e.preventDefault(); ir(pagina + (e.key === "ArrowRight" ? 1 : -1))
+  })
+  // al cruzar los 1200 px sigue el mismo apunte: en el carrusel es la hoja actual; apilado, el que marca la ruta del drawer
+  mqCarrusel.addEventListener("change", () => {
+    const k = carrusel() ? $(".d-ap[aria-current]", drawer)?.dataset.k : hojas[pagina]?.dataset.k   // carrusel() ya es el modo nuevo
+    armar(Math.max(0, hojaDe(k))); observarApuntes()
+    if (k && !modulo.hidden) salto(carrusel() ? modulo : $(`#a-${k}`), { suave: false })
+  })
+
+  // ---------- 3c. una sola barra vertical: la de la página ----------
+  // El módulo mide 100svh + lo que el apunte actual excede la pantalla; el escenario queda fijo (sticky) y la hoja no se desplaza sola:
+  // su scrollTop sigue al de la página. Al revés también, por si el navegador mueve la hoja (foco con Tab, buscar en la página).
+  let activo = null, extra = 0, esperado = 0
+  const tope = () => modulo.getBoundingClientRect().top + scrollY
+  const ro = new ResizeObserver(() => ajustarAlto())   // cambia el contenido (vista Práctica, imágenes) o la ventana
+  function ajustarAlto() {
+    activo = carrusel() && hojas[pagina] ? $(".hoja-scroll", hojas[pagina]) : null
+    extra = activo ? Math.max(0, activo.scrollHeight - activo.clientHeight) : 0
+    modulo.style.height = carrusel() ? `calc(100svh + ${extra}px)` : ""
+  }
+  function medir() {
+    ajustarAlto(); esperado = activo ? activo.scrollTop : 0
+    ro.disconnect(); if (activo) { ro.observe(activo); ro.observe(activo.firstElementChild) }
+  }
+  // la página nueva abre arriba: si se leía más abajo del inicio del escenario, la página vuelve a él
+  function alinear() { medir(); if (scrollY > tope() + 1) scrollTo({ top: tope(), behavior: "instant" }) }
+  addEventListener("scroll", () => {
+    if (!activo) return
+    const y = Math.round(Math.max(0, Math.min(extra, scrollY - tope())))
+    if (Math.abs(activo.scrollTop - y) > .5) { esperado = y; activo.scrollTop = y }
+  }, { passive: true })
+  // ---------- 3d. tope al subir (usuario, 2026-11-12) ----------
+  // Leyendo, la rueda a veces pasa del inicio del apunte y deja ver la franja. Al llegar arriba el scroll se detiene ahí y se absorbe lo que sobra del gesto
+  // (también el impulso del trackpad); un gesto nuevo, tras una pausa, sigue hacia la franja. Solo la rueda: teclado, barra de la página y flechas quedan libres.
+  // (Probado y descartado: scroll-snap con stop:always; en Chrome no detiene la rueda: pasó 532 px del punto de anclaje.)
+  // Reglas (usuario, 2026-11-12): un empujón (un gesto de rueda o de trackpad, con su inercia) topa y enciende el resplandor; para pasar hacen falta DOS empujones
+  // seguidos: otro gesto, tras una pausa, dentro de VENTANA. Pasada la ventana, el siguiente vuelve a ser un primer empujón.
+  const GESTO = 110, VENTANA = 600, EMPUJES = 3   // 3 y no 2: dos giros rápidos se hacen sin pensar; tres ya son intención (usuario, 2026-11-12)
+  let armado = false, retenido = false, tUlt = 0, tRueda = 0, objetivo = 0, tObj = 0, escuchando = false, tBrillo = 0, dPrev = 0, apagado = false, empujes = 0
+  const brillo = $("#brillo")
+  const brillar = (n = 1) => { brillo.style.setProperty("--luz", n >= 2 ? 1 : .75); brillo.classList.add("on"); clearTimeout(tBrillo); tBrillo = setTimeout(() => brillo.classList.remove("on"), 450) }
+  const aTope = () => scrollTo({ top: tope(), behavior: quieto ? "instant" : "smooth" })
+  function alRueda(e) {
+    if (!carrusel() || modulo.hidden || e.ctrlKey || !drawer.inert) return
+    const ahora = performance.now()
+    if (e.deltaY >= 0) { retenido = false; return }   // bajar siempre es libre y suelta el tope
+    const dy = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? innerHeight : 1), mag = -dy
+    if (retenido) {
+      const hueco = ahora - tUlt
+      // otro empujón: hubo una pausa, o el primero venía apagándose (la inercia del trackpad dura más de un segundo) y la rueda vuelve a empujar con fuerza
+      const otro = hueco > GESTO || (apagado && mag > dPrev * 1.5 + 4)
+      if (mag < dPrev) apagado = true
+      dPrev = mag
+      if (!otro) { tUlt = ahora; e.preventDefault(); return }   // sigue el mismo gesto (o su inercia): se absorbe
+      if (hueco <= VENTANA) {   // otro empujón seguido
+        if (++empujes >= EMPUJES) { retenido = false; return }   // el último: pasa de largo hacia la franja
+        tUlt = ahora; apagado = false; brillar(empujes); e.preventDefault(); return   // el resplandor sube con cada empujón
+      }
+      empujes = 1; tUlt = ahora; apagado = false; brillar(1); e.preventDefault(); return   // pasó mucho tiempo: vuelve a ser un primer empujón
+    }
+    if (!armado) return
+    const destino = (ahora - tObj < 250 ? objetivo : scrollY) + dy   // el scroll suave va por detrás de la rueda: se suma lo ya concedido
+    if (destino <= tope() + 1) { e.preventDefault(); armado = false; retenido = true; empujes = 1; tUlt = ahora; dPrev = mag; apagado = false; aTope(); brillar(1); objetivo = tope(); tObj = ahora; return }
+    objetivo = destino; tObj = ahora
+  }
+  // el oyente que puede frenar solo está puesto cuando hace falta (cerca del inicio del apunte): uno que bloquea resta fluidez a todo el scroll
+  const escuchar = v => { if (v !== escuchando) { escuchando = v; v ? addEventListener("wheel", alRueda, { passive: false }) : removeEventListener("wheel", alRueda) } }
+  addEventListener("wheel", e => { if (e.deltaY < 0) tRueda = performance.now() }, { passive: true })
+  let yAnt = scrollY
+  addEventListener("scroll", () => {
+    const sube = scrollY < yAnt; yAnt = scrollY
+    if (!carrusel() || modulo.hidden) { escuchar(false); return }
+    const r = scrollY - tope(), ahora = performance.now()
+    // se arma desde el filo (usuario, 2026-11-12): con el apunte ya a la vista, subir topa aunque no se haya leído nada. En el filo (-1 < r ≤ 8) solo arma si la página no va subiendo:
+    // si no, el gesto que acaba de pasar el tope (o la animación hacia él) lo volvería a armar y lo devolvería
+    if (r > 8 || (r > -1 && !sube)) { if (!retenido || ahora - tUlt > 700) { retenido = false; armado = true } }   // la animación hacia el tope también pasa por r > 8: no cuenta como volver a leer
+    else if (r < -1) {
+      if (armado && ahora - tRueda < 250) { armado = false; retenido = true; empujes = 1; tUlt = ahora; dPrev = 0; apagado = false; scrollTo({ top: tope(), behavior: "instant" }); brillar(1) }   // se pasó de largo: vuelve
+      else armado = false   // llegó a la franja por otra vía (teclado, barra): el tope no aplica
+    }
+    escuchar((armado && r < 900) || retenido)
+  }, { passive: true })
+  modulo.addEventListener("scroll", e => {   // los scroll no burbujean: se escuchan en captura
+    if (e.target !== activo || Math.abs(activo.scrollTop - esperado) <= 1) return   // lo demás es el eco de nuestra propia escritura
+    esperado = activo.scrollTop; scrollTo({ top: tope() + activo.scrollTop, behavior: "instant" })
+  }, true)
 
   // ---------- 4. teoría / práctica en el sitio del apunte, y saltos entre apuntes (aunque sean de otro módulo) ----------
+  // en el carrusel, al cambiar de vista la hoja vuelve arriba (la página sigue a la hoja); en el flujo apilado se mueve la página
   function ver(ap, v, fuera) {
-    if (ap.hasAttribute("data-solo")) { if (fuera) salto(ap, { suave: false }); return }   // práctica suelta: no tiene pestañas
+    const enCarrusel = carrusel()
+    if (ap.hasAttribute("data-solo")) { if (fuera && !enCarrusel) salto(ap, { suave: false }); return }   // práctica suelta: no tiene pestañas
     $$(".vista button", ap).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ver === v)))
     $$("[data-panel]", ap).forEach(p => { p.hidden = p.dataset.panel !== v })
     ap.dataset.vista = v
+    if (enCarrusel) { const sc = ap.closest(".hoja-scroll"); if (sc) { sc.scrollTop = 0; if (sc === activo) alinear() } }   // el otro panel mide distinto: se recalcula el alto de la página
     // si el apunte empieza arriba de la pantalla, su cabecera vuelve a verse para que el otro panel empiece a la vista
-    if (fuera || ap.getBoundingClientRect().top < 0) salto(ap, { suave: false })
+    else if (fuera || ap.getBoundingClientRect().top < 0) salto(ap, { suave: false })
   }
   // id = "a-<clave>" lleva al apunte; "p-<clave>", a su práctica
   function irA(id) {
     const k = id.replace(/^[ap]-/, ""), n = modDe(k); if (!n) return
     cargar(n)
     const ap = $(`#a-${k}`)
-    if (id.startsWith("p-")) ver(ap, "practica", true); else if (ap.dataset.vista === "practica") ver(ap, "teoria", true); else salto(ap, { suave: false })
-    $(".ap-titulo", ap)?.focus({ preventScroll: true })
+    if (id.startsWith("p-")) ver(ap, "practica", true); else if (ap.dataset.vista === "practica") ver(ap, "teoria", true); else if (!carrusel()) salto(ap, { suave: false })
+    if (carrusel()) salto(modulo, { suave: false })   // el escenario llena la pantalla
+    if (carrusel() && hojaDe(k) !== pagina) ir(hojaDe(k))   // la página llega con la misma animación
+    else $(".ap-titulo", ap)?.focus({ preventScroll: true })
     history.replaceState(null, "", "#" + id)
   }
   modulo.addEventListener("click", e => {
     const b = e.target.closest(".vista button"); if (b) return ver(b.closest(".apunte"), b.dataset.ver)
     const a = e.target.closest('a.ref[href^="#"]'); if (!a) return
     const id = a.getAttribute("href").slice(1)
-    if (!document.getElementById(id)) { e.preventDefault(); irA(id) }   // en este módulo el ancla lleva sola; si es de otro, se carga primero
+    if (carrusel() || !document.getElementById(id)) { e.preventDefault(); irA(id) }   // en el carrusel siempre; apilado, el ancla lleva sola salvo que sea de otro módulo
   })
   const porHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (/^[ap]-/.test(h)) irA(h) }
   addEventListener("hashchange", porHash)
@@ -128,7 +297,7 @@
     const n = +b.dataset.mod
     if (!MODULOS[n - 1].claves.length) { $("#d-nota").textContent = `M${n} todavía no tiene apuntes.`; return }
     abreDrawer(false); cargar(n)
-    setTimeout(() => salto($("#corte-fogata"), { suave: false }), 0)
+    setTimeout(() => salto(modulo, { suave: false }), 0)
   }))
   // buscador de la ruta
   $("#buscar").addEventListener("input", e => {
@@ -136,13 +305,9 @@
     $$("#d-ruta > li").forEach(li => { const ok = !q || li.dataset.t.includes(q); li.hidden = !ok; if (ok) n++ })
     $("#d-vacio").hidden = n > 0
   })
-  // el apunte que se está leyendo queda marcado en la ruta
-  const ioAp = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return
-    $$(".d-ap[aria-current]", drawer).forEach(a => a.removeAttribute("aria-current"))
-    $(`.d-ap[data-k="${e.target.dataset.k}"]`, drawer)?.setAttribute("aria-current", "location")
-  }), { rootMargin: "-40% 0px -55% 0px" })
-  function observarApuntes() { ioAp.disconnect(); $$(".apunte").forEach(ap => ioAp.observe(ap)) }
+  // el apunte que se está leyendo queda marcado en la ruta (apilado: el que cruza la pantalla; en el carrusel lo marca ir(), porque una hoja corta nunca llega a la franja)
+  const ioAp = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) marcarRuta(e.target.dataset.k) }), { rootMargin: "-40% 0px -55% 0px" })
+  function observarApuntes() { ioAp.disconnect(); if (!carrusel()) $$(".apunte").forEach(ap => ioAp.observe(ap)) }
 
   // ---------- 6. sonido: celta en el hero, la franja y la fogata; pantano en el muelle. Los archivos van en audio/ (celta.mp3, pantano.mp3) ----------
   const PISTAS = { celta: "audio/celta.mp3", pantano: "audio/pantano.mp3" }

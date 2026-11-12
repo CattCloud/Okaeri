@@ -221,6 +221,9 @@ function svg(nombre, filas, extra = "") {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"${extra}><path d="${trazo(filas)}"/></svg>\n`
 }
 
+// «izquierda» es «derecha» espejada (la barra de navegación del carrusel usa las dos)
+G["izquierda"] = G["derecha"].map(f => [...f].reverse().join(""))
+
 const sprite = () => `<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">` +
   Object.entries(G).map(([n, f]) => `<symbol id="i-${n}" viewBox="0 0 12 12"><path d="${trazo(f)}"/></symbol>`).join("") + `</svg>`
 

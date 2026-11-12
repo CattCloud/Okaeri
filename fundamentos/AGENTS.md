@@ -32,7 +32,7 @@
 
 **F10 · Un concepto se escribe una vez.** La teoría común a los dos carriles (notas, octavas, escala) vive en un solo apunte y se enlaza desde el otro. Excepción: el carril canto no enlaza a guitarra (F15). Cada apunte cierra con `📋 Repaso en una pantalla`. Plantilla: `.claude/skills/escribir-apunte/plantilla.md`.
 
-**F14 · Sin huecos.** Antes de escribir un apunte se lista lo que hay que entender para comprender su concepto y se marca cada prerrequisito: explicado (con enlace) o faltante. Un faltante se presenta al usuario y se escribe como su propio apunte antes que el concepto que lo necesita, nunca como una frase dentro del apunte de arriba. Un apunte explica un solo concepto y abre, debajo del título, con la línea «Antes de esto necesitas: …» con los enlaces a sus prerrequisitos (o «nada: es el punto de partida»). La academia puede saltar temas; el sistema no.
+**F14 · Sin huecos.** Antes de escribir un apunte se lista lo que hay que entender para comprender su concepto y se marca cada prerrequisito: explicado (con enlace) o faltante. Un faltante se presenta al usuario y se escribe como su propio apunte antes que el concepto que lo necesita, nunca como una frase dentro del apunte de arriba. Un apunte explica un solo concepto. La lista de prerrequisitos es de proceso y **no se muestra en el apunte**: sin la línea «Antes de esto necesitas» (el usuario la quitó el 2026-11-12); el apunte solo enlaza, en su cuerpo, lo que usa (R6). La academia puede saltar temas; el sistema no.
 
 ## Consultas y canto
 

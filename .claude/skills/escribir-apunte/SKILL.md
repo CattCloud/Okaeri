@@ -14,11 +14,11 @@ Las reglas de contenido están en `fundamentos/AGENTS.md` (F1-F15). Este archivo
 3. **Auditar prerrequisitos (F14).** Listar lo que hay que entender para comprender este concepto y marcar cada uno: explicado (con enlace) o faltante. Si falta uno, se presenta al usuario y se escribe **antes**, como su propio apunte; este espera. Un apunte, un concepto: si al explicarlo aparece un segundo concepto grande, es otro apunte.
 4. **Presentar el esquema y esperar el OK del usuario:** 3-5 líneas con el concepto, sus prerrequisitos y los ejemplos que usará. No se escribe antes.
 5. **Ubicación y nombre** (F1): `fundamentos/<carril>/claseNN/claseNN_<tema>.md`, en la carpeta de la clase que lo abrió; si no nació de una clase, `fundamentos/<carril>/base/apunte_N.N_<tema>.md`.
-6. **Copiar `plantilla.md`** (en esta carpeta) y escribir: debajo del título, la línea «Antes de esto necesitas: …» con enlaces; luego la definición central en negrita, secciones que se abren una a otra, ejemplos del repertorio del usuario, cierre con `📋 Repaso en una pantalla`.
+6. **Copiar `plantilla.md`** (en esta carpeta) y escribir: bajo el título, la definición central en negrita, secciones que se abren una a otra, ejemplos del repertorio del usuario, cierre con `📋 Repaso en una pantalla`.
 7. **Todo ejemplo visual se muestra** (F8): si el apunte nombra una forma, una posición o una comparación, lleva diagramas (lado a lado si compara), hechos con `crear-diagrama`.
 8. **Índice:** fila en `fundamentos/00_indice.md`, dentro de la sección de su clase.
 9. **Revisar antes de cerrar:**
-   - [ ] Abre con «Antes de esto necesitas: …» y cada enlace existe (F14).
+   - [ ] No muestra la línea «Antes de esto necesitas» (F14: los prerrequisitos se auditan en el paso 3, no se muestran en el apunte).
    - [ ] Atemporal (F9): nada de la conversación del día, ni disculpas, ni comentarios sobre el sistema.
    - [ ] Cada término técnico está definido aquí o enlazado (R6).
    - [ ] Sin frases de efecto (R7).

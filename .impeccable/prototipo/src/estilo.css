@@ -16,7 +16,7 @@ body{margin:0;background:var(--noche);color:var(--niebla);font-family:var(--px);
 img,svg{display:block}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
-.apuntes :focus-visible,.cierre :focus-visible{outline-color:var(--ladrillo)}
+.apuntes :focus-visible{outline-color:var(--ladrillo)}   /* ladrillo solo sobre blanco; el cierre es oscuro y usa el ámbar de siempre */
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .salto{position:fixed;left:12px;top:-80px;z-index:50;background:var(--noche);color:var(--niebla);padding:10px 16px;font-size:1.5rem;text-decoration:none;border:3px solid var(--ambar)}
 .salto:focus{top:12px}
@@ -159,6 +159,49 @@ blockquote.repaso li{margin-bottom:.5em}
 .cierre{background:var(--noche);color:var(--niebla);padding:clamp(72px,12vw,140px) 24px;display:grid;justify-items:center;gap:28px;text-align:center}
 .cierre-t{margin:0;font:400 clamp(2.25rem,4vw,3rem)/1 var(--px)}
 .cierre .btn-px{text-align:left}
+
+/* ---------- carrusel de apuntes ----------
+   Bajo 1200 px no existe: la hoja es transparente (display:contents), la barra y «Volver» se esconden y el módulo se lee apilado, con sus separadores.
+   Desde 1200 px el módulo es un escenario de 100svh: una página por apunte (la escena a la izquierda, la hoja de 750 px a la derecha) y una página de cierre.
+   Dentro de una misma escena solo se desliza la hoja; al cruzar de la fogata al muelle, o al cierre, se desliza el escenario entero (.pista). Solo transform. */
+.hoja{display:contents}
+.hoja-nav,#volver,.brillo{display:none}
+.btn-hoja{display:inline-flex;align-items:center;gap:.4em;min-height:48px;max-width:100%;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:#fff;background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
+.btn-hoja:hover{background-color:var(--crema)}
+.btn-hoja .ico{width:1.125em;height:1.125em;vertical-align:baseline}
+.btn-txt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hoja-cuenta{margin:0;font:400 1.375rem/1.2 var(--px);color:var(--tinta-2);white-space:nowrap}   /* a 1.125rem el 6 pixelado se leía como 8 */
+@media (min-width:1200px){
+  /* una sola barra vertical: la de la página. El módulo mide 100svh más lo que el apunte actual excede la pantalla (lo pone app.js, «3c»),
+     el escenario queda fijo mientras se lee y la hoja no se desplaza sola: su scrollTop sigue al de la página */
+  .modulo{position:relative}
+  /* resplandor del tope (usuario, 2026-11-12): se enciende un momento al toparse con el inicio del apunte y se apaga; es lo único con degradado suave del sistema */
+  .brillo{display:block;position:absolute;inset:0 0 auto 0;height:130px;z-index:4;pointer-events:none;opacity:0;transition:opacity .9s ease-out;
+    background:linear-gradient(180deg,rgba(247,175,58,.38),rgba(208,148,49,.14) 50%,rgba(208,148,49,0))}
+  .brillo.on{opacity:var(--luz,1);transition:opacity .16s ease-out}   /* --luz la pone app.js: más tenue en el 1.er empujón, plena en el 2.º */
+  .escenario{position:sticky;top:0;height:100vh;height:100svh;overflow:clip}   /* clip, no hidden: nada puede desplazar el escenario con scrollIntoView ni con el foco */
+  .pista{display:flex;height:100%;transition:transform .42s var(--ease)}
+  .corte,.cierre{flex:none;width:100%;height:100%}
+  .paso,.sep{display:none}
+  .escena{position:relative;height:100%}
+  .escena-fogata,.escena-muelle{align-content:center}   /* ya no hay línea entre escenas a la que pegar el arte */
+  .apuntes{position:relative;overflow:clip;padding:0}
+  .hoja{display:block;position:absolute;inset:0;background:var(--papel);transform:translateX(100%);visibility:hidden;transition:transform .42s var(--ease),visibility 0s .42s}
+  .hoja.antes{transform:translateX(-100%)}
+  /* la hoja que sale sigue visible mientras se desliza (la visibilidad se apaga al final); la que entra se ve de inmediato */
+  .hoja.act{transform:none;visibility:visible;transition:transform .42s var(--ease)}
+  .modulo.sin-hojas .hoja,.modulo.sin-pista .pista{transition:none}
+  .hoja-scroll{height:100%;overflow:hidden;padding:0 32px 0 16px;display:flex;flex-direction:column}   /* sin barra propia: la rueda, el teclado y el foco llegan a la página */
+  .hoja .apunte{flex:1 0 auto;width:100%;padding-bottom:40px}
+  .hoja-nav{position:sticky;bottom:0;z-index:1;flex:none;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;width:100%;max-width:750px;margin-inline:auto;padding:14px 0;background:var(--papel);border-top:2px solid var(--linea)}
+  .pie-nav .pn-nav,.pie-nav .pn-sep,.pie-nav.solo-nav{display:none}   /* el pie «← anterior · índice · siguiente →» de los .md lo hace la barra */
+  .btn-hoja.ant{justify-self:start}
+  .btn-hoja.sig{justify-self:end}
+  .cierre{align-content:center}
+  #volver{display:inline-flex}
+  /* el foco llega solo al título de cada página (no es un control): sin aro, la página nueva ya es la señal */
+  .ap-titulo:focus-visible,.cierre-t:focus-visible{outline:none}
+}
 
 /* ---------- drawer ---------- */
 .btn-drawer{position:fixed;top:max(12px,env(safe-area-inset-top));right:12px;z-index:20;width:60px;height:60px;padding:0;display:grid;place-items:center;background:rgba(4,14,16,.9);background-clip:padding-box;transition:opacity .25s,visibility .25s}

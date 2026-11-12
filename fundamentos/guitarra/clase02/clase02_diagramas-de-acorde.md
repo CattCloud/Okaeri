@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # 📐 El diagrama de acorde: cómo se lee
 
-**Antes de esto necesitas:** [El acorde, y mayor vs. menor](clase02_el-acorde.md) · [La tablatura (TAB)](../clase01/clase01_tablatura.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md)
-
 > **El diagrama es un dibujo del mástil visto de frente, con la guitarra parada, que dice dónde pisar y qué cuerdas tocar.** Es la forma estándar de escribir acordes, como la TAB lo es para los ejercicios ([La tablatura (TAB)](../clase01/clase01_tablatura.md)).
 
 ![Anatomía del diagrama de acorde: X, O, cejuela, puntos con número de dedo, orden de cuerdas.](img/clase02-anatomia-diagrama.png)

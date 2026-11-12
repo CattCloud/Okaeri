@@ -35,14 +35,14 @@ FORM: dirección fijada por el usuario (hero tipo Firewatch + escenas de dos cor
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Carrusel de apuntes (definido 2026-11-12, aprobado por el usuario; sin construir)
+## Carrusel de apuntes (definido y construido 2026-11-12; aprobado por el usuario)
 
 Porqué (usuario): con scroll continuo y separadores, el módulo se lee como un solo apunte largo; no se siente que entras a otro apunte.
 
 Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con sus separadores (tableta y móvil aparcados).
 
 - **Escenario:** el módulo pasa a ser un escenario de 100svh. La página sigue siendo hero → franja → escenario, y termina ahí: el cierre deja de ser una sección aparte.
-- **Una página por apunte**, más una página final de cierre. La escena queda a la izquierda y la hoja de 750 px a la derecha, como ahora. La hoja tiene su propio scroll vertical (`overflow-y:auto; overscroll-behavior:contain`) y vuelve arriba al entrar.
+- **Una página por apunte**, más una página final de cierre. La escena queda a la izquierda y la hoja de 750 px a la derecha, como ahora. La hoja vuelve arriba al entrar. **Una sola barra vertical (usuario, 2026-11-12; reemplaza «la hoja tiene su propio scroll»):** la de la página; el escenario queda fijo y la hoja sigue al scroll de la página (ver `DESIGN.md` → Carousel).
 - **Transición:** dentro de la misma escena, la escena queda quieta (es un solo lienzo) y solo se desliza la hoja. La nueva entra por la derecha con «siguiente» y por la izquierda con «anterior», y la saliente sale por el lado opuesto. Dura ~420 ms con ease-out exponencial (`cubic-bezier(.16,1,.3,1)`), solo `transform`. Al cruzar de la fogata al muelle (la mitad del módulo) se desliza el escenario entero, escena y hoja. Con `prefers-reduced-motion` el cambio es directo.
 - **Navegación:** barra al pie de la hoja, fija dentro de ella, sobre papel con filete `linea`:
   - a la izquierda, «‹ Anterior» (no aparece en el primer apunte);

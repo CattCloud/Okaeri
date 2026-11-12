@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # ✋ Los dedos de la mano izquierda son números
 
-**Antes de esto necesitas:** [La tablatura (TAB)](clase01_tablatura.md) · [La guitarra: partes, cómo sostenerla, afinar](../../_consulta-instrumento.md) (qué es un traste)
-
 > **En guitarra, los dedos que pisan (mano izquierda) se numeran del 1 al 4: índice, medio, anular, meñique. El pulgar no tiene número**, porque va detrás del mástil sosteniendo y no pisa cuerdas (por ahora).
 
 | Nº | Dedo | Color en los diagramas del sistema |

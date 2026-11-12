@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # 📄 La tablatura (TAB): el plano de qué pisar
 
-**Antes de esto necesitas:** [Las notas y las 6 cuerdas](clase01_notas-y-cuerdas.md) · [La guitarra: partes, cómo sostenerla, afinar](../../_consulta-instrumento.md) (qué es un traste)
-
 > **La TAB es un dibujo de tus 6 cuerdas con números encima: cada número te dice qué traste pisar en esa cuerda.** No necesitas saber leer música para leerla, y por eso es el idioma de los ejercicios y de gran parte del material guitarrero de internet.
 
 ![Anatomía de la TAB: la 1ª arriba, números = trastes, 0 = al aire, columna apilada = acorde.](img/clase01-anatomia-tab.png)

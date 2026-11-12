@@ -9,8 +9,6 @@ estado: PROVISIONAL — comprimido en un solo apunte; lo reemplaza la escalera d
 ---
 # 🗺️ La pentatónica de La menor: tu primera escala
 
-**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md) · [Las notas y las octavas](../../canto/clase05/clase05_notas-y-octavas.md) · [El semitono](../../canto/clase05/clase05_semitono.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md) · [El acorde, y mayor vs. menor](../clase02/clase02_el-acorde.md)
-
 > **Una escala es una lista ordenada de notas — de la más grave a la más aguda — que suenan bien juntas; la pentatónica es la escala de solo 5 notas.** En clase la tocaste sin la teoría; este apunte pone el nombre a lo que ya hicieron tus dedos.
 
 ## Qué es una escala

@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # 🥁 Ritmo básico: el pulso, las figuras y la caja del 4/4
 
-**Antes de esto necesitas:** nada: es el punto de partida.
-
 > **El ritmo es cuándo suena cada nota. Se apoya en el pulso, un "tic" parejo que no se acelera ni se frena**, como el que marcas con el pie cuando te gusta una canción. El metrónomo es una máquina que hace ese tic por ti mientras aprendes a llevarlo por dentro.
 
 ## Las figuras: cuánto dura cada nota

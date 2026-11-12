@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # 🎸 Los 8 acordes abiertos del arranque
 
-**Antes de esto necesitas:** [El diagrama de acorde](clase02_diagramas-de-acorde.md) · [El acorde, y mayor vs. menor](clase02_el-acorde.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md)
-
 > **Estas son las formas. Se estudian y se verifican aquí, nunca mirándolas mientras practicas.** El objetivo es producirlas de memoria al oír su nombre; para eso está el drill de Anki (`sistema/herramientas/anki-acordes/`), donde estos mismos diagramas son el reverso de verificación.
 >
 > 🖨️ **Versión imprimible:** los 8 en una sola hoja A4 apaisada → `../img/hoja-8-acordes.png` (imprimir con "ajustar a página"). Misma regla: se mira para verificar, no mientras se toca.

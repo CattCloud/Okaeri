@@ -8,8 +8,6 @@ estado: ESCRITA
 ---
 # 🎵 El acorde: varias notas que suenan bien juntas
 
-**Antes de esto necesitas:** [Las notas y las 6 cuerdas](../clase01/clase01_notas-y-cuerdas.md) · [Los dedos de la mano izquierda](../clase01/clase01_dedos-mano-izquierda.md)
-
 > **Un acorde es tocar tres o más notas al mismo tiempo, elegidas para que suenen bien juntas.** Es la unidad con la que se acompañan las canciones: cuando escuchas la guitarra "rellenando" debajo de una voz en un worship, eso son acordes.
 
 Una nota sola suena delgada. Junta tres bien elegidas y el sonido se vuelve lleno: eso es lo que acompaña a una voz. En la guitarra, una forma de la mano izquierda + un rasgueo = las 3-4 notas del acorde sonando a la vez (aunque pises 3 cuerdas y suenen 5 o 6: las de al aire también son notas del acorde).

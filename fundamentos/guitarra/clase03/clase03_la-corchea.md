@@ -10,8 +10,6 @@ estado: ESCRITA
 
 # 🎵 La corchea: media negra
 
-**Antes de esto necesitas:** [Ritmo básico](../clase01/clase01_ritmo-basico.md)
-
 > **La corchea es la figura que dura medio tiempo: en cada clic del metrónomo caben dos.** Con ella el ritmo deja de ir "una nota por clic" y empieza a moverse *entre* los clics. Es la base del rasgueo abajo-arriba y de casi todo el worship.
 
 ## La cuarta figura

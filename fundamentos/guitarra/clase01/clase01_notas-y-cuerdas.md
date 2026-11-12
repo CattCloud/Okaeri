@@ -9,8 +9,6 @@ estado: ESCRITA
 
 # 🎵 Las notas, y cada cuerda es una nota
 
-**Antes de esto necesitas:** [La guitarra: partes, cómo sostenerla, afinar](../../_consulta-instrumento.md)
-
 > **Solo hay 7 notas: Do, Re, Mi, Fa, Sol, La, Si, y luego se repiten.** Toda la música que vas a tocar está hecha de esas siete, y cada cuerda de tu guitarra, tocada sin pisar nada, suena a una de ellas.
 
 ## Los dos nombres de cada nota
