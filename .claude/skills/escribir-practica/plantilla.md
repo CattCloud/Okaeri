@@ -13,7 +13,7 @@ estado: EN-CURSO          # EN-CURSO | SALIÓ | REPETIR | RETIRADA
 > **Con la guitarra afinada.** [Origen en una línea: tarea de la clase N o sección N.N del mapa.]
 
 ## 🎯 Qué estás mejorando (en claro)
-<!-- F4. Sin jerga. Qué habilidad construye, para qué le sirve y CÓMO va a notar la mejora. -->
+<!-- F4. Sin jerga. Un párrafo, 3 oraciones como máximo: qué habilidad construye y CÓMO va a notar la mejora. -->
 
 ## El gráfico
 <!-- Solo si el ejercicio NO tiene versiones (si las tiene, borra esta sección: sus imágenes van en «Cómo se hace», F16). F6: muestra QUÉ practicar; nunca la forma que debe salir de memoria. -->

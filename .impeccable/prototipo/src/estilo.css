@@ -5,7 +5,8 @@
   --papel:#fff;--tinta:#26241f;--tinta-2:#4a463d;--crema:#f7f1e3;--linea:#d9d2c0;--ladrillo:#8a3a2a;--ambar:#ffb53c;--dorado:#d09431;--lago:#7fc0e0;--musgo:#74b64f;
   --px:"Jersey 15",ui-monospace,monospace;--lectura:"Atkinson Hyperlegible",system-ui,sans-serif;
   --escena:min(92.24svh,58cqw,calc(100cqw - 798px));
-  --ease:cubic-bezier(.16,1,.3,1)
+  --ease:cubic-bezier(.16,1,.3,1);
+  --t-pagina:.7s;--curva-pagina:cubic-bezier(.65,0,.35,1)   /* lo que se desliza a página completa: acelera y frena parejo, sin que casi todo el recorrido pase en los primeros cuadros */
 }
 *{box-sizing:border-box}
 html{scrollbar-color:#3d5f52 var(--noche);scrollbar-gutter:stable;scroll-padding-top:0}
@@ -108,7 +109,6 @@ a{color:inherit}
 @media (max-width:559px){.sep{--u:3px}}
 .ap-meta{margin:-.2rem 0 1.2rem;font:400 1.375rem/1 var(--px);color:var(--tinta-2)}
 .ap-titulo{margin:0 0 .5em;font:400 clamp(2.75rem,4.4vw,3.5rem)/.95 var(--px);color:var(--tinta);text-wrap:balance;outline-offset:6px}
-.ap-practica{margin:0 0 .6em;font:400 clamp(2.25rem,3.6vw,2.875rem)/1 var(--px);color:var(--ladrillo);text-wrap:balance}
 .ap-cuerpo>*:first-child{margin-top:0}
 .apunte p{margin:0 0 1em}
 .apunte p.previo{font-size:1rem;color:var(--tinta-2);margin-bottom:1.2em}
@@ -149,12 +149,6 @@ blockquote>*:last-child{margin-bottom:0}
 blockquote .cab{display:flex;align-items:center;gap:.5em;margin:0 0 .6em;font:400 1.75rem/1 var(--px);color:var(--ladrillo)}
 blockquote.repaso li{margin-bottom:.5em}
 
-/* teoría / práctica */
-.vista{display:inline-flex;gap:12px;margin:.2rem 0 1.4rem}
-.vista button{min-height:48px;min-width:8.5rem;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:#fff;background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
-.vista button:hover{background-color:var(--crema)}
-.vista button[aria-pressed="true"]{background:var(--tinta);background-clip:padding-box;color:#fff}
-
 /* ---------- cierre ---------- */
 .cierre{background:var(--noche);color:var(--niebla);padding:clamp(72px,12vw,140px) 24px;display:grid;justify-items:center;gap:28px;text-align:center}
 .cierre-t{margin:0;font:400 clamp(2.25rem,4vw,3rem)/1 var(--px)}
@@ -166,9 +160,10 @@ blockquote.repaso li{margin-bottom:.5em}
    Dentro de una misma escena solo se desliza la hoja; al cruzar de la fogata al muelle, o al cierre, se desliza el escenario entero (.pista). Solo transform. */
 .hoja{display:contents}
 .hoja-nav,#volver,.brillo{display:none}
-.btn-hoja{display:inline-flex;align-items:center;gap:.4em;min-height:48px;max-width:100%;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:#fff;background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
-.btn-hoja:hover{background-color:var(--crema)}
-.btn-hoja .ico{width:1.125em;height:1.125em;vertical-align:baseline}
+.btn-hoja,.btn-prac{display:inline-flex;align-items:center;gap:.4em;min-height:48px;max-width:100%;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:#fff;background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
+.btn-hoja:hover,.btn-prac:hover{background-color:var(--crema)}
+.btn-prac{margin:.2rem 0 1.4rem}
+.btn-hoja .ico,.btn-prac .ico{width:1.125em;height:1.125em;vertical-align:baseline}
 .btn-txt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hoja-cuenta{margin:0;font:400 1.375rem/1.2 var(--px);color:var(--tinta-2);white-space:nowrap}   /* a 1.125rem el 6 pixelado se leía como 8 */
 @media (min-width:1200px){
@@ -180,16 +175,16 @@ blockquote.repaso li{margin-bottom:.5em}
     background:linear-gradient(180deg,rgba(247,175,58,.38),rgba(208,148,49,.14) 50%,rgba(208,148,49,0))}
   .brillo.on{opacity:var(--luz,1);transition:opacity .16s ease-out}   /* --luz la pone app.js: más tenue en el 1.er empujón, plena en el 2.º */
   .escenario{position:sticky;top:0;height:100vh;height:100svh;overflow:clip}   /* clip, no hidden: nada puede desplazar el escenario con scrollIntoView ni con el foco */
-  .pista{display:flex;height:100%;transition:transform .42s var(--ease)}
+  .pista{display:flex;height:100%;transition:transform var(--t-pagina) var(--curva-pagina)}
   .corte,.cierre{flex:none;width:100%;height:100%}
   .paso,.sep{display:none}
   .escena{position:relative;height:100%}
   .escena-fogata,.escena-muelle{align-content:center}   /* ya no hay línea entre escenas a la que pegar el arte */
   .apuntes{position:relative;overflow:clip;padding:0}
-  .hoja{display:block;position:absolute;inset:0;background:var(--papel);transform:translateX(100%);visibility:hidden;transition:transform .42s var(--ease),visibility 0s .42s}
+  .hoja{display:block;position:absolute;inset:0;background:var(--papel);transform:translateX(100%);visibility:hidden;transition:transform var(--t-pagina) var(--curva-pagina),visibility 0s var(--t-pagina)}
   .hoja.antes{transform:translateX(-100%)}
   /* la hoja que sale sigue visible mientras se desliza (la visibilidad se apaga al final); la que entra se ve de inmediato */
-  .hoja.act{transform:none;visibility:visible;transition:transform .42s var(--ease)}
+  .hoja.act{transform:none;visibility:visible;transition:transform var(--t-pagina) var(--curva-pagina)}
   .modulo.sin-hojas .hoja,.modulo.sin-pista .pista{transition:none}
   .hoja-scroll{height:100%;overflow:hidden;padding:0 32px 0 16px;display:flex;flex-direction:column}   /* sin barra propia: la rueda, el teclado y el foco llegan a la página */
   .hoja .apunte{flex:1 0 auto;width:100%;padding-bottom:40px}
@@ -255,7 +250,7 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
   .escena{position:relative;height:auto;display:block}
   .lienzo{width:min(100%,calc(78svh*368/399));height:auto;aspect-ratio:368/399;margin-inline:auto}
   .apuntes{padding:0 20px 88px}
-  .ap-titulo,.ap-practica{padding-right:56px}
+  .ap-titulo{padding-right:56px}
   .btn-drawer{transition:transform .25s var(--ease),opacity .25s,visibility .25s}
   .btn-drawer.oculto{transform:translateY(-84px)}
 }
@@ -265,13 +260,12 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
   .fr-lista{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:0 16px 6px;scroll-snap-type:x proximity}
   .mod{flex:none;scroll-snap-align:start}
   .apunte{font-size:1.125rem}
-  .vista{display:flex}.vista button{flex:1;min-width:0}
   .tabla th{padding:.45em .35em;font-size:1.125rem;white-space:normal}
   .tabla td{padding:.5em .35em;font-size:1rem}
 }
 /* ---------- visor de imágenes (usuario, 2026-10-21; repuesto en la web 2026-11-12) ---------- */
 /* clic o Enter en una imagen de un apunte la amplía en un <dialog> modal sobre noche, con marco pixel claro, flechas, contador y X; superficies planas, sin degradado ni sombra (Corte Limpio) */
-.apunte img[data-ampliar]{cursor:zoom-in}
+.apunte img[data-ampliar],.pv img[data-ampliar]{cursor:zoom-in}
 .visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--noche);color:var(--niebla);cursor:zoom-out}
 .visor[open]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr);grid-template-areas:". cont x" "ant img sig";gap:12px 16px;padding:16px 16px 20px}
 .visor::backdrop{background:var(--noche)}
@@ -294,6 +288,81 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
   .visor-cont{justify-self:start}
   .visor-ant{justify-self:start}.visor-sig{justify-self:end}
 }
+/* ---------- vista de Práctica a pantalla completa (usuario, 2026-11-12; fichas con su tempo, boceto elegido en .impeccable/mocks/decision/fichas.html) ----------
+   Un <dialog> modal sin escena. Dos temas: oscuro (noche, niebla, ámbar) y claro (papel, tinta, ladrillo); respeta la regla de los dos acentos. La TAB siempre va sobre papel blanco. */
+.pv{--pv-fondo:var(--noche);--pv-texto:var(--niebla);--pv-2:var(--bruma);--pv-acento:var(--ambar);--pv-linea:var(--pino);--pv-tira:var(--bosque);--pv-borde:var(--bruma);--pv-marco:var(--m-claro);--pv-marco-act:var(--m-ambar);color-scheme:dark}
+html[data-tema="claro"] .pv{--pv-fondo:var(--papel);--pv-texto:var(--tinta);--pv-2:var(--tinta-2);--pv-acento:var(--ladrillo);--pv-linea:var(--linea);--pv-tira:var(--crema);--pv-borde:var(--tinta);--pv-marco:var(--m-tinta);--pv-marco-act:var(--m-ladrillo);color-scheme:light}
+html.en-practica{scrollbar-gutter:auto}   /* la vista tapa la página entera: sin franja vacía a la derecha, solo su propia barra */
+.pv{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--pv-fondo);color:var(--pv-texto)}
+.pv[open]{display:flex;flex-direction:column}
+/* entra deslizando desde la derecha y sale por el mismo lado; 700 ms con una curva que acelera y frena parejo (la del carrusel, 420 ms con frenado exponencial, se sentía veloz en una vista que cubre toda la pantalla); la página de atrás se oscurece como con el drawer.
+   display y overlay con allow-discrete mantienen el diálogo visible mientras sale; en un navegador que no lo soporte el cambio es directo */
+.pv{transform:translateX(100%);transition:transform var(--t-pagina) var(--curva-pagina),overlay var(--t-pagina) allow-discrete,display var(--t-pagina) allow-discrete}
+.pv[open]{transform:none}
+@starting-style{.pv[open]{transform:translateX(100%)}}
+.pv::backdrop{background:var(--noche);opacity:0;transition:opacity var(--t-pagina) var(--curva-pagina),overlay var(--t-pagina) allow-discrete,display var(--t-pagina) allow-discrete}
+.pv[open]::backdrop{opacity:.62}
+@starting-style{.pv[open]::backdrop{opacity:0}}
+.pv :focus-visible{outline-color:var(--pv-acento)}
+.pv-bar{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:16px 24px;min-height:88px;padding:16px clamp(16px,2.5vw,40px);border-bottom:3px solid var(--pv-linea)}
+.pv-t{flex:1 1 20rem;min-width:0;margin:0;font:400 clamp(2rem,3vw,2.875rem)/1 var(--px);text-wrap:balance}
+.pv-t:focus-visible{outline:none}
+.pv-btn{display:inline-flex;align-items:center;justify-content:center;gap:.45em;min-height:56px;padding:0 1.1rem;border:6px solid transparent;border-image:var(--pv-marco) 2 stretch;background:var(--pv-fondo);background-clip:padding-box;color:var(--pv-texto);font:400 1.75rem/1 var(--px);cursor:pointer}
+.pv-btn:hover,.pv-btn[aria-pressed="true"]{border-image-source:var(--pv-marco-act);background-color:var(--pv-tira);color:var(--pv-acento)}
+.pv-btn:active{transform:translateY(3px)}
+.pv-btn .ico{width:1.125em;height:1.125em;vertical-align:baseline}
+.pv-ctl{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}
+.pv-cols{display:flex;align-items:center;gap:6px}
+.pv-cols-t{margin-right:6px;font:400 1.375rem/1 var(--px);color:var(--pv-2)}
+.pv-col{min-width:48px;min-height:48px;padding:0;font-size:1.5rem}
+.pv-tema{min-height:48px;font-size:1.5rem}
+.pv-cuerpo:focus-visible{outline-offset:-3px}
+.pv-cuerpo{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:var(--pv-2) var(--pv-fondo);padding:28px clamp(16px,2.5vw,40px) 72px}
+.pv-doc{max-width:1840px;margin-inline:auto}
+.pv-intro,.pv-nota{max-width:72ch;font:400 1.1875rem/1.6 var(--lectura)}
+.pv-intro{margin:0 0 24px}
+.pv-nota{margin:28px 0 0}
+.pv-intro p,.pv-nota p,.pv-mejora p,.pv-plegado p{margin:0 0 .7em}
+.pv-intro p:last-child,.pv-nota p:last-child,.pv-mejora p:last-child,.pv-plegado>:last-child{margin-bottom:0}
+.pv b{font-weight:700}
+.pv code{font:.9em ui-monospace,Consolas,monospace;background:var(--pv-tira);padding:.05em .3em}
+.pv a.ref{color:var(--pv-acento);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+.pv a.ref:hover{background:var(--pv-tira)}
+.pv .ref-fuera{border-bottom:2px dotted var(--pv-2);cursor:help}
+/* las versiones: una ficha cada una (la TAB sobre papel y, al pie, su número, su tempo y dónde) */
+.pv-fichas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px}
+.pv[data-cols="1"] .pv-fichas{grid-template-columns:minmax(0,1fr)}
+.pv[data-cols="3"] .pv-fichas{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pv-ficha{margin:0;min-width:0;display:flex;flex-direction:column;border:6px solid transparent;border-image:var(--pv-marco) 2 stretch;background:var(--pv-fondo);background-clip:padding-box}
+.pv-ficha img{flex:1 1 auto;width:100%;height:auto;min-height:0;object-fit:contain;background:#fff}   /* la fila se iguala: la TAB más baja se centra sobre su papel y las tiras quedan alineadas */
+.pv-tira{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:2px 18px;min-height:58px;margin:0;padding:8px 18px;background:var(--pv-tira);color:var(--pv-texto)}
+.pv-v{grid-column:1;grid-row:1 / span 2;font:400 2.5rem/1 var(--px);color:var(--pv-acento)}
+.pv-tempo{grid-column:2;font:400 1.75rem/1.1 var(--px)}
+.pv-tempo.larga{font:400 1.25rem/1.35 var(--lectura)}   /* lo que se lee con la guitarra en la mano: no baja de 20 px */
+.pv-donde{grid-column:2;margin:0;font:400 1.1875rem/1.35 var(--lectura);font-style:normal;color:var(--pv-2)}
+.pv[data-cols="3"] .pv-v{font-size:2rem}.pv[data-cols="3"] .pv-tempo:not(.larga){font-size:1.5rem}
+/* debajo de las imágenes: lo que se mejora (corto) y, plegados, lo que se abre solo si hace falta */
+.pv-pie{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px 48px;margin-top:32px;padding-top:24px;border-top:3px solid var(--pv-linea)}
+.pv-h{margin:0 0 .35em;font:400 1.75rem/1 var(--px);color:var(--pv-acento)}
+.pv-mejora{position:sticky;top:16px;align-self:start;max-width:64ch;font:400 1.1875rem/1.6 var(--lectura)}
+.pv-plegables{display:grid;gap:12px;align-content:start}
+.pv-plegable summary{display:flex;align-items:center;gap:.5em;min-height:56px;padding:0 1.1rem;list-style:none;border:6px solid transparent;border-image:var(--pv-marco) 2 stretch;background:var(--pv-fondo);background-clip:padding-box;color:var(--pv-texto);font:400 1.75rem/1 var(--px);cursor:pointer}
+.pv-plegable summary::-webkit-details-marker{display:none}
+.pv-plegable summary:hover,.pv-plegable[open]>summary{border-image-source:var(--pv-marco-act);background-color:var(--pv-tira);color:var(--pv-acento)}
+.pv-plegable summary .ico{width:1.125em;height:1.125em;vertical-align:baseline}
+.pv-plegable[open]>summary .ico{transform:rotate(90deg)}
+.pv-plegado{padding:16px 4px 4px;font:400 1.1875rem/1.6 var(--lectura)}
+.pv-plegado ul,.pv-plegado ol{margin:0 0 .8em;padding-left:1.4em}
+.pv-plegado li::marker{color:var(--pv-acento)}
+.pv .tabla{margin:0 0 1em;border:3px solid var(--pv-borde);background:linear-gradient(90deg,var(--pv-fondo) 30%,#0000) left/36px 100% no-repeat local,linear-gradient(270deg,var(--pv-fondo) 30%,#0000) right/36px 100% no-repeat local,linear-gradient(90deg,color-mix(in srgb,var(--pv-borde) 45%,transparent),#0000) left/12px 100% no-repeat scroll,linear-gradient(270deg,color-mix(in srgb,var(--pv-borde) 45%,transparent),#0000) right/12px 100% no-repeat scroll;background-color:var(--pv-fondo)}   /* la ayuda de scroll de las tablas, con los colores del tema */
+.pv .tabla th{background:var(--pv-tira);color:var(--pv-texto);border-bottom:3px solid var(--pv-borde)}
+.pv .tabla td{border-top:2px solid var(--pv-linea)}
+@media (max-width:820px){
+  .pv-cols{display:none}
+  .pv-fichas,.pv[data-cols] .pv-fichas{grid-template-columns:minmax(0,1fr)}
+  .pv-pie{grid-template-columns:minmax(0,1fr)}
+  .pv-donde{margin-left:0}
+}
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
+  *,*::before,*::after,.pv::backdrop{animation:none!important;transition:none!important}
 }

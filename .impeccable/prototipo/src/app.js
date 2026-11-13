@@ -142,7 +142,7 @@
   $("#volver").addEventListener("click", () => ir(hojas.length - 1))
   addEventListener("keydown", e => {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return
-    if (e.repeat || !carrusel() || modulo.hidden || !drawer.inert || visor.open || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
+    if (e.repeat || !carrusel() || modulo.hidden || !drawer.inert || visor.open || practica.open || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
     if (!DEL_MODULO.includes(document.body.dataset.zona)) return   // solo cuando el escenario es lo que se está mirando
     if (e.target.closest?.("input,textarea,select,[contenteditable],.tabla")) return   // en un campo o una tabla con scroll, las flechas son suyas
     e.preventDefault(); ir(pagina + (e.key === "ArrowRight" ? 1 : -1))
@@ -188,7 +188,7 @@
   const brillar = (n = 1) => { brillo.style.setProperty("--luz", n >= 2 ? 1 : .75); brillo.classList.add("on"); clearTimeout(tBrillo); tBrillo = setTimeout(() => brillo.classList.remove("on"), 450) }
   const aTope = () => scrollTo({ top: tope(), behavior: quieto ? "instant" : "smooth" })
   function alRueda(e) {
-    if (!carrusel() || modulo.hidden || e.ctrlKey || !drawer.inert || visor.open) return
+    if (!carrusel() || modulo.hidden || e.ctrlKey || !drawer.inert || visor.open || practica.open) return
     const ahora = performance.now()
     if (e.deltaY >= 0) { retenido = false; return }   // bajar siempre es libre y suelta el tope
     const dy = e.deltaY * (e.deltaMode === 1 ? 40 : e.deltaMode === 2 ? innerHeight : 1), mag = -dy
@@ -232,34 +232,79 @@
     esperado = activo.scrollTop; scrollTo({ top: tope() + activo.scrollTop, behavior: "instant" })
   }, true)
 
-  // ---------- 4. teoría / práctica en el sitio del apunte, y saltos entre apuntes (aunque sean de otro módulo) ----------
-  // en el carrusel, al cambiar de vista la hoja vuelve arriba (la página sigue a la hoja); en el flujo apilado se mueve la página
-  function ver(ap, v, fuera) {
-    const enCarrusel = carrusel()
-    if (ap.hasAttribute("data-solo")) { if (fuera && !enCarrusel) salto(ap, { suave: false }); return }   // práctica suelta: no tiene pestañas
-    $$(".vista button", ap).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.ver === v)))
-    $$("[data-panel]", ap).forEach(p => { p.hidden = p.dataset.panel !== v })
-    ap.dataset.vista = v
-    if (enCarrusel) { const sc = ap.closest(".hoja-scroll"); if (sc) { sc.scrollTop = 0; if (sc === activo) alinear() } }   // el otro panel mide distinto: se recalcula el alto de la página
-    // si el apunte empieza arriba de la pantalla, su cabecera vuelve a verse para que el otro panel empiece a la vista
-    else if (fuera || ap.getBoundingClientRect().top < 0) salto(ap, { suave: false })
-  }
-  // id = "a-<clave>" lleva al apunte; "p-<clave>", a su práctica
-  function irA(id) {
-    const k = id.replace(/^[ap]-/, ""), n = modDe(k); if (!n) return
+  // ---------- 4. saltos entre apuntes (aunque sean de otro módulo) y vista de Práctica ----------
+  // id = "a-<clave>" lleva al apunte; "p-<clave>" abre su práctica a pantalla completa (4b), con el apunte detrás para que «Volver» caiga en él
+  function irAApunte(k, n) {
     cargar(n)
     const ap = $(`#a-${k}`)
-    if (id.startsWith("p-")) ver(ap, "practica", true); else if (ap.dataset.vista === "practica") ver(ap, "teoria", true); else if (!carrusel()) salto(ap, { suave: false })
+    if (!carrusel()) salto(ap, { suave: false })
     if (carrusel()) salto(modulo, { suave: false })   // el escenario llena la pantalla
     if (carrusel() && hojaDe(k) !== pagina) ir(hojaDe(k))   // la página llega con la misma animación
     else $(".ap-titulo", ap)?.focus({ preventScroll: true })
-    history.replaceState(null, "", "#" + id)
+  }
+  function irA(id) {
+    const k = id.replace(/^[ap]-/, ""), n = modDe(k); if (!n) return
+    const quiereP = id.startsWith("p-")
+    if (practica.open) { pvK = null; cerrarPractica() }   // se cierra sin «volver»: se va a otro lado
+    // abrir la práctica desde su propio apunte no lo mueve; desde otro sitio (drawer, enlace, dirección) el apunte pasa primero
+    const ya = quiereP && !modulo.hidden && actual === n && (!carrusel() || hojas[pagina]?.dataset.k === k)
+    if (!ya) irAApunte(k, n)
+    if (quiereP) abrirPractica(k); else history.replaceState(null, "", "#" + id)
   }
   modulo.addEventListener("click", e => {
-    const b = e.target.closest(".vista button"); if (b) return ver(b.closest(".apunte"), b.dataset.ver)
+    const p = e.target.closest(".btn-prac"); if (p) return abrirPractica(p.dataset.practica)
     const a = e.target.closest('a.ref[href^="#"]'); if (!a) return
     const id = a.getAttribute("href").slice(1)
-    if (carrusel() || !document.getElementById(id)) { e.preventDefault(); irA(id) }   // en el carrusel siempre; apilado, el ancla lleva sola salvo que sea de otro módulo
+    if (carrusel() || !document.getElementById(id)) { e.preventDefault(); irA(id) }   // en el carrusel siempre; apilado, el ancla lleva sola salvo que sea de otro módulo o de una práctica (que ya no tiene ancla)
+  })
+
+  // ---------- 4b. vista de Práctica a pantalla completa (usuario, 2026-11-12; contrato en .impeccable/surfaces/system-html.md) ----------
+  // Un <dialog> modal sin escena: deja inerte todo lo demás, atrapa el foco y se cierra con Esc o «Volver al apunte». Las columnas (1, 2 o 3) y el tema (oscuro / claro,
+  // por defecto el de Windows) se recuerdan en el navegador; el tema vale para todo el sistema (hoy solo lo usa esta vista).
+  const practica = $("#practica"), pvT = $("#pv-t"), pvCuerpo = $("#pv-cuerpo"), pvTema = $("#pv-tema")
+  const guardado = { leer: k => { try { return localStorage.getItem(k) } catch { return null } }, poner: (k, v) => { try { localStorage.setItem(k, v) } catch { } } }
+  const mqOscuro = matchMedia("(prefers-color-scheme: dark)")
+  let pvK = null, cols = guardado.leer("okaeri.cols"), tema = guardado.leer("okaeri.tema"), temaElegido = ["claro", "oscuro"].includes(tema)
+  if (!["1", "2", "3"].includes(cols)) cols = "2"
+  if (!temaElegido) tema = mqOscuro.matches ? "oscuro" : "claro"
+  function pintarVista() {
+    document.documentElement.dataset.tema = tema
+    practica.dataset.cols = cols
+    $$(".pv-col", practica).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.cols === cols)))
+    const aClaro = tema === "oscuro"   // el botón ofrece el otro tema
+    $("use", pvTema).setAttribute("href", aClaro ? "#i-sol" : "#i-luna"); $("span", pvTema).textContent = aClaro ? "Claro" : "Oscuro"
+    pvTema.setAttribute("aria-label", aClaro ? "Cambiar a tema claro" : "Cambiar a tema oscuro")
+  }
+  pintarVista()
+  mqOscuro.addEventListener("change", e => { if (!temaElegido) { tema = e.matches ? "oscuro" : "claro"; pintarVista() } })   // mientras no haya elegido, sigue a Windows
+  const candado = () => {   // la página de atrás no se mueve mientras haya algo encima (visor, vista de Práctica o drawer)
+    const h = document.documentElement.classList
+    h.toggle("sin-scroll", visor.open || practica.open || !drawer.inert); if (!practica.open) h.remove("en-practica")
+  }
+  function cerrarPractica() { document.documentElement.classList.remove("en-practica"); practica.close() }   // la franja vuelve antes de que salga, mientras aún tapa la página
+  practica.addEventListener("cancel", () => document.documentElement.classList.remove("en-practica"))   // Esc
+  function abrirPractica(k) {
+    const tpl = document.getElementById("v-" + k); if (!tpl) return
+    pvK = k; pvT.innerHTML = tpl.dataset.t
+    pvCuerpo.replaceChildren(tpl.content.cloneNode(true)); pvCuerpo.scrollTop = 0
+    prepararImagenes(); pintarVista()
+    if (!practica.open) {
+      practica.showModal()
+      setTimeout(() => { if (practica.open) document.documentElement.classList.add("en-practica") }, quieto ? 0 : 740)   // la franja sin barra solo cuando la vista ya tapa todo: la página de atrás no salta mientras entra
+    }
+    candado(); history.replaceState(null, "", "#p-" + k)
+  }
+  practica.addEventListener("close", () => {
+    candado()
+    if (practica.open || !pvK) return   // open: se cerró para abrir otra; sin clave: se cerró para ir a otro lado
+    const k = pvK; pvK = null; history.replaceState(null, "", "#a-" + k)
+    if (!carrusel()) { const ap = $(`#a-${k}`); if (ap) salto(ap, { suave: false }) }   // apilado, el apunte vuelve a verse
+  })
+  practica.addEventListener("click", e => {
+    if (e.target.closest("#pv-volver")) return cerrarPractica()
+    const c = e.target.closest(".pv-col"); if (c) { cols = c.dataset.cols; guardado.poner("okaeri.cols", cols); return pintarVista() }
+    if (e.target.closest("#pv-tema")) { tema = tema === "oscuro" ? "claro" : "oscuro"; temaElegido = true; guardado.poner("okaeri.tema", tema); return pintarVista() }
+    const a = e.target.closest('a.ref[href^="#"]'); if (a) { e.preventDefault(); irA(a.getAttribute("href").slice(1)) }
   })
   const porHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (/^[ap]-/.test(h)) irA(h) }
   addEventListener("hashchange", porHash)
@@ -271,7 +316,7 @@
     if (v === !drawer.inert) return
     drawer.inert = !v; velo.hidden = !v
     drawer.classList.toggle("abierto", v); velo.classList.toggle("abierto", v)
-    abrir.setAttribute("aria-expanded", String(v)); document.documentElement.classList.toggle("sin-scroll", v)
+    abrir.setAttribute("aria-expanded", String(v)); candado()
     fondo.forEach(el => { el.inert = v })
     if (v) setTimeout(() => $("#buscar").focus({ preventScroll: true }), quieto ? 0 : 60); else abrir.focus({ preventScroll: true })
   }
@@ -362,13 +407,13 @@
   const srcDe = i => i.getAttribute("src")
   // las imágenes de un apunte llegan con cada módulo cargado: se vuelven botones accesibles (foco por teclado y nombre) una sola vez
   function prepararImagenes() {
-    $$(".apunte img").forEach(i => {
+    $$(".apunte img, .pv img").forEach(i => {
       if (i.dataset.ampliar !== undefined) return
       i.dataset.ampliar = ""; i.tabIndex = 0; i.setAttribute("role", "button"); i.title = "Ampliar"
       i.setAttribute("aria-label", i.alt ? "Ampliar imagen: " + i.alt : "Ampliar imagen")
     })
   }
-  const imagenesDe = ap => { const vistas = new Set(); return $$("img[data-ampliar]", ap).filter(i => !i.closest("[hidden]") && !vistas.has(srcDe(i)) && vistas.add(srcDe(i))) }
+  const imagenesDe = ap => { const vistas = new Set(); return $$("img[data-ampliar]", ap).filter(i => !i.closest("[hidden], details:not([open])") && !vistas.has(srcDe(i)) && vistas.add(srcDe(i))) }
   // se espera a que la imagen esté decodificada antes de cambiarla, para que al pasar de una a otra no parpadee en blanco
   const decodificar = src => new Promise(res => { const p = new Image(); p.src = src; p.decode ? p.decode().then(res, res) : (p.onload = p.onerror = res) })
   async function verImagen(i) {
@@ -384,22 +429,21 @@
     for (const j of [i - 1, i + 1]) if (vLista[j]) decodificar(srcDe(vLista[j]))   // las vecinas quedan en caché: pasar de una a otra es inmediato
   }
   function abrirVisor(img) {
-    const ap = img.closest(".apunte"); if (!ap || visor.open) return
+    const ap = img.closest(".apunte, .pv"); if (!ap || visor.open) return
     vLista = imagenesDe(ap); vOrigen = img
-    document.documentElement.classList.add("sin-scroll")
-    visor.showModal()
+    visor.showModal(); candado()
     verImagen(Math.max(0, vLista.findIndex(x => srcDe(x) === srcDe(img))))
   }
   visor.addEventListener("close", () => {
-    document.documentElement.classList.remove("sin-scroll"); vTok++; vImg.removeAttribute("src")
+    candado(); vTok++; vImg.removeAttribute("src")
     vOrigen?.focus({ preventScroll: true }); vOrigen = null
   })
   document.addEventListener("click", e => {
     if (e.button || e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return
-    const i = e.target.closest?.(".apunte img[data-ampliar]"); if (i) { e.preventDefault(); abrirVisor(i) }
+    const i = e.target.closest?.(".apunte img[data-ampliar], .pv img[data-ampliar]"); if (i) { e.preventDefault(); abrirVisor(i) }
   })
   document.addEventListener("keydown", e => {
-    if ((e.key === "Enter" || e.key === " ") && !e.repeat && !e.altKey && !e.ctrlKey && !e.metaKey && e.target.matches?.(".apunte img[data-ampliar]")) { e.preventDefault(); abrirVisor(e.target) }
+    if ((e.key === "Enter" || e.key === " ") && !e.repeat && !e.altKey && !e.ctrlKey && !e.metaKey && e.target.matches?.(".apunte img[data-ampliar], .pv img[data-ampliar]")) { e.preventDefault(); abrirVisor(e.target) }
   })
   vAnt.addEventListener("click", () => verImagen(vI - 1)); vSig.addEventListener("click", () => verImagen(vI + 1)); vX.addEventListener("click", () => visor.close())
   visor.addEventListener("click", e => { if (e.target === visor || e.target.classList.contains("visor-cuadro")) visor.close() })   // el margen cierra; la imagen y los botones no
@@ -407,6 +451,7 @@
     if (e.altKey || e.ctrlKey || e.metaKey) return
     if (e.key === "ArrowLeft") verImagen(vI - 1)
     else if (e.key === "ArrowRight") verImagen(vI + 1)
+    else if (e.key === "Escape") visor.close()   // a mano: con la vista de Práctica debajo, un solo Esc no debe cerrar las dos (el navegador agrupa los diálogos abiertos sin un clic en medio)
     else if (e.key === "Home") verImagen(0)
     else if (e.key === "End") verImagen(vLista.length - 1)
     else return

@@ -26,7 +26,7 @@ El avance que muestra es real y medible: un tema solo cuenta como «logrado» cu
 
 ## Capabilities and Constraints
 
-- **Vistas actuales:** hero a pantalla completa con paisaje por capas y sonido; franja de módulos (M1 a M9, el en curso ya elegido); por módulo, las dos escenas animadas (fogata y muelle) con sus apuntes al lado y la práctica de cada apunte en su mismo sitio (botones Teoría / Práctica); drawer con la ruta del módulo, los otros módulos, buscador y «Clases en orden».
+- **Vistas actuales:** hero a pantalla completa con paisaje por capas y sonido; franja de módulos (M1 a M9, el en curso ya elegido); por módulo, las dos escenas animadas (fogata y muelle) con sus apuntes al lado; la práctica de cada apunte se abre en su propia vista a pantalla completa, sin escena (botón «Práctica ›» del apunte o el drawer): las versiones en fichas de 1, 2 o 3 columnas, cada una con su tempo, y tema oscuro o claro según Windows (por ahora solo en esa vista); drawer con la ruta del módulo, los otros módulos, buscador y «Clases en orden».
 - **Un módulo a la vez.** Los que no tienen apuntes escritos dicen «Sin apuntes aún».
 - **Sin emojis** en la interfaz: iconos e ilustraciones propias. Los emojis dentro de un apunte se muestran con su icono equivalente.
 - **Solo contenido real:** un módulo sin apuntes lo dice, y un apunte provisional lo dice en su línea de metadatos; nada se inventa para llenar.

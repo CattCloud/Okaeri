@@ -13,11 +13,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**Llevar el pulso por dentro, sin depender de la app.** Es tocar cada nota en el momento correcto, además de tocar la nota correcta. En Yousician la pista marcaba el ritmo por ti y por eso no te quedaba nada; aquí el pulso lo llevas tú.
-
-Se toca en una sola cuerda al aire, la 6ª, porque el ejercicio es de tiempo y no de dedos. Contar en voz alta te da un punto fijo: cada número cae sobre un clic.
-
-**Lo vas a notar** el día que apagues el metrónomo, sigas tocando, lo vuelvas a prender y sigas cuadrado con él.
+**Llevar el pulso por dentro, sin depender de la app:** tocar cada nota en su momento, con el pulso puesto por ti. Se toca en la 6ª cuerda al aire para que toda la atención vaya al tiempo. **Lo vas a notar** el día que apagues el metrónomo, sigas tocando, lo vuelvas a prender y sigas cuadrado con él.
 
 ## Cómo se hace (referencia)
 

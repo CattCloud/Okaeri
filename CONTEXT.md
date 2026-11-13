@@ -1,6 +1,6 @@
 # Contexto — Okaeri
 
-> Última actualización: 2026-11-12 (visor de imágenes repuesto, sin commit; decidida la vista de Práctica a pantalla completa, por diseñar; carril de canto archivado en `942f26d`)
+> Última actualización: 2026-11-12 (visor publicado en `46add36`; vista de Práctica a pantalla completa construida y revisada —paso 1—, sin commit; falta el paso 2: tema oscuro/claro en los apuntes)
 
 ## Estado
 
@@ -9,11 +9,11 @@ Sistema personal para aprender guitarra clásica comprendiendo y reteniendo, no 
 - **Clases:** guitarra reportada hasta la 8 (2026-10-20); faltan la 9, la 10 y la 11 (27-oct, 3-nov, 10-nov). `estado_actual.md` → «Semana en curso» sigue en 2026-10-20 → 10-26: se actualiza al reportarlas.
 - **La web de Okaeri** (`.impeccable/prototipo/index.html`: doble clic, sin servidor; la arma `node build.cjs` con Node 22 desde esa carpeta) reemplazó a `system.html` el 2026-11-11; el panel viejo está en `_archivo/panel-system-html/`. **No se publica en internet:** el sitio era para la hermana del usuario, que dejó el canto. La rama `gh-pages` sigue en el remoto con el panel viejo (preguntar si se retira). `build.cjs` lee los `.md` por su `modulo:`; conectados: M1 (6 apuntes, 2 prácticas), M3, M6 y M8 (`la-pentatonica`, provisional, y la práctica de arpegio suelta). M2, M4, M5, M7 y M9 dicen «Sin apuntes aún» (R11). Se regenera dentro de la misma tarea al cerrar una clase o escribir un apunte o práctica.
 - **Carrusel de apuntes** (escritorio ≥1200 px; bajo ese ancho sigue apilado): construido, probado con el mouse del usuario y publicado en `main` (`ea9909e`, 2026-11-12). Especificación: `.impeccable/surfaces/system-html.md` → «Carrusel de apuntes»; reglas visuales: `DESIGN.md` → Carousel.
-- **Visor de imágenes, sin commit:** repuesto el 2026-11-12 (`build.cjs`, `src/app.js` §6b, `src/estilo.css`, `index.html` regenerado) con su documentación (`DESIGN.md`, `NOTAS.md`, `decision_system-html.md`) y estas memorias. Hasta ahora es lo único pendiente de commit.
+- **Visor de imágenes:** repuesto el 2026-11-12 y publicado en `main` (`46add36`).
 
 ## Siguiente paso
 
-**Primera acción, en una conversación nueva con `/model opus`:** definir la **vista de Práctica a pantalla completa** con `agatha:impeccable` (`shape`: la definición del diseño va en Opus, el código después en Sonnet), partiendo de la decisión de abajo. Antes, si el usuario lo autoriza, commit y push del visor y de las memorias (`agatha:commit-push-pr`).
+**Primera acción:** si el usuario lo autoriza, commit y push del paso 1 y de las prácticas reescritas (`agatha:commit-push-pr`; junto con `CONTEXT.md`, `NOTAS.md`, `DESIGN.md`, `PRODUCT.md`, el brief de superficie y `F4` en `fundamentos/AGENTS.md`). Luego el **paso 2** con `agatha:impeccable` en `/model sonnet`: llevar el tema oscuro/claro (ya en `html[data-tema]`, según Windows) a la hoja del apunte, el visor y el drawer, y poner su botón en la cabecera del drawer junto al de sonido; resolver el borde de la escena (se disuelve en blanco y en oscuro no calza) y el contraste AA de la lectura en oscuro. Abrir `index.html` una sola vez en el navegador del sistema al terminar.
 
 Después, retomar el estudio de guitarra: que el usuario reporte las clases 9, 10 y 11 (27-oct, 3-nov, 10-nov) para correr `procesar-clase` (marcador, «Semana en curso» y tarea del profesor); luego, el OK del esquema de p-i-m-a y el resultado de la evaluación de la clase 5.
 
@@ -26,7 +26,9 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 - `la-pentatonica` quedó sin el enlace al apunte del semitono: se enlaza de nuevo cuando la cola de guitarra escriba «Tono y semitono» (concepto 2).
 - Histórico que se queda: `sistema/decisiones/`, `sistema/manual_okaeri.md`, el rango vocal en `yo_musica.md` y el registro de las clases 1-6 de canto en `practica/00_indice.md`.
 
-**Vista de Práctica a pantalla completa (usuario, 2026-11-12; aprobada, por diseñar)**
+**Vista de Práctica y tema oscuro/claro (usuario, 2026-11-12; diseño aprobado con `shape`, sin construir).** Brief completo: `.impeccable/surfaces/system-html.md` → «Vista de Práctica a pantalla completa y tema del sistema». Resolvió lo abierto de abajo: (a) se acorta en los `.md` (F4 por `nueva-regla`, 2-3 líneas); (b) tema del sistema según Windows, con botón en el drawer y en la Práctica; (c) cuadrícula de 1, 2 o 3 columnas (2 por defecto; 4 ilegible), clic → visor; (d) silencio al entrar; (e) un solo botón «Práctica ›». Se construye en dos pasos: Práctica con ambos temas, luego tema en apuntes.
+
+**Vista de Práctica a pantalla completa (usuario, 2026-11-12; CONSTRUIDA, paso 1; lo de abajo es el diseño original, ya resuelto arriba)**
 - **Qué:** la práctica deja de alternarse con el apunte dentro de la hoja (botones Teoría / Práctica, con la escena al lado) y pasa a una **vista propia a pantalla completa, sin escena**, minimalista y del mismo mundo visual de la web. **Porqué:** el usuario quiere entrar a una práctica y ver de inmediato lo que debe practicar (le gustaba el modo Libre del panel viejo y quitó las demás pestañas); con la escena al lado las imágenes (TABs de ~2600 px) salen chicas y la escena estorba cuando el foco son las imágenes. En los apuntes la escena sí acompaña.
 - **Entrada (aprobada):** el botón «Práctica» del apunte abre la vista y «Volver al apunte» regresa; también desde el drawer (las prácticas cuelgan de su apunte); el arpegio de la clase 8, sin apunte, entra igual; el hash `#p-…` la abre.
 - **Bloques (aprobados con una corrección del usuario).** Al entrar, visible y grande: el título y **«Cómo se hace»** (imágenes de las versiones V1…Vn, con su tabla de tempo y dónde si la hay). **«Qué estás mejorando» baja, debajo de las imágenes, y se acorta** (corrección del usuario). A un toque, plegados: **«Si sale mal»** y **«Hasta cuándo»**. Fuera de la web (siguen en el `.md`): la cita inicial («Con la guitarra afinada…»), «Cómo suena cuando está bien», «Afinación del instructor», «Qué sigue» y «Verificación». El visor de imágenes sigue valiendo en la vista.
@@ -43,7 +45,7 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 **Web (2026-11-06 → 11-11)**
 - **Solo dos escenas, fogata y muelle** (usuario, 2026-11-06). Porqué: la primera escena tomó días y el usuario necesita Okaeri ya para ver apuntes y practicar. La primera mitad de los apuntes de un módulo va con la fogata y la segunda con el muelle (módulo de un apunte: solo fogata). Plano de referencia de dónde está cada escena: `.impeccable/mocks/lugares/mapa.svg`.
 - **Hero** por capas con parallax, de día pleno, aprobado el 2026-11-09 (`.impeccable/mocks/lugares/hero/`). Fuentes: **Jersey 15** (títulos, botones, drawer) y **Atkinson Hyperlegible** (lectura).
-- **Navegación:** un módulo a la vez; franja de módulos entre el hero y el apunte (abre con el módulo en curso); drawer con la ruta del módulo, otros módulos, buscador y «Clases en orden» (solo personal). Hoy la práctica se alterna con la teoría en el sitio del apunte; la reemplaza la vista de Práctica a pantalla completa (decisión de abajo).
+- **Navegación:** un módulo a la vez; franja de módulos entre el hero y el apunte (abre con el módulo en curso); drawer con la ruta del módulo, otros módulos, buscador y «Clases en orden» (solo personal). La práctica ya no se alterna con el apunte: se abre en su vista a pantalla completa (botón «Práctica ›» o drawer).
 - **Visor de imágenes repuesto (usuario, 2026-11-12):** al tocar una imagen de un apunte se amplía (flechas, Inicio, Fin, «3 / 8», X, Esc, margen); se había perdido al archivar `system.html`. Probado en Chrome headless (escritorio, vertical y móvil). Reglas en `DESIGN.md` → «Visor de imágenes». Los demás faltantes del panel viejo (Recorrido, pestañas de práctica, modo foco) siguen sin reconstruirse (R11: solo a pedido). Sin commit aún.
 - **Alcance:** solo laptop con Windows. Tableta y móvil quedan fuera por ahora (usuario, 2026-11-10).
 - **Audio:** `audio/celta.mp3` y `audio/pantano.mp3` **no existen** (las consigue el usuario; `.gitignore` ignora los `.mp3`); sin ellas el botón avisa «Sin audio».

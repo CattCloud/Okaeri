@@ -48,7 +48,8 @@ function tabla(lineas, ctx) {
   const enc = celdas(lineas[0]), alin = celdas(lineas[1]).map(c => /^:-+:$/.test(c) ? "c" : /-+:$/.test(c) ? "r" : "")
   const c2 = { ...ctx, tabla: true }
   const fila = (cs, t) => `<tr>${cs.map((c, i) => `<${t}${alin[i] ? ` class="a-${alin[i]}"` : ""}>${inline(c, c2)}</${t}>`).join("")}</tr>`
-  return `<div class="tabla" tabindex="0" role="region" aria-label="Tabla"><table><thead>${fila(enc, "th")}</thead><tbody>${lineas.slice(2).map(l => fila(celdas(l), "td")).join("")}</tbody></table></div>`
+  const filas = lineas.slice(2).map(celdas)
+  return { html: `<div class="tabla" tabindex="0" role="region" aria-label="Tabla"><table><thead>${fila(enc, "th")}</thead><tbody>${filas.map(cs => fila(cs, "td")).join("")}</tbody></table></div>`, datos: { enc: enc.map(c => inline(c, c2)), filas: filas.map(cs => cs.map(c => inline(c, c2))) } }
 }
 
 const esItem = l => /^(\s*)([-*]|\d+\.)\s+/.test(l)
@@ -67,7 +68,7 @@ function bloques(lineas, ctx, nivel = 0) {
       if (n === 1) t = t.replace(/^[^\p{L}\p{N}"«¿¡]+/u, "")           // el h1 pierde su emoji de cabecera
       out.push({ tipo: "h", n, html: inline(t, ctx), texto: t }); i++; continue
     }
-    if (l.startsWith("|")) { const t = []; while (i < lineas.length && lineas[i].startsWith("|")) t.push(lineas[i++]); out.push({ tipo: "html", html: tabla(t, ctx) }); continue }
+    if (l.startsWith("|")) { const t = []; while (i < lineas.length && lineas[i].startsWith("|")) t.push(lineas[i++]); const tb = tabla(t, ctx); out.push({ tipo: "html", html: tb.html, tabla: tb.datos }); continue }
     if (l.startsWith(">")) {
       const t = []; while (i < lineas.length && lineas[i].startsWith(">")) t.push(lineas[i++].replace(/^>\s?/, ""))
       out.push({ tipo: "cita", hijos: bloques(t, ctx, nivel + 1), crudo: t.join("\n") }); continue
@@ -77,7 +78,7 @@ function bloques(lineas, ctx, nivel = 0) {
       const mm = t.join(" ").match(/^!\[(.*?)\]\(([^)]*)\)\s*(.*)$/)
       if (!mm) { out.push({ tipo: "p", html: inline(t.join(" "), ctx) }); continue }
       const src = ctx.imagen ? ctx.imagen(mm[2]) : mm[2]
-      out.push({ tipo: "html", html: `<figure><img src="${src}" alt="${esc(mm[1])}" loading="lazy" decoding="async">${mm[3] ? `<figcaption>${inline(mm[3], ctx)}</figcaption>` : ""}</figure>` }); continue
+      out.push({ tipo: "html", html: `<figure><img src="${src}" alt="${esc(mm[1])}" loading="lazy" decoding="async">${mm[3] ? `<figcaption>${inline(mm[3], ctx)}</figcaption>` : ""}</figure>`, fig: { alt: mm[1], src, pie: mm[3] ? inline(mm[3], ctx) : "" } }); continue
     }
     if (esItem(l)) {
       const ord = /^\s*\d+\./.test(l), items = []
@@ -134,7 +135,7 @@ function convertir(archivo, ctx) {
     throw new Error(`${path.basename(archivo)}: quedaron emojis sin ícono: ${sobra.join(" ")}`)
   }
   const plano = resto.length ? html.replace(/<svg[\s\S]*?<\/svg>/g, " ").replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ").replace(/\s+/g, " ").trim() : ""
-  return { fm, titulo: h1 ? h1.texto : fm.titulo, tituloHtml: h1 ? h1.html : esc(fm.titulo || ""), html, texto: plano }
+  return { fm, titulo: h1 ? h1.texto : fm.titulo, tituloHtml: h1 ? h1.html : esc(fm.titulo || ""), html, texto: plano, bloques: resto }
 }
 
-module.exports = { convertir, inline, icono, esc }
+module.exports = { convertir, inline, icono, esc, render }

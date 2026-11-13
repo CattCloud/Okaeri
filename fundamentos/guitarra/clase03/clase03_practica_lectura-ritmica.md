@@ -13,11 +13,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**Leer un ritmo escrito y tocarlo a tiempo, con el pulso partido en dos.** Viene después de [Figuras con metrónomo](../clase01/clase01_practica_ritmo-metronomo.md): allá cada figura duraba tiempos enteros; aquí entra la corchea y tu mano tiene que caer también *entre* los clics.
-
-En un par de corcheas, la primera nota va con el clic y la segunda en la «y», justo a la mitad, con la misma fuerza que la primera. Redondas, blancas y negras se tocan como siempre: en su número, y suenan lo que duran. Se toca en la 6ª cuerda al aire porque el ejercicio trabaja el tiempo y no los dedos.
-
-**Lo vas a notar** cuando un compás nuevo del profesor te salga a la primera, sin descifrarlo nota por nota. Y cuando llegue el rasgueo (barrer varias cuerdas a la vez con la mano derecha), abajo-arriba, la «y» ya estará en tu mano.
+**Leer un ritmo escrito y tocarlo a tiempo, con el pulso partido en dos.** En un par de corcheas, la primera nota va con el clic y la segunda en la «y», justo a la mitad y con la misma fuerza. **Lo vas a notar** cuando un compás nuevo del profesor te salga a la primera, sin descifrarlo nota por nota.
 
 ## Cómo se hace (referencia)
 

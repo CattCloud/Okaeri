@@ -12,9 +12,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-**La velocidad y la limpieza del cambio de acorde.** Lo que se entrena es el paso de un acorde al siguiente, que es donde un principiante se atasca y la canción pierde el pulso. En concreto: mover la menor cantidad de dedos (las anclas), no despegar toda la mano y que los dedos del acorde caigan todos a la vez.
-
-**Lo vas a notar** cuando el cambio deje de abrir un hueco en tu conteo. Hoy, entre acorde y acorde, hay un silencio mientras buscas la forma; en unas semanas el siguiente acorde cae en su tiempo sin que el conteo se detenga.
+**La velocidad y la limpieza del cambio de acorde.** Se entrena mover la menor cantidad de dedos (las anclas), sin despegar toda la mano, y que los dedos del acorde caigan todos a la vez. **Lo vas a notar** cuando el cambio deje de abrir un hueco en tu conteo y el siguiente acorde caiga en su tiempo.
 
 ## Cómo se hace (referencia)
 

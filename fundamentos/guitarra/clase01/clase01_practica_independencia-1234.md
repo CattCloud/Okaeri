@@ -12,12 +12,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-Dos cosas, y las vas a poder comprobar:
-
-1. **Que cada dedo se mueva solo.** El anular y el meñique tienden a moverse juntos: si levantas uno, el otro lo sigue. Este ejercicio los separa. Lo notarás en unas semanas, cuando armes acordes y los dedos caigan cada uno en su sitio sin recolocarlos uno por uno.
-2. **Que cada nota salga limpia**, no apagada ni zumbando. Lo notarás dentro del mismo ejercicio: cada día habrá menos notas "sucias" por vuelta.
-
-El criterio es el **sonido limpio**, no la velocidad, que llega sola después.
+**Que cada dedo se mueva solo y que cada nota salga limpia**, sin zumbido ni apagada (el anular y el meñique tienden a moverse juntos). El criterio es el sonido limpio; la velocidad llega sola después. **Lo vas a notar** cuando cada vuelta tenga menos notas sucias y, al armar acordes, los dedos caigan cada uno en su sitio.
 
 ## Cómo se hace (referencia) — las 4 versiones
 

@@ -17,7 +17,7 @@ Lectura, con un hero de Experiencia. El mundo es dueño del marco (hero, escenas
 
 - Uso: antes de practicar, con la guitarra en la mano y leyendo con calma.
 - Un módulo a la vez; la franja abre con el módulo en curso. Primera mitad del módulo con la fogata, segunda con el muelle (impar: la primera lleva uno más).
-- Prácticas: se cambia de teoría a práctica en el sitio del apunte, sin scroll; también desde el drawer.
+- Prácticas: cada una se abre en su propia vista a pantalla completa («Práctica ›» en el apunte o desde el drawer); ver «Vista de Práctica…» más abajo. (Antes se alternaba con el apunte en su sitio.)
 - Escenas existentes: `.impeccable/mocks/lugares/fogata/fogata_anim.html`, `.impeccable/mocks/lugares/muelle/muelle_anim.html`.
 - Futuro: tarjeta de personaje con stats; no se construye ahora.
 
@@ -43,7 +43,7 @@ Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con su
 
 - **Escenario:** el módulo pasa a ser un escenario de 100svh. La página sigue siendo hero → franja → escenario, y termina ahí: el cierre deja de ser una sección aparte.
 - **Una página por apunte**, más una página final de cierre. La escena queda a la izquierda y la hoja de 750 px a la derecha, como ahora. La hoja vuelve arriba al entrar. **Una sola barra vertical (usuario, 2026-11-12; reemplaza «la hoja tiene su propio scroll»):** la de la página; el escenario queda fijo y la hoja sigue al scroll de la página (ver `DESIGN.md` → Carousel).
-- **Transición:** dentro de la misma escena, la escena queda quieta (es un solo lienzo) y solo se desliza la hoja. La nueva entra por la derecha con «siguiente» y por la izquierda con «anterior», y la saliente sale por el lado opuesto. Dura ~420 ms con ease-out exponencial (`cubic-bezier(.16,1,.3,1)`), solo `transform`. Al cruzar de la fogata al muelle (la mitad del módulo) se desliza el escenario entero, escena y hoja. Con `prefers-reduced-motion` el cambio es directo.
+- **Transición:** dentro de la misma escena, la escena queda quieta (es un solo lienzo) y solo se desliza la hoja. La nueva entra por la derecha con «siguiente» y por la izquierda con «anterior», y la saliente sale por el lado opuesto. Dura 700 ms con `cubic-bezier(.65,0,.35,1)` (acelera y frena parejo; era 420 ms con ease-out exponencial y pasaba veloz, usuario, 2026-11-12; es el mismo tiempo y curva de la vista de Práctica), solo `transform`. Al cruzar de la fogata al muelle (la mitad del módulo) se desliza el escenario entero, escena y hoja. Con `prefers-reduced-motion` el cambio es directo.
 - **Navegación:** barra al pie de la hoja, fija dentro de ella, sobre papel con filete `linea`:
   - a la izquierda, «‹ Anterior» (no aparece en el primer apunte);
   - al centro, «2 de 6» en Jersey label-small, `tinta-2`;
@@ -52,13 +52,40 @@ Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con su
   - Las flechas ← → del teclado funcionan cuando el foco no está en un campo.
   - Al llegar a una página, el foco pasa a su título (`preventScroll`).
 - **Página de cierre:** el escenario entero en `noche`, con «Fin de <módulo>», «Módulo siguiente» y «‹ Volver al último apunte». Su sonido es el pantano si el módulo tiene muelle.
-- **Saltos:** el drawer, los enlaces internos y el hash llegan con la misma animación. Si el salto es largo, se hace un solo deslizamiento hacia el destino. Teoría/Práctica sigue dentro de cada página.
+- **Saltos:** el drawer, los enlaces internos y el hash llegan con la misma animación. Si el salto es largo, se hace un solo deslizamiento hacia el destino. La práctica de cada apunte se abre en su vista a pantalla completa, no dentro de la página.
 - **Accesibilidad:**
   - el escenario lleva `aria-roledescription="carrusel"`;
   - cada página lleva `role="group"`, `aria-roledescription="apunte"` y una etiqueta «2 de 6: <título>»;
   - las páginas inactivas quedan `inert`.
 - **Se quitan en escritorio:** `.sep` (las cuerdas entre apuntes) y `.paso` (la línea dorada entre escenas). Las funciones quedan en `separadores.cjs` como referencia.
 - **Fuera de alcance:** deslizar con la rueda horizontal, el trackpad o el gesto de swipe (se activarían sin querer).
+
+## Vista de Práctica a pantalla completa y tema del sistema (definido 2026-11-12; paso 1 construido y revisado el mismo día; falta el paso 2: el tema en los apuntes, el botón en el drawer)
+
+Porqué (usuario): entrar a una práctica y ver de inmediato qué tocar; con la escena al lado las TABs (~2667 px de ancho, ~3,2:1) salen chicas. En los apuntes la escena sí acompaña. Modo de la vista: Operate (con el instrumento en la mano).
+
+- **Entrada:** un solo botón «Práctica ›» en el apunte (reemplaza el par Teoría/Práctica; `ver()` de `app.js` se simplifica), el drawer (las prácticas cuelgan de su apunte), el hash `#p-…` y el arpegio de la clase 8 (sin apunte). «‹ Volver al apunte» y Esc regresan. Si un apunte tiene varias prácticas, cada una tiene su entrada.
+- **Sin escena y sin música:** al entrar el audio se apaga; al volver, regresa.
+- **Barra superior:** «‹ Volver al apunte», título en Jersey, selector de columnas (1 · 2 · 3; por defecto 2) y botón de tema. 4 columnas se descartó: cada TAB quedaría ~430 × 135 px en 18", ilegible a distancia de brazo.
+- **«Cómo se hace»:** todas las imágenes en cuadrícula, cada una sobre papel blanco con marco pixel y su etiqueta (V1…Vn, o el nombre antes de la coma del alt). Clic → visor de imágenes, que recorre las versiones con ← →. Debajo, la tabla «Versión · Tempo · Dónde» entera.
+- **Después:** «Qué estás mejorando» (corto desde el `.md`: F4 cambia por `nueva-regla` a 2-3 líneas y se reescriben las 6 prácticas antes de construir) y, plegados, «Si sale mal» y «Hasta cuándo». Fuera de la web: la cita inicial, «Cómo suena cuando está bien», «Afinación del instructor», «Qué sigue» y «Verificación».
+- **Columnas y tema se recuerdan** en el navegador (`localStorage`, con `try/catch`).
+- **Tema del sistema (oscuro / claro), según Windows** (`prefers-color-scheme`), con botón para cambiarlo en la cabecera del drawer (junto al sonido) y en la barra de la Práctica; mismo ajuste en ambos. Cambia: la hoja del apunte, la vista de Práctica y el visor. Claro = lo de hoy (papel, tinta, ladrillo). Oscuro = noche, niebla, ámbar; callouts y tabla en `bosque` / `pino`; las imágenes siguen sobre blanco con su marco. No cambian: hero, escenas, franja, drawer y cierre. Por resolver al construir: el borde del arte de la escena se disuelve en blanco y en oscuro no calza con la hoja; contraste AA de toda la lectura en oscuro.
+- **Construcción en dos pasos:** 1) la vista de Práctica con los dos temas; 2) el tema oscuro en los apuntes y el botón del drawer.
+
+### Direction contract — vista de Práctica (elegida por el usuario el 2026-11-12: «Fichas con su tempo»; boceto `.impeccable/mocks/decision/fichas.html`; code-led)
+
+THESIS: entras a tocar y cada versión trae en su propia ficha su tempo y dónde; nada que cruzar con una tabla aparte. Rechaza la hoja de lectura con la tabla al final y el panel de control con tarjetas.
+
+OWN-WORLD: fondo noche (papel en claro); Jersey 15 en barra, etiquetas y tiras, Atkinson en el texto; marcos pixel de 6 px; la TAB siempre sobre papel blanco; tira al pie en `bosque` con ámbar (en claro, `crema` con ladrillo).
+
+STORY: entra desde «Práctica ›», el drawer o `#p-…`; ve todas las versiones; elige la que toca por el tempo de su tira; clic → visor; «‹ Volver al apunte» o Esc regresa.
+
+FIRST VIEWPORT: barra de 88 px: «‹ Volver al apunte», título en Jersey ~46 px, «Columnas 1 · 2 · 3» (2 activa, ámbar) y botón de tema. Cuadrícula de fichas a 2 columnas: imagen 3,2:1 sobre blanco y tira de 58 px con «V1» en Jersey 40 px ámbar, el tempo en Jersey 28 px y dónde en Atkinson `bruma` a la derecha. Debajo, filete `pino`; «Qué estás mejorando» a la izquierda (1,3fr) y los plegados «Si sale mal» y «Hasta cuándo» a la derecha.
+
+FORM: «Fichas con su tempo», posición 4 de 7 en la lista; repartida por la tirada junto a «Hoja de sistemas» y «Por tempo». Gesto propio: la tabla «Versión · Tempo · Dónde» se reparte en las tiras por versión; si una fila no nombra sus versiones o la imagen no es una versión (p. ej. el mapa de la pentatónica), la ficha va sin tira y la tabla vuelve entera bajo la cuadrícula. seed: none (unavailable)
+
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Pendiente
 

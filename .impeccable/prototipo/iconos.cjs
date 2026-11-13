@@ -221,6 +221,34 @@ function svg(nombre, filas, extra = "") {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="currentColor" shape-rendering="crispEdges" aria-hidden="true"${extra}><path d="${trazo(filas)}"/></svg>\n`
 }
 
+// tema claro / oscuro (el botón de la vista de Práctica muestra el que se activaría al tocarlo)
+G["sol"] = [
+  ".....##.....",
+  ".#...##...#.",
+  "............",
+  "....####....",
+  "...######...",
+  "##.######.##",
+  "##.######.##",
+  "...######...",
+  "....####....",
+  "............",
+  ".#...##...#.",
+  ".....##....."]
+// media luna gruesa con una estrella en el hueco: sola, en 12x12, se lee como una «C»; con la estrella dice «noche»
+G["luna"] = [
+  ".........#..",
+  "........###.",
+  "..##.....#..",
+  ".###........",
+  ".###........",
+  "####........",
+  "####........",
+  "#####.......",
+  "######......",
+  ".########...",
+  "..######....",
+  "...####....."]
 // «izquierda» es «derecha» espejada (la barra de navegación del carrusel usa las dos)
 G["izquierda"] = G["derecha"].map(f => [...f].reverse().join(""))
 

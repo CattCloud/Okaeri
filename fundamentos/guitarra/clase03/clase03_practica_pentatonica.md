@@ -14,9 +14,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-Trabajas las dos manos a la vez. **Mano izquierda:** la caja completa bajo los dedos, un dedo por traste, y el meñique (dedo 4) trabajando de verdad por primera vez. Pisa con la punta, cerca de la barrita metálica del traste. **Mano derecha:** tocar cuerdas de una en una y parejo, alternando índice y medio (lo natural en nylon) o como lo hizo el profesor. Es la base del picado y de los arpegios que la academia trae en las próximas clases (los dos términos están definidos en [el apunte](clase03_la-pentatonica.md)).
-
-**Lo vas a notar** cuando subas y bajes sin mirar la imagen y sin tropezar al cambiar de cuerda.
+Trabajas las dos manos a la vez: con la **izquierda**, la caja completa con un dedo por traste y el meñique (dedo 4) trabajando de verdad; con la **derecha**, las cuerdas de una en una y parejas, alternando índice y medio. Es la base del picado y de los arpegios (los dos términos están definidos en [el apunte](clase03_la-pentatonica.md)). **Lo vas a notar** cuando subas y bajes sin mirar la imagen y sin tropezar al cambiar de cuerda.
 
 ## Cómo se hace (referencia)
 

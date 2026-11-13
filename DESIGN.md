@@ -103,16 +103,20 @@ components:
   modulo-ficha-fuera:
     backgroundColor: "{colors.noche}"
     textColor: "{colors.bruma}"
-  vista-boton:
+  boton-practica:
     backgroundColor: "{colors.papel}"
     textColor: "{colors.tinta}"
     typography: "{typography.label}"
     rounded: "{rounded.none}"
     height: "48px"
     padding: "0 1.1rem"
-  vista-boton-activo:
-    backgroundColor: "{colors.tinta}"
-    textColor: "{colors.papel}"
+  practica-ficha-tira:
+    backgroundColor: "{colors.bosque}"
+    textColor: "{colors.niebla}"
+    typography: "{typography.label}"
+    rounded: "{rounded.none}"
+    height: "58px"
+    padding: "8px 18px"
   callout-clave:
     backgroundColor: "{colors.crema}"
     textColor: "{colors.tinta}"
@@ -209,11 +213,11 @@ Paleta de dos mundos: día de cielo claro y bosque profundo; noche de lago y fue
 
 ### Hierarchy
 - **Logo** (400, clamp(5.5rem, 17vw, 12rem), 1): «okaeri» en el hero.
-- **Display** (400, clamp(2.75rem, 4.4vw, 3.5rem), .95): título de apunte; la práctica usa clamp(2.25rem, 3.6vw, 2.875rem) en ladrillo.
+- **Display** (400, clamp(2.75rem, 4.4vw, 3.5rem), .95): título de apunte; el título de la vista de Práctica usa clamp(2rem, 3vw, 2.875rem) en el color de texto de su tema, y el número de versión de cada tira, 2.5rem (2rem con 3 columnas) en el acento del tema.
 - **Franja** (400): título clamp(3rem, 6vw, 4.5rem); nombre del módulo clamp(2.75rem, 5.5vw, 4rem); resumen clamp(1.5rem, 2.4vw, 1.875rem).
 - **Headline** (400, clamp(2rem, 3vw, 2.375rem), 1.02): subtítulo `t2` dentro del apunte.
 - **Title** (400, 1.75rem, 1.05): `t3`, cabecera de callout, encabezados del drawer.
-- **Label** (400, 1.5rem a 1.75rem): botones, ítems del drawer, botones Teoría/Práctica, entrada de búsqueda.
+- **Label** (400, 1.5rem a 1.75rem): botones, ítems del drawer, botón «Práctica ›», botones de la vista de Práctica, entrada de búsqueda.
 - **Label small** (400, 1.125rem a 1.375rem): metadatos, subtítulos de botón, cabecera de tabla, avisos.
 - **Body** (400, 1.1875rem, 1.65): lectura del apunte; 1.125rem bajo 640 px. Columna de 750 px máximo.
 - **Caption** (1rem, 1.45): pies de figura, texto previo.
@@ -227,7 +231,7 @@ Paleta de dos mundos: día de cielo claro y bosque profundo; noche de lago y fue
 
 Página en tres tramos: hero a pantalla completa (100svh, mínimo 520 px), franja de módulos, y por módulo uno o más cortes. Cada corte es una rejilla de dos columnas: escena (100svh) a la izquierda y apuntes a la derecha en una columna de 750 px centrada. Ancho de escena: `min(92.2svh, 58cqw, 100cqw - 798px)` (el contenedor es el módulo). La escena conserva la proporción de su arte (368x399) y no se recorta; el sobrante se rellena con letterbox `noche`. El borde derecho del arte está disuelto en blanco a propósito para fundirse con el apunte.
 
-Bajo 1200 px el corte se apila: la escena pasa arriba (ancho máx. min(100%, 78svh*368/399)) y el apunte debajo, con padding lateral de 20 px. Bajo 640 px la lista de módulos pasa a una sola fila con scroll horizontal y snap, y los botones Teoría/Práctica ocupan todo el ancho.
+Bajo 1200 px el corte se apila: la escena pasa arriba (ancho máx. min(100%, 78svh*368/399)) y el apunte debajo, con padding lateral de 20 px. Bajo 640 px la lista de módulos pasa a una sola fila con scroll horizontal y snap.
 
 Desde 1200 px el módulo es un **carrusel** (2026-11-12): la página termina en un escenario de 100svh (hero, franja, escenario) y cada apunte es una página con su escena a la izquierda y su hoja de 750 px a la derecha, más una página final de cierre. Los cortes entre escenas y entre apuntes (`.paso`, `.sep`) solo existen bajo 1200 px. El arte de la escena se centra en su columna (ya no hay línea a la que pegarlo).
 
@@ -257,8 +261,15 @@ Radio cero. Todo marco grande es pixel: un SVG de 5x5 con las esquinas cortadas,
 ### Module strip (franja)
 Fichas de 76x64 px con el número en Jersey 1.875rem. Activa: marco y texto ámbar sobre `bosque`. Sin apuntes: marco suave y texto `bruma` (se puede elegir; su detalle dice «Sin apuntes aún» y no ofrece entrar). Debajo, el detalle del módulo (nombre, resumen, metadatos) sobre el suelo oscuro. Al elegir un módulo, sus apuntes entran en las dos escenas, que son las mismas para todos; si el módulo tiene un solo apunte, solo lleva la fogata y no hay línea entre escenas.
 
-### Teoría / Práctica
-Dos botones de 48 px de alto con marco tinta sobre blanco; el activo se invierte (fondo tinta, texto blanco). Controlan qué parte del apunte se ve.
+### Botón «Práctica ›» y vista de Práctica (2026-11-12)
+**Botón:** uno solo, de 48 px de alto con marco tinta sobre blanco (la misma apariencia que «Anterior» / «Siguiente»), bajo los metadatos del apunte; abre la vista. Reemplazó al par Teoría / Práctica.
+
+**Vista:** un `<dialog>` modal a pantalla completa, sin escena, que tapa la página (con `Esc` o «‹ Volver al apunte» se regresa al mismo apunte y a la misma posición). Dos temas que **solo cambian dentro de la vista por ahora** (el paso 2 los extiende a los apuntes): *oscuro* (fondo `noche`, texto `niebla`, acento `ámbar`, marco `niebla`, tiras `bosque`) y *claro* (fondo `papel`, texto `tinta`, acento `ladrillo`, marco `tinta`, tiras `crema`); respetan los Dos Acentos. El tema sigue al de Windows hasta que el usuario elige, y la elección y las columnas se recuerdan en el navegador.
+- **Barra** de 88 px mínimo con filete de 3 px (`pino` / `linea`): «‹ Volver al apunte», título en Jersey, selector «Columnas 1 · 2 · 3» (2 por defecto; 4 se descartó: cada TAB quedaría ilegible a distancia de brazo; bajo 820 px se esconde y queda 1) y el botón del tema (ícono pixel `sol` / `luna` y la palabra del tema al que pasaría). Botones de 48 a 56 px con marco pixel; activo y hover: marco y texto en el acento del tema sobre la tira.
+- **Cuerpo** (la única barra vertical, con foco al abrir para que PgDn funcione): la introducción de «Cómo se hace» en Atkinson, la cuadrícula de fichas, las notas de después y el pie.
+- **Ficha:** marco pixel de 6 px; la TAB siempre sobre papel blanco (centrada si la fila la estira) y, al pie, una tira en dos columnas: el número de versión en Jersey (2.5rem, acento) y, apilados, el tempo (Jersey 1.75rem; si es largo, Atkinson 1.25rem) y debajo dónde o el nombre de la versión (Atkinson 1.1875rem, texto secundario). La tira sale de la tabla «Versión · Tempo [· Dónde]» del `.md`; si la tabla no nombra todas las versiones, queda entera bajo la cuadrícula y las tiras solo llevan número y nombre. Clic en la imagen: visor.
+- **Pie:** «Qué estás mejorando» (Jersey 1.75rem en el acento, texto de lectura; queda fijo a la vista mientras se lee un plegable) a 1,3fr y, a 1fr, «Si sale mal» y «Hasta cuándo» plegados (botones `summary` con la flecha que gira). Las tablas llevan los colores del tema.
+- **Transición (usuario, 2026-11-12: el corte seco entre apunte y práctica era brusco):** la vista entra deslizando desde la derecha y sale por el mismo lado, 700 ms con `cubic-bezier(.65,0,.35,1)` (acelera y frena parejo; el easing del carrusel, 420 ms con frenado exponencial, se sentía veloz en una vista que cubre toda la pantalla), solo `transform`; la página de atrás se oscurece (`noche` al 62 %, como el velo del drawer) mientras entra. Con `prefers-reduced-motion` el cambio es directo. La franja sin barra de la página (`html.en-practica`) se pone cuando la vista ya tapa todo y se quita antes de que salga, para que la página de atrás no salte. Lo demás dentro de la vista (columnas, tema, plegables) cambia al instante.
 
 ### Callouts (clave, repaso, nota)
 Marco pixel tinta, padding .9rem 1.2rem. Clave sobre crema (1.25rem/1.5); repaso y nota sobre blanco (nota 1.0625rem). La cabecera va en Jersey 1.75rem color ladrillo, con ícono.
@@ -270,7 +281,7 @@ Tabla con borde de 3 px tinta, cabecera crema en Jersey 1.375rem con filete de 3
 Panel de 36rem (máx. 92vw) sobre `noche`, borde de 6 px `pino`, entra por la izquierda (≥1200 px) o la derecha en 350 ms. Contiene, en orden: cabecera con el botón de sonido (solo icono, 52 px, ámbar si suena) y el cierre, aviso de audio solo cuando hace falta, buscador (marco pino, ámbar al enfocar), la ruta con sus prácticas colgando del apunte por un conector de píxel, otros módulos y las clases en orden. Ítem activo: fondo `bosque`, texto ámbar. Al abrirse, el fondo queda `inert`.
 
 ### Carousel (≥1200 px)
-Escenario `.escenario` (fijo, 100svh, con `overflow: clip`, no `hidden`: nada puede desplazarlo con `scrollIntoView` ni con el foco) dentro de `.modulo`, y una pista `.pista` con un tramo por escena (fogata, muelle) y otro de cierre. **Dentro de una escena** solo se desliza la hoja (`.hoja`, absoluta sobre la columna del apunte); **al cruzar de la fogata al muelle, o al cierre,** se desliza la pista entera, escena y hoja juntas. Un salto largo (drawer, enlace interno, hash) es un solo deslizamiento hacia el destino. 420 ms con `cubic-bezier(.16,1,.3,1)`, solo `transform`; la hoja que sale sigue visible mientras se desliza y la que entra se ve de inmediato (la `visibility` se apaga al final). Con `prefers-reduced-motion` el cambio es directo. No se desliza con rueda horizontal, trackpad ni swipe.
+Escenario `.escenario` (fijo, 100svh, con `overflow: clip`, no `hidden`: nada puede desplazarlo con `scrollIntoView` ni con el foco) dentro de `.modulo`, y una pista `.pista` con un tramo por escena (fogata, muelle) y otro de cierre. **Dentro de una escena** solo se desliza la hoja (`.hoja`, absoluta sobre la columna del apunte); **al cruzar de la fogata al muelle, o al cierre,** se desliza la pista entera, escena y hoja juntas. Un salto largo (drawer, enlace interno, hash) es un solo deslizamiento hacia el destino. 700 ms con `cubic-bezier(.65,0,.35,1)` (`--t-pagina` y `--curva-pagina`, los mismos de la vista de Práctica; usuario, 2026-11-12: la curva anterior, 420 ms con frenado exponencial, pasaba veloz), solo `transform`; la hoja que sale sigue visible mientras se desliza y la que entra se ve de inmediato (la `visibility` se apaga al final). Con `prefers-reduced-motion` el cambio es directo. No se desliza con rueda horizontal, trackpad ni swipe.
 
 **Una sola barra vertical, la de la página** (el usuario no quiere dos, 2026-11-12). `.modulo` mide 100svh más lo que el apunte actual excede la pantalla (lo calcula `app.js`, sección 3c, y lo recalcula al cambiar de vista, cargar imágenes o redimensionar), el escenario `.escenario` queda fijo (`position: sticky`) y la hoja (`overflow: hidden`) no se desplaza sola: su `scrollTop` sigue al de la página, y al revés si el navegador la mueve (foco con Tab, buscar en la página). La rueda funciona igual sobre la escena y sobre el texto, y subir pasa de la hoja a la franja sin quedar atrapado. Cada página abre arriba. **Tope al subir** (usuario, 2026-11-12: la rueda pasaba del inicio del apunte y asomaba la franja): desde que el apunte está a la vista (el filo, aunque no se haya leído nada) y mientras se lee, al llegar al inicio la rueda se detiene ahí (el primer empujón, un gesto de rueda o de trackpad con su inercia, absorbe lo que sobra) y **se enciende un resplandor** en el borde superior del escenario (`.brillo`, degradado dorado de 130 px que sube a su pico en 160 ms y se apaga en ~0,9 s). Para pasar a la franja hacen falta **tres empujones seguidos** (tres y no dos: dos giros rápidos se hacen sin pensar y tres ya son intención, usuario, 2026-11-12; el resplandor es más tenue en el primero y pleno en el segundo, para que se vea que avanza): otro gesto, tras una pausa de ≥110 ms o, si el primero venía apagándose (inercia del trackpad) y la rueda vuelve a empujar con fuerza, de inmediato; cada uno dentro de 0,6 s del anterior (tienen que ser seguidos, no espaciados; usuario, 2026-11-12: 1,5 s era demasiado); pasado ese tiempo el siguiente vuelve a ser un primer empujón. Solo rueda: teclado, barra de la página y flechas quedan libres; bajar siempre es libre; no se activa si se llegó arriba por otra vía. Con `prefers-reduced-motion` el resplandor es un destello sin transición. El oyente que bloquea solo está puesto cerca del inicio (`app.js`, 3d). La **barra al pie** es el último hijo de la hoja y va pegada abajo (`position: sticky`): comparte el ancho del apunte (750 px), con filete de 2 px `linea` arriba y fondo papel. Rejilla de tres columnas iguales: «‹ Anterior» a la izquierda (no aparece en el primero), «2 de 6» al centro en Jersey 1.375rem `tinta-2` (a 1.125rem el 6 pixelado se leía como 8) y «Siguiente ›» a la derecha, sin título (usuario, 2026-11-12: el título completo sale al pasar el mouse; en el último, «Fin del módulo ›»). Los botones son de 48 px con marco tinta y fondo blanco, como Teoría/Práctica; el título del siguiente va completo en `title` y `aria-label`. El pie de enlaces con que terminan los `.md` («← anterior · índice · siguiente →») se esconde en el carrusel porque repetía la barra (usuario, 2026-11-12); `build.cjs` lo marca (`.pie-nav`) y se conserva «su práctica: …» si el pie la trae. Bajo 1200 px se ve entero, porque ahí no hay barra. Flechas ← → cambian de página cuando el foco no está en un campo ni en una tabla con scroll, sin modificadores ni autorepetición, y solo mientras el escenario es lo que se mira.
 

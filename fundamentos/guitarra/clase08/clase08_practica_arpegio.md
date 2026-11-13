@@ -14,7 +14,7 @@ estado: EN-CURSO
 
 ## 🎯 Qué estás mejorando (en claro)
 
-Trabajas la **mano derecha**. Un **arpegio** es tocar las cuerdas de una en una, en vez de todas juntas como en un rasgueo. Cada dedo de la mano derecha tiene su letra: **p** pulgar, **i** índice, **m** medio, **a** anular (**p-i-m-a**). El pulgar toca el bajo (la cuerda grave) y los otros tres tocan las cuerdas agudas. El ejercicio busca que cada dedo vaya a su cuerda sin pensarlo y que las notas suenen parejas. Lo notarás cuando un compás salga limpio varias veces seguidas, también después de subir el metrónomo.
+Trabajas el **arpegio** de la mano derecha: tocar las cuerdas de una en una, con **p** pulgar en el bajo (la cuerda grave) e **i** índice, **m** medio y **a** anular en las agudas. Buscas que cada dedo vaya a su cuerda sin pensarlo y que las notas suenen parejas. **Lo vas a notar** cuando un compás salga limpio varias veces seguidas, también después de subir el metrónomo.
 
 ## Cómo se hace (referencia)
 

@@ -3,7 +3,7 @@
 // (fogata y muelle, de .impeccable/mocks/lugares/) con su motor intacto; y escribe index.html + hero/ + img/ junto a este archivo.
 // Las escenas van con imágenes en base64 a propósito: el motor lee píxeles del lienzo (getImageData) y desde file:// una imagen suelta lo bloquearía.
 const fs = require("fs"), path = require("path")
-const { convertir, inline, icono, esc } = require("./md.cjs")
+const { convertir, inline, icono, esc, render } = require("./md.cjs")
 const { sprite } = require("./iconos.cjs")
 const { rosetaChica, cuerdas } = require("./separadores.cjs")
 const TRES = [70, 100, 70]
@@ -200,29 +200,79 @@ const idPrac = r => `p-${r.k}`
 const tPractica = r => sinPrefijo(r.p.tituloHtml)
 function apunteHtml(r) {
   const meta = [r.solo ? "Práctica" : "", r.clase ? `Clase ${r.clase}` : "", r.fecha ? fechaCorta(r.fecha) : "", r.seccion ? `sección ${r.seccion}` : "", r.provisional ? "provisional" : ""].filter(Boolean).join(" · ")
+  // la práctica ya no se alterna con el apunte: se abre en su propia vista a pantalla completa (usuario, 2026-11-12)
+  const boton = r.p ? `<button type="button" class="btn-prac" data-practica="${r.k}" aria-label="Práctica: ${esc(sinPrefijo(r.p.titulo))}" title="Abrir la práctica a pantalla completa"><span class="btn-txt">Práctica</span>${ico("derecha")}</button>` : ""
   const cab = `<header class="ap-cab">
 <h3 class="ap-titulo" tabindex="-1">${r.solo ? tPractica(r) : r.t.tituloHtml}</h3>
 ${meta ? `<p class="ap-meta">${esc(meta)}</p>` : ""}
-${r.p && !r.solo ? `<div class="vista" role="group" aria-label="Qué lees de este apunte"><button type="button" data-ver="teoria" aria-pressed="true">Teoría</button><button type="button" data-ver="practica" aria-pressed="false">Práctica</button></div>` : ""}
+${boton}
 </header>`
-  // práctica suelta (su apunte aún no existe): es todo el apunte, sin pestañas Teoría/Práctica
-  if (r.solo) return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="practica" data-solo>
+  // práctica suelta (su apunte aún no existe): la hoja muestra el .md entero y además ofrece la vista de Práctica
+  return `<article class="apunte" id="a-${r.k}" data-k="${r.k}"${r.solo ? " data-solo" : ""}>
 ${cab}
-<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}">
-${pieNav(r.p.html)}
+<div class="ap-cuerpo">
+${pieNav((r.solo ? r.p : r.t).html)}
 </div>
-</article>`
-  return `<article class="apunte" id="a-${r.k}" data-k="${r.k}" data-vista="teoria">
-${cab}
-<div class="ap-cuerpo" data-panel="teoria">
-${pieNav(r.t.html)}
-</div>
-${r.p ? `<div class="ap-cuerpo" data-panel="practica" id="${idPrac(r)}" hidden>
-<h4 class="ap-practica">Práctica: ${tPractica(r)}</h4>
-${pieNav(r.p.html)}
-</div>` : ""}
 </article>`
 }
+
+// ---------- vista de Práctica a pantalla completa (usuario, 2026-11-12; contrato en .impeccable/surfaces/system-html.md) ----------
+// Del .md toma cuatro secciones: Cómo se hace (las versiones, en fichas con su tempo), Qué estás mejorando, y plegadas Si sale mal y Hasta cuándo.
+// La cita inicial, Cómo suena cuando está bien, Afinación del instructor, Qué sigue y Verificación siguen solo en el .md (en la práctica suelta, también en la hoja).
+const SECCIONES = [["mejora", /Qué estás mejorando/], ["como", /Cómo se hace/], ["grafico", /El gráfico/], ["mal", /Si sale mal/], ["hasta", /Hasta cuándo/]]
+function seccionesDe(p) {
+  const out = {}; let cur = null
+  for (const b of p.bloques) {
+    if (b.tipo === "h" && b.n === 2) { cur = (SECCIONES.find(([, re]) => re.test(b.texto)) || [])[0] || null; if (cur) out[cur] = []; continue }
+    if (cur) out[cur].push(b)
+  }
+  return out
+}
+const plano = h => h.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim()
+// tabla «Versión · Tempo [· Dónde]» -> el tempo (y dónde) de cada versión; una fila puede nombrar varias («V1, V2 y V3»)
+function tempoPorVersion(bs) {
+  const t = bs.find(b => b.tabla && /^Versi[oó]n/i.test(plano(b.tabla.enc[0])) && /Tempo/i.test(plano(b.tabla.enc[1] || "")))
+  if (!t) return null
+  const mapa = {}
+  for (const f of t.tabla.filas) for (const v of plano(f[0]).match(/V\d+/g) || []) mapa[v] = { tempo: f[1] || "", donde: f[2] || "" }
+  return { bloque: t, mapa }
+}
+const versionDe = alt => { const m = alt.match(/^(V\d+)\s*,\s*([^:]+):/); return m ? { v: m[1], nombre: m[2].trim() } : null }   // «V1, subir y bajar: …» -> V1 y «subir y bajar»
+// ancho y alto del PNG (están en su cabecera): con ellos la cuadrícula no salta al cargar cada imagen
+function dimensiones(src) {
+  const par = [...IMG].find(([, n]) => "img/" + n === src); if (!par) return ""
+  try { const b = Buffer.alloc(24), fd = fs.openSync(par[0], "r"); fs.readSync(fd, b, 0, 24, 0); fs.closeSync(fd); return b.toString("latin1", 1, 4) === "PNG" ? ` width="${b.readUInt32BE(16)}" height="${b.readUInt32BE(20)}"` : "" } catch { return "" }
+}
+function ficha(f, tp) {
+  const ver = versionDe(f.alt)
+  const img = `<img src="${f.src}"${dimensiones(f.src)} alt="${esc(f.alt)}" loading="lazy" decoding="async">`
+  if (!ver) return `<figure class="pv-ficha">${img}</figure>`
+  const nombre = esc(ver.nombre), d = tp && tp.mapa[ver.v]
+  const centro = d ? d.tempo : nombre, der = d ? (d.donde || nombre) : ""
+  return `<figure class="pv-ficha">${img}<figcaption class="pv-tira"><b class="pv-v">${ver.v}</b>${centro ? `<span class="pv-tempo${plano(centro).length > 26 ? " larga" : ""}">${centro}</span>` : ""}${der ? `<em class="pv-donde">${der}</em>` : ""}</figcaption></figure>`
+}
+function vistaHtml(r) {
+  const s = seccionesDe(r.p), como = [...(s.como || []), ...(s.grafico || [])]
+  const figs = como.filter(b => b.fig).map(b => b.fig)
+  if (!figs.length) aviso(`${r.p.titulo}: la práctica no trae imágenes en «Cómo se hace»; la vista queda sin fichas`)
+  const tp = tempoPorVersion(como)
+  // la tabla se reparte en las tiras solo si nombra todas las versiones; si no, queda entera bajo la cuadrícula
+  const versionadas = figs.map(f => versionDe(f.alt)).filter(Boolean)
+  const completa = !!tp && versionadas.length > 0 && versionadas.every(x => tp.mapa[x.v])
+  const primera = como.findIndex(b => b.fig), antes = [], despues = []
+  como.forEach((b, i) => { if (b.fig || (completa && b === tp.bloque)) return; (i < primera ? antes : despues).push(b) })
+  const plegable = (titulo, bs) => bs && bs.length ? `<details class="pv-plegable"><summary>${ico("derecha")}<span>${titulo}</span></summary><div class="pv-plegado">${render(bs)}</div></details>` : ""
+  return `<div class="pv-doc">
+${antes.length ? `<div class="pv-intro">${render(antes)}</div>` : ""}
+<div class="pv-fichas">${figs.map(f => ficha(f, completa ? tp : null)).join("\n")}</div>
+${despues.length ? `<div class="pv-nota">${render(despues)}</div>` : ""}
+<div class="pv-pie">
+<section class="pv-mejora" aria-label="Qué estás mejorando"><h3 class="pv-h">Qué estás mejorando</h3>${render(s.mejora || [])}</section>
+<div class="pv-plegables">${plegable("Si sale mal", s.mal)}${plegable("Hasta cuándo", s.hasta)}</div>
+</div>
+</div>`
+}
+const vistas = RUTA.filter(r => r.p).map(r => `<template id="v-${r.k}" data-t="${esc(tPractica(r))}">${vistaHtml(r)}</template>`).join("\n")
 
 // el corte es el marco fijo (escena + columna); los apuntes de cada módulo entran en su columna desde las <template>
 function corte(nombre) {
@@ -290,7 +340,7 @@ const HTML = `<!doctype html>
 <!-- Web de Okaeri. Lo arma build.cjs; no se edita a mano. Fuentes: Jersey 15 (pixel) y Atkinson Hyperlegible (lectura), ambas OFL. -->
 <style>
 ${fuentes}
-:root{--m-claro:${marco("#e8efe9")};--m-tinta:${marco("#26241f")};--m-ambar:${marco("#ffb53c")};--m-pino:${marco("#1c3a31")};--m-suave:${marco("#52705f")};--conector:${conector}}
+:root{--m-claro:${marco("#e8efe9")};--m-tinta:${marco("#26241f")};--m-ambar:${marco("#ffb53c")};--m-ladrillo:${marco("#8a3a2a")};--m-pino:${marco("#1c3a31")};--m-suave:${marco("#52705f")};--conector:${conector}}
 ${leer(path.join(AQUI, "src", "estilo.css"))}
 </style>
 </head>
@@ -361,7 +411,20 @@ ${clasesDrawer}
 <button type="button" class="visor-btn visor-sig" id="visor-sig" aria-label="Imagen siguiente">${ico("derecha")}</button>
 </dialog>
 
+<dialog class="pv" id="practica" aria-labelledby="pv-t">
+<header class="pv-bar">
+<button type="button" class="pv-btn pv-volver" id="pv-volver">${ico("izquierda")}<span>Volver al apunte</span></button>
+<h2 class="pv-t" id="pv-t" tabindex="-1"></h2>
+<div class="pv-ctl">
+<div class="pv-cols" role="group" aria-label="Columnas de la cuadrícula"><span class="pv-cols-t" aria-hidden="true">Columnas</span>${[1, 2, 3].map(n => `<button type="button" class="pv-btn pv-col" data-cols="${n}" aria-pressed="false" aria-label="${n} ${n === 1 ? "columna" : "columnas"}">${n}</button>`).join("")}</div>
+<button type="button" class="pv-btn pv-tema" id="pv-tema"><svg class="ico" viewBox="0 0 12 12" aria-hidden="true"><use href="#i-sol"/></svg><span></span></button>
+</div>
+</header>
+<div class="pv-cuerpo" id="pv-cuerpo" role="region" aria-label="Contenido de la práctica" tabindex="-1" autofocus></div>
+</dialog>
+
 ${plantillas}
+${vistas}
 
 <script>
 const MODULOS=${JSON.stringify(MODS_JS)},EN_CURSO=${EN_CURSO},ICO_DERECHA=${JSON.stringify(ico("derecha"))};
