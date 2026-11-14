@@ -1,6 +1,6 @@
 # Contexto — Okaeri
 
-> Última actualización: 2026-11-13 (paso 2 y hero de noche construidos y **sin commit**: tema oscuro en la hoja del apunte, el visor, el drawer y el hero; botón de sonido quitado)
+> Última actualización: 2026-11-13 (paso 2, hero de noche y botón del tema en la portada publicados en `1ca7379`; sonido pospuesto)
 
 ## Estado
 
@@ -10,21 +10,17 @@ Sistema personal para aprender guitarra clásica comprendiendo y reteniendo, no 
 - **La web de Okaeri** (`.impeccable/prototipo/index.html`: doble clic, sin servidor; la arma `node build.cjs` con Node 22 desde esa carpeta) reemplazó a `system.html` el 2026-11-11; el panel viejo está en `_archivo/panel-system-html/`. **No se publica en internet:** el sitio era para la hermana del usuario, que dejó el canto. La rama `gh-pages` sigue en el remoto con el panel viejo (preguntar si se retira). `build.cjs` lee los `.md` por su `modulo:`; conectados: M1 (6 apuntes, 2 prácticas), M3, M6 y M8 (`la-pentatonica`, provisional, y la práctica de arpegio suelta). M2, M4, M5, M7 y M9 dicen «Sin apuntes aún» (R11). Se regenera dentro de la misma tarea al cerrar una clase o escribir un apunte o práctica.
 - **Carrusel de apuntes** (escritorio ≥1200 px; bajo ese ancho sigue apilado): construido, probado con el mouse del usuario y publicado en `main` (`ea9909e`, 2026-11-12). Especificación: `.impeccable/surfaces/system-html.md` → «Carrusel de apuntes»; reglas visuales: `DESIGN.md` → Carousel.
 - **Visor de imágenes:** repuesto el 2026-11-12 y publicado en `main` (`46add36`).
-- **Vista de Práctica a pantalla completa (paso 1):** publicada en `main` (`5863b3d`, 2026-11-12), con la transición de 0,7 s y el tema oscuro/claro solo dentro de la vista. Decisión y detalle abajo.
-- **Tema oscuro en los apuntes (paso 2):** construido el 2026-11-13, **sin commit ni publicar**. Hoja en `noche`, visor que sigue el tema, botón del tema en el drawer y hero de noche. Decisión y detalle abajo.
+- **Vista de Práctica a pantalla completa (paso 1):** publicada en `main` (`5863b3d`, 2026-11-12), con la transición de 0,7 s y el tema oscuro/claro. Decisión y detalle abajo.
+- **Tema oscuro en los apuntes (paso 2) y hero de noche:** publicados en `main` (`1ca7379`, 2026-11-13) y aprobados por el usuario («queda genial»). Hoja en `noche`, visor que sigue el tema, botón del tema en el hero y en el drawer, hero de noche con arte de Gemini. Decisión y detalle abajo.
 - **Sonido pospuesto (2026-11-13):** se quitó el botón (portada y drawer) con su código; ver «Web» abajo.
 
 ## Siguiente paso
 
-**Primera acción (el usuario prueba y decide):** abrir `.impeccable/prototipo/index.html` (F5) y revisar el paso 2: la hoja oscura (con Windows en oscuro, o con el botón del tema del drawer), el visor en los dos temas y el borde de las escenas. Decir si le convienen la hoja en `noche` y las láminas blancas de los diagramas sobre ella. Con su OK, commit y push en lote: la vista de Práctica ya está en `main`; falta subir el sonido quitado, el paso 2 y la documentación (`DESIGN.md`, `PRODUCT.md`, `.impeccable/surfaces/system-html.md` y esta memoria).
+**Primera acción:** la web quedó terminada y publicada (`1ca7379`); lo que sigue es el estudio de guitarra. El usuario reporta las clases 9, 10 y 11 (27-oct, 3-nov, 10-nov) para correr `procesar-clase` (marcador, «Semana en curso» y tarea del profesor); luego, el OK del esquema de p-i-m-a y el resultado de la evaluación de la clase 5.
 
-**Ajustes posibles, solo si no le gusta:** (a) las láminas blancas sobre la hoja oscura: enmarcarlas con el marco pixel claro (hoy van sin marco, como en la vista de Práctica); (b) el negro de la hoja: `bosque` o `pino` ya están calculados (AA) y se cambian en una línea de `src/estilo.css` (`html[data-tema="oscuro"] .modulo`) y en el color de `bordeOscuro()` en `build.cjs`.
+**Si algo de la web no le gusta (hoy no pidió más):** (a) las láminas blancas sobre la hoja oscura: enmarcarlas con el marco pixel claro; (b) el negro de la hoja: `bosque` o `pino` ya están calculados (AA) y se cambian en `html[data-tema="oscuro"] .modulo` (`src/estilo.css`) y en el color de `bordeOscuro()` (`build.cjs`); (c) el sonido vuelve solo a pedido.
 
-**Hero de noche (usuario, 2026-11-13): construido, sin commit.** Con el tema oscuro el hero es de noche. Arte de Gemini en `.impeccable/mocks/lugares/hero/noche/` (el hero de noche y cuatro ediciones, una por capa). `hero/capas_noche.cjs` arma `hero/capas/noche/` con el cielo plano `#1a345c` (Gemini lo pintó en 5 franjas; se aplanó por relleno conectado desde el borde superior, sin tocar estrellas, luna, nubes ni montes). `build.cjs` convierte a `hero/noche/*.webp` y pone un segundo juego de `<img>` (`.capa.noche`) que el CSS muestra con `html[data-tema="oscuro"]`; el logo se invierte (`#c4e9fc` con sombra `#0d3250`). **Pendiente del usuario:** probarlo y decir si el logo y el halo de la luna le gustan. Después, commit y push en lote.
-
-**Pendiente del usuario:** probar con el mouse la vista de Práctica y su transición (recargar con F5) y decir si 0,7 s está bien (se cambia en `--t-pagina`, `src/estilo.css`).
-
-Después, retomar el estudio de guitarra: que el usuario reporte las clases 9, 10 y 11 (27-oct, 3-nov, 10-nov) para correr `procesar-clase` (marcador, «Semana en curso» y tarea del profesor); luego, el OK del esquema de p-i-m-a y el resultado de la evaluación de la clase 5.
+**Pendiente del usuario (de antes):** probar con el mouse la vista de Práctica y su transición (recargar con F5) y decir si 0,7 s está bien (se cambia en `--t-pagina`, `src/estilo.css`).
 
 ## Decisiones vivas
 
@@ -35,7 +31,7 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 - `la-pentatonica` quedó sin el enlace al apunte del semitono: se enlaza de nuevo cuando la cola de guitarra escriba «Tono y semitono» (concepto 2).
 - Histórico que se queda: `sistema/decisiones/`, `sistema/manual_okaeri.md`, el rango vocal en `yo_musica.md` y el registro de las clases 1-6 de canto en `practica/00_indice.md`.
 
-**Tema oscuro en los apuntes, paso 2 (usuario, 2026-11-13; CONSTRUIDO, sin commit)**
+**Tema oscuro en los apuntes, paso 2 (usuario, 2026-11-13; CONSTRUIDO y publicado en `1ca7379`)**
 - **Qué cambia:** con el tema oscuro la hoja del apunte pasa a `noche` (`#040e10`) con texto `niebla`, secundario `bruma`, recuadros y cabeceras de tabla en `bosque`, líneas `pino` y ámbar en lugar de ladrillo (Dos Acentos). El visor sigue al tema con las mismas variables `--pv-*` de la Práctica. El botón del tema entra en la cabecera del drawer (mismo ajuste y mismo guardado). No cambian: escenas (salvo su borde), franja, drawer y cierre; el hero sí pasa a noche (ver «Hero de noche»). Código: `html[data-tema="oscuro"] .modulo` en `src/estilo.css` (se redefinen las variables dentro de `.modulo`; ninguna regla del apunte cambió), `alternarTema()` en `src/app.js` §4b y un script en el `<head>` de `build.cjs` que fija `data-tema` antes de pintar.
 - **Tono:** se probaron `noche`, `bosque` y `pino` (los tres cumplen AA: texto 16,7 / 15,2 / 10,6; secundario 8,8 / 8,0 / 5,6). Al principio al usuario le pareció demasiado negro; al verlos uno al lado del otro, junto al apunte, se quedó con `noche`.
 - **Borde de las escenas sin Gemini:** el arte (368×399) se disuelve en `#fff` puro, sin transparencia. `bordeOscuro()` (en `ESCENAS_JS` de `build.cjs`) arma al cargar un lienzo `.borde-oscuro` encima, visible solo en oscuro, que pinta de `noche` el blanco conectado al borde derecho; los blancos de dentro del arte (destellos del agua, flores) se quedan (fogata 16 035 px; muelle 12 142). El motor de las escenas no se tocó. Porqué no Gemini: un borde nuevo era arte nuevo (la primera escena tomó días) y el contorno aprobado se perdía.
@@ -43,8 +39,7 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 - **Sonido pospuesto (usuario, 2026-11-13):** se quitó el botón de la portada y del drawer, con `app.js` §6, sus estilos y su HTML en `build.cjs`. El código anterior está en el historial de git y los íconos `sonido-on/off` siguen en `iconos.cjs`.
 - **Botón del tema en el hero (usuario, 2026-11-13):** arriba a la derecha de la portada, donde estuvo el de sonido (`#tema-hero`, `.hero-acc` en `src/estilo.css`); alterna el mismo tema que los del drawer y la Práctica.
 - **Hero de noche (usuario, 2026-11-13):** pidió noche con el tema oscuro y eligió arte nuevo de Gemini (la opción por código se descartó). Método: el hero de noche sale de `hero_gemini.jpg` («la misma escena, solo cambia la hora») y de ahí cuatro ediciones (fondo sin árbol, árbol, bosque, bosque del frente; magenta `#FF00FF` donde no va). Gemini repitió el error de las franjas en el cielo: se aplanó por código, como en el día. `DIF=28` y el resto de `capas.cjs` se mantuvieron. **Dither del frente (usuario: «en el de noche hay más puntos, no está igual al de día»):** el frente de noche es más claro y sus siluetas más altas, y los puntos salían a lo ancho; `zonaDeDia()` en `build.cjs` limita el dither de noche a las zonas donde el del día se nota (mismo patrón de Bayer), y ahora cae solo en las masas del centro y la derecha, como en el día.
-- **Lección:** la herramienta Edit convierte CRLF en LF en `app.js`, `estilo.css` y `build.cjs` (el diff sale de todo el archivo). Editar con un script de Node que conserve `
-`, o restaurar CRLF después.
+- **Lección:** la herramienta Edit convierte CRLF en LF en `app.js`, `estilo.css` y `build.cjs` (el diff sale de todo el archivo): editar con un script de Node que conserve los saltos `\r\n`, o restaurar CRLF después. Un comando largo de Bash con heredoc puede chocar con el control de seguridad aunque no borre nada: escribir el script con Write y correrlo con un comando corto.
 
 **Vista de Práctica y tema oscuro/claro (usuario, 2026-11-12; paso 1 CONSTRUIDO y publicado en `5863b3d`; el paso 2 se construyó el 2026-11-13, abajo)**
 - **Qué:** la práctica ya no se alterna con el apunte: se abre en un `<dialog>` a pantalla completa, sin escena (botón «Práctica ›» del apunte, drawer o `#p-…`; `Esc` o «Volver al apunte» regresan al mismo apunte y posición). Porqué: ver de inmediato qué practicar; con la escena al lado las TABs (~2600 px) salían chicas. El arpegio (sin apunte) entra igual: su hoja conserva el `.md` entero y suma el botón.
@@ -64,11 +59,11 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 
 **Web (2026-11-06 → 11-11)**
 - **Solo dos escenas, fogata y muelle** (usuario, 2026-11-06). Porqué: la primera escena tomó días y el usuario necesita Okaeri ya para ver apuntes y practicar. La primera mitad de los apuntes de un módulo va con la fogata y la segunda con el muelle (módulo de un apunte: solo fogata). Plano de referencia de dónde está cada escena: `.impeccable/mocks/lugares/mapa.svg`.
-- **Hero** por capas con parallax, de día pleno, aprobado el 2026-11-09 (`.impeccable/mocks/lugares/hero/`). Fuentes: **Jersey 15** (títulos, botones, drawer) y **Atkinson Hyperlegible** (lectura).
+- **Hero** por capas con parallax, de día pleno, aprobado el 2026-11-09 (`.impeccable/mocks/lugares/hero/`); con el tema oscuro es de noche (2026-11-13). Fuentes: **Jersey 15** (títulos, botones, drawer) y **Atkinson Hyperlegible** (lectura).
 - **Navegación:** un módulo a la vez; franja de módulos entre el hero y el apunte (abre con el módulo en curso); drawer con la ruta del módulo, otros módulos, buscador y «Clases en orden» (solo personal). La práctica ya no se alterna con el apunte: se abre en su vista a pantalla completa (botón «Práctica ›» o drawer).
 - **Visor de imágenes repuesto (usuario, 2026-11-12):** al tocar una imagen de un apunte se amplía (flechas, Inicio, Fin, «3 / 8», X, Esc, margen); se había perdido al archivar `system.html`. Probado en Chrome headless (escritorio, vertical y móvil). Reglas en `DESIGN.md` → «Visor de imágenes». Los demás faltantes del panel viejo (Recorrido, pestañas de práctica, modo foco) siguen sin reconstruirse (R11: solo a pedido).
 - **Alcance:** solo laptop con Windows. Tableta y móvil quedan fuera por ahora (usuario, 2026-11-10).
-- **Audio pospuesto (usuario, 2026-11-13):** se quitó el botón de sonido (portada y drawer) con su código y sus estilos (`src/app.js` §6, `src/estilo.css`, `build.cjs`); el código anterior está en el historial de git y los íconos `sonido-on/off` siguen en `iconos.cjs`. Si vuelve: `audio/celta.mp3` y `audio/pantano.mp3` (no existen; `.gitignore` ignora los `.mp3`). `.impeccable/surfaces/system-html.md` todavía menciona el sonido.
+- **Audio pospuesto (usuario, 2026-11-13):** se quitó el botón de sonido (portada y drawer) con su código y sus estilos (`src/app.js` §6, `src/estilo.css`, `build.cjs`); el código anterior está en el historial de git y los íconos `sonido-on/off` siguen en `iconos.cjs`. Si vuelve: `audio/celta.mp3` y `audio/pantano.mp3` (no existen; `.gitignore` ignora los `.mp3`).
 - **Método de escenas:** Gemini explora y dibuja por capas; el código reproduce al pixel y anima. No se remuestrea ni se deforma lo que dibujó Gemini (cambia el diseño). El borde del paisaje va disuelto en blanco desde el primer prompt. Los gestos son cíclicos y en su sitio (nada que pase una sola vez). Fórmulas de prompt y lecciones: `CONTEXT-archivo.md`.
 - **Versionado:** `.impeccable/review/` (capturas viejas, 11 MB) queda sin versionar a propósito. `.impeccable/mocks/` lo ignora `.gitignore` y `build.cjs` lo necesita para reconstruir, por eso `index.html`, `hero/` e `img/` se versionan ya generados.
 
@@ -89,6 +84,7 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 - Probar el tope de la rueda: Chrome headless con `Input.dispatchMouseEvent` tipo `mouseWheel`; separar los empujones ≥110 ms y <600 ms.
 - `npm` no está en el PATH; los scripts con imágenes usan el `sharp` de `C:/dev/entertechschool/app_enterbase/node_modules/sharp`.
 - Los generadores `gen-*.js` de imágenes de apuntes son desechables y no están versionados.
+- Hero de noche: las fuentes de Gemini (`.impeccable/mocks/lugares/hero/noche/`) y `capas_noche.cjs` solo están en esta máquina (`.impeccable/mocks/` lo ignora git). Para regenerar: `node capas_noche.cjs` desde `.impeccable/mocks/lugares/hero/` y luego `node build.cjs` desde `.impeccable/prototipo/`.
 
 ## Pendientes
 
@@ -108,4 +104,4 @@ Las que explican algo que sigue en pie, con su porqué. Las demás (escenas del 
 - `.impeccable/design.json`: sidecar sin actualizar (`DESIGN.md` sí).
 - Código muerto: `p.previo` en `md.cjs` y `.apunte p.previo` en `src/estilo.css`, `.ico-nivel`; `ornamento.cjs` y `ornamentos.cjs` solo sirven de referencia.
 
-Última conversación: vista de Práctica a pantalla completa (paso 1), transición y commit `5863b3d` · 2026-11-12 · `claude --resume 2774a0de-31bb-44cd-b330-d0852b7b97b9`
+Última conversación: tema oscuro en los apuntes, hero de noche y botón del tema (paso 2) y commit `1ca7379` · 2026-11-13 · `claude --resume 8b6939e6-9315-4301-b19c-b56903d529fc`
