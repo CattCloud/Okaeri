@@ -104,14 +104,28 @@ const CAPAS = [["1_fondo", "fondo"], ["3_medio", "medio"], ["2_arbol", "arbol"],
 let sharp = null; try { sharp = require("C:/dev/entertechschool/app_enterbase/node_modules/sharp") } catch { }
 const EXT = sharp ? "webp" : "png"
 
-async function frenteHundido(src, dst) {
+async function frenteHundido(src, dst, zona = null) {   // zona: máscara (W*H) donde se permite el dither; null = en toda la capa
   // el bosque del frente se oscurece en bloques de 8 px (dither de Bayer 4x4) hacia el suelo de la franja, para que cubra la pantalla en vez de cortarse recto
   const { data, info } = await sharp(src).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
   const W = info.width, H = info.height, FIN = H - 240, INI = FIN - 380, B = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5], NO = [4, 14, 16]
   for (let y = INI; y < FIN; y++) { const t = (y - INI) / (FIN - INI); for (let x = 0; x < W; x++) {
-    const i = (y * W + x) * 4; if (data[i + 3] < 255) continue
+    const i = (y * W + x) * 4; if (data[i + 3] < 255 || (zona && !zona[y * W + x])) continue
     if (t * 1.15 > B[(((y / 8) | 0) % 4) * 4 + (((x / 8) | 0) % 4)] / 16 + .04) for (let k = 0; k < 3; k++) data[i + k] = (NO[k] + (data[i + k] - NO[k]) * .12) | 0 } }
   await sharp(data, { raw: { width: W, height: H, channels: 4 } }).webp({ quality: 90, alphaQuality: 100, effort: 5 }).toFile(dst)
+}
+async function zonaDeDia() {
+  // dónde se nota el dither del día (usuario, 2026-11-13: «en el de noche hay más puntos, no está igual al de día»): los costados del bosque del frente de día son casi negros y el dither no se ve;
+  // el de noche es más claro y los puntos aparecían a lo ancho. Máscara = píxeles del frente de día cuyo dither baja la luminancia >= 10, dilatada 16 px; el de noche solo se tramea ahí.
+  const { data, info } = await sharp(path.join(LUG, "hero", "capas", "4_frente.png")).ensureAlpha().raw().toBuffer({ resolveWithObject: true })
+  const W = info.width, H = info.height, FIN = H - 240, INI = FIN - 380, B = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5], NO = [4, 14, 16], R = 16
+  const lum = (r, g, b) => .2126 * r + .7152 * g + .0722 * b, vis = new Uint8Array(W * H)
+  for (let y = INI; y < FIN; y++) { const t = (y - INI) / (FIN - INI); for (let x = 0; x < W; x++) {
+    const i = (y * W + x) * 4; if (data[i + 3] < 255) continue
+    if (t * 1.15 > B[(((y / 8) | 0) % 4) * 4 + (((x / 8) | 0) % 4)] / 16 + .04 && lum(data[i], data[i + 1], data[i + 2]) - lum(...[0, 1, 2].map(j => NO[j] + (data[i + j] - NO[j]) * .12)) >= 10) vis[y * W + x] = 1 } }
+  const h = new Uint8Array(W * H), z = new Uint8Array(W * H)   // dilatación en dos pasadas (horizontal y vertical)
+  for (let y = 0; y < H; y++) { let c = 0; for (let x = -R; x < W; x++) { const a = x + R, s = x - R - 1; if (a < W && vis[y * W + a]) c++; if (s >= 0 && vis[y * W + s]) c--; if (x >= 0) h[y * W + x] = c > 0 ? 1 : 0 } }
+  for (let x = 0; x < W; x++) { let c = 0; for (let y = -R; y < H; y++) { const a = y + R, s = y - R - 1; if (a < H && h[a * W + x]) c++; if (s >= 0 && h[s * W + x]) c--; if (y >= 0) z[y * W + x] = c > 0 ? 1 : 0 } }
+  return z
 }
 async function sueloFranja(dst) {
   // suelo de bosque de la franja: manchas de copas oscuras en celdas de 8 px que aparecen bajo el frente y se apagan hacia abajo. Código puro, semilla fija.
@@ -137,6 +151,15 @@ async function activos() {
     if (sharp && f === "4_frente") await frenteHundido(src, dst)
     else if (sharp) await sharp(src).webp({ quality: 90, alphaQuality: 100, effort: 5 }).toFile(dst); else fs.copyFileSync(src, dst)
   }
+  // hero de noche (2026-11-13): las mismas cuatro capas, de .impeccable/mocks/lugares/hero/capas/noche/ (las arma capas_noche.cjs) a hero/noche/
+  fs.mkdirSync(path.join(AQUI, "hero", "noche"), { recursive: true })
+  for (const [f] of CAPAS) {
+    const src = path.join(LUG, "hero", "capas", "noche", f + ".png"), dst = path.join(AQUI, "hero", "noche", f + "." + EXT)
+    if (!fs.existsSync(src)) continue
+    if (fs.existsSync(dst) && fs.statSync(dst).mtimeMs > Math.max(mioT, fs.statSync(src).mtimeMs)) continue
+    if (sharp && f === "4_frente") await frenteHundido(src, dst, await zonaDeDia())
+    else if (sharp) await sharp(src).webp({ quality: 90, alphaQuality: 100, effort: 5 }).toFile(dst); else fs.copyFileSync(src, dst)
+  }
   const sue = path.join(AQUI, "hero", "suelo.png")
   if (sharp && !(fs.existsSync(sue) && fs.statSync(sue).mtimeMs > mioT)) await sueloFranja(sue)
   for (const [abs, n] of IMG) fs.copyFileSync(abs, path.join(AQUI, "img", n))
@@ -149,7 +172,7 @@ function escenaFogata() {
   const pj = leer(path.join(L, "pxl", "personajes.js")).replace('document.getElementById("pj")', "__pj")
   return `(function(__c,__pj,requestAnimationFrame){
 ${leer(path.join(L, "pxl", "escena.js"))}
-const im=new Image();im.onload=()=>iniciar(__c,im);im.src="${b64(path.join(L, "pxl", "fondo_personajes.png"), "image/png")}"
+const im=new Image();im.onload=()=>{iniciar(__c,im);bordeOscuro(__c,im)};im.src="${b64(path.join(L, "pxl", "fondo_personajes.png"), "image/png")}"
 const PJ=${leer(path.join(L, "personajes", "posiciones.json"))},SRC=${JSON.stringify(capas)}
 ${pj}
 })`
@@ -162,7 +185,7 @@ function escenaMuelle() {
   return `(function(__c,__pj,requestAnimationFrame){
 const KOI=${leer(path.join(L, "koi", "koi_dir.json"))},RUTAS=${leer(path.join(L, "koi", "recorridos.json"))}
 ${leer(path.join(L, "pxl", "escena.js"))}
-const F=new Image(),Bc=new Image();let n=0;const listo=()=>{if(++n==2)iniciar(__c,F,Bc)};F.onload=Bc.onload=listo;F.src="${b64(path.join(L, "pxl", "fondo_mov.png"), "image/png")}";Bc.src="${b64(path.join(L, "pxl", "barca.png"), "image/png")}"
+const F=new Image(),Bc=new Image();let n=0;const listo=()=>{if(++n==2){iniciar(__c,F,Bc);bordeOscuro(__c,F)}};F.onload=Bc.onload=listo;F.src="${b64(path.join(L, "pxl", "fondo_mov.png"), "image/png")}";Bc.src="${b64(path.join(L, "pxl", "barca.png"), "image/png")}"
 const PJ=${leer(path.join(L, "personajes", "posiciones.json"))},SRC=${JSON.stringify(capas)}
 ${pj}
 })`
@@ -170,6 +193,14 @@ ${pj}
 const ESCENAS_JS = `// compuerta: la escena solo pide cuadros mientras está a la vista
 function compuerta(){let on=false,cola=[];return{raf:f=>{if(on)window.requestAnimationFrame(f);else cola.push(f)},set(v){on=v;if(v)cola.splice(0).forEach(f=>window.requestAnimationFrame(f))}}}
 window.COMPUERTAS={fogata:compuerta(),muelle:compuerta()}
+// tema oscuro (usuario, 2026-11-13): el borde derecho de cada arte se disuelve en blanco puro (#fff, sin transparencia). Un lienzo encima, visible solo con el tema oscuro, pinta de noche (#040e10, el fondo de la hoja)
+// ese blanco —el conectado al borde derecho—; los blancos del arte (destellos del agua, flores) se quedan. Mismo contorno, otro color de vacío; el motor de la escena no se toca.
+function bordeOscuro(cv,img){const w=img.naturalWidth,h=img.naturalHeight,o=document.createElement("canvas");o.width=w;o.height=h;o.className="borde-oscuro";o.setAttribute("aria-hidden","true")
+const x=o.getContext("2d");x.drawImage(img,0,0);const d=x.getImageData(0,0,w,h),p=d.data,v=new Uint8Array(w*h),pila=[],bl=i=>p[i]===255&&p[i+1]===255&&p[i+2]===255
+for(let y=0;y<h;y++){const k=y*w+w-1;if(bl(k*4)){v[k]=1;pila.push(k)}}
+while(pila.length){const k=pila.pop(),qx=k%w,qy=(k/w)|0;for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){const nx=qx+dx,ny=qy+dy;if(nx<0||ny<0||nx>=w||ny>=h)continue;const m=ny*w+nx;if(!v[m]&&bl(m*4)){v[m]=1;pila.push(m)}}}
+for(let k=0;k<w*h;k++){const i=k*4;if(v[k]){p[i]=4;p[i+1]=14;p[i+2]=16;p[i+3]=255}else p[i+3]=0}
+x.putImageData(d,0,0);cv.after(o)}
 const fogata=${escenaFogata()};fogata(document.getElementById("c-fogata"),document.getElementById("pj-fogata"),COMPUERTAS.fogata.raf)
 const muelle=${escenaMuelle()};muelle(document.getElementById("c-muelle"),document.getElementById("pj-muelle"),COMPUERTAS.muelle.raf)`
 const ARIA = {
@@ -336,6 +367,7 @@ const HTML = `<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#040e10">
 <meta name="robots" content="noindex">
+<script>try{var t=localStorage.getItem("okaeri.tema");if(t!=="claro"&&t!=="oscuro")t=matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro";document.documentElement.dataset.tema=t}catch(e){}</script>
 <title>Okaeri</title>
 <!-- Web de Okaeri. Lo arma build.cjs; no se edita a mano. Fuentes: Jersey 15 (pixel) y Atkinson Hyperlegible (lectura), ambas OFL. -->
 <style>
@@ -350,16 +382,17 @@ ${sprite()}
 
 <header class="hero" id="inicio">
 <div class="paisaje" aria-hidden="true">
-<img class="capa fondo" src="hero/1_fondo.${EXT}" alt="" fetchpriority="high" decoding="async">
-<img class="capa medio" src="hero/3_medio.${EXT}" alt="" decoding="async">
-<img class="capa arbol" src="hero/2_arbol.${EXT}" alt="" decoding="async">
-<img class="capa frente" src="hero/4_frente.${EXT}" alt="" decoding="async">
+<img class="capa fondo dia" src="hero/1_fondo.${EXT}" alt="" fetchpriority="high" decoding="async">
+<img class="capa fondo noche" src="hero/noche/1_fondo.${EXT}" alt="" decoding="async">
+<img class="capa medio dia" src="hero/3_medio.${EXT}" alt="" decoding="async">
+<img class="capa medio noche" src="hero/noche/3_medio.${EXT}" alt="" decoding="async">
+<img class="capa arbol dia" src="hero/2_arbol.${EXT}" alt="" decoding="async">
+<img class="capa arbol noche" src="hero/noche/2_arbol.${EXT}" alt="" decoding="async">
+<img class="capa frente dia" src="hero/4_frente.${EXT}" alt="" decoding="async">
+<img class="capa frente noche" src="hero/noche/4_frente.${EXT}" alt="" decoding="async">
 </div>
 <h1 class="logo">okaeri</h1>
-<div class="hero-sonido">
-<button type="button" class="btn-sonido" id="sonido" aria-pressed="false" aria-label="Activar el sonido"><svg class="ico" viewBox="0 0 12 12" aria-hidden="true"><use href="#i-sonido-off"/></svg></button>
-<p class="aviso-sonido" id="aviso-sonido" role="status"></p>
-</div>
+<div class="hero-acc"><button type="button" class="btn-cerrar btn-tema btn-tema-hero" id="tema-hero" aria-label="Cambiar de tema" title="Cambiar de tema">${ico("sol")}</button></div>
 <a class="bajar" href="#modulos" aria-label="Bajar a los módulos">${ico("abajo")}</a>
 </header>
 
@@ -392,8 +425,7 @@ ${corte("muelle")}
 <button type="button" class="btn-drawer" id="abrir-drawer" aria-label="Abrir la ruta del módulo" aria-controls="drawer" aria-expanded="false">${ico("lista")}</button>
 <div class="velo" id="velo" hidden></div>
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-titulo" inert>
-<div class="d-cab"><h2 id="d-titulo"></h2><div class="d-acc"><button type="button" class="btn-sonido en-drawer" id="sonido-drawer" aria-pressed="false" aria-label="Activar el sonido" title="Activar el sonido">${ico("sonido-off")}</button><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div></div>
-<p class="aviso-sonido d-aviso" id="aviso-sonido-d" role="status"></p>
+<div class="d-cab"><h2 id="d-titulo"></h2><div class="d-acc"><button type="button" class="btn-cerrar btn-tema" id="tema-drawer" aria-label="Cambiar de tema" title="Cambiar de tema">${ico("sol")}</button><button type="button" class="btn-cerrar" id="cerrar-drawer" aria-label="Cerrar">${ico("cerrar")}</button></div></div>
 <label class="d-buscar"><span class="vh">Buscar en los apuntes</span>${ico("lupa")}<input type="search" id="buscar" placeholder="Buscar en los apuntes" autocomplete="off" spellcheck="false"></label>
 <p class="d-vacio" id="d-vacio" role="status" hidden>Ningún apunte lo nombra.</p>
 <nav aria-label="Ruta de apuntes"><h3 class="d-h">Ruta del módulo</h3><ol class="d-ruta" id="d-ruta"></ol></nav>

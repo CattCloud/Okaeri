@@ -12,6 +12,11 @@ module.exports = function (AQUI, IMG) {
     const f1 = ["webp", "png"].map(e => path.join(AQUI, "hero", f + "." + e)).find(fs.existsSync)
     if (f1) lista.push([f1, "Capa del hero de Okaeri (prototipo web). " + GEMINI + extra])
   }
+  const NOCHE = "Origen: ilustración pixel art generada por el usuario con Gemini el 2026-11-13 a partir del hero de día aprobado: hero_noche_gemini.jpg (la misma escena de noche, mismo encuadre) y capa1/3/4/5_*_noche_gemini.jpg (una edición por capa, con fondo magenta) en .impeccable/mocks/lugares/hero/noche/. El prompt exacto no se conservó en el repositorio. Se separó en capas con .impeccable/mocks/lugares/hero/capas_noche.cjs (cielo de un solo color #1A345C por relleno desde el borde superior, 600 px de cielo agregados arriba) y el prototipo la convierte a WebP con build.cjs."
+  for (const f of ["1_fondo", "2_arbol", "3_medio", "4_frente"]) {
+    const f1 = ["webp", "png"].map(e => path.join(AQUI, "hero", "noche", f + "." + e)).find(fs.existsSync)
+    if (f1) lista.push([f1, "Capa del hero de noche de Okaeri (prototipo web, tema oscuro). " + NOCHE + (f === "4_frente" ? " Además, build.cjs (frenteHundido) oscurece sus 380 px inferiores con dither de Bayer 4x4 hacia #040e10." : "")])
+  }
   lista.push([path.join(AQUI, "hero", "suelo.png"), "Suelo de bosque de la franja de módulos del prototipo web de Okaeri. Producido por código, sin modelo de imagen: build.cjs (sueloFranja) con ruido de valor, semilla fija 20261109, paleta de 4 verdes oscuros, celdas de 8 px y dither de Bayer 4x4."])
   for (const [, n] of IMG) lista.push([path.join(AQUI, "img", n), `Diagrama propio del repositorio Okaeri (apuntes de guitarra, fundamentos/guitarra/**/img/${n}), hecho con el procedimiento crear-diagrama del proyecto. Copia sin cambios para el prototipo web.`])
   let fallos = 0

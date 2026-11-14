@@ -1,0 +1,4 @@
+{
+  "prompt": "Capa del hero de noche de Okaeri (prototipo web, tema oscuro). Origen: ilustración pixel art generada por el usuario con Gemini el 2026-11-13 a partir del hero de día aprobado: hero_noche_gemini.jpg (la misma escena de noche, mismo encuadre) y capa1/3/4/5_*_noche_gemini.jpg (una edición por capa, con fondo magenta) en .impeccable/mocks/lugares/hero/noche/. El prompt exacto no se conservó en el repositorio. Se separó en capas con .impeccable/mocks/lugares/hero/capas_noche.cjs (cielo de un solo color #1A345C por relleno desde el borde superior, 600 px de cielo agregados arriba) y el prototipo la convierte a WebP con build.cjs. Además, build.cjs (frenteHundido) oscurece sus 380 px inferiores con dither de Bayer 4x4 hacia #040e10.",
+  "createdAt": "2026-11-14T00:03:15.252Z"
+}

@@ -8,17 +8,17 @@
   // ---------- 1. hero: cada capa va a su velocidad; el bosque del frente (velocidad 0) sube con la página y cubre el paisaje ----------
   const hero = $(".hero")
   const V = { fondo: .55, logo: .3, arbol: .4, medio: .22, frente: 0 }   // el logo sube más rápido que el árbol: nunca lo cruza
-  const capas = { fondo: $(".fondo"), arbol: $(".arbol"), medio: $(".medio"), frente: $(".frente"), logo: $(".logo") }
+  const capas = { fondo: $$(".capa.fondo"), arbol: $$(".capa.arbol"), medio: $$(".capa.medio"), frente: $$(".capa.frente"), logo: [$(".logo")] }   // cada capa tiene su juego de día y su juego de noche: se mueven los dos
   let pend = false
   function pintar() {
     pend = false
     const y = Math.min(scrollY, hero.offsetHeight)
-    for (const n in V) capas[n].style.transform = `translate3d(0,${(y * V[n]).toFixed(1)}px,0)`
-    capas.logo.style.opacity = Math.max(0, 1 - y / (hero.offsetHeight * .45)).toFixed(2)
+    for (const n in V) { const t = `translate3d(0,${(y * V[n]).toFixed(1)}px,0)`; for (const e of capas[n]) e.style.transform = t }
+    capas.logo[0].style.opacity = Math.max(0, 1 - y / (hero.offsetHeight * .45)).toFixed(2)
   }
   if (!quieto) { addEventListener("scroll", () => { if (!pend) { pend = true; requestAnimationFrame(pintar) } }, { passive: true }); pintar() }
 
-  // ---------- 2. zona de la página (qué hay en el centro de la pantalla): manda el botón del drawer, el sonido y las escenas ----------
+  // ---------- 2. zona de la página (qué hay en el centro de la pantalla): manda el botón del drawer y las escenas ----------
   const zonas = [["hero", ".hero"], ["franja", ".franja"], ["fogata", "#corte-fogata"], ["paso", ".paso"], ["muelle", "#corte-muelle"], ["cierre", ".cierre"]]
   const visibles = new Set()
   const DEL_MODULO = ["fogata", "paso", "muelle", "cierre"]
@@ -26,7 +26,7 @@
     for (const e of es) { const z = e.target.dataset.zona; e.isIntersecting ? visibles.add(z) : visibles.delete(z) }
     let z = zonas.map(x => x[0]).find(x => visibles.has(x))
     if (z && carrusel() && DEL_MODULO.includes(z)) z = zonaCarrusel()   // en el escenario manda la página, no la tira de tramos que se ve mientras se desliza
-    if (z && document.body.dataset.zona !== z) { document.body.dataset.zona = z; mezclar() }
+    if (z && document.body.dataset.zona !== z) { document.body.dataset.zona = z }
   }, { rootMargin: "-50% 0px -50% 0px" })
   zonas.forEach(([z, s]) => { const el = $(s); el.dataset.zona = z; ioZona.observe(el) })
 
@@ -97,7 +97,7 @@
   const hojaDe = k => hojas.findIndex(h => h.dataset.k === k)
   function fijarZona() {
     if (!carrusel() || !DEL_MODULO.includes(document.body.dataset.zona)) return
-    const z = zonaCarrusel(); if (document.body.dataset.zona !== z) { document.body.dataset.zona = z; mezclar() }
+    const z = zonaCarrusel(); if (document.body.dataset.zona !== z) { document.body.dataset.zona = z }
   }
   // arma el escenario del módulo recién cargado (o al cruzar los 1200 px); sin animación
   function armar(p) {
@@ -260,8 +260,8 @@
 
   // ---------- 4b. vista de Práctica a pantalla completa (usuario, 2026-11-12; contrato en .impeccable/surfaces/system-html.md) ----------
   // Un <dialog> modal sin escena: deja inerte todo lo demás, atrapa el foco y se cierra con Esc o «Volver al apunte». Las columnas (1, 2 o 3) y el tema (oscuro / claro,
-  // por defecto el de Windows) se recuerdan en el navegador; el tema vale para todo el sistema (hoy solo lo usa esta vista).
-  const practica = $("#practica"), pvT = $("#pv-t"), pvCuerpo = $("#pv-cuerpo"), pvTema = $("#pv-tema")
+  // por defecto el de Windows) se recuerdan en el navegador; el tema vale para la hoja del apunte, el visor y esta vista (y el hero, que pasa a noche con CSS; escenas, franja, drawer y cierre no cambian). Tres botones lo alternan: el de la portada (hero), el del drawer y el de la barra de esta vista.
+  const practica = $("#practica"), pvT = $("#pv-t"), pvCuerpo = $("#pv-cuerpo"), pvTema = $("#pv-tema"), temaDrawer = $("#tema-drawer"), temaHero = $("#tema-hero")
   const guardado = { leer: k => { try { return localStorage.getItem(k) } catch { return null } }, poner: (k, v) => { try { localStorage.setItem(k, v) } catch { } } }
   const mqOscuro = matchMedia("(prefers-color-scheme: dark)")
   let pvK = null, cols = guardado.leer("okaeri.cols"), tema = guardado.leer("okaeri.tema"), temaElegido = ["claro", "oscuro"].includes(tema)
@@ -271,10 +271,12 @@
     document.documentElement.dataset.tema = tema
     practica.dataset.cols = cols
     $$(".pv-col", practica).forEach(b => b.setAttribute("aria-pressed", String(b.dataset.cols === cols)))
-    const aClaro = tema === "oscuro"   // el botón ofrece el otro tema
-    $("use", pvTema).setAttribute("href", aClaro ? "#i-sol" : "#i-luna"); $("span", pvTema).textContent = aClaro ? "Claro" : "Oscuro"
-    pvTema.setAttribute("aria-label", aClaro ? "Cambiar a tema claro" : "Cambiar a tema oscuro")
+    const aClaro = tema === "oscuro", etiqueta = aClaro ? "Cambiar a tema claro" : "Cambiar a tema oscuro"   // los botones ofrecen el otro tema
+    for (const b of [pvTema, temaDrawer, temaHero]) { $("use", b).setAttribute("href", aClaro ? "#i-sol" : "#i-luna"); b.setAttribute("aria-label", etiqueta) }
+    $("span", pvTema).textContent = aClaro ? "Claro" : "Oscuro"; temaDrawer.title = temaHero.title = etiqueta
   }
+  function alternarTema() { tema = tema === "oscuro" ? "claro" : "oscuro"; temaElegido = true; guardado.poner("okaeri.tema", tema); pintarVista() }
+  for (const b of [temaDrawer, temaHero]) b.addEventListener("click", alternarTema)
   pintarVista()
   mqOscuro.addEventListener("change", e => { if (!temaElegido) { tema = e.matches ? "oscuro" : "claro"; pintarVista() } })   // mientras no haya elegido, sigue a Windows
   const candado = () => {   // la página de atrás no se mueve mientras haya algo encima (visor, vista de Práctica o drawer)
@@ -303,7 +305,7 @@
   practica.addEventListener("click", e => {
     if (e.target.closest("#pv-volver")) return cerrarPractica()
     const c = e.target.closest(".pv-col"); if (c) { cols = c.dataset.cols; guardado.poner("okaeri.cols", cols); return pintarVista() }
-    if (e.target.closest("#pv-tema")) { tema = tema === "oscuro" ? "claro" : "oscuro"; temaElegido = true; guardado.poner("okaeri.tema", tema); return pintarVista() }
+    if (e.target.closest("#pv-tema")) return alternarTema()
     const a = e.target.closest('a.ref[href^="#"]'); if (a) { e.preventDefault(); irA(a.getAttribute("href").slice(1)) }
   })
   const porHash = () => { const h = decodeURIComponent(location.hash.slice(1)); if (/^[ap]-/.test(h)) irA(h) }
@@ -354,49 +356,6 @@
   // el apunte que se está leyendo queda marcado en la ruta (apilado: el que cruza la pantalla; en el carrusel lo marca ir(), porque una hoja corta nunca llega a la franja)
   const ioAp = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) marcarRuta(e.target.dataset.k) }), { rootMargin: "-40% 0px -55% 0px" })
   function observarApuntes() { ioAp.disconnect(); if (!carrusel()) $$(".apunte").forEach(ap => ioAp.observe(ap)) }
-
-  // ---------- 6. sonido: celta en el hero, la franja y la fogata; pantano en el muelle. Los archivos van en audio/ (celta.mp3, pantano.mp3) ----------
-  const PISTAS = { celta: "audio/celta.mp3", pantano: "audio/pantano.mp3" }
-  const N = Object.keys(PISTAS).length, pistas = {}, faltan = new Set()
-  let sonando = false
-  const botones = [$("#sonido"), $("#sonido-drawer")]
-  const mensaje = t => [$("#aviso-sonido"), $("#aviso-sonido-d")].forEach(p => { p.textContent = t; p.classList.toggle("ver", !!t) })
-  function pintarBotones() {
-    const sin = faltan.size === N
-    botones.forEach(b => { b.setAttribute("aria-pressed", String(sonando)); b.classList.toggle("sin-audio", sin); $("use", b).setAttribute("href", sonando ? "#i-sonido-on" : "#i-sonido-off") })
-    const txt = sin ? "Sonido no disponible: faltan los archivos de audio" : sonando ? "Apagar el sonido" : "Activar el sonido"
-    botones.forEach(b => { b.setAttribute("aria-label", txt); b.title = txt })
-  }
-  function pista(n) {
-    if (pistas[n]) return pistas[n]
-    const a = new Audio(PISTAS[n]); a.loop = true; a.volume = 0; a.preload = "auto"
-    a.addEventListener("error", () => { faltan.add(n); if (faltan.size === N) sonando = false; mensaje("Sin audio: faltan " + [...faltan].map(k => PISTAS[k].replace("audio/", "")).join(" y ") + " en la carpeta audio/."); pintarBotones() })
-    return pistas[n] = a
-  }
-  const pistaDeZona = () => { const z = document.body.dataset.zona; return z === "paso" || z === "muelle" || (z === "cierre" && MODULOS[actual - 1]?.hayMuelle) ? "pantano" : "celta" }
-  function fundir(a, objetivo, ms = quieto ? 0 : 1600, pausar = false) {
-    clearInterval(a._f); const ini = a.volume, t0 = performance.now()
-    if (objetivo > 0 && a.paused) a.play().catch(() => { })
-    const fin = () => { a.volume = objetivo; if (pausar) a.pause() }
-    if (!ms) return fin()
-    a._f = setInterval(() => { const u = Math.min(1, (performance.now() - t0) / ms); a.volume = ini + (objetivo - ini) * u; if (u >= 1) { clearInterval(a._f); fin() } }, 50)
-  }
-  function mezclar() {
-    if (!sonando) return
-    const activa = pistaDeZona()
-    for (const n of Object.keys(PISTAS)) if (pistas[n] && !faltan.has(n)) fundir(pistas[n], n === activa ? .7 : 0)
-  }
-  // las dos pistas se crean y arrancan dentro del clic (los navegadores solo lo permiten con un gesto); la inactiva queda en volumen 0
-  function sonido(v) {
-    sonando = v
-    if (v) { for (const n of Object.keys(PISTAS)) { const a = pista(n); if (!faltan.has(n) && a.paused) a.play().catch(() => { }) } mezclar() }
-    else Object.values(pistas).forEach(a => fundir(a, 0, quieto ? 0 : 600, true))
-    pintarBotones()
-  }
-  botones.forEach(b => b.addEventListener("click", () => {
-    if (faltan.size === N) { faltan.clear(); Object.keys(pistas).forEach(k => delete pistas[k]); mensaje("") }   // reintenta si el usuario los puso después
-    sonido(!sonando)
-  }))
 
   // ---------- 6b. visor de imágenes (usuario, 2026-10-21; repuesto en la web 2026-11-12) ----------
   // Clic (o Enter / Espacio con el foco en ella) en una imagen de un apunte o práctica la amplía en un <dialog> modal: lo más grande que quepa, sobre noche.

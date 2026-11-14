@@ -2,7 +2,7 @@
    Pixel (Jersey 15) en títulos, botones, franja y drawer; Atkinson Hyperlegible solo en la lectura. Radio cero; los marcos son pixel (border-image). */
 :root{
   --cielo:#78cbf7;--noche:#040e10;--bosque:#0b1b18;--pino:#1c3a31;--niebla:#e8efe9;--bruma:#9fb3a8;
-  --papel:#fff;--tinta:#26241f;--tinta-2:#4a463d;--crema:#f7f1e3;--linea:#d9d2c0;--ladrillo:#8a3a2a;--ambar:#ffb53c;--dorado:#d09431;--lago:#7fc0e0;--musgo:#74b64f;
+  --papel:#fff;--sombra-tabla:rgba(38,36,31,.28);--tinta:#26241f;--tinta-2:#4a463d;--crema:#f7f1e3;--linea:#d9d2c0;--ladrillo:#8a3a2a;--ambar:#ffb53c;--dorado:#d09431;--lago:#7fc0e0;--musgo:#74b64f;
   --px:"Jersey 15",ui-monospace,monospace;--lectura:"Atkinson Hyperlegible",system-ui,sans-serif;
   --escena:min(92.24svh,58cqw,calc(100cqw - 798px));
   --ease:cubic-bezier(.16,1,.3,1);
@@ -26,10 +26,10 @@ a{color:inherit}
 .ico-flecha{width:1.25em;height:1.25em;display:inline-block;vertical-align:-.28em}
 
 /* ---------- marcos pixel ---------- */
-.btn-px,.mod,.btn-sonido,.btn-drawer,.btn-cerrar,.visor-btn,.d-buscar{border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:var(--noche);background-clip:padding-box;color:var(--niebla);font:400 1.75rem/1 var(--px);cursor:pointer;text-decoration:none}
+.btn-px,.mod,.btn-drawer,.btn-cerrar,.visor-btn,.d-buscar{border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:var(--noche);background-clip:padding-box;color:var(--niebla);font:400 1.75rem/1 var(--px);cursor:pointer;text-decoration:none}
 .btn-px{display:inline-flex;align-items:center;gap:.5em;padding:.5em 1em;min-height:56px;transition:transform .12s steps(1),background-color .2s}
-.btn-px:hover,.mod:hover,.btn-sonido:hover,.btn-drawer:hover,.btn-cerrar:hover,.visor-btn:hover{border-image-source:var(--m-ambar);background-color:var(--bosque);color:var(--ambar)}
-.btn-px:active,.mod:active,.btn-sonido:active,.btn-drawer:active{transform:translateY(3px)}
+.btn-px:hover,.mod:hover,.btn-drawer:hover,.btn-cerrar:hover,.visor-btn:hover{border-image-source:var(--m-ambar);background-color:var(--bosque);color:var(--ambar)}
+.btn-px:active,.mod:active,.btn-drawer:active{transform:translateY(3px)}
 .btn-px.chico{min-height:48px;font-size:1.5rem;padding:.35em .8em}
 .btn-px .btn-sub{display:block;font-size:1.125rem;color:var(--bruma)}
 .btn-px:has(.btn-sub){flex-wrap:wrap}
@@ -39,17 +39,16 @@ a{color:inherit}
 .paisaje{position:absolute;left:50%;bottom:0;width:max(100%,calc(100svh*2576/1798));aspect-ratio:2576/1438;transform:translate(-50%,12%)}
 .capa{position:absolute;left:0;width:100%;height:auto;will-change:transform;pointer-events:none;user-select:none}
 .capa.fondo{top:-41.725%}.capa.arbol{top:3%}.capa.medio,.capa.frente{top:0}
+/* hero de noche (usuario, 2026-11-13): con el tema oscuro se muestra el segundo juego de capas (cielo plano #1a345c) y el logo se invierte; el de día queda con el tema claro */
+.capa.noche{display:none}
+html[data-tema="oscuro"] .capa.noche{display:block}
+html[data-tema="oscuro"] .capa.dia{display:none}
+html[data-tema="oscuro"] .hero{background:#1a345c}
+html[data-tema="oscuro"] .logo{color:#c4e9fc;text-shadow:0 .045em 0 #0d3250}   /* el logo de día invertido: letras claras con sombra azul, sobre el cielo plano de noche */
 /* el logo se centra sobre la torre del árbol (52 % del ancho del arte), no sobre la página: el paisaje está corrido a la derecha del centro */
 .logo{--eje-arbol:.52;position:absolute;left:calc(50% + (var(--eje-arbol) - .5) * max(100vw, 100svh * 2576 / 1798));right:auto;width:max-content;translate:-50% 0;padding-left:.02em;margin:0;text-align:center;font:400 1em/1 var(--px);
   /* el logo ocupa el cielo que queda entre el borde y la punta del árbol (la punta está al 79.85 % de la altura del paisaje contando su hundimiento); tinta del logo: de .21em a .85em de su caja; 40 px arriba y 28 px sobre el árbol */
   font-size:clamp(5rem,min(17vw,(var(--arbol-top) - 68px)/.64),12rem);top:max(calc(16px - .21em),calc(40px + (var(--arbol-top) - 68px - .64em)/2 - .21em));letter-spacing:.02em;color:#0d3250;text-shadow:0 .045em 0 #c4e9fc;will-change:transform;pointer-events:none}
-.hero-sonido{position:absolute;top:max(16px,env(safe-area-inset-top));right:16px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:3}
-.btn-sonido{width:60px;height:60px;padding:0;display:grid;place-items:center;background:rgba(4,14,16,.72);background-clip:padding-box;font-size:1.5rem}
-.btn-sonido .ico{width:30px;height:30px}
-.btn-sonido[aria-pressed="true"]{color:var(--ambar)}
-.btn-sonido.sin-audio,.btn-px.sin-audio{color:var(--bruma);border-image-source:var(--m-suave)}
-.aviso-sonido{margin:0;max-width:19rem;padding:8px 12px;font:400 1.25rem/1.15 var(--px);background:var(--noche);color:var(--niebla);border:3px solid var(--ambar);opacity:0;visibility:hidden;transition:opacity .2s}
-.aviso-sonido.ver{opacity:1;visibility:visible}
 .bajar{position:absolute;right:max(20px,3vw);bottom:max(18px,3.5svh);width:48px;height:48px;display:grid;place-items:center;color:var(--niebla);z-index:3}
 .bajar .ico{width:36px;height:36px}
 @media (prefers-reduced-motion:no-preference){.bajar .ico{animation:cabeceo 1.4s steps(2,jump-none) infinite alternate}}
@@ -75,7 +74,7 @@ a{color:inherit}
 /* un módulo sin apuntes, o con una sola escena, esconde lo que no usa (los display de .corte y .cierre pisarían el atributo hidden) */
 .modulo[hidden],.modulo [hidden]{display:none!important}
 .corte{display:grid;grid-template-columns:var(--escena) minmax(0,1fr);background:var(--papel);color:var(--tinta)}
-/* la escena conserva la proporción del arte (368x399): su borde derecho está disuelto en blanco para fundirse con el apunte, así que no se recorta */
+/* la escena conserva la proporción del arte (368x399): su borde derecho está disuelto en blanco para fundirse con el apunte, así que no se recorta. Con el tema oscuro, .borde-oscuro (un lienzo que arma app.js encima) pinta ese blanco de noche */
 .escena{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;align-content:center;background:var(--papel)}
 /* si la ventana es más baja que el arte, el blanco sobrante se va al lado opuesto de la línea entre escenas: la fogata pegada abajo, el muelle pegado arriba */
 .escena-fogata{align-content:end}
@@ -83,6 +82,8 @@ a{color:inherit}
 .lienzo{position:relative;width:var(--escena);height:calc(var(--escena)*399/368);overflow:hidden}
 .lienzo canvas{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;image-rendering:pixelated}
 .lienzo .pj{image-rendering:auto;pointer-events:none}
+.lienzo canvas.borde-oscuro{display:none}
+html[data-tema="oscuro"] .lienzo canvas.borde-oscuro{display:block}
 .apuntes{min-width:0;padding:0 32px 120px 16px}
 /* corte entre escenas: una sola línea dorada de borde a borde, sin decoración. 1 pixel del arte = var(--u) px; la línea mide 2 */
 /* la línea se superpone 1 px sobre cada escena: tapa la fila de blanco semitransparente que dejan los bordes en fracciones de pixel */
@@ -99,7 +100,13 @@ a{color:inherit}
 @media (max-width:699px){.paso{--u:3px}}
 @media (max-width:519px){.paso{--u:2px}}
 
-/* ---------- apunte: columna tranquila, blanco, 750 px, Atkinson ---------- */
+/* ---------- tema oscuro de la hoja (usuario, 2026-11-13; paso 2) ----------
+   Con el tema oscuro la hoja del apunte usa los neutros del lugar: noche de fondo (la misma que dejan las escenas en su borde), niebla de texto, bruma de secundario, bosque en recuadros y cabeceras y pino en líneas.
+   Ámbar reemplaza al ladrillo (Dos Acentos) y los marcos pasan a claro. Se redefinen las mismas variables dentro de .modulo; el cierre, el hero y el drawer ya eran oscuros y no las usan.
+   Contraste sobre noche: niebla 16,7 · bruma 8,8 · ámbar 11,1; sobre bosque (recuadros): 15,2 · 8,0 · 10,1. Las TAB y los diagramas siguen sobre papel blanco. */
+html[data-tema="oscuro"] .modulo{--papel:var(--noche);--tinta:var(--niebla);--tinta-2:var(--bruma);--crema:var(--bosque);--linea:var(--pino);--ladrillo:var(--ambar);--m-tinta:var(--m-claro);--m-ladrillo:var(--m-ambar);--sombra-tabla:rgba(159,179,168,.28);color-scheme:dark}
+
+/* ---------- apunte: columna tranquila, blanco (u oscuro, según el tema), 750 px, Atkinson ---------- */
 .apunte{max-width:750px;margin-inline:auto;padding-top:clamp(56px,8vw,88px);font:400 1.1875rem/1.65 var(--lectura);color:var(--tinta);scroll-margin-top:0}
 /* entre apuntes de la misma escena: tres cuerdas con una roseta chica dentro de la columna (la idea del corte entre escenas, a menor escala) */
 .sep{--u:4px;display:flex;align-items:center;gap:calc(3*var(--u));max-width:750px;margin-inline:auto;padding-top:clamp(24px,3vw,36px)}
@@ -130,8 +137,8 @@ figcaption{margin-top:.5em;font-size:1rem;line-height:1.45;color:var(--tinta-2)}
 .dedo{display:inline-block;width:.85em;height:.85em;margin-right:.5em;vertical-align:-.08em;border:2px solid var(--tinta)}
 .dedo.d1{background:#d83a2e}.dedo.d2{background:#e8821f}.dedo.d3{background:#3f9b3f}.dedo.d4{background:#2f6fd0}
 .tabla{margin:0 0 1.4em;overflow-x:auto;border:3px solid var(--tinta);
-  background:linear-gradient(90deg,#fff 30%,#fff0) left/36px 100% no-repeat local,linear-gradient(270deg,#fff 30%,#fff0) right/36px 100% no-repeat local,
-    linear-gradient(90deg,rgba(38,36,31,.28),#0000) left/12px 100% no-repeat scroll,linear-gradient(270deg,rgba(38,36,31,.28),#0000) right/12px 100% no-repeat scroll}
+  background:linear-gradient(90deg,var(--papel) 30%,#0000) left/36px 100% no-repeat local,linear-gradient(270deg,var(--papel) 30%,#0000) right/36px 100% no-repeat local,
+    linear-gradient(90deg,var(--sombra-tabla),#0000) left/12px 100% no-repeat scroll,linear-gradient(270deg,var(--sombra-tabla),#0000) right/12px 100% no-repeat scroll}
 .tabla table{width:100%;border-collapse:collapse;font-size:1.0625rem;line-height:1.4;font-variant-numeric:tabular-nums}
 .tabla th{font:400 1.375rem/1.1 var(--px);text-align:left;background:var(--crema);padding:.5em .75em;border-bottom:3px solid var(--tinta);white-space:nowrap}
 .tabla td{padding:.55em .75em;border-top:2px solid var(--linea);vertical-align:top}
@@ -139,12 +146,13 @@ figcaption{margin-top:.5em;font-size:1rem;line-height:1.45;color:var(--tinta-2)}
 .tabla .a-c{text-align:center}.tabla .a-r{text-align:right}
 .tabla:focus-visible{outline-offset:2px}
 .tabla td:has(.cel-img){padding:.5em;text-align:center;background:#fff}
+.tabla:has(.cel-img) td{background:#fff;color:#26241f}   /* en una tabla de diagramas, todas las celdas son lámina blanca: una celda vacía no deja un hueco oscuro entre ellas */
 .cel-img{width:100%;max-width:15rem;height:auto;margin-inline:auto}
 blockquote{margin:0 0 1.4em}
 blockquote.clave,blockquote.repaso,blockquote.nota{border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:var(--crema);background-clip:padding-box;padding:.9rem 1.2rem}
 blockquote.clave{font-size:1.25rem;line-height:1.5}
-blockquote.nota{background:#fff;font-size:1.0625rem}
-blockquote.repaso{background:#fff}
+blockquote.nota{background:var(--papel);font-size:1.0625rem}
+blockquote.repaso{background:var(--papel)}
 blockquote>*:last-child{margin-bottom:0}
 blockquote .cab{display:flex;align-items:center;gap:.5em;margin:0 0 .6em;font:400 1.75rem/1 var(--px);color:var(--ladrillo)}
 blockquote.repaso li{margin-bottom:.5em}
@@ -160,7 +168,7 @@ blockquote.repaso li{margin-bottom:.5em}
    Dentro de una misma escena solo se desliza la hoja; al cruzar de la fogata al muelle, o al cierre, se desliza el escenario entero (.pista). Solo transform. */
 .hoja{display:contents}
 .hoja-nav,#volver,.brillo{display:none}
-.btn-hoja,.btn-prac{display:inline-flex;align-items:center;gap:.4em;min-height:48px;max-width:100%;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:#fff;background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
+.btn-hoja,.btn-prac{display:inline-flex;align-items:center;gap:.4em;min-height:48px;max-width:100%;padding:0 1.1rem;border:6px solid transparent;border-image:var(--m-tinta) 2 stretch;background:var(--papel);background-clip:padding-box;color:var(--tinta);font:400 1.5rem/1 var(--px);cursor:pointer}
 .btn-hoja:hover,.btn-prac:hover{background-color:var(--crema)}
 .btn-prac{margin:.2rem 0 1.4rem}
 .btn-hoja .ico,.btn-prac .ico{width:1.125em;height:1.125em;vertical-align:baseline}
@@ -211,11 +219,12 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
 .d-cab h2{margin:6px 0 0;font:400 2.25rem/1 var(--px);text-wrap:balance}
 .btn-cerrar{flex:none;width:52px;height:52px;padding:0;display:grid;place-items:center}
 .btn-cerrar .ico{width:24px;height:24px}
+.btn-cerrar.btn-tema .ico{width:30px;height:30px}
+/* botón del tema en el hero (usuario, 2026-11-13): arriba a la derecha, donde estuvo el de sonido; fondo noche semitransparente porque va sobre el arte */
+.hero-acc{position:absolute;top:max(16px,env(safe-area-inset-top));right:16px;z-index:3}
+.btn-tema-hero{width:60px;height:60px;background:rgba(4,14,16,.72);background-clip:padding-box}
+.btn-tema-hero:hover{background-color:var(--bosque)}
 .d-acc{flex:none;display:flex;gap:8px}
-.btn-sonido.en-drawer{width:52px;height:52px}
-.btn-sonido.en-drawer .ico{width:30px;height:30px}
-.d-aviso{display:none;max-width:none;margin:0 0 12px}
-.d-aviso.ver{display:block}
 .d-buscar{display:flex;align-items:center;gap:10px;padding:0 10px;min-height:56px;cursor:text;margin-bottom:12px;border-image-source:var(--m-pino)}
 .d-buscar:focus-within{border-image-source:var(--m-ambar)}
 .d-buscar .ico{width:24px;height:24px;color:var(--bruma)}
@@ -266,22 +275,25 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
 /* ---------- visor de imágenes (usuario, 2026-10-21; repuesto en la web 2026-11-12) ---------- */
 /* clic o Enter en una imagen de un apunte la amplía en un <dialog> modal sobre noche, con marco pixel claro, flechas, contador y X; superficies planas, sin degradado ni sombra (Corte Limpio) */
 .apunte img[data-ampliar],.pv img[data-ampliar]{cursor:zoom-in}
-.visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--noche);color:var(--niebla);cursor:zoom-out}
+.visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--pv-fondo);color:var(--pv-texto);cursor:zoom-out}
 .visor[open]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto minmax(0,1fr);grid-template-areas:". cont x" "ant img sig";gap:12px 16px;padding:16px 16px 20px}
-.visor::backdrop{background:var(--noche)}
-.visor-cont{grid-area:cont;align-self:center;justify-self:center;margin:0;font:400 2.5rem/1 var(--px);font-variant-numeric:tabular-nums;color:var(--ambar);cursor:default}
+.visor::backdrop{background:var(--pv-fondo,var(--noche))}
+.visor :focus-visible{outline-color:var(--pv-acento)}
+.visor-cont{grid-area:cont;align-self:center;justify-self:center;margin:0;font:400 2.5rem/1 var(--px);font-variant-numeric:tabular-nums;color:var(--pv-acento);cursor:default}
 .visor-cont:empty{display:none}
 .visor-btn{width:64px;height:64px;padding:0;display:grid;place-items:center;cursor:pointer}
 .visor-btn[hidden]{display:none}
-.visor-btn:disabled{border-image-source:var(--m-suave);color:var(--bruma);cursor:default}
-.visor-btn:disabled:hover{background-color:var(--noche);color:var(--bruma)}
+.visor-btn{border-image-source:var(--pv-marco);background-color:var(--pv-fondo);color:var(--pv-texto)}
+.visor-btn:hover{border-image-source:var(--pv-marco-act);background-color:var(--pv-tira);color:var(--pv-acento)}
+.visor-btn:disabled{border-image-source:var(--m-suave);color:var(--pv-2);cursor:default}
+.visor-btn:disabled:hover{background-color:var(--pv-fondo);color:var(--pv-2)}
 .visor-btn .ico{width:30px;height:30px}
 .visor-btn:active:not(:disabled){transform:translateY(3px)}
 .visor-x{grid-area:x;justify-self:end;width:60px;height:60px}
 .visor-ant{grid-area:ant;align-self:center}
 .visor-sig{grid-area:sig;align-self:center}
 .visor-cuadro{grid-area:img;position:relative;min-width:0;min-height:0}
-.visor-cuadro img{position:absolute;inset:0;margin:auto;display:block;width:auto;height:auto;max-width:100%;max-height:100%;border:6px solid transparent;border-image:var(--m-claro) 2 stretch;background:#fff;background-clip:padding-box;cursor:default}
+.visor-cuadro img{position:absolute;inset:0;margin:auto;display:block;width:auto;height:auto;max-width:100%;max-height:100%;border:6px solid transparent;border-image:var(--pv-marco) 2 stretch;background:#fff;background-clip:padding-box;cursor:default}
 /* en vertical (o estrecho) el contador va arriba con la X y las flechas abajo, al alcance del pulgar */
 @media (max-aspect-ratio:1/1),(max-width:720px){
   .visor[open]{grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(0,1fr) auto;grid-template-areas:"cont x" "img img" "ant sig"}
@@ -290,8 +302,8 @@ body[data-zona="hero"] .btn-drawer{opacity:0;visibility:hidden}
 }
 /* ---------- vista de Práctica a pantalla completa (usuario, 2026-11-12; fichas con su tempo, boceto elegido en .impeccable/mocks/decision/fichas.html) ----------
    Un <dialog> modal sin escena. Dos temas: oscuro (noche, niebla, ámbar) y claro (papel, tinta, ladrillo); respeta la regla de los dos acentos. La TAB siempre va sobre papel blanco. */
-.pv{--pv-fondo:var(--noche);--pv-texto:var(--niebla);--pv-2:var(--bruma);--pv-acento:var(--ambar);--pv-linea:var(--pino);--pv-tira:var(--bosque);--pv-borde:var(--bruma);--pv-marco:var(--m-claro);--pv-marco-act:var(--m-ambar);color-scheme:dark}
-html[data-tema="claro"] .pv{--pv-fondo:var(--papel);--pv-texto:var(--tinta);--pv-2:var(--tinta-2);--pv-acento:var(--ladrillo);--pv-linea:var(--linea);--pv-tira:var(--crema);--pv-borde:var(--tinta);--pv-marco:var(--m-tinta);--pv-marco-act:var(--m-ladrillo);color-scheme:light}
+.pv,.visor{--pv-fondo:var(--noche);--pv-texto:var(--niebla);--pv-2:var(--bruma);--pv-acento:var(--ambar);--pv-linea:var(--pino);--pv-tira:var(--bosque);--pv-borde:var(--bruma);--pv-marco:var(--m-claro);--pv-marco-act:var(--m-ambar);color-scheme:dark}
+html[data-tema="claro"] .pv,html[data-tema="claro"] .visor{--pv-fondo:var(--papel);--pv-texto:var(--tinta);--pv-2:var(--tinta-2);--pv-acento:var(--ladrillo);--pv-linea:var(--linea);--pv-tira:var(--crema);--pv-borde:var(--tinta);--pv-marco:var(--m-tinta);--pv-marco-act:var(--m-ladrillo);color-scheme:light}
 html.en-practica{scrollbar-gutter:auto}   /* la vista tapa la página entera: sin franja vacía a la derecha, solo su propia barra */
 .pv{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;overflow:hidden;background:var(--pv-fondo);color:var(--pv-texto)}
 .pv[open]{display:flex;flex-direction:column}

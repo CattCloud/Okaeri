@@ -27,11 +27,11 @@ THESIS: entrar a Okaeri es volver al árbol: ves el paisaje, cruzas el bosque y 
 
 OWN-WORLD: todo lo dibujado es pixel art del mismo lugar (hero de día pleno; escenas de noche: azul de lago, ámbar de fuego). El apunte va sobre blanco a 750 px en fuente de lectura; títulos, botones y drawer en fuente pixel, nunca la lectura. Sin emojis.
 
-STORY: abres y ves el árbol; tocas sonido y entra la música celta; eliges módulo (ya viene el tuyo); bajas, el bosque cubre todo y aparece la fogata con el primer apunte; a mitad del módulo pasa al muelle y el sonido funde al pantano; al final, «Módulo siguiente →».
+STORY: abres y ves el árbol; eliges módulo (ya viene el tuyo); bajas, el bosque cubre todo y aparece la fogata con el primer apunte; a mitad del módulo pasa al muelle; al final, «Módulo siguiente →». (El sonido, celta y pantano, se pospuso el 2026-11-13 y se quitó el botón.)
 
-FIRST VIEWPORT: paisaje pixel a pantalla completa, cámara frontal, el gran árbol al centro con el río a sus pies; «okaeri» arriba, botón de sonido en una esquina, señal discreta para bajar. Nada más. Debajo, la franja de módulos.
+FIRST VIEWPORT: paisaje pixel a pantalla completa, cámara frontal, el gran árbol al centro con el río a sus pies; «okaeri» arriba, botón del tema en una esquina (2026-11-13), señal discreta para bajar. Nada más. Debajo, la franja de módulos.
 
-FORM: dirección fijada por el usuario (hero tipo Firewatch + escenas de dos cortes); sin sorteo. Gestos: capas del hero que se desplazan a distinta velocidad al scroll hasta que el bosque del frente cubre la pantalla; cambio de escena a mitad del módulo; fundido de audio por escena; teoría/práctica en su sitio. Sobre el apunte solo el botón del drawer. Con `prefers-reduced-motion`, capas quietas y cortes limpios. seed: none (unavailable)
+FORM: dirección fijada por el usuario (hero tipo Firewatch + escenas de dos cortes); sin sorteo. Gestos: capas del hero que se desplazan a distinta velocidad al scroll hasta que el bosque del frente cubre la pantalla; cambio de escena a mitad del módulo; teoría/práctica en su sitio. Sobre el apunte solo el botón del drawer. Con `prefers-reduced-motion`, capas quietas y cortes limpios. seed: none (unavailable)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
@@ -51,7 +51,7 @@ Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con su
   - Los botones son de 48 px con marco tinta, como Teoría/Práctica.
   - Las flechas ← → del teclado funcionan cuando el foco no está en un campo.
   - Al llegar a una página, el foco pasa a su título (`preventScroll`).
-- **Página de cierre:** el escenario entero en `noche`, con «Fin de <módulo>», «Módulo siguiente» y «‹ Volver al último apunte». Su sonido es el pantano si el módulo tiene muelle.
+- **Página de cierre:** el escenario entero en `noche`, con «Fin de <módulo>», «Módulo siguiente» y «‹ Volver al último apunte».
 - **Saltos:** el drawer, los enlaces internos y el hash llegan con la misma animación. Si el salto es largo, se hace un solo deslizamiento hacia el destino. La práctica de cada apunte se abre en su vista a pantalla completa, no dentro de la página.
 - **Accesibilidad:**
   - el escenario lleva `aria-roledescription="carrusel"`;
@@ -60,18 +60,18 @@ Solo escritorio (≥1200 px). Bajo 1200 px queda el flujo apilado actual, con su
 - **Se quitan en escritorio:** `.sep` (las cuerdas entre apuntes) y `.paso` (la línea dorada entre escenas). Las funciones quedan en `separadores.cjs` como referencia.
 - **Fuera de alcance:** deslizar con la rueda horizontal, el trackpad o el gesto de swipe (se activarían sin querer).
 
-## Vista de Práctica a pantalla completa y tema del sistema (definido 2026-11-12; paso 1 construido y revisado el mismo día; falta el paso 2: el tema en los apuntes, el botón en el drawer)
+## Vista de Práctica a pantalla completa y tema del sistema (definido 2026-11-12; paso 1 construido y revisado el mismo día; paso 2 construido el 2026-11-13: el tema en la hoja del apunte y el visor, y el botón en el drawer)
 
 Porqué (usuario): entrar a una práctica y ver de inmediato qué tocar; con la escena al lado las TABs (~2667 px de ancho, ~3,2:1) salen chicas. En los apuntes la escena sí acompaña. Modo de la vista: Operate (con el instrumento en la mano).
 
 - **Entrada:** un solo botón «Práctica ›» en el apunte (reemplaza el par Teoría/Práctica; `ver()` de `app.js` se simplifica), el drawer (las prácticas cuelgan de su apunte), el hash `#p-…` y el arpegio de la clase 8 (sin apunte). «‹ Volver al apunte» y Esc regresan. Si un apunte tiene varias prácticas, cada una tiene su entrada.
-- **Sin escena y sin música:** al entrar el audio se apaga; al volver, regresa.
+- **Sin escena** (y, mientras el sonido esté pospuesto, sin música).
 - **Barra superior:** «‹ Volver al apunte», título en Jersey, selector de columnas (1 · 2 · 3; por defecto 2) y botón de tema. 4 columnas se descartó: cada TAB quedaría ~430 × 135 px en 18", ilegible a distancia de brazo.
 - **«Cómo se hace»:** todas las imágenes en cuadrícula, cada una sobre papel blanco con marco pixel y su etiqueta (V1…Vn, o el nombre antes de la coma del alt). Clic → visor de imágenes, que recorre las versiones con ← →. Debajo, la tabla «Versión · Tempo · Dónde» entera.
 - **Después:** «Qué estás mejorando» (corto desde el `.md`: F4 cambia por `nueva-regla` a 2-3 líneas y se reescriben las 6 prácticas antes de construir) y, plegados, «Si sale mal» y «Hasta cuándo». Fuera de la web: la cita inicial, «Cómo suena cuando está bien», «Afinación del instructor», «Qué sigue» y «Verificación».
 - **Columnas y tema se recuerdan** en el navegador (`localStorage`, con `try/catch`).
-- **Tema del sistema (oscuro / claro), según Windows** (`prefers-color-scheme`), con botón para cambiarlo en la cabecera del drawer (junto al sonido) y en la barra de la Práctica; mismo ajuste en ambos. Cambia: la hoja del apunte, la vista de Práctica y el visor. Claro = lo de hoy (papel, tinta, ladrillo). Oscuro = noche, niebla, ámbar; callouts y tabla en `bosque` / `pino`; las imágenes siguen sobre blanco con su marco. No cambian: hero, escenas, franja, drawer y cierre. Por resolver al construir: el borde del arte de la escena se disuelve en blanco y en oscuro no calza con la hoja; contraste AA de toda la lectura en oscuro.
-- **Construcción en dos pasos:** 1) la vista de Práctica con los dos temas; 2) el tema oscuro en los apuntes y el botón del drawer.
+- **Tema del sistema (oscuro / claro), según Windows** (`prefers-color-scheme`), con botón para cambiarlo en la cabecera del drawer y en la barra de la Práctica; mismo ajuste en ambos. Cambia: la hoja del apunte, la vista de Práctica y el visor. Claro = lo de hoy (papel, tinta, ladrillo). Oscuro = noche, niebla, ámbar; callouts y tabla en `bosque` / `pino`; las imágenes siguen sobre blanco, sin marco (aprobado por el usuario el 2026-11-13). El hero pasa a noche con el tema oscuro (capas de noche, cielo plano `#1a345c`, logo invertido); no cambian escenas (salvo su borde, que `.borde-oscuro` pinta de `noche`), franja, drawer y cierre. Resuelto el 2026-11-13: el borde del arte y el contraste AA de la lectura en oscuro (niebla 16,7 · bruma 8,8 · ámbar 11,1 sobre noche).
+- **Construcción en dos pasos:** 1) la vista de Práctica con los dos temas; 2) el tema oscuro en los apuntes y el botón del drawer. **Ambos construidos** (el paso 2, el 2026-11-13: hoja en `noche` con `niebla`, ámbar en lugar de ladrillo, borde de las escenas pintado de `noche` por código y visor que sigue el tema).
 
 ### Direction contract — vista de Práctica (elegida por el usuario el 2026-11-12: «Fichas con su tempo»; boceto `.impeccable/mocks/decision/fichas.html`; code-led)
 

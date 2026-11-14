@@ -26,12 +26,12 @@ El avance que muestra es real y medible: un tema solo cuenta como «logrado» cu
 
 ## Capabilities and Constraints
 
-- **Vistas actuales:** hero a pantalla completa con paisaje por capas y sonido; franja de módulos (M1 a M9, el en curso ya elegido); por módulo, las dos escenas animadas (fogata y muelle) con sus apuntes al lado; la práctica de cada apunte se abre en su propia vista a pantalla completa, sin escena (botón «Práctica ›» del apunte o el drawer): las versiones en fichas de 1, 2 o 3 columnas, cada una con su tempo, y tema oscuro o claro según Windows (por ahora solo en esa vista); drawer con la ruta del módulo, los otros módulos, buscador y «Clases en orden».
+- **Vistas actuales:** hero a pantalla completa con paisaje por capas (de día; de noche con el tema oscuro) y el botón del tema arriba a la derecha; franja de módulos (M1 a M9, el en curso ya elegido); por módulo, las dos escenas animadas (fogata y muelle) con sus apuntes al lado; la práctica de cada apunte se abre en su propia vista a pantalla completa, sin escena (botón «Práctica ›» del apunte o el drawer): las versiones en fichas de 1, 2 o 3 columnas, cada una con su tempo, y tema oscuro o claro según Windows (desde el 2026-11-13 también en la hoja del apunte, el visor y el hero; se cambia con el botón del drawer o el de esa vista); drawer con el botón del tema, la ruta del módulo, los otros módulos, buscador y «Clases en orden».
 - **Un módulo a la vez.** Los que no tienen apuntes escritos dicen «Sin apuntes aún».
 - **Sin emojis** en la interfaz: iconos e ilustraciones propias. Los emojis dentro de un apunte se muestran con su icono equivalente.
 - **Solo contenido real:** un módulo sin apuntes lo dice, y un apunte provisional lo dice en su línea de metadatos; nada se inventa para llenar.
 - **Pantallas:** escritorio de 18" como principal; debe funcionar bien en celular.
-- **Sonido:** pistas `audio/celta.mp3` y `audio/pantano.mp3` que el usuario aún no consigue; sin ellas el botón avisa «Sin audio».
+- **Sonido:** pospuesto (2026-11-13): se quitó el botón y su código; las pistas `audio/celta.mp3` y `audio/pantano.mp3` aún no existen.
 - **Gamificación (futura, no se construye ahora; el diseño la deja prevista):** una tarjeta de personaje a pantalla completa («mi yo guitarrista»), con sus stats al lado. Cada stat es un criterio que el músico debe desarrollar (p. ej. dedos rápidos, velocidad de cambio de acordes). Al marcar un ejercicio como realizado desde la interfaz, sube un punto en el criterio correspondiente.
 - **Decisiones abiertas:** la lista de criterios y qué ejercicio alimenta cada uno; dónde se guarda lo marcado (la web hoy es estática, sin persistencia).
 
